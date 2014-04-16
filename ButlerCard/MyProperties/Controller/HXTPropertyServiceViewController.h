@@ -8,10 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import "DJQRateView.h"
-@interface HXTPropertyServiceViewController : UITableViewController
+#import "MBProgressHUD.h"
+
+@interface HXTPropertyServiceViewController : UITableViewController<MBProgressHUDDelegate>
+{
+    MBProgressHUD *HUD;
+
+}
 @property (weak, nonatomic) IBOutlet UIButton *houseNameBtn;
 @property (strong, nonatomic) NSString *houseName;
-@property (weak, nonatomic) IBOutlet DJQRateView *renteRateView;
-@property (weak, nonatomic) IBOutlet DJQRateView *repareRateView;
+@property (weak, nonatomic) IBOutlet DJQRateView *rentRateView;
+@property (weak, nonatomic) IBOutlet DJQRateView *repairRateView;
+@property (weak, nonatomic) IBOutlet UIButton *rentCommentBtn;
+@property (weak, nonatomic) IBOutlet UIButton *repairCommentBtn;
+@property (nonatomic,retain)NSMutableArray *dataArr;
 
 @end

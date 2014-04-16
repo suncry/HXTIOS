@@ -12,6 +12,5 @@
 @interface CYRentController : UITableViewController<UIAlertViewDelegate,MBProgressHUDDelegate>
 {
 	MBProgressHUD *HUD;
-
 }
 @end
