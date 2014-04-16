@@ -12,6 +12,8 @@
 	<dict>
 		<key>BEB1C8D7-8E1E-4FA7-A6FD-7E9421475D54</key>
 		<string>http://192.168.18.8:7990/scm/os/hexinpassios.git</string>
+		<key>DC0C0288-2D6A-430C-98F2-3C6990555B20</key>
+		<string>http://192.168.18.8:7990/scm/os/hexinpassios.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>ButlerCard.xcworkspace</string>
@@ -19,13 +21,15 @@
 	<dict>
 		<key>BEB1C8D7-8E1E-4FA7-A6FD-7E9421475D54</key>
 		<string>..</string>
+		<key>DC0C0288-2D6A-430C-98F2-3C6990555B20</key>
+		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>http://192.168.18.8:7990/scm/os/hexinpassios.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>BEB1C8D7-8E1E-4FA7-A6FD-7E9421475D54</string>
+	<string>DC0C0288-2D6A-430C-98F2-3C6990555B20</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -33,6 +37,14 @@
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>BEB1C8D7-8E1E-4FA7-A6FD-7E9421475D54</string>
+			<key>IDESourceControlWCCName</key>
+			<string>hexinpassios</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DC0C0288-2D6A-430C-98F2-3C6990555B20</string>
 			<key>IDESourceControlWCCName</key>
 			<string>hexinpassios</string>
 		</dict>
