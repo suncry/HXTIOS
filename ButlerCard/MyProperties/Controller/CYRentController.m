@@ -7,7 +7,7 @@
 //
 
 #import "CYRentController.h"
-
+#import "AFNetworking.h"
 @interface CYRentController ()
 
 @end
@@ -35,16 +35,6 @@
 }
 
 #pragma mark - Table view data source
-//在用tableViewController的时候如果页面定义了内容  data代理不需要写任何内容
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-//{
-//    return 0;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-//{
-//    return 0;
-//}
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //提示的文字
@@ -52,65 +42,29 @@
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"服务确认" message:str delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确认", nil];
     [alert show];
 }
+#pragma mark - UIAlertViewDelegate
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
+    NSLog(@"buttonIndex == %d",buttonIndex);
+    //点击确认按钮 发送服务请求
+    if (buttonIndex == 1)
+    {
+    }
 }
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)request
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *parameters = @{@"uid": @"1",@"tenement_serv_id": @"1"};
+    [manager POST:@"http://bbs.enveesoft.com:1602/htx/hexinpassserver/appserver/public/announce/apply" parameters:parameters
+          success:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+         //             NSLog(@"responseObject == %@",responseObject);
+         NSLog(@"服务请求已提交");
+     }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+         NSLog(@"Error: %@", error);
+     }];
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end
