@@ -57,6 +57,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [[NSUserDefaults standardUserDefaults]setValue:[tableView cellForRowAtIndexPath:indexPath].textLabel.text forKeyPath:kHouseName];
-    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
+- (IBAction)cancelBtnClick:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end

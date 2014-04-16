@@ -1,18 +1,18 @@
 //
-//  CYRentController.m
+//  CYRepairController.m
 //  ButlerCard
 //
-//  Created by niko on 14-4-15.
+//  Created by niko on 14-4-16.
 //  Copyright (c) 2014年 johnny tang. All rights reserved.
 //
 
-#import "CYRentController.h"
+#import "CYRepairController.h"
 
-@interface CYRentController ()
+@interface CYRepairController ()
 
 @end
 
-@implementation CYRentController
+@implementation CYRepairController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -26,6 +26,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,7 +41,7 @@
 }
 
 #pragma mark - Table view data source
-//在用tableViewController的时候如果页面定义了内容  data代理不需要写任何内容
+
 //- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 //{
 //    return 0;
@@ -45,13 +51,6 @@
 //{
 //    return 0;
 //}
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    //提示的文字
-    NSString *str = [NSString stringWithFormat:@"你确认要租借%@吗？",((UILabel *)[tableView viewWithTag:100 + indexPath.row]).text];
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"服务确认" message:str delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确认", nil];
-    [alert show];
-}
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -63,6 +62,13 @@
     return cell;
 }
 */
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //提示的文字
+    NSString *str = [NSString stringWithFormat:@"你确认需要%@服务吗？",((UILabel *)[tableView viewWithTag:100 + indexPath.row]).text];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"服务确认" message:str delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确认", nil];
+    [alert show];
+}
 
 /*
 // Override to support conditional editing of the table view.

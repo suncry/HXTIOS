@@ -24,7 +24,7 @@
 }
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self.houseNameBtn setTitle:[[NSUserDefaults standardUserDefaults]valueForKeyPath:kHouseName] forState:UIControlStateNormal];
+    [self.houseNameBtn setTitle:[NSString stringWithFormat:@"%@ ▾",[[NSUserDefaults standardUserDefaults]valueForKeyPath:kHouseName]] forState:UIControlStateNormal];
 }
 - (void)viewDidLoad
 {

@@ -9,4 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface CYHouseChoiceController : UITableViewController
+- (IBAction)cancelBtnClick:(id)sender;
 @end
