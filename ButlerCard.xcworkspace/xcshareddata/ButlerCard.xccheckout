@@ -5,46 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>C3A4E312-BD9E-4919-87BB-926A3EDCB760</string>
+	<string>AC7993DE-F3AB-4006-B940-1B561F69E5B6</string>
 	<key>IDESourceControlProjectName</key>
 	<string>ButlerCard</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>BEB1C8D7-8E1E-4FA7-A6FD-7E9421475D54</key>
-		<string>http://192.168.18.8:7990/scm/os/hexinpassios.git</string>
-		<key>DC0C0288-2D6A-430C-98F2-3C6990555B20</key>
-		<string>http://192.168.18.8:7990/scm/os/hexinpassios.git</string>
+		<key>84C87D21-65ED-41FF-868E-BF831C389861</key>
+		<string>http://enveesoft.com:7990/scm/os/hexinpassios.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>ButlerCard.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>BEB1C8D7-8E1E-4FA7-A6FD-7E9421475D54</key>
-		<string>..</string>
-		<key>DC0C0288-2D6A-430C-98F2-3C6990555B20</key>
+		<key>84C87D21-65ED-41FF-868E-BF831C389861</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>http://192.168.18.8:7990/scm/os/hexinpassios.git</string>
+	<string>http://enveesoft.com:7990/scm/os/hexinpassios.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>DC0C0288-2D6A-430C-98F2-3C6990555B20</string>
+	<string>84C87D21-65ED-41FF-868E-BF831C389861</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>BEB1C8D7-8E1E-4FA7-A6FD-7E9421475D54</string>
-			<key>IDESourceControlWCCName</key>
-			<string>hexinpassios</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>DC0C0288-2D6A-430C-98F2-3C6990555B20</string>
+			<string>84C87D21-65ED-41FF-868E-BF831C389861</string>
 			<key>IDESourceControlWCCName</key>
 			<string>hexinpassios</string>
 		</dict>

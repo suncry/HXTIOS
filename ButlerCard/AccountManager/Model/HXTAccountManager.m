@@ -118,7 +118,7 @@
                                               self.logged = YES;
                                               [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                                               dispatch_async(dispatch_get_main_queue(), ^{
-                                                  [[NSNotificationCenter defaultCenter] postNotificationName:kLoginFailedNotification object:self userInfo:error.userInfo];
+                                                  [[NSNotificationCenter defaultCenter] postNotificationName:kLoginSuccessNotification object:self userInfo:error.userInfo];
                                               });
                                           }];
     
