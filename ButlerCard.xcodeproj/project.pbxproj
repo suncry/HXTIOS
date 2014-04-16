@@ -162,6 +162,10 @@
 		B2214E8518FE1FE200762AE9 /* SurroundingLife.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2214E7518FE1FE200762AE9 /* SurroundingLife.storyboard */; };
 		B2214E8618FE1FE200762AE9 /* SurroundingLife.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2214E7518FE1FE200762AE9 /* SurroundingLife.storyboard */; };
 		B2214E8818FE216700762AE9 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B2214E8718FE216700762AE9 /* libsqlite3.dylib */; };
+		B22F869218FE72710031A646 /* HXTPropertyItemDetailTableViewHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B22F869118FE72710031A646 /* HXTPropertyItemDetailTableViewHeaderFooterView.xib */; };
+		B22F869318FE72710031A646 /* HXTPropertyItemDetailTableViewHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B22F869118FE72710031A646 /* HXTPropertyItemDetailTableViewHeaderFooterView.xib */; };
+		B22F869618FE72CE0031A646 /* HXTPropertyItemDetailTableViewHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = B22F869518FE72CE0031A646 /* HXTPropertyItemDetailTableViewHeaderFooterView.m */; };
+		B22F869718FE72CE0031A646 /* HXTPropertyItemDetailTableViewHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = B22F869518FE72CE0031A646 /* HXTPropertyItemDetailTableViewHeaderFooterView.m */; };
 		B26FE5CF18FE51FC0093BC2F /* NSArrayAdditionals.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE58518FE51FC0093BC2F /* NSArrayAdditionals.m */; };
 		B26FE5D018FE51FC0093BC2F /* NSArrayAdditionals.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE58518FE51FC0093BC2F /* NSArrayAdditionals.m */; };
 		B26FE5D118FE51FC0093BC2F /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE58718FE51FC0093BC2F /* NSDataAdditions.m */; };
@@ -350,6 +354,9 @@
 		B2214E7418FE1FE200762AE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PropertyService.storyboard; sourceTree = "<group>"; };
 		B2214E7618FE1FE200762AE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SurroundingLife.storyboard; sourceTree = "<group>"; };
 		B2214E8718FE216700762AE9 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		B22F869118FE72710031A646 /* HXTPropertyItemDetailTableViewHeaderFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HXTPropertyItemDetailTableViewHeaderFooterView.xib; sourceTree = "<group>"; };
+		B22F869418FE72CE0031A646 /* HXTPropertyItemDetailTableViewHeaderFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTPropertyItemDetailTableViewHeaderFooterView.h; sourceTree = "<group>"; };
+		B22F869518FE72CE0031A646 /* HXTPropertyItemDetailTableViewHeaderFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTPropertyItemDetailTableViewHeaderFooterView.m; sourceTree = "<group>"; };
 		B26FE58418FE51FC0093BC2F /* NSArrayAdditionals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSArrayAdditionals.h; sourceTree = "<group>"; };
 		B26FE58518FE51FC0093BC2F /* NSArrayAdditionals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayAdditionals.m; sourceTree = "<group>"; };
 		B26FE58618FE51FC0093BC2F /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
@@ -700,6 +707,9 @@
 				B2214E0418FE1FB800762AE9 /* HXTPropertyTableViewHeaderFooterView.h */,
 				B2214E0518FE1FB800762AE9 /* HXTPropertyTableViewHeaderFooterView.m */,
 				B2214E0618FE1FB800762AE9 /* MyPropertyTableViewHeaderFooterView.xib */,
+				B22F869418FE72CE0031A646 /* HXTPropertyItemDetailTableViewHeaderFooterView.h */,
+				B22F869518FE72CE0031A646 /* HXTPropertyItemDetailTableViewHeaderFooterView.m */,
+				B22F869118FE72710031A646 /* HXTPropertyItemDetailTableViewHeaderFooterView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -917,6 +927,7 @@
 				B2214E7718FE1FE200762AE9 /* AccountManager.storyboard in Resources */,
 				B2214E5B18FE1FB800762AE9 /* MyPropertyTableViewHeaderFooterView.xib in Resources */,
 				B2214C2718FE1E4000762AE9 /* Images.xcassets in Resources */,
+				B22F869218FE72710031A646 /* HXTPropertyItemDetailTableViewHeaderFooterView.xib in Resources */,
 				B2214C8A18FE1F9000762AE9 /* provinces_bck.plist in Resources */,
 				B2214E7F18FE1FE200762AE9 /* Home.storyboard in Resources */,
 				B2214E8118FE1FE200762AE9 /* PropertyFee.storyboard in Resources */,
@@ -936,6 +947,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2214C8D18FE1F9000762AE9 /* region.plist in Resources */,
+				B22F869318FE72710031A646 /* HXTPropertyItemDetailTableViewHeaderFooterView.xib in Resources */,
 				B2214C3818FE1E4000762AE9 /* InfoPlist.strings in Resources */,
 				B2214E7E18FE1FE200762AE9 /* EcologicalDistribution.storyboard in Resources */,
 				B2214E7A18FE1FE200762AE9 /* AddHouseEstate.storyboard in Resources */,
@@ -1000,6 +1012,7 @@
 				B26FE5CF18FE51FC0093BC2F /* NSArrayAdditionals.m in Sources */,
 				B26FE5D118FE51FC0093BC2F /* NSDataAdditions.m in Sources */,
 				B2214E2D18FE1FB800762AE9 /* CYOrderCell.m in Sources */,
+				B22F869618FE72CE0031A646 /* HXTPropertyItemDetailTableViewHeaderFooterView.m in Sources */,
 				B2214DB318FE1FA200762AE9 /* HXTNavigationController.m in Sources */,
 				B2214E5118FE1FB800762AE9 /* HXTMyProperties.m in Sources */,
 				B2214E3318FE1FB800762AE9 /* NSMutableArray+pieEx.m in Sources */,
@@ -1095,6 +1108,7 @@
 				B2214E3018FE1FB800762AE9 /* Example2PieView.m in Sources */,
 				B2214E3A18FE1FB800762AE9 /* CYActiveController.m in Sources */,
 				B2214E3C18FE1FB800762AE9 /* CYDiscussController.m in Sources */,
+				B22F869718FE72CE0031A646 /* HXTPropertyItemDetailTableViewHeaderFooterView.m in Sources */,
 				B2214E5418FE1FB800762AE9 /* HXTPropertyCell.m in Sources */,
 				B26FE64218FE55A90093BC2F /* NSString+Check.m in Sources */,
 				B2214E6218FE1FB800762AE9 /* HXTIGoViewController.m in Sources */,
