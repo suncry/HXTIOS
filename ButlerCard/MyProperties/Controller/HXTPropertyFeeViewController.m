@@ -184,11 +184,11 @@
         //模态显示动画
         //        ((UIViewController *)segue.destinationViewController).modalPresentationStyle = UIModalPresentationPageSheet;
         //        ((UIViewController *)segue.destinationViewController).modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    } else if ([segue.identifier isEqualToString:@"PropertyItemDetailStoryboardSegue"]) {
+        ((UIViewController *)(segue.destinationViewController)).hidesBottomBarWhenPushed = YES;
+    } else if ([segue.identifier isEqualToString:@"BindCardStoryboardSegue"]) {
+        ((UIViewController *)(segue.destinationViewController)).hidesBottomBarWhenPushed = YES;
     }
-}
-
-- (IBAction)backButtonPressed:(UIButton *)sender {
-    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 @end

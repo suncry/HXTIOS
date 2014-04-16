@@ -2,12 +2,13 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "add0_searchbg02.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "u=1965690280,1056735677&fm=23&gp=0.jpg.png"
+      "filename" : "add0_searchbg02@2x.png"
     }
   ],
   "info" : {

@@ -37,6 +37,14 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     [self.tableView registerNib:[UINib nibWithNibName:@"HXTPropertyItemDetailTableViewHeaderFooterView" bundle:[NSBundle mainBundle]]forHeaderFooterViewReuseIdentifier:kHeaderFooterViewReuseIdentifier];
+    self.view.backgroundColor = [UIColor colorWithRed:241.0f / 255 green:241.0f / 255 blue:241.0f / 255 alpha:1];
+    
+    self.navigationController.tabBarController.hidesBottomBarWhenPushed = YES;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,9 +68,9 @@
 }
 
 
-//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-//    return [NSString stringWithFormat:@"%li年", 2014L - section];
-//}
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return [NSString stringWithFormat:@"%li年", 2014L - section];
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -118,16 +126,20 @@
 
 #pragma mark - Table view delegate
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 30;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return 30;
+//}
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    HXTPropertyItemDetailTableViewHeaderFooterView *tableViewHeaderFooterView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:kHeaderFooterViewReuseIdentifier];
-    
-    tableViewHeaderFooterView.titleLabel.text = [NSString stringWithFormat:@"%li年", 2014L - section];
-    return tableViewHeaderFooterView;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+//    return 50;
+//}
+//
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+//    HXTPropertyItemDetailTableViewHeaderFooterView *tableViewHeaderFooterView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:kHeaderFooterViewReuseIdentifier];
+//    
+//    tableViewHeaderFooterView.titleLabel.text = [NSString stringWithFormat:@"%li年", 2014L - section];
+//    return tableViewHeaderFooterView;
+//}
 
 /*
  #pragma mark - Navigation

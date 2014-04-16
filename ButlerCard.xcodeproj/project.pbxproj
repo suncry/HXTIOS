@@ -14,7 +14,6 @@
 		B2214C1618FE1E4000762AE9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B2214C1418FE1E4000762AE9 /* InfoPlist.strings */; };
 		B2214C1818FE1E4000762AE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C1718FE1E4000762AE9 /* main.m */; };
 		B2214C1C18FE1E4000762AE9 /* HXTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C1B18FE1E4000762AE9 /* HXTAppDelegate.m */; };
-		B2214C2718FE1E4000762AE9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2214C2618FE1E4000762AE9 /* Images.xcassets */; };
 		B2214C2E18FE1E4000762AE9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2214C2D18FE1E4000762AE9 /* XCTest.framework */; };
 		B2214C2F18FE1E4000762AE9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2214C0B18FE1E4000762AE9 /* Foundation.framework */; };
 		B2214C3018FE1E4000762AE9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2214C0F18FE1E4000762AE9 /* UIKit.framework */; };
@@ -167,6 +166,7 @@
 		B22F869318FE72710031A646 /* HXTPropertyItemDetailTableViewHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B22F869118FE72710031A646 /* HXTPropertyItemDetailTableViewHeaderFooterView.xib */; };
 		B22F869618FE72CE0031A646 /* HXTPropertyItemDetailTableViewHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = B22F869518FE72CE0031A646 /* HXTPropertyItemDetailTableViewHeaderFooterView.m */; };
 		B22F869718FE72CE0031A646 /* HXTPropertyItemDetailTableViewHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = B22F869518FE72CE0031A646 /* HXTPropertyItemDetailTableViewHeaderFooterView.m */; };
+		B22F869918FE8E5F0031A646 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B22F869818FE8E5F0031A646 /* Images.xcassets */; };
 		B26FE5CF18FE51FC0093BC2F /* NSArrayAdditionals.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE58518FE51FC0093BC2F /* NSArrayAdditionals.m */; };
 		B26FE5D018FE51FC0093BC2F /* NSArrayAdditionals.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE58518FE51FC0093BC2F /* NSArrayAdditionals.m */; };
 		B26FE5D118FE51FC0093BC2F /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE58718FE51FC0093BC2F /* NSDataAdditions.m */; };
@@ -220,7 +220,6 @@
 		B2214C1918FE1E4000762AE9 /* ButlerCard-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ButlerCard-Prefix.pch"; sourceTree = "<group>"; };
 		B2214C1A18FE1E4000762AE9 /* HXTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HXTAppDelegate.h; sourceTree = "<group>"; };
 		B2214C1B18FE1E4000762AE9 /* HXTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HXTAppDelegate.m; sourceTree = "<group>"; };
-		B2214C2618FE1E4000762AE9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B2214C2C18FE1E4000762AE9 /* ButlerCardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ButlerCardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2214C2D18FE1E4000762AE9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		B2214C3518FE1E4000762AE9 /* ButlerCardTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ButlerCardTests-Info.plist"; sourceTree = "<group>"; };
@@ -360,6 +359,7 @@
 		B22F869118FE72710031A646 /* HXTPropertyItemDetailTableViewHeaderFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HXTPropertyItemDetailTableViewHeaderFooterView.xib; sourceTree = "<group>"; };
 		B22F869418FE72CE0031A646 /* HXTPropertyItemDetailTableViewHeaderFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTPropertyItemDetailTableViewHeaderFooterView.h; sourceTree = "<group>"; };
 		B22F869518FE72CE0031A646 /* HXTPropertyItemDetailTableViewHeaderFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTPropertyItemDetailTableViewHeaderFooterView.m; sourceTree = "<group>"; };
+		B22F869818FE8E5F0031A646 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B26FE58418FE51FC0093BC2F /* NSArrayAdditionals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSArrayAdditionals.h; sourceTree = "<group>"; };
 		B26FE58518FE51FC0093BC2F /* NSArrayAdditionals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayAdditionals.m; sourceTree = "<group>"; };
 		B26FE58618FE51FC0093BC2F /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
@@ -468,7 +468,7 @@
 				B2214E7118FE1FE200762AE9 /* PropertyFee.storyboard */,
 				B2214E7318FE1FE200762AE9 /* PropertyService.storyboard */,
 				B2214E7518FE1FE200762AE9 /* SurroundingLife.storyboard */,
-				B2214C2618FE1E4000762AE9 /* Images.xcassets */,
+				B22F869818FE8E5F0031A646 /* Images.xcassets */,
 				B2214C1218FE1E4000762AE9 /* Supporting Files */,
 			);
 			path = ButlerCard;
@@ -929,9 +929,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2214C8C18FE1F9000762AE9 /* region.plist in Resources */,
+				B22F869918FE8E5F0031A646 /* Images.xcassets in Resources */,
 				B2214E7718FE1FE200762AE9 /* AccountManager.storyboard in Resources */,
 				B2214E5B18FE1FB800762AE9 /* MyPropertyTableViewHeaderFooterView.xib in Resources */,
-				B2214C2718FE1E4000762AE9 /* Images.xcassets in Resources */,
 				B22F869218FE72710031A646 /* HXTPropertyItemDetailTableViewHeaderFooterView.xib in Resources */,
 				B2214C8A18FE1F9000762AE9 /* provinces_bck.plist in Resources */,
 				B2214E7F18FE1FE200762AE9 /* Home.storyboard in Resources */,
