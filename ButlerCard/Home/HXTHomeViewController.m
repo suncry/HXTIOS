@@ -41,6 +41,7 @@
     
     NSLog(@"Test!!");
     NSLog(@"Test!!33");
+    NSLog(@"Test!!44");
 }
 
 - (void)viewDidAppear:(BOOL)animated {
