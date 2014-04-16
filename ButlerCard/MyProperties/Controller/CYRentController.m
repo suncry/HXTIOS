@@ -50,7 +50,15 @@
     //点击确认按钮 发送服务请求
     if (buttonIndex == 1)
     {
-        [self request];
+        HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+        [self.navigationController.view addSubview:HUD];
+        
+        // Regiser for HUD callbacks so we can remove it from the window at the right time
+        HUD.delegate = self;
+        
+        // Show the HUD while the provided method executes in a new thread
+        [HUD showWhileExecuting:@selector(request) onTarget:self withObject:nil animated:YES];
+
     }
 }
 /**
@@ -63,12 +71,24 @@
     [manager POST:@"http://bbs.enveesoft.com:1602/htx/hexinpassserver/appserver/public/announce/apply" parameters:parameters
           success:^(AFHTTPRequestOperation *operation, id responseObject)
      {
-         //             NSLog(@"responseObject == %@",responseObject);
-         NSLog(@"服务请求已提交");
+         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+         hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Checkmark.png"]];
+         hud.mode = MBProgressHUDModeCustomView;
+         hud.labelText = @"申请已提交!";
+         [hud show:YES];
+         [hud hide:YES afterDelay:1.5];
+
      }
           failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
          NSLog(@"Error: %@", error);
+         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+         hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Checkmark.png"]];
+         hud.mode = MBProgressHUDModeCustomView;
+         hud.labelText = [NSString stringWithFormat:@"Error: %@",error];
+         [hud show:YES];
+         [hud hide:YES afterDelay:1.5];
+
      }];
 }
 @end

@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD.h"
 
-@interface CYRepairController : UITableViewController
+@interface CYRepairController : UITableViewController<UIAlertViewDelegate,MBProgressHUDDelegate>
+{
+	MBProgressHUD *HUD;
+}
 
 @end
