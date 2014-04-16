@@ -452,12 +452,12 @@
 			isa = PBXGroup;
 			children = (
 				B26FE55718FE51FC0093BC2F /* Global */,
-				B2214DBA18FE1FB800762AE9 /* MyButler */,
-				B2214DE018FE1FB800762AE9 /* MyProperties */,
-				B2214E0718FE1FB800762AE9 /* SurroundingLife */,
-				B2214D2218FE1FA200762AE9 /* Home */,
-				B2214C4318FE1F9000762AE9 /* AccountManager */,
-				B2214C5418FE1F9000762AE9 /* AddHouseEstate */,
+				B2214D2218FE1FA200762AE9 /* Home----------主页 */,
+				B2214C4318FE1F9000762AE9 /* AccountManager-账户管理 */,
+				B2214DE018FE1FB800762AE9 /* MyProperties----我的物业 */,
+				B2214C5418FE1F9000762AE9 /* AddHouseEstate--添加小区 */,
+				B2214DBA18FE1FB800762AE9 /* MyButler--------我的管家 */,
+				B2214E0718FE1FB800762AE9 /* SurroundingLife--周边生活 */,
 				B2214C1A18FE1E4000762AE9 /* HXTAppDelegate.h */,
 				B2214C1B18FE1E4000762AE9 /* HXTAppDelegate.m */,
 				B2214E6718FE1FE200762AE9 /* AccountManager.storyboard */,
@@ -503,12 +503,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B2214C4318FE1F9000762AE9 /* AccountManager */ = {
+		B2214C4318FE1F9000762AE9 /* AccountManager-账户管理 */ = {
 			isa = PBXGroup;
 			children = (
 				B2214C4418FE1F9000762AE9 /* Controller */,
 				B2214C5118FE1F9000762AE9 /* Model */,
 			);
+			name = "AccountManager-账户管理";
 			path = AccountManager;
 			sourceTree = "<group>";
 		};
@@ -540,12 +541,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		B2214C5418FE1F9000762AE9 /* AddHouseEstate */ = {
+		B2214C5418FE1F9000762AE9 /* AddHouseEstate--添加小区 */ = {
 			isa = PBXGroup;
 			children = (
 				B2214C5518FE1F9000762AE9 /* Controller */,
 				B2214C6418FE1F9000762AE9 /* Model */,
 			);
+			name = "AddHouseEstate--添加小区";
 			path = AddHouseEstate;
 			sourceTree = "<group>";
 		};
@@ -589,7 +591,7 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		B2214D2218FE1FA200762AE9 /* Home */ = {
+		B2214D2218FE1FA200762AE9 /* Home----------主页 */ = {
 			isa = PBXGroup;
 			children = (
 				B2214D2518FE1FA200762AE9 /* HXTHomeViewController.h */,
@@ -601,10 +603,11 @@
 				B2214D2318FE1FA200762AE9 /* HXTHomeChooseHouseEstateTableViewController.h */,
 				B2214D2418FE1FA200762AE9 /* HXTHomeChooseHouseEstateTableViewController.m */,
 			);
+			name = "Home----------主页";
 			path = Home;
 			sourceTree = "<group>";
 		};
-		B2214DBA18FE1FB800762AE9 /* MyButler */ = {
+		B2214DBA18FE1FB800762AE9 /* MyButler--------我的管家 */ = {
 			isa = PBXGroup;
 			children = (
 				B2214DBB18FE1FB800762AE9 /* CYActivityCell.h */,
@@ -645,16 +648,18 @@
 				B2214DDE18FE1FB800762AE9 /* PieLayer.h */,
 				B2214DDF18FE1FB800762AE9 /* PieLayer.m */,
 			);
+			name = "MyButler--------我的管家";
 			path = MyButler;
 			sourceTree = "<group>";
 		};
-		B2214DE018FE1FB800762AE9 /* MyProperties */ = {
+		B2214DE018FE1FB800762AE9 /* MyProperties----我的物业 */ = {
 			isa = PBXGroup;
 			children = (
 				B2214DE118FE1FB800762AE9 /* Controller */,
 				B2214DF418FE1FB800762AE9 /* Model */,
 				B2214E0318FE1FB800762AE9 /* View */,
 			);
+			name = "MyProperties----我的物业";
 			path = MyProperties;
 			sourceTree = "<group>";
 		};
@@ -719,11 +724,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		B2214E0718FE1FB800762AE9 /* SurroundingLife */ = {
+		B2214E0718FE1FB800762AE9 /* SurroundingLife--周边生活 */ = {
 			isa = PBXGroup;
 			children = (
 				B2214E0818FE1FB800762AE9 /* Controller */,
 			);
+			name = "SurroundingLife--周边生活";
 			path = SurroundingLife;
 			sourceTree = "<group>";
 		};
