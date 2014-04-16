@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="l9G-C5-nfz">
+    <dependencies>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller - 生态配送-->
+        <scene sceneID="5Qz-1v-Bos">
+            <objects>
+                <viewController storyboardIdentifier="EcologicalDistributionStoryboardID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="b9S-r3-6iS" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ab4-Ch-eKE"/>
+                        <viewControllerLayoutGuide type="bottom" id="24o-c6-Cus"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nlp-ga-5g9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="生态配送" id="Fn1-tf-Y1r"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Ew-0g-Frw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1196" y="64"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fC3-3O-vz1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="l9G-C5-nfz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="G3R-Eq-XXI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="b9S-r3-6iS" kind="relationship" relationship="rootViewController" id="Jhb-sa-K5D"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IVe-FR-a1w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="670" y="64"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

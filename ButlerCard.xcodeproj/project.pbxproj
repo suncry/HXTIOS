@@ -13,15 +13,249 @@
 		B2214C1618FE1E4000762AE9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B2214C1418FE1E4000762AE9 /* InfoPlist.strings */; };
 		B2214C1818FE1E4000762AE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C1718FE1E4000762AE9 /* main.m */; };
 		B2214C1C18FE1E4000762AE9 /* HXTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C1B18FE1E4000762AE9 /* HXTAppDelegate.m */; };
-		B2214C1F18FE1E4000762AE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2214C1D18FE1E4000762AE9 /* Main.storyboard */; };
-		B2214C2218FE1E4000762AE9 /* HXTFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C2118FE1E4000762AE9 /* HXTFirstViewController.m */; };
-		B2214C2518FE1E4000762AE9 /* HXTSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C2418FE1E4000762AE9 /* HXTSecondViewController.m */; };
 		B2214C2718FE1E4000762AE9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2214C2618FE1E4000762AE9 /* Images.xcassets */; };
 		B2214C2E18FE1E4000762AE9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2214C2D18FE1E4000762AE9 /* XCTest.framework */; };
 		B2214C2F18FE1E4000762AE9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2214C0B18FE1E4000762AE9 /* Foundation.framework */; };
 		B2214C3018FE1E4000762AE9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2214C0F18FE1E4000762AE9 /* UIKit.framework */; };
 		B2214C3818FE1E4000762AE9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B2214C3618FE1E4000762AE9 /* InfoPlist.strings */; };
 		B2214C3A18FE1E4000762AE9 /* ButlerCardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C3918FE1E4000762AE9 /* ButlerCardTests.m */; };
+		B2214C6A18FE1F9000762AE9 /* HXTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C4618FE1F9000762AE9 /* HXTLoginViewController.m */; };
+		B2214C6B18FE1F9000762AE9 /* HXTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C4618FE1F9000762AE9 /* HXTLoginViewController.m */; };
+		B2214C6C18FE1F9000762AE9 /* HXTRegisterAddHouseEstateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C4818FE1F9000762AE9 /* HXTRegisterAddHouseEstateViewController.m */; };
+		B2214C6D18FE1F9000762AE9 /* HXTRegisterAddHouseEstateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C4818FE1F9000762AE9 /* HXTRegisterAddHouseEstateViewController.m */; };
+		B2214C6E18FE1F9000762AE9 /* HXTRegisterInputPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C4A18FE1F9000762AE9 /* HXTRegisterInputPasswordViewController.m */; };
+		B2214C6F18FE1F9000762AE9 /* HXTRegisterInputPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C4A18FE1F9000762AE9 /* HXTRegisterInputPasswordViewController.m */; };
+		B2214C7018FE1F9000762AE9 /* HXTRegisterInputPhoneNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C4C18FE1F9000762AE9 /* HXTRegisterInputPhoneNumberViewController.m */; };
+		B2214C7118FE1F9000762AE9 /* HXTRegisterInputPhoneNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C4C18FE1F9000762AE9 /* HXTRegisterInputPhoneNumberViewController.m */; };
+		B2214C7218FE1F9000762AE9 /* HXTRegisterInputValidCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C4E18FE1F9000762AE9 /* HXTRegisterInputValidCodeViewController.m */; };
+		B2214C7318FE1F9000762AE9 /* HXTRegisterInputValidCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C4E18FE1F9000762AE9 /* HXTRegisterInputValidCodeViewController.m */; };
+		B2214C7418FE1F9000762AE9 /* HXTRetrievePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C5018FE1F9000762AE9 /* HXTRetrievePasswordViewController.m */; };
+		B2214C7518FE1F9000762AE9 /* HXTRetrievePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C5018FE1F9000762AE9 /* HXTRetrievePasswordViewController.m */; };
+		B2214C7618FE1F9000762AE9 /* HXTAccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C5318FE1F9000762AE9 /* HXTAccountManager.m */; };
+		B2214C7718FE1F9000762AE9 /* HXTAccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C5318FE1F9000762AE9 /* HXTAccountManager.m */; };
+		B2214C7818FE1F9000762AE9 /* HXTAddHouseEstateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C5718FE1F9000762AE9 /* HXTAddHouseEstateViewController.m */; };
+		B2214C7918FE1F9000762AE9 /* HXTAddHouseEstateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C5718FE1F9000762AE9 /* HXTAddHouseEstateViewController.m */; };
+		B2214C7A18FE1F9000762AE9 /* HXTAddHouseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C5918FE1F9000762AE9 /* HXTAddHouseViewController.m */; };
+		B2214C7B18FE1F9000762AE9 /* HXTAddHouseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C5918FE1F9000762AE9 /* HXTAddHouseViewController.m */; };
+		B2214C7C18FE1F9000762AE9 /* HXTAppleyOpenPropertyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C5B18FE1F9000762AE9 /* HXTAppleyOpenPropertyViewController.m */; };
+		B2214C7D18FE1F9000762AE9 /* HXTAppleyOpenPropertyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C5B18FE1F9000762AE9 /* HXTAppleyOpenPropertyViewController.m */; };
+		B2214C7E18FE1F9000762AE9 /* HXTBrowseHouseEstateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C5D18FE1F9000762AE9 /* HXTBrowseHouseEstateViewController.m */; };
+		B2214C7F18FE1F9000762AE9 /* HXTBrowseHouseEstateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C5D18FE1F9000762AE9 /* HXTBrowseHouseEstateViewController.m */; };
+		B2214C8018FE1F9000762AE9 /* HXTRegisterUserProtocolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C5F18FE1F9000762AE9 /* HXTRegisterUserProtocolViewController.m */; };
+		B2214C8118FE1F9000762AE9 /* HXTRegisterUserProtocolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C5F18FE1F9000762AE9 /* HXTRegisterUserProtocolViewController.m */; };
+		B2214C8218FE1F9000762AE9 /* HXTSelectCitySecondLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C6118FE1F9000762AE9 /* HXTSelectCitySecondLevelViewController.m */; };
+		B2214C8318FE1F9000762AE9 /* HXTSelectCitySecondLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C6118FE1F9000762AE9 /* HXTSelectCitySecondLevelViewController.m */; };
+		B2214C8418FE1F9000762AE9 /* HXTSelectCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C6318FE1F9000762AE9 /* HXTSelectCityViewController.m */; };
+		B2214C8518FE1F9000762AE9 /* HXTSelectCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C6318FE1F9000762AE9 /* HXTSelectCityViewController.m */; };
+		B2214C8618FE1F9000762AE9 /* hotCities.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2214C6618FE1F9000762AE9 /* hotCities.plist */; };
+		B2214C8718FE1F9000762AE9 /* hotCities.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2214C6618FE1F9000762AE9 /* hotCities.plist */; };
+		B2214C8818FE1F9000762AE9 /* provinces.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2214C6718FE1F9000762AE9 /* provinces.plist */; };
+		B2214C8918FE1F9000762AE9 /* provinces.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2214C6718FE1F9000762AE9 /* provinces.plist */; };
+		B2214C8A18FE1F9000762AE9 /* provinces_bck.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2214C6818FE1F9000762AE9 /* provinces_bck.plist */; };
+		B2214C8B18FE1F9000762AE9 /* provinces_bck.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2214C6818FE1F9000762AE9 /* provinces_bck.plist */; };
+		B2214C8C18FE1F9000762AE9 /* region.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2214C6918FE1F9000762AE9 /* region.plist */; };
+		B2214C8D18FE1F9000762AE9 /* region.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2214C6918FE1F9000762AE9 /* region.plist */; };
+		B2214DAF18FE1FA200762AE9 /* HXTHomeChooseHouseEstateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214D2418FE1FA200762AE9 /* HXTHomeChooseHouseEstateTableViewController.m */; };
+		B2214DB018FE1FA200762AE9 /* HXTHomeChooseHouseEstateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214D2418FE1FA200762AE9 /* HXTHomeChooseHouseEstateTableViewController.m */; };
+		B2214DB118FE1FA200762AE9 /* HXTHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214D2618FE1FA200762AE9 /* HXTHomeViewController.m */; };
+		B2214DB218FE1FA200762AE9 /* HXTHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214D2618FE1FA200762AE9 /* HXTHomeViewController.m */; };
+		B2214DB318FE1FA200762AE9 /* HXTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214D2818FE1FA200762AE9 /* HXTNavigationController.m */; };
+		B2214DB418FE1FA200762AE9 /* HXTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214D2818FE1FA200762AE9 /* HXTNavigationController.m */; };
+		B2214DB518FE1FA200762AE9 /* HXTTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214D2A18FE1FA200762AE9 /* HXTTabBarViewController.m */; };
+		B2214DB618FE1FA200762AE9 /* HXTTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214D2A18FE1FA200762AE9 /* HXTTabBarViewController.m */; };
+		B2214E1518FE1FB800762AE9 /* CYActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DBC18FE1FB800762AE9 /* CYActivityCell.m */; };
+		B2214E1618FE1FB800762AE9 /* CYActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DBC18FE1FB800762AE9 /* CYActivityCell.m */; };
+		B2214E1718FE1FB800762AE9 /* CYActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DBE18FE1FB800762AE9 /* CYActivityViewController.m */; };
+		B2214E1818FE1FB800762AE9 /* CYActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DBE18FE1FB800762AE9 /* CYActivityViewController.m */; };
+		B2214E1918FE1FB800762AE9 /* CYBillPieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DC018FE1FB800762AE9 /* CYBillPieViewController.m */; };
+		B2214E1A18FE1FB800762AE9 /* CYBillPieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DC018FE1FB800762AE9 /* CYBillPieViewController.m */; };
+		B2214E1B18FE1FB800762AE9 /* CYFeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DC218FE1FB800762AE9 /* CYFeedBackViewController.m */; };
+		B2214E1C18FE1FB800762AE9 /* CYFeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DC218FE1FB800762AE9 /* CYFeedBackViewController.m */; };
+		B2214E1D18FE1FB800762AE9 /* CYMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DC418FE1FB800762AE9 /* CYMsgCell.m */; };
+		B2214E1E18FE1FB800762AE9 /* CYMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DC418FE1FB800762AE9 /* CYMsgCell.m */; };
+		B2214E1F18FE1FB800762AE9 /* CYMsgTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DC618FE1FB800762AE9 /* CYMsgTableViewController.m */; };
+		B2214E2018FE1FB800762AE9 /* CYMsgTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DC618FE1FB800762AE9 /* CYMsgTableViewController.m */; };
+		B2214E2118FE1FB800762AE9 /* CYMyBillDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DC818FE1FB800762AE9 /* CYMyBillDetailCell.m */; };
+		B2214E2218FE1FB800762AE9 /* CYMyBillDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DC818FE1FB800762AE9 /* CYMyBillDetailCell.m */; };
+		B2214E2318FE1FB800762AE9 /* CYMyBillMonthCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DCA18FE1FB800762AE9 /* CYMyBillMonthCell.m */; };
+		B2214E2418FE1FB800762AE9 /* CYMyBillMonthCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DCA18FE1FB800762AE9 /* CYMyBillMonthCell.m */; };
+		B2214E2518FE1FB800762AE9 /* CYMyBillTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DCC18FE1FB800762AE9 /* CYMyBillTableViewController.m */; };
+		B2214E2618FE1FB800762AE9 /* CYMyBillTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DCC18FE1FB800762AE9 /* CYMyBillTableViewController.m */; };
+		B2214E2718FE1FB800762AE9 /* CYMyOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DCE18FE1FB800762AE9 /* CYMyOrderViewController.m */; };
+		B2214E2818FE1FB800762AE9 /* CYMyOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DCE18FE1FB800762AE9 /* CYMyOrderViewController.m */; };
+		B2214E2918FE1FB800762AE9 /* CYMyPropertyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DD018FE1FB800762AE9 /* CYMyPropertyTableViewCell.m */; };
+		B2214E2A18FE1FB800762AE9 /* CYMyPropertyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DD018FE1FB800762AE9 /* CYMyPropertyTableViewCell.m */; };
+		B2214E2B18FE1FB800762AE9 /* CYMyPropertyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DD218FE1FB800762AE9 /* CYMyPropertyTableViewController.m */; };
+		B2214E2C18FE1FB800762AE9 /* CYMyPropertyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DD218FE1FB800762AE9 /* CYMyPropertyTableViewController.m */; };
+		B2214E2D18FE1FB800762AE9 /* CYOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DD418FE1FB800762AE9 /* CYOrderCell.m */; };
+		B2214E2E18FE1FB800762AE9 /* CYOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DD418FE1FB800762AE9 /* CYOrderCell.m */; };
+		B2214E2F18FE1FB800762AE9 /* Example2PieView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DD618FE1FB800762AE9 /* Example2PieView.m */; };
+		B2214E3018FE1FB800762AE9 /* Example2PieView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DD618FE1FB800762AE9 /* Example2PieView.m */; };
+		B2214E3118FE1FB800762AE9 /* MyPieElement.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DD918FE1FB800762AE9 /* MyPieElement.m */; };
+		B2214E3218FE1FB800762AE9 /* MyPieElement.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DD918FE1FB800762AE9 /* MyPieElement.m */; };
+		B2214E3318FE1FB800762AE9 /* NSMutableArray+pieEx.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DDB18FE1FB800762AE9 /* NSMutableArray+pieEx.m */; };
+		B2214E3418FE1FB800762AE9 /* NSMutableArray+pieEx.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DDB18FE1FB800762AE9 /* NSMutableArray+pieEx.m */; };
+		B2214E3518FE1FB800762AE9 /* PieElement.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DDD18FE1FB800762AE9 /* PieElement.m */; };
+		B2214E3618FE1FB800762AE9 /* PieElement.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DDD18FE1FB800762AE9 /* PieElement.m */; };
+		B2214E3718FE1FB800762AE9 /* PieLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DDF18FE1FB800762AE9 /* PieLayer.m */; };
+		B2214E3818FE1FB800762AE9 /* PieLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DDF18FE1FB800762AE9 /* PieLayer.m */; };
+		B2214E3918FE1FB800762AE9 /* CYActiveController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DE318FE1FB800762AE9 /* CYActiveController.m */; };
+		B2214E3A18FE1FB800762AE9 /* CYActiveController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DE318FE1FB800762AE9 /* CYActiveController.m */; };
+		B2214E3B18FE1FB800762AE9 /* CYDiscussController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DE518FE1FB800762AE9 /* CYDiscussController.m */; };
+		B2214E3C18FE1FB800762AE9 /* CYDiscussController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DE518FE1FB800762AE9 /* CYDiscussController.m */; };
+		B2214E3D18FE1FB800762AE9 /* CYHouseChoiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DE718FE1FB800762AE9 /* CYHouseChoiceController.m */; };
+		B2214E3E18FE1FB800762AE9 /* CYHouseChoiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DE718FE1FB800762AE9 /* CYHouseChoiceController.m */; };
+		B2214E3F18FE1FB800762AE9 /* CYNoticeBoardController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DE918FE1FB800762AE9 /* CYNoticeBoardController.m */; };
+		B2214E4018FE1FB800762AE9 /* CYNoticeBoardController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DE918FE1FB800762AE9 /* CYNoticeBoardController.m */; };
+		B2214E4118FE1FB800762AE9 /* CYRentController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DEB18FE1FB800762AE9 /* CYRentController.m */; };
+		B2214E4218FE1FB800762AE9 /* CYRentController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DEB18FE1FB800762AE9 /* CYRentController.m */; };
+		B2214E4318FE1FB800762AE9 /* HXTBindCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DED18FE1FB800762AE9 /* HXTBindCardViewController.m */; };
+		B2214E4418FE1FB800762AE9 /* HXTBindCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DED18FE1FB800762AE9 /* HXTBindCardViewController.m */; };
+		B2214E4518FE1FB800762AE9 /* HXTPropertyFeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DEF18FE1FB800762AE9 /* HXTPropertyFeeViewController.m */; };
+		B2214E4618FE1FB800762AE9 /* HXTPropertyFeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DEF18FE1FB800762AE9 /* HXTPropertyFeeViewController.m */; };
+		B2214E4718FE1FB800762AE9 /* HXTPropertyItemDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DF118FE1FB800762AE9 /* HXTPropertyItemDetailTableViewController.m */; };
+		B2214E4818FE1FB800762AE9 /* HXTPropertyItemDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DF118FE1FB800762AE9 /* HXTPropertyItemDetailTableViewController.m */; };
+		B2214E4918FE1FB800762AE9 /* HXTPropertyServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DF318FE1FB800762AE9 /* HXTPropertyServiceViewController.m */; };
+		B2214E4A18FE1FB800762AE9 /* HXTPropertyServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DF318FE1FB800762AE9 /* HXTPropertyServiceViewController.m */; };
+		B2214E4B18FE1FB800762AE9 /* DJQRateView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DF618FE1FB800762AE9 /* DJQRateView.m */; };
+		B2214E4C18FE1FB800762AE9 /* DJQRateView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DF618FE1FB800762AE9 /* DJQRateView.m */; };
+		B2214E4D18FE1FB800762AE9 /* DJQStartView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DF818FE1FB800762AE9 /* DJQStartView.m */; };
+		B2214E4E18FE1FB800762AE9 /* DJQStartView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DF818FE1FB800762AE9 /* DJQStartView.m */; };
+		B2214E4F18FE1FB800762AE9 /* HXTHouse.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DFA18FE1FB800762AE9 /* HXTHouse.m */; };
+		B2214E5018FE1FB800762AE9 /* HXTHouse.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DFA18FE1FB800762AE9 /* HXTHouse.m */; };
+		B2214E5118FE1FB800762AE9 /* HXTMyProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DFC18FE1FB800762AE9 /* HXTMyProperties.m */; };
+		B2214E5218FE1FB800762AE9 /* HXTMyProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DFC18FE1FB800762AE9 /* HXTMyProperties.m */; };
+		B2214E5318FE1FB800762AE9 /* HXTPropertyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DFE18FE1FB800762AE9 /* HXTPropertyCell.m */; };
+		B2214E5418FE1FB800762AE9 /* HXTPropertyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214DFE18FE1FB800762AE9 /* HXTPropertyCell.m */; };
+		B2214E5518FE1FB800762AE9 /* HXTPropertyFeeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214E0018FE1FB800762AE9 /* HXTPropertyFeeCell.m */; };
+		B2214E5618FE1FB800762AE9 /* HXTPropertyFeeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214E0018FE1FB800762AE9 /* HXTPropertyFeeCell.m */; };
+		B2214E5718FE1FB800762AE9 /* HXTPropertyFeeDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214E0218FE1FB800762AE9 /* HXTPropertyFeeDetailCell.m */; };
+		B2214E5818FE1FB800762AE9 /* HXTPropertyFeeDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214E0218FE1FB800762AE9 /* HXTPropertyFeeDetailCell.m */; };
+		B2214E5918FE1FB800762AE9 /* HXTPropertyTableViewHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214E0518FE1FB800762AE9 /* HXTPropertyTableViewHeaderFooterView.m */; };
+		B2214E5A18FE1FB800762AE9 /* HXTPropertyTableViewHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214E0518FE1FB800762AE9 /* HXTPropertyTableViewHeaderFooterView.m */; };
+		B2214E5B18FE1FB800762AE9 /* MyPropertyTableViewHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2214E0618FE1FB800762AE9 /* MyPropertyTableViewHeaderFooterView.xib */; };
+		B2214E5C18FE1FB800762AE9 /* MyPropertyTableViewHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2214E0618FE1FB800762AE9 /* MyPropertyTableViewHeaderFooterView.xib */; };
+		B2214E5D18FE1FB800762AE9 /* HXTChooseHousingEstateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214E0A18FE1FB800762AE9 /* HXTChooseHousingEstateTableViewController.m */; };
+		B2214E5E18FE1FB800762AE9 /* HXTChooseHousingEstateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214E0A18FE1FB800762AE9 /* HXTChooseHousingEstateTableViewController.m */; };
+		B2214E5F18FE1FB800762AE9 /* HXTSurroundingLifeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214E0C18FE1FB800762AE9 /* HXTSurroundingLifeViewController.m */; };
+		B2214E6018FE1FB800762AE9 /* HXTSurroundingLifeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214E0C18FE1FB800762AE9 /* HXTSurroundingLifeViewController.m */; };
+		B2214E6118FE1FB800762AE9 /* HXTIGoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214E0F18FE1FB800762AE9 /* HXTIGoViewController.m */; };
+		B2214E6218FE1FB800762AE9 /* HXTIGoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214E0F18FE1FB800762AE9 /* HXTIGoViewController.m */; };
+		B2214E6318FE1FB800762AE9 /* HXTIGoWithTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214E1118FE1FB800762AE9 /* HXTIGoWithTypeViewController.m */; };
+		B2214E6418FE1FB800762AE9 /* HXTIGoWithTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214E1118FE1FB800762AE9 /* HXTIGoWithTypeViewController.m */; };
+		B2214E6518FE1FB800762AE9 /* HXTTheGroceryStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214E1418FE1FB800762AE9 /* HXTTheGroceryStoreViewController.m */; };
+		B2214E6618FE1FB800762AE9 /* HXTTheGroceryStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214E1418FE1FB800762AE9 /* HXTTheGroceryStoreViewController.m */; };
+		B2214E7718FE1FE200762AE9 /* AccountManager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2214E6718FE1FE200762AE9 /* AccountManager.storyboard */; };
+		B2214E7818FE1FE200762AE9 /* AccountManager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2214E6718FE1FE200762AE9 /* AccountManager.storyboard */; };
+		B2214E7918FE1FE200762AE9 /* AddHouseEstate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2214E6918FE1FE200762AE9 /* AddHouseEstate.storyboard */; };
+		B2214E7A18FE1FE200762AE9 /* AddHouseEstate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2214E6918FE1FE200762AE9 /* AddHouseEstate.storyboard */; };
+		B2214E7B18FE1FE200762AE9 /* BrowseHouseEstate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2214E6B18FE1FE200762AE9 /* BrowseHouseEstate.storyboard */; };
+		B2214E7C18FE1FE200762AE9 /* BrowseHouseEstate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2214E6B18FE1FE200762AE9 /* BrowseHouseEstate.storyboard */; };
+		B2214E7D18FE1FE200762AE9 /* EcologicalDistribution.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2214E6D18FE1FE200762AE9 /* EcologicalDistribution.storyboard */; };
+		B2214E7E18FE1FE200762AE9 /* EcologicalDistribution.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2214E6D18FE1FE200762AE9 /* EcologicalDistribution.storyboard */; };
+		B2214E7F18FE1FE200762AE9 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2214E6F18FE1FE200762AE9 /* Home.storyboard */; };
+		B2214E8018FE1FE200762AE9 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2214E6F18FE1FE200762AE9 /* Home.storyboard */; };
+		B2214E8118FE1FE200762AE9 /* PropertyFee.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2214E7118FE1FE200762AE9 /* PropertyFee.storyboard */; };
+		B2214E8218FE1FE200762AE9 /* PropertyFee.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2214E7118FE1FE200762AE9 /* PropertyFee.storyboard */; };
+		B2214E8318FE1FE200762AE9 /* PropertyService.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2214E7318FE1FE200762AE9 /* PropertyService.storyboard */; };
+		B2214E8418FE1FE200762AE9 /* PropertyService.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2214E7318FE1FE200762AE9 /* PropertyService.storyboard */; };
+		B2214E8518FE1FE200762AE9 /* SurroundingLife.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2214E7518FE1FE200762AE9 /* SurroundingLife.storyboard */; };
+		B2214E8618FE1FE200762AE9 /* SurroundingLife.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2214E7518FE1FE200762AE9 /* SurroundingLife.storyboard */; };
+		B2214E8818FE216700762AE9 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B2214E8718FE216700762AE9 /* libsqlite3.dylib */; };
+		B26FE5A718FE51FC0093BC2F /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE55B18FE51FC0093BC2F /* AFHTTPRequestOperation.m */; };
+		B26FE5A818FE51FC0093BC2F /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE55B18FE51FC0093BC2F /* AFHTTPRequestOperation.m */; };
+		B26FE5A918FE51FC0093BC2F /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE55D18FE51FC0093BC2F /* AFHTTPRequestOperationManager.m */; };
+		B26FE5AA18FE51FC0093BC2F /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE55D18FE51FC0093BC2F /* AFHTTPRequestOperationManager.m */; };
+		B26FE5AB18FE51FC0093BC2F /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE55F18FE51FC0093BC2F /* AFHTTPSessionManager.m */; };
+		B26FE5AC18FE51FC0093BC2F /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE55F18FE51FC0093BC2F /* AFHTTPSessionManager.m */; };
+		B26FE5AD18FE51FC0093BC2F /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE56218FE51FC0093BC2F /* AFNetworkReachabilityManager.m */; };
+		B26FE5AE18FE51FC0093BC2F /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE56218FE51FC0093BC2F /* AFNetworkReachabilityManager.m */; };
+		B26FE5AF18FE51FC0093BC2F /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE56418FE51FC0093BC2F /* AFSecurityPolicy.m */; };
+		B26FE5B018FE51FC0093BC2F /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE56418FE51FC0093BC2F /* AFSecurityPolicy.m */; };
+		B26FE5B118FE51FC0093BC2F /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE56618FE51FC0093BC2F /* AFURLConnectionOperation.m */; };
+		B26FE5B218FE51FC0093BC2F /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE56618FE51FC0093BC2F /* AFURLConnectionOperation.m */; };
+		B26FE5B318FE51FC0093BC2F /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE56818FE51FC0093BC2F /* AFURLRequestSerialization.m */; };
+		B26FE5B418FE51FC0093BC2F /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE56818FE51FC0093BC2F /* AFURLRequestSerialization.m */; };
+		B26FE5B518FE51FC0093BC2F /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE56A18FE51FC0093BC2F /* AFURLResponseSerialization.m */; };
+		B26FE5B618FE51FC0093BC2F /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE56A18FE51FC0093BC2F /* AFURLResponseSerialization.m */; };
+		B26FE5B718FE51FC0093BC2F /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE56C18FE51FC0093BC2F /* AFURLSessionManager.m */; };
+		B26FE5B818FE51FC0093BC2F /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE56C18FE51FC0093BC2F /* AFURLSessionManager.m */; };
+		B26FE5BD18FE51FC0093BC2F /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE57118FE51FC0093BC2F /* AFNetworkActivityIndicatorManager.m */; };
+		B26FE5BE18FE51FC0093BC2F /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE57118FE51FC0093BC2F /* AFNetworkActivityIndicatorManager.m */; };
+		B26FE5BF18FE51FC0093BC2F /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE57318FE51FC0093BC2F /* UIActivityIndicatorView+AFNetworking.m */; };
+		B26FE5C018FE51FC0093BC2F /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE57318FE51FC0093BC2F /* UIActivityIndicatorView+AFNetworking.m */; };
+		B26FE5C118FE51FC0093BC2F /* UIAlertView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE57518FE51FC0093BC2F /* UIAlertView+AFNetworking.m */; };
+		B26FE5C218FE51FC0093BC2F /* UIAlertView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE57518FE51FC0093BC2F /* UIAlertView+AFNetworking.m */; };
+		B26FE5C318FE51FC0093BC2F /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE57718FE51FC0093BC2F /* UIButton+AFNetworking.m */; };
+		B26FE5C418FE51FC0093BC2F /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE57718FE51FC0093BC2F /* UIButton+AFNetworking.m */; };
+		B26FE5C518FE51FC0093BC2F /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE57918FE51FC0093BC2F /* UIImageView+AFNetworking.m */; };
+		B26FE5C618FE51FC0093BC2F /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE57918FE51FC0093BC2F /* UIImageView+AFNetworking.m */; };
+		B26FE5C718FE51FC0093BC2F /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE57C18FE51FC0093BC2F /* UIProgressView+AFNetworking.m */; };
+		B26FE5C818FE51FC0093BC2F /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE57C18FE51FC0093BC2F /* UIProgressView+AFNetworking.m */; };
+		B26FE5C918FE51FC0093BC2F /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE57E18FE51FC0093BC2F /* UIRefreshControl+AFNetworking.m */; };
+		B26FE5CA18FE51FC0093BC2F /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE57E18FE51FC0093BC2F /* UIRefreshControl+AFNetworking.m */; };
+		B26FE5CB18FE51FC0093BC2F /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE58018FE51FC0093BC2F /* UIWebView+AFNetworking.m */; };
+		B26FE5CC18FE51FC0093BC2F /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE58018FE51FC0093BC2F /* UIWebView+AFNetworking.m */; };
+		B26FE5CD18FE51FC0093BC2F /* KeyboardCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE58318FE51FC0093BC2F /* KeyboardCommon.m */; };
+		B26FE5CE18FE51FC0093BC2F /* KeyboardCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE58318FE51FC0093BC2F /* KeyboardCommon.m */; };
+		B26FE5CF18FE51FC0093BC2F /* NSArrayAdditionals.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE58518FE51FC0093BC2F /* NSArrayAdditionals.m */; };
+		B26FE5D018FE51FC0093BC2F /* NSArrayAdditionals.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE58518FE51FC0093BC2F /* NSArrayAdditionals.m */; };
+		B26FE5D118FE51FC0093BC2F /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE58718FE51FC0093BC2F /* NSDataAdditions.m */; };
+		B26FE5D218FE51FC0093BC2F /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE58718FE51FC0093BC2F /* NSDataAdditions.m */; };
+		B26FE5D318FE51FC0093BC2F /* NSDictionaryAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE58918FE51FC0093BC2F /* NSDictionaryAdditions.m */; };
+		B26FE5D418FE51FC0093BC2F /* NSDictionaryAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE58918FE51FC0093BC2F /* NSDictionaryAdditions.m */; };
+		B26FE5D518FE51FC0093BC2F /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE58B18FE51FC0093BC2F /* NSStringAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B26FE5D618FE51FC0093BC2F /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE58B18FE51FC0093BC2F /* NSStringAdditions.m */; };
+		B26FE5D718FE51FC0093BC2F /* HXTLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE58E18FE51FC0093BC2F /* HXTLocationManager.m */; };
+		B26FE5D818FE51FC0093BC2F /* HXTLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE58E18FE51FC0093BC2F /* HXTLocationManager.m */; };
+		B26FE5DB18FE51FC0093BC2F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE59318FE51FC0093BC2F /* Reachability.m */; };
+		B26FE5DC18FE51FC0093BC2F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE59318FE51FC0093BC2F /* Reachability.m */; };
+		B26FE5DD18FE51FC0093BC2F /* SqliteStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE59518FE51FC0093BC2F /* SqliteStoreManager.m */; };
+		B26FE5DE18FE51FC0093BC2F /* SqliteStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE59518FE51FC0093BC2F /* SqliteStoreManager.m */; };
+		B26FE5DF18FE51FC0093BC2F /* StoreBaseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE59718FE51FC0093BC2F /* StoreBaseItem.m */; };
+		B26FE5E018FE51FC0093BC2F /* StoreBaseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE59718FE51FC0093BC2F /* StoreBaseItem.m */; };
+		B26FE5E118FE51FC0093BC2F /* UIDevice+Resolutions.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE59918FE51FC0093BC2F /* UIDevice+Resolutions.m */; };
+		B26FE5E218FE51FC0093BC2F /* UIDevice+Resolutions.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE59918FE51FC0093BC2F /* UIDevice+Resolutions.m */; };
+		B26FE5E318FE51FC0093BC2F /* HXTCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE59D18FE51FC0093BC2F /* HXTCheckBox.m */; };
+		B26FE5E418FE51FC0093BC2F /* HXTCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE59D18FE51FC0093BC2F /* HXTCheckBox.m */; };
+		B26FE5E918FE51FC0093BC2F /* HXTViewWithArrow.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE5A418FE51FC0093BC2F /* HXTViewWithArrow.m */; };
+		B26FE5EA18FE51FC0093BC2F /* HXTViewWithArrow.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE5A418FE51FC0093BC2F /* HXTViewWithArrow.m */; };
+		B26FE5EB18FE51FC0093BC2F /* XPHTTPURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE5A618FE51FC0093BC2F /* XPHTTPURLConnection.m */; };
+		B26FE5EC18FE51FC0093BC2F /* XPHTTPURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE5A618FE51FC0093BC2F /* XPHTTPURLConnection.m */; };
+		B26FE5FA18FE526F0093BC2F /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE5EF18FE526F0093BC2F /* FMDatabase.m */; };
+		B26FE5FB18FE526F0093BC2F /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE5EF18FE526F0093BC2F /* FMDatabase.m */; };
+		B26FE5FC18FE526F0093BC2F /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE5F118FE526F0093BC2F /* FMDatabaseAdditions.m */; };
+		B26FE5FD18FE526F0093BC2F /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE5F118FE526F0093BC2F /* FMDatabaseAdditions.m */; };
+		B26FE5FE18FE526F0093BC2F /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE5F318FE526F0093BC2F /* FMDatabasePool.m */; };
+		B26FE5FF18FE526F0093BC2F /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE5F318FE526F0093BC2F /* FMDatabasePool.m */; };
+		B26FE60018FE526F0093BC2F /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE5F518FE526F0093BC2F /* FMDatabaseQueue.m */; };
+		B26FE60118FE526F0093BC2F /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE5F518FE526F0093BC2F /* FMDatabaseQueue.m */; };
+		B26FE60218FE526F0093BC2F /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE5F718FE526F0093BC2F /* FMResultSet.m */; };
+		B26FE60318FE526F0093BC2F /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE5F718FE526F0093BC2F /* FMResultSet.m */; };
+		B26FE60618FE526F0093BC2F /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = B26FE5F918FE526F0093BC2F /* README.markdown */; };
+		B26FE60718FE526F0093BC2F /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = B26FE5F918FE526F0093BC2F /* README.markdown */; };
+		B26FE62518FE52E40093BC2F /* SBJson4Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE61618FE52E40093BC2F /* SBJson4Parser.m */; };
+		B26FE62618FE52E40093BC2F /* SBJson4Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE61618FE52E40093BC2F /* SBJson4Parser.m */; };
+		B26FE62718FE52E40093BC2F /* SBJson4StreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE61818FE52E40093BC2F /* SBJson4StreamParser.m */; };
+		B26FE62818FE52E40093BC2F /* SBJson4StreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE61818FE52E40093BC2F /* SBJson4StreamParser.m */; };
+		B26FE62918FE52E40093BC2F /* SBJson4StreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE61A18FE52E40093BC2F /* SBJson4StreamParserState.m */; };
+		B26FE62A18FE52E40093BC2F /* SBJson4StreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE61A18FE52E40093BC2F /* SBJson4StreamParserState.m */; };
+		B26FE62B18FE52E40093BC2F /* SBJson4StreamTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE61C18FE52E40093BC2F /* SBJson4StreamTokeniser.m */; };
+		B26FE62C18FE52E40093BC2F /* SBJson4StreamTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE61C18FE52E40093BC2F /* SBJson4StreamTokeniser.m */; };
+		B26FE62D18FE52E40093BC2F /* SBJson4StreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE61E18FE52E40093BC2F /* SBJson4StreamWriter.m */; };
+		B26FE62E18FE52E40093BC2F /* SBJson4StreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE61E18FE52E40093BC2F /* SBJson4StreamWriter.m */; };
+		B26FE62F18FE52E40093BC2F /* SBJson4StreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE62018FE52E40093BC2F /* SBJson4StreamWriterState.m */; };
+		B26FE63018FE52E40093BC2F /* SBJson4StreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE62018FE52E40093BC2F /* SBJson4StreamWriterState.m */; };
+		B26FE63118FE52E40093BC2F /* SBJson4Writer.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE62218FE52E40093BC2F /* SBJson4Writer.m */; };
+		B26FE63218FE52E40093BC2F /* SBJson4Writer.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE62218FE52E40093BC2F /* SBJson4Writer.m */; };
+		B26FE63A18FE53480093BC2F /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE63618FE53480093BC2F /* MBProgressHUD.m */; };
+		B26FE63B18FE53480093BC2F /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE63618FE53480093BC2F /* MBProgressHUD.m */; };
+		B26FE64118FE55A90093BC2F /* NSString+Check.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE64018FE55A90093BC2F /* NSString+Check.m */; };
+		B26FE64218FE55A90093BC2F /* NSString+Check.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE64018FE55A90093BC2F /* NSString+Check.m */; };
+		B26FE64918FE55B70093BC2F /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE64618FE55B70093BC2F /* UIScrollView+SVInfiniteScrolling.m */; };
+		B26FE64A18FE55B70093BC2F /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE64618FE55B70093BC2F /* UIScrollView+SVInfiniteScrolling.m */; };
+		B26FE64B18FE55B70093BC2F /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE64818FE55B70093BC2F /* UIScrollView+SVPullToRefresh.m */; };
+		B26FE64C18FE55B70093BC2F /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE64818FE55B70093BC2F /* UIScrollView+SVPullToRefresh.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,17 +279,240 @@
 		B2214C1918FE1E4000762AE9 /* ButlerCard-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ButlerCard-Prefix.pch"; sourceTree = "<group>"; };
 		B2214C1A18FE1E4000762AE9 /* HXTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HXTAppDelegate.h; sourceTree = "<group>"; };
 		B2214C1B18FE1E4000762AE9 /* HXTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HXTAppDelegate.m; sourceTree = "<group>"; };
-		B2214C1E18FE1E4000762AE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B2214C2018FE1E4000762AE9 /* HXTFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HXTFirstViewController.h; sourceTree = "<group>"; };
-		B2214C2118FE1E4000762AE9 /* HXTFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HXTFirstViewController.m; sourceTree = "<group>"; };
-		B2214C2318FE1E4000762AE9 /* HXTSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HXTSecondViewController.h; sourceTree = "<group>"; };
-		B2214C2418FE1E4000762AE9 /* HXTSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HXTSecondViewController.m; sourceTree = "<group>"; };
 		B2214C2618FE1E4000762AE9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B2214C2C18FE1E4000762AE9 /* ButlerCardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ButlerCardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2214C2D18FE1E4000762AE9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		B2214C3518FE1E4000762AE9 /* ButlerCardTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ButlerCardTests-Info.plist"; sourceTree = "<group>"; };
 		B2214C3718FE1E4000762AE9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B2214C3918FE1E4000762AE9 /* ButlerCardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ButlerCardTests.m; sourceTree = "<group>"; };
+		B2214C4518FE1F9000762AE9 /* HXTLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTLoginViewController.h; sourceTree = "<group>"; };
+		B2214C4618FE1F9000762AE9 /* HXTLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTLoginViewController.m; sourceTree = "<group>"; };
+		B2214C4718FE1F9000762AE9 /* HXTRegisterAddHouseEstateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTRegisterAddHouseEstateViewController.h; sourceTree = "<group>"; };
+		B2214C4818FE1F9000762AE9 /* HXTRegisterAddHouseEstateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTRegisterAddHouseEstateViewController.m; sourceTree = "<group>"; };
+		B2214C4918FE1F9000762AE9 /* HXTRegisterInputPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTRegisterInputPasswordViewController.h; sourceTree = "<group>"; };
+		B2214C4A18FE1F9000762AE9 /* HXTRegisterInputPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTRegisterInputPasswordViewController.m; sourceTree = "<group>"; };
+		B2214C4B18FE1F9000762AE9 /* HXTRegisterInputPhoneNumberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTRegisterInputPhoneNumberViewController.h; sourceTree = "<group>"; };
+		B2214C4C18FE1F9000762AE9 /* HXTRegisterInputPhoneNumberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTRegisterInputPhoneNumberViewController.m; sourceTree = "<group>"; };
+		B2214C4D18FE1F9000762AE9 /* HXTRegisterInputValidCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTRegisterInputValidCodeViewController.h; sourceTree = "<group>"; };
+		B2214C4E18FE1F9000762AE9 /* HXTRegisterInputValidCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTRegisterInputValidCodeViewController.m; sourceTree = "<group>"; };
+		B2214C4F18FE1F9000762AE9 /* HXTRetrievePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTRetrievePasswordViewController.h; sourceTree = "<group>"; };
+		B2214C5018FE1F9000762AE9 /* HXTRetrievePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTRetrievePasswordViewController.m; sourceTree = "<group>"; };
+		B2214C5218FE1F9000762AE9 /* HXTAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTAccountManager.h; sourceTree = "<group>"; };
+		B2214C5318FE1F9000762AE9 /* HXTAccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTAccountManager.m; sourceTree = "<group>"; };
+		B2214C5618FE1F9000762AE9 /* HXTAddHouseEstateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTAddHouseEstateViewController.h; sourceTree = "<group>"; };
+		B2214C5718FE1F9000762AE9 /* HXTAddHouseEstateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTAddHouseEstateViewController.m; sourceTree = "<group>"; };
+		B2214C5818FE1F9000762AE9 /* HXTAddHouseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTAddHouseViewController.h; sourceTree = "<group>"; };
+		B2214C5918FE1F9000762AE9 /* HXTAddHouseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTAddHouseViewController.m; sourceTree = "<group>"; };
+		B2214C5A18FE1F9000762AE9 /* HXTAppleyOpenPropertyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTAppleyOpenPropertyViewController.h; sourceTree = "<group>"; };
+		B2214C5B18FE1F9000762AE9 /* HXTAppleyOpenPropertyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTAppleyOpenPropertyViewController.m; sourceTree = "<group>"; };
+		B2214C5C18FE1F9000762AE9 /* HXTBrowseHouseEstateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTBrowseHouseEstateViewController.h; sourceTree = "<group>"; };
+		B2214C5D18FE1F9000762AE9 /* HXTBrowseHouseEstateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTBrowseHouseEstateViewController.m; sourceTree = "<group>"; };
+		B2214C5E18FE1F9000762AE9 /* HXTRegisterUserProtocolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTRegisterUserProtocolViewController.h; sourceTree = "<group>"; };
+		B2214C5F18FE1F9000762AE9 /* HXTRegisterUserProtocolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTRegisterUserProtocolViewController.m; sourceTree = "<group>"; };
+		B2214C6018FE1F9000762AE9 /* HXTSelectCitySecondLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTSelectCitySecondLevelViewController.h; sourceTree = "<group>"; };
+		B2214C6118FE1F9000762AE9 /* HXTSelectCitySecondLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTSelectCitySecondLevelViewController.m; sourceTree = "<group>"; };
+		B2214C6218FE1F9000762AE9 /* HXTSelectCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTSelectCityViewController.h; sourceTree = "<group>"; };
+		B2214C6318FE1F9000762AE9 /* HXTSelectCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTSelectCityViewController.m; sourceTree = "<group>"; };
+		B2214C6618FE1F9000762AE9 /* hotCities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hotCities.plist; sourceTree = "<group>"; };
+		B2214C6718FE1F9000762AE9 /* provinces.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = provinces.plist; sourceTree = "<group>"; };
+		B2214C6818FE1F9000762AE9 /* provinces_bck.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = provinces_bck.plist; sourceTree = "<group>"; };
+		B2214C6918FE1F9000762AE9 /* region.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = region.plist; sourceTree = "<group>"; };
+		B2214D2318FE1FA200762AE9 /* HXTHomeChooseHouseEstateTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTHomeChooseHouseEstateTableViewController.h; sourceTree = "<group>"; };
+		B2214D2418FE1FA200762AE9 /* HXTHomeChooseHouseEstateTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTHomeChooseHouseEstateTableViewController.m; sourceTree = "<group>"; };
+		B2214D2518FE1FA200762AE9 /* HXTHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTHomeViewController.h; sourceTree = "<group>"; };
+		B2214D2618FE1FA200762AE9 /* HXTHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTHomeViewController.m; sourceTree = "<group>"; };
+		B2214D2718FE1FA200762AE9 /* HXTNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTNavigationController.h; sourceTree = "<group>"; };
+		B2214D2818FE1FA200762AE9 /* HXTNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTNavigationController.m; sourceTree = "<group>"; };
+		B2214D2918FE1FA200762AE9 /* HXTTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTTabBarViewController.h; sourceTree = "<group>"; };
+		B2214D2A18FE1FA200762AE9 /* HXTTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTTabBarViewController.m; sourceTree = "<group>"; };
+		B2214DBB18FE1FB800762AE9 /* CYActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYActivityCell.h; sourceTree = "<group>"; };
+		B2214DBC18FE1FB800762AE9 /* CYActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYActivityCell.m; sourceTree = "<group>"; };
+		B2214DBD18FE1FB800762AE9 /* CYActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYActivityViewController.h; sourceTree = "<group>"; };
+		B2214DBE18FE1FB800762AE9 /* CYActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYActivityViewController.m; sourceTree = "<group>"; };
+		B2214DBF18FE1FB800762AE9 /* CYBillPieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYBillPieViewController.h; sourceTree = "<group>"; };
+		B2214DC018FE1FB800762AE9 /* CYBillPieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYBillPieViewController.m; sourceTree = "<group>"; };
+		B2214DC118FE1FB800762AE9 /* CYFeedBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYFeedBackViewController.h; sourceTree = "<group>"; };
+		B2214DC218FE1FB800762AE9 /* CYFeedBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYFeedBackViewController.m; sourceTree = "<group>"; };
+		B2214DC318FE1FB800762AE9 /* CYMsgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYMsgCell.h; sourceTree = "<group>"; };
+		B2214DC418FE1FB800762AE9 /* CYMsgCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYMsgCell.m; sourceTree = "<group>"; };
+		B2214DC518FE1FB800762AE9 /* CYMsgTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYMsgTableViewController.h; sourceTree = "<group>"; };
+		B2214DC618FE1FB800762AE9 /* CYMsgTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYMsgTableViewController.m; sourceTree = "<group>"; };
+		B2214DC718FE1FB800762AE9 /* CYMyBillDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYMyBillDetailCell.h; sourceTree = "<group>"; };
+		B2214DC818FE1FB800762AE9 /* CYMyBillDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYMyBillDetailCell.m; sourceTree = "<group>"; };
+		B2214DC918FE1FB800762AE9 /* CYMyBillMonthCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYMyBillMonthCell.h; sourceTree = "<group>"; };
+		B2214DCA18FE1FB800762AE9 /* CYMyBillMonthCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYMyBillMonthCell.m; sourceTree = "<group>"; };
+		B2214DCB18FE1FB800762AE9 /* CYMyBillTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYMyBillTableViewController.h; sourceTree = "<group>"; };
+		B2214DCC18FE1FB800762AE9 /* CYMyBillTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYMyBillTableViewController.m; sourceTree = "<group>"; };
+		B2214DCD18FE1FB800762AE9 /* CYMyOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYMyOrderViewController.h; sourceTree = "<group>"; };
+		B2214DCE18FE1FB800762AE9 /* CYMyOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYMyOrderViewController.m; sourceTree = "<group>"; };
+		B2214DCF18FE1FB800762AE9 /* CYMyPropertyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYMyPropertyTableViewCell.h; sourceTree = "<group>"; };
+		B2214DD018FE1FB800762AE9 /* CYMyPropertyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYMyPropertyTableViewCell.m; sourceTree = "<group>"; };
+		B2214DD118FE1FB800762AE9 /* CYMyPropertyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYMyPropertyTableViewController.h; sourceTree = "<group>"; };
+		B2214DD218FE1FB800762AE9 /* CYMyPropertyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYMyPropertyTableViewController.m; sourceTree = "<group>"; };
+		B2214DD318FE1FB800762AE9 /* CYOrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYOrderCell.h; sourceTree = "<group>"; };
+		B2214DD418FE1FB800762AE9 /* CYOrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYOrderCell.m; sourceTree = "<group>"; };
+		B2214DD518FE1FB800762AE9 /* Example2PieView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example2PieView.h; sourceTree = "<group>"; };
+		B2214DD618FE1FB800762AE9 /* Example2PieView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example2PieView.m; sourceTree = "<group>"; };
+		B2214DD718FE1FB800762AE9 /* MagicPieLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicPieLayer.h; sourceTree = "<group>"; };
+		B2214DD818FE1FB800762AE9 /* MyPieElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPieElement.h; sourceTree = "<group>"; };
+		B2214DD918FE1FB800762AE9 /* MyPieElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPieElement.m; sourceTree = "<group>"; };
+		B2214DDA18FE1FB800762AE9 /* NSMutableArray+pieEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+pieEx.h"; sourceTree = "<group>"; };
+		B2214DDB18FE1FB800762AE9 /* NSMutableArray+pieEx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+pieEx.m"; sourceTree = "<group>"; };
+		B2214DDC18FE1FB800762AE9 /* PieElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieElement.h; sourceTree = "<group>"; };
+		B2214DDD18FE1FB800762AE9 /* PieElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieElement.m; sourceTree = "<group>"; };
+		B2214DDE18FE1FB800762AE9 /* PieLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieLayer.h; sourceTree = "<group>"; };
+		B2214DDF18FE1FB800762AE9 /* PieLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieLayer.m; sourceTree = "<group>"; };
+		B2214DE218FE1FB800762AE9 /* CYActiveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYActiveController.h; sourceTree = "<group>"; };
+		B2214DE318FE1FB800762AE9 /* CYActiveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYActiveController.m; sourceTree = "<group>"; };
+		B2214DE418FE1FB800762AE9 /* CYDiscussController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYDiscussController.h; sourceTree = "<group>"; };
+		B2214DE518FE1FB800762AE9 /* CYDiscussController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYDiscussController.m; sourceTree = "<group>"; };
+		B2214DE618FE1FB800762AE9 /* CYHouseChoiceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYHouseChoiceController.h; sourceTree = "<group>"; };
+		B2214DE718FE1FB800762AE9 /* CYHouseChoiceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYHouseChoiceController.m; sourceTree = "<group>"; };
+		B2214DE818FE1FB800762AE9 /* CYNoticeBoardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYNoticeBoardController.h; sourceTree = "<group>"; };
+		B2214DE918FE1FB800762AE9 /* CYNoticeBoardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYNoticeBoardController.m; sourceTree = "<group>"; };
+		B2214DEA18FE1FB800762AE9 /* CYRentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYRentController.h; sourceTree = "<group>"; };
+		B2214DEB18FE1FB800762AE9 /* CYRentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYRentController.m; sourceTree = "<group>"; };
+		B2214DEC18FE1FB800762AE9 /* HXTBindCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTBindCardViewController.h; sourceTree = "<group>"; };
+		B2214DED18FE1FB800762AE9 /* HXTBindCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTBindCardViewController.m; sourceTree = "<group>"; };
+		B2214DEE18FE1FB800762AE9 /* HXTPropertyFeeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTPropertyFeeViewController.h; sourceTree = "<group>"; };
+		B2214DEF18FE1FB800762AE9 /* HXTPropertyFeeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTPropertyFeeViewController.m; sourceTree = "<group>"; };
+		B2214DF018FE1FB800762AE9 /* HXTPropertyItemDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTPropertyItemDetailTableViewController.h; sourceTree = "<group>"; };
+		B2214DF118FE1FB800762AE9 /* HXTPropertyItemDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTPropertyItemDetailTableViewController.m; sourceTree = "<group>"; };
+		B2214DF218FE1FB800762AE9 /* HXTPropertyServiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTPropertyServiceViewController.h; sourceTree = "<group>"; };
+		B2214DF318FE1FB800762AE9 /* HXTPropertyServiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTPropertyServiceViewController.m; sourceTree = "<group>"; };
+		B2214DF518FE1FB800762AE9 /* DJQRateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJQRateView.h; sourceTree = "<group>"; };
+		B2214DF618FE1FB800762AE9 /* DJQRateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJQRateView.m; sourceTree = "<group>"; };
+		B2214DF718FE1FB800762AE9 /* DJQStartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJQStartView.h; sourceTree = "<group>"; };
+		B2214DF818FE1FB800762AE9 /* DJQStartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJQStartView.m; sourceTree = "<group>"; };
+		B2214DF918FE1FB800762AE9 /* HXTHouse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTHouse.h; sourceTree = "<group>"; };
+		B2214DFA18FE1FB800762AE9 /* HXTHouse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTHouse.m; sourceTree = "<group>"; };
+		B2214DFB18FE1FB800762AE9 /* HXTMyProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTMyProperties.h; sourceTree = "<group>"; };
+		B2214DFC18FE1FB800762AE9 /* HXTMyProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTMyProperties.m; sourceTree = "<group>"; };
+		B2214DFD18FE1FB800762AE9 /* HXTPropertyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTPropertyCell.h; sourceTree = "<group>"; };
+		B2214DFE18FE1FB800762AE9 /* HXTPropertyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTPropertyCell.m; sourceTree = "<group>"; };
+		B2214DFF18FE1FB800762AE9 /* HXTPropertyFeeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTPropertyFeeCell.h; sourceTree = "<group>"; };
+		B2214E0018FE1FB800762AE9 /* HXTPropertyFeeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTPropertyFeeCell.m; sourceTree = "<group>"; };
+		B2214E0118FE1FB800762AE9 /* HXTPropertyFeeDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTPropertyFeeDetailCell.h; sourceTree = "<group>"; };
+		B2214E0218FE1FB800762AE9 /* HXTPropertyFeeDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTPropertyFeeDetailCell.m; sourceTree = "<group>"; };
+		B2214E0418FE1FB800762AE9 /* HXTPropertyTableViewHeaderFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTPropertyTableViewHeaderFooterView.h; sourceTree = "<group>"; };
+		B2214E0518FE1FB800762AE9 /* HXTPropertyTableViewHeaderFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTPropertyTableViewHeaderFooterView.m; sourceTree = "<group>"; };
+		B2214E0618FE1FB800762AE9 /* MyPropertyTableViewHeaderFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyPropertyTableViewHeaderFooterView.xib; sourceTree = "<group>"; };
+		B2214E0918FE1FB800762AE9 /* HXTChooseHousingEstateTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTChooseHousingEstateTableViewController.h; sourceTree = "<group>"; };
+		B2214E0A18FE1FB800762AE9 /* HXTChooseHousingEstateTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTChooseHousingEstateTableViewController.m; sourceTree = "<group>"; };
+		B2214E0B18FE1FB800762AE9 /* HXTSurroundingLifeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTSurroundingLifeViewController.h; sourceTree = "<group>"; };
+		B2214E0C18FE1FB800762AE9 /* HXTSurroundingLifeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTSurroundingLifeViewController.m; sourceTree = "<group>"; };
+		B2214E0E18FE1FB800762AE9 /* HXTIGoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTIGoViewController.h; sourceTree = "<group>"; };
+		B2214E0F18FE1FB800762AE9 /* HXTIGoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTIGoViewController.m; sourceTree = "<group>"; };
+		B2214E1018FE1FB800762AE9 /* HXTIGoWithTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTIGoWithTypeViewController.h; sourceTree = "<group>"; };
+		B2214E1118FE1FB800762AE9 /* HXTIGoWithTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTIGoWithTypeViewController.m; sourceTree = "<group>"; };
+		B2214E1318FE1FB800762AE9 /* HXTTheGroceryStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTTheGroceryStoreViewController.h; sourceTree = "<group>"; };
+		B2214E1418FE1FB800762AE9 /* HXTTheGroceryStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTTheGroceryStoreViewController.m; sourceTree = "<group>"; };
+		B2214E6818FE1FE200762AE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AccountManager.storyboard; sourceTree = "<group>"; };
+		B2214E6A18FE1FE200762AE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AddHouseEstate.storyboard; sourceTree = "<group>"; };
+		B2214E6C18FE1FE200762AE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/BrowseHouseEstate.storyboard; sourceTree = "<group>"; };
+		B2214E6E18FE1FE200762AE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/EcologicalDistribution.storyboard; sourceTree = "<group>"; };
+		B2214E7018FE1FE200762AE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
+		B2214E7218FE1FE200762AE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PropertyFee.storyboard; sourceTree = "<group>"; };
+		B2214E7418FE1FE200762AE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PropertyService.storyboard; sourceTree = "<group>"; };
+		B2214E7618FE1FE200762AE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SurroundingLife.storyboard; sourceTree = "<group>"; };
+		B2214E8718FE216700762AE9 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		B26FE55A18FE51FC0093BC2F /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		B26FE55B18FE51FC0093BC2F /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		B26FE55C18FE51FC0093BC2F /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		B26FE55D18FE51FC0093BC2F /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		B26FE55E18FE51FC0093BC2F /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		B26FE55F18FE51FC0093BC2F /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		B26FE56018FE51FC0093BC2F /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		B26FE56118FE51FC0093BC2F /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		B26FE56218FE51FC0093BC2F /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		B26FE56318FE51FC0093BC2F /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		B26FE56418FE51FC0093BC2F /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		B26FE56518FE51FC0093BC2F /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		B26FE56618FE51FC0093BC2F /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		B26FE56718FE51FC0093BC2F /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		B26FE56818FE51FC0093BC2F /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		B26FE56918FE51FC0093BC2F /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		B26FE56A18FE51FC0093BC2F /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		B26FE56B18FE51FC0093BC2F /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		B26FE56C18FE51FC0093BC2F /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		B26FE57018FE51FC0093BC2F /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		B26FE57118FE51FC0093BC2F /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
+		B26FE57218FE51FC0093BC2F /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
+		B26FE57318FE51FC0093BC2F /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
+		B26FE57418FE51FC0093BC2F /* UIAlertView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+AFNetworking.h"; sourceTree = "<group>"; };
+		B26FE57518FE51FC0093BC2F /* UIAlertView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+AFNetworking.m"; sourceTree = "<group>"; };
+		B26FE57618FE51FC0093BC2F /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+AFNetworking.h"; sourceTree = "<group>"; };
+		B26FE57718FE51FC0093BC2F /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+AFNetworking.m"; sourceTree = "<group>"; };
+		B26FE57818FE51FC0093BC2F /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		B26FE57918FE51FC0093BC2F /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		B26FE57A18FE51FC0093BC2F /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+AFNetworking.h"; sourceTree = "<group>"; };
+		B26FE57B18FE51FC0093BC2F /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
+		B26FE57C18FE51FC0093BC2F /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
+		B26FE57D18FE51FC0093BC2F /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
+		B26FE57E18FE51FC0093BC2F /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
+		B26FE57F18FE51FC0093BC2F /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
+		B26FE58018FE51FC0093BC2F /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		B26FE58218FE51FC0093BC2F /* KeyboardCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardCommon.h; sourceTree = "<group>"; };
+		B26FE58318FE51FC0093BC2F /* KeyboardCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardCommon.m; sourceTree = "<group>"; };
+		B26FE58418FE51FC0093BC2F /* NSArrayAdditionals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSArrayAdditionals.h; sourceTree = "<group>"; };
+		B26FE58518FE51FC0093BC2F /* NSArrayAdditionals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayAdditionals.m; sourceTree = "<group>"; };
+		B26FE58618FE51FC0093BC2F /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
+		B26FE58718FE51FC0093BC2F /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
+		B26FE58818FE51FC0093BC2F /* NSDictionaryAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionaryAdditions.h; sourceTree = "<group>"; };
+		B26FE58918FE51FC0093BC2F /* NSDictionaryAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionaryAdditions.m; sourceTree = "<group>"; };
+		B26FE58A18FE51FC0093BC2F /* NSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringAdditions.h; sourceTree = "<group>"; };
+		B26FE58B18FE51FC0093BC2F /* NSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringAdditions.m; sourceTree = "<group>"; };
+		B26FE58D18FE51FC0093BC2F /* HXTLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTLocationManager.h; sourceTree = "<group>"; };
+		B26FE58E18FE51FC0093BC2F /* HXTLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTLocationManager.m; sourceTree = "<group>"; };
+		B26FE59218FE51FC0093BC2F /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		B26FE59318FE51FC0093BC2F /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		B26FE59418FE51FC0093BC2F /* SqliteStoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SqliteStoreManager.h; sourceTree = "<group>"; };
+		B26FE59518FE51FC0093BC2F /* SqliteStoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SqliteStoreManager.m; sourceTree = "<group>"; };
+		B26FE59618FE51FC0093BC2F /* StoreBaseItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreBaseItem.h; sourceTree = "<group>"; };
+		B26FE59718FE51FC0093BC2F /* StoreBaseItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreBaseItem.m; sourceTree = "<group>"; };
+		B26FE59818FE51FC0093BC2F /* UIDevice+Resolutions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Resolutions.h"; sourceTree = "<group>"; };
+		B26FE59918FE51FC0093BC2F /* UIDevice+Resolutions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Resolutions.m"; sourceTree = "<group>"; };
+		B26FE59C18FE51FC0093BC2F /* HXTCheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTCheckBox.h; sourceTree = "<group>"; };
+		B26FE59D18FE51FC0093BC2F /* HXTCheckBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTCheckBox.m; sourceTree = "<group>"; };
+		B26FE5A318FE51FC0093BC2F /* HXTViewWithArrow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTViewWithArrow.h; sourceTree = "<group>"; };
+		B26FE5A418FE51FC0093BC2F /* HXTViewWithArrow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTViewWithArrow.m; sourceTree = "<group>"; };
+		B26FE5A518FE51FC0093BC2F /* XPHTTPURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPHTTPURLConnection.h; sourceTree = "<group>"; };
+		B26FE5A618FE51FC0093BC2F /* XPHTTPURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPHTTPURLConnection.m; sourceTree = "<group>"; };
+		B26FE5EE18FE526F0093BC2F /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		B26FE5EF18FE526F0093BC2F /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		B26FE5F018FE526F0093BC2F /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		B26FE5F118FE526F0093BC2F /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		B26FE5F218FE526F0093BC2F /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		B26FE5F318FE526F0093BC2F /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		B26FE5F418FE526F0093BC2F /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		B26FE5F518FE526F0093BC2F /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		B26FE5F618FE526F0093BC2F /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		B26FE5F718FE526F0093BC2F /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		B26FE5F918FE526F0093BC2F /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
+		B26FE61418FE52E40093BC2F /* SBJson4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson4.h; sourceTree = "<group>"; };
+		B26FE61518FE52E40093BC2F /* SBJson4Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson4Parser.h; sourceTree = "<group>"; };
+		B26FE61618FE52E40093BC2F /* SBJson4Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJson4Parser.m; sourceTree = "<group>"; };
+		B26FE61718FE52E40093BC2F /* SBJson4StreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson4StreamParser.h; sourceTree = "<group>"; };
+		B26FE61818FE52E40093BC2F /* SBJson4StreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJson4StreamParser.m; sourceTree = "<group>"; };
+		B26FE61918FE52E40093BC2F /* SBJson4StreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson4StreamParserState.h; sourceTree = "<group>"; };
+		B26FE61A18FE52E40093BC2F /* SBJson4StreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJson4StreamParserState.m; sourceTree = "<group>"; };
+		B26FE61B18FE52E40093BC2F /* SBJson4StreamTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson4StreamTokeniser.h; sourceTree = "<group>"; };
+		B26FE61C18FE52E40093BC2F /* SBJson4StreamTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJson4StreamTokeniser.m; sourceTree = "<group>"; };
+		B26FE61D18FE52E40093BC2F /* SBJson4StreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson4StreamWriter.h; sourceTree = "<group>"; };
+		B26FE61E18FE52E40093BC2F /* SBJson4StreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJson4StreamWriter.m; sourceTree = "<group>"; };
+		B26FE61F18FE52E40093BC2F /* SBJson4StreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson4StreamWriterState.h; sourceTree = "<group>"; };
+		B26FE62018FE52E40093BC2F /* SBJson4StreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJson4StreamWriterState.m; sourceTree = "<group>"; };
+		B26FE62118FE52E40093BC2F /* SBJson4Writer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson4Writer.h; sourceTree = "<group>"; };
+		B26FE62218FE52E40093BC2F /* SBJson4Writer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJson4Writer.m; sourceTree = "<group>"; };
+		B26FE63518FE53480093BC2F /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		B26FE63618FE53480093BC2F /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		B26FE63F18FE55A90093BC2F /* NSString+Check.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Check.h"; sourceTree = "<group>"; };
+		B26FE64018FE55A90093BC2F /* NSString+Check.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Check.m"; sourceTree = "<group>"; };
+		B26FE64418FE55B70093BC2F /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
+		B26FE64518FE55B70093BC2F /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
+		B26FE64618FE55B70093BC2F /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
+		B26FE64718FE55B70093BC2F /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
+		B26FE64818FE55B70093BC2F /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +520,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2214E8818FE216700762AE9 /* libsqlite3.dylib in Frameworks */,
 				B2214C0E18FE1E4000762AE9 /* CoreGraphics.framework in Frameworks */,
 				B2214C1018FE1E4000762AE9 /* UIKit.framework in Frameworks */,
 				B2214C0C18FE1E4000762AE9 /* Foundation.framework in Frameworks */,
@@ -104,6 +562,7 @@
 		B2214C0A18FE1E4000762AE9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B2214E8718FE216700762AE9 /* libsqlite3.dylib */,
 				B2214C0B18FE1E4000762AE9 /* Foundation.framework */,
 				B2214C0D18FE1E4000762AE9 /* CoreGraphics.framework */,
 				B2214C0F18FE1E4000762AE9 /* UIKit.framework */,
@@ -115,13 +574,23 @@
 		B2214C1118FE1E4000762AE9 /* ButlerCard */ = {
 			isa = PBXGroup;
 			children = (
+				B26FE55718FE51FC0093BC2F /* Global */,
+				B2214DBA18FE1FB800762AE9 /* MyButler */,
+				B2214DE018FE1FB800762AE9 /* MyProperties */,
+				B2214E0718FE1FB800762AE9 /* SurroundingLife */,
+				B2214D2218FE1FA200762AE9 /* Home */,
+				B2214C4318FE1F9000762AE9 /* AccountManager */,
+				B2214C5418FE1F9000762AE9 /* AddHouseEstate */,
 				B2214C1A18FE1E4000762AE9 /* HXTAppDelegate.h */,
 				B2214C1B18FE1E4000762AE9 /* HXTAppDelegate.m */,
-				B2214C1D18FE1E4000762AE9 /* Main.storyboard */,
-				B2214C2018FE1E4000762AE9 /* HXTFirstViewController.h */,
-				B2214C2118FE1E4000762AE9 /* HXTFirstViewController.m */,
-				B2214C2318FE1E4000762AE9 /* HXTSecondViewController.h */,
-				B2214C2418FE1E4000762AE9 /* HXTSecondViewController.m */,
+				B2214E6718FE1FE200762AE9 /* AccountManager.storyboard */,
+				B2214E6918FE1FE200762AE9 /* AddHouseEstate.storyboard */,
+				B2214E6B18FE1FE200762AE9 /* BrowseHouseEstate.storyboard */,
+				B2214E6D18FE1FE200762AE9 /* EcologicalDistribution.storyboard */,
+				B2214E6F18FE1FE200762AE9 /* Home.storyboard */,
+				B2214E7118FE1FE200762AE9 /* PropertyFee.storyboard */,
+				B2214E7318FE1FE200762AE9 /* PropertyService.storyboard */,
+				B2214E7518FE1FE200762AE9 /* SurroundingLife.storyboard */,
 				B2214C2618FE1E4000762AE9 /* Images.xcassets */,
 				B2214C1218FE1E4000762AE9 /* Supporting Files */,
 			);
@@ -155,6 +624,474 @@
 				B2214C3618FE1E4000762AE9 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B2214C4318FE1F9000762AE9 /* AccountManager */ = {
+			isa = PBXGroup;
+			children = (
+				B2214C4418FE1F9000762AE9 /* Controller */,
+				B2214C5118FE1F9000762AE9 /* Model */,
+			);
+			path = AccountManager;
+			sourceTree = "<group>";
+		};
+		B2214C4418FE1F9000762AE9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B2214C4518FE1F9000762AE9 /* HXTLoginViewController.h */,
+				B2214C4618FE1F9000762AE9 /* HXTLoginViewController.m */,
+				B2214C4718FE1F9000762AE9 /* HXTRegisterAddHouseEstateViewController.h */,
+				B2214C4818FE1F9000762AE9 /* HXTRegisterAddHouseEstateViewController.m */,
+				B2214C4918FE1F9000762AE9 /* HXTRegisterInputPasswordViewController.h */,
+				B2214C4A18FE1F9000762AE9 /* HXTRegisterInputPasswordViewController.m */,
+				B2214C4B18FE1F9000762AE9 /* HXTRegisterInputPhoneNumberViewController.h */,
+				B2214C4C18FE1F9000762AE9 /* HXTRegisterInputPhoneNumberViewController.m */,
+				B2214C4D18FE1F9000762AE9 /* HXTRegisterInputValidCodeViewController.h */,
+				B2214C4E18FE1F9000762AE9 /* HXTRegisterInputValidCodeViewController.m */,
+				B2214C4F18FE1F9000762AE9 /* HXTRetrievePasswordViewController.h */,
+				B2214C5018FE1F9000762AE9 /* HXTRetrievePasswordViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B2214C5118FE1F9000762AE9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B2214C5218FE1F9000762AE9 /* HXTAccountManager.h */,
+				B2214C5318FE1F9000762AE9 /* HXTAccountManager.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B2214C5418FE1F9000762AE9 /* AddHouseEstate */ = {
+			isa = PBXGroup;
+			children = (
+				B2214C5518FE1F9000762AE9 /* Controller */,
+				B2214C6418FE1F9000762AE9 /* Model */,
+			);
+			path = AddHouseEstate;
+			sourceTree = "<group>";
+		};
+		B2214C5518FE1F9000762AE9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B2214C5618FE1F9000762AE9 /* HXTAddHouseEstateViewController.h */,
+				B2214C5718FE1F9000762AE9 /* HXTAddHouseEstateViewController.m */,
+				B2214C5818FE1F9000762AE9 /* HXTAddHouseViewController.h */,
+				B2214C5918FE1F9000762AE9 /* HXTAddHouseViewController.m */,
+				B2214C5A18FE1F9000762AE9 /* HXTAppleyOpenPropertyViewController.h */,
+				B2214C5B18FE1F9000762AE9 /* HXTAppleyOpenPropertyViewController.m */,
+				B2214C5C18FE1F9000762AE9 /* HXTBrowseHouseEstateViewController.h */,
+				B2214C5D18FE1F9000762AE9 /* HXTBrowseHouseEstateViewController.m */,
+				B2214C5E18FE1F9000762AE9 /* HXTRegisterUserProtocolViewController.h */,
+				B2214C5F18FE1F9000762AE9 /* HXTRegisterUserProtocolViewController.m */,
+				B2214C6018FE1F9000762AE9 /* HXTSelectCitySecondLevelViewController.h */,
+				B2214C6118FE1F9000762AE9 /* HXTSelectCitySecondLevelViewController.m */,
+				B2214C6218FE1F9000762AE9 /* HXTSelectCityViewController.h */,
+				B2214C6318FE1F9000762AE9 /* HXTSelectCityViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B2214C6418FE1F9000762AE9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B2214C6518FE1F9000762AE9 /* Data */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B2214C6518FE1F9000762AE9 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B2214C6618FE1F9000762AE9 /* hotCities.plist */,
+				B2214C6718FE1F9000762AE9 /* provinces.plist */,
+				B2214C6818FE1F9000762AE9 /* provinces_bck.plist */,
+				B2214C6918FE1F9000762AE9 /* region.plist */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		B2214D2218FE1FA200762AE9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B2214D2318FE1FA200762AE9 /* HXTHomeChooseHouseEstateTableViewController.h */,
+				B2214D2418FE1FA200762AE9 /* HXTHomeChooseHouseEstateTableViewController.m */,
+				B2214D2518FE1FA200762AE9 /* HXTHomeViewController.h */,
+				B2214D2618FE1FA200762AE9 /* HXTHomeViewController.m */,
+				B2214D2718FE1FA200762AE9 /* HXTNavigationController.h */,
+				B2214D2818FE1FA200762AE9 /* HXTNavigationController.m */,
+				B2214D2918FE1FA200762AE9 /* HXTTabBarViewController.h */,
+				B2214D2A18FE1FA200762AE9 /* HXTTabBarViewController.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B2214DBA18FE1FB800762AE9 /* MyButler */ = {
+			isa = PBXGroup;
+			children = (
+				B2214DBB18FE1FB800762AE9 /* CYActivityCell.h */,
+				B2214DBC18FE1FB800762AE9 /* CYActivityCell.m */,
+				B2214DBD18FE1FB800762AE9 /* CYActivityViewController.h */,
+				B2214DBE18FE1FB800762AE9 /* CYActivityViewController.m */,
+				B2214DBF18FE1FB800762AE9 /* CYBillPieViewController.h */,
+				B2214DC018FE1FB800762AE9 /* CYBillPieViewController.m */,
+				B2214DC118FE1FB800762AE9 /* CYFeedBackViewController.h */,
+				B2214DC218FE1FB800762AE9 /* CYFeedBackViewController.m */,
+				B2214DC318FE1FB800762AE9 /* CYMsgCell.h */,
+				B2214DC418FE1FB800762AE9 /* CYMsgCell.m */,
+				B2214DC518FE1FB800762AE9 /* CYMsgTableViewController.h */,
+				B2214DC618FE1FB800762AE9 /* CYMsgTableViewController.m */,
+				B2214DC718FE1FB800762AE9 /* CYMyBillDetailCell.h */,
+				B2214DC818FE1FB800762AE9 /* CYMyBillDetailCell.m */,
+				B2214DC918FE1FB800762AE9 /* CYMyBillMonthCell.h */,
+				B2214DCA18FE1FB800762AE9 /* CYMyBillMonthCell.m */,
+				B2214DCB18FE1FB800762AE9 /* CYMyBillTableViewController.h */,
+				B2214DCC18FE1FB800762AE9 /* CYMyBillTableViewController.m */,
+				B2214DCD18FE1FB800762AE9 /* CYMyOrderViewController.h */,
+				B2214DCE18FE1FB800762AE9 /* CYMyOrderViewController.m */,
+				B2214DCF18FE1FB800762AE9 /* CYMyPropertyTableViewCell.h */,
+				B2214DD018FE1FB800762AE9 /* CYMyPropertyTableViewCell.m */,
+				B2214DD118FE1FB800762AE9 /* CYMyPropertyTableViewController.h */,
+				B2214DD218FE1FB800762AE9 /* CYMyPropertyTableViewController.m */,
+				B2214DD318FE1FB800762AE9 /* CYOrderCell.h */,
+				B2214DD418FE1FB800762AE9 /* CYOrderCell.m */,
+				B2214DD518FE1FB800762AE9 /* Example2PieView.h */,
+				B2214DD618FE1FB800762AE9 /* Example2PieView.m */,
+				B2214DD718FE1FB800762AE9 /* MagicPieLayer.h */,
+				B2214DD818FE1FB800762AE9 /* MyPieElement.h */,
+				B2214DD918FE1FB800762AE9 /* MyPieElement.m */,
+				B2214DDA18FE1FB800762AE9 /* NSMutableArray+pieEx.h */,
+				B2214DDB18FE1FB800762AE9 /* NSMutableArray+pieEx.m */,
+				B2214DDC18FE1FB800762AE9 /* PieElement.h */,
+				B2214DDD18FE1FB800762AE9 /* PieElement.m */,
+				B2214DDE18FE1FB800762AE9 /* PieLayer.h */,
+				B2214DDF18FE1FB800762AE9 /* PieLayer.m */,
+			);
+			path = MyButler;
+			sourceTree = "<group>";
+		};
+		B2214DE018FE1FB800762AE9 /* MyProperties */ = {
+			isa = PBXGroup;
+			children = (
+				B2214DE118FE1FB800762AE9 /* Controller */,
+				B2214DF418FE1FB800762AE9 /* Model */,
+				B2214E0318FE1FB800762AE9 /* View */,
+			);
+			path = MyProperties;
+			sourceTree = "<group>";
+		};
+		B2214DE118FE1FB800762AE9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B2214DE218FE1FB800762AE9 /* CYActiveController.h */,
+				B2214DE318FE1FB800762AE9 /* CYActiveController.m */,
+				B2214DE418FE1FB800762AE9 /* CYDiscussController.h */,
+				B2214DE518FE1FB800762AE9 /* CYDiscussController.m */,
+				B2214DE618FE1FB800762AE9 /* CYHouseChoiceController.h */,
+				B2214DE718FE1FB800762AE9 /* CYHouseChoiceController.m */,
+				B2214DE818FE1FB800762AE9 /* CYNoticeBoardController.h */,
+				B2214DE918FE1FB800762AE9 /* CYNoticeBoardController.m */,
+				B2214DEA18FE1FB800762AE9 /* CYRentController.h */,
+				B2214DEB18FE1FB800762AE9 /* CYRentController.m */,
+				B2214DEC18FE1FB800762AE9 /* HXTBindCardViewController.h */,
+				B2214DED18FE1FB800762AE9 /* HXTBindCardViewController.m */,
+				B2214DEE18FE1FB800762AE9 /* HXTPropertyFeeViewController.h */,
+				B2214DEF18FE1FB800762AE9 /* HXTPropertyFeeViewController.m */,
+				B2214DF018FE1FB800762AE9 /* HXTPropertyItemDetailTableViewController.h */,
+				B2214DF118FE1FB800762AE9 /* HXTPropertyItemDetailTableViewController.m */,
+				B2214DF218FE1FB800762AE9 /* HXTPropertyServiceViewController.h */,
+				B2214DF318FE1FB800762AE9 /* HXTPropertyServiceViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B2214DF418FE1FB800762AE9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B2214DF518FE1FB800762AE9 /* DJQRateView.h */,
+				B2214DF618FE1FB800762AE9 /* DJQRateView.m */,
+				B2214DF718FE1FB800762AE9 /* DJQStartView.h */,
+				B2214DF818FE1FB800762AE9 /* DJQStartView.m */,
+				B2214DF918FE1FB800762AE9 /* HXTHouse.h */,
+				B2214DFA18FE1FB800762AE9 /* HXTHouse.m */,
+				B2214DFB18FE1FB800762AE9 /* HXTMyProperties.h */,
+				B2214DFC18FE1FB800762AE9 /* HXTMyProperties.m */,
+				B2214DFD18FE1FB800762AE9 /* HXTPropertyCell.h */,
+				B2214DFE18FE1FB800762AE9 /* HXTPropertyCell.m */,
+				B2214DFF18FE1FB800762AE9 /* HXTPropertyFeeCell.h */,
+				B2214E0018FE1FB800762AE9 /* HXTPropertyFeeCell.m */,
+				B2214E0118FE1FB800762AE9 /* HXTPropertyFeeDetailCell.h */,
+				B2214E0218FE1FB800762AE9 /* HXTPropertyFeeDetailCell.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B2214E0318FE1FB800762AE9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B2214E0418FE1FB800762AE9 /* HXTPropertyTableViewHeaderFooterView.h */,
+				B2214E0518FE1FB800762AE9 /* HXTPropertyTableViewHeaderFooterView.m */,
+				B2214E0618FE1FB800762AE9 /* MyPropertyTableViewHeaderFooterView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B2214E0718FE1FB800762AE9 /* SurroundingLife */ = {
+			isa = PBXGroup;
+			children = (
+				B2214E0818FE1FB800762AE9 /* Controller */,
+			);
+			path = SurroundingLife;
+			sourceTree = "<group>";
+		};
+		B2214E0818FE1FB800762AE9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B2214E0918FE1FB800762AE9 /* HXTChooseHousingEstateTableViewController.h */,
+				B2214E0A18FE1FB800762AE9 /* HXTChooseHousingEstateTableViewController.m */,
+				B2214E0B18FE1FB800762AE9 /* HXTSurroundingLifeViewController.h */,
+				B2214E0C18FE1FB800762AE9 /* HXTSurroundingLifeViewController.m */,
+				B2214E0D18FE1FB800762AE9 /* IGo */,
+				B2214E1218FE1FB800762AE9 /* YouCome */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B2214E0D18FE1FB800762AE9 /* IGo */ = {
+			isa = PBXGroup;
+			children = (
+				B2214E0E18FE1FB800762AE9 /* HXTIGoViewController.h */,
+				B2214E0F18FE1FB800762AE9 /* HXTIGoViewController.m */,
+				B2214E1018FE1FB800762AE9 /* HXTIGoWithTypeViewController.h */,
+				B2214E1118FE1FB800762AE9 /* HXTIGoWithTypeViewController.m */,
+			);
+			path = IGo;
+			sourceTree = "<group>";
+		};
+		B2214E1218FE1FB800762AE9 /* YouCome */ = {
+			isa = PBXGroup;
+			children = (
+				B2214E1318FE1FB800762AE9 /* HXTTheGroceryStoreViewController.h */,
+				B2214E1418FE1FB800762AE9 /* HXTTheGroceryStoreViewController.m */,
+			);
+			path = YouCome;
+			sourceTree = "<group>";
+		};
+		B26FE55718FE51FC0093BC2F /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				B26FE63E18FE55A90093BC2F /* NSString+Check */,
+				B26FE61218FE52E40093BC2F /* SBJson */,
+				B26FE5ED18FE526F0093BC2F /* FMDB */,
+				B26FE55818FE51FC0093BC2F /* AFNetworking */,
+				B26FE58118FE51FC0093BC2F /* Extra */,
+				B26FE58C18FE51FC0093BC2F /* LocationManager */,
+				B26FE59118FE51FC0093BC2F /* Reachability */,
+				B26FE59418FE51FC0093BC2F /* SqliteStoreManager.h */,
+				B26FE59518FE51FC0093BC2F /* SqliteStoreManager.m */,
+				B26FE59618FE51FC0093BC2F /* StoreBaseItem.h */,
+				B26FE59718FE51FC0093BC2F /* StoreBaseItem.m */,
+				B26FE59818FE51FC0093BC2F /* UIDevice+Resolutions.h */,
+				B26FE59918FE51FC0093BC2F /* UIDevice+Resolutions.m */,
+				B26FE59A18FE51FC0093BC2F /* View */,
+				B26FE5A518FE51FC0093BC2F /* XPHTTPURLConnection.h */,
+				B26FE5A618FE51FC0093BC2F /* XPHTTPURLConnection.m */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		B26FE55818FE51FC0093BC2F /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				B26FE55918FE51FC0093BC2F /* AFNetworking */,
+				B26FE56F18FE51FC0093BC2F /* UIKit+AFNetworking */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		B26FE55918FE51FC0093BC2F /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				B26FE55A18FE51FC0093BC2F /* AFHTTPRequestOperation.h */,
+				B26FE55B18FE51FC0093BC2F /* AFHTTPRequestOperation.m */,
+				B26FE55C18FE51FC0093BC2F /* AFHTTPRequestOperationManager.h */,
+				B26FE55D18FE51FC0093BC2F /* AFHTTPRequestOperationManager.m */,
+				B26FE55E18FE51FC0093BC2F /* AFHTTPSessionManager.h */,
+				B26FE55F18FE51FC0093BC2F /* AFHTTPSessionManager.m */,
+				B26FE56018FE51FC0093BC2F /* AFNetworking.h */,
+				B26FE56118FE51FC0093BC2F /* AFNetworkReachabilityManager.h */,
+				B26FE56218FE51FC0093BC2F /* AFNetworkReachabilityManager.m */,
+				B26FE56318FE51FC0093BC2F /* AFSecurityPolicy.h */,
+				B26FE56418FE51FC0093BC2F /* AFSecurityPolicy.m */,
+				B26FE56518FE51FC0093BC2F /* AFURLConnectionOperation.h */,
+				B26FE56618FE51FC0093BC2F /* AFURLConnectionOperation.m */,
+				B26FE56718FE51FC0093BC2F /* AFURLRequestSerialization.h */,
+				B26FE56818FE51FC0093BC2F /* AFURLRequestSerialization.m */,
+				B26FE56918FE51FC0093BC2F /* AFURLResponseSerialization.h */,
+				B26FE56A18FE51FC0093BC2F /* AFURLResponseSerialization.m */,
+				B26FE56B18FE51FC0093BC2F /* AFURLSessionManager.h */,
+				B26FE56C18FE51FC0093BC2F /* AFURLSessionManager.m */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		B26FE56F18FE51FC0093BC2F /* UIKit+AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				B26FE57018FE51FC0093BC2F /* AFNetworkActivityIndicatorManager.h */,
+				B26FE57118FE51FC0093BC2F /* AFNetworkActivityIndicatorManager.m */,
+				B26FE57218FE51FC0093BC2F /* UIActivityIndicatorView+AFNetworking.h */,
+				B26FE57318FE51FC0093BC2F /* UIActivityIndicatorView+AFNetworking.m */,
+				B26FE57418FE51FC0093BC2F /* UIAlertView+AFNetworking.h */,
+				B26FE57518FE51FC0093BC2F /* UIAlertView+AFNetworking.m */,
+				B26FE57618FE51FC0093BC2F /* UIButton+AFNetworking.h */,
+				B26FE57718FE51FC0093BC2F /* UIButton+AFNetworking.m */,
+				B26FE57818FE51FC0093BC2F /* UIImageView+AFNetworking.h */,
+				B26FE57918FE51FC0093BC2F /* UIImageView+AFNetworking.m */,
+				B26FE57A18FE51FC0093BC2F /* UIKit+AFNetworking.h */,
+				B26FE57B18FE51FC0093BC2F /* UIProgressView+AFNetworking.h */,
+				B26FE57C18FE51FC0093BC2F /* UIProgressView+AFNetworking.m */,
+				B26FE57D18FE51FC0093BC2F /* UIRefreshControl+AFNetworking.h */,
+				B26FE57E18FE51FC0093BC2F /* UIRefreshControl+AFNetworking.m */,
+				B26FE57F18FE51FC0093BC2F /* UIWebView+AFNetworking.h */,
+				B26FE58018FE51FC0093BC2F /* UIWebView+AFNetworking.m */,
+			);
+			path = "UIKit+AFNetworking";
+			sourceTree = "<group>";
+		};
+		B26FE58118FE51FC0093BC2F /* Extra */ = {
+			isa = PBXGroup;
+			children = (
+				B26FE58218FE51FC0093BC2F /* KeyboardCommon.h */,
+				B26FE58318FE51FC0093BC2F /* KeyboardCommon.m */,
+				B26FE58418FE51FC0093BC2F /* NSArrayAdditionals.h */,
+				B26FE58518FE51FC0093BC2F /* NSArrayAdditionals.m */,
+				B26FE58618FE51FC0093BC2F /* NSDataAdditions.h */,
+				B26FE58718FE51FC0093BC2F /* NSDataAdditions.m */,
+				B26FE58818FE51FC0093BC2F /* NSDictionaryAdditions.h */,
+				B26FE58918FE51FC0093BC2F /* NSDictionaryAdditions.m */,
+				B26FE58A18FE51FC0093BC2F /* NSStringAdditions.h */,
+				B26FE58B18FE51FC0093BC2F /* NSStringAdditions.m */,
+			);
+			path = Extra;
+			sourceTree = "<group>";
+		};
+		B26FE58C18FE51FC0093BC2F /* LocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				B26FE58D18FE51FC0093BC2F /* HXTLocationManager.h */,
+				B26FE58E18FE51FC0093BC2F /* HXTLocationManager.m */,
+			);
+			path = LocationManager;
+			sourceTree = "<group>";
+		};
+		B26FE59118FE51FC0093BC2F /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				B26FE59218FE51FC0093BC2F /* Reachability.h */,
+				B26FE59318FE51FC0093BC2F /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		B26FE59A18FE51FC0093BC2F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B26FE64318FE55B70093BC2F /* SVPullToRefresh */,
+				B26FE63318FE53480093BC2F /* MBProgressHUD */,
+				B26FE59B18FE51FC0093BC2F /* CheckBox */,
+				B26FE5A218FE51FC0093BC2F /* ViewWithArrow */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B26FE59B18FE51FC0093BC2F /* CheckBox */ = {
+			isa = PBXGroup;
+			children = (
+				B26FE59C18FE51FC0093BC2F /* HXTCheckBox.h */,
+				B26FE59D18FE51FC0093BC2F /* HXTCheckBox.m */,
+			);
+			path = CheckBox;
+			sourceTree = "<group>";
+		};
+		B26FE5A218FE51FC0093BC2F /* ViewWithArrow */ = {
+			isa = PBXGroup;
+			children = (
+				B26FE5A318FE51FC0093BC2F /* HXTViewWithArrow.h */,
+				B26FE5A418FE51FC0093BC2F /* HXTViewWithArrow.m */,
+			);
+			path = ViewWithArrow;
+			sourceTree = "<group>";
+		};
+		B26FE5ED18FE526F0093BC2F /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				B26FE5EE18FE526F0093BC2F /* FMDatabase.h */,
+				B26FE5EF18FE526F0093BC2F /* FMDatabase.m */,
+				B26FE5F018FE526F0093BC2F /* FMDatabaseAdditions.h */,
+				B26FE5F118FE526F0093BC2F /* FMDatabaseAdditions.m */,
+				B26FE5F218FE526F0093BC2F /* FMDatabasePool.h */,
+				B26FE5F318FE526F0093BC2F /* FMDatabasePool.m */,
+				B26FE5F418FE526F0093BC2F /* FMDatabaseQueue.h */,
+				B26FE5F518FE526F0093BC2F /* FMDatabaseQueue.m */,
+				B26FE5F618FE526F0093BC2F /* FMResultSet.h */,
+				B26FE5F718FE526F0093BC2F /* FMResultSet.m */,
+				B26FE5F918FE526F0093BC2F /* README.markdown */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
+		B26FE61218FE52E40093BC2F /* SBJson */ = {
+			isa = PBXGroup;
+			children = (
+				B26FE61418FE52E40093BC2F /* SBJson4.h */,
+				B26FE61518FE52E40093BC2F /* SBJson4Parser.h */,
+				B26FE61618FE52E40093BC2F /* SBJson4Parser.m */,
+				B26FE61718FE52E40093BC2F /* SBJson4StreamParser.h */,
+				B26FE61818FE52E40093BC2F /* SBJson4StreamParser.m */,
+				B26FE61918FE52E40093BC2F /* SBJson4StreamParserState.h */,
+				B26FE61A18FE52E40093BC2F /* SBJson4StreamParserState.m */,
+				B26FE61B18FE52E40093BC2F /* SBJson4StreamTokeniser.h */,
+				B26FE61C18FE52E40093BC2F /* SBJson4StreamTokeniser.m */,
+				B26FE61D18FE52E40093BC2F /* SBJson4StreamWriter.h */,
+				B26FE61E18FE52E40093BC2F /* SBJson4StreamWriter.m */,
+				B26FE61F18FE52E40093BC2F /* SBJson4StreamWriterState.h */,
+				B26FE62018FE52E40093BC2F /* SBJson4StreamWriterState.m */,
+				B26FE62118FE52E40093BC2F /* SBJson4Writer.h */,
+				B26FE62218FE52E40093BC2F /* SBJson4Writer.m */,
+			);
+			path = SBJson;
+			sourceTree = "<group>";
+		};
+		B26FE63318FE53480093BC2F /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				B26FE63518FE53480093BC2F /* MBProgressHUD.h */,
+				B26FE63618FE53480093BC2F /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		B26FE63E18FE55A90093BC2F /* NSString+Check */ = {
+			isa = PBXGroup;
+			children = (
+				B26FE63F18FE55A90093BC2F /* NSString+Check.h */,
+				B26FE64018FE55A90093BC2F /* NSString+Check.m */,
+			);
+			path = "NSString+Check";
+			sourceTree = "<group>";
+		};
+		B26FE64318FE55B70093BC2F /* SVPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				B26FE64418FE55B70093BC2F /* SVPullToRefresh.h */,
+				B26FE64518FE55B70093BC2F /* UIScrollView+SVInfiniteScrolling.h */,
+				B26FE64618FE55B70093BC2F /* UIScrollView+SVInfiniteScrolling.m */,
+				B26FE64718FE55B70093BC2F /* UIScrollView+SVPullToRefresh.h */,
+				B26FE64818FE55B70093BC2F /* UIScrollView+SVPullToRefresh.m */,
+			);
+			path = SVPullToRefresh;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,9 +1171,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2214C8C18FE1F9000762AE9 /* region.plist in Resources */,
+				B2214E7718FE1FE200762AE9 /* AccountManager.storyboard in Resources */,
+				B2214E5B18FE1FB800762AE9 /* MyPropertyTableViewHeaderFooterView.xib in Resources */,
 				B2214C2718FE1E4000762AE9 /* Images.xcassets in Resources */,
+				B26FE60618FE526F0093BC2F /* README.markdown in Resources */,
+				B2214C8A18FE1F9000762AE9 /* provinces_bck.plist in Resources */,
+				B2214E7F18FE1FE200762AE9 /* Home.storyboard in Resources */,
+				B2214E8118FE1FE200762AE9 /* PropertyFee.storyboard in Resources */,
+				B2214C8618FE1F9000762AE9 /* hotCities.plist in Resources */,
+				B2214E7B18FE1FE200762AE9 /* BrowseHouseEstate.storyboard in Resources */,
+				B2214E8318FE1FE200762AE9 /* PropertyService.storyboard in Resources */,
+				B2214E8518FE1FE200762AE9 /* SurroundingLife.storyboard in Resources */,
+				B2214C8818FE1F9000762AE9 /* provinces.plist in Resources */,
+				B2214E7D18FE1FE200762AE9 /* EcologicalDistribution.storyboard in Resources */,
+				B2214E7918FE1FE200762AE9 /* AddHouseEstate.storyboard in Resources */,
 				B2214C1618FE1E4000762AE9 /* InfoPlist.strings in Resources */,
-				B2214C1F18FE1E4000762AE9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,7 +1194,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B26FE60718FE526F0093BC2F /* README.markdown in Resources */,
+				B2214C8D18FE1F9000762AE9 /* region.plist in Resources */,
 				B2214C3818FE1E4000762AE9 /* InfoPlist.strings in Resources */,
+				B2214E7E18FE1FE200762AE9 /* EcologicalDistribution.storyboard in Resources */,
+				B2214E7A18FE1FE200762AE9 /* AddHouseEstate.storyboard in Resources */,
+				B2214E8618FE1FE200762AE9 /* SurroundingLife.storyboard in Resources */,
+				B2214E8018FE1FE200762AE9 /* Home.storyboard in Resources */,
+				B2214C8B18FE1F9000762AE9 /* provinces_bck.plist in Resources */,
+				B2214C8718FE1F9000762AE9 /* hotCities.plist in Resources */,
+				B2214C8918FE1F9000762AE9 /* provinces.plist in Resources */,
+				B2214E7818FE1FE200762AE9 /* AccountManager.storyboard in Resources */,
+				B2214E8218FE1FE200762AE9 /* PropertyFee.storyboard in Resources */,
+				B2214E5C18FE1FB800762AE9 /* MyPropertyTableViewHeaderFooterView.xib in Resources */,
+				B2214E7C18FE1FE200762AE9 /* BrowseHouseEstate.storyboard in Resources */,
+				B2214E8418FE1FE200762AE9 /* PropertyService.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,10 +1219,112 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2214E1B18FE1FB800762AE9 /* CYFeedBackViewController.m in Sources */,
+				B26FE5E118FE51FC0093BC2F /* UIDevice+Resolutions.m in Sources */,
+				B26FE5FE18FE526F0093BC2F /* FMDatabasePool.m in Sources */,
+				B2214E4518FE1FB800762AE9 /* HXTPropertyFeeViewController.m in Sources */,
+				B2214E3B18FE1FB800762AE9 /* CYDiscussController.m in Sources */,
+				B2214E2318FE1FB800762AE9 /* CYMyBillMonthCell.m in Sources */,
+				B26FE5C718FE51FC0093BC2F /* UIProgressView+AFNetworking.m in Sources */,
+				B26FE5CF18FE51FC0093BC2F /* NSArrayAdditionals.m in Sources */,
+				B26FE5D118FE51FC0093BC2F /* NSDataAdditions.m in Sources */,
+				B2214E2D18FE1FB800762AE9 /* CYOrderCell.m in Sources */,
+				B2214DB318FE1FA200762AE9 /* HXTNavigationController.m in Sources */,
+				B2214E5118FE1FB800762AE9 /* HXTMyProperties.m in Sources */,
+				B26FE5A718FE51FC0093BC2F /* AFHTTPRequestOperation.m in Sources */,
+				B2214E3318FE1FB800762AE9 /* NSMutableArray+pieEx.m in Sources */,
+				B2214C8218FE1F9000762AE9 /* HXTSelectCitySecondLevelViewController.m in Sources */,
+				B2214E4918FE1FB800762AE9 /* HXTPropertyServiceViewController.m in Sources */,
+				B2214E5F18FE1FB800762AE9 /* HXTSurroundingLifeViewController.m in Sources */,
+				B26FE5AB18FE51FC0093BC2F /* AFHTTPSessionManager.m in Sources */,
+				B2214E4F18FE1FB800762AE9 /* HXTHouse.m in Sources */,
+				B26FE5DD18FE51FC0093BC2F /* SqliteStoreManager.m in Sources */,
+				B2214E1D18FE1FB800762AE9 /* CYMsgCell.m in Sources */,
+				B2214DAF18FE1FA200762AE9 /* HXTHomeChooseHouseEstateTableViewController.m in Sources */,
 				B2214C1818FE1E4000762AE9 /* main.m in Sources */,
+				B2214C8018FE1F9000762AE9 /* HXTRegisterUserProtocolViewController.m in Sources */,
+				B2214C6E18FE1F9000762AE9 /* HXTRegisterInputPasswordViewController.m in Sources */,
+				B2214C8418FE1F9000762AE9 /* HXTSelectCityViewController.m in Sources */,
+				B26FE5CD18FE51FC0093BC2F /* KeyboardCommon.m in Sources */,
+				B2214E4D18FE1FB800762AE9 /* DJQStartView.m in Sources */,
+				B26FE5A918FE51FC0093BC2F /* AFHTTPRequestOperationManager.m in Sources */,
+				B26FE5B118FE51FC0093BC2F /* AFURLConnectionOperation.m in Sources */,
+				B26FE62F18FE52E40093BC2F /* SBJson4StreamWriterState.m in Sources */,
+				B2214E1918FE1FB800762AE9 /* CYBillPieViewController.m in Sources */,
+				B2214E5518FE1FB800762AE9 /* HXTPropertyFeeCell.m in Sources */,
+				B2214E4318FE1FB800762AE9 /* HXTBindCardViewController.m in Sources */,
+				B26FE5DF18FE51FC0093BC2F /* StoreBaseItem.m in Sources */,
+				B2214E3718FE1FB800762AE9 /* PieLayer.m in Sources */,
+				B26FE62718FE52E40093BC2F /* SBJson4StreamParser.m in Sources */,
+				B2214E3118FE1FB800762AE9 /* MyPieElement.m in Sources */,
+				B26FE5BF18FE51FC0093BC2F /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				B26FE5C918FE51FC0093BC2F /* UIRefreshControl+AFNetworking.m in Sources */,
+				B26FE5E918FE51FC0093BC2F /* HXTViewWithArrow.m in Sources */,
+				B2214C7418FE1F9000762AE9 /* HXTRetrievePasswordViewController.m in Sources */,
 				B2214C1C18FE1E4000762AE9 /* HXTAppDelegate.m in Sources */,
-				B2214C2218FE1E4000762AE9 /* HXTFirstViewController.m in Sources */,
-				B2214C2518FE1E4000762AE9 /* HXTSecondViewController.m in Sources */,
+				B2214C7018FE1F9000762AE9 /* HXTRegisterInputPhoneNumberViewController.m in Sources */,
+				B2214E2918FE1FB800762AE9 /* CYMyPropertyTableViewCell.m in Sources */,
+				B2214C6A18FE1F9000762AE9 /* HXTLoginViewController.m in Sources */,
+				B26FE64B18FE55B70093BC2F /* UIScrollView+SVPullToRefresh.m in Sources */,
+				B26FE5EB18FE51FC0093BC2F /* XPHTTPURLConnection.m in Sources */,
+				B2214E5D18FE1FB800762AE9 /* HXTChooseHousingEstateTableViewController.m in Sources */,
+				B26FE5E318FE51FC0093BC2F /* HXTCheckBox.m in Sources */,
+				B2214C7818FE1F9000762AE9 /* HXTAddHouseEstateViewController.m in Sources */,
+				B26FE5CB18FE51FC0093BC2F /* UIWebView+AFNetworking.m in Sources */,
+				B26FE5C318FE51FC0093BC2F /* UIButton+AFNetworking.m in Sources */,
+				B26FE5FC18FE526F0093BC2F /* FMDatabaseAdditions.m in Sources */,
+				B2214DB118FE1FA200762AE9 /* HXTHomeViewController.m in Sources */,
+				B2214E2118FE1FB800762AE9 /* CYMyBillDetailCell.m in Sources */,
+				B26FE5FA18FE526F0093BC2F /* FMDatabase.m in Sources */,
+				B2214C7618FE1F9000762AE9 /* HXTAccountManager.m in Sources */,
+				B2214C7218FE1F9000762AE9 /* HXTRegisterInputValidCodeViewController.m in Sources */,
+				B26FE5D718FE51FC0093BC2F /* HXTLocationManager.m in Sources */,
+				B26FE62518FE52E40093BC2F /* SBJson4Parser.m in Sources */,
+				B2214E1718FE1FB800762AE9 /* CYActivityViewController.m in Sources */,
+				B2214E6518FE1FB800762AE9 /* HXTTheGroceryStoreViewController.m in Sources */,
+				B2214E4718FE1FB800762AE9 /* HXTPropertyItemDetailTableViewController.m in Sources */,
+				B2214C7C18FE1F9000762AE9 /* HXTAppleyOpenPropertyViewController.m in Sources */,
+				B2214DB518FE1FA200762AE9 /* HXTTabBarViewController.m in Sources */,
+				B2214E3F18FE1FB800762AE9 /* CYNoticeBoardController.m in Sources */,
+				B26FE5B718FE51FC0093BC2F /* AFURLSessionManager.m in Sources */,
+				B2214C6C18FE1F9000762AE9 /* HXTRegisterAddHouseEstateViewController.m in Sources */,
+				B26FE5C518FE51FC0093BC2F /* UIImageView+AFNetworking.m in Sources */,
+				B26FE5C118FE51FC0093BC2F /* UIAlertView+AFNetworking.m in Sources */,
+				B26FE60218FE526F0093BC2F /* FMResultSet.m in Sources */,
+				B26FE5B518FE51FC0093BC2F /* AFURLResponseSerialization.m in Sources */,
+				B2214C7A18FE1F9000762AE9 /* HXTAddHouseViewController.m in Sources */,
+				B26FE63118FE52E40093BC2F /* SBJson4Writer.m in Sources */,
+				B2214E3918FE1FB800762AE9 /* CYActiveController.m in Sources */,
+				B26FE63A18FE53480093BC2F /* MBProgressHUD.m in Sources */,
+				B2214E2B18FE1FB800762AE9 /* CYMyPropertyTableViewController.m in Sources */,
+				B2214E4B18FE1FB800762AE9 /* DJQRateView.m in Sources */,
+				B2214E2718FE1FB800762AE9 /* CYMyOrderViewController.m in Sources */,
+				B26FE64118FE55A90093BC2F /* NSString+Check.m in Sources */,
+				B2214E5318FE1FB800762AE9 /* HXTPropertyCell.m in Sources */,
+				B26FE5D318FE51FC0093BC2F /* NSDictionaryAdditions.m in Sources */,
+				B26FE5BD18FE51FC0093BC2F /* AFNetworkActivityIndicatorManager.m in Sources */,
+				B2214E2518FE1FB800762AE9 /* CYMyBillTableViewController.m in Sources */,
+				B2214E3D18FE1FB800762AE9 /* CYHouseChoiceController.m in Sources */,
+				B26FE5B318FE51FC0093BC2F /* AFURLRequestSerialization.m in Sources */,
+				B26FE62918FE52E40093BC2F /* SBJson4StreamParserState.m in Sources */,
+				B2214E6118FE1FB800762AE9 /* HXTIGoViewController.m in Sources */,
+				B26FE5AD18FE51FC0093BC2F /* AFNetworkReachabilityManager.m in Sources */,
+				B26FE64918FE55B70093BC2F /* UIScrollView+SVInfiniteScrolling.m in Sources */,
+				B2214E3518FE1FB800762AE9 /* PieElement.m in Sources */,
+				B2214E2F18FE1FB800762AE9 /* Example2PieView.m in Sources */,
+				B2214E4118FE1FB800762AE9 /* CYRentController.m in Sources */,
+				B26FE62D18FE52E40093BC2F /* SBJson4StreamWriter.m in Sources */,
+				B2214E1518FE1FB800762AE9 /* CYActivityCell.m in Sources */,
+				B26FE5D518FE51FC0093BC2F /* NSStringAdditions.m in Sources */,
+				B2214E6318FE1FB800762AE9 /* HXTIGoWithTypeViewController.m in Sources */,
+				B26FE60018FE526F0093BC2F /* FMDatabaseQueue.m in Sources */,
+				B2214E1F18FE1FB800762AE9 /* CYMsgTableViewController.m in Sources */,
+				B26FE5AF18FE51FC0093BC2F /* AFSecurityPolicy.m in Sources */,
+				B2214E5718FE1FB800762AE9 /* HXTPropertyFeeDetailCell.m in Sources */,
+				B2214C7E18FE1F9000762AE9 /* HXTBrowseHouseEstateViewController.m in Sources */,
+				B26FE62B18FE52E40093BC2F /* SBJson4StreamTokeniser.m in Sources */,
+				B2214E5918FE1FB800762AE9 /* HXTPropertyTableViewHeaderFooterView.m in Sources */,
+				B26FE5DB18FE51FC0093BC2F /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +1332,111 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2214DB418FE1FA200762AE9 /* HXTNavigationController.m in Sources */,
 				B2214C3A18FE1E4000762AE9 /* ButlerCardTests.m in Sources */,
+				B2214E2618FE1FB800762AE9 /* CYMyBillTableViewController.m in Sources */,
+				B2214E3618FE1FB800762AE9 /* PieElement.m in Sources */,
+				B2214E4C18FE1FB800762AE9 /* DJQRateView.m in Sources */,
+				B26FE5FD18FE526F0093BC2F /* FMDatabaseAdditions.m in Sources */,
+				B26FE60318FE526F0093BC2F /* FMResultSet.m in Sources */,
+				B2214C8318FE1F9000762AE9 /* HXTSelectCitySecondLevelViewController.m in Sources */,
+				B26FE5C018FE51FC0093BC2F /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				B2214C6B18FE1F9000762AE9 /* HXTLoginViewController.m in Sources */,
+				B26FE5D418FE51FC0093BC2F /* NSDictionaryAdditions.m in Sources */,
+				B26FE5DE18FE51FC0093BC2F /* SqliteStoreManager.m in Sources */,
+				B2214E1818FE1FB800762AE9 /* CYActivityViewController.m in Sources */,
+				B26FE5DC18FE51FC0093BC2F /* Reachability.m in Sources */,
+				B2214E1C18FE1FB800762AE9 /* CYFeedBackViewController.m in Sources */,
+				B26FE5E018FE51FC0093BC2F /* StoreBaseItem.m in Sources */,
+				B26FE5AC18FE51FC0093BC2F /* AFHTTPSessionManager.m in Sources */,
+				B26FE5AE18FE51FC0093BC2F /* AFNetworkReachabilityManager.m in Sources */,
+				B2214E5618FE1FB800762AE9 /* HXTPropertyFeeCell.m in Sources */,
+				B2214DB018FE1FA200762AE9 /* HXTHomeChooseHouseEstateTableViewController.m in Sources */,
+				B2214E3E18FE1FB800762AE9 /* CYHouseChoiceController.m in Sources */,
+				B26FE5A818FE51FC0093BC2F /* AFHTTPRequestOperation.m in Sources */,
+				B2214E2A18FE1FB800762AE9 /* CYMyPropertyTableViewCell.m in Sources */,
+				B26FE5AA18FE51FC0093BC2F /* AFHTTPRequestOperationManager.m in Sources */,
+				B26FE5EC18FE51FC0093BC2F /* XPHTTPURLConnection.m in Sources */,
+				B26FE5B818FE51FC0093BC2F /* AFURLSessionManager.m in Sources */,
+				B26FE5D218FE51FC0093BC2F /* NSDataAdditions.m in Sources */,
+				B2214C8518FE1F9000762AE9 /* HXTSelectCityViewController.m in Sources */,
+				B26FE62618FE52E40093BC2F /* SBJson4Parser.m in Sources */,
+				B26FE5C218FE51FC0093BC2F /* UIAlertView+AFNetworking.m in Sources */,
+				B2214E3018FE1FB800762AE9 /* Example2PieView.m in Sources */,
+				B2214E3A18FE1FB800762AE9 /* CYActiveController.m in Sources */,
+				B2214E3C18FE1FB800762AE9 /* CYDiscussController.m in Sources */,
+				B26FE62A18FE52E40093BC2F /* SBJson4StreamParserState.m in Sources */,
+				B26FE5CE18FE51FC0093BC2F /* KeyboardCommon.m in Sources */,
+				B26FE5FB18FE526F0093BC2F /* FMDatabase.m in Sources */,
+				B26FE64A18FE55B70093BC2F /* UIScrollView+SVInfiniteScrolling.m in Sources */,
+				B2214E5418FE1FB800762AE9 /* HXTPropertyCell.m in Sources */,
+				B26FE64218FE55A90093BC2F /* NSString+Check.m in Sources */,
+				B2214E6218FE1FB800762AE9 /* HXTIGoViewController.m in Sources */,
+				B2214E2E18FE1FB800762AE9 /* CYOrderCell.m in Sources */,
+				B26FE62818FE52E40093BC2F /* SBJson4StreamParser.m in Sources */,
+				B26FE5D618FE51FC0093BC2F /* NSStringAdditions.m in Sources */,
+				B2214E3818FE1FB800762AE9 /* PieLayer.m in Sources */,
+				B2214DB618FE1FA200762AE9 /* HXTTabBarViewController.m in Sources */,
+				B2214E4618FE1FB800762AE9 /* HXTPropertyFeeViewController.m in Sources */,
+				B26FE5C818FE51FC0093BC2F /* UIProgressView+AFNetworking.m in Sources */,
+				B26FE62E18FE52E40093BC2F /* SBJson4StreamWriter.m in Sources */,
+				B26FE5B618FE51FC0093BC2F /* AFURLResponseSerialization.m in Sources */,
+				B26FE63218FE52E40093BC2F /* SBJson4Writer.m in Sources */,
+				B2214E3418FE1FB800762AE9 /* NSMutableArray+pieEx.m in Sources */,
+				B2214C7718FE1F9000762AE9 /* HXTAccountManager.m in Sources */,
+				B2214E5018FE1FB800762AE9 /* HXTHouse.m in Sources */,
+				B2214E2418FE1FB800762AE9 /* CYMyBillMonthCell.m in Sources */,
+				B26FE5E418FE51FC0093BC2F /* HXTCheckBox.m in Sources */,
+				B2214E5818FE1FB800762AE9 /* HXTPropertyFeeDetailCell.m in Sources */,
+				B2214E6418FE1FB800762AE9 /* HXTIGoWithTypeViewController.m in Sources */,
+				B26FE5E218FE51FC0093BC2F /* UIDevice+Resolutions.m in Sources */,
+				B26FE5BE18FE51FC0093BC2F /* AFNetworkActivityIndicatorManager.m in Sources */,
+				B26FE64C18FE55B70093BC2F /* UIScrollView+SVPullToRefresh.m in Sources */,
+				B26FE5C418FE51FC0093BC2F /* UIButton+AFNetworking.m in Sources */,
+				B2214C6F18FE1F9000762AE9 /* HXTRegisterInputPasswordViewController.m in Sources */,
+				B2214C7D18FE1F9000762AE9 /* HXTAppleyOpenPropertyViewController.m in Sources */,
+				B2214C7918FE1F9000762AE9 /* HXTAddHouseEstateViewController.m in Sources */,
+				B2214DB218FE1FA200762AE9 /* HXTHomeViewController.m in Sources */,
+				B2214E1A18FE1FB800762AE9 /* CYBillPieViewController.m in Sources */,
+				B2214E1618FE1FB800762AE9 /* CYActivityCell.m in Sources */,
+				B26FE5C618FE51FC0093BC2F /* UIImageView+AFNetworking.m in Sources */,
+				B26FE5CA18FE51FC0093BC2F /* UIRefreshControl+AFNetworking.m in Sources */,
+				B26FE5D018FE51FC0093BC2F /* NSArrayAdditionals.m in Sources */,
+				B26FE5B218FE51FC0093BC2F /* AFURLConnectionOperation.m in Sources */,
+				B26FE5FF18FE526F0093BC2F /* FMDatabasePool.m in Sources */,
+				B2214E2018FE1FB800762AE9 /* CYMsgTableViewController.m in Sources */,
+				B2214E2218FE1FB800762AE9 /* CYMyBillDetailCell.m in Sources */,
+				B2214C8118FE1F9000762AE9 /* HXTRegisterUserProtocolViewController.m in Sources */,
+				B26FE63018FE52E40093BC2F /* SBJson4StreamWriterState.m in Sources */,
+				B2214C7F18FE1F9000762AE9 /* HXTBrowseHouseEstateViewController.m in Sources */,
+				B26FE62C18FE52E40093BC2F /* SBJson4StreamTokeniser.m in Sources */,
+				B2214C7518FE1F9000762AE9 /* HXTRetrievePasswordViewController.m in Sources */,
+				B26FE5D818FE51FC0093BC2F /* HXTLocationManager.m in Sources */,
+				B2214C7B18FE1F9000762AE9 /* HXTAddHouseViewController.m in Sources */,
+				B2214E4018FE1FB800762AE9 /* CYNoticeBoardController.m in Sources */,
+				B2214E3218FE1FB800762AE9 /* MyPieElement.m in Sources */,
+				B2214E4A18FE1FB800762AE9 /* HXTPropertyServiceViewController.m in Sources */,
+				B2214E4E18FE1FB800762AE9 /* DJQStartView.m in Sources */,
+				B2214C7318FE1F9000762AE9 /* HXTRegisterInputValidCodeViewController.m in Sources */,
+				B26FE5B418FE51FC0093BC2F /* AFURLRequestSerialization.m in Sources */,
+				B2214E4818FE1FB800762AE9 /* HXTPropertyItemDetailTableViewController.m in Sources */,
+				B2214E6618FE1FB800762AE9 /* HXTTheGroceryStoreViewController.m in Sources */,
+				B2214E2C18FE1FB800762AE9 /* CYMyPropertyTableViewController.m in Sources */,
+				B2214E1E18FE1FB800762AE9 /* CYMsgCell.m in Sources */,
+				B2214E5218FE1FB800762AE9 /* HXTMyProperties.m in Sources */,
+				B2214E2818FE1FB800762AE9 /* CYMyOrderViewController.m in Sources */,
+				B2214C7118FE1F9000762AE9 /* HXTRegisterInputPhoneNumberViewController.m in Sources */,
+				B26FE60118FE526F0093BC2F /* FMDatabaseQueue.m in Sources */,
+				B2214E5E18FE1FB800762AE9 /* HXTChooseHousingEstateTableViewController.m in Sources */,
+				B2214C6D18FE1F9000762AE9 /* HXTRegisterAddHouseEstateViewController.m in Sources */,
+				B26FE63B18FE53480093BC2F /* MBProgressHUD.m in Sources */,
+				B2214E6018FE1FB800762AE9 /* HXTSurroundingLifeViewController.m in Sources */,
+				B26FE5B018FE51FC0093BC2F /* AFSecurityPolicy.m in Sources */,
+				B26FE5CC18FE51FC0093BC2F /* UIWebView+AFNetworking.m in Sources */,
+				B2214E5A18FE1FB800762AE9 /* HXTPropertyTableViewHeaderFooterView.m in Sources */,
+				B26FE5EA18FE51FC0093BC2F /* HXTViewWithArrow.m in Sources */,
+				B2214E4218FE1FB800762AE9 /* CYRentController.m in Sources */,
+				B2214E4418FE1FB800762AE9 /* HXTBindCardViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,20 +1459,76 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		B2214C1D18FE1E4000762AE9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B2214C1E18FE1E4000762AE9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B2214C3618FE1E4000762AE9 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B2214C3718FE1E4000762AE9 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B2214E6718FE1FE200762AE9 /* AccountManager.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2214E6818FE1FE200762AE9 /* Base */,
+			);
+			name = AccountManager.storyboard;
+			sourceTree = "<group>";
+		};
+		B2214E6918FE1FE200762AE9 /* AddHouseEstate.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2214E6A18FE1FE200762AE9 /* Base */,
+			);
+			name = AddHouseEstate.storyboard;
+			sourceTree = "<group>";
+		};
+		B2214E6B18FE1FE200762AE9 /* BrowseHouseEstate.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2214E6C18FE1FE200762AE9 /* Base */,
+			);
+			name = BrowseHouseEstate.storyboard;
+			sourceTree = "<group>";
+		};
+		B2214E6D18FE1FE200762AE9 /* EcologicalDistribution.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2214E6E18FE1FE200762AE9 /* Base */,
+			);
+			name = EcologicalDistribution.storyboard;
+			sourceTree = "<group>";
+		};
+		B2214E6F18FE1FE200762AE9 /* Home.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2214E7018FE1FE200762AE9 /* Base */,
+			);
+			name = Home.storyboard;
+			sourceTree = "<group>";
+		};
+		B2214E7118FE1FE200762AE9 /* PropertyFee.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2214E7218FE1FE200762AE9 /* Base */,
+			);
+			name = PropertyFee.storyboard;
+			sourceTree = "<group>";
+		};
+		B2214E7318FE1FE200762AE9 /* PropertyService.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2214E7418FE1FE200762AE9 /* Base */,
+			);
+			name = PropertyService.storyboard;
+			sourceTree = "<group>";
+		};
+		B2214E7518FE1FE200762AE9 /* SurroundingLife.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2214E7618FE1FE200762AE9 /* Base */,
+			);
+			name = SurroundingLife.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -340,7 +1566,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -372,7 +1598,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -386,6 +1612,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ButlerCard/ButlerCard-Prefix.pch";
 				INFOPLIST_FILE = "ButlerCard/ButlerCard-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -399,6 +1626,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ButlerCard/ButlerCard-Prefix.pch";
 				INFOPLIST_FILE = "ButlerCard/ButlerCard-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -463,6 +1691,7 @@
 				B2214C3F18FE1E4000762AE9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B2214C4018FE1E4000762AE9 /* Build configuration list for PBXNativeTarget "ButlerCardTests" */ = {
 			isa = XCConfigurationList;
@@ -471,6 +1700,7 @@
 				B2214C4218FE1E4000762AE9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

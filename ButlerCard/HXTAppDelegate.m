@@ -2,11 +2,12 @@
 //  HXTAppDelegate.m
 //  ButlerCard
 //
-//  Created by johnny tang on 4/16/14.
-//  Copyright (c) 2014 johnny. All rights reserved.
+//  Created by johnny tang on 2/19/14.
+//  Copyright (c) 2014 johnny tang. All rights reserved.
 //
 
 #import "HXTAppDelegate.h"
+#import "HXTAccountManager.h"
 
 @implementation HXTAppDelegate
 
@@ -26,6 +27,8 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    [[HXTAccountManager sharedInstance] writeDataToUserDefault];
+    
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application

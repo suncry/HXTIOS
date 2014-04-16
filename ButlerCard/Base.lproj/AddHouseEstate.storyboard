@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Ngw-rg-gIa">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <scenes>
+        <!--Add House Estate View Controller - 选择小区-->
+        <scene sceneID="yie-27-K9g">
+            <objects>
+                <viewController storyboardIdentifier="AddHouseEstateStoryboardID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KbO-D9-o9T" customClass="HXTAddHouseEstateViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5ay-93-U0h"/>
+                        <viewControllerLayoutGuide type="bottom" id="REb-iE-BXa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="afT-KI-7F6">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aG2-6z-Gk5" customClass="UIControl">
+                                <rect key="frame" x="0.0" y="44" width="320" height="411"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="backgroudTouchUpInside:" destination="KbO-D9-o9T" eventType="touchUpInside" id="d48-dk-TWk"/>
+                                </connections>
+                            </view>
+                            <searchBar contentMode="redraw" text="" placeholder="search" backgroundImage="property_searchbg" translatesAutoresizingMaskIntoConstraints="NO" id="9eD-ib-4iT">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="WVn-VX-srJ"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="KbO-D9-o9T" id="yFH-fs-mxZ"/>
+                                </connections>
+                            </searchBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="property_houseLine" translatesAutoresizingMaskIntoConstraints="NO" id="iIy-Op-YwT">
+                                <rect key="frame" x="0.0" y="44" width="320" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="lJH-Dt-gDV"/>
+                                </constraints>
+                            </imageView>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YBD-Ce-MEF">
+                                <rect key="frame" x="0.0" y="46" width="320" height="354"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="8" id="QtT-xf-eLg">
+                                    <size key="itemSize" width="65" height="70"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="18" minY="15" maxX="18" maxY="12"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCellIdentifier" id="rss-0n-Pdt">
+                                        <rect key="frame" x="18" y="15" width="65" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="华瑞凤凰城" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wd9-ls-Aj6">
+                                                    <rect key="frame" x="0.0" y="50" width="65" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="house" translatesAutoresizingMaskIntoConstraints="NO" id="reg-ak-uIt">
+                                                    <rect key="frame" x="7" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="CEx-uv-6mb" kind="push" identifier="AddHouseStoryboardSegue" id="r9u-yN-sD5"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="KbO-D9-o9T" id="P9T-lc-2Vm"/>
+                                    <outlet property="delegate" destination="KbO-D9-o9T" id="VaS-mf-LO8"/>
+                                </connections>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DjE-AA-Fzf" userLabel="View --开通shenqing">
+                                <rect key="frame" x="0.0" y="400" width="320" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="property_houseTipsicon" translatesAutoresizingMaskIntoConstraints="NO" id="w79-gJ-dUO">
+                                        <rect key="frame" x="24" y="8" width="12" height="12"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="如果你所在的小区未开通物业服务,请提交" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ua-zY-QIn">
+                                        <rect key="frame" x="37" y="9" width="225" height="12"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpi-XJ-U7u">
+                                        <rect key="frame" x="235" y="0.0" width="50" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                                        <state key="normal" title="开通申请"/>
+                                        <connections>
+                                            <action selector="appleyOpenPropertyButtonPressed:" destination="KbO-D9-o9T" eventType="touchUpInside" id="9yf-IF-7mt"/>
+                                            <segue destination="vRv-54-B51" kind="push" id="spj-28-JA4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="1OQ-wv-pa7"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.95000000000000007" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iIy-Op-YwT" firstAttribute="top" secondItem="9eD-ib-4iT" secondAttribute="bottom" id="0CY-17-Yel"/>
+                            <constraint firstAttribute="trailing" secondItem="iIy-Op-YwT" secondAttribute="trailing" id="0jY-vI-2pA"/>
+                            <constraint firstAttribute="trailing" secondItem="9eD-ib-4iT" secondAttribute="trailing" id="3e1-qy-Ubt"/>
+                            <constraint firstItem="aG2-6z-Gk5" firstAttribute="top" secondItem="9eD-ib-4iT" secondAttribute="bottom" id="4OH-Ta-hly"/>
+                            <constraint firstItem="9eD-ib-4iT" firstAttribute="leading" secondItem="afT-KI-7F6" secondAttribute="leading" id="4xz-8w-Lpa"/>
+                            <constraint firstItem="aG2-6z-Gk5" firstAttribute="leading" secondItem="afT-KI-7F6" secondAttribute="leading" id="7UB-k7-x6m"/>
+                            <constraint firstItem="DjE-AA-Fzf" firstAttribute="leading" secondItem="afT-KI-7F6" secondAttribute="leading" id="CcU-8Q-IkO"/>
+                            <constraint firstAttribute="trailing" secondItem="YBD-Ce-MEF" secondAttribute="trailing" id="FDI-Wn-1pg"/>
+                            <constraint firstItem="REb-iE-BXa" firstAttribute="top" secondItem="DjE-AA-Fzf" secondAttribute="bottom" id="Fqr-5a-hWy"/>
+                            <constraint firstItem="DjE-AA-Fzf" firstAttribute="top" secondItem="YBD-Ce-MEF" secondAttribute="bottom" id="GHq-Je-tLc"/>
+                            <constraint firstItem="iIy-Op-YwT" firstAttribute="leading" secondItem="afT-KI-7F6" secondAttribute="leading" id="PsM-Eu-RS1"/>
+                            <constraint firstItem="REb-iE-BXa" firstAttribute="top" secondItem="aG2-6z-Gk5" secondAttribute="bottom" id="RPR-3y-6fm"/>
+                            <constraint firstAttribute="trailing" secondItem="DjE-AA-Fzf" secondAttribute="trailing" id="RrW-5s-1PV"/>
+                            <constraint firstItem="9eD-ib-4iT" firstAttribute="top" secondItem="5ay-93-U0h" secondAttribute="bottom" id="Rwx-JK-asW"/>
+                            <constraint firstItem="YBD-Ce-MEF" firstAttribute="leading" secondItem="afT-KI-7F6" secondAttribute="leading" id="g0T-hs-53q"/>
+                            <constraint firstAttribute="trailing" secondItem="aG2-6z-Gk5" secondAttribute="trailing" id="kz0-g9-QbP"/>
+                            <constraint firstItem="YBD-Ce-MEF" firstAttribute="top" secondItem="iIy-Op-YwT" secondAttribute="bottom" id="zrc-wl-DYE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="选择小区" id="T9y-7o-5kM">
+                        <barButtonItem key="backBarButtonItem" id="YIH-jW-S2E"/>
+                        <barButtonItem key="leftBarButtonItem" id="gx7-Hb-Mte">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="na3-ek-qzZ">
+                                <rect key="frame" x="16" y="5" width="40" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="取消">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="KbO-D9-o9T" eventType="touchUpInside" id="rSW-ip-2Ey"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" id="e6O-5N-3iV">
+                            <view key="customView" contentMode="scaleToFill" id="89W-ot-K2x">
+                                <rect key="frame" x="204" y="5" width="100" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="成都市 ▾" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WtG-10-tZV">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r2g-m6-Gja">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <inset key="imageEdgeInsets" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="chooseCityButtonPressed:" destination="KbO-D9-o9T" eventType="touchUpInside" id="Kqj-Ut-LWn"/>
+                                            <segue destination="bgN-nH-UGk" kind="modal" id="Jfj-td-kqz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="chooseCityButton" destination="r2g-m6-Gja" id="Yzk-hi-9dH"/>
+                        <outlet property="cityLabel" destination="WtG-10-tZV" id="mOb-CK-n89"/>
+                        <outlet property="coverView" destination="aG2-6z-Gk5" id="JUD-nG-Tnr"/>
+                        <outlet property="housingEstatesCollectionView" destination="YBD-Ce-MEF" id="f5e-Lm-deS"/>
+                        <outlet property="propertySearchBar" destination="9eD-ib-4iT" id="sa0-k6-ShT"/>
+                        <outlet property="searchDisplayController" destination="cjh-a7-OSq" id="g9s-Xy-sD9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f7H-D4-hsf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="wh5-VR-fef">
+                    <connections>
+                        <outlet property="delegate" destination="KbO-D9-o9T" id="amY-eF-pZv"/>
+                        <outlet property="searchContentsController" destination="KbO-D9-o9T" id="bCp-Na-934"/>
+                        <outlet property="searchResultsDataSource" destination="KbO-D9-o9T" id="k0s-Ll-Pmq"/>
+                        <outlet property="searchResultsDelegate" destination="KbO-D9-o9T" id="hlh-ED-7xo"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="cjh-a7-OSq">
+                    <connections>
+                        <outlet property="delegate" destination="KbO-D9-o9T" id="eNX-dp-ANj"/>
+                        <outlet property="searchContentsController" destination="KbO-D9-o9T" id="7nk-6E-n39"/>
+                        <outlet property="searchResultsDataSource" destination="KbO-D9-o9T" id="aIa-eG-n8C"/>
+                        <outlet property="searchResultsDelegate" destination="KbO-D9-o9T" id="AI0-8A-I4W"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="1033" y="132"/>
+        </scene>
+        <!--Add House View Controller - 选择住房-->
+        <scene sceneID="IQj-bM-Jsk">
+            <objects>
+                <viewController id="CEx-uv-6mb" customClass="HXTAddHouseViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rQj-Ob-xk7"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cw1-wH-olw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WmM-XR-0oy">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zsx-Pa-waH">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="aEa-Gz-kkb"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="CEx-uv-6mb" id="8mi-vV-KzJ"/>
+                                    <outlet property="delegate" destination="CEx-uv-6mb" id="yhd-bf-ndA"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOh-ZP-2Iq">
+                                <rect key="frame" x="20" y="170" width="280" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Q1m-EC-Ms8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="确定" backgroundImage="account_sigh_button_tjxq">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="okButtonPresssed:" destination="CEx-uv-6mb" eventType="touchUpInside" id="GYK-IN-E1O"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GOh-ZP-2Iq" firstAttribute="leading" secondItem="WmM-XR-0oy" secondAttribute="leading" constant="20" id="8nz-9o-PdZ"/>
+                            <constraint firstItem="Zsx-Pa-waH" firstAttribute="leading" secondItem="WmM-XR-0oy" secondAttribute="leading" id="baE-mv-iCW"/>
+                            <constraint firstAttribute="trailing" secondItem="Zsx-Pa-waH" secondAttribute="trailing" id="c8w-MO-VlA"/>
+                            <constraint firstAttribute="trailing" secondItem="GOh-ZP-2Iq" secondAttribute="trailing" constant="20" id="eH0-Tz-v3N"/>
+                            <constraint firstItem="Zsx-Pa-waH" firstAttribute="top" secondItem="rQj-Ob-xk7" secondAttribute="bottom" id="fDa-DE-xqX"/>
+                            <constraint firstItem="GOh-ZP-2Iq" firstAttribute="top" secondItem="Zsx-Pa-waH" secondAttribute="bottom" constant="8" id="hUE-P1-Mtv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="选择住房" id="vz5-Km-Kis">
+                        <barButtonItem key="leftBarButtonItem" id="1D7-0i-6lJ">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="KnO-Gb-Ub2">
+                                <rect key="frame" x="16" y="5" width="33" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" backgroundImage="navigationBar_back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="CEx-uv-6mb" eventType="touchUpInside" id="DI9-OP-mbm"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="housePicker" destination="Zsx-Pa-waH" id="Z8G-yX-p3Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GSZ-03-oJN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1585" y="132"/>
+        </scene>
+        <!--Appley Open Property View Controller - 申请开通小区-->
+        <scene sceneID="gNC-zH-byS">
+            <objects>
+                <viewController id="vRv-54-B51" customClass="HXTAppleyOpenPropertyViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TjV-md-H4e"/>
+                        <viewControllerLayoutGuide type="bottom" id="cID-pf-QBG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dCh-oA-aKh" customClass="UIControl">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" 小区名称:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfJ-Cw-mhy">
+                                <rect key="frame" x="43" y="107" width="64" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入申请开通的小区名称" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gh0-cx-wGH">
+                                <rect key="frame" x="115" y="103" width="161" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vRv-54-B51" id="aQj-pt-FQg"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A5p-Cc-hC0">
+                                <rect key="frame" x="43" y="160" width="234" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="申请" backgroundImage="global_button_login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="applyButtonPressed:" destination="vRv-54-B51" eventType="touchUpInside" id="fc5-sd-hZd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <connections>
+                            <action selector="backgoudTouchUpInside:" destination="vRv-54-B51" eventType="touchUpInside" id="TpN-Xm-4Jc"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="申请开通小区" id="0pI-c6-tdT">
+                        <barButtonItem key="leftBarButtonItem" id="7i7-6J-R9a">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PKm-qJ-sfy">
+                                <rect key="frame" x="16" y="5" width="33" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" backgroundImage="navigationBar_back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="vRv-54-B51" eventType="touchUpInside" id="8f1-mC-Tob"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="housingEstateNameTestField" destination="gh0-cx-wGH" id="waq-6i-aew"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vSr-As-DAv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1585" y="810"/>
+        </scene>
+        <!--Select City View Controller - 选择地区-->
+        <scene sceneID="RIR-wk-lDd">
+            <objects>
+                <tableViewController storyboardIdentifier="ChooseCityStoryboardID" title="选择地区" id="nDI-RQ-1VH" customClass="HXTSelectCityViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Mte-Xo-cZ4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CurrentCityCellIdentifier" textLabel="koZ-ZX-28T" style="IBUITableViewCellStyleDefault" id="hiY-xw-U6G">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hiY-xw-U6G" id="4pL-Ka-mFd">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="成都市" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="koZ-ZX-28T">
+                                            <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TopCityCellIdentifier" textLabel="Ech-CK-wAG" style="IBUITableViewCellStyleDefault" id="UvC-BL-921">
+                                <rect key="frame" x="0.0" y="130" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UvC-BL-921" id="iHj-e5-ndg">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="北京市" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ech-CK-wAG">
+                                            <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProvinceCellIdentifier" textLabel="HBn-8e-Phg" style="IBUITableViewCellStyleDefault" id="E7v-FV-nxz">
+                                <rect key="frame" x="0.0" y="174" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E7v-FV-nxz" id="sDf-KZ-gbO">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="四川省" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HBn-8e-Phg">
+                                            <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="RWv-pV-Xau" kind="push" identifier="SelectCitySecondLevelSegueIdentifier" id="q9s-B4-MJo"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="nDI-RQ-1VH" id="YIq-S0-rer"/>
+                            <outlet property="delegate" destination="nDI-RQ-1VH" id="Kac-RJ-5h2"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="选择地区" id="jzZ-QU-t3v">
+                        <barButtonItem key="leftBarButtonItem" id="rM4-29-Jvh">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZXG-wI-Fes">
+                                <rect key="frame" x="16" y="5" width="33" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="navigationBar_back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="nDI-RQ-1VH" eventType="touchUpInside" id="HbR-pq-dOp"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TT7-KE-j05" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2037" y="-610"/>
+        </scene>
+        <!--Select City Second Level View Controller - 四川省-->
+        <scene sceneID="4z7-Xc-1fy">
+            <objects>
+                <tableViewController storyboardIdentifier="SelectCitySecondLevelViewControllerStoryboardID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RWv-pV-Xau" customClass="HXTSelectCitySecondLevelViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="swr-7M-BLf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CityCellIdentifier" textLabel="Ehl-N1-zrV" style="IBUITableViewCellStyleDefault" id="LYs-Qh-oNH">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LYs-Qh-oNH" id="qSQ-wp-DDI">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="成都市" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ehl-N1-zrV">
+                                            <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="RWv-pV-Xau" id="PRC-Qk-Eli"/>
+                            <outlet property="delegate" destination="RWv-pV-Xau" id="Qi5-E5-isP"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="四川省" id="zGV-DT-Nrt">
+                        <barButtonItem key="leftBarButtonItem" id="pxS-pc-Ld8">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="SQe-jj-jTi">
+                                <rect key="frame" x="16" y="5" width="33" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="navigationBar_back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="RWv-pV-Xau" eventType="touchUpInside" id="50s-5b-plN"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uQT-ri-jMk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2486" y="-610"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="unw-sE-oeN">
+            <objects>
+                <navigationController storyboardIdentifier="AddHouseEstateNavStoryboardID" automaticallyAdjustsScrollViewInsets="NO" id="Ngw-rg-gIa" customClass="HXTNavigationController" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="8qt-IS-zzA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="KbO-D9-o9T" kind="relationship" relationship="rootViewController" id="ADY-lO-8YQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fkh-kD-yut" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="608" y="132"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ydY-vK-P6y">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bgN-nH-UGk" customClass="HXTNavigationController" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xP4-v8-Ffu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nDI-RQ-1VH" kind="relationship" relationship="rootViewController" id="upA-Kz-FjS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vzO-9z-OJA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1584" y="-610"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="account_sigh_button_tjxq" width="234" height="26"/>
+        <image name="global_button_login" width="236" height="40"/>
+        <image name="house" width="26" height="26"/>
+        <image name="navigationBar_back" width="40" height="40"/>
+        <image name="property_houseLine" width="320" height="2"/>
+        <image name="property_houseTipsicon" width="12" height="12"/>
+        <image name="property_searchbg" width="320" height="44"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
