@@ -34,7 +34,7 @@
 }
 -(void) refresh
 {
-    int size = self.rateViews.count;
+    int size = (int)self.rateViews.count;
     for (int i = 0; i < size; i ++) {
         DJQStartView *view = [self.rateViews objectAtIndex:i];
         if (self.rate >= i + 1) {
@@ -74,7 +74,7 @@
     float imageWidth = MAX(self.minImageSize.size.width,desireImageViewWidth);
     float imageHeight = MAX(self.frame.size.height,self.minImageSize.size.height);
     
-    int size = self.rateViews.count;
+    int size = (int)self.rateViews.count;
     UIImageView *view = NULL;
     
     for (int i = 0; i<size; i ++) {
@@ -89,7 +89,7 @@
 -(void)setMaxRate:(int)maxRate
 {
     _maxRate = maxRate;
-    int size = self.rateViews.count;
+    int size = (int)self.rateViews.count;
     DJQStartView *view = NULL;
     if (size > maxRate) {
         

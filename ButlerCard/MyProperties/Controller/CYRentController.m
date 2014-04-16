@@ -46,7 +46,7 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    NSLog(@"buttonIndex == %d",buttonIndex);
+    NSLog(@"buttonIndex == %ld",(long)buttonIndex);
     //点击确认按钮 发送服务请求
     if (buttonIndex == 1)
     {
