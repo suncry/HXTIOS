@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C3A4E312-BD9E-4919-87BB-926A3EDCB760</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ButlerCard</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>BEB1C8D7-8E1E-4FA7-A6FD-7E9421475D54</key>
+		<string>http://192.168.18.8:7990/scm/os/hexinpassios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ButlerCard.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>BEB1C8D7-8E1E-4FA7-A6FD-7E9421475D54</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>http://192.168.18.8:7990/scm/os/hexinpassios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>BEB1C8D7-8E1E-4FA7-A6FD-7E9421475D54</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BEB1C8D7-8E1E-4FA7-A6FD-7E9421475D54</string>
+			<key>IDESourceControlWCCName</key>
+			<string>hexinpassios</string>
+		</dict>
+	</array>
+</dict>
+</plist>
