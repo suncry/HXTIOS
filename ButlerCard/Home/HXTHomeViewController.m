@@ -40,6 +40,7 @@
 	// Do any additional setup after loading the view.
     
     NSLog(@"Test11");
+    NSLog(@"Test22");
 }
 
 - (void)viewDidAppear:(BOOL)animated {
