@@ -582,14 +582,14 @@
 		B2214D2218FE1FA200762AE9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				B2214D2318FE1FA200762AE9 /* HXTHomeChooseHouseEstateTableViewController.h */,
-				B2214D2418FE1FA200762AE9 /* HXTHomeChooseHouseEstateTableViewController.m */,
 				B2214D2518FE1FA200762AE9 /* HXTHomeViewController.h */,
 				B2214D2618FE1FA200762AE9 /* HXTHomeViewController.m */,
 				B2214D2718FE1FA200762AE9 /* HXTNavigationController.h */,
 				B2214D2818FE1FA200762AE9 /* HXTNavigationController.m */,
 				B2214D2918FE1FA200762AE9 /* HXTTabBarViewController.h */,
 				B2214D2A18FE1FA200762AE9 /* HXTTabBarViewController.m */,
+				B2214D2318FE1FA200762AE9 /* HXTHomeChooseHouseEstateTableViewController.h */,
+				B2214D2418FE1FA200762AE9 /* HXTHomeChooseHouseEstateTableViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1244,7 +1244,7 @@
 		B2214C3B18FE1E4000762AE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1276,13 +1276,14 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/Headers/AFNetworking $(SRCROOT)/Pods/Headers/FMDB $(SRCROOT)/Pods/Headers/SBJson $(SRCROOT)/Pods/Headers/MBProgressHUD $(SRCROOT)/Pods/Headers/SVPullToRefresh";
 			};
 			name = Debug;
 		};
 		B2214C3C18FE1E4000762AE9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1307,6 +1308,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/Headers/AFNetworking $(SRCROOT)/Pods/Headers/FMDB $(SRCROOT)/Pods/Headers/SBJson $(SRCROOT)/Pods/Headers/MBProgressHUD $(SRCROOT)/Pods/Headers/SVPullToRefresh";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
