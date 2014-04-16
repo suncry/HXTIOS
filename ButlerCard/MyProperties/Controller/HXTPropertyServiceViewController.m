@@ -8,6 +8,7 @@
 
 #import "HXTPropertyServiceViewController.h"
 #import "CYHouseChoiceController.h"
+#import "AFNetworking.h"
 @interface HXTPropertyServiceViewController ()
 
 @end
@@ -25,6 +26,12 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [self.houseNameBtn setTitle:[NSString stringWithFormat:@"%@ ▾",[[NSUserDefaults standardUserDefaults]valueForKeyPath:kHouseName]] forState:UIControlStateNormal];
+    //每次进入页面都根据所选择住址刷新一遍页面内容
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.navigationController.view addSubview:HUD];
+    HUD.delegate = self;
+    [HUD showWhileExecuting:@selector(request) onTarget:self withObject:nil animated:YES];
+
 }
 - (void)viewDidLoad
 {
@@ -32,88 +39,40 @@
     //假定一个默认的住址
     [[NSUserDefaults standardUserDefaults]setValue:@"默认的第一个住址" forKeyPath:kHouseName];
     
-    self.renteRateView.rate = 3.5;
-    self.repareRateView.rate = 4.5;
+    self.rentRateView.rate = 3.5;
+    self.repairRateView.rate = 4.5;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
 }
-#pragma mark - Table view data source
-
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-//{
-////#warning Potentially incomplete method implementation.
-//    // Return the number of sections.
-//    return 0;
-//}
-
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-//{
-////#warning Incomplete method implementation.
-//    // Return the number of rows in the section.
-//    return 0;
-//}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+/**
+ *  提交服务申请
+ */
+- (void)request
 {
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *parameters = @{@"tenement_id": @"1"};
+    [manager POST:@"http://bbs.enveesoft.com:1602/htx/hexinpassserver/appserver/public/serv/top" parameters:parameters
+          success:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+         _dataArr = responseObject[@"results"];
+//         NSLog(@"_dataArr == %@",_dataArr);
+         NSDictionary *rentDic = _dataArr[0];
+         NSDictionary *repairDic = _dataArr[1];
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+         _rentRateView.rate = [rentDic[@"grade"]floatValue];
+         _repairRateView.rate = [repairDic[@"grade"]floatValue];
+         [_rentCommentBtn setTitle:[NSString stringWithFormat:@"评论(%@)",rentDic[@"commentNum"]] forState:UIControlStateNormal];
+         [_repairCommentBtn setTitle:[NSString stringWithFormat:@"评论(%@)",repairDic[@"commentNum"]] forState:UIControlStateNormal];
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
+     }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+         NSLog(@"Error: %@", error);
+     }];
 }
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
