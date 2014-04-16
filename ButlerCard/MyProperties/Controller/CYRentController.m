@@ -50,8 +50,12 @@
     //点击确认按钮 发送服务请求
     if (buttonIndex == 1)
     {
+        [self request];
     }
 }
+/**
+ *  提交服务申请
+ */
 - (void)request
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
