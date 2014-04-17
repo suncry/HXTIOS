@@ -39,11 +39,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    NSLog(@"Test11");
-    NSLog(@"Test22");
-    NSLog(@"Test33");
-    NSLog(@"Test44");
-    NSLog(@"Test55");
 }
 
 - (void)viewDidAppear:(BOOL)animated {

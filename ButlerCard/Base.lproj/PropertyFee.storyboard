@@ -251,10 +251,15 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="6T8-6M-fdW"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="提交" backgroundImage="global_button_y">
                                     <color key="titleColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="selected" backgroundImage="global_button_y_s"/>
+                                <connections>
+                                    <action selector="applyButtonPressed:" destination="V7w-cy-Qz8" eventType="touchUpInside" id="vid-C1-RrT"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系电话:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpG-FB-HiE">
                                 <rect key="frame" x="96" y="412" width="56" height="30"/>
@@ -301,6 +306,9 @@
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="feeTypeButtonPressed:" destination="V7w-cy-Qz8" eventType="touchUpInside" id="xlh-Z6-7Qz"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -334,6 +342,9 @@
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="areaButtonPressed:" destination="V7w-cy-Qz8" eventType="touchUpInside" id="rkA-lo-Twf"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -367,6 +378,9 @@
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="companyButtonPressed:" destination="V7w-cy-Qz8" eventType="touchUpInside" id="Zu2-HN-STs"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -425,10 +439,13 @@
                                     <constraint firstAttribute="height" constant="30" id="mv9-ab-TdY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="85331111">
+                                <state key="normal" title="85191958">
                                     <color key="titleColor" red="0.15686274510000001" green="0.68627450980000004" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="telButtonPressed:" destination="V7w-cy-Qz8" eventType="touchUpInside" id="IZx-tm-Aze"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQh-fm-SCR">
                                 <rect key="frame" x="122" y="446" width="138" height="30"/>
@@ -442,6 +459,9 @@
                                     <color key="titleColor" red="0.15686274510000001" green="0.68627450980000004" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="addressButtonPressed:" destination="V7w-cy-Qz8" eventType="touchUpInside" id="er3-Dl-DTN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
@@ -475,6 +495,14 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="添加绑定" id="37z-b0-A15"/>
+                    <connections>
+                        <outlet property="areaLabel" destination="bYl-yY-E1X" id="ntF-Hq-073"/>
+                        <outlet property="cardNumberTextField" destination="hrT-HZ-XA8" id="DgA-Hh-3xc"/>
+                        <outlet property="companyLabel" destination="Au5-c8-dAd" id="XWk-5u-avH"/>
+                        <outlet property="feeTypeLabel" destination="cMO-Xu-OYi" id="A7f-Mh-X5w"/>
+                        <outlet property="remarkTestField" destination="9nm-dH-hVa" id="Ipw-fZ-4px"/>
+                        <outlet property="telButton" destination="Hpo-tp-GqK" id="3ou-zz-sqY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HrZ-dQ-80p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -557,6 +585,7 @@
     <resources>
         <image name="account_sigh_bg03" width="280" height="88"/>
         <image name="global_button_y" width="116" height="40"/>
+        <image name="global_button_y_s" width="116" height="40"/>
         <image name="global_down_arrow" width="15" height="15"/>
         <image name="global_nyline" width="320" height="4"/>
         <image name="navigationBar_add" width="22" height="22"/>
