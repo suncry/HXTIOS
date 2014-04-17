@@ -261,26 +261,6 @@
                                     <action selector="applyButtonPressed:" destination="V7w-cy-Qz8" eventType="touchUpInside" id="vid-C1-RrT"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系电话:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpG-FB-HiE">
-                                <rect key="frame" x="96" y="412" width="56" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="56" id="j1E-Km-pnE"/>
-                                    <constraint firstAttribute="height" constant="30" id="jx9-zs-dOr"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地址:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4w-h8-tHB">
-                                <rect key="frame" x="45" y="445" width="69" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Ckg-d8-odU"/>
-                                    <constraint firstAttribute="width" constant="69" id="zsH-OI-iJb"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ch6-cO-Lph" userLabel="View － Fee type">
                                 <rect key="frame" x="24" y="56" width="82" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -431,32 +411,32 @@
                                     <constraint firstAttribute="height" constant="88" id="PBW-Pg-Fdg"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hpo-tp-GqK">
-                                <rect key="frame" x="160" y="413" width="100" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hpo-tp-GqK">
+                                <rect key="frame" x="202" y="454" width="98" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="fCr-LZ-SrZ"/>
-                                    <constraint firstAttribute="height" constant="30" id="mv9-ab-TdY"/>
+                                    <constraint firstAttribute="width" constant="98" id="ZSQ-cR-dcC"/>
+                                    <constraint firstAttribute="height" constant="30" id="j5w-YY-2XN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="85191958">
-                                    <color key="titleColor" red="0.15686274510000001" green="0.68627450980000004" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="85191958" image="propertyFee_tel">
+                                    <color key="titleColor" red="0.3294117647" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="telButtonPressed:" destination="V7w-cy-Qz8" eventType="touchUpInside" id="IZx-tm-Aze"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQh-fm-SCR">
-                                <rect key="frame" x="122" y="446" width="138" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQh-fm-SCR">
+                                <rect key="frame" x="20" y="454" width="126" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="FJq-dU-E3e"/>
-                                    <constraint firstAttribute="width" constant="138" id="uV8-rK-F5t"/>
+                                    <constraint firstAttribute="width" constant="126" id="f03-5h-APy"/>
+                                    <constraint firstAttribute="height" constant="30" id="zgA-st-mlA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="人民南路二段100号">
-                                    <color key="titleColor" red="0.15686274510000001" green="0.68627450980000004" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="人民南路二段100号" image="propertyFee_address">
+                                    <color key="titleColor" red="0.3294117647" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -468,26 +448,22 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="UmU-uC-uGU" secondAttribute="trailing" constant="102" id="1Jv-kN-qQ0"/>
                             <constraint firstItem="aCX-dE-duL" firstAttribute="leading" secondItem="xl4-U9-w4C" secondAttribute="trailing" constant="54" id="3ox-J5-grb"/>
-                            <constraint firstItem="G4w-h8-tHB" firstAttribute="top" secondItem="fpG-FB-HiE" secondAttribute="bottom" constant="3" id="8PM-d6-rMr"/>
                             <constraint firstItem="GMs-NO-HfP" firstAttribute="leading" secondItem="bAS-FO-Uq6" secondAttribute="leading" constant="20" id="Bqz-nD-yba"/>
+                            <constraint firstItem="3ac-Ku-ecW" firstAttribute="top" secondItem="QQh-fm-SCR" secondAttribute="bottom" constant="20" id="EL3-On-agh"/>
                             <constraint firstItem="Ch6-cO-Lph" firstAttribute="leading" secondItem="bAS-FO-Uq6" secondAttribute="leading" constant="24" id="Fiu-vF-ZyH"/>
-                            <constraint firstItem="QQh-fm-SCR" firstAttribute="leading" secondItem="G4w-h8-tHB" secondAttribute="trailing" constant="8" id="H4V-UZ-X7H"/>
                             <constraint firstItem="UmU-uC-uGU" firstAttribute="top" secondItem="GMs-NO-HfP" secondAttribute="bottom" constant="15" id="Jvk-7I-eSR"/>
-                            <constraint firstItem="3ac-Ku-ecW" firstAttribute="top" secondItem="QQh-fm-SCR" secondAttribute="bottom" constant="28" id="QTs-Jr-iNE"/>
+                            <constraint firstItem="3ac-Ku-ecW" firstAttribute="top" secondItem="Hpo-tp-GqK" secondAttribute="bottom" constant="20" id="KhW-dF-xpp"/>
+                            <constraint firstItem="QQh-fm-SCR" firstAttribute="leading" secondItem="bAS-FO-Uq6" secondAttribute="leading" constant="20" id="Mul-7u-33m"/>
                             <constraint firstItem="xl4-U9-w4C" firstAttribute="leading" secondItem="bAS-FO-Uq6" secondAttribute="leading" constant="24" id="XQ4-Hd-QzA"/>
                             <constraint firstItem="Ch6-cO-Lph" firstAttribute="top" secondItem="xeH-kd-oOS" secondAttribute="bottom" constant="12" id="anK-bd-fHR"/>
                             <constraint firstItem="xeH-kd-oOS" firstAttribute="top" secondItem="wdO-m4-Qio" secondAttribute="bottom" id="bN4-PZ-xIb"/>
                             <constraint firstItem="xl4-U9-w4C" firstAttribute="top" secondItem="Ch6-cO-Lph" secondAttribute="bottom" constant="2" id="e8z-Kq-arr"/>
                             <constraint firstItem="xeH-kd-oOS" firstAttribute="leading" secondItem="bAS-FO-Uq6" secondAttribute="leading" id="goM-av-BhF"/>
                             <constraint firstItem="GMs-NO-HfP" firstAttribute="top" secondItem="aCX-dE-duL" secondAttribute="bottom" constant="8" id="hz6-pZ-XDJ"/>
-                            <constraint firstItem="fpG-FB-HiE" firstAttribute="leading" secondItem="bAS-FO-Uq6" secondAttribute="leading" constant="96" id="la2-Zj-yd7"/>
                             <constraint firstAttribute="trailing" secondItem="xeH-kd-oOS" secondAttribute="trailing" id="ld5-4a-Dvc"/>
-                            <constraint firstItem="Hpo-tp-GqK" firstAttribute="leading" secondItem="fpG-FB-HiE" secondAttribute="trailing" constant="8" id="n07-HA-aRT"/>
-                            <constraint firstItem="G4w-h8-tHB" firstAttribute="leading" secondItem="bAS-FO-Uq6" secondAttribute="leading" constant="45" id="pV9-Uz-Utw"/>
-                            <constraint firstItem="3ac-Ku-ecW" firstAttribute="top" secondItem="G4w-h8-tHB" secondAttribute="bottom" constant="29" id="prs-Lw-YZ0"/>
                             <constraint firstItem="UmU-uC-uGU" firstAttribute="leading" secondItem="bAS-FO-Uq6" secondAttribute="leading" constant="102" id="rS1-6h-ZHc"/>
                             <constraint firstItem="aCX-dE-duL" firstAttribute="centerY" secondItem="xl4-U9-w4C" secondAttribute="centerY" id="rtz-Ei-dbL"/>
-                            <constraint firstItem="QQh-fm-SCR" firstAttribute="top" secondItem="Hpo-tp-GqK" secondAttribute="bottom" constant="3" id="vD5-vb-9tF"/>
+                            <constraint firstAttribute="trailing" secondItem="Hpo-tp-GqK" secondAttribute="trailing" constant="20" id="uFP-OI-uzZ"/>
                             <constraint firstAttribute="trailing" secondItem="GMs-NO-HfP" secondAttribute="trailing" constant="20" id="xXv-qC-O5O"/>
                         </constraints>
                         <connections>
@@ -589,8 +565,10 @@
         <image name="global_down_arrow" width="15" height="15"/>
         <image name="global_nyline" width="320" height="4"/>
         <image name="navigationBar_add" width="22" height="22"/>
+        <image name="propertyFee_address" width="17" height="17"/>
         <image name="propertyFee_bindCard_searchbg01" width="82" height="22"/>
         <image name="propertyFee_bindCard_searchbg02" width="140" height="22"/>
+        <image name="propertyFee_tel" width="17" height="17"/>
         <image name="property_house7" width="52" height="52"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
