@@ -80,8 +80,7 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     NSLog(@"buttonIndex = %lu", (long)buttonIndex);
     if (alertView == _telAlerView && buttonIndex == 1) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", _telButton.titleLabel.text]]];
-//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel://8008808888"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[[NSString stringWithFormat:@"tel://%@", _telButton.titleLabel.text] stringByReplacingOccurrencesOfString:@"-" withString:@""]]];
     }
 }
 
