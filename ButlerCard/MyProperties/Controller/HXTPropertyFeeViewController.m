@@ -184,11 +184,16 @@
         //模态显示动画
         //        ((UIViewController *)segue.destinationViewController).modalPresentationStyle = UIModalPresentationPageSheet;
         //        ((UIViewController *)segue.destinationViewController).modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    } else if ([segue.identifier isEqualToString:@"PropertyItemDetailStoryboardSegue"]) {
+    } else if ([segue.identifier isEqualToString:@"PropertyFeeDetailStoryboardSegue"]) { //费用明细
         ((UIViewController *)(segue.destinationViewController)).hidesBottomBarWhenPushed = YES;
-    } else if ([segue.identifier isEqualToString:@"BindCardStoryboardSegue"]) {
+    } else if ([segue.identifier isEqualToString:@"BindCardStoryboardSegue"]) {    //绑定卡
+        ((UIViewController *)(segue.destinationViewController)).hidesBottomBarWhenPushed = YES;
+    } else if ([segue.identifier isEqualToString:@"RechargeStoryboardSegue"]) {    //充值
+        ((UIViewController *)(segue.destinationViewController)).hidesBottomBarWhenPushed = YES;
+    } else if ([segue.identifier isEqualToString:@"WithholdingStoryboardSegue"]) { //代扣
         ((UIViewController *)(segue.destinationViewController)).hidesBottomBarWhenPushed = YES;
     }
+    
 }
 
 @end

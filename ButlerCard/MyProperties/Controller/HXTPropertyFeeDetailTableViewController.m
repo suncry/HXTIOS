@@ -1,21 +1,18 @@
 //
-//  HXTPropertyItemDetailTableViewController.m
+//  HXTPropertyFeeDetailTableViewController.m
 //  ButlerCard
 //
 //  Created by johnny tang on 3/13/14.
 //  Copyright (c) 2014 johnny tang. All rights reserved.
 //
 
-#import "HXTPropertyItemDetailTableViewController.h"
-#import "HXTPropertyItemDetailTableViewHeaderFooterView.h"
+#import "HXTPropertyFeeDetailTableViewController.h"
 
-#define kHeaderFooterViewReuseIdentifier @"HeaderFooterViewReuseIdentifier"
-
-@interface HXTPropertyItemDetailTableViewController ()
+@interface HXTPropertyFeeDetailTableViewController ()
 
 @end
 
-@implementation HXTPropertyItemDetailTableViewController
+@implementation HXTPropertyFeeDetailTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -36,10 +33,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"HXTPropertyItemDetailTableViewHeaderFooterView" bundle:[NSBundle mainBundle]]forHeaderFooterViewReuseIdentifier:kHeaderFooterViewReuseIdentifier];
     self.view.backgroundColor = [UIColor colorWithRed:241.0f / 255 green:241.0f / 255 blue:241.0f / 255 alpha:1];
-    
-    self.navigationController.tabBarController.hidesBottomBarWhenPushed = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -126,20 +120,7 @@
 
 #pragma mark - Table view delegate
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return 30;
-//}
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-//    return 50;
-//}
-//
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    HXTPropertyItemDetailTableViewHeaderFooterView *tableViewHeaderFooterView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:kHeaderFooterViewReuseIdentifier];
-//    
-//    tableViewHeaderFooterView.titleLabel.text = [NSString stringWithFormat:@"%li年", 2014L - section];
-//    return tableViewHeaderFooterView;
-//}
 
 /*
  #pragma mark - Navigation

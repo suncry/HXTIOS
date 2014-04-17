@@ -104,7 +104,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="zcJ-fU-yOc" kind="push" identifier="PropertyItemDetailStoryboardSegue" id="VYD-A4-yhm"/>
+                                    <segue destination="zcJ-fU-yOc" kind="push" identifier="PropertyFeeDetailStoryboardSegue" id="VYD-A4-yhm"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FunctionCellIdentifier" rowHeight="148" id="nTu-N0-vfQ">
@@ -127,14 +127,14 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="我的管家卡账户余额：800元" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fti-em-k9c">
-                                            <rect key="frame" x="44" y="47" width="230" height="21"/>
+                                            <rect key="frame" x="37" y="47" width="230" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1g-Na-1Oy">
-                                            <rect key="frame" x="260" y="43" width="40" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1g-Na-1Oy">
+                                            <rect key="frame" x="267" y="43" width="40" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <state key="normal" title="充值">
@@ -142,7 +142,7 @@
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <segue destination="N71-jd-9dX" kind="push" id="9su-MH-3Le"/>
+                                                <segue destination="N71-jd-9dX" kind="push" identifier="RechargeStoryboardSegue" id="9su-MH-3Le"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v3R-Al-nmk">
@@ -155,7 +155,7 @@
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <segue destination="TJm-XO-52v" kind="push" id="iUG-BS-Sgk"/>
+                                                <segue destination="TJm-XO-52v" kind="push" identifier="WithholdingStoryboardSegue" id="iUG-BS-Sgk"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzR-yB-Oin">
@@ -480,10 +480,10 @@
             </objects>
             <point key="canvasLocation" x="2043" y="-1702"/>
         </scene>
-        <!--Property Item Detail Table View Controller - 物管费-->
+        <!--Property Fee Detail Table View Controller - 物管费-->
         <scene sceneID="Cvo-DD-Ava">
             <objects>
-                <tableViewController id="zcJ-fU-yOc" customClass="HXTPropertyItemDetailTableViewController" sceneMemberID="viewController">
+                <tableViewController id="zcJ-fU-yOc" customClass="HXTPropertyFeeDetailTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="31" sectionHeaderHeight="22" sectionFooterHeight="22" id="kkH-ew-cgw">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
