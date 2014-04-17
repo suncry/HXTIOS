@@ -39,6 +39,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    NSLog(@"测试");
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
