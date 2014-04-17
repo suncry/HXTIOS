@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2392C7C218FE7157007EDB5A /* CYRepairController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2392C7C118FE7157007EDB5A /* CYRepairController.m */; };
+		23D711F518FF7E9D00B9011A /* CYMyCardsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D711F418FF7E9D00B9011A /* CYMyCardsController.m */; };
 		B2214C0C18FE1E4000762AE9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2214C0B18FE1E4000762AE9 /* Foundation.framework */; };
 		B2214C0E18FE1E4000762AE9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2214C0D18FE1E4000762AE9 /* CoreGraphics.framework */; };
 		B2214C1018FE1E4000762AE9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2214C0F18FE1E4000762AE9 /* UIKit.framework */; };
@@ -209,6 +210,8 @@
 /* Begin PBXFileReference section */
 		2392C7C018FE7157007EDB5A /* CYRepairController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYRepairController.h; sourceTree = "<group>"; };
 		2392C7C118FE7157007EDB5A /* CYRepairController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYRepairController.m; sourceTree = "<group>"; };
+		23D711F318FF7E9D00B9011A /* CYMyCardsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYMyCardsController.h; sourceTree = "<group>"; };
+		23D711F418FF7E9D00B9011A /* CYMyCardsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYMyCardsController.m; sourceTree = "<group>"; };
 		B08EE05FF8CA47378694428B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		B2214C0818FE1E4000762AE9 /* ButlerCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ButlerCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2214C0B18FE1E4000762AE9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -686,6 +689,8 @@
 				B2214DF118FE1FB800762AE9 /* HXTPropertyItemDetailTableViewController.m */,
 				B2214DF218FE1FB800762AE9 /* HXTPropertyServiceViewController.h */,
 				B2214DF318FE1FB800762AE9 /* HXTPropertyServiceViewController.m */,
+				23D711F318FF7E9D00B9011A /* CYMyCardsController.h */,
+				23D711F418FF7E9D00B9011A /* CYMyCardsController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1025,6 +1030,7 @@
 				B2214E2318FE1FB800762AE9 /* CYMyBillMonthCell.m in Sources */,
 				B26FE5CF18FE51FC0093BC2F /* NSArrayAdditionals.m in Sources */,
 				B26FE5D118FE51FC0093BC2F /* NSDataAdditions.m in Sources */,
+				23D711F518FF7E9D00B9011A /* CYMyCardsController.m in Sources */,
 				B2214E2D18FE1FB800762AE9 /* CYOrderCell.m in Sources */,
 				B22F869618FE72CE0031A646 /* HXTPropertyItemDetailTableViewHeaderFooterView.m in Sources */,
 				B2214DB318FE1FA200762AE9 /* HXTNavigationController.m in Sources */,
