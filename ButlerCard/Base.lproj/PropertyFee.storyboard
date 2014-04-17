@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--View Controller - 申请物业代扣-->
+        <!--Open Automatic Bill Payment View Controller - 开通自动代缴费-->
         <scene sceneID="4TV-Aa-hdY">
             <objects>
-                <viewController id="TJm-XO-52v" sceneMemberID="viewController">
+                <viewController id="TJm-XO-52v" customClass="HXTOpenAutomaticBillPaymentViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="r2p-3B-z0V"/>
                         <viewControllerLayoutGuide type="bottom" id="Da5-Ma-h2m"/>
@@ -16,13 +16,285 @@
                     <view key="view" contentMode="scaleToFill" id="SG3-jU-TVn">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="brS-rh-aMQ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="property_house7" translatesAutoresizingMaskIntoConstraints="NO" id="ghC-c4-40G">
+                                        <rect key="frame" x="20" y="5" width="33" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="中铁小区8栋2单元303" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igT-Bg-L6g">
+                                        <rect key="frame" x="61" y="0.0" width="239" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.3294117647" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="global_nyline" translatesAutoresizingMaskIntoConstraints="NO" id="fvo-Ey-FIP">
+                                        <rect key="frame" x="0.0" y="40" width="320" height="4"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Rpc-6E-PUK"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A6Y-R7-HOY">
+                                <rect key="frame" x="0.0" y="52" width="320" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" tag="101" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1EL-se-E5X">
+                                        <rect key="frame" x="20" y="3" width="110" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="物管费" image="global_point">
+                                            <color key="titleColor" red="0.3294117647" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" image="global_point_s02"/>
+                                        <connections>
+                                            <action selector="chechBoxChecked:" destination="TJm-XO-52v" eventType="touchUpInside" id="DCn-Ly-cMY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="waq-sS-avF"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U0q-OB-2DG">
+                                <rect key="frame" x="0.0" y="92" width="320" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" tag="102" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Roz-pA-14Y">
+                                        <rect key="frame" x="20" y="3" width="110" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="停车费" image="global_point">
+                                            <color key="titleColor" red="0.3294117647" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" image="global_point_s02"/>
+                                        <connections>
+                                            <action selector="chechBoxChecked:" destination="TJm-XO-52v" eventType="touchUpInside" id="Dke-L8-IKd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="mPA-7z-DRX"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b98-HJ-0dB">
+                                <rect key="frame" x="0.0" y="132" width="320" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" tag="103" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQ9-5q-KPL">
+                                        <rect key="frame" x="20" y="3" width="110" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="水费" image="global_point">
+                                            <color key="titleColor" red="0.3294117647" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" image="global_point_s02"/>
+                                        <connections>
+                                            <action selector="chechBoxChecked:" destination="TJm-XO-52v" eventType="touchUpInside" id="8LZ-3k-JmN"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="JA4-KG-usA"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lnl-gB-Exd">
+                                <rect key="frame" x="0.0" y="172" width="320" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" tag="104" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4V-dY-eub">
+                                        <rect key="frame" x="20" y="3" width="110" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="电费" image="global_point">
+                                            <color key="titleColor" red="0.3294117647" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" image="global_point_s02"/>
+                                        <connections>
+                                            <action selector="chechBoxChecked:" destination="TJm-XO-52v" eventType="touchUpInside" id="fQx-5f-Dak"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="wWO-Ca-ycB"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MEW-S2-qOl">
+                                <rect key="frame" x="0.0" y="212" width="320" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" tag="105" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zNd-n8-ozV">
+                                        <rect key="frame" x="20" y="3" width="110" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="气费" image="global_point">
+                                            <color key="titleColor" red="0.3294117647" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" image="global_point_s02"/>
+                                        <connections>
+                                            <action selector="chechBoxChecked:" destination="TJm-XO-52v" eventType="touchUpInside" id="vrN-TU-ubk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="4UN-qY-6Dx"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBT-0Q-3t9">
+                                <rect key="frame" x="102" y="270" width="116" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="xj3-JA-i83"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="立即结算" backgroundImage="global_button_y">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hAz-6t-e7r">
+                                <rect key="frame" x="0.0" y="318" width="320" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" tag="106" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcQ-oI-v1K">
+                                        <rect key="frame" x="58" y="4" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="global_point">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" image="global_point_s"/>
+                                        <connections>
+                                            <action selector="chechBoxChecked:" destination="TJm-XO-52v" eventType="touchUpInside" id="KUT-p9-vBA"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="已阅读并同意《                     》" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVX-fo-79F">
+                                        <rect key="frame" x="92" y="9" width="171" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59E-Mg-J4E">
+                                        <rect key="frame" x="176" y="5" width="74" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="代扣用户协议">
+                                            <color key="titleColor" red="0.15686274510000001" green="0.68627450980000004" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="a2f-aa-4OB" kind="modal" id="Zyc-iD-alM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="U0q-OB-2DG" firstAttribute="top" secondItem="A6Y-R7-HOY" secondAttribute="bottom" id="AML-14-YtD"/>
+                            <constraint firstAttribute="trailing" secondItem="RBT-0Q-3t9" secondAttribute="trailing" constant="102" id="D2h-sT-Rgu"/>
+                            <constraint firstAttribute="trailing" secondItem="lnl-gB-Exd" secondAttribute="trailing" id="DYK-zV-BRX"/>
+                            <constraint firstItem="RBT-0Q-3t9" firstAttribute="leading" secondItem="SG3-jU-TVn" secondAttribute="leading" constant="102" id="HPE-h2-Tee"/>
+                            <constraint firstAttribute="trailing" secondItem="U0q-OB-2DG" secondAttribute="trailing" id="LCy-tV-blE"/>
+                            <constraint firstItem="RBT-0Q-3t9" firstAttribute="top" secondItem="MEW-S2-qOl" secondAttribute="bottom" constant="18" id="Qdd-5m-0Xi"/>
+                            <constraint firstItem="MEW-S2-qOl" firstAttribute="top" secondItem="lnl-gB-Exd" secondAttribute="bottom" id="RWU-Xa-dn3"/>
+                            <constraint firstAttribute="trailing" secondItem="b98-HJ-0dB" secondAttribute="trailing" id="UDZ-tF-HRj"/>
+                            <constraint firstItem="b98-HJ-0dB" firstAttribute="top" secondItem="U0q-OB-2DG" secondAttribute="bottom" id="UNy-qV-gPZ"/>
+                            <constraint firstAttribute="trailing" secondItem="MEW-S2-qOl" secondAttribute="trailing" id="Wx4-bz-xw3"/>
+                            <constraint firstItem="brS-rh-aMQ" firstAttribute="leading" secondItem="SG3-jU-TVn" secondAttribute="leading" id="YmC-OQ-y2m"/>
+                            <constraint firstItem="lnl-gB-Exd" firstAttribute="top" secondItem="b98-HJ-0dB" secondAttribute="bottom" id="bkS-aB-G80"/>
+                            <constraint firstAttribute="trailing" secondItem="A6Y-R7-HOY" secondAttribute="trailing" id="d6P-4r-cBQ"/>
+                            <constraint firstItem="A6Y-R7-HOY" firstAttribute="top" secondItem="brS-rh-aMQ" secondAttribute="bottom" constant="8" id="gYJ-Jx-DUU"/>
+                            <constraint firstItem="A6Y-R7-HOY" firstAttribute="leading" secondItem="SG3-jU-TVn" secondAttribute="leading" id="heS-v7-asw"/>
+                            <constraint firstItem="b98-HJ-0dB" firstAttribute="leading" secondItem="SG3-jU-TVn" secondAttribute="leading" id="kpC-yD-xKt"/>
+                            <constraint firstAttribute="trailing" secondItem="brS-rh-aMQ" secondAttribute="trailing" id="pBe-ls-66C"/>
+                            <constraint firstItem="MEW-S2-qOl" firstAttribute="leading" secondItem="SG3-jU-TVn" secondAttribute="leading" id="qSj-xQ-sGY"/>
+                            <constraint firstItem="brS-rh-aMQ" firstAttribute="top" secondItem="r2p-3B-z0V" secondAttribute="bottom" id="ssi-T2-qUj"/>
+                            <constraint firstItem="lnl-gB-Exd" firstAttribute="leading" secondItem="SG3-jU-TVn" secondAttribute="leading" id="wES-6V-qds"/>
+                            <constraint firstItem="U0q-OB-2DG" firstAttribute="leading" secondItem="SG3-jU-TVn" secondAttribute="leading" id="xpX-6C-ECj"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="申请物业代扣" id="3lX-Gx-tzm"/>
+                    <navigationItem key="navigationItem" title="开通自动代缴费" id="3lX-Gx-tzm">
+                        <barButtonItem key="backBarButtonItem" title="返回" id="Tr2-lM-pon"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="userAgreementCheckBox" destination="tcQ-oI-v1K" id="teV-Id-Oc5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YPy-Cv-TDv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2043" y="-1042"/>
+        </scene>
+        <!--Withholding Use Agreement View Controller - 代扣用户协议-->
+        <scene sceneID="t3L-Gd-MQi">
+            <objects>
+                <viewController id="mGF-Qt-j44" customClass="HXTWithholdingUseAgreementViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ItR-Pg-5GP"/>
+                        <viewControllerLayoutGuide type="bottom" id="yBA-2k-9R6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jod-4O-Bcr">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2qh-sS-NDg">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2qh-sS-NDg" firstAttribute="top" secondItem="ItR-Pg-5GP" secondAttribute="bottom" id="7NS-bT-orO"/>
+                            <constraint firstItem="2qh-sS-NDg" firstAttribute="leading" secondItem="Jod-4O-Bcr" secondAttribute="leading" id="EFr-mY-BIo"/>
+                            <constraint firstItem="yBA-2k-9R6" firstAttribute="top" secondItem="2qh-sS-NDg" secondAttribute="bottom" id="HLE-0e-xoD"/>
+                            <constraint firstAttribute="trailing" secondItem="2qh-sS-NDg" secondAttribute="trailing" id="sGk-wo-IUv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="代扣用户协议" id="CyC-Kn-bAe">
+                        <barButtonItem key="rightBarButtonItem" id="ulI-Wy-F8O">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZNo-nn-7qe">
+                                <rect key="frame" x="264" y="5" width="40" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="关闭">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="mGF-Qt-j44" eventType="touchUpInside" id="2Oy-ao-Vmk"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8af-DF-BrU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2463" y="-376"/>
         </scene>
         <!--View Controller - 充值-->
         <scene sceneID="bpU-vB-M2C">
@@ -35,13 +307,13 @@
                     <view key="view" contentMode="scaleToFill" id="Ywn-aC-XFd">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="充值" id="IlF-ry-a1G"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cph-UN-Ih2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2411" y="-1710"/>
+            <point key="canvasLocation" x="2463" y="-2370"/>
         </scene>
         <!--View Controller - 缴费-->
         <scene sceneID="Rxg-L9-LB4">
@@ -60,7 +332,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ob-8c-Mtv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2411" y="-1042"/>
+            <point key="canvasLocation" x="2463" y="-1042"/>
         </scene>
         <!--Property Fee View Controller - 我的物业-->
         <scene sceneID="05V-e1-hS3">
@@ -441,6 +713,7 @@
                                 </state>
                                 <connections>
                                     <action selector="addressButtonPressed:" destination="V7w-cy-Qz8" eventType="touchUpInside" id="er3-Dl-DTN"/>
+                                    <segue destination="kxh-8u-Em3" kind="push" identifier="MapStoryboardSegue" id="pnz-d3-ctx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -483,6 +756,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HrZ-dQ-80p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2043" y="-1702"/>
+        </scene>
+        <!--View Controller - 查看地图位置-->
+        <scene sceneID="p7G-Ag-Aws">
+            <objects>
+                <viewController id="kxh-8u-Em3" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6PP-ao-pNL"/>
+                        <viewControllerLayoutGuide type="bottom" id="dGN-M1-461"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jqv-Js-xqM" customClass="MKMapView">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="查看地图位置" id="boK-yN-Vr6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rfR-Z9-c6d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2463" y="-1702"/>
         </scene>
         <!--Property Fee Detail Table View Controller - 物管费-->
         <scene sceneID="Cvo-DD-Ava">
@@ -557,6 +849,25 @@
             </objects>
             <point key="canvasLocation" x="964" y="-1694"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="drG-WZ-qrq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a2f-aa-4OB" customClass="HXTNavigationController" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="9Wl-Oq-9LL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mGF-Qt-j44" kind="relationship" relationship="rootViewController" id="TBt-HJ-pCG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NFN-Zw-0C2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2043" y="-376"/>
+        </scene>
     </scenes>
     <resources>
         <image name="account_sigh_bg03" width="280" height="88"/>
@@ -564,6 +875,9 @@
         <image name="global_button_y_s" width="116" height="40"/>
         <image name="global_down_arrow" width="15" height="15"/>
         <image name="global_nyline" width="320" height="4"/>
+        <image name="global_point" width="22" height="22"/>
+        <image name="global_point_s" width="22" height="22"/>
+        <image name="global_point_s02" width="22" height="22"/>
         <image name="navigationBar_add" width="22" height="22"/>
         <image name="propertyFee_address" width="17" height="17"/>
         <image name="propertyFee_bindCard_searchbg01" width="82" height="22"/>

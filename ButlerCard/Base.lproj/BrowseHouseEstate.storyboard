@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Ngw-rg-gIa">
     <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
@@ -48,7 +49,7 @@
                                 </constraints>
                             </imageView>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YBD-Ce-MEF">
-                                <rect key="frame" x="0.0" y="46" width="320" height="354"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="404"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="8" id="QtT-xf-eLg">
@@ -71,7 +72,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="house" translatesAutoresizingMaskIntoConstraints="NO" id="reg-ak-uIt">
+                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="property_house1" translatesAutoresizingMaskIntoConstraints="NO" id="reg-ak-uIt">
                                                     <rect key="frame" x="7" y="0.0" width="50" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -87,22 +88,22 @@
                                 </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DjE-AA-Fzf" userLabel="View --开通shenqing">
-                                <rect key="frame" x="0.0" y="400" width="320" height="55"/>
+                                <rect key="frame" x="0.0" y="450" width="320" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="property_houseTipsicon" translatesAutoresizingMaskIntoConstraints="NO" id="w79-gJ-dUO">
-                                        <rect key="frame" x="24" y="8" width="12" height="12"/>
+                                        <rect key="frame" x="30" y="20" width="12" height="12"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="如果你所在的小区未开通物业服务,请提交" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ua-zY-QIn">
-                                        <rect key="frame" x="37" y="9" width="225" height="12"/>
+                                        <rect key="frame" x="43" y="21" width="225" height="12"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpi-XJ-U7u">
-                                        <rect key="frame" x="235" y="0.0" width="50" height="30"/>
+                                        <rect key="frame" x="241" y="12" width="50" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
                                         <state key="normal" title="开通申请"/>
@@ -114,7 +115,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="1OQ-wv-pa7"/>
+                                    <constraint firstAttribute="height" constant="54" id="1OQ-wv-pa7"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -131,7 +132,7 @@
                             <constraint firstItem="REb-iE-BXa" firstAttribute="top" secondItem="DjE-AA-Fzf" secondAttribute="bottom" id="Fqr-5a-hWy"/>
                             <constraint firstItem="DjE-AA-Fzf" firstAttribute="top" secondItem="YBD-Ce-MEF" secondAttribute="bottom" id="GHq-Je-tLc"/>
                             <constraint firstItem="iIy-Op-YwT" firstAttribute="leading" secondItem="afT-KI-7F6" secondAttribute="leading" id="PsM-Eu-RS1"/>
-                            <constraint firstItem="REb-iE-BXa" firstAttribute="top" secondItem="aG2-6z-Gk5" secondAttribute="bottom" id="RPR-3y-6fm"/>
+                            <constraint firstItem="REb-iE-BXa" firstAttribute="top" secondItem="aG2-6z-Gk5" secondAttribute="bottom" constant="49" id="RPR-3y-6fm"/>
                             <constraint firstAttribute="trailing" secondItem="DjE-AA-Fzf" secondAttribute="trailing" id="RrW-5s-1PV"/>
                             <constraint firstItem="9eD-ib-4iT" firstAttribute="top" secondItem="5ay-93-U0h" secondAttribute="bottom" id="Rwx-JK-asW"/>
                             <constraint firstItem="YBD-Ce-MEF" firstAttribute="leading" secondItem="afT-KI-7F6" secondAttribute="leading" id="g0T-hs-53q"/>
@@ -184,7 +185,6 @@
                             </view>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="chooseCityButton" destination="r2g-m6-Gja" id="Yzk-hi-9dH"/>
                         <outlet property="cityLabel" destination="WtG-10-tZV" id="mOb-CK-n89"/>
@@ -460,8 +460,8 @@
     </scenes>
     <resources>
         <image name="global_button_login" width="236" height="40"/>
-        <image name="house" width="26" height="26"/>
         <image name="navigationBar_back" width="40" height="40"/>
+        <image name="property_house1" width="52" height="52"/>
         <image name="property_houseLine" width="320" height="2"/>
         <image name="property_houseTipsicon" width="12" height="12"/>
         <image name="property_searchbg" width="320" height="44"/>

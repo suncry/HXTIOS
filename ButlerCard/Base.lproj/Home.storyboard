@@ -451,7 +451,7 @@
                         <viewControllerLayoutGuide type="bottom" id="miz-KC-MKR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nxu-lE-lmL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -470,7 +470,7 @@
                         <viewControllerLayoutGuide type="bottom" id="AzE-uy-ql9"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="J75-7U-WZz">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -1651,7 +1651,7 @@
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BD3-Al-IIf">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="BD3-Al-IIf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1693,7 +1693,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0O2-9c-WIU" customClass="HXTNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" tag="1" title="关注" image="tabbar_collection" id="4Bb-vz-dqq"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5uA-Ad-rjN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="5uA-Ad-rjN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
