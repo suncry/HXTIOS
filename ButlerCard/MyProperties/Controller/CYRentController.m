@@ -38,9 +38,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //提示的文字
-    NSString *str = [NSString stringWithFormat:@"你确认要租借%@吗？",((UILabel *)[tableView viewWithTag:100 + indexPath.row]).text];
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"服务确认" message:str delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确认", nil];
-    [alert show];
+    if (indexPath.section == 0)
+    {
+        NSString *str = [NSString stringWithFormat:@"你确认要租借%@吗？",((UILabel *)[tableView viewWithTag:100 + indexPath.row]).text];
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"服务确认" message:str delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确认", nil];
+        [alert show];
+
+    }
 }
 #pragma mark - UIAlertViewDelegate
 
@@ -85,10 +89,25 @@
          MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
          hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Checkmark.png"]];
          hud.mode = MBProgressHUDModeCustomView;
-         hud.labelText = [NSString stringWithFormat:@"Error: %@",error];
+         hud.labelText = [NSString stringWithFormat:@"无网络连接!!!"];
          [hud show:YES];
          [hud hide:YES afterDelay:1.5];
 
      }];
 }
+- (IBAction)takeCall:(id)sender
+{
+    NSString *number = @"10010";// 此处读入电话号码
+    
+    // NSString *num = [[NSString alloc] initWithFormat:@"tel://%@",number]; //number为号码字符串 如果使用这个方法 结束电话之后会进入联系人列表
+    
+    
+    
+    NSString *num = [[NSString alloc] initWithFormat:@"telprompt://%@",number]; //而这个方法则打电话前先弹框  是否打电话 然后打完电话之后回到程序中 网上说这个方法可能不合法 无法通过审核
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:num]]; //拨号
+    
+
+}
+
 @end
