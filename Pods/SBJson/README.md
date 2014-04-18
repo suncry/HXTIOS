@@ -1,16 +1,17 @@
-JSON (JavaScript Object Notation) is a light-weight data interchange
-format that's easy to read and write for humans and computers alike.
-This library implements chunk-based JSON parsing and generation in
-Objective-C.
+JSON (JavaScript Object Notation) is a light-weight data interchange format
+that's easy to read and write for humans and computers alike. This library
+implements chunk-based JSON parsing and generation in Objective-C.
+
+[![Build Status](https://travis-ci.org/stig/json-framework.png?branch=master)](https://travis-ci.org/stig/json-framework)
 
 Features
 ========
 
 SBJson's number one feature is chunk-based operation. Feed the parser one or
 more chunks of UTF8-encoded data and it will call a block you provide with each
-root-level document or array; or optionally for each top-level entry in one (or
-more) root-level array. See more in the [Version 4 API
-docs](http://sbjson.org/api/4.0/Classes/SBJson4Parser.html).
+root-level document or array. Or, optionally, for each top-level entry in each
+root-level array. See more in the [Version 4 API
+docs](http://cocoadocs.org/docsets/SBJson/4.0.0/Classes/SBJson4Parser.html).
 
 Other features:
 
@@ -19,49 +20,38 @@ Other features:
 * The writer can optionally sort dictionary keys so output is consistent across writes.
 * The writer can optionally create human-readable (indented) output.
 
-Links
-=====
+API Documentation
+=================
 
-* [GitHub project page](http://github.com/stig/json-framework)
-* [Online API docs](http://sbjson.org/api/4.0)
-* [SBJson tag on Stack Overflow](http://stackoverflow.com/questions/tagged/sbjson)
-
+Please see the [API Documentation](http://cocoadocs.org/docsets/SBJson) for more details.
 
 Installation
 ============
 
-The simplest way to start using JSON in your application is to copy all
-the source files (the contents of the `src/main/objc` folder) into your own
-Xcode project.
+The preferred way to use SBJson is by using
+[CocoaPods](http://cocoapods.org/?q=sbjson). In your Podfile use:
 
-1. In the Finder, navigate into the `src/main/objc` folder.
-2. Select all the files and drag-and-drop them into your Xcode project.
-3. Tick the **Copy items into destination group's folder** option.
-4. Use `#import "SBJson.h"` in  your source files.
+    pod 'SBJson', '~> 4.0.0'
 
-That should be it. Now create that Twitter client!
+If you depend on a third-party library that requires an earlier version of
+SBJson---or want to install both version 3 and 4 in the same app to do a gradual
+transition---you can instead use:
 
-*If you're upgrading from a previous version, make sure you're deleting the
-old SBJson classes first, moving all the files to Trash.*
+    pod 'SBJson4', '~> 4.0.0'
 
+An alternative that I no longer recommend is to copy all the source files (the
+contents of the `src/main/objc` folder) into your own Xcode project.
 
-Alternative Installation Instructions
-=====================================
+Support
+=======
 
-* With Xcode 4's workspaces it has become much simpler to link to dependant
-projects. The examples in the distribution link to the iOS library and Mac
-framework, respectively. Des Hartman wrote [a blog post with step-by-step
-instructions for iOS][link-ios]. This is the recommended way if you need to
-make local changes to SBJson.
-* You can also install SBJson using [CocoaPods](http://cocoapods.org).
-
-[link-ios]: http://deshartman.wordpress.com/2011/09/02/configuring-sbjson-framework-for-xcode-4-2/
-
+* Check [StackOverflow questions tagged with SBJson](http://stackoverflow.com/questions/tagged/sbjson) if you have questions about how to use the library. I eventually read all questions with this tag.
+* Use the [issue tracker](http://github.com/stig/json-framework/issues) if you have found a bug.
 
 License
 =======
 
-Copyright (C) 2007-2013 Stig Brautaset. All rights reserved.
+Copyright (C) 2007-2014 Stig Brautaset. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:

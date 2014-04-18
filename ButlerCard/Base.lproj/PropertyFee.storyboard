@@ -279,7 +279,7 @@
                     <navigationItem key="navigationItem" title="代扣用户协议" id="CyC-Kn-bAe">
                         <barButtonItem key="rightBarButtonItem" id="ulI-Wy-F8O">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZNo-nn-7qe">
-                                <rect key="frame" x="264" y="5" width="40" height="33"/>
+                                <rect key="frame" x="254" y="5" width="50" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="关闭">
@@ -594,8 +594,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="缴费" id="qVP-kI-NUV">
                         <barButtonItem key="leftBarButtonItem" id="UwL-r7-wd9">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0hw-dS-pvn">
-                                <rect key="frame" x="16" y="5" width="40" height="33"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0hw-dS-pvn">
+                                <rect key="frame" x="16" y="5" width="50" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="取消">
@@ -745,8 +745,8 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="我的物业" id="FDu-Ri-jBf">
                         <barButtonItem key="rightBarButtonItem" id="Shn-DL-4Pi">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CjN-qa-0SP">
-                                <rect key="frame" x="264" y="5" width="40" height="33"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CjN-qa-0SP">
+                                <rect key="frame" x="254" y="5" width="50" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="navigationBar_add">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>

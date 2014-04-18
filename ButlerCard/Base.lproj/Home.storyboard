@@ -404,12 +404,9 @@
                     <navigationItem key="navigationItem" title="选择小区" id="Sdz-AB-bko">
                         <barButtonItem key="leftBarButtonItem" id="LTv-gA-lcE">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dzb-or-Lcg">
-                                <rect key="frame" x="16" y="5" width="40" height="33"/>
+                                <rect key="frame" x="16" y="5" width="50" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="取消">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" title="取消"/>
                                 <connections>
                                     <action selector="backButtonPressed:" destination="0Ke-7N-58u" eventType="touchUpInside" id="bgL-sp-MaN"/>
                                 </connections>

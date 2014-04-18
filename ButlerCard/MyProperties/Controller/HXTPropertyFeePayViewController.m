@@ -106,8 +106,8 @@
     
     UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 430)];
     _monthPicker = [[SRMonthPicker alloc] initWithFrame:CGRectMake(0, 0, 320, 165)];
-    _monthPicker.maximumYear = @2020;
-    _monthPicker.minimumYear = @1900;
+    _monthPicker.maximumYear = @2015;
+    _monthPicker.minimumYear = @2013;
     _monthPicker.yearFirst = YES;
     [backgroundView addSubview:_monthPicker];
     

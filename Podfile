@@ -1,7 +1,7 @@
 
-platform :ios, '7.0'
-pod "AFNetworking"
-pod "SBJson"  
-pod "FMDB"
-pod "SVPullToRefresh"
-pod "MBProgressHUD"
+platform :ios, '6.0'
+pod 'AFNetworking'
+pod 'SBJson'
+pod 'FMDB'
+pod 'SVPullToRefresh'
+pod 'MBProgressHUD'

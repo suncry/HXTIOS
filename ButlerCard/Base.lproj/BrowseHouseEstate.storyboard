@@ -144,12 +144,9 @@
                         <barButtonItem key="backBarButtonItem" id="YIH-jW-S2E"/>
                         <barButtonItem key="leftBarButtonItem" id="XAr-YD-YQp">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xMg-L1-Dyo">
-                                <rect key="frame" x="16" y="5" width="40" height="33"/>
+                                <rect key="frame" x="16" y="5" width="50" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="取消">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" title="取消"/>
                                 <connections>
                                     <action selector="backButtonPressed:" destination="KbO-D9-o9T" eventType="touchUpInside" id="qVw-fW-y5E"/>
                                 </connections>
@@ -243,9 +240,9 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A5p-Cc-hC0">
-                                <rect key="frame" x="43" y="160" width="234" height="40"/>
+                                <rect key="frame" x="20" y="141" width="280" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="申请" backgroundImage="global_button_login">
+                                <state key="normal" title="申请" backgroundImage="account_sigh_button_tjxq">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -259,21 +256,7 @@
                             <action selector="backgoudTouchUpInside:" destination="vRv-54-B51" eventType="touchUpInside" id="TpN-Xm-4Jc"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="申请开通小区" id="0pI-c6-tdT">
-                        <barButtonItem key="leftBarButtonItem" id="7i7-6J-R9a">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PKm-qJ-sfy">
-                                <rect key="frame" x="16" y="5" width="33" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" backgroundImage="navigationBar_back">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="backButtonPressed:" destination="vRv-54-B51" eventType="touchUpInside" id="8f1-mC-Tob"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="申请开通小区" id="0pI-c6-tdT"/>
                     <connections>
                         <outlet property="housingEstateNameTestField" destination="gh0-cx-wGH" id="waq-6i-aew"/>
                     </connections>
@@ -353,12 +336,10 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="选择地区" id="jzZ-QU-t3v">
                         <barButtonItem key="leftBarButtonItem" id="rM4-29-Jvh">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZXG-wI-Fes">
-                                <rect key="frame" x="16" y="5" width="33" height="33"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZXG-wI-Fes">
+                                <rect key="frame" x="16" y="5" width="50" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="navigationBar_back">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" title="取消"/>
                                 <connections>
                                     <action selector="backButtonPressed:" destination="nDI-RQ-1VH" eventType="touchUpInside" id="HbR-pq-dOp"/>
                                 </connections>
@@ -402,20 +383,7 @@
                             <outlet property="delegate" destination="RWv-pV-Xau" id="Qi5-E5-isP"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="四川省" id="zGV-DT-Nrt">
-                        <barButtonItem key="leftBarButtonItem" id="pxS-pc-Ld8">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="SQe-jj-jTi">
-                                <rect key="frame" x="16" y="5" width="33" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="navigationBar_back">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="backButtonPressed:" destination="RWv-pV-Xau" eventType="touchUpInside" id="50s-5b-plN"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="四川省" id="zGV-DT-Nrt"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uQT-ri-jMk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -429,6 +397,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="8qt-IS-zzA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -447,6 +416,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="xP4-v8-Ffu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -459,8 +429,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="global_button_login" width="236" height="40"/>
-        <image name="navigationBar_back" width="40" height="40"/>
+        <image name="account_sigh_button_tjxq" width="234" height="26"/>
         <image name="property_house1" width="52" height="52"/>
         <image name="property_houseLine" width="320" height="2"/>
         <image name="property_houseTipsicon" width="12" height="12"/>
