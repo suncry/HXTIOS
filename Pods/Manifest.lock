@@ -23,6 +23,7 @@ PODS:
   - FMDB/common (2.2)
   - FMDB/standard (2.2):
     - FMDB/common
+  - FontAwesome+iOS (0.1.1)
   - MBProgressHUD (0.8)
   - SBJson (4.0.1)
   - SVPullToRefresh (0.4.1)
@@ -30,6 +31,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - FMDB
+  - FontAwesome+iOS
   - MBProgressHUD
   - SBJson
   - SVPullToRefresh
@@ -37,6 +39,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: dd8c1868e57451e3d17ebd3516f2a8c16f9646fe
   FMDB: e0dd09464b4e1a1cd7fa51ea835ae821b5656865
+  FontAwesome+iOS: 243c5309e90d5788909b0f859f75ecff4a20f88f
   MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
   SBJson: a4f2b0dd2e1e79fc6ea990f021dfc6901d1f9cf1
   SVPullToRefresh: 61a0e4bd12bd6f8e3465909810b0fbeb1a28d5f2

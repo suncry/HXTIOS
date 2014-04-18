@@ -9,6 +9,8 @@
 #import "HXTSurroundingLifeViewController.h"
 #import "HXTAccountManager.h"
 #import "HXTViewWithArrow.h"
+#import "UIButton+PPiAwesome.h"
+#import "NSString+FontAwesome.h"
 
 #define kDurationTime 0.3f
 
@@ -23,7 +25,6 @@ typedef NS_ENUM(NSUInteger, FunctionsGroup) {
 
 @interface HXTSurroundingLifeViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *chooseCityLabel;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *coverView;
 @property (weak, nonatomic) IBOutlet UIView *doorServiceAndBookedConsumptionView;
@@ -35,6 +36,7 @@ typedef NS_ENUM(NSUInteger, FunctionsGroup) {
 @property (assign, nonatomic) FunctionsGroup currentFunctionsGroup;
 @property (strong, nonatomic) NSArray *FunctionsGroupItems;
 
+@property (weak, nonatomic) IBOutlet UIButton *chooseHouseEstateButton;
 @end
 
 @implementation HXTSurroundingLifeViewController
@@ -73,19 +75,22 @@ typedef NS_ENUM(NSUInteger, FunctionsGroup) {
                                             options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld
                                             context:NULL];
     if ([HXTAccountManager sharedInstance].defaultHouseingEstate) {
-        _chooseCityLabel.text = [HXTAccountManager sharedInstance].defaultHouseingEstate;
+//        [_chooseHouseEstateButton setTitle:[HXTAccountManager sharedInstance].defaultHouseingEstate forState:UIControlStateNormal];
+        [_chooseHouseEstateButton setButtonText:@"小区AAAAA"];
     } else {
-        _chooseCityLabel.text = @"选择小区";
+//        [_chooseHouseEstateButton setTitle:@"选择小区" forState:UIControlStateNormal];
+        [_chooseHouseEstateButton setButtonText:@"小区BBB"];
     }
+    
 }
 
 #pragma -- key value abserver
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if ([keyPath isEqualToString:@"defaultHouseingEstate"] && object == [HXTAccountManager sharedInstance]) {
         if ([HXTAccountManager sharedInstance].defaultHouseingEstate) {
-            _chooseCityLabel.text = [HXTAccountManager sharedInstance].defaultHouseingEstate;
+            [_chooseHouseEstateButton setTitle:[HXTAccountManager sharedInstance].defaultHouseingEstate forState:UIControlStateNormal];
         } else {
-            _chooseCityLabel.text = @"选择小区";
+            [_chooseHouseEstateButton setTitle:@"选择小区" forState:UIControlStateNormal];
         }
     }
 }
@@ -100,7 +105,39 @@ typedef NS_ENUM(NSUInteger, FunctionsGroup) {
     [super viewWillAppear:animated];
     
     _subFunctionsArrowView.hidden = YES;
+    
 }
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [_chooseHouseEstateButton setIsAwesome:YES];
+    [_chooseHouseEstateButton setButtonText:@"Twitter"];
+    [_chooseHouseEstateButton setButtonIcon:@"icon-twitter"];
+    //    [_chooseHouseEstateButton setTextAttributes:attributes forUIControlState:UIControlStateNormal];
+    [_chooseHouseEstateButton setIconPosition:IconPositionRight];
+    [_chooseHouseEstateButton setIsAwesome:YES];
+    //    [_chooseHouseEstateButton setIconPosition: IconPositionRight];
+    //    [_chooseHouseEstateButton setNeedsDisplay];
+    
+//    UIButton *textButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 60, 120 , 40) text:@"CCCCCC" iconString:@"navigationBar_down" textAttributes:nil andIconPosition:IconPositionRight];
+    UIButton *textButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 60, 120 , 40) text:@"Twitter" icon:@"icon-twitter" textAttributes:nil andIconPosition:IconPositionRight];
+    textButton.titleLabel.font = [UIFont fontWithName:kFontAwesomeFamilyName size:20];
+    [textButton setIsAwesome:YES];
+    [self.view addSubview:textButton];
+    [self.view bringSubviewToFront:textButton];
+    
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 100, 280, 40)];
+	label.font = [UIFont fontWithName:kFontAwesomeFamilyName size:20];
+    
+//	label.text = [NSString fontAwesomeIconStringForIconIdentifier:@"icon-caret-down"];
+    label.text = [@"AAA" stringByAppendingString:[NSString fontAwesomeIconStringForIconIdentifier:@"icon-caret-down"]];
+    label.textColor = [UIColor whiteColor];
+    [self.view addSubview:label];
+    [self.view bringSubviewToFront:label];
+}
+
 #pragma UICollectionView DataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     if (_currentFunctionsGroup != FunctionsGroupIsNone) {

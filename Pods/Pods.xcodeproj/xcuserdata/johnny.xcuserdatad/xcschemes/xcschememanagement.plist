@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-FontAwesome+iOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,32 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>242F6620ECF04D1EA9C6E762</key>
+		<key>1AD6B8CC38F640E2AEB810EC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>30A870566A374DEBA2FB34AE</key>
+		<key>21DB07AD89C54EE49F5C16CE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>91F626F5306F49399904F76D</key>
+		<key>2D82C756194E4F8AAF055C4D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B3474D15E4164B1DBC7E6963</key>
+		<key>4190B2FE8D7A473F8AC05828</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BCD7C7EC60D6441E9986FA03</key>
+		<key>947FBEBE2DE9449E90216F84</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C3338CA8875C4551B2B52231</key>
+		<key>D92492BCFE044B5F8F5CF797</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D9D5E1B04FE54F098A1161C4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
