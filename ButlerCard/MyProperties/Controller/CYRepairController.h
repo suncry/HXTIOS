@@ -13,5 +13,6 @@
 {
 	MBProgressHUD *HUD;
 }
+- (IBAction)takeCall:(id)sender;
 
 @end

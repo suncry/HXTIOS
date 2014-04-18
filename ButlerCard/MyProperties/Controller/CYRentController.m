@@ -89,7 +89,7 @@
          MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
          hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Checkmark.png"]];
          hud.mode = MBProgressHUDModeCustomView;
-         hud.labelText = [NSString stringWithFormat:@"Error: %@",error];
+         hud.labelText = [NSString stringWithFormat:@"无网络连接!!!"];
          [hud show:YES];
          [hud hide:YES afterDelay:1.5];
 
