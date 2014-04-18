@@ -10,6 +10,9 @@
 
 @interface HXTPropertyFeePayViewController ()
 
+@property (weak, nonatomic) IBOutlet UITableView *propertyFeeItemsTabelView;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *payMethordSegmentedControl;
+
 @end
 
 @implementation HXTPropertyFeePayViewController
@@ -33,6 +36,40 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - table view data source
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 5;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    static NSString *TypeOneCellIdentifier = @"TypeOneCellIdentifier";
+//    static NSString *TypeTwoCellIdentifier = @"TypeTwoCellIdentifier";
+    static NSString *TypeThreeCellIdentifier = @"TypeThreeCellIdentifier";
+    
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TypeThreeCellIdentifier forIndexPath:indexPath];
+    
+    // Configure the cell...
+    
+    return cell;
+}
+
+#pragma mark - IB Actions
+
+
+- (IBAction)chechBoxChecked:(UIButton *)sender {
+    sender.selected = !sender.selected;
+}
+
+- (IBAction)lowerDateSelectorButtonPressed:(id)sender {
+    
+}
+
+- (IBAction)uperDateSelectorButtonPressed:(id)sender {
 }
 
 /*
