@@ -57,8 +57,9 @@
     [manager POST:@"http://bbs.enveesoft.com:1602/htx/hexinpassserver/appserver/public/serv/top" parameters:parameters
           success:^(AFHTTPRequestOperation *operation, id responseObject)
      {
+         NSLog(@"responseObject == %@",responseObject);
+
          _dataArr = responseObject[@"results"];
-//         NSLog(@"_dataArr == %@",_dataArr);
          NSDictionary *rentDic = _dataArr[0];
          NSDictionary *repairDic = _dataArr[1];
 
