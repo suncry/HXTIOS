@@ -31,6 +31,9 @@
     [self.navigationController.view addSubview:HUD];
     HUD.delegate = self;
     [HUD showWhileExecuting:@selector(request) onTarget:self withObject:nil animated:YES];
+    
+    //在子页面反悔此页面时刷新。用于去掉cell的选中状态
+    [self.tableView reloadData];
 
 }
 - (void)viewDidLoad
@@ -41,6 +44,7 @@
     
     self.rentRateView.rate = 3.5;
     self.repairRateView.rate = 4.5;
+    
 }
 
 - (void)didReceiveMemoryWarning
