@@ -75,4 +75,11 @@
      }];
 }
 
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSLog(@"segue.indentifer = %@", segue.identifier );
+    ((UIViewController *)(segue.destinationViewController)).hidesBottomBarWhenPushed = YES;
+}
+
 @end

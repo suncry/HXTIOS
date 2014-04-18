@@ -315,10 +315,10 @@
             </objects>
             <point key="canvasLocation" x="2463" y="-2370"/>
         </scene>
-        <!--View Controller - 缴费-->
+        <!--Property Fee Pay View Controller - 缴费-->
         <scene sceneID="Rxg-L9-LB4">
             <objects>
-                <viewController id="LPQ-63-w2k" sceneMemberID="viewController">
+                <viewController id="LPQ-63-w2k" customClass="HXTPropertyFeePayViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6zX-tU-kdQ"/>
                         <viewControllerLayoutGuide type="bottom" id="32u-Ef-mOa"/>
@@ -326,13 +326,135 @@
                     <view key="view" contentMode="scaleToFill" id="Mqu-Ts-V3F">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZbR-HW-HhS">
+                                <rect key="frame" x="0.0" y="44" width="320" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="8BM-SW-kq3"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="缴清欠费（－500元）"/>
+                                    <segment title="自定义缴费"/>
+                                </segments>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w6E-kw-5St">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="property_house7" translatesAutoresizingMaskIntoConstraints="NO" id="sag-4r-ysc">
+                                        <rect key="frame" x="20" y="5" width="33" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="中铁小区8栋2单元303" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o71-qB-l6Z">
+                                        <rect key="frame" x="61" y="5" width="239" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.3294117647" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="global_nyline" translatesAutoresizingMaskIntoConstraints="NO" id="slS-Ry-MwN">
+                                        <rect key="frame" x="0.0" y="40" width="320" height="4"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="MPj-Jj-0Rl"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJE-XD-cNk">
+                                <rect key="frame" x="0.0" y="364" width="320" height="140"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tpT-SK-ZqP">
+                                        <rect key="frame" x="40" y="80" width="116" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="加入购物车" backgroundImage="global_button_y02">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="global_button_y_s"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OdT-7K-9Ag">
+                                        <rect key="frame" x="164" y="80" width="116" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="立即结算" backgroundImage="global_button_y">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="global_button_y_s"/>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="我的管家卡账户余额：800元" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bzc-ev-nbv">
+                                        <rect key="frame" x="20" y="46" width="242" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.32941176470588235" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="amd-no-d9s">
+                                        <rect key="frame" x="260" y="42" width="40" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <state key="normal" title="充值">
+                                            <color key="titleColor" red="0.15686274510000001" green="0.68627450980000004" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="合计：500元" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcY-GZ-EMV">
+                                        <rect key="frame" x="20" y="13" width="280" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="hCb-A4-Pgn"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="3eg-7Y-zS4">
+                                <rect key="frame" x="0.0" y="72" width="320" height="292"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="3eg-7Y-zS4" firstAttribute="leading" secondItem="Mqu-Ts-V3F" secondAttribute="leading" id="1wj-cB-NaV"/>
+                            <constraint firstItem="32u-Ef-mOa" firstAttribute="top" secondItem="EJE-XD-cNk" secondAttribute="bottom" id="6AJ-5Z-Zpq"/>
+                            <constraint firstItem="w6E-kw-5St" firstAttribute="leading" secondItem="Mqu-Ts-V3F" secondAttribute="leading" id="GnU-vo-xrH"/>
+                            <constraint firstItem="w6E-kw-5St" firstAttribute="top" secondItem="6zX-tU-kdQ" secondAttribute="bottom" id="T9F-nu-tkY"/>
+                            <constraint firstAttribute="trailing" secondItem="3eg-7Y-zS4" secondAttribute="trailing" id="XB8-U1-dYC"/>
+                            <constraint firstItem="3eg-7Y-zS4" firstAttribute="top" secondItem="ZbR-HW-HhS" secondAttribute="bottom" id="ZS3-hw-E6n"/>
+                            <constraint firstAttribute="trailing" secondItem="EJE-XD-cNk" secondAttribute="trailing" id="all-YF-MSE"/>
+                            <constraint firstItem="ZbR-HW-HhS" firstAttribute="leading" secondItem="Mqu-Ts-V3F" secondAttribute="leading" id="ar8-Wb-yNe"/>
+                            <constraint firstAttribute="trailing" secondItem="w6E-kw-5St" secondAttribute="trailing" id="kKB-xH-0iP"/>
+                            <constraint firstItem="EJE-XD-cNk" firstAttribute="top" secondItem="3eg-7Y-zS4" secondAttribute="bottom" id="lSJ-wr-m5d"/>
+                            <constraint firstAttribute="trailing" secondItem="ZbR-HW-HhS" secondAttribute="trailing" id="pR7-TY-Hh4"/>
+                            <constraint firstItem="ZbR-HW-HhS" firstAttribute="top" secondItem="w6E-kw-5St" secondAttribute="bottom" id="x4a-3J-93J"/>
+                            <constraint firstItem="EJE-XD-cNk" firstAttribute="leading" secondItem="Mqu-Ts-V3F" secondAttribute="leading" id="yXh-jh-OhZ"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="缴费" id="qVP-kI-NUV"/>
+                    <navigationItem key="navigationItem" title="缴费" id="qVP-kI-NUV">
+                        <barButtonItem key="leftBarButtonItem" id="UwL-r7-wd9">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0hw-dS-pvn">
+                                <rect key="frame" x="16" y="5" width="40" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="取消">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="LPQ-63-w2k" eventType="touchUpInside" id="lhi-y4-mn6"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ob-8c-Mtv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2463" y="-1042"/>
+            <point key="canvasLocation" x="2879" y="-1042"/>
         </scene>
         <!--Property Fee View Controller - 我的物业-->
         <scene sceneID="05V-e1-hS3">
@@ -440,7 +562,7 @@
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <segue destination="LPQ-63-w2k" kind="push" id="YV5-Uj-WX5"/>
+                                                <segue destination="DuE-Ke-35j" kind="modal" id="YV5-Uj-WX5"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="欠费总计：290元" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lX7-oT-eah">
@@ -868,10 +990,31 @@
             </objects>
             <point key="canvasLocation" x="2043" y="-376"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gg6-jf-fBU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DuE-Ke-35j" customClass="HXTNavigationController" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Efm-Wo-AQW"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Q69-Kc-xgG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LPQ-63-w2k" kind="relationship" relationship="rootViewController" id="Eju-mz-DWu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u0b-oJ-r2P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2463" y="-1042"/>
+        </scene>
     </scenes>
     <resources>
         <image name="account_sigh_bg03" width="280" height="88"/>
         <image name="global_button_y" width="116" height="40"/>
+        <image name="global_button_y02" width="116" height="40"/>
         <image name="global_button_y_s" width="116" height="40"/>
         <image name="global_down_arrow" width="15" height="15"/>
         <image name="global_nyline" width="320" height="4"/>

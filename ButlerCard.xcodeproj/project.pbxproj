@@ -194,6 +194,8 @@
 		B280044418FFCAF400E2DE0E /* HXTOpenAutomaticBillPaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B280044218FFCAF400E2DE0E /* HXTOpenAutomaticBillPaymentViewController.m */; };
 		B280044718FFE1B100E2DE0E /* HXTWithholdingUseAgreementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B280044618FFE1B000E2DE0E /* HXTWithholdingUseAgreementViewController.m */; };
 		B280044818FFE1B100E2DE0E /* HXTWithholdingUseAgreementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B280044618FFE1B000E2DE0E /* HXTWithholdingUseAgreementViewController.m */; };
+		B2F8B6541900BB31000CAB54 /* HXTPropertyFeePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F8B6531900BB31000CAB54 /* HXTPropertyFeePayViewController.m */; };
+		B2F8B6551900BB31000CAB54 /* HXTPropertyFeePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F8B6531900BB31000CAB54 /* HXTPropertyFeePayViewController.m */; };
 		FCE6C2F870A645348CF02435 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C760D7067C514D27AA581EFA /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -390,6 +392,8 @@
 		B280044218FFCAF400E2DE0E /* HXTOpenAutomaticBillPaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTOpenAutomaticBillPaymentViewController.m; sourceTree = "<group>"; };
 		B280044518FFE1B000E2DE0E /* HXTWithholdingUseAgreementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTWithholdingUseAgreementViewController.h; sourceTree = "<group>"; };
 		B280044618FFE1B000E2DE0E /* HXTWithholdingUseAgreementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTWithholdingUseAgreementViewController.m; sourceTree = "<group>"; };
+		B2F8B6521900BB31000CAB54 /* HXTPropertyFeePayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTPropertyFeePayViewController.h; sourceTree = "<group>"; };
+		B2F8B6531900BB31000CAB54 /* HXTPropertyFeePayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTPropertyFeePayViewController.m; sourceTree = "<group>"; };
 		C760D7067C514D27AA581EFA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -692,6 +696,8 @@
 				B280044218FFCAF400E2DE0E /* HXTOpenAutomaticBillPaymentViewController.m */,
 				B280044518FFE1B000E2DE0E /* HXTWithholdingUseAgreementViewController.h */,
 				B280044618FFE1B000E2DE0E /* HXTWithholdingUseAgreementViewController.m */,
+				B2F8B6521900BB31000CAB54 /* HXTPropertyFeePayViewController.h */,
+				B2F8B6531900BB31000CAB54 /* HXTPropertyFeePayViewController.m */,
 				B2214DF218FE1FB800762AE9 /* HXTPropertyServiceViewController.h */,
 				B2214DF318FE1FB800762AE9 /* HXTPropertyServiceViewController.m */,
 				23D711F318FF7E9D00B9011A /* CYMyCardsController.h */,
@@ -1045,6 +1051,7 @@
 				B2214DAF18FE1FA200762AE9 /* HXTHomeChooseHouseEstateTableViewController.m in Sources */,
 				B2214C1818FE1E4000762AE9 /* main.m in Sources */,
 				B2214C8018FE1F9000762AE9 /* HXTRegisterUserProtocolViewController.m in Sources */,
+				B2F8B6541900BB31000CAB54 /* HXTPropertyFeePayViewController.m in Sources */,
 				B2214C6E18FE1F9000762AE9 /* HXTRegisterInputPasswordViewController.m in Sources */,
 				B2214C8418FE1F9000762AE9 /* HXTSelectCityViewController.m in Sources */,
 				B2214E4D18FE1FB800762AE9 /* DJQStartView.m in Sources */,
@@ -1117,6 +1124,7 @@
 				B26FE5D418FE51FC0093BC2F /* NSDictionaryAdditions.m in Sources */,
 				B26FE5DE18FE51FC0093BC2F /* SqliteStoreManager.m in Sources */,
 				B2214E1818FE1FB800762AE9 /* CYActivityViewController.m in Sources */,
+				B2F8B6551900BB31000CAB54 /* HXTPropertyFeePayViewController.m in Sources */,
 				B26FE5DC18FE51FC0093BC2F /* Reachability.m in Sources */,
 				B2214E1C18FE1FB800762AE9 /* CYFeedBackViewController.m in Sources */,
 				B26FE5E018FE51FC0093BC2F /* StoreBaseItem.m in Sources */,
