@@ -9,9 +9,12 @@
 #import "HXTHomeViewController.h"
 #import "UIDevice+Resolutions.h"
 #import "HXTAccountManager.h"
+#import "NSString+FontAwesome.h"
+#import "UIFont+FontAwesome.h"
 
 @interface HXTHomeViewController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *chooseHouseEstateButton;
 @property (weak, nonatomic) IBOutlet UIButton *propertyServiceButton;
 @property (weak, nonatomic) IBOutlet UIButton *propertyFeeButton;
 @property (weak, nonatomic) IBOutlet UIButton *surroundingLifeButton;
@@ -38,7 +41,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
+    _chooseHouseEstateButton.titleLabel.font = [UIFont fontAwesomeFontOfSize:18.0f];
+    if ([HXTAccountManager sharedInstance].defaultHouseingEstate) {
+        NSString *buttonTitle = [NSString stringWithFormat:@"%@ %@", [HXTAccountManager sharedInstance].defaultHouseingEstate, [NSString fontAwesomeIconStringForIconIdentifier:@"icon-angle-down"]];
+        [_chooseHouseEstateButton setTitle:buttonTitle forState:UIControlStateNormal];
+    } else {
+        NSString *buttonTitle = [NSString stringWithFormat:@"%@ %@", @"全部商圈", [NSString fontAwesomeIconStringForIconIdentifier:@"icon-angle-down"]];
+        [_chooseHouseEstateButton setTitle:buttonTitle forState:UIControlStateNormal];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -93,7 +103,6 @@
 //物管服务
 - (IBAction)propertyServiceButtonPressed:(UIButton *)sender {
     sender.selected = YES;
-    NSLog(@"物业服务 %s %s %d", __FILE__, __FUNCTION__, __LINE__);
     
     if ([HXTAccountManager sharedInstance].logged) {
         UIViewController *propertyServiceViewController = [[UIStoryboard storyboardWithName:@"PropertyService" bundle:nil] instantiateViewControllerWithIdentifier:@"PropertyServiceStoryboardID"];
@@ -108,7 +117,6 @@
 //物业缴费
 - (IBAction)propertyFeeButtonPressed:(UIButton *)sender {
     sender.selected = YES;
-    NSLog(@"物业缴费 %s %s %d", __FILE__, __FUNCTION__, __LINE__);
     
     if ([HXTAccountManager sharedInstance].logged) {
         UITableViewController *propertyFeeViewController = [[UIStoryboard storyboardWithName:@"PropertyFee" bundle:nil] instantiateViewControllerWithIdentifier:@"PropertyFeeStoryboardID"];

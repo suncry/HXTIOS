@@ -9,11 +9,12 @@
 #import "HXTBrowseHouseEstateViewController.h"
 #import "HXTAccountManager.h"
 #import "HXTMyProperties.h"
+#import "NSString+FontAwesome.h"
+#import "UIFont+FontAwesome.h"
 
 @interface HXTBrowseHouseEstateViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *chooseCityButton;
-@property (weak, nonatomic) IBOutlet UILabel *cityLabel;
 @property (weak, nonatomic) IBOutlet UIControl *coverView;
 @property (weak, nonatomic) IBOutlet UISearchBar *propertySearchBar;
 @property (weak, nonatomic) IBOutlet UICollectionView *housingEstatesCollectionView;
@@ -38,10 +39,11 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    self.navigationController.navigationBarHidden = NO;
-    
     _housingEstateNamesToShow = [[NSMutableArray alloc] initWithArray:[HXTMyProperties sharedInstance].allHousingEstateNames];
     
+    _chooseCityButton.titleLabel.font = [UIFont fontAwesomeFontOfSize:15.0f];
+    NSString *buttonTitle = [NSString stringWithFormat:@"%@ %@", [HXTAccountManager sharedInstance].currentCity, [NSString fontAwesomeIconStringForIconIdentifier:@"icon-angle-down"]];
+    [_chooseCityButton setTitle:buttonTitle forState:UIControlStateNormal];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -52,7 +54,6 @@
                                          forKeyPath:@"currentCity"
                                             options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld
                                             context:NULL];
-    _cityLabel.text = [[HXTAccountManager sharedInstance].currentCity stringByAppendingString:@" ▾"];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -71,7 +72,8 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if ([keyPath isEqualToString:@"currentCity"] && object == [HXTAccountManager sharedInstance]) {
-        _cityLabel.text = [[HXTAccountManager sharedInstance].currentCity stringByAppendingString:@" ▾"];
+        NSString *buttonTitle = [NSString stringWithFormat:@"%@ %@", [HXTAccountManager sharedInstance].currentCity, [NSString fontAwesomeIconStringForIconIdentifier:@"icon-angle-down"]];
+        [_chooseCityButton setTitle:buttonTitle forState:UIControlStateNormal];
     }
 }
 
@@ -131,11 +133,11 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"didSelectItemAtIndexPath indexPath.section = %li, indexPath.row = %li", (long)indexPath.section, (long)indexPath.row);
-
+    
     UIViewController *loginViewcontroller = [[UIStoryboard storyboardWithName:@"AccountManager" bundle:nil] instantiateViewControllerWithIdentifier:@"LoginStoryboardID"];
     
     [self.navigationController pushViewController:loginViewcontroller animated:YES];
-//    [self presentViewController:accountManagerNavViewcontroller animated:YES completion:^{}];
+    //    [self presentViewController:accountManagerNavViewcontroller animated:YES completion:^{}];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -162,8 +164,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"ChooseCityStoryboardID"]) {
         //模态显示动画
-//        ((UIViewController *)segue.destinationViewController).modalPresentationStyle = UIModalPresentationPageSheet;
-//        ((UIViewController *)segue.destinationViewController).modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+        //        ((UIViewController *)segue.destinationViewController).modalPresentationStyle = UIModalPresentationPageSheet;
+        //        ((UIViewController *)segue.destinationViewController).modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     }
 }
 

@@ -9,8 +9,8 @@
 #import "HXTSurroundingLifeViewController.h"
 #import "HXTAccountManager.h"
 #import "HXTViewWithArrow.h"
-#import "UIButton+PPiAwesome.h"
 #import "NSString+FontAwesome.h"
+#import "HMSegmentedControl.h"
 
 #define kDurationTime 0.3f
 
@@ -70,30 +70,23 @@ typedef NS_ENUM(NSUInteger, FunctionsGroup) {
     
     
     _currentFunctionsGroup = FunctionsGroupIsNone;
-    [[HXTAccountManager sharedInstance] addObserver:self
-                                         forKeyPath:@"defaultHouseingEstate"
-                                            options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld
-                                            context:NULL];
-    if ([HXTAccountManager sharedInstance].defaultHouseingEstate) {
-//        [_chooseHouseEstateButton setTitle:[HXTAccountManager sharedInstance].defaultHouseingEstate forState:UIControlStateNormal];
-        [_chooseHouseEstateButton setButtonText:@"小区AAAAA"];
-    } else {
-//        [_chooseHouseEstateButton setTitle:@"选择小区" forState:UIControlStateNormal];
-        [_chooseHouseEstateButton setButtonText:@"小区BBB"];
-    }
+//    [[HXTAccountManager sharedInstance] addObserver:self
+//                                         forKeyPath:@"defaultHouseingEstate"
+//                                            options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld
+//                                            context:NULL];
     
 }
 
-#pragma -- key value abserver
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    if ([keyPath isEqualToString:@"defaultHouseingEstate"] && object == [HXTAccountManager sharedInstance]) {
-        if ([HXTAccountManager sharedInstance].defaultHouseingEstate) {
-            [_chooseHouseEstateButton setTitle:[HXTAccountManager sharedInstance].defaultHouseingEstate forState:UIControlStateNormal];
-        } else {
-            [_chooseHouseEstateButton setTitle:@"选择小区" forState:UIControlStateNormal];
-        }
-    }
-}
+//#pragma -- key value abserver
+//- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+//    if ([keyPath isEqualToString:@"defaultHouseingEstate"] && object == [HXTAccountManager sharedInstance]) {
+//        if ([HXTAccountManager sharedInstance].defaultHouseingEstate) {
+//            [_chooseHouseEstateButton setTitle:[HXTAccountManager sharedInstance].defaultHouseingEstate forState:UIControlStateNormal];
+//        } else {
+//            [_chooseHouseEstateButton setTitle:@"选择小区" forState:UIControlStateNormal];
+//        }
+//    }
+//}
 
 - (void)didReceiveMemoryWarning
 {
@@ -106,36 +99,32 @@ typedef NS_ENUM(NSUInteger, FunctionsGroup) {
     
     _subFunctionsArrowView.hidden = YES;
     
+    if ([HXTAccountManager sharedInstance].defaultHouseingEstate) {
+        [_chooseHouseEstateButton setTitle:[HXTAccountManager sharedInstance].defaultHouseingEstate forState:UIControlStateNormal];
+    } else {
+        [_chooseHouseEstateButton setTitle:@"选择小区" forState:UIControlStateNormal];
+    }
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-    [_chooseHouseEstateButton setIsAwesome:YES];
-    [_chooseHouseEstateButton setButtonText:@"Twitter"];
-    [_chooseHouseEstateButton setButtonIcon:@"icon-twitter"];
-    //    [_chooseHouseEstateButton setTextAttributes:attributes forUIControlState:UIControlStateNormal];
-    [_chooseHouseEstateButton setIconPosition:IconPositionRight];
-    [_chooseHouseEstateButton setIsAwesome:YES];
-    //    [_chooseHouseEstateButton setIconPosition: IconPositionRight];
-    //    [_chooseHouseEstateButton setNeedsDisplay];
-    
-//    UIButton *textButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 60, 120 , 40) text:@"CCCCCC" iconString:@"navigationBar_down" textAttributes:nil andIconPosition:IconPositionRight];
-    UIButton *textButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 60, 120 , 40) text:@"Twitter" icon:@"icon-twitter" textAttributes:nil andIconPosition:IconPositionRight];
-    textButton.titleLabel.font = [UIFont fontWithName:kFontAwesomeFamilyName size:20];
-    [textButton setIsAwesome:YES];
-    [self.view addSubview:textButton];
-    [self.view bringSubviewToFront:textButton];
     
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 100, 280, 40)];
 	label.font = [UIFont fontWithName:kFontAwesomeFamilyName size:20];
     
 //	label.text = [NSString fontAwesomeIconStringForIconIdentifier:@"icon-caret-down"];
-    label.text = [@"AAA" stringByAppendingString:[NSString fontAwesomeIconStringForIconIdentifier:@"icon-caret-down"]];
+    label.text = [@"AAA" stringByAppendingString:[NSString fontAwesomeIconStringForIconIdentifier:@"icon-phone"]];
     label.textColor = [UIColor whiteColor];
     [self.view addSubview:label];
     [self.view bringSubviewToFront:label];
+    
+    HMSegmentedControl *segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"Library", @"Trending", @"News"]];
+    [segmentedControl setFrame:CGRectMake(10, 10, 300, 60)];
+    [segmentedControl addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
+    [segmentedControl setTag:1];
+    [self.view addSubview:segmentedControl];
 }
 
 #pragma UICollectionView DataSource
@@ -175,6 +164,10 @@ typedef NS_ENUM(NSUInteger, FunctionsGroup) {
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     
+}
+
+- (void)segmentedControlChangedValue:(HMSegmentedControl *)segmentedControl {
+	NSLog(@"Selected index %lu (via UIControlEventValueChanged)", (long)segmentedControl.selectedIndex);
 }
 
 #pragma mark - IB Actions

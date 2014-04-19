@@ -9,10 +9,11 @@
 #import "HXTAddHouseEstateViewController.h"
 #import "HXTAccountManager.h"
 #import "HXTMyProperties.h"
+#import "NSString+FontAwesome.h"
+#import "UIFont+FontAwesome.h"
 
 @interface HXTAddHouseEstateViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *chooseCityButton;
-@property (weak, nonatomic) IBOutlet UILabel *cityLabel;
 @property (weak, nonatomic) IBOutlet UIControl *coverView;
 @property (weak, nonatomic) IBOutlet UISearchBar *propertySearchBar;
 @property (weak, nonatomic) IBOutlet UICollectionView *housingEstatesCollectionView;
@@ -41,6 +42,10 @@
     
     _housingEstateNamesToShow = [[NSMutableArray alloc] initWithArray:[HXTMyProperties sharedInstance].allHousingEstateNames];
     _addedHouse = [[HXTHouse alloc] init];
+    
+    _chooseCityButton.titleLabel.font = [UIFont fontAwesomeFontOfSize:15.0f];
+    NSString *buttonTitle = [NSString stringWithFormat:@"%@ %@", [HXTAccountManager sharedInstance].currentCity, [NSString fontAwesomeIconStringForIconIdentifier:@"icon-angle-down"]];
+    [_chooseCityButton setTitle:buttonTitle forState:UIControlStateNormal];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -51,7 +56,6 @@
                                          forKeyPath:@"currentCity"
                                             options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld
                                             context:NULL];
-    _cityLabel.text = [[HXTAccountManager sharedInstance].currentCity stringByAppendingString:@" ▾"];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -71,7 +75,8 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if ([keyPath isEqualToString:@"currentCity"] && object == [HXTAccountManager sharedInstance]) {
-        _cityLabel.text = [[HXTAccountManager sharedInstance].currentCity stringByAppendingString:@" ▾"];;
+        NSString *buttonTitle = [NSString stringWithFormat:@"%@ %@", [HXTAccountManager sharedInstance].currentCity, [NSString fontAwesomeIconStringForIconIdentifier:@"icon-angle-down"]];
+        [_chooseCityButton setTitle:buttonTitle forState:UIControlStateNormal];
     }
 }
 

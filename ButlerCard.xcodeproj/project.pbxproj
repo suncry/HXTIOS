@@ -195,10 +195,8 @@
 		B280044718FFE1B100E2DE0E /* HXTWithholdingUseAgreementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B280044618FFE1B000E2DE0E /* HXTWithholdingUseAgreementViewController.m */; };
 		B280044818FFE1B100E2DE0E /* HXTWithholdingUseAgreementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B280044618FFE1B000E2DE0E /* HXTWithholdingUseAgreementViewController.m */; };
 		B2D0E57B19012A4100926C66 /* SRMonthPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D0E57A19012A4100926C66 /* SRMonthPicker.m */; };
-		B2D1FC7F1901773000A7467D /* UIButton+PPiAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D1FC6E1901773000A7467D /* UIButton+PPiAwesome.m */; };
-		B2D1FC801901773000A7467D /* UIButton+PPiAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D1FC6E1901773000A7467D /* UIButton+PPiAwesome.m */; };
-		B2D1FC811901773000A7467D /* PPiFlatSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D1FC701901773000A7467D /* PPiFlatSegmentedControl.m */; };
-		B2D1FC821901773000A7467D /* PPiFlatSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D1FC701901773000A7467D /* PPiFlatSegmentedControl.m */; };
+		B2D1FC86190256C500A7467D /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D1FC85190256C500A7467D /* HMSegmentedControl.m */; };
+		B2D1FC87190256C500A7467D /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D1FC85190256C500A7467D /* HMSegmentedControl.m */; };
 		B2F8B6541900BB31000CAB54 /* HXTPropertyFeePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F8B6531900BB31000CAB54 /* HXTPropertyFeePayViewController.m */; };
 		B2F8B6551900BB31000CAB54 /* HXTPropertyFeePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F8B6531900BB31000CAB54 /* HXTPropertyFeePayViewController.m */; };
 		FCE6C2F870A645348CF02435 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C760D7067C514D27AA581EFA /* libPods.a */; };
@@ -399,10 +397,8 @@
 		B280044618FFE1B000E2DE0E /* HXTWithholdingUseAgreementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTWithholdingUseAgreementViewController.m; sourceTree = "<group>"; };
 		B2D0E57919012A4100926C66 /* SRMonthPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRMonthPicker.h; sourceTree = "<group>"; };
 		B2D0E57A19012A4100926C66 /* SRMonthPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRMonthPicker.m; sourceTree = "<group>"; };
-		B2D1FC6D1901773000A7467D /* UIButton+PPiAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+PPiAwesome.h"; sourceTree = "<group>"; };
-		B2D1FC6E1901773000A7467D /* UIButton+PPiAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+PPiAwesome.m"; sourceTree = "<group>"; };
-		B2D1FC6F1901773000A7467D /* PPiFlatSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPiFlatSegmentedControl.h; sourceTree = "<group>"; };
-		B2D1FC701901773000A7467D /* PPiFlatSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPiFlatSegmentedControl.m; sourceTree = "<group>"; };
+		B2D1FC84190256C500A7467D /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
+		B2D1FC85190256C500A7467D /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
 		B2F8B6521900BB31000CAB54 /* HXTPropertyFeePayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTPropertyFeePayViewController.h; sourceTree = "<group>"; };
 		B2F8B6531900BB31000CAB54 /* HXTPropertyFeePayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTPropertyFeePayViewController.m; sourceTree = "<group>"; };
 		C760D7067C514D27AA581EFA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -846,7 +842,7 @@
 		B26FE59A18FE51FC0093BC2F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B2D1FC5F1901773000A7467D /* PPiFlatSegmentedControl */,
+				B2D1FC83190256C500A7467D /* HMSegmentedControl */,
 				B2D0E57819012A4100926C66 /* SRMonthPicker */,
 				B26FE59B18FE51FC0093BC2F /* CheckBox */,
 				B26FE5A218FE51FC0093BC2F /* ViewWithArrow */,
@@ -890,23 +886,13 @@
 			path = SRMonthPicker;
 			sourceTree = "<group>";
 		};
-		B2D1FC5F1901773000A7467D /* PPiFlatSegmentedControl */ = {
+		B2D1FC83190256C500A7467D /* HMSegmentedControl */ = {
 			isa = PBXGroup;
 			children = (
-				B2D1FC601901773000A7467D /* PPiAwesomeButton */,
-				B2D1FC6F1901773000A7467D /* PPiFlatSegmentedControl.h */,
-				B2D1FC701901773000A7467D /* PPiFlatSegmentedControl.m */,
+				B2D1FC84190256C500A7467D /* HMSegmentedControl.h */,
+				B2D1FC85190256C500A7467D /* HMSegmentedControl.m */,
 			);
-			path = PPiFlatSegmentedControl;
-			sourceTree = "<group>";
-		};
-		B2D1FC601901773000A7467D /* PPiAwesomeButton */ = {
-			isa = PBXGroup;
-			children = (
-				B2D1FC6D1901773000A7467D /* UIButton+PPiAwesome.h */,
-				B2D1FC6E1901773000A7467D /* UIButton+PPiAwesome.m */,
-			);
-			path = PPiAwesomeButton;
+			path = HMSegmentedControl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1071,7 +1057,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2214E1B18FE1FB800762AE9 /* CYFeedBackViewController.m in Sources */,
-				B2D1FC811901773000A7467D /* PPiFlatSegmentedControl.m in Sources */,
 				B26FE5E118FE51FC0093BC2F /* UIDevice+Resolutions.m in Sources */,
 				B2214E4518FE1FB800762AE9 /* HXTPropertyFeeViewController.m in Sources */,
 				B2214E3B18FE1FB800762AE9 /* CYDiscussController.m in Sources */,
@@ -1102,7 +1087,6 @@
 				B2214E5518FE1FB800762AE9 /* HXTPropertyFeeCell.m in Sources */,
 				B2214E4318FE1FB800762AE9 /* HXTBindCardViewController.m in Sources */,
 				B26FE5DF18FE51FC0093BC2F /* StoreBaseItem.m in Sources */,
-				B2D1FC7F1901773000A7467D /* UIButton+PPiAwesome.m in Sources */,
 				B2214E3718FE1FB800762AE9 /* PieLayer.m in Sources */,
 				B2214E3118FE1FB800762AE9 /* MyPieElement.m in Sources */,
 				B26FE5E918FE51FC0093BC2F /* HXTViewWithArrow.m in Sources */,
@@ -1121,6 +1105,7 @@
 				B2214C7218FE1F9000762AE9 /* HXTRegisterInputValidCodeViewController.m in Sources */,
 				B280044718FFE1B100E2DE0E /* HXTWithholdingUseAgreementViewController.m in Sources */,
 				B26FE5D718FE51FC0093BC2F /* HXTLocationManager.m in Sources */,
+				B2D1FC86190256C500A7467D /* HMSegmentedControl.m in Sources */,
 				B2214E1718FE1FB800762AE9 /* CYActivityViewController.m in Sources */,
 				B2214E6518FE1FB800762AE9 /* HXTTheGroceryStoreViewController.m in Sources */,
 				B2214E4718FE1FB800762AE9 /* HXTPropertyFeeDetailTableViewController.m in Sources */,
@@ -1167,15 +1152,14 @@
 				B2214C6B18FE1F9000762AE9 /* HXTLoginViewController.m in Sources */,
 				B26FE5D418FE51FC0093BC2F /* NSDictionaryAdditions.m in Sources */,
 				B26FE5DE18FE51FC0093BC2F /* SqliteStoreManager.m in Sources */,
+				B2D1FC87190256C500A7467D /* HMSegmentedControl.m in Sources */,
 				B2214E1818FE1FB800762AE9 /* CYActivityViewController.m in Sources */,
 				B2F8B6551900BB31000CAB54 /* HXTPropertyFeePayViewController.m in Sources */,
 				B26FE5DC18FE51FC0093BC2F /* Reachability.m in Sources */,
-				B2D1FC801901773000A7467D /* UIButton+PPiAwesome.m in Sources */,
 				B2214E1C18FE1FB800762AE9 /* CYFeedBackViewController.m in Sources */,
 				B26FE5E018FE51FC0093BC2F /* StoreBaseItem.m in Sources */,
 				B2214E5618FE1FB800762AE9 /* HXTPropertyFeeCell.m in Sources */,
 				B2214DB018FE1FA200762AE9 /* HXTHomeChooseHouseEstateTableViewController.m in Sources */,
-				B2D1FC821901773000A7467D /* PPiFlatSegmentedControl.m in Sources */,
 				B2214E3E18FE1FB800762AE9 /* CYHouseChoiceController.m in Sources */,
 				B2214E2A18FE1FB800762AE9 /* CYMyPropertyTableViewCell.m in Sources */,
 				B26FE5EC18FE51FC0093BC2F /* XPHTTPURLConnection.m in Sources */,
