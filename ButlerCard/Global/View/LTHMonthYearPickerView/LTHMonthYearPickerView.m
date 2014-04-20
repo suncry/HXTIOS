@@ -218,13 +218,14 @@ const CGFloat kRowHeight = 30.0;
             self.frame = CGRectMake(0.0, 0.0, kWinSize.width, 260.0);
 			datePickerFrame = CGRectMake(0.0, 44.5, self.frame.size.width, 216.0);
             
-            UIToolbar *toolbar = [[UIToolbar alloc]
-                                  initWithFrame: CGRectMake(0.0, 0.0, self.frame.size.width, datePickerFrame.origin.y - 0.5)];
+            UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame: CGRectMake(0.0, 0.0, self.frame.size.width, datePickerFrame.origin.y - 0.5)];
+            toolbar.backgroundColor = [UIColor colorWithRed:249.0f / 255 green:249.0f / 255 blue:249.0f / 255 alpha:1];
             
             UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc]
                                              initWithBarButtonSystemItem: UIBarButtonSystemItemCancel
                                              target: self
                                              action: @selector(_cancel)];
+            cancelButton.tintColor = [UIColor redColor];
             UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc]
                                           initWithBarButtonSystemItem: UIBarButtonSystemItemFlexibleSpace
                                           target: self
@@ -234,6 +235,7 @@ const CGFloat kRowHeight = 30.0;
                                         target: self
                                         action: @selector(_done)];
             
+            doneBtn.tintColor = [UIColor colorWithRed:40.0f / 255 green:175.0f / 233 blue:3.0f / 255 alpha:1];
             [toolbar setItems: @[cancelButton, flexSpace, doneBtn]
                      animated: YES];
             [self addSubview: toolbar];
