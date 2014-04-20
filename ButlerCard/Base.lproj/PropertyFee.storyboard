@@ -277,18 +277,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="代扣用户协议" id="CyC-Kn-bAe">
-                        <barButtonItem key="rightBarButtonItem" id="ulI-Wy-F8O">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZNo-nn-7qe">
-                                <rect key="frame" x="254" y="5" width="50" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="关闭">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="backButtonPressed:" destination="mGF-Qt-j44" eventType="touchUpInside" id="2Oy-ao-Vmk"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" title="关闭" id="Lnh-YV-fHg">
+                            <connections>
+                                <action selector="backButtonPressed:" destination="mGF-Qt-j44" id="hfL-j6-GlQ"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
@@ -611,7 +603,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ob-8c-Mtv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2879" y="-1042"/>
+            <point key="canvasLocation" x="2463" y="-1042"/>
         </scene>
         <!--Property Fee View Controller - 我的物业-->
         <scene sceneID="05V-e1-hS3">
@@ -741,17 +733,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="我的物业" id="FDu-Ri-jBf">
-                        <barButtonItem key="rightBarButtonItem" id="Shn-DL-4Pi">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CjN-qa-0SP">
-                                <rect key="frame" x="254" y="5" width="50" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="navigationBar_add">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="addPropertyButtonPressed:" destination="WJD-nw-qmQ" eventType="touchUpInside" id="JKi-0R-EJ8"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" image="navigationBar_add" id="ddh-TN-pBD">
+                            <connections>
+                                <action selector="addPropertyButtonPressed:" destination="WJD-nw-qmQ" id="vSj-ja-S26"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
@@ -1164,7 +1149,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u0b-oJ-r2P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2463" y="-1042"/>
+            <point key="canvasLocation" x="2037" y="-1042"/>
         </scene>
     </scenes>
     <resources>

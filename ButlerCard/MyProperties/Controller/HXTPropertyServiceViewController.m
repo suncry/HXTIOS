@@ -9,6 +9,8 @@
 #import "HXTPropertyServiceViewController.h"
 #import "CYHouseChoiceController.h"
 #import "AFNetworking.h"
+#import "NSString+FontAwesome.h"
+#import "UIFont+FontAwesome.h"
 @interface HXTPropertyServiceViewController ()
 
 @end
@@ -23,9 +25,29 @@
     }
     return self;
 }
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    //假定一个默认的住址
+    [[NSUserDefaults standardUserDefaults]setValue:@"中铁小区8栋1单元14-10" forKeyPath:kHouseName];
+    
+    self.rentRateView.rate = 3.5;
+    self.repairRateView.rate = 4.5;
+    
+    [_chooseHouseEstateBarButtonItem setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], UITextAttributeFont: [UIFont fontAwesomeFontOfSize:15.0f]} forState:UIControlStateNormal];
+    
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self.houseNameBtn setTitle:[NSString stringWithFormat:@"%@ ▾",[[NSUserDefaults standardUserDefaults]valueForKeyPath:kHouseName]] forState:UIControlStateNormal];
+    _chooseHouseEstateBarButtonItem.title = [NSString stringWithFormat:@"%@ %@", [[NSUserDefaults standardUserDefaults] valueForKeyPath:kHouseName], [NSString fontAwesomeIconStringForIconIdentifier:@"icon-angle-down"]];
+    
     //每次进入页面都根据所选择住址刷新一遍页面内容
     HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
     [self.navigationController.view addSubview:HUD];
@@ -34,23 +56,9 @@
     
     //在子页面反悔此页面时刷新。用于去掉cell的选中状态
     [self.tableView reloadData];
-
-}
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    //假定一个默认的住址
-    [[NSUserDefaults standardUserDefaults]setValue:@"默认的第一个住址" forKeyPath:kHouseName];
-    
-    self.rentRateView.rate = 3.5;
-    self.repairRateView.rate = 4.5;
     
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
 /**
  *  提交服务申请
  */

@@ -10,6 +10,7 @@
 #import "NSString+FontAwesome.h"
 #import "UIFont+FontAwesome.h"
 #import "LTHMonthYearPickerView.h"
+#import "HXTYearMonthIntervalPickerView.h"
 
 @interface HXTPropertyFeePayViewController () <UITextFieldDelegate, LTHMonthYearPickerViewDelegate>
 
@@ -19,7 +20,7 @@
 
 @property (strong, nonatomic) UIControl *coverView;
 @property (strong, nonatomic) NSArray *feeTypeName;
-@property (strong, nonatomic) LTHMonthYearPickerView *monthYearPicker;
+@property (strong, nonatomic) HXTYearMonthIntervalPickerView *yearMonthIntervalPicker;
 @property (strong, nonatomic) UITextField *editingTextField;
 @end
 
@@ -42,11 +43,7 @@
 //    [_backButton setTitle:[NSString fontAwesomeIconStringForIconIdentifier:@"icon-remove"] forState:UIControlStateNormal];
     _feeTypeName = @[@"物管费", @"停车费", @"水费", @"电费", @"气费"];
     
-    _monthYearPicker = [[LTHMonthYearPickerView alloc] initWithDate: [NSDate date]
-														shortMonths: YES
-													 numberedMonths: YES
-														 andToolbar: YES];
-	_monthYearPicker.delegate = self;
+    _yearMonthIntervalPicker = [[HXTYearMonthIntervalPickerView alloc] initWithFrame:CGRectMake(0, 0, 320, 270)];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -94,10 +91,10 @@
             
             ((UILabel *)[cell viewWithTag:102]).text = _feeTypeName[indexPath.row];
             
-            ((UITextField *)[cell viewWithTag:103]).inputView = _monthYearPicker;
+            ((UITextField *)[cell viewWithTag:103]).inputView = _yearMonthIntervalPicker;
             ((UITextField *)[cell viewWithTag:103]).delegate = self;
             
-            ((UITextField *)[cell viewWithTag:105]).inputView = _monthYearPicker;
+            ((UITextField *)[cell viewWithTag:105]).inputView = _yearMonthIntervalPicker;
             ((UITextField *)[cell viewWithTag:105]).delegate = self;
             
             return cell;
@@ -107,7 +104,7 @@
             // Configure the cell...
             
             ((UILabel *)[cell viewWithTag:102]).text = _feeTypeName[indexPath.row];
-            ((UITextField *)[cell viewWithTag:103]).inputView = _monthYearPicker;
+            ((UITextField *)[cell viewWithTag:103]).inputView = _yearMonthIntervalPicker;
             ((UITextField *)[cell viewWithTag:103]).delegate = self;
             
             return cell;

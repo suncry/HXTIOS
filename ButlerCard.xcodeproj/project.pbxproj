@@ -164,6 +164,8 @@
 		B2214E8618FE1FE200762AE9 /* SurroundingLife.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2214E7518FE1FE200762AE9 /* SurroundingLife.storyboard */; };
 		B2214E8818FE216700762AE9 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B2214E8718FE216700762AE9 /* libsqlite3.dylib */; };
 		B22F869918FE8E5F0031A646 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B22F869818FE8E5F0031A646 /* Images.xcassets */; };
+		B240382C1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B240382B1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.m */; };
+		B240382D1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B240382B1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.m */; };
 		B26FE5CF18FE51FC0093BC2F /* NSArrayAdditionals.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE58518FE51FC0093BC2F /* NSArrayAdditionals.m */; };
 		B26FE5D018FE51FC0093BC2F /* NSArrayAdditionals.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE58518FE51FC0093BC2F /* NSArrayAdditionals.m */; };
 		B26FE5D118FE51FC0093BC2F /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE58718FE51FC0093BC2F /* NSDataAdditions.m */; };
@@ -366,6 +368,8 @@
 		B2214E7618FE1FE200762AE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SurroundingLife.storyboard; sourceTree = "<group>"; };
 		B2214E8718FE216700762AE9 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		B22F869818FE8E5F0031A646 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B240382A1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTYearMonthIntervalPickerView.h; sourceTree = "<group>"; };
+		B240382B1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTYearMonthIntervalPickerView.m; sourceTree = "<group>"; };
 		B26FE58418FE51FC0093BC2F /* NSArrayAdditionals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSArrayAdditionals.h; sourceTree = "<group>"; };
 		B26FE58518FE51FC0093BC2F /* NSArrayAdditionals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayAdditionals.m; sourceTree = "<group>"; };
 		B26FE58618FE51FC0093BC2F /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
@@ -741,6 +745,8 @@
 				B2214E0418FE1FB800762AE9 /* HXTPropertyTableViewHeaderFooterView.h */,
 				B2214E0518FE1FB800762AE9 /* HXTPropertyTableViewHeaderFooterView.m */,
 				B2214E0618FE1FB800762AE9 /* MyPropertyTableViewHeaderFooterView.xib */,
+				B240382A1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.h */,
+				B240382B1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1100,6 +1106,7 @@
 				B2214E5D18FE1FB800762AE9 /* HXTChooseHousingEstateTableViewController.m in Sources */,
 				B26FE5E318FE51FC0093BC2F /* HXTCheckBox.m in Sources */,
 				B2214C7818FE1F9000762AE9 /* HXTAddHouseEstateViewController.m in Sources */,
+				B240382C1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.m in Sources */,
 				B2214DB118FE1FA200762AE9 /* HXTHomeViewController.m in Sources */,
 				B2214E2118FE1FB800762AE9 /* CYMyBillDetailCell.m in Sources */,
 				B2214C7618FE1F9000762AE9 /* HXTAccountManager.m in Sources */,
@@ -1205,6 +1212,7 @@
 				B2214E3218FE1FB800762AE9 /* MyPieElement.m in Sources */,
 				B2214E4A18FE1FB800762AE9 /* HXTPropertyServiceViewController.m in Sources */,
 				B2214E4E18FE1FB800762AE9 /* DJQStartView.m in Sources */,
+				B240382D1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.m in Sources */,
 				B2214C7318FE1F9000762AE9 /* HXTRegisterInputValidCodeViewController.m in Sources */,
 				B2214E4818FE1FB800762AE9 /* HXTPropertyFeeDetailTableViewController.m in Sources */,
 				B2214E6618FE1FB800762AE9 /* HXTTheGroceryStoreViewController.m in Sources */,

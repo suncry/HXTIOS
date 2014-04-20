@@ -308,21 +308,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="2FR-eI-eZB">
                         <barButtonItem key="backBarButtonItem" title="首页" id="6ZD-Hj-Gxb"/>
-                        <barButtonItem key="leftBarButtonItem" id="lsb-vY-O8m">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NDk-fB-5Gf">
-                                <rect key="frame" x="16" y="5" width="120" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <inset key="contentEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="全部商圈 ▾"/>
-                                <connections>
-                                    <segue destination="p66-WV-dhf" kind="modal" id="NCi-4J-v9H"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="leftBarButtonItem" title="全部商圈 ▾" id="RuO-HR-Qzp">
+                            <connections>
+                                <segue destination="p66-WV-dhf" kind="modal" id="RBu-ij-mpB"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="chooseHouseEstateButton" destination="NDk-fB-5Gf" id="Nis-nL-Mqx"/>
+                        <outlet property="chooseHouseEstateBarButtonItem" destination="RuO-HR-Qzp" id="JnW-oW-2cJ"/>
                         <outlet property="houseEstateInteractionButton" destination="nu1-HL-J5v" id="KwL-ww-te2"/>
                         <outlet property="messageTableView" destination="Fk6-FR-SPF" id="INc-wn-8Sb"/>
                         <outlet property="propertyFeeButton" destination="srh-sM-lIZ" id="8Xc-xw-ohk"/>
@@ -402,15 +395,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="选择小区" id="Sdz-AB-bko">
-                        <barButtonItem key="leftBarButtonItem" id="LTv-gA-lcE">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dzb-or-Lcg">
-                                <rect key="frame" x="16" y="5" width="50" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="取消"/>
-                                <connections>
-                                    <action selector="backButtonPressed:" destination="0Ke-7N-58u" eventType="touchUpInside" id="bgL-sp-MaN"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="leftBarButtonItem" title="取消" id="SSC-6f-X8a">
+                            <connections>
+                                <action selector="backButtonPressed:" destination="0Ke-7N-58u" id="0PW-us-Tqb"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>

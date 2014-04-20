@@ -14,7 +14,7 @@
 
 @interface HXTBrowseHouseEstateViewController ()
 
-@property (weak, nonatomic) IBOutlet UIButton *chooseCityButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *chooseAreaBarButtonItem;
 @property (weak, nonatomic) IBOutlet UIControl *coverView;
 @property (weak, nonatomic) IBOutlet UISearchBar *propertySearchBar;
 @property (weak, nonatomic) IBOutlet UICollectionView *housingEstatesCollectionView;
@@ -41,14 +41,12 @@
     
     _housingEstateNamesToShow = [[NSMutableArray alloc] initWithArray:[HXTMyProperties sharedInstance].allHousingEstateNames];
     
-    _chooseCityButton.titleLabel.font = [UIFont fontAwesomeFontOfSize:15.0f];
-    NSString *buttonTitle = [NSString stringWithFormat:@"%@ %@", [HXTAccountManager sharedInstance].currentCity, [NSString fontAwesomeIconStringForIconIdentifier:@"icon-angle-down"]];
-    [_chooseCityButton setTitle:buttonTitle forState:UIControlStateNormal];
+    [_chooseAreaBarButtonItem setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], UITextAttributeFont: [UIFont fontAwesomeFontOfSize:15.0f]} forState:UIControlStateNormal];
+    _chooseAreaBarButtonItem.title = [NSString stringWithFormat:@"%@ %@", [HXTAccountManager sharedInstance].currentCity, [NSString fontAwesomeIconStringForIconIdentifier:@"icon-angle-down"]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    _chooseCityButton.selected = NO;
     
     [[HXTAccountManager sharedInstance] addObserver:self
                                          forKeyPath:@"currentCity"
@@ -72,8 +70,7 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if ([keyPath isEqualToString:@"currentCity"] && object == [HXTAccountManager sharedInstance]) {
-        NSString *buttonTitle = [NSString stringWithFormat:@"%@ %@", [HXTAccountManager sharedInstance].currentCity, [NSString fontAwesomeIconStringForIconIdentifier:@"icon-angle-down"]];
-        [_chooseCityButton setTitle:buttonTitle forState:UIControlStateNormal];
+        _chooseAreaBarButtonItem.title = [NSString stringWithFormat:@"%@ %@", [HXTAccountManager sharedInstance].currentCity, [NSString fontAwesomeIconStringForIconIdentifier:@"icon-angle-down"]];
     }
 }
 
@@ -145,10 +142,6 @@
 }
 
 #pragma mark - IB Actions
-
-- (IBAction)chooseCityButtonPressed:(UIButton *)sender {
-    sender.selected = !sender.selected;
-}
 
 - (IBAction)backgroudTouchUpInside:(id)sender {
     [_propertySearchBar resignFirstResponder];

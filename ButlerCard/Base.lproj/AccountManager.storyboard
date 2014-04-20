@@ -112,31 +112,15 @@
                     </view>
                     <navigationItem key="navigationItem" title="用户登录" id="7RX-sD-6aT">
                         <barButtonItem key="backBarButtonItem" title="返回" id="Jz7-mk-PIN"/>
-                        <barButtonItem key="leftBarButtonItem" id="Vr2-zB-8eB">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wWo-9K-Ms4">
-                                <rect key="frame" x="16" y="5" width="50" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="取消">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="backButtonPressed:" destination="rjh-qG-5i0" eventType="touchUpInside" id="P4G-Tz-HmH"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="leftBarButtonItem" title="取消" id="nN6-EY-dcZ">
+                            <connections>
+                                <action selector="backButtonPressed:" destination="rjh-qG-5i0" id="Vzi-mM-Gs1"/>
+                            </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" id="PJd-kE-bLF">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="CZs-2o-fjY">
-                                <rect key="frame" x="254" y="5" width="50" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="注册">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="EuQ-sy-3IN" kind="push" identifier="InputPhoneNumberStoryboardSegue" id="5BC-9z-C2J"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" title="注册" id="JZp-bM-w9t">
+                            <connections>
+                                <segue destination="EuQ-sy-3IN" kind="push" id="ibc-XM-2gV"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>

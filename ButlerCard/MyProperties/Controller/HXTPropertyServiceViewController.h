@@ -15,7 +15,7 @@
     MBProgressHUD *HUD;
 
 }
-@property (weak, nonatomic) IBOutlet UIButton *houseNameBtn;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *chooseHouseEstateBarButtonItem;
 @property (strong, nonatomic) NSString *houseName;
 @property (weak, nonatomic) IBOutlet DJQRateView *rentRateView;
 @property (weak, nonatomic) IBOutlet DJQRateView *repairRateView;

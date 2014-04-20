@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="gz4-CT-J1B">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="gz4-CT-J1B">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -302,29 +302,14 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="4Pb-Fo-E23">
                         <barButtonItem key="backBarButtonItem" title="物管服务" id="rhx-ay-t25"/>
-                        <barButtonItem key="rightBarButtonItem" id="3yq-Ud-WiI">
-                            <view key="customView" contentMode="scaleToFill" id="fAL-3A-dfZ">
-                                <rect key="frame" x="74" y="5" width="230" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXW-t2-9Bs">
-                                        <rect key="frame" x="0.0" y="2" width="230" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="中铁小区8栋1单元14-10 ▾">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="Fvx-SP-cTZ" kind="modal" id="lpZ-Pa-wbD"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
+                        <barButtonItem key="rightBarButtonItem" title="中铁小区8栋1单元14-10 ▾" id="I7y-Al-MSI">
+                            <connections>
+                                <segue destination="Fvx-SP-cTZ" kind="modal" id="L8y-ud-hrN"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="houseNameBtn" destination="EXW-t2-9Bs" id="S7y-yk-g0R"/>
+                        <outlet property="chooseHouseEstateBarButtonItem" destination="I7y-Al-MSI" id="1Lb-5R-uzS"/>
                         <outlet property="rentCommentBtn" destination="DUX-5W-AGs" id="kPp-No-44f"/>
                         <outlet property="rentRateView" destination="2EU-N0-Lgb" id="IFV-DY-yCZ"/>
                         <outlet property="repairCommentBtn" destination="Lxq-sv-RCs" id="dSf-zg-ZAE"/>
@@ -902,7 +887,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZGH-D7-c0Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="244" y="-5331"/>
+            <point key="canvasLocation" x="244" y="-5313"/>
         </scene>
         <!--Discuss Controller - 服务评价-->
         <scene sceneID="14h-Se-ccW">

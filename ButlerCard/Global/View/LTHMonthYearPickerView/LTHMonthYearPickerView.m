@@ -193,10 +193,24 @@ const CGFloat kRowHeight = 30.0;
     if (self) {
         if (!date) date = [NSDate date];
         
+        NSDateComponents *comp = [[NSDateComponents alloc]init];
+        [comp setTimeZone:[NSTimeZone systemTimeZone]];
+        [comp setMonth:6];
+        [comp setDay:2];
+        [comp setHour:12];
+        [comp setYear:2001];
+        NSCalendar *myCal = [NSCalendar currentCalendar];
+        [myCal setTimeZone:[NSTimeZone systemTimeZone]];
+        NSDate *myDate1 = [myCal dateFromComponents:comp];
+        NSLog(@"myDate1 = %@",myDate1);
+        NSLog(@"myDate1 = %@", [myDate1 descriptionWithLocale:[[NSLocale alloc] initWithLocaleIdentifier : @"zh_CN" ]]  );
+        
+        
         NSCalendar *calendar = [NSCalendar currentCalendar];
-        NSDateComponents *dateComponents = [NSDateComponents new];
-        NSDateFormatter *dateFormatter = [NSDateFormatter new];
-        NSMutableArray *months = [NSMutableArray new];
+        calendar.timeZone = [NSTimeZone defaultTimeZone];
+        NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        NSMutableArray *months = [NSMutableArray array];
         dateComponents.month = 1;
         
         if (numberedMonths) [dateFormatter setDateFormat: @"MM"]; // MARK: Change to @"M" if you don't want double digits

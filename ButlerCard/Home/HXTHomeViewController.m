@@ -14,7 +14,7 @@
 
 @interface HXTHomeViewController ()
 
-@property (weak, nonatomic) IBOutlet UIButton *chooseHouseEstateButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *chooseHouseEstateBarButtonItem;
 @property (weak, nonatomic) IBOutlet UIButton *propertyServiceButton;
 @property (weak, nonatomic) IBOutlet UIButton *propertyFeeButton;
 @property (weak, nonatomic) IBOutlet UIButton *surroundingLifeButton;
@@ -41,13 +41,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    _chooseHouseEstateButton.titleLabel.font = [UIFont fontAwesomeFontOfSize:18.0f];
+    [_chooseHouseEstateBarButtonItem setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], UITextAttributeFont: [UIFont fontAwesomeFontOfSize:18.0f]} forState:UIControlStateNormal];
     if ([HXTAccountManager sharedInstance].defaultHouseingEstate) {
-        NSString *buttonTitle = [NSString stringWithFormat:@"%@ %@", [HXTAccountManager sharedInstance].defaultHouseingEstate, [NSString fontAwesomeIconStringForIconIdentifier:@"icon-angle-down"]];
-        [_chooseHouseEstateButton setTitle:buttonTitle forState:UIControlStateNormal];
+        _chooseHouseEstateBarButtonItem.title = [NSString stringWithFormat:@"%@ %@", [HXTAccountManager sharedInstance].defaultHouseingEstate, [NSString fontAwesomeIconStringForIconIdentifier:@"icon-angle-down"]];
     } else {
-        NSString *buttonTitle = [NSString stringWithFormat:@"%@ %@", @"全部商圈", [NSString fontAwesomeIconStringForIconIdentifier:@"icon-angle-down"]];
-        [_chooseHouseEstateButton setTitle:buttonTitle forState:UIControlStateNormal];
+        _chooseHouseEstateBarButtonItem.title = [NSString stringWithFormat:@"%@ %@", @"全部商圈", [NSString fontAwesomeIconStringForIconIdentifier:@"icon-angle-down"]];
     }
 }
 
