@@ -13,11 +13,11 @@
 
 @interface HXTPropertyFeePayViewController () <UITextFieldDelegate, LTHMonthYearPickerViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIControl *coverView;
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 
+@property (strong, nonatomic) UIControl *coverView;
 @property (strong, nonatomic) NSArray *feeTypeName;
 @property (strong, nonatomic) LTHMonthYearPickerView *monthYearPicker;
 @property (strong, nonatomic) UITextField *editingTextField;
@@ -38,8 +38,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.view bringSubviewToFront:_coverView];
-    _coverView.hidden = YES;
     _backButton.titleLabel.font = [UIFont fontAwesomeFontOfSize:30.0f];
 //    [_backButton setTitle:[NSString fontAwesomeIconStringForIconIdentifier:@"icon-remove"] forState:UIControlStateNormal];
     _feeTypeName = @[@"物管费", @"停车费", @"水费", @"电费", @"气费"];
@@ -49,6 +47,17 @@
 													 numberedMonths: YES
 														 andToolbar: YES];
 	_monthYearPicker.delegate = self;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    _coverView = [[UIControl alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [self.view.window addSubview:_coverView];
+    [self.view.window bringSubviewToFront:_coverView];
+    _coverView.hidden = YES;
+    _coverView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.2f];
+    [_coverView addTarget:self action:@selector(backgroundTouchUpInside:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)didReceiveMemoryWarning
@@ -162,26 +171,21 @@
     _editingTextField.text = [NSString stringWithFormat: @"%@年%@月",year, month];
 }
 
+#pragma mark - local functions
+- (void)backgroundTouchUpInside:(id)sender {
+    if (_editingTextField) {
+        [_editingTextField resignFirstResponder];
+    }
+    _coverView.hidden = YES;
+}
 
 #pragma mark - IB Actions
 
 
 - (IBAction)segmentedControlValueChanged:(UISegmentedControl *)sender {
     NSLog(@"sender.selectedSegmentIndex = %lu title = %@", (long)sender.selectedSegmentIndex, [sender titleForSegmentAtIndex:sender.selectedSegmentIndex]);
-    if (_editingTextField) {
-        [_editingTextField resignFirstResponder];
-    }
-    _coverView.hidden = YES;
     
     [self.tableView reloadData];
-}
-
-
-- (IBAction)backgroundTouchUpInside:(id)sender {
-    if (_editingTextField) {
-        [_editingTextField resignFirstResponder];
-    }
-    _coverView.hidden = YES;
 }
 
 - (IBAction)chechBoxChecked:(UIButton *)sender {

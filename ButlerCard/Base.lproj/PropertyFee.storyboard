@@ -327,14 +327,6 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JyD-sd-Nfc" userLabel="coverView" customClass="UIControl">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <action selector="backgroundTouchUpInside:" destination="LPQ-63-w2k" eventType="touchUpInside" id="Jjt-p3-2us"/>
-                                </connections>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w6E-kw-5St">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -573,12 +565,8 @@
                             <constraint firstItem="w6E-kw-5St" firstAttribute="top" secondItem="6zX-tU-kdQ" secondAttribute="bottom" id="A2S-UN-U5V"/>
                             <constraint firstItem="w6E-kw-5St" firstAttribute="leading" secondItem="Mqu-Ts-V3F" secondAttribute="leading" id="Rx1-hU-kag"/>
                             <constraint firstAttribute="trailing" secondItem="EJE-XD-cNk" secondAttribute="trailing" id="all-YF-MSE"/>
-                            <constraint firstItem="JyD-sd-Nfc" firstAttribute="leading" secondItem="Mqu-Ts-V3F" secondAttribute="leading" id="buX-LG-eR1"/>
-                            <constraint firstItem="JyD-sd-Nfc" firstAttribute="top" secondItem="6zX-tU-kdQ" secondAttribute="bottom" id="e2p-B7-QOd"/>
-                            <constraint firstItem="32u-Ef-mOa" firstAttribute="top" secondItem="JyD-sd-Nfc" secondAttribute="bottom" id="em8-bv-8DW"/>
                             <constraint firstAttribute="trailing" secondItem="w6E-kw-5St" secondAttribute="trailing" id="gzc-Bi-XvO"/>
                             <constraint firstItem="3eg-7Y-zS4" firstAttribute="leading" secondItem="Mqu-Ts-V3F" secondAttribute="leading" id="ja5-DM-ixY"/>
-                            <constraint firstAttribute="trailing" secondItem="JyD-sd-Nfc" secondAttribute="trailing" id="uZJ-Co-frO"/>
                             <constraint firstItem="EJE-XD-cNk" firstAttribute="leading" secondItem="Mqu-Ts-V3F" secondAttribute="leading" id="yXh-jh-OhZ"/>
                             <constraint firstItem="3eg-7Y-zS4" firstAttribute="top" secondItem="w6E-kw-5St" secondAttribute="bottom" id="z7v-Hl-xwb"/>
                         </constraints>
@@ -617,7 +605,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backButton" destination="0hw-dS-pvn" id="4Zv-GH-dqK"/>
-                        <outlet property="coverView" destination="JyD-sd-Nfc" id="Oqu-fE-nrs"/>
                         <outlet property="segmentedControl" destination="ZbR-HW-HhS" id="by7-ii-MnO"/>
                         <outlet property="tableView" destination="3eg-7Y-zS4" id="k0F-l9-45P"/>
                     </connections>
