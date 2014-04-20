@@ -93,7 +93,7 @@
                                                     cancelButtonTitle:@"取消"
                                                destructiveButtonTitle:nil
                                                     otherButtonTitles:_feeTypeArray[0], _feeTypeArray[1], _feeTypeArray[2], _feeTypeArray[3], _feeTypeArray[4], nil];
-    [_feeTypeActionSheet showInView:self.view];
+    [_feeTypeActionSheet showInView:self.view.window];
 }
 
 - (IBAction)areaButtonPressed:(id)sender {
@@ -105,7 +105,7 @@
                                                     cancelButtonTitle:@"取消"
                                                destructiveButtonTitle:nil
                                                     otherButtonTitles:_areaArray[0], _areaArray[1], _areaArray[2], _areaArray[3], nil];
-    [_areaActionSheet showInView:self.view];
+    [_areaActionSheet showInView:self.view.window];
 }
 
 - (IBAction)companyButtonPressed:(id)sender {
@@ -115,7 +115,7 @@
                                                     cancelButtonTitle:@"取消"
                                                destructiveButtonTitle:nil
                                                     otherButtonTitles:_companyArray[0], _companyArray[1], _companyArray[2], _companyArray[3], nil];
-    [_companyActionSheet showInView:self.view];
+    [_companyActionSheet showInView:self.view.window];
 }
 
 - (IBAction)applyButtonPressed:(UIButton *)sender {

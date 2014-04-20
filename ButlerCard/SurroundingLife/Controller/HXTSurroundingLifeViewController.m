@@ -112,10 +112,10 @@ typedef NS_ENUM(NSUInteger, FunctionsGroup) {
     
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 100, 280, 40)];
-	label.font = [UIFont fontWithName:kFontAwesomeFamilyName size:20];
+	label.font = [UIFont fontWithName:kFontAwesomeFamilyName size:33];
     
 //	label.text = [NSString fontAwesomeIconStringForIconIdentifier:@"icon-caret-down"];
-    label.text = [@"AAA" stringByAppendingString:[NSString fontAwesomeIconStringForIconIdentifier:@"icon-phone"]];
+    label.text = [@"AAA" stringByAppendingString:[NSString fontAwesomeIconStringForIconIdentifier:@"icon-angle-left"]];
     label.textColor = [UIColor whiteColor];
     [self.view addSubview:label];
     [self.view bringSubviewToFront:label];

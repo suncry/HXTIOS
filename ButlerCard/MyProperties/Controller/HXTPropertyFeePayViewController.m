@@ -7,15 +7,20 @@
 //
 
 #import "HXTPropertyFeePayViewController.h"
-#import "SRMonthPicker.h"
+#import "NSString+FontAwesome.h"
+#import "UIFont+FontAwesome.h"
+#import "LTHMonthYearPickerView.h"
 
-@interface HXTPropertyFeePayViewController () <UIActionSheetDelegate, UIPickerViewDelegate>
+@interface HXTPropertyFeePayViewController () <UITextFieldDelegate, LTHMonthYearPickerViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIControl *coverView;
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 
-@property (strong, nonatomic) SRMonthPicker *monthPicker;
 @property (strong, nonatomic) NSArray *feeTypeName;
+@property (strong, nonatomic) LTHMonthYearPickerView *monthYearPicker;
+@property (strong, nonatomic) UITextField *editingTextField;
 @end
 
 @implementation HXTPropertyFeePayViewController
@@ -33,8 +38,17 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    [self.view bringSubviewToFront:_coverView];
+    _coverView.hidden = YES;
+    _backButton.titleLabel.font = [UIFont fontAwesomeFontOfSize:30.0f];
+//    [_backButton setTitle:[NSString fontAwesomeIconStringForIconIdentifier:@"icon-remove"] forState:UIControlStateNormal];
     _feeTypeName = @[@"物管费", @"停车费", @"水费", @"电费", @"气费"];
+    
+    _monthYearPicker = [[LTHMonthYearPickerView alloc] initWithDate: [NSDate date]
+														shortMonths: YES
+													 numberedMonths: YES
+														 andToolbar: YES];
+	_monthYearPicker.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,6 +84,12 @@
             
             ((UILabel *)[cell viewWithTag:102]).text = _feeTypeName[indexPath.row];
             
+            ((UITextField *)[cell viewWithTag:103]).inputView = _monthYearPicker;
+            ((UITextField *)[cell viewWithTag:103]).delegate = self;
+            
+            ((UITextField *)[cell viewWithTag:105]).inputView = _monthYearPicker;
+            ((UITextField *)[cell viewWithTag:105]).delegate = self;
+            
             return cell;
         } else {
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TypeThreeCellIdentifier forIndexPath:indexPath];
@@ -77,57 +97,97 @@
             // Configure the cell...
             
             ((UILabel *)[cell viewWithTag:102]).text = _feeTypeName[indexPath.row];
+            ((UITextField *)[cell viewWithTag:103]).inputView = _monthYearPicker;
+            ((UITextField *)[cell viewWithTag:103]).delegate = self;
             
             return cell;
         }
     }
 }
 
+#pragma mark - text field delegate
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    _coverView.hidden = NO;
+    _editingTextField = textField;
+    return YES;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    
+}
+
+
+#pragma mark - LTHMonthYearPickerView Delegate
+
+- (void)pickerDidPressCancelWithInitialValues:(NSDictionary *)initialValues {
+	_editingTextField.text = [NSString stringWithFormat:
+						   @"%@年%@月",
+                              initialValues[@"year"],
+                              initialValues[@"month"]];
+    [_editingTextField resignFirstResponder];
+    _coverView.hidden = YES;
+}
+
+
+- (void)pickerDidPressDoneWithMonth:(NSString *)month andYear:(NSString *)year {
+    _editingTextField.text = [NSString stringWithFormat: @"%@年%@月",year, month];
+	[_editingTextField resignFirstResponder];
+    _coverView.hidden = YES;
+}
+
+
+- (void)pickerDidPressCancel {
+	[_editingTextField resignFirstResponder];
+    _coverView.hidden = YES;
+}
+
+
+- (void)pickerDidSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+	NSLog(@"row: %li in component: %li", (long)row, (long)component);
+}
+
+
+- (void)pickerDidSelectMonth:(NSString *)month {
+    NSLog(@"month: %@ ", month);
+}
+
+
+- (void)pickerDidSelectYear:(NSString *)year {
+    NSLog(@"year: %@ ", year);
+}
+
+
+- (void)pickerDidSelectMonth:(NSString *)month andYear:(NSString *)year {
+    _editingTextField.text = [NSString stringWithFormat: @"%@年%@月",year, month];
+}
+
+
 #pragma mark - IB Actions
+
 
 - (IBAction)segmentedControlValueChanged:(UISegmentedControl *)sender {
     NSLog(@"sender.selectedSegmentIndex = %lu title = %@", (long)sender.selectedSegmentIndex, [sender titleForSegmentAtIndex:sender.selectedSegmentIndex]);
+    if (_editingTextField) {
+        [_editingTextField resignFirstResponder];
+    }
+    _coverView.hidden = YES;
+    
     [self.tableView reloadData];
+}
+
+
+- (IBAction)backgroundTouchUpInside:(id)sender {
+    if (_editingTextField) {
+        [_editingTextField resignFirstResponder];
+    }
+    _coverView.hidden = YES;
 }
 
 - (IBAction)chechBoxChecked:(UIButton *)sender {
     sender.selected = !sender.selected;
 }
 
-- (IBAction)lowerDateSelectorButtonPressed:(id)sender {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
-                                                             delegate:self
-                                                    cancelButtonTitle:@"Cancel"
-                               
-                                               destructiveButtonTitle:nil
-                                                    otherButtonTitles:nil];
-    [actionSheet showInView:[UIApplication sharedApplication].keyWindow];
-    [actionSheet setBounds:CGRectMake(0,0,320, 385)];
-    
-    UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 430)];
-    _monthPicker = [[SRMonthPicker alloc] initWithFrame:CGRectMake(0, 0, 320, 165)];
-    _monthPicker.maximumYear = @2015;
-    _monthPicker.minimumYear = @2013;
-    _monthPicker.yearFirst = YES;
-    [backgroundView addSubview:_monthPicker];
-    
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(20, 170, 280, 40);
-    [button setBackgroundImage:[UIImage imageNamed:@"account_sigh_button_tjxq"] forState:UIControlStateNormal];
-    [button setTitle:@"取消" forState:UIControlStateNormal];
-    [backgroundView addSubview:button];
-    
-    [actionSheet addSubview:backgroundView];
-    backgroundView.backgroundColor = [UIColor colorWithRed:241.0f / 255 green:241.0f / 255 blue:241.0f / 255 alpha:1];
-    [actionSheet bringSubviewToFront:backgroundView];
-    
-}
-
-- (IBAction)uperDateSelectorButtonPressed:(id)sender {
-    
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"确认" otherButtonTitles:@"11", @"22", @"33", nil];
-    [actionSheet showInView:self.view];
-}
 
 /*
 #pragma mark - Navigation
