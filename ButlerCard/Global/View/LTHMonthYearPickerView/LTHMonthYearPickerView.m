@@ -8,7 +8,7 @@
 
 #import "LTHMonthYearPickerView.h"
 
-#define kMonthColor [UIColor grayColor]
+#define kMonthColor [UIColor darkGrayColor]
 #define kYearColor [UIColor darkGrayColor]
 #define kMonthFont [UIFont systemFontOfSize: 22.0]
 #define kYearFont [UIFont systemFontOfSize: 22.0]
@@ -216,10 +216,11 @@ const CGFloat kRowHeight = 30.0;
 		CGRect datePickerFrame;
         if (showToolbar) {
             self.frame = CGRectMake(0.0, 0.0, kWinSize.width, 260.0);
+            self.backgroundColor = [UIColor whiteColor];
 			datePickerFrame = CGRectMake(0.0, 44.5, self.frame.size.width, 216.0);
             
             UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame: CGRectMake(0.0, 0.0, self.frame.size.width, datePickerFrame.origin.y - 0.5)];
-            toolbar.backgroundColor = [UIColor colorWithRed:249.0f / 255 green:249.0f / 255 blue:249.0f / 255 alpha:1];
+            toolbar.barTintColor = [UIColor whiteColor];
             
             UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc]
                                              initWithBarButtonSystemItem: UIBarButtonSystemItemCancel

@@ -245,7 +245,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YPy-Cv-TDv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2043" y="-1042"/>
+            <point key="canvasLocation" x="1603" y="-376"/>
         </scene>
         <!--Withholding Use Agreement View Controller - 代扣用户协议-->
         <scene sceneID="t3L-Gd-MQi">

@@ -56,7 +56,8 @@
     [self.view.window addSubview:_coverView];
     [self.view.window bringSubviewToFront:_coverView];
     _coverView.hidden = YES;
-    _coverView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.2f];
+    _coverView.backgroundColor = [UIColor clearColor];
+//    _coverView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.2f];
     [_coverView addTarget:self action:@selector(backgroundTouchUpInside:) forControlEvents:UIControlEventTouchUpInside];
 }
 
