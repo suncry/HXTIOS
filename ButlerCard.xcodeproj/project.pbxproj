@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		238ECB531904BECA00721872 /* CYPropertieCardsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 238ECB521904BECA00721872 /* CYPropertieCardsController.m */; };
 		2392C7C218FE7157007EDB5A /* CYRepairController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2392C7C118FE7157007EDB5A /* CYRepairController.m */; };
-		23D711F518FF7E9D00B9011A /* CYMyCardsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D711F418FF7E9D00B9011A /* CYMyCardsController.m */; };
 		B2214C0C18FE1E4000762AE9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2214C0B18FE1E4000762AE9 /* Foundation.framework */; };
 		B2214C0E18FE1E4000762AE9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2214C0D18FE1E4000762AE9 /* CoreGraphics.framework */; };
 		B2214C1018FE1E4000762AE9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2214C0F18FE1E4000762AE9 /* UIKit.framework */; };
@@ -216,10 +216,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		238ECB511904BECA00721872 /* CYPropertieCardsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYPropertieCardsController.h; sourceTree = "<group>"; };
+		238ECB521904BECA00721872 /* CYPropertieCardsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYPropertieCardsController.m; sourceTree = "<group>"; };
 		2392C7C018FE7157007EDB5A /* CYRepairController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYRepairController.h; sourceTree = "<group>"; };
 		2392C7C118FE7157007EDB5A /* CYRepairController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYRepairController.m; sourceTree = "<group>"; };
-		23D711F318FF7E9D00B9011A /* CYMyCardsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYMyCardsController.h; sourceTree = "<group>"; };
-		23D711F418FF7E9D00B9011A /* CYMyCardsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYMyCardsController.m; sourceTree = "<group>"; };
 		B08EE05FF8CA47378694428B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		B2214C0818FE1E4000762AE9 /* ButlerCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ButlerCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2214C0B18FE1E4000762AE9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -712,8 +712,8 @@
 				B2F8B6531900BB31000CAB54 /* HXTPropertyFeePayViewController.m */,
 				B2214DF218FE1FB800762AE9 /* HXTPropertyServiceViewController.h */,
 				B2214DF318FE1FB800762AE9 /* HXTPropertyServiceViewController.m */,
-				23D711F318FF7E9D00B9011A /* CYMyCardsController.h */,
-				23D711F418FF7E9D00B9011A /* CYMyCardsController.m */,
+				238ECB511904BECA00721872 /* CYPropertieCardsController.h */,
+				238ECB521904BECA00721872 /* CYPropertieCardsController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1070,7 +1070,6 @@
 				B2214E2318FE1FB800762AE9 /* CYMyBillMonthCell.m in Sources */,
 				B26FE5CF18FE51FC0093BC2F /* NSArrayAdditionals.m in Sources */,
 				B26FE5D118FE51FC0093BC2F /* NSDataAdditions.m in Sources */,
-				23D711F518FF7E9D00B9011A /* CYMyCardsController.m in Sources */,
 				B2214E2D18FE1FB800762AE9 /* CYOrderCell.m in Sources */,
 				B2D4EFFE19035897007C6089 /* LTHMonthYearPickerView.m in Sources */,
 				B2214DB318FE1FA200762AE9 /* HXTNavigationController.m in Sources */,
@@ -1133,6 +1132,7 @@
 				B2214E2518FE1FB800762AE9 /* CYMyBillTableViewController.m in Sources */,
 				B2214E3D18FE1FB800762AE9 /* CYHouseChoiceController.m in Sources */,
 				B2214E6118FE1FB800762AE9 /* HXTIGoViewController.m in Sources */,
+				238ECB531904BECA00721872 /* CYPropertieCardsController.m in Sources */,
 				B2214E3518FE1FB800762AE9 /* PieElement.m in Sources */,
 				B2214E2F18FE1FB800762AE9 /* Example2PieView.m in Sources */,
 				B2214E4118FE1FB800762AE9 /* CYRentController.m in Sources */,
@@ -1415,7 +1415,7 @@
 				INFOPLIST_FILE = "ButlerCard/ButlerCard-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "A77BA517-27F5-4575-AF96-B214674C6B79";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1433,7 +1433,7 @@
 				INFOPLIST_FILE = "ButlerCard/ButlerCard-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "A77BA517-27F5-4575-AF96-B214674C6B79";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
