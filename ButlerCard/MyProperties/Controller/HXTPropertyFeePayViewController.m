@@ -112,6 +112,17 @@
 #pragma mark - text field delegate
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    
+    NSDateComponents *startComps = [[NSDateComponents alloc] init];
+    startComps.year = 2012;
+    startComps.month = 11;
+    
+    NSDateComponents *endComps = [[NSDateComponents alloc] init];
+    endComps.year = 2014;
+    endComps.month = 2;
+    _yearMonthIntervalPicker.startComps = startComps;
+    _yearMonthIntervalPicker.endComps = endComps;
+    
     _coverView.hidden = NO;
     _editingTextField = textField;
     return YES;
@@ -123,61 +134,23 @@
 
 #pragma mark - HXTYearMonthIntervalPickerView delegate
 
-- (void)pickerDidSelectStarYear:(NSUInteger)startYear andStartMonth:(NSUInteger)startMonth
-                     andEndYear:(NSUInteger)endYear andEndMonth:(NSUInteger)endMonth
-{
+- (void)pickerDidSelectStartDateComponents:(NSDateComponents *)startComps andEndComponents:(NSDateComponents *)endComps {
     
 }
 
-- (void)pickerDidPressDoneWithStarYear:(NSUInteger)startYear andStartMonth:(NSUInteger)startMonth
-                            andEndYear:(NSUInteger)endYear andEndMonth:(NSUInteger)endMonth {
+- (void)pickerDidPressDoneWithStarDateComponents:(NSDateComponents *)startComps andEndComponents:(NSDateComponents *)endComps {
     [_editingTextField resignFirstResponder];
     _coverView.hidden = YES;
-    
 }
+
+- (void)pickerDidPressCancelWithStarDateComponents:(NSDateComponents *)startComps andEndComponents:(NSDateComponents *)endComps {
+    [_editingTextField resignFirstResponder];
+    _coverView.hidden = YES;
+}
+
 - (void)pickerDidPressCancel {
     [_editingTextField resignFirstResponder];
     _coverView.hidden = YES;
-    
-}
-
-
-#pragma mark - LTHMonthYearPickerView Delegate
-
-- (void)pickerDidPressCancelWithInitialValues:(NSDictionary *)initialValues {
-	_editingTextField.text = [NSString stringWithFormat:
-						   @"%@年%@月",
-                              initialValues[@"year"],
-                              initialValues[@"month"]];
-    [_editingTextField resignFirstResponder];
-    _coverView.hidden = YES;
-}
-
-
-- (void)pickerDidPressDoneWithMonth:(NSString *)month andYear:(NSString *)year {
-    _editingTextField.text = [NSString stringWithFormat: @"%@年%@月",year, month];
-	[_editingTextField resignFirstResponder];
-    _coverView.hidden = YES;
-}
-
-
-- (void)pickerDidSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-	NSLog(@"row: %li in component: %li", (long)row, (long)component);
-}
-
-
-- (void)pickerDidSelectMonth:(NSString *)month {
-    NSLog(@"month: %@ ", month);
-}
-
-
-- (void)pickerDidSelectYear:(NSString *)year {
-    NSLog(@"year: %@ ", year);
-}
-
-
-- (void)pickerDidSelectMonth:(NSString *)month andYear:(NSString *)year {
-    _editingTextField.text = [NSString stringWithFormat: @"%@年%@月",year, month];
 }
 
 #pragma mark - local functions

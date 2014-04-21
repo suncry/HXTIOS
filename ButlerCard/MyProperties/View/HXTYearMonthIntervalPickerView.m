@@ -21,6 +21,14 @@
 @property (strong, nonatomic) NSArray *starMonth;
 @property (strong, nonatomic) NSArray *endYears;
 @property (strong, nonatomic) NSArray *endMonth;
+@property (strong, nonatomic) NSMutableArray *dateArray;
+
+@property (strong, nonatomic) NSDateComponents *curStartComps;
+@property (strong, nonatomic) NSDateComponents *curEndComps;
+
+- (NSDate *)dateFromComponents:(NSDateComponents *)comps;
+- (NSDateComponents *)componentsFromdate:(NSDate *)date;
+
 @end
 
 @implementation HXTYearMonthIntervalPickerView
@@ -44,10 +52,55 @@
         
         _endYears = @[@"2012", @"2013", @"2014", @"2015"];
         _endMonth = @[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"11", @"12"];
+        
+        _dateArray = [NSMutableArray array];
     }
     return self;
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    if (!_startComps) {
+        _startComps = [[NSDateComponents alloc] init];
+        _startComps.year = 2000;
+        _startComps.month = 1;
+        _startComps = [self componentsFromdate:[self dateFromComponents:_startComps]];
+    }
+    
+    if (!_endComps) {
+        _endComps = [[NSDateComponents alloc] init];
+        _endComps.year = 2020;
+        _endComps.month = 12;
+        _endComps = [self componentsFromdate:[self dateFromComponents:_endComps]];
+    }
+    
+    if (!_defaultStartComps) {
+        _defaultStartComps = [_startComps copy];
+    } else {
+        _defaultStartComps = [self componentsFromdate:[self dateFromComponents:_defaultStartComps]];
+    }
+    
+    if (!_defaultEndComps) {
+        _defaultEndComps = [_endComps copy];
+    } else {
+        _defaultEndComps   = [self componentsFromdate:[self dateFromComponents:_defaultEndComps]];
+    }
+    
+    _curStartComps = [_defaultStartComps copy];
+    _curEndComps = [_defaultEndComps copy];
+    
+    NSLog(@"_defaultEndComps = %@ _defaultEndComps.date = %@", _defaultEndComps, [self dateFromComponents:_defaultStartComps]);
+    
+    NSDate *startDate = [self dateFromComponents:_startComps];
+    NSDate *endDate = [self dateFromComponents:_endComps];
+    
+    for (NSDate *date = [startDate copy]; [date compare:endDate] == NSOrderedAscending || [date compare:endDate] == NSOrderedSame; date = [NSDate dateWithTimeInterval:24 * 60 *60 sinceDate:date ]) {
+        NSLog(@"myDate1 = %@",[date descriptionWithLocale:[[NSLocale alloc] initWithLocaleIdentifier : @"zh_CN" ]]);
+        
+        [_dateArray addObject:date];
+    }
+}
 
 #pragma mark - picker view data source
 
@@ -115,40 +168,6 @@
     return 30;
 }
 
-//- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
-//    UILabel *label = (UILabel *)view;
-//    if (!label) {
-//        label = [[UILabel alloc] init];
-//        label.backgroundColor = [UIColor redColor];
-//        label.textAlignment = NSTextAlignmentCenter;
-//        label.font = [UIFont systemFontOfSize:15];
-//        label.textColor = [UIColor colorWithRed:84.0f / 255 green:83.0f / 255 blue:83.0f / 255 alpha:1];
-//    }
-//    
-//    switch (component) {
-//        case 0:
-//            label.text = @"2014 ";
-//            break;
-//        case 1:
-//            label.text = @"12 ";
-//            break;
-//        case 2:
-//            label.text = @" ";
-//            break;
-//        case 3:
-//            label.text = @"2015年";
-//            break;
-//        case 4:
-//            label.text = @" 1 ";
-//            break;
-//        default:
-//            label.text = @"";
-//            break;
-//    }
-//    
-//    return label;
-//}
-
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     NSString *title = @" ";
     switch (component) {
@@ -185,23 +204,35 @@
 }
 
 
-#pragma mark - Local Actions
+#pragma mark - Local Functions
+
+- (NSDate *)dateFromComponents:(NSDateComponents *)comps {
+    NSCalendar *myCal = [NSCalendar currentCalendar];
+    [myCal setTimeZone:[NSTimeZone systemTimeZone]];
+    NSLog(@"myDate1 = %@", [myCal dateFromComponents:comps]);
+    NSLog(@"myDate1 = %@",[[myCal dateFromComponents:comps] descriptionWithLocale:[[NSLocale alloc] initWithLocaleIdentifier : @"zh_CN" ]]);
+    return  [myCal dateFromComponents:comps];
+}
+
+- (NSDateComponents *)componentsFromdate:(NSDate *)date {
+    NSCalendar *myCal = [NSCalendar currentCalendar];
+    [myCal setTimeZone:[NSTimeZone systemTimeZone]];
+    return [myCal components:kCFCalendarUnitYear | kCFCalendarUnitMonth | kCFCalendarUnitDay fromDate:date];
+}
 
 #pragma mark IB Actions
 - (IBAction)doneBarButtonItemPressed:(UIBarButtonItem *)sender {
-    if (_delegate && [_delegate respondsToSelector:@selector(pickerDidPressDoneWithStarYear:andStartMonth:andEndYear:andEndMonth:)]) {
-        [_delegate pickerDidPressDoneWithStarYear:2014 andStartMonth:11 andEndYear:2015 andEndMonth:10];
+    if (_delegate && [_delegate respondsToSelector:@selector(pickerDidPressDoneWithStarDateComponents:andEndComponents:)]) {
+        [_delegate pickerDidPressDoneWithStarDateComponents:_curStartComps andEndComponents:_curEndComps];
     }
-    //    if ([self.delegate respondsToSelector: @selector(pickerDidPressDoneWithMonth:andYear:)])
-    //        [self.delegate pickerDidPressDoneWithMonth: _months[_monthIndex]
-    //										   andYear: _years[_yearIndex]];
-    //    _initialValues = nil;
-    //	_year = _years[_yearIndex];
-    //    _month = _months[_monthIndex];
 }
 - (IBAction)cancelBarButtonItemPressed:(UIBarButtonItem *)sender {
     if (_delegate && [_delegate respondsToSelector:@selector(pickerDidPressCancel)]) {
         [_delegate pickerDidPressCancel];
+    }
+    
+    if (_delegate && [_delegate respondsToSelector:@selector(pickerDidPressCancelWithStarDateComponents:andEndComponents:)]) {
+        [_delegate pickerDidPressCancelWithStarDateComponents:_defaultStartComps andEndComponents:_defaultEndComps];
     }
     //    if (!_initialValues) _initialValues  = @{ @"month" : _months[_monthIndex],
     //											  @"year" : _years[_yearIndex] };

@@ -10,20 +10,21 @@
 
 @protocol HXTYearMonthIntervalPickerViewDelegate <NSObject>
 @optional
-- (void)pickerDidSelectStarYear:(NSUInteger)startYear andStartMonth:(NSUInteger)startMonth andEndYear:(NSUInteger)endYear andEndMonth:(NSUInteger)endMonth;
-- (void)pickerDidPressDoneWithStarYear:(NSUInteger)startYear andStartMonth:(NSUInteger)startMonth andEndYear:(NSUInteger)endYear andEndMonth:(NSUInteger)endMonth;
+
+- (void)pickerDidSelectStartDateComponents:(NSDateComponents *)startComps andEndComponents:(NSDateComponents *)endComps;
+- (void)pickerDidPressDoneWithStarDateComponents:(NSDateComponents *)startComps andEndComponents:(NSDateComponents *)endComps;
+- (void)pickerDidPressCancelWithStarDateComponents:(NSDateComponents *)startComps andEndComponents:(NSDateComponents *)endComps;
 - (void)pickerDidPressCancel;
-/**
- *  If you want to change the text field dynamically, as the user changes the values,
- you should implement this method too, so the Cancel button does something.
- *
- *  @param initialValues comes in the form of @{ "month" : month, @"year" : year }
- */
-- (void)pickerDidPressCancelWithInitialValues:(NSDictionary *)initialValues;
+
 @end
 
 @interface HXTYearMonthIntervalPickerView : UIControl
 
-@property (nonatomic, strong) id<HXTYearMonthIntervalPickerViewDelegate> delegate;
+@property (strong, nonatomic) id<HXTYearMonthIntervalPickerViewDelegate> delegate;
+
+@property (strong, nonatomic) NSDateComponents *startComps;
+@property (strong, nonatomic) NSDateComponents *endComps;
+@property (strong, nonatomic) NSDateComponents *defaultStartComps;
+@property (strong, nonatomic) NSDateComponents *defaultEndComps;
 
 @end
