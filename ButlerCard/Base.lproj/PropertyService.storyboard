@@ -878,6 +878,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="小区选择" id="DE2-HM-MTF">
                         <barButtonItem key="leftBarButtonItem" title="取消" id="2AM-A7-OPu">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="cancelBtnClick:" destination="0ZD-Yv-vXw" id="R3V-Fv-ldz"/>
                             </connections>
