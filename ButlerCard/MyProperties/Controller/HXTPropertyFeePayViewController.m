@@ -114,12 +114,12 @@
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     
     NSDateComponents *startComps = [[NSDateComponents alloc] init];
-    startComps.year = 2012;
-    startComps.month = 11;
+    startComps.year = 2011;
+    startComps.month = 1;
     
     NSDateComponents *endComps = [[NSDateComponents alloc] init];
     endComps.year = 2014;
-    endComps.month = 2;
+    endComps.month = 12;
     _yearMonthIntervalPicker.startComps = startComps;
     _yearMonthIntervalPicker.endComps = endComps;
     

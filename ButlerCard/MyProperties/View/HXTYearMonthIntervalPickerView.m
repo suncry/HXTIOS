@@ -92,21 +92,39 @@
     
     NSLog(@"_defaultEndComps = %@ _defaultEndComps.date = %@", _defaultEndComps, [self dateFromComponents:_defaultStartComps]);
     
-    NSDate *startDate = [self dateFromComponents:_startComps];
-    NSDate *endDate = [self dateFromComponents:_endComps];
-    
-    for (NSDate *date = [startDate copy]; [date compare:endDate] == NSOrderedAscending || [date compare:endDate] == NSOrderedSame; date = [NSDate dateWithTimeInterval:24 * 60 *60 sinceDate:date ]) {
-        NSLog(@"myDate1 = %@",[date descriptionWithLocale:[[NSLocale alloc] initWithLocaleIdentifier : @"zh_CN" ]]);
-        
-        [_dateArray addObject:date];
+    for (NSDateComponents *comps = [_startComps copy]; [[self dateFromComponents:comps] compare:[self dateFromComponents:_endComps]] == NSOrderedAscending || [[self dateFromComponents:comps] compare:[self dateFromComponents:_endComps]] == NSOrderedSame; comps.month++) {
+//        NSLog(@"#######_curStartComps = %@", comps.year, comps.month);
+        NSLog(@"####%4lu年%2lu月", (long)comps.year, (long)comps.month);
+        [_dateArray addObject:[NSString stringWithFormat:@"%4lu年%2lu月", (long)comps.year, (long)comps.month]];
+        if (comps.month > 12) {
+            comps.year++;
+            comps.month = 0;
+        }
     }
+    
+    [_picker reloadAllComponents];
+    
+//    NSDate *startDate = [self dateFromComponents:_startComps];
+//    NSDate *endDate = [self dateFromComponents:_endComps];
+//    
+//    for (NSDate *date = [startDate copy]; [date compare:endDate] == NSOrderedAscending || [date compare:endDate] == NSOrderedSame; date = [NSDate dateWithTimeInterval:24 * 60 *60 sinceDate:date ]) {
+//        NSLog(@"myDate1 = %@",[date descriptionWithLocale:[[NSLocale alloc] initWithLocaleIdentifier : @"zh_CN" ]]);
+//        
+//        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+//        [dateFormatter setDateFormat:@"yyyy年MM月"];
+//        [dateFormatter stringFromDate:date];
+//        
+//        NSLog(@"Date = %@", [dateFormatter stringFromDate:date]);
+//        
+//        [_dateArray addObject:[dateFormatter stringFromDate:date]];
+//    }
 }
 
 #pragma mark - picker view data source
 
 // returns the number of 'columns' to display.
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    return 5;
+    return 3;
 }
 
 // returns the # of rows in each component..
@@ -114,19 +132,13 @@
     NSUInteger numberOfRows = 0;
     switch (component) {
         case 0:
-            numberOfRows = _starYears.count;
+            numberOfRows = _dateArray.count;
             break;
         case 1:
-            numberOfRows = _starMonth.count;
-            break;
-        case 2:
             numberOfRows = 0;
             break;
-        case 3:
-            numberOfRows = _endYears.count;
-            break;
-        case 4:
-            numberOfRows = _endMonth.count;
+        case 2:
+            numberOfRows = _dateArray.count;
             break;
             
         default:
@@ -139,25 +151,18 @@
 #pragma mark - picker view delegate
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
-    CGFloat width = kWinSize.width / 5;
+    CGFloat width = 0;
     switch (component) {
         case 0:
-            width = 64;
+            width = 134;
             break;
         case 1:
-            width = 56;
+            width = 20;
             break;
         case 2:
-            width = 32;
-            break;
-        case 3:
-            width = 64;
-            break;
-        case 4:
-            width = 56;
+            width = 134;
             break;
         default:
-            width = 0;
             break;
     }
     
@@ -169,21 +174,15 @@
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    NSString *title = @" ";
+    NSString *title = @"";
     switch (component) {
         case 0:
-            title = _starYears[row];
+            title = _dateArray[row];
             break;
         case 1:
-            title = _starMonth[row];
             break;
         case 2:
-            break;
-        case 3:
-            title = _endYears[row];
-            break;
-        case 4:
-            title = _endMonth[row];
+            title = _dateArray[row];
             break;
         default:
             break;
@@ -209,8 +208,8 @@
 - (NSDate *)dateFromComponents:(NSDateComponents *)comps {
     NSCalendar *myCal = [NSCalendar currentCalendar];
     [myCal setTimeZone:[NSTimeZone systemTimeZone]];
-    NSLog(@"myDate1 = %@", [myCal dateFromComponents:comps]);
-    NSLog(@"myDate1 = %@",[[myCal dateFromComponents:comps] descriptionWithLocale:[[NSLocale alloc] initWithLocaleIdentifier : @"zh_CN" ]]);
+//    NSLog(@"myDate1 = %@", [myCal dateFromComponents:comps]);
+//    NSLog(@"myDate1 = %@",[[myCal dateFromComponents:comps] descriptionWithLocale:[[NSLocale alloc] initWithLocaleIdentifier : @"zh_CN" ]]);
     return  [myCal dateFromComponents:comps];
 }
 
