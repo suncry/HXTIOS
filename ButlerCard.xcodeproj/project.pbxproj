@@ -166,6 +166,8 @@
 		B22F869918FE8E5F0031A646 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B22F869818FE8E5F0031A646 /* Images.xcassets */; };
 		B240382C1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B240382B1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.m */; };
 		B240382D1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B240382B1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.m */; };
+		B2596BA71904BF4A00FBB3F9 /* HXTYearMonthIntervalPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2596BA61904BF4A00FBB3F9 /* HXTYearMonthIntervalPickerView.xib */; };
+		B2596BA81904BF4A00FBB3F9 /* HXTYearMonthIntervalPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2596BA61904BF4A00FBB3F9 /* HXTYearMonthIntervalPickerView.xib */; };
 		B26FE5CF18FE51FC0093BC2F /* NSArrayAdditionals.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE58518FE51FC0093BC2F /* NSArrayAdditionals.m */; };
 		B26FE5D018FE51FC0093BC2F /* NSArrayAdditionals.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE58518FE51FC0093BC2F /* NSArrayAdditionals.m */; };
 		B26FE5D118FE51FC0093BC2F /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE58718FE51FC0093BC2F /* NSDataAdditions.m */; };
@@ -370,6 +372,7 @@
 		B22F869818FE8E5F0031A646 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B240382A1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTYearMonthIntervalPickerView.h; sourceTree = "<group>"; };
 		B240382B1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTYearMonthIntervalPickerView.m; sourceTree = "<group>"; };
+		B2596BA61904BF4A00FBB3F9 /* HXTYearMonthIntervalPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HXTYearMonthIntervalPickerView.xib; sourceTree = "<group>"; };
 		B26FE58418FE51FC0093BC2F /* NSArrayAdditionals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSArrayAdditionals.h; sourceTree = "<group>"; };
 		B26FE58518FE51FC0093BC2F /* NSArrayAdditionals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayAdditionals.m; sourceTree = "<group>"; };
 		B26FE58618FE51FC0093BC2F /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
@@ -747,6 +750,7 @@
 				B2214E0618FE1FB800762AE9 /* MyPropertyTableViewHeaderFooterView.xib */,
 				B240382A1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.h */,
 				B240382B1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.m */,
+				B2596BA61904BF4A00FBB3F9 /* HXTYearMonthIntervalPickerView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -996,6 +1000,7 @@
 				B2214E8318FE1FE200762AE9 /* PropertyService.storyboard in Resources */,
 				B2214E8518FE1FE200762AE9 /* SurroundingLife.storyboard in Resources */,
 				B2214C8818FE1F9000762AE9 /* provinces.plist in Resources */,
+				B2596BA71904BF4A00FBB3F9 /* HXTYearMonthIntervalPickerView.xib in Resources */,
 				B2214E7D18FE1FE200762AE9 /* EcologicalDistribution.storyboard in Resources */,
 				B2214E7918FE1FE200762AE9 /* AddHouseEstate.storyboard in Resources */,
 				B2214C1618FE1E4000762AE9 /* InfoPlist.strings in Resources */,
@@ -1016,6 +1021,7 @@
 				B2214C8718FE1F9000762AE9 /* hotCities.plist in Resources */,
 				B2214C8918FE1F9000762AE9 /* provinces.plist in Resources */,
 				B2214E7818FE1FE200762AE9 /* AccountManager.storyboard in Resources */,
+				B2596BA81904BF4A00FBB3F9 /* HXTYearMonthIntervalPickerView.xib in Resources */,
 				B2214E8218FE1FE200762AE9 /* PropertyFee.storyboard in Resources */,
 				B2214E5C18FE1FB800762AE9 /* MyPropertyTableViewHeaderFooterView.xib in Resources */,
 				B2214E7C18FE1FE200762AE9 /* BrowseHouseEstate.storyboard in Resources */,

@@ -42,8 +42,5 @@
 
 #pragma mark - IB Actions
 
-- (IBAction)backButtonPressed:(UIButton *)sender {
-    [self.navigationController popViewControllerAnimated:YES];
-}
 
 @end

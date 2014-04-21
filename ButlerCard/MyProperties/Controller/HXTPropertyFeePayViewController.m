@@ -39,7 +39,7 @@
 //    [_backButton setTitle:[NSString fontAwesomeIconStringForIconIdentifier:@"icon-remove"] forState:UIControlStateNormal];
     _feeTypeName = @[@"物管费", @"停车费", @"水费", @"电费", @"气费"];
     
-    _yearMonthIntervalPicker = [[HXTYearMonthIntervalPickerView alloc] initWithFrame:CGRectMake(0, 0, 320, 270)];
+    _yearMonthIntervalPicker = [[[NSBundle mainBundle] loadNibNamed:@"HXTYearMonthIntervalPickerView" owner:self options:nil] lastObject];
     _yearMonthIntervalPicker.delegate = self;
 }
 
@@ -77,6 +77,7 @@
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TypeOneCellIdentifier forIndexPath:indexPath];
         // Configure the cell...
         
+        ((UIButton *)[cell viewWithTag:101]).selected = YES;
         ((UILabel *)[cell viewWithTag:102]).text = _feeTypeName[indexPath.row];
         
         return cell;
@@ -87,10 +88,9 @@
             // Configure the cell...
             
             ((UILabel *)[cell viewWithTag:102]).text = _feeTypeName[indexPath.row];
-            
+        
             ((UITextField *)[cell viewWithTag:103]).inputView = _yearMonthIntervalPicker;
             ((UITextField *)[cell viewWithTag:103]).delegate = self;
-            
             ((UITextField *)[cell viewWithTag:105]).inputView = _yearMonthIntervalPicker;
             ((UITextField *)[cell viewWithTag:105]).delegate = self;
             
@@ -123,7 +123,9 @@
 
 #pragma mark - HXTYearMonthIntervalPickerView delegate
 
-- (void)pickerDidSelectStarYear:(NSUInteger)startYear andStartMonth:(NSUInteger)startMonth andEndYear:(NSUInteger)endYear andEndMonth:(NSUInteger)endMonth {
+- (void)pickerDidSelectStarYear:(NSUInteger)startYear andStartMonth:(NSUInteger)startMonth
+                     andEndYear:(NSUInteger)endYear andEndMonth:(NSUInteger)endMonth
+{
     
 }
 

@@ -53,9 +53,11 @@
     //从登录界面返回后进入物业服务页面
     if (_propertyServiceButton.selected && [HXTAccountManager sharedInstance].logged) {
         UIViewController *propertyServiceViewController = [[UIStoryboard storyboardWithName:@"PropertyService" bundle:nil] instantiateViewControllerWithIdentifier:@"PropertyServiceStoryboardID"];
+        propertyServiceViewController.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:propertyServiceViewController animated:YES];
     } else if (_propertyFeeButton.selected && [HXTAccountManager sharedInstance].logged) {
         UIViewController *propertyFeeViewcontroller = [[UIStoryboard storyboardWithName:@"PropertyFee" bundle:nil] instantiateViewControllerWithIdentifier:@"PropertyFeeStoryboardID"];
+        propertyFeeViewcontroller.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:propertyFeeViewcontroller animated:YES];
     }
     
@@ -102,6 +104,7 @@
     
     if ([HXTAccountManager sharedInstance].logged) {
         UIViewController *propertyServiceViewController = [[UIStoryboard storyboardWithName:@"PropertyService" bundle:nil] instantiateViewControllerWithIdentifier:@"PropertyServiceStoryboardID"];
+        propertyServiceViewController.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:propertyServiceViewController animated:YES];
         sender.selected = NO;
     } else {
@@ -116,6 +119,7 @@
     
     if ([HXTAccountManager sharedInstance].logged) {
         UITableViewController *propertyFeeViewController = [[UIStoryboard storyboardWithName:@"PropertyFee" bundle:nil] instantiateViewControllerWithIdentifier:@"PropertyFeeStoryboardID"];
+        propertyFeeViewController.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:propertyFeeViewController animated:YES];
         sender.selected = NO;
     } else {

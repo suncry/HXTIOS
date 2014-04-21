@@ -25,6 +25,5 @@
 @interface HXTYearMonthIntervalPickerView : UIControl
 
 @property (nonatomic, strong) id<HXTYearMonthIntervalPickerViewDelegate> delegate;
-@property (nonatomic, strong) UIPickerView *picker;
 
 @end

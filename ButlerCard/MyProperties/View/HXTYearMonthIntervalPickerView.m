@@ -12,6 +12,15 @@
 
 @interface HXTYearMonthIntervalPickerView () <UIPickerViewDataSource, UIPickerViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelBarButtonItem;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *doneBarButtonItem;
+@property (weak, nonatomic) IBOutlet UIPickerView *picker;
+
+@property (strong, nonatomic) NSArray *starYears;
+@property (strong, nonatomic) NSArray *starMonth;
+@property (strong, nonatomic) NSArray *endYears;
+@property (strong, nonatomic) NSArray *endMonth;
 @end
 
 @implementation HXTYearMonthIntervalPickerView
@@ -21,7 +30,6 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        [self _setup];
     }
     return self;
 }
@@ -30,50 +38,16 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         // Initialization code
-        [self _setup];
+        
+        _starYears = @[@"2012", @"2013", @"2014", @"2015"];
+        _starMonth = @[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"11", @"12"];
+        
+        _endYears = @[@"2012", @"2013", @"2014", @"2015"];
+        _endMonth = @[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"11", @"12"];
     }
     return self;
 }
 
-#pragma mark - Init
-
-- (void)_setup {
-    self.frame = CGRectMake(0.0, 0.0, kWinSize.width, 260.0);
-    self.backgroundColor = [UIColor whiteColor];
-    CGRect datePickerFrame = CGRectMake(0.0, 44.5, self.frame.size.width, 216.0);
-    
-    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame: CGRectMake(0.0, 0.0, self.frame.size.width, datePickerFrame.origin.y - 0.5)];
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
-        toolbar.barTintColor = [UIColor whiteColor];
-    }
-    
-    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc]
-                                     initWithBarButtonSystemItem: UIBarButtonSystemItemCancel
-                                     target: self
-                                     action: @selector(_cancel)];
-    UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc]
-                                  initWithBarButtonSystemItem: UIBarButtonSystemItemFlexibleSpace
-                                  target: self
-                                  action: nil];
-    UIBarButtonItem *doneBtn = [[UIBarButtonItem alloc]
-                                initWithBarButtonSystemItem: UIBarButtonSystemItemDone
-                                target: self
-                                action: @selector(_done)];
-    
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
-        cancelButton.tintColor = [UIColor colorWithRed:40.0f / 255 green:175.0f / 233 blue:3.0f / 255 alpha:1];
-        doneBtn.tintColor = [UIColor colorWithRed:40.0f / 255 green:175.0f / 233 blue:3.0f / 255 alpha:1];
-    }
-    [toolbar setItems: @[cancelButton, flexSpace, doneBtn]
-             animated: YES];
-    [self addSubview: toolbar];
-    
-    _picker = [[UIPickerView alloc] initWithFrame: datePickerFrame];
-    _picker.showsSelectionIndicator = YES;
-    _picker.dataSource = self;
-    _picker.delegate = self;
-    [self addSubview: _picker];
-}
 
 #pragma mark - picker view data source
 
@@ -84,10 +58,29 @@
 
 // returns the # of rows in each component..
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    if (component == 2) {
-        return 1;
+    NSUInteger numberOfRows = 0;
+    switch (component) {
+        case 0:
+            numberOfRows = _starYears.count;
+            break;
+        case 1:
+            numberOfRows = _starMonth.count;
+            break;
+        case 2:
+            numberOfRows = 0;
+            break;
+        case 3:
+            numberOfRows = _endYears.count;
+            break;
+        case 4:
+            numberOfRows = _endMonth.count;
+            break;
+            
+        default:
+            break;
     }
-    return 10;
+
+    return numberOfRows;
 }
 
 #pragma mark - picker view delegate
@@ -96,17 +89,20 @@
     CGFloat width = kWinSize.width / 5;
     switch (component) {
         case 0:
-        case 4:
-            width = 62;
-            break;
-        case 2:
-            width = 40;
+            width = 64;
             break;
         case 1:
-        case 3:
-            width = 62;
+            width = 56;
             break;
-            
+        case 2:
+            width = 32;
+            break;
+        case 3:
+            width = 64;
+            break;
+        case 4:
+            width = 56;
+            break;
         default:
             width = 0;
             break;
@@ -119,48 +115,80 @@
     return 30;
 }
 
-- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
-    UILabel *label = (UILabel *)view;
-    if (!label) {
-        label = [[UILabel alloc] init];
-        label.backgroundColor = [UIColor clearColor];
-        label.textAlignment = NSTextAlignmentCenter;
-        label.textColor = [UIColor colorWithRed:84.0f / 255 green:83.0f / 255 blue:83.0f / 255 alpha:1];
-    }
-    
+//- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
+//    UILabel *label = (UILabel *)view;
+//    if (!label) {
+//        label = [[UILabel alloc] init];
+//        label.backgroundColor = [UIColor redColor];
+//        label.textAlignment = NSTextAlignmentCenter;
+//        label.font = [UIFont systemFontOfSize:15];
+//        label.textColor = [UIColor colorWithRed:84.0f / 255 green:83.0f / 255 blue:83.0f / 255 alpha:1];
+//    }
+//    
+//    switch (component) {
+//        case 0:
+//            label.text = @"2014 ";
+//            break;
+//        case 1:
+//            label.text = @"12 ";
+//            break;
+//        case 2:
+//            label.text = @" ";
+//            break;
+//        case 3:
+//            label.text = @"2015年";
+//            break;
+//        case 4:
+//            label.text = @" 1 ";
+//            break;
+//        default:
+//            label.text = @"";
+//            break;
+//    }
+//    
+//    return label;
+//}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    NSString *title = @" ";
     switch (component) {
         case 0:
-            label.text = @"2014年";
+            title = _starYears[row];
             break;
         case 1:
-            label.text = @"12月";
+            title = _starMonth[row];
             break;
         case 2:
-            label.text = @"到";
             break;
         case 3:
-            label.text = @"2015年";
+            title = _endYears[row];
             break;
         case 4:
-            label.text = @"11月";
+            title = _endMonth[row];
             break;
         default:
-            label.text = @"";
             break;
     }
     
-    return label;
+    return title;
 }
+
 
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     NSLog(@"selectRown %lu inComponent %lu", (long)row, (long)component);
+    UIView *view = [pickerView viewForRow:row forComponent:component];
+    if ([view isKindOfClass:[UILabel class]]) {
+//        ((UILabel *)view).textColor = [UIColor blackColor];
+//        ((UILabel *)view).font = [UIFont boldSystemFontOfSize:18];
+    }
 }
 
 
 #pragma mark - Local Actions
 
-- (void)_done {
+#pragma mark IB Actions
+- (IBAction)doneBarButtonItemPressed:(UIBarButtonItem *)sender {
     if (_delegate && [_delegate respondsToSelector:@selector(pickerDidPressDoneWithStarYear:andStartMonth:andEndYear:andEndMonth:)]) {
         [_delegate pickerDidPressDoneWithStarYear:2014 andStartMonth:11 andEndYear:2015 andEndMonth:10];
     }
@@ -171,9 +199,7 @@
     //	_year = _years[_yearIndex];
     //    _month = _months[_monthIndex];
 }
-
-
-- (void)_cancel {
+- (IBAction)cancelBarButtonItemPressed:(UIBarButtonItem *)sender {
     if (_delegate && [_delegate respondsToSelector:@selector(pickerDidPressCancel)]) {
         [_delegate pickerDidPressCancel];
     }
@@ -196,4 +222,5 @@
     //    _month = _months[_monthIndex];
     //	_initialValues = nil;
 }
+
 @end

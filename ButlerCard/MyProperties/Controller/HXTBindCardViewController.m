@@ -12,6 +12,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *feeTypeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *areaLabel;
 @property (weak, nonatomic) IBOutlet UILabel *companyLabel;
+
+
 @property (weak, nonatomic) IBOutlet UITextField *cardNumberTextField;
 @property (weak, nonatomic) IBOutlet UITextField *remarkTestField;
 @property (weak, nonatomic) IBOutlet UIButton *telButton;

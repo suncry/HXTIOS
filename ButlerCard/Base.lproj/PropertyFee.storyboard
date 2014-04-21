@@ -564,8 +564,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="qVP-kI-NUV">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="Sy3-Ab-HJF">
-                            <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="stop" id="Sy3-Ab-HJF">
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="backButtonPressed:" destination="LPQ-63-w2k" id="zsh-Gr-lnh"/>
                             </connections>
