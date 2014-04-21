@@ -168,7 +168,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="xj3-JA-i83"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="立即结算" backgroundImage="global_button_y">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -565,19 +564,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="qVP-kI-NUV">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" id="UwL-r7-wd9">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0hw-dS-pvn">
-                                <rect key="frame" x="16" y="5" width="37" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <inset key="imageEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" image="global_delb">
-                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="backButtonPressed:" destination="LPQ-63-w2k" eventType="touchUpInside" id="lhi-y4-mn6"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="Sy3-Ab-HJF">
+                            <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backButtonPressed:" destination="LPQ-63-w2k" id="zsh-Gr-lnh"/>
+                            </connections>
                         </barButtonItem>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="ZbR-HW-HhS">
                             <rect key="frame" x="70" y="8" width="180" height="29"/>
@@ -596,7 +587,6 @@
                         </segmentedControl>
                     </navigationItem>
                     <connections>
-                        <outlet property="backButton" destination="0hw-dS-pvn" id="4Zv-GH-dqK"/>
                         <outlet property="segmentedControl" destination="ZbR-HW-HhS" id="by7-ii-MnO"/>
                         <outlet property="tableView" destination="3eg-7Y-zS4" id="k0F-l9-45P"/>
                     </connections>
@@ -704,9 +694,7 @@
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzR-yB-Oin">
                                             <rect key="frame" x="97" y="93" width="116" height="40"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <state key="normal" title="去缴费">
+                                            <state key="normal" title="去缴费" backgroundImage="global_button_y">
                                                 <color key="titleColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -733,7 +721,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="我的物业" id="FDu-Ri-jBf">
-                        <barButtonItem key="rightBarButtonItem" image="navigationBar_add" id="ddh-TN-pBD">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ddh-TN-pBD">
                             <connections>
                                 <action selector="addPropertyButtonPressed:" destination="WJD-nw-qmQ" id="vSj-ja-S26"/>
                             </connections>
@@ -787,7 +775,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="6T8-6M-fdW"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="提交" backgroundImage="global_button_y">
                                     <color key="titleColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1157,13 +1144,11 @@
         <image name="global_button_y" width="116" height="40"/>
         <image name="global_button_y02" width="116" height="40"/>
         <image name="global_button_y_s" width="116" height="40"/>
-        <image name="global_delb" width="42" height="42"/>
         <image name="global_down_arrow" width="15" height="15"/>
         <image name="global_nyline" width="320" height="4"/>
         <image name="global_point" width="22" height="22"/>
         <image name="global_point_s" width="22" height="22"/>
         <image name="global_point_s02" width="22" height="22"/>
-        <image name="navigationBar_add" width="22" height="22"/>
         <image name="propertyFee_address" width="17" height="17"/>
         <image name="propertyFee_bindCard_searchbg01" width="82" height="22"/>
         <image name="propertyFee_bindCard_searchbg02" width="140" height="22"/>

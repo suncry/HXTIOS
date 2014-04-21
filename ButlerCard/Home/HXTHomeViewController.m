@@ -9,8 +9,6 @@
 #import "HXTHomeViewController.h"
 #import "UIDevice+Resolutions.h"
 #import "HXTAccountManager.h"
-#import "NSString+FontAwesome.h"
-#import "UIFont+FontAwesome.h"
 
 @interface HXTHomeViewController ()
 
@@ -41,11 +39,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [_chooseHouseEstateBarButtonItem setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], UITextAttributeFont: [UIFont fontAwesomeFontOfSize:18.0f]} forState:UIControlStateNormal];
+//    [_chooseHouseEstateBarButtonItem setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], UITextAttributeFont: [UIFont fontAwesomeFontOfSize:18.0f]} forState:UIControlStateNormal];
     if ([HXTAccountManager sharedInstance].defaultHouseingEstate) {
-        _chooseHouseEstateBarButtonItem.title = [NSString stringWithFormat:@"%@ %@", [HXTAccountManager sharedInstance].defaultHouseingEstate, [NSString fontAwesomeIconStringForIconIdentifier:@"icon-angle-down"]];
+        _chooseHouseEstateBarButtonItem.title = [[HXTAccountManager sharedInstance].defaultHouseingEstate stringByAppendingString:@" ▾"];
     } else {
-        _chooseHouseEstateBarButtonItem.title = [NSString stringWithFormat:@"%@ %@", @"全部商圈", [NSString fontAwesomeIconStringForIconIdentifier:@"icon-angle-down"]];
+        _chooseHouseEstateBarButtonItem.title = @"全部商圈 ▾";
     }
 }
 

@@ -427,7 +427,7 @@
             </objects>
             <point key="canvasLocation" x="654" y="755"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller - 消息-->
         <scene sceneID="PVN-gz-WMe">
             <objects>
                 <viewController id="Gj0-A8-Ts1" sceneMemberID="viewController">
@@ -440,13 +440,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="mDg-IE-PUS"/>
+                    <navigationItem key="navigationItem" title="消息" id="mDg-IE-PUS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vpz-yq-MAj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1818" y="1103"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller - 关注-->
         <scene sceneID="mOr-gN-kEV">
             <objects>
                 <viewController id="MVq-PH-mpz" sceneMemberID="viewController">
@@ -459,7 +459,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="H8L-z4-2Qt"/>
+                    <navigationItem key="navigationItem" title="关注" id="H8L-z4-2Qt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PW5-5o-lkA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1196,18 +1196,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="我的消费单" id="RhP-78-9go">
-                        <barButtonItem key="rightBarButtonItem" id="Qkn-tG-Hgm">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bbr-eq-IhE">
-                                <rect key="frame" x="233" y="5" width="71" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="饼图">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Xwe-eO-u8p" kind="push" id="B36-YW-dwJ"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" title="饼图" id="D12-zA-ppE">
+                            <connections>
+                                <segue destination="Xwe-eO-u8p" kind="push" id="Qen-Qr-UsY"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
@@ -1639,6 +1631,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="BD3-Al-IIf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1658,7 +1651,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="pDI-cL-V3C">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.94509803921568625" green="0.4392156862745098" blue="0.050980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
                         </textAttributes>
@@ -1681,6 +1674,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="5uA-Ad-rjN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1722,6 +1716,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Zd7-9S-mol">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

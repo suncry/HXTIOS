@@ -7,14 +7,11 @@
 //
 
 #import "HXTPropertyFeePayViewController.h"
-#import "NSString+FontAwesome.h"
-#import "UIFont+FontAwesome.h"
-#import "LTHMonthYearPickerView.h"
+
 #import "HXTYearMonthIntervalPickerView.h"
 
-@interface HXTPropertyFeePayViewController () <UITextFieldDelegate, LTHMonthYearPickerViewDelegate>
+@interface HXTPropertyFeePayViewController () <UITextFieldDelegate, HXTYearMonthIntervalPickerViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 
@@ -39,11 +36,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _backButton.titleLabel.font = [UIFont fontAwesomeFontOfSize:30.0f];
 //    [_backButton setTitle:[NSString fontAwesomeIconStringForIconIdentifier:@"icon-remove"] forState:UIControlStateNormal];
     _feeTypeName = @[@"物管费", @"停车费", @"水费", @"电费", @"气费"];
     
     _yearMonthIntervalPicker = [[HXTYearMonthIntervalPickerView alloc] initWithFrame:CGRectMake(0, 0, 320, 270)];
+    _yearMonthIntervalPicker.delegate = self;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -124,6 +121,24 @@
     
 }
 
+#pragma mark - HXTYearMonthIntervalPickerView delegate
+
+- (void)pickerDidSelectStarYear:(NSUInteger)startYear andStartMonth:(NSUInteger)startMonth andEndYear:(NSUInteger)endYear andEndMonth:(NSUInteger)endMonth {
+    
+}
+
+- (void)pickerDidPressDoneWithStarYear:(NSUInteger)startYear andStartMonth:(NSUInteger)startMonth
+                            andEndYear:(NSUInteger)endYear andEndMonth:(NSUInteger)endMonth {
+    [_editingTextField resignFirstResponder];
+    _coverView.hidden = YES;
+    
+}
+- (void)pickerDidPressCancel {
+    [_editingTextField resignFirstResponder];
+    _coverView.hidden = YES;
+    
+}
+
 
 #pragma mark - LTHMonthYearPickerView Delegate
 
@@ -139,12 +154,6 @@
 
 - (void)pickerDidPressDoneWithMonth:(NSString *)month andYear:(NSString *)year {
     _editingTextField.text = [NSString stringWithFormat: @"%@年%@月",year, month];
-	[_editingTextField resignFirstResponder];
-    _coverView.hidden = YES;
-}
-
-
-- (void)pickerDidPressCancel {
 	[_editingTextField resignFirstResponder];
     _coverView.hidden = YES;
 }

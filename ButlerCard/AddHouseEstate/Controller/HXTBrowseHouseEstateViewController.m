@@ -9,8 +9,6 @@
 #import "HXTBrowseHouseEstateViewController.h"
 #import "HXTAccountManager.h"
 #import "HXTMyProperties.h"
-#import "NSString+FontAwesome.h"
-#import "UIFont+FontAwesome.h"
 
 @interface HXTBrowseHouseEstateViewController ()
 
@@ -41,8 +39,7 @@
     
     _housingEstateNamesToShow = [[NSMutableArray alloc] initWithArray:[HXTMyProperties sharedInstance].allHousingEstateNames];
     
-    [_chooseAreaBarButtonItem setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], UITextAttributeFont: [UIFont fontAwesomeFontOfSize:15.0f]} forState:UIControlStateNormal];
-    _chooseAreaBarButtonItem.title = [NSString stringWithFormat:@"%@ %@", [HXTAccountManager sharedInstance].currentCity, [NSString fontAwesomeIconStringForIconIdentifier:@"icon-angle-down"]];
+    _chooseAreaBarButtonItem.title = [[HXTAccountManager sharedInstance].currentCity stringByAppendingString:@" ▾"];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -70,7 +67,7 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if ([keyPath isEqualToString:@"currentCity"] && object == [HXTAccountManager sharedInstance]) {
-        _chooseAreaBarButtonItem.title = [NSString stringWithFormat:@"%@ %@", [HXTAccountManager sharedInstance].currentCity, [NSString fontAwesomeIconStringForIconIdentifier:@"icon-angle-down"]];
+        _chooseAreaBarButtonItem.title = [[HXTAccountManager sharedInstance].currentCity stringByAppendingString:@" ▾"];
     }
 }
 

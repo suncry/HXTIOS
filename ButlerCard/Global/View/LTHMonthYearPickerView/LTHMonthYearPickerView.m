@@ -234,7 +234,6 @@ const CGFloat kRowHeight = 30.0;
 			datePickerFrame = CGRectMake(0.0, 44.5, self.frame.size.width, 216.0);
             
             UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame: CGRectMake(0.0, 0.0, self.frame.size.width, datePickerFrame.origin.y - 0.5)];
-            toolbar.barTintColor = [UIColor whiteColor];
             
             UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc]
                                              initWithBarButtonSystemItem: UIBarButtonSystemItemCancel

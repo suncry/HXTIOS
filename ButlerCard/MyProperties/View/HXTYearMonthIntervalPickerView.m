@@ -12,8 +12,6 @@
 
 @interface HXTYearMonthIntervalPickerView () <UIPickerViewDataSource, UIPickerViewDelegate>
 
-@property (nonatomic, strong) UIPickerView *picker;
-
 @end
 
 @implementation HXTYearMonthIntervalPickerView
@@ -45,13 +43,14 @@
     CGRect datePickerFrame = CGRectMake(0.0, 44.5, self.frame.size.width, 216.0);
     
     UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame: CGRectMake(0.0, 0.0, self.frame.size.width, datePickerFrame.origin.y - 0.5)];
-    toolbar.barTintColor = [UIColor whiteColor];
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+        toolbar.barTintColor = [UIColor whiteColor];
+    }
     
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc]
                                      initWithBarButtonSystemItem: UIBarButtonSystemItemCancel
                                      target: self
                                      action: @selector(_cancel)];
-    cancelButton.tintColor = [UIColor redColor];
     UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc]
                                   initWithBarButtonSystemItem: UIBarButtonSystemItemFlexibleSpace
                                   target: self
@@ -61,7 +60,10 @@
                                 target: self
                                 action: @selector(_done)];
     
-    doneBtn.tintColor = [UIColor colorWithRed:40.0f / 255 green:175.0f / 233 blue:3.0f / 255 alpha:1];
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+        cancelButton.tintColor = [UIColor colorWithRed:40.0f / 255 green:175.0f / 233 blue:3.0f / 255 alpha:1];
+        doneBtn.tintColor = [UIColor colorWithRed:40.0f / 255 green:175.0f / 233 blue:3.0f / 255 alpha:1];
+    }
     [toolbar setItems: @[cancelButton, flexSpace, doneBtn]
              animated: YES];
     [self addSubview: toolbar];
@@ -121,12 +123,7 @@
     UILabel *label = (UILabel *)view;
     if (!label) {
         label = [[UILabel alloc] init];
-        if (component == 2) {
-            label.frame = CGRectMake(0, 0, 40.0f, 30.f);
-        } else {
-            label.frame = CGRectMake(0, 0, 62.0f, 30.f);
-        }
-        label.backgroundColor = [UIColor redColor];
+        label.backgroundColor = [UIColor clearColor];
         label.textAlignment = NSTextAlignmentCenter;
         label.textColor = [UIColor colorWithRed:84.0f / 255 green:83.0f / 255 blue:83.0f / 255 alpha:1];
     }
@@ -154,7 +151,7 @@
     
     return label;
 }
- 
+
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     NSLog(@"selectRown %lu inComponent %lu", (long)row, (long)component);
@@ -164,33 +161,39 @@
 #pragma mark - Local Actions
 
 - (void)_done {
-//    if ([self.delegate respondsToSelector: @selector(pickerDidPressDoneWithMonth:andYear:)])
-//        [self.delegate pickerDidPressDoneWithMonth: _months[_monthIndex]
-//										   andYear: _years[_yearIndex]];
-//    _initialValues = nil;
-//	_year = _years[_yearIndex];
-//    _month = _months[_monthIndex];
+    if (_delegate && [_delegate respondsToSelector:@selector(pickerDidPressDoneWithStarYear:andStartMonth:andEndYear:andEndMonth:)]) {
+        [_delegate pickerDidPressDoneWithStarYear:2014 andStartMonth:11 andEndYear:2015 andEndMonth:10];
+    }
+    //    if ([self.delegate respondsToSelector: @selector(pickerDidPressDoneWithMonth:andYear:)])
+    //        [self.delegate pickerDidPressDoneWithMonth: _months[_monthIndex]
+    //										   andYear: _years[_yearIndex]];
+    //    _initialValues = nil;
+    //	_year = _years[_yearIndex];
+    //    _month = _months[_monthIndex];
 }
 
 
 - (void)_cancel {
-//    if (!_initialValues) _initialValues  = @{ @"month" : _months[_monthIndex],
-//											  @"year" : _years[_yearIndex] };
-//    if ([self.delegate respondsToSelector: @selector(pickerDidPressCancelWithInitialValues:)]) {
-//        [self.delegate pickerDidPressCancelWithInitialValues: _initialValues];
-//        [self.datePicker selectRow: [_months indexOfObject: _initialValues[@"month"]]
-//                       inComponent: 0
-//                          animated: NO];
-//        [self.datePicker selectRow: [_years indexOfObject: _initialValues[@"year"]]
-//                       inComponent: 1
-//                          animated: NO];
-//    }
-//    else if ([self.delegate respondsToSelector: @selector(pickerDidPressCancel)])
-//        [self.delegate pickerDidPressCancel];
-//	_monthIndex = [_months indexOfObject: _initialValues[@"month"]];
-//	_yearIndex = [_years indexOfObject: _initialValues[@"year"]];
-//	_year = _years[_yearIndex];
-//    _month = _months[_monthIndex];
-//	_initialValues = nil;
+    if (_delegate && [_delegate respondsToSelector:@selector(pickerDidPressCancel)]) {
+        [_delegate pickerDidPressCancel];
+    }
+    //    if (!_initialValues) _initialValues  = @{ @"month" : _months[_monthIndex],
+    //											  @"year" : _years[_yearIndex] };
+    //    if ([self.delegate respondsToSelector: @selector(pickerDidPressCancelWithInitialValues:)]) {
+    //        [self.delegate pickerDidPressCancelWithInitialValues: _initialValues];
+    //        [self.datePicker selectRow: [_months indexOfObject: _initialValues[@"month"]]
+    //                       inComponent: 0
+    //                          animated: NO];
+    //        [self.datePicker selectRow: [_years indexOfObject: _initialValues[@"year"]]
+    //                       inComponent: 1
+    //                          animated: NO];
+    //    }
+    //    else if ([self.delegate respondsToSelector: @selector(pickerDidPressCancel)])
+    //        [self.delegate pickerDidPressCancel];
+    //	_monthIndex = [_months indexOfObject: _initialValues[@"month"]];
+    //	_yearIndex = [_years indexOfObject: _initialValues[@"year"]];
+    //	_year = _years[_yearIndex];
+    //    _month = _months[_monthIndex];
+    //	_initialValues = nil;
 }
 @end

@@ -9,8 +9,7 @@
 #import "HXTPropertyServiceViewController.h"
 #import "CYHouseChoiceController.h"
 #import "AFNetworking.h"
-#import "NSString+FontAwesome.h"
-#import "UIFont+FontAwesome.h"
+
 @interface HXTPropertyServiceViewController ()
 
 @end
@@ -34,9 +33,6 @@
     
     self.rentRateView.rate = 3.5;
     self.repairRateView.rate = 4.5;
-    
-    [_chooseHouseEstateBarButtonItem setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], UITextAttributeFont: [UIFont fontAwesomeFontOfSize:15.0f]} forState:UIControlStateNormal];
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,7 +42,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    _chooseHouseEstateBarButtonItem.title = [NSString stringWithFormat:@"%@ %@", [[NSUserDefaults standardUserDefaults] valueForKeyPath:kHouseName], [NSString fontAwesomeIconStringForIconIdentifier:@"icon-angle-down"]];
+    _chooseHouseEstateBarButtonItem.title = [[[NSUserDefaults standardUserDefaults] valueForKeyPath:kHouseName] stringByAppendingString:@" ▾"];
     
     //每次进入页面都根据所选择住址刷新一遍页面内容
     HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
