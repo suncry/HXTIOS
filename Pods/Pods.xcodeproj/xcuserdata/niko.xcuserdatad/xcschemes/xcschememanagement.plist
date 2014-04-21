@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>Pods-FontAwesome+iOS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 		<key>Pods-MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -37,6 +42,26 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>1AD6B8CC38F640E2AEB810EC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>21DB07AD89C54EE49F5C16CE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2D82C756194E4F8AAF055C4D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4190B2FE8D7A473F8AC05828</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>462E85BF2D6741DAAB7A0933</key>
 		<dict>
 			<key>primary</key>
@@ -57,7 +82,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>947FBEBE2DE9449E90216F84</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>D7960388A15A475A9AA2C76D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D92492BCFE044B5F8F5CF797</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D9D5E1B04FE54F098A1161C4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
