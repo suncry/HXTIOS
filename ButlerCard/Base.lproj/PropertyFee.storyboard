@@ -549,7 +549,6 @@
                                 <segment title="缴清欠费"/>
                                 <segment title="自定义缴费"/>
                             </segments>
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="segmentedControlValueChanged:" destination="LPQ-63-w2k" eventType="valueChanged" id="JsU-wG-ybE"/>
                             </connections>
@@ -988,7 +987,19 @@
                     <view key="view" contentMode="scaleToFill" id="jqv-Js-xqM" customClass="MKMapView">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Dl5-3n-sMK">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Dl5-3n-sMK" firstAttribute="top" secondItem="6PP-ao-pNL" secondAttribute="bottom" id="Bhv-7J-vjc"/>
+                            <constraint firstItem="dGN-M1-461" firstAttribute="top" secondItem="Dl5-3n-sMK" secondAttribute="bottom" id="JG7-c2-2UE"/>
+                            <constraint firstAttribute="trailing" secondItem="Dl5-3n-sMK" secondAttribute="trailing" id="JMH-ZB-dXa"/>
+                            <constraint firstItem="Dl5-3n-sMK" firstAttribute="leading" secondItem="jqv-Js-xqM" secondAttribute="leading" id="Tq6-xc-oyM"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="查看地图位置" id="boK-yN-Vr6"/>
                 </viewController>

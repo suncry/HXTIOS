@@ -36,7 +36,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    [_backButton setTitle:[NSString fontAwesomeIconStringForIconIdentifier:@"icon-remove"] forState:UIControlStateNormal];
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+        _segmentedControl.tintColor = [UIColor whiteColor];
+    }
+    
     _feeTypeName = @[@"物管费", @"停车费", @"水费", @"电费", @"气费"];
     
     _yearMonthIntervalPicker = [[[NSBundle mainBundle] loadNibNamed:@"HXTYearMonthIntervalPickerView" owner:self options:nil] lastObject];
@@ -46,6 +50,9 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+        _segmentedControl.tintColor = [UIColor whiteColor];
+    }
     _coverView = [[UIControl alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.view.window addSubview:_coverView];
     [self.view.window bringSubviewToFront:_coverView];
