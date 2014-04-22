@@ -766,8 +766,8 @@
 		B2214E0718FE1FB800762AE9 /* SurroundingLife--周边生活 */ = {
 			isa = PBXGroup;
 			children = (
-				23CA860719065B5C0067D0D4 /* Model */,
 				B2214E0818FE1FB800762AE9 /* Controller */,
+				23CA860719065B5C0067D0D4 /* Model */,
 			);
 			name = "SurroundingLife--周边生活";
 			path = SurroundingLife;

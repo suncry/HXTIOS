@@ -717,11 +717,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="property_house7" translatesAutoresizingMaskIntoConstraints="NO" id="yzt-Mv-MuU">
-                                        <rect key="frame" x="20" y="5" width="33" height="33"/>
+                                        <rect key="frame" x="20" y="8" width="28" height="28"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="中铁小区8栋2单元303" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVu-iT-AFB">
-                                        <rect key="frame" x="61" y="5" width="239" height="33"/>
+                                        <rect key="frame" x="56" y="5" width="244" height="33"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="0.3294117647" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1078,7 +1078,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z8w-c8-pPd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="964" y="-1694"/>
+            <point key="canvasLocation" x="1018" y="-1702"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="drG-WZ-qrq">

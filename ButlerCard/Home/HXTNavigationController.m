@@ -58,6 +58,8 @@
         self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor colorWithRed:255.0f / 255 green:192.0f / 255 blue:141.0f / 255 alpha:1.0f], UITextAttributeFont: [UIFont systemFontOfSize:18.0f]};
         
         self.navigationBar.tintColor = [UIColor whiteColor];
+        
+        [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     }
     
 }

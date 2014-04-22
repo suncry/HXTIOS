@@ -106,25 +106,21 @@
     switch (indexPath.section) {
         case 0: {
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:allHouseEstateCellIdentifier forIndexPath:indexPath];
-            cell.textLabel.text = @"全部商圈";
             return cell;
             break;
         }
         case 1: {
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:currentLocationCellIdentifier forIndexPath:indexPath];
-            cell.textLabel.text = @"成都市高新区天府软件园C区 GPS定位";
             return cell;
             break;
         }
         case 2: {
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:myHouseEstateCellIdentifier forIndexPath:indexPath];
-            cell.textLabel.text = @"我的小区";
             return cell;
             break;
         }
         case 3: {
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:theOtherHouseEstateCellIdentifier forIndexPath:indexPath];
-            cell.textLabel.text = @"其他小区";
             return cell;
             break;
         }
@@ -180,10 +176,17 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if (section > 0) {
-        return 20.0f;
+        return 22.0f;
     } else {
         return 0.0f;
     }
+}
+
+#pragma mark - IB Actions
+
+- (IBAction)reloadButtonPressed:(UIButton *)sender {
+    sender.selected = !sender.selected;
+    NSLog(@"#####");
 }
 
 #pragma mark - Navigation

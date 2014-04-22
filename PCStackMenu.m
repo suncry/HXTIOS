@@ -141,7 +141,7 @@
 
 - (void)dismissWithSelect:(PCStackMenuItem *)selectedItem
 {
-	int selectedIndex = [_items indexOfObject:selectedItem];
+	int selectedIndex = (int)[_items indexOfObject:selectedItem];
 	selectedItem.highlight = YES;
 	
     [UIView animateWithDuration:0.1 animations:^{
@@ -235,7 +235,7 @@
 	self = [self initWithFrame:rect];
 	_menuDirection = direction;
 	
-	int max = MAX([titles count], [images count]);
+	int max = (int)MAX([titles count], [images count]);
 	for(int i = 0; i < max; i++)
 	{
 		CGPoint point = CGPointMake((direction == PCStackMenuDirectionClockWiseUp || direction == PCStackMenuDirectionCounterClockWiseDown) ? 0 : startPoint.x,
