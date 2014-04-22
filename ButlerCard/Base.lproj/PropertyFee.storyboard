@@ -414,7 +414,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="物管费" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGk-Cl-O46">
-                                                    <rect key="frame" x="60" y="9" width="120" height="21"/>
+                                                    <rect key="frame" x="56" y="9" width="120" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.32941176470588235" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
@@ -542,20 +542,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="qVP-kI-NUV">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" image="navigationBar_close" id="Sy3-Ab-HJF">
-                            <color key="tintColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="backButtonPressed:" destination="LPQ-63-w2k" id="zsh-Gr-lnh"/>
-                            </connections>
-                        </barButtonItem>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="ZbR-HW-HhS">
-                            <rect key="frame" x="58" y="7" width="209" height="31"/>
+                            <rect key="frame" x="56" y="7" width="209" height="31"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="缴清欠费"/>
                                 <segment title="自定义缴费"/>
                             </segments>
-                            <color key="tintColor" red="0.61960784313725492" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="segmentedControlValueChanged:" destination="LPQ-63-w2k" eventType="valueChanged" id="JsU-wG-ybE"/>
                             </connections>
@@ -568,9 +562,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ob-8c-Mtv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2463" y="-1042"/>
+            <point key="canvasLocation" x="2043" y="-1054"/>
         </scene>
-        <!--Property Fee View Controller - 我的物业-->
+        <!--Property Fee View Controller-->
         <scene sceneID="05V-e1-hS3">
             <objects>
                 <tableViewController storyboardIdentifier="PropertyFeeStoryboardID" id="WJD-nw-qmQ" customClass="HXTPropertyFeeViewController" sceneMemberID="viewController">
@@ -674,7 +668,7 @@
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <segue destination="DuE-Ke-35j" kind="modal" id="YV5-Uj-WX5"/>
+                                                <segue destination="LPQ-63-w2k" kind="push" id="8pA-7Q-ICo"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="欠费总计：290元" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lX7-oT-eah">
@@ -695,7 +689,7 @@
                             <outlet property="delegate" destination="WJD-nw-qmQ" id="ZwP-zW-3So"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="我的物业" id="FDu-Ri-jBf">
+                    <navigationItem key="navigationItem" id="FDu-Ri-jBf">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ddh-TN-pBD">
                             <connections>
                                 <action selector="addPropertyButtonPressed:" destination="WJD-nw-qmQ" id="vSj-ja-S26"/>
@@ -1094,25 +1088,6 @@
             </objects>
             <point key="canvasLocation" x="2043" y="-376"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="gg6-jf-fBU">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DuE-Ke-35j" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="Efm-Wo-AQW"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Q69-Kc-xgG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="LPQ-63-w2k" kind="relationship" relationship="rootViewController" id="Eju-mz-DWu"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="u0b-oJ-r2P" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2037" y="-1042"/>
-        </scene>
     </scenes>
     <resources>
         <image name="account_sigh_bg03" width="280" height="88"/>
@@ -1124,7 +1099,6 @@
         <image name="global_point" width="22" height="22"/>
         <image name="global_point_s" width="22" height="22"/>
         <image name="global_point_s02" width="22" height="22"/>
-        <image name="navigationBar_close" width="25" height="25"/>
         <image name="propertyFee_address" width="17" height="17"/>
         <image name="propertyFee_bindCard_searchbg01" width="82" height="22"/>
         <image name="propertyFee_bindCard_searchbg02" width="140" height="22"/>
