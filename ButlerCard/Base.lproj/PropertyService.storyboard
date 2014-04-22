@@ -430,7 +430,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="qianzi" translatesAutoresizingMaskIntoConstraints="NO" id="6dW-fm-52M">
-                                                    <rect key="frame" x="20" y="7" width="30" height="30"/>
+                                                    <rect key="frame" x="21" y="7" width="30" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -459,41 +459,28 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="TLi-e4-3kr">
+                            <tableViewSection headerTitle="友情提示:工具租赁平均响应时间为10分钟。" id="TLi-e4-3kr">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="renteCell" id="pTi-iK-SEU">
-                                        <rect key="frame" x="0.0" y="319" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pTi-iK-SEU" id="FbV-gG-yUb">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="友情提示:工具租赁平均响应时间为10分钟。" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0W-or-SFi">
-                                                    <rect key="frame" x="20" y="11" width="330" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="renteCell" id="5AG-re-aSk">
-                                        <rect key="frame" x="0.0" y="363" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="347" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5AG-re-aSk" id="Wfq-AV-mWP">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="租赁电话：028-5988903" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ox-kn-GX3">
-                                                    <rect key="frame" x="20" y="11" width="187" height="21"/>
+                                                    <rect key="frame" x="58" y="11" width="187" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="manager_phone" translatesAutoresizingMaskIntoConstraints="NO" id="Mef-42-mJj">
+                                                    <rect key="frame" x="23" y="10" width="25" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXS-4z-AUJ">
-                                                    <rect key="frame" x="7" y="7" width="280" height="36"/>
+                                                    <rect key="frame" x="-17" y="4" width="320" height="36"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -652,41 +639,28 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="INa-zr-2AY">
+                            <tableViewSection headerTitle="友情提示:维修的平均等待时间为30分钟" id="INa-zr-2AY">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="renteCell" id="TVS-gL-XTf">
-                                        <rect key="frame" x="0.0" y="319" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TVS-gL-XTf" id="1wY-uj-77i">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="友情提示:维修平均响应时间为30分钟。" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vTg-iw-Waw">
-                                                    <rect key="frame" x="20" y="11" width="330" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="renteCell" id="W5p-R1-vcc">
-                                        <rect key="frame" x="0.0" y="363" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="347" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="W5p-R1-vcc" id="YQi-JG-ghp">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="维修电话：028-5988903" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ieO-3n-l1O">
-                                                    <rect key="frame" x="20" y="11" width="187" height="21"/>
+                                                    <rect key="frame" x="58" y="11" width="187" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="manager_phone" translatesAutoresizingMaskIntoConstraints="NO" id="JKn-82-Au3">
+                                                    <rect key="frame" x="20" y="7" width="30" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnn-aM-zCy">
-                                                    <rect key="frame" x="7" y="7" width="280" height="36"/>
+                                                    <rect key="frame" x="3" y="4" width="280" height="36"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1006,28 +980,29 @@
         </scene>
     </scenes>
     <resources>
-        <image name="banshou" width="512" height="512"/>
-        <image name="chuanghu" width="76" height="76"/>
-        <image name="chuizi" width="512" height="512"/>
-        <image name="dianshi" width="512" height="512"/>
-        <image name="dianzuan" width="512" height="512"/>
-        <image name="luosidao" width="512" height="512"/>
+        <image name="banshou" width="34" height="34"/>
+        <image name="chuanghu" width="34" height="34"/>
+        <image name="chuizi" width="34" height="34"/>
+        <image name="dianshi" width="34" height="34"/>
+        <image name="dianzuan" width="34" height="34"/>
+        <image name="luosidao" width="34" height="34"/>
         <image name="manager_icon_gjzl" width="34" height="34"/>
         <image name="manager_icon_wxfw" width="34" height="34"/>
         <image name="manager_icon_xqgg" width="34" height="34"/>
         <image name="manager_icon_xqhd" width="34" height="34"/>
         <image name="manager_icon_yzk" width="34" height="34"/>
-        <image name="matong" width="1368" height="1806"/>
-        <image name="mensuo" width="76" height="76"/>
+        <image name="manager_phone" width="30" height="30"/>
+        <image name="matong" width="34" height="34"/>
+        <image name="mensuo" width="34" height="34"/>
         <image name="property_house2" width="52" height="52"/>
         <image name="property_house3" width="52" height="52"/>
         <image name="property_house6" width="52" height="52"/>
         <image name="property_house7" width="52" height="52"/>
         <image name="public_button_pl" width="22" height="22"/>
-        <image name="qianzi" width="512" height="512"/>
-        <image name="shuiguan" width="256" height="256"/>
-        <image name="tizi" width="512" height="512"/>
-        <image name="xiyiji" width="512" height="512"/>
+        <image name="qianzi" width="34" height="34"/>
+        <image name="shuiguan" width="34" height="34"/>
+        <image name="tizi" width="34" height="34"/>
+        <image name="xiyiji" width="34" height="34"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
