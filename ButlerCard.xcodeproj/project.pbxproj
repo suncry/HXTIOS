@@ -136,16 +136,6 @@
 		B2214E5A18FE1FB800762AE9 /* HXTPropertyTableViewHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214E0518FE1FB800762AE9 /* HXTPropertyTableViewHeaderFooterView.m */; };
 		B2214E5B18FE1FB800762AE9 /* MyPropertyTableViewHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2214E0618FE1FB800762AE9 /* MyPropertyTableViewHeaderFooterView.xib */; };
 		B2214E5C18FE1FB800762AE9 /* MyPropertyTableViewHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2214E0618FE1FB800762AE9 /* MyPropertyTableViewHeaderFooterView.xib */; };
-		B2214E5D18FE1FB800762AE9 /* HXTChooseHousingEstateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214E0A18FE1FB800762AE9 /* HXTChooseHousingEstateTableViewController.m */; };
-		B2214E5E18FE1FB800762AE9 /* HXTChooseHousingEstateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214E0A18FE1FB800762AE9 /* HXTChooseHousingEstateTableViewController.m */; };
-		B2214E5F18FE1FB800762AE9 /* HXTSurroundingLifeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214E0C18FE1FB800762AE9 /* HXTSurroundingLifeViewController.m */; };
-		B2214E6018FE1FB800762AE9 /* HXTSurroundingLifeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214E0C18FE1FB800762AE9 /* HXTSurroundingLifeViewController.m */; };
-		B2214E6118FE1FB800762AE9 /* HXTIGoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214E0F18FE1FB800762AE9 /* HXTIGoViewController.m */; };
-		B2214E6218FE1FB800762AE9 /* HXTIGoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214E0F18FE1FB800762AE9 /* HXTIGoViewController.m */; };
-		B2214E6318FE1FB800762AE9 /* HXTIGoWithTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214E1118FE1FB800762AE9 /* HXTIGoWithTypeViewController.m */; };
-		B2214E6418FE1FB800762AE9 /* HXTIGoWithTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214E1118FE1FB800762AE9 /* HXTIGoWithTypeViewController.m */; };
-		B2214E6518FE1FB800762AE9 /* HXTTheGroceryStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214E1418FE1FB800762AE9 /* HXTTheGroceryStoreViewController.m */; };
-		B2214E6618FE1FB800762AE9 /* HXTTheGroceryStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214E1418FE1FB800762AE9 /* HXTTheGroceryStoreViewController.m */; };
 		B2214E7718FE1FE200762AE9 /* AccountManager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2214E6718FE1FE200762AE9 /* AccountManager.storyboard */; };
 		B2214E7818FE1FE200762AE9 /* AccountManager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2214E6718FE1FE200762AE9 /* AccountManager.storyboard */; };
 		B2214E7918FE1FE200762AE9 /* AddHouseEstate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2214E6918FE1FE200762AE9 /* AddHouseEstate.storyboard */; };
@@ -350,16 +340,6 @@
 		B2214E0418FE1FB800762AE9 /* HXTPropertyTableViewHeaderFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTPropertyTableViewHeaderFooterView.h; sourceTree = "<group>"; };
 		B2214E0518FE1FB800762AE9 /* HXTPropertyTableViewHeaderFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTPropertyTableViewHeaderFooterView.m; sourceTree = "<group>"; };
 		B2214E0618FE1FB800762AE9 /* MyPropertyTableViewHeaderFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyPropertyTableViewHeaderFooterView.xib; sourceTree = "<group>"; };
-		B2214E0918FE1FB800762AE9 /* HXTChooseHousingEstateTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTChooseHousingEstateTableViewController.h; sourceTree = "<group>"; };
-		B2214E0A18FE1FB800762AE9 /* HXTChooseHousingEstateTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTChooseHousingEstateTableViewController.m; sourceTree = "<group>"; };
-		B2214E0B18FE1FB800762AE9 /* HXTSurroundingLifeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTSurroundingLifeViewController.h; sourceTree = "<group>"; };
-		B2214E0C18FE1FB800762AE9 /* HXTSurroundingLifeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTSurroundingLifeViewController.m; sourceTree = "<group>"; };
-		B2214E0E18FE1FB800762AE9 /* HXTIGoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTIGoViewController.h; sourceTree = "<group>"; };
-		B2214E0F18FE1FB800762AE9 /* HXTIGoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTIGoViewController.m; sourceTree = "<group>"; };
-		B2214E1018FE1FB800762AE9 /* HXTIGoWithTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTIGoWithTypeViewController.h; sourceTree = "<group>"; };
-		B2214E1118FE1FB800762AE9 /* HXTIGoWithTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTIGoWithTypeViewController.m; sourceTree = "<group>"; };
-		B2214E1318FE1FB800762AE9 /* HXTTheGroceryStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTTheGroceryStoreViewController.h; sourceTree = "<group>"; };
-		B2214E1418FE1FB800762AE9 /* HXTTheGroceryStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTTheGroceryStoreViewController.m; sourceTree = "<group>"; };
 		B2214E6818FE1FE200762AE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AccountManager.storyboard; sourceTree = "<group>"; };
 		B2214E6A18FE1FE200762AE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AddHouseEstate.storyboard; sourceTree = "<group>"; };
 		B2214E6C18FE1FE200762AE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/BrowseHouseEstate.storyboard; sourceTree = "<group>"; };
@@ -767,34 +747,8 @@
 		B2214E0818FE1FB800762AE9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B2214E0918FE1FB800762AE9 /* HXTChooseHousingEstateTableViewController.h */,
-				B2214E0A18FE1FB800762AE9 /* HXTChooseHousingEstateTableViewController.m */,
-				B2214E0B18FE1FB800762AE9 /* HXTSurroundingLifeViewController.h */,
-				B2214E0C18FE1FB800762AE9 /* HXTSurroundingLifeViewController.m */,
-				B2214E0D18FE1FB800762AE9 /* IGo */,
-				B2214E1218FE1FB800762AE9 /* YouCome */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		B2214E0D18FE1FB800762AE9 /* IGo */ = {
-			isa = PBXGroup;
-			children = (
-				B2214E0E18FE1FB800762AE9 /* HXTIGoViewController.h */,
-				B2214E0F18FE1FB800762AE9 /* HXTIGoViewController.m */,
-				B2214E1018FE1FB800762AE9 /* HXTIGoWithTypeViewController.h */,
-				B2214E1118FE1FB800762AE9 /* HXTIGoWithTypeViewController.m */,
-			);
-			path = IGo;
-			sourceTree = "<group>";
-		};
-		B2214E1218FE1FB800762AE9 /* YouCome */ = {
-			isa = PBXGroup;
-			children = (
-				B2214E1318FE1FB800762AE9 /* HXTTheGroceryStoreViewController.h */,
-				B2214E1418FE1FB800762AE9 /* HXTTheGroceryStoreViewController.m */,
-			);
-			path = YouCome;
 			sourceTree = "<group>";
 		};
 		B26FE55718FE51FC0093BC2F /* Global */ = {
@@ -1084,7 +1038,6 @@
 				B2214E3318FE1FB800762AE9 /* NSMutableArray+pieEx.m in Sources */,
 				B2214C8218FE1F9000762AE9 /* HXTSelectCitySecondLevelViewController.m in Sources */,
 				B2214E4918FE1FB800762AE9 /* HXTPropertyServiceViewController.m in Sources */,
-				B2214E5F18FE1FB800762AE9 /* HXTSurroundingLifeViewController.m in Sources */,
 				B2214E4F18FE1FB800762AE9 /* HXTHouse.m in Sources */,
 				B26FE5DD18FE51FC0093BC2F /* SqliteStoreManager.m in Sources */,
 				B2214E1D18FE1FB800762AE9 /* CYMsgCell.m in Sources */,
@@ -1108,7 +1061,6 @@
 				B2214E2918FE1FB800762AE9 /* CYMyPropertyTableViewCell.m in Sources */,
 				B2214C6A18FE1F9000762AE9 /* HXTLoginViewController.m in Sources */,
 				B26FE5EB18FE51FC0093BC2F /* XPHTTPURLConnection.m in Sources */,
-				B2214E5D18FE1FB800762AE9 /* HXTChooseHousingEstateTableViewController.m in Sources */,
 				B26FE5E318FE51FC0093BC2F /* HXTCheckBox.m in Sources */,
 				B2214C7818FE1F9000762AE9 /* HXTAddHouseEstateViewController.m in Sources */,
 				B240382C1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.m in Sources */,
@@ -1120,7 +1072,6 @@
 				B26FE5D718FE51FC0093BC2F /* HXTLocationManager.m in Sources */,
 				B2D1FC86190256C500A7467D /* HMSegmentedControl.m in Sources */,
 				B2214E1718FE1FB800762AE9 /* CYActivityViewController.m in Sources */,
-				B2214E6518FE1FB800762AE9 /* HXTTheGroceryStoreViewController.m in Sources */,
 				B2214E4718FE1FB800762AE9 /* HXTPropertyFeeDetailTableViewController.m in Sources */,
 				B2214C7C18FE1F9000762AE9 /* HXTAppleyOpenPropertyViewController.m in Sources */,
 				B2214DB518FE1FA200762AE9 /* HXTTabBarViewController.m in Sources */,
@@ -1137,14 +1088,12 @@
 				B26FE5D318FE51FC0093BC2F /* NSDictionaryAdditions.m in Sources */,
 				B2214E2518FE1FB800762AE9 /* CYMyBillTableViewController.m in Sources */,
 				B2214E3D18FE1FB800762AE9 /* CYHouseChoiceController.m in Sources */,
-				B2214E6118FE1FB800762AE9 /* HXTIGoViewController.m in Sources */,
 				238ECB531904BECA00721872 /* CYPropertieCardsController.m in Sources */,
 				B2214E3518FE1FB800762AE9 /* PieElement.m in Sources */,
 				B2214E2F18FE1FB800762AE9 /* Example2PieView.m in Sources */,
 				B2214E4118FE1FB800762AE9 /* CYRentController.m in Sources */,
 				B2214E1518FE1FB800762AE9 /* CYActivityCell.m in Sources */,
 				B26FE5D518FE51FC0093BC2F /* NSStringAdditions.m in Sources */,
-				B2214E6318FE1FB800762AE9 /* HXTIGoWithTypeViewController.m in Sources */,
 				B2214E1F18FE1FB800762AE9 /* CYMsgTableViewController.m in Sources */,
 				B2214E5718FE1FB800762AE9 /* HXTPropertyFeeDetailCell.m in Sources */,
 				B2214C7E18FE1F9000762AE9 /* HXTBrowseHouseEstateViewController.m in Sources */,
@@ -1184,7 +1133,6 @@
 				B2214E3C18FE1FB800762AE9 /* CYDiscussController.m in Sources */,
 				B2214E5418FE1FB800762AE9 /* HXTPropertyCell.m in Sources */,
 				B26FE64218FE55A90093BC2F /* NSString+Check.m in Sources */,
-				B2214E6218FE1FB800762AE9 /* HXTIGoViewController.m in Sources */,
 				B2214E2E18FE1FB800762AE9 /* CYOrderCell.m in Sources */,
 				B26FE5D618FE51FC0093BC2F /* NSStringAdditions.m in Sources */,
 				B2214E3818FE1FB800762AE9 /* PieLayer.m in Sources */,
@@ -1197,7 +1145,6 @@
 				B2214E2418FE1FB800762AE9 /* CYMyBillMonthCell.m in Sources */,
 				B26FE5E418FE51FC0093BC2F /* HXTCheckBox.m in Sources */,
 				B2214E5818FE1FB800762AE9 /* HXTPropertyFeeDetailCell.m in Sources */,
-				B2214E6418FE1FB800762AE9 /* HXTIGoWithTypeViewController.m in Sources */,
 				B26FE5E218FE51FC0093BC2F /* UIDevice+Resolutions.m in Sources */,
 				B2214C6F18FE1F9000762AE9 /* HXTRegisterInputPasswordViewController.m in Sources */,
 				B2214C7D18FE1F9000762AE9 /* HXTAppleyOpenPropertyViewController.m in Sources */,
@@ -1221,16 +1168,13 @@
 				B240382D1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.m in Sources */,
 				B2214C7318FE1F9000762AE9 /* HXTRegisterInputValidCodeViewController.m in Sources */,
 				B2214E4818FE1FB800762AE9 /* HXTPropertyFeeDetailTableViewController.m in Sources */,
-				B2214E6618FE1FB800762AE9 /* HXTTheGroceryStoreViewController.m in Sources */,
 				B2D4EFFF19035897007C6089 /* LTHMonthYearPickerView.m in Sources */,
 				B2214E2C18FE1FB800762AE9 /* CYMyPropertyTableViewController.m in Sources */,
 				B2214E1E18FE1FB800762AE9 /* CYMsgCell.m in Sources */,
 				B2214E5218FE1FB800762AE9 /* HXTMyProperties.m in Sources */,
 				B2214E2818FE1FB800762AE9 /* CYMyOrderViewController.m in Sources */,
 				B2214C7118FE1F9000762AE9 /* HXTRegisterInputPhoneNumberViewController.m in Sources */,
-				B2214E5E18FE1FB800762AE9 /* HXTChooseHousingEstateTableViewController.m in Sources */,
 				B2214C6D18FE1F9000762AE9 /* HXTRegisterAddHouseEstateViewController.m in Sources */,
-				B2214E6018FE1FB800762AE9 /* HXTSurroundingLifeViewController.m in Sources */,
 				B2214E5A18FE1FB800762AE9 /* HXTPropertyTableViewHeaderFooterView.m in Sources */,
 				B26FE5EA18FE51FC0093BC2F /* HXTViewWithArrow.m in Sources */,
 				B2214E4218FE1FB800762AE9 /* CYRentController.m in Sources */,
