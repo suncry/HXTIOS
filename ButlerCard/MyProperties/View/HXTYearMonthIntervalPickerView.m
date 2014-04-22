@@ -22,6 +22,7 @@
 @property (strong, nonatomic) NSArray *endYears;
 @property (strong, nonatomic) NSArray *endMonth;
 @property (strong, nonatomic) NSMutableArray *dateArray;
+@property (strong, nonatomic) NSMutableArray *compsArray;
 
 @property (strong, nonatomic) NSDateComponents *curStartComps;
 @property (strong, nonatomic) NSDateComponents *curEndComps;
@@ -54,6 +55,7 @@
         _endMonth = @[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"11", @"12"];
         
         _dateArray = [NSMutableArray array];
+        _compsArray = [NSMutableArray array];
     }
     return self;
 }
@@ -93,31 +95,26 @@
     NSLog(@"_defaultEndComps = %@ _defaultEndComps.date = %@", _defaultEndComps, [self dateFromComponents:_defaultStartComps]);
     
     for (NSDateComponents *comps = [_startComps copy]; [[self dateFromComponents:comps] compare:[self dateFromComponents:_endComps]] == NSOrderedAscending || [[self dateFromComponents:comps] compare:[self dateFromComponents:_endComps]] == NSOrderedSame; comps.month++) {
-//        NSLog(@"#######_curStartComps = %@", comps.year, comps.month);
-        NSLog(@"####%4lu年%2lu月", (long)comps.year, (long)comps.month);
-        [_dateArray addObject:[NSString stringWithFormat:@"%4lu年%2lu月", (long)comps.year, (long)comps.month]];
         if (comps.month > 12) {
             comps.year++;
-            comps.month = 0;
+            comps.month = 1;
+        }
+        NSLog(@"####%4lu年%2lu月", (long)comps.year, (long)comps.month);
+        [_dateArray addObject:[NSString stringWithFormat:@"%4lu年%2lu月", (long)comps.year, (long)comps.month]];
+        [_compsArray addObject:[comps copy]];
+        
+        if ([[self dateFromComponents:_defaultStartComps] compare:[self dateFromComponents:comps]] == NSOrderedSame) {
+            _defaultStartComps = [_compsArray lastObject];
+        }
+        
+        if ([[self dateFromComponents:_defaultEndComps] compare:[self dateFromComponents:comps]] == NSOrderedSame) {
+            _defaultEndComps = [_compsArray lastObject];
         }
     }
     
     [_picker reloadAllComponents];
-    
-//    NSDate *startDate = [self dateFromComponents:_startComps];
-//    NSDate *endDate = [self dateFromComponents:_endComps];
-//    
-//    for (NSDate *date = [startDate copy]; [date compare:endDate] == NSOrderedAscending || [date compare:endDate] == NSOrderedSame; date = [NSDate dateWithTimeInterval:24 * 60 *60 sinceDate:date ]) {
-//        NSLog(@"myDate1 = %@",[date descriptionWithLocale:[[NSLocale alloc] initWithLocaleIdentifier : @"zh_CN" ]]);
-//        
-//        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-//        [dateFormatter setDateFormat:@"yyyy年MM月"];
-//        [dateFormatter stringFromDate:date];
-//        
-//        NSLog(@"Date = %@", [dateFormatter stringFromDate:date]);
-//        
-//        [_dateArray addObject:[dateFormatter stringFromDate:date]];
-//    }
+    [_picker selectRow:[_compsArray indexOfObject:_defaultStartComps] inComponent:0 animated:NO];
+    [_picker selectRow:[_compsArray indexOfObject:_defaultEndComps] inComponent:2 animated:NO];
 }
 
 #pragma mark - picker view data source
@@ -194,11 +191,14 @@
 
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    NSLog(@"selectRown %lu inComponent %lu", (long)row, (long)component);
-    UIView *view = [pickerView viewForRow:row forComponent:component];
-    if ([view isKindOfClass:[UILabel class]]) {
-//        ((UILabel *)view).textColor = [UIColor blackColor];
-//        ((UILabel *)view).font = [UIFont boldSystemFontOfSize:18];
+    if (component == 0) {
+        _curStartComps = _compsArray[row];
+    }else if (component == 2) {
+        _curEndComps = _compsArray[row];
+    }
+    
+    if (_delegate && [_delegate respondsToSelector:@selector(pickerDidSelectStartDateComponents:andEndComponents:)]) {
+        [_delegate pickerDidSelectStartDateComponents:_curStartComps andEndComponents:_curEndComps];
     }
 }
 
@@ -220,6 +220,7 @@
 }
 
 #pragma mark IB Actions
+
 - (IBAction)doneBarButtonItemPressed:(UIBarButtonItem *)sender {
     if (_delegate && [_delegate respondsToSelector:@selector(pickerDidPressDoneWithStarDateComponents:andEndComponents:)]) {
         [_delegate pickerDidPressDoneWithStarDateComponents:_curStartComps andEndComponents:_curEndComps];
@@ -233,24 +234,6 @@
     if (_delegate && [_delegate respondsToSelector:@selector(pickerDidPressCancelWithStarDateComponents:andEndComponents:)]) {
         [_delegate pickerDidPressCancelWithStarDateComponents:_defaultStartComps andEndComponents:_defaultEndComps];
     }
-    //    if (!_initialValues) _initialValues  = @{ @"month" : _months[_monthIndex],
-    //											  @"year" : _years[_yearIndex] };
-    //    if ([self.delegate respondsToSelector: @selector(pickerDidPressCancelWithInitialValues:)]) {
-    //        [self.delegate pickerDidPressCancelWithInitialValues: _initialValues];
-    //        [self.datePicker selectRow: [_months indexOfObject: _initialValues[@"month"]]
-    //                       inComponent: 0
-    //                          animated: NO];
-    //        [self.datePicker selectRow: [_years indexOfObject: _initialValues[@"year"]]
-    //                       inComponent: 1
-    //                          animated: NO];
-    //    }
-    //    else if ([self.delegate respondsToSelector: @selector(pickerDidPressCancel)])
-    //        [self.delegate pickerDidPressCancel];
-    //	_monthIndex = [_months indexOfObject: _initialValues[@"month"]];
-    //	_yearIndex = [_years indexOfObject: _initialValues[@"year"]];
-    //	_year = _years[_yearIndex];
-    //    _month = _months[_monthIndex];
-    //	_initialValues = nil;
 }
 
 @end

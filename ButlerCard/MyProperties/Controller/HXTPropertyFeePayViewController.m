@@ -86,20 +86,18 @@
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TypeTwoCellIdentifier forIndexPath:indexPath];
             
             // Configure the cell...
-            
+            ((UIButton *)[cell viewWithTag:101]).selected = YES;
             ((UILabel *)[cell viewWithTag:102]).text = _feeTypeName[indexPath.row];
         
             ((UITextField *)[cell viewWithTag:103]).inputView = _yearMonthIntervalPicker;
             ((UITextField *)[cell viewWithTag:103]).delegate = self;
-            ((UITextField *)[cell viewWithTag:105]).inputView = _yearMonthIntervalPicker;
-            ((UITextField *)[cell viewWithTag:105]).delegate = self;
             
             return cell;
         } else {
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TypeThreeCellIdentifier forIndexPath:indexPath];
             
             // Configure the cell...
-            
+            ((UIButton *)[cell viewWithTag:101]).selected = YES;
             ((UILabel *)[cell viewWithTag:102]).text = _feeTypeName[indexPath.row];
             ((UITextField *)[cell viewWithTag:103]).inputView = _yearMonthIntervalPicker;
             ((UITextField *)[cell viewWithTag:103]).delegate = self;
@@ -125,6 +123,8 @@
     
     _coverView.hidden = NO;
     _editingTextField = textField;
+//    _editingTextField.borderStyle = UITextBorderStyleRoundedRect;
+//    _editingTextField.backgroundColor = [UIColor whiteColor];
     return YES;
 }
 
@@ -135,20 +135,22 @@
 #pragma mark - HXTYearMonthIntervalPickerView delegate
 
 - (void)pickerDidSelectStartDateComponents:(NSDateComponents *)startComps andEndComponents:(NSDateComponents *)endComps {
-    
+    NSLog(@"startComps = %@, endComps = %@, ", startComps, endComps);
+    _editingTextField.text = [NSString stringWithFormat:@"%4lu年%02lu月~%4lu年%02lu月",(long)startComps.year, (long)startComps.month, (long)endComps.year, (long)endComps.month];
 }
 
 - (void)pickerDidPressDoneWithStarDateComponents:(NSDateComponents *)startComps andEndComponents:(NSDateComponents *)endComps {
+    _editingTextField.text = [NSString stringWithFormat:@"%4lu年%02lu月~%4lu年%02lu月",(long)startComps.year, (long)startComps.month, (long)endComps.year, (long)endComps.month];
+//    _editingTextField.borderStyle = UITextBorderStyleNone;
+//    _editingTextField.backgroundColor = [UIColor clearColor];
     [_editingTextField resignFirstResponder];
     _coverView.hidden = YES;
 }
 
 - (void)pickerDidPressCancelWithStarDateComponents:(NSDateComponents *)startComps andEndComponents:(NSDateComponents *)endComps {
-    [_editingTextField resignFirstResponder];
-    _coverView.hidden = YES;
-}
-
-- (void)pickerDidPressCancel {
+    _editingTextField.text = [NSString stringWithFormat:@"%4lu年%02lu月~%4lu年%02lu月",(long)startComps.year, (long)startComps.month, (long)endComps.year, (long)endComps.month];
+//    _editingTextField.borderStyle = UITextBorderStyleNone;
+//    _editingTextField.backgroundColor = [UIColor clearColor];
     [_editingTextField resignFirstResponder];
     _coverView.hidden = YES;
 }
@@ -157,12 +159,13 @@
 - (void)backgroundTouchUpInside:(id)sender {
     if (_editingTextField) {
         [_editingTextField resignFirstResponder];
+//        _editingTextField.borderStyle = UITextBorderStyleNone;
+//        _editingTextField.backgroundColor = [UIColor clearColor];
     }
     _coverView.hidden = YES;
 }
 
 #pragma mark - IB Actions
-
 
 - (IBAction)segmentedControlValueChanged:(UISegmentedControl *)sender {
     NSLog(@"sender.selectedSegmentIndex = %lu title = %@", (long)sender.selectedSegmentIndex, [sender titleForSegmentAtIndex:sender.selectedSegmentIndex]);
