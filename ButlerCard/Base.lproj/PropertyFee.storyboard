@@ -22,11 +22,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="property_house7" translatesAutoresizingMaskIntoConstraints="NO" id="ghC-c4-40G">
-                                        <rect key="frame" x="20" y="5" width="33" height="33"/>
+                                        <rect key="frame" x="20" y="8" width="28" height="28"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="中铁小区8栋2单元303" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igT-Bg-L6g">
-                                        <rect key="frame" x="61" y="0.0" width="239" height="44"/>
+                                        <rect key="frame" x="56" y="0.0" width="244" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="0.3294117647" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -323,11 +323,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="property_house7" translatesAutoresizingMaskIntoConstraints="NO" id="sag-4r-ysc">
-                                        <rect key="frame" x="20" y="5" width="33" height="33"/>
+                                        <rect key="frame" x="20" y="8" width="28" height="28"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="中铁小区8栋2单元303" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o71-qB-l6Z">
-                                        <rect key="frame" x="61" y="5" width="239" height="33"/>
+                                        <rect key="frame" x="56" y="5" width="244" height="33"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="0.3294117647" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -543,7 +543,7 @@
                     <navigationItem key="navigationItem" id="qVP-kI-NUV">
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" image="navigationBar_close" id="Sy3-Ab-HJF">
-                            <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="backButtonPressed:" destination="LPQ-63-w2k" id="zsh-Gr-lnh"/>
                             </connections>
@@ -555,7 +555,7 @@
                                 <segment title="缴清欠费"/>
                                 <segment title="自定义缴费"/>
                             </segments>
-                            <color key="tintColor" red="0.15686274510000001" green="0.68627450980000004" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.61960784313725492" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="segmentedControlValueChanged:" destination="LPQ-63-w2k" eventType="valueChanged" id="JsU-wG-ybE"/>
                             </connections>
