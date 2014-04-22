@@ -5,43 +5,78 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Surrounding Life View Controller - 周边生活-->
-        <scene sceneID="NGJ-LX-R9z">
+        <!--Surrounding Life Controller - 周边生活-->
+        <scene sceneID="JxR-TF-Seg">
             <objects>
-                <viewController storyboardIdentifier="SurroundingLifeStoryboardID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="k30-ec-sj4" customClass="HXTSurroundingLifeViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="sNi-xv-fuz"/>
-                        <viewControllerLayoutGuide type="bottom" id="9lt-UQ-rTG"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="6zo-Id-osq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="0.95000000000000007" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="周边生活" id="DiW-jA-gXM"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RXh-5e-CTF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController storyboardIdentifier="SurroundingLifeStoryboardID" id="eat-rI-xvY" customClass="CYSurroundingLifeController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" restorationIdentifier="SurroundingLifeStoryboardID" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="CsK-9M-GO3">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="u3P-bF-QUb">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dld-a7-x6f">
+                                    <rect key="frame" x="0.0" y="2" width="110" height="39"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <state key="normal" title="全部商家">
+                                        <color key="titleColor" red="1" green="0.50196078430000002" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="styleBtnClick:" destination="eat-rI-xvY" eventType="touchUpInside" id="JA8-za-VY4"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SurroundingLifeCell" id="87k-6l-4yP">
+                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="87k-6l-4yP" id="SWX-yx-KY4">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="eat-rI-xvY" id="k7I-wk-WNt"/>
+                            <outlet property="delegate" destination="eat-rI-xvY" id="lC3-IG-vsB"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="周边生活" id="AxV-Ma-HZx"/>
+                    <connections>
+                        <outlet property="styleBtn" destination="dld-a7-x6f" id="fRN-Ie-krH"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tkl-9k-Jf9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1054" y="73"/>
+            <point key="canvasLocation" x="992" y="541"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QUy-Za-EwL">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9JY-Dc-Jkj" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3lt-vh-grq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="3lt-vh-grq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.50196078430000002" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="k30-ec-sj4" kind="relationship" relationship="rootViewController" id="810-Q6-gEi"/>
+                        <segue destination="eat-rI-xvY" kind="relationship" relationship="rootViewController" id="DQb-xB-m72"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mdl-VW-nSl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="620" y="73"/>
+            <point key="canvasLocation" x="594" y="-140"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
