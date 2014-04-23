@@ -9,9 +9,10 @@
 #import "HXTBindCardViewController.h"
 
 @interface HXTBindCardViewController () <UITextFieldDelegate, UIActionSheetDelegate, UIAlertViewDelegate>
-@property (weak, nonatomic) IBOutlet UILabel *feeTypeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *areaLabel;
-@property (weak, nonatomic) IBOutlet UILabel *companyLabel;
+
+@property (weak, nonatomic) IBOutlet UIButton *feeTypeButton;
+@property (weak, nonatomic) IBOutlet UIButton *areaButton;
+@property (weak, nonatomic) IBOutlet UIButton *companyButton;
 
 
 @property (weak, nonatomic) IBOutlet UITextField *cardNumberTextField;
@@ -69,11 +70,14 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     NSLog(@"buttonIndex = %lu", (long)buttonIndex);
     if (actionSheet == _feeTypeActionSheet && buttonIndex < _feeTypeArray.count) {
-        _feeTypeLabel.text = _feeTypeArray[buttonIndex];
+        [_feeTypeButton setTitle:_feeTypeArray[buttonIndex] forState:UIControlStateNormal];
+        _feeTypeButton.selected = NO;
     } else if (actionSheet == _areaActionSheet && buttonIndex < _areaArray.count){
-        _areaLabel.text = _areaArray[buttonIndex];
+        [_areaButton setTitle:_areaArray[buttonIndex] forState:UIControlStateNormal];
+        _areaButton.selected = NO;
     } else if (actionSheet == _companyActionSheet && buttonIndex < _companyArray.count){
-        _companyLabel.text = _companyArray[buttonIndex];
+        [_companyButton setTitle:_companyArray[buttonIndex] forState:UIControlStateNormal];
+        _companyButton.selected = NO;
     }
 }
 
@@ -88,8 +92,8 @@
 
 #pragma mark - IB Actions
 
-- (IBAction)feeTypeButtonPressed:(id)sender {
-    NSLog(@"feeTypeButtonPressed");
+- (IBAction)feeTypeButtonPressed:(UIButton *)sender {
+    sender.selected = YES;
     _feeTypeActionSheet = [[UIActionSheet alloc] initWithTitle:nil
                                                              delegate:self
                                                     cancelButtonTitle:@"取消"
@@ -98,10 +102,8 @@
     [_feeTypeActionSheet showInView:self.view.window];
 }
 
-- (IBAction)areaButtonPressed:(id)sender {
-    NSLog(@"areaButtonPressed");
-    
-    NSLog(@"companyButtonPressed");
+- (IBAction)areaButtonPressed:(UIButton *)sender {
+    sender.selected = YES;
     _areaActionSheet = [[UIActionSheet alloc] initWithTitle:nil
                                                              delegate:self
                                                     cancelButtonTitle:@"取消"
@@ -110,8 +112,8 @@
     [_areaActionSheet showInView:self.view.window];
 }
 
-- (IBAction)companyButtonPressed:(id)sender {
-    NSLog(@"companyButtonPressed");
+- (IBAction)companyButtonPressed:(UIButton *)sender {
+    sender.selected = YES;
     _companyActionSheet = [[UIActionSheet alloc] initWithTitle:nil
                                                              delegate:self
                                                     cancelButtonTitle:@"取消"

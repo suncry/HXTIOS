@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="O5j-kg-yg9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="O5j-kg-yg9">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -745,99 +745,60 @@
                                     <action selector="applyButtonPressed:" destination="V7w-cy-Qz8" eventType="touchUpInside" id="vid-C1-RrT"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ch6-cO-Lph" userLabel="View － Fee type">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQd-da-zHM">
                                 <rect key="frame" x="20" y="54" width="100" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="propertyFee_bindCard_searchbg01_down" translatesAutoresizingMaskIntoConstraints="NO" id="g51-ei-r5W">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="气费" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMO-Xu-OYi">
-                                        <rect key="frame" x="8" y="0.0" width="69" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQd-da-zHM">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="feeTypeButtonPressed:" destination="V7w-cy-Qz8" eventType="touchUpInside" id="xlh-Z6-7Qz"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="EBv-Pc-syn"/>
-                                    <constraint firstAttribute="height" constant="30" id="l8w-yk-izB"/>
+                                    <constraint firstAttribute="height" constant="30" id="Ru9-PU-tfy"/>
+                                    <constraint firstAttribute="width" constant="100" id="dnK-gZ-YyA"/>
                                 </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xl4-U9-w4C" userLabel="View － area">
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="气费" backgroundImage="propertyFee_bindCard_searchbg01_down">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" backgroundImage="propertyFee_bindCard_searchbg01_up"/>
+                                <connections>
+                                    <action selector="feeTypeButtonPressed:" destination="V7w-cy-Qz8" eventType="touchUpInside" id="xlh-Z6-7Qz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sDK-6D-4Ki">
                                 <rect key="frame" x="20" y="94" width="100" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="propertyFee_bindCard_searchbg01_down" translatesAutoresizingMaskIntoConstraints="NO" id="teD-yy-ZXn">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="成都市" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYl-yY-E1X">
-                                        <rect key="frame" x="8" y="0.0" width="69" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sDK-6D-4Ki">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="areaButtonPressed:" destination="V7w-cy-Qz8" eventType="touchUpInside" id="rkA-lo-Twf"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="FOK-vE-4Al"/>
-                                    <constraint firstAttribute="width" constant="100" id="oXL-UM-687"/>
+                                    <constraint firstAttribute="width" constant="100" id="fHF-Ng-IGU"/>
+                                    <constraint firstAttribute="height" constant="30" id="zF7-fA-t9w"/>
                                 </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aCX-dE-duL" userLabel="View － company">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="成都市" backgroundImage="propertyFee_bindCard_searchbg01_down">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" backgroundImage="propertyFee_bindCard_searchbg01_up"/>
+                                <connections>
+                                    <action selector="areaButtonPressed:" destination="V7w-cy-Qz8" eventType="touchUpInside" id="rkA-lo-Twf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZm-Xn-5c4">
                                 <rect key="frame" x="160" y="94" width="140" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="propertyFee_bindCard_searchbg02_down" translatesAutoresizingMaskIntoConstraints="NO" id="ofd-TY-Y0v">
-                                        <rect key="frame" x="0.0" y="0.0" width="140" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="天然气公司" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Au5-c8-dAd">
-                                        <rect key="frame" x="8" y="5" width="109" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BZm-Xn-5c4">
-                                        <rect key="frame" x="0.0" y="0.0" width="140" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="companyButtonPressed:" destination="V7w-cy-Qz8" eventType="touchUpInside" id="Zu2-HN-STs"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="5Cm-qT-em7"/>
-                                    <constraint firstAttribute="width" constant="140" id="bPF-OJ-vGq"/>
+                                    <constraint firstAttribute="width" constant="140" id="O0W-ld-Ok6"/>
+                                    <constraint firstAttribute="height" constant="30" id="rMZ-LS-4Ru"/>
                                 </constraints>
-                            </view>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="天然气公司" backgroundImage="propertyFee_bindCard_searchbg02_down">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" backgroundImage="propertyFee_bindCard_searchbg02_up"/>
+                                <connections>
+                                    <action selector="companyButtonPressed:" destination="V7w-cy-Qz8" eventType="touchUpInside" id="Zu2-HN-STs"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GMs-NO-HfP">
                                 <rect key="frame" x="20" y="132" width="280" height="88"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -865,12 +826,18 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="V7w-cy-Qz8" id="WmS-B1-wYe"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入备注名" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9nm-dH-hVa">
                                         <rect key="frame" x="70" y="51" width="210" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="V7w-cy-Qz8" id="pcJ-fv-wRa"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -914,25 +881,25 @@
                         </subviews>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="BZm-Xn-5c4" firstAttribute="leading" secondItem="sDK-6D-4Ki" secondAttribute="trailing" constant="40" id="11h-XB-Htq"/>
                             <constraint firstAttribute="trailing" secondItem="UmU-uC-uGU" secondAttribute="trailing" constant="102" id="1Jv-kN-qQ0"/>
-                            <constraint firstItem="aCX-dE-duL" firstAttribute="leading" secondItem="xl4-U9-w4C" secondAttribute="trailing" constant="40" id="3ox-J5-grb"/>
+                            <constraint firstItem="GMs-NO-HfP" firstAttribute="top" secondItem="sDK-6D-4Ki" secondAttribute="bottom" constant="8" id="3v6-0K-dcZ"/>
+                            <constraint firstItem="sDK-6D-4Ki" firstAttribute="centerY" secondItem="BZm-Xn-5c4" secondAttribute="centerY" id="Aiy-EZ-Lea"/>
                             <constraint firstItem="GMs-NO-HfP" firstAttribute="leading" secondItem="bAS-FO-Uq6" secondAttribute="leading" constant="20" id="Bqz-nD-yba"/>
                             <constraint firstItem="3ac-Ku-ecW" firstAttribute="top" secondItem="QQh-fm-SCR" secondAttribute="bottom" constant="20" id="EL3-On-agh"/>
-                            <constraint firstItem="Ch6-cO-Lph" firstAttribute="leading" secondItem="bAS-FO-Uq6" secondAttribute="leading" constant="20" id="Fiu-vF-ZyH"/>
                             <constraint firstItem="UmU-uC-uGU" firstAttribute="top" secondItem="GMs-NO-HfP" secondAttribute="bottom" constant="12" id="Jvk-7I-eSR"/>
                             <constraint firstItem="3ac-Ku-ecW" firstAttribute="top" secondItem="Hpo-tp-GqK" secondAttribute="bottom" constant="20" id="KhW-dF-xpp"/>
                             <constraint firstItem="QQh-fm-SCR" firstAttribute="leading" secondItem="bAS-FO-Uq6" secondAttribute="leading" constant="20" id="Mul-7u-33m"/>
-                            <constraint firstItem="xl4-U9-w4C" firstAttribute="leading" secondItem="bAS-FO-Uq6" secondAttribute="leading" constant="20" id="XQ4-Hd-QzA"/>
-                            <constraint firstItem="Ch6-cO-Lph" firstAttribute="top" secondItem="xeH-kd-oOS" secondAttribute="bottom" constant="10" id="anK-bd-fHR"/>
+                            <constraint firstItem="sDK-6D-4Ki" firstAttribute="leading" secondItem="bAS-FO-Uq6" secondAttribute="leading" constant="20" id="Yx9-B7-8qg"/>
                             <constraint firstItem="xeH-kd-oOS" firstAttribute="top" secondItem="wdO-m4-Qio" secondAttribute="bottom" id="bN4-PZ-xIb"/>
-                            <constraint firstItem="xl4-U9-w4C" firstAttribute="top" secondItem="Ch6-cO-Lph" secondAttribute="bottom" constant="10" id="e8z-Kq-arr"/>
+                            <constraint firstItem="oQd-da-zHM" firstAttribute="top" secondItem="xeH-kd-oOS" secondAttribute="bottom" constant="10" id="faZ-d6-9Qy"/>
+                            <constraint firstItem="oQd-da-zHM" firstAttribute="leading" secondItem="bAS-FO-Uq6" secondAttribute="leading" constant="20" id="fed-6P-a5a"/>
                             <constraint firstItem="xeH-kd-oOS" firstAttribute="leading" secondItem="bAS-FO-Uq6" secondAttribute="leading" id="goM-av-BhF"/>
-                            <constraint firstItem="GMs-NO-HfP" firstAttribute="top" secondItem="aCX-dE-duL" secondAttribute="bottom" constant="8" id="hz6-pZ-XDJ"/>
                             <constraint firstAttribute="trailing" secondItem="xeH-kd-oOS" secondAttribute="trailing" id="ld5-4a-Dvc"/>
                             <constraint firstItem="UmU-uC-uGU" firstAttribute="leading" secondItem="bAS-FO-Uq6" secondAttribute="leading" constant="102" id="rS1-6h-ZHc"/>
-                            <constraint firstItem="aCX-dE-duL" firstAttribute="centerY" secondItem="xl4-U9-w4C" secondAttribute="centerY" id="rtz-Ei-dbL"/>
                             <constraint firstAttribute="trailing" secondItem="Hpo-tp-GqK" secondAttribute="trailing" constant="20" id="uFP-OI-uzZ"/>
                             <constraint firstAttribute="trailing" secondItem="GMs-NO-HfP" secondAttribute="trailing" constant="20" id="xXv-qC-O5O"/>
+                            <constraint firstItem="sDK-6D-4Ki" firstAttribute="top" secondItem="oQd-da-zHM" secondAttribute="bottom" constant="10" id="ylR-dF-1sa"/>
                         </constraints>
                         <connections>
                             <action selector="backgroundTouchUpInside:" destination="V7w-cy-Qz8" eventType="touchUpInside" id="296-Q2-JjQ"/>
@@ -940,10 +907,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="添加绑定" id="37z-b0-A15"/>
                     <connections>
-                        <outlet property="areaLabel" destination="bYl-yY-E1X" id="ntF-Hq-073"/>
+                        <outlet property="areaButton" destination="sDK-6D-4Ki" id="FXq-Na-6UL"/>
                         <outlet property="cardNumberTextField" destination="hrT-HZ-XA8" id="DgA-Hh-3xc"/>
-                        <outlet property="companyLabel" destination="Au5-c8-dAd" id="XWk-5u-avH"/>
-                        <outlet property="feeTypeLabel" destination="cMO-Xu-OYi" id="A7f-Mh-X5w"/>
+                        <outlet property="companyButton" destination="BZm-Xn-5c4" id="gpw-ag-a1r"/>
+                        <outlet property="feeTypeButton" destination="oQd-da-zHM" id="6Wc-4F-fNM"/>
                         <outlet property="remarkTestField" destination="9nm-dH-hVa" id="Ipw-fZ-4px"/>
                         <outlet property="telButton" destination="Hpo-tp-GqK" id="3ou-zz-sqY"/>
                     </connections>
@@ -1088,7 +1055,9 @@
         <image name="global_point_s02" width="22" height="22"/>
         <image name="propertyFee_address" width="17" height="17"/>
         <image name="propertyFee_bindCard_searchbg01_down" width="100" height="30"/>
+        <image name="propertyFee_bindCard_searchbg01_up" width="100" height="30"/>
         <image name="propertyFee_bindCard_searchbg02_down" width="140" height="30"/>
+        <image name="propertyFee_bindCard_searchbg02_up" width="140" height="30"/>
         <image name="propertyFee_tel" width="17" height="17"/>
         <image name="property_house7" width="52" height="52"/>
     </resources>
