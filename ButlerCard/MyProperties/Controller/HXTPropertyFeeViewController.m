@@ -38,7 +38,9 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"MyPropertyTableViewHeaderFooterView" bundle:[NSBundle mainBundle]]forHeaderFooterViewReuseIdentifier:kHeaderFooterViewReuseIdentifier];
     
     _expandedIndexSet = [NSMutableIndexSet indexSetWithIndex:0];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     _freeNames = @[@"物管费", @"停车费", @"水费", @"电费", @"气费",@"物管费", @"停车费", @"水费", @"电费", @"气费"];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,6 +48,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 #pragma mark - Table view data source
 
@@ -58,7 +62,7 @@
 {
     if ([_expandedIndexSet containsIndex:section]) {
         HXTPropertyCell *property = [HXTMyProperties sharedInstance].properties[section];
-        return property.fees.count + 1; //计算功能行
+        return property.fees.count + 2; //计算绑定单元和付费单元
     } else {
         return 0;
     }
@@ -68,23 +72,27 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *ProtertyItemDetailCellIdentifier = @"ProtertyItemDetailCellIdentifier"; //详情单元
-    static NSString *FunctionCellIdentifier           = @"FunctionCellIdentifier";           //功能单元
+    static NSString *BindMoreCellIdentifier           = @"BindMoreCellIdentifier";           //绑定单元
+    static NSString *PayCellIdentifier                = @"PayCellIdentifier";                //付费单元
     
     HXTPropertyCell *property = [HXTMyProperties sharedInstance].properties[indexPath.section];
     if (indexPath.row < property.fees.count) { //详情单元
         HXTPropertyFeeCell *feeCell = property.fees[indexPath.row];
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ProtertyItemDetailCellIdentifier forIndexPath:indexPath];
-//        ((UILabel *)[cell viewWithTag:101]).text = _freeNames[feeCell.freeType];
+        //        ((UILabel *)[cell viewWithTag:101]).text = _freeNames[feeCell.freeType];
         ((UILabel *)[cell viewWithTag:101]).text = _freeNames[indexPath.row];
         
         NSDateFormatter *df  = [[NSDateFormatter alloc] init];
         [df setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"]];
         [df setDateFormat:@"YYYY年MM月d日"];
         ((UILabel *)[cell viewWithTag:102]).text = [NSString stringWithFormat:@"截止%@", [df stringFromDate:feeCell.deadline]];
-//        ((UILabel *)[cell viewWithTag:103]).text = [NSString stringWithFormat:@"%.2f", feeCell.money];
+        //        ((UILabel *)[cell viewWithTag:103]).text = [NSString stringWithFormat:@"%.2f", feeCell.money];
         return cell;
-    } else if (indexPath.row == property.fees.count) { //功能单元
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:FunctionCellIdentifier forIndexPath:indexPath];
+    } else if (indexPath.row == property.fees.count) { //绑定单元
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:BindMoreCellIdentifier forIndexPath:indexPath];
+        return cell;
+    } else if (indexPath.row == property.fees.count + 1) { //付费单元
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:PayCellIdentifier forIndexPath:indexPath];
         return cell;
     } else {
         NSLog(@"Error##############%s %s %d Wrong indexPath!!!", __FILE__, __FUNCTION__, __LINE__);
@@ -131,10 +139,15 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row < 5) {
+    HXTPropertyCell *property = [HXTMyProperties sharedInstance].properties[indexPath.section];
+    if (indexPath.row < property.fees.count) {              //详情单元
         return 44;
-    } else {
-        return 148;
+    } else if (indexPath.row == property.fees.count) {      //绑定单元
+        return 83;
+    } else if (indexPath.row == property.fees.count + 1) {  //付费单元
+        return 56;
+    }else {
+        return 0;
     }
 }
 
@@ -150,14 +163,34 @@
     
     if (expanded) {
         NSIndexSet *lastIndexSet = [[NSIndexSet alloc] initWithIndexSet:_expandedIndexSet];
-        [_expandedIndexSet addIndex:tableViewHeaderFooterView.tag];
+        [self.expandedIndexSet addIndex:tableViewHeaderFooterView.tag];
+        
+        if (_expandedIndexSet.count > 0) {
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        } else {
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        }
+        
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:tableViewHeaderFooterView.tag] withRowAnimation:UITableViewRowAnimationAutomatic];
+        
         if (lastIndexSet.count > 0) {
-            [_expandedIndexSet removeIndexes:lastIndexSet];
+            [self.expandedIndexSet removeIndexes:lastIndexSet];
+            
+            if (_expandedIndexSet.count > 0) {
+                self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+            } else {
+                self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+            }
+            
             [self.tableView reloadSections:lastIndexSet withRowAnimation:UITableViewRowAnimationAutomatic];
         }
     } else {
-        [_expandedIndexSet removeIndex:tableViewHeaderFooterView.tag];
+        [self.expandedIndexSet removeIndex:tableViewHeaderFooterView.tag];
+        if (_expandedIndexSet.count > 0) {
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        } else {
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        }
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:tableViewHeaderFooterView.tag] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
 }
