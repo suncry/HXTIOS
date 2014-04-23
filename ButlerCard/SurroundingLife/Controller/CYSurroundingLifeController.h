@@ -13,8 +13,8 @@
     UISearchDisplayController *_cySearchDisplayController;
     UISearchBar *_cySearchBar;
 }
-@property (retain, nonatomic) NSArray *dataArr;
-@property (retain, nonatomic) NSArray *searchDataArr;
+@property (retain, nonatomic) NSMutableArray *dataArr;
+@property (retain, nonatomic) NSMutableArray *searchDataArr;
 
 @property (weak, nonatomic) IBOutlet UIButton *styleBtn;
 - (IBAction)styleBtnClick:(id)sender;

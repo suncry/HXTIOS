@@ -39,14 +39,15 @@
           success:^(AFHTTPRequestOperation *operation, id responseObject)
      {
          _dataArr = [responseObject valueForKey:@"results"];
+//         _searchDataArr = [responseObject valueForKey:@"results"];
+         _searchDataArr = [[NSMutableArray alloc]initWithArray:_dataArr];
          [self.tableView reloadData];
-         NSLog(@"self.dataDic: %@", _dataArr);
+//         NSLog(@"self.dataDic: %@", _dataArr);
      }
           failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
          NSLog(@"Error: %@", error);
      }];
-
 }
 - (void)viewDidLoad
 {
@@ -82,7 +83,16 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _dataArr.count;
+    if ([tableView isEqual:self.searchDisplayController.searchResultsTableView])
+    {
+        return _searchDataArr.count;
+
+    }
+    else
+    {
+        return _dataArr.count;
+
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -112,7 +122,6 @@
         //距离
         NSString *distanceString = [NSString stringWithFormat:@"%@m",_dataArr[indexPath.row][@"distance"]];
         [(UILabel *)[cell viewWithTag:107] setText:distanceString];
-
 
         return cell;
     }
@@ -197,7 +206,15 @@
 }
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-//    _cySearchBar.hidden = YES;
+//    [_searchDataArr removeAllObjects];
+//    for(NSString *str in _searchDataArr)
+//    {
+//        if([str hasPrefix:searchBar.text])
+//        {
+//            [_searchDataArr addObject:str];
+//        }
+//    }
+//    [self.tableView reloadData];
 }
 //- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 //{
@@ -205,7 +222,27 @@
 //}
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
-//    NSLog(@"正在搜索 %@",searchText);
+    if(0 == searchText.length)
+    {
+        return ;
+    }
+//    NSLog(@"_searchDataArr == %@",_searchDataArr);
+    NSMutableArray *tempArr = _searchDataArr;
+//    [_searchDataArr removeAllObjects];
+    for(NSDictionary *dic in _searchDataArr)
+    {
+        if ([dic[@"name"] hasPrefix:searchText])
+        {
+//            [tempArr addObject:dic];
+            NSLog(@"dic  name == %@",dic[@"name"]);
+
+            NSLog(@"有匹配结果！");
+        }
+    }
+//    [_searchDataArr removeAllObjects];
+//    _searchDataArr = tempArr;
+    [self.tableView reloadData];
+
 }
 
 @end
