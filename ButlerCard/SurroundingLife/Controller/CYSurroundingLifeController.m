@@ -72,7 +72,7 @@
         {
             cell = [[searchCell alloc]initWithStyle:UITableViewCellStyleDefault
                                          reuseIdentifier:CellIdentifier];
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
         return cell;
     }
