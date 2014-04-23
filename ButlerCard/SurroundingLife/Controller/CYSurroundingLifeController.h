@@ -16,5 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *styleBtn;
 - (IBAction)styleBtnClick:(id)sender;
 - (IBAction)seachBtnClick:(id)sender;
+- (IBAction)zhekouBtnClick:(id)sender;
+- (IBAction)songhuoBtnClick:(id)sender;
 
 @end

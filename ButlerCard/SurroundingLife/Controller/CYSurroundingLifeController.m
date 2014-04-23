@@ -140,15 +140,6 @@
 - (IBAction)styleBtnClick:(id)sender
 {
     UIButton *button = (UIButton *)sender;
-//    [PCStackMenu showStackMenuWithTitles:[NSArray arrayWithObjects:@"全部商家", @"周边商店", @"周边餐饮", @"周边服务", nil]
-//                              withImages:[NSArray arrayWithObjects:[UIImage imageNamed:@"life_all_merchant.png"], [UIImage imageNamed:@"life_store@2x.png"], [UIImage imageNamed:@"want_food@2x.png"],[UIImage imageNamed:@"life_service@2x.png"], nil]
-//                            atStartPoint:CGPointMake(button.frame.origin.x + button.frame.size.width, button.frame.origin.y + 30)
-//                                  inView:self.view
-//                              itemHeight:40
-//                           menuDirection:PCStackMenuDirectionCounterClockWiseDown
-//                            onSelectMenu:^(NSInteger selectedMenuIndex) {
-//                                NSLog(@"menu index : %d", selectedMenuIndex);
-//                            }];
 	PCStackMenu *stackMenu = [[PCStackMenu alloc] initWithTitles:[NSArray arrayWithObjects:@"全部商家", @"周边商店", @"周边餐饮", @"周边服务", nil]
 													  withImages:[NSArray arrayWithObjects:[UIImage imageNamed:@"life_all_merchant.png"], [UIImage imageNamed:@"life_store@2x.png"], [UIImage imageNamed:@"want_food@2x.png"],[UIImage imageNamed:@"life_service@2x.png"], nil]
 													atStartPoint:CGPointMake(button.frame.origin.x + button.frame.size.width, button.frame.origin.y + button.frame.size.height)
@@ -171,23 +162,50 @@
 	[stackMenu show:^(NSInteger selectedMenuIndex)
     {
         PCStackMenuItem *item = stackMenu.items[selectedMenuIndex];
-        [_styleBtn setTitle:item.stackTitleLabel.text forState:UIControlStateNormal];
+        [_styleBtn setTitle:[NSString stringWithFormat:@"%@▼",item.stackTitleLabel.text]
+                   forState:UIControlStateNormal];
 //		NSLog(@"menu index : %d", selectedMenuIndex);
 	}];
 
 }
+- (IBAction)zhekouBtnClick:(id)sender
+{
+    UIButton *btn = (UIButton *)sender;
+    btn.selected = !btn.selected;
+}
+- (IBAction)songhuoBtnClick:(id)sender
+{
+    UIButton *btn = (UIButton *)sender;
+    btn.selected = !btn.selected;
+}
+
 #pragma mark searchDisplayControllerDelegate
 - (IBAction)seachBtnClick:(id)sender
 {
     _cySearchBar.hidden = NO;
-
-
     [self.searchDisplayController setActive:YES animated:YES];
 }
 //- (void) searchDisplayControllerWillBeginSearch:(UISearchDisplayController *)controller
+//{
+//    NSLog(@"searchDisplayControllerWillBeginSearch");
+//}
 //- (void) searchDisplayControllerDidBeginSearch:(UISearchDisplayController *)controller
-//- (void) searchDisplayControllerWillEndSearch:(UISearchDisplayController *)controller
+//{
+//    NSLog(@"searchDisplayControllerDidBeginSearch");
+//
+//}
+- (void) searchDisplayControllerWillEndSearch:(UISearchDisplayController *)controller
+{
+//    NSLog(@"searchDisplayControllerWillEndSearch");
+    _cySearchBar.hidden = YES;
+
+
+}
 //- (void) searchDisplayControllerDidEndSearch:(UISearchDisplayController *)controller
+//{
+//    NSLog(@"searchDisplayControllerDidEndSearch");
+//
+//}
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar
 {
@@ -197,6 +215,5 @@
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
 //    _cySearchBar.hidden = YES;
-
 }
 @end
