@@ -8,6 +8,10 @@
 
 #import "CYSurroundingLifeController.h"
 #import "PCStackMenu.h"
+#import "searchCell.h"
+#import "DJQRateView.h"
+#import "AFNetworking.h"
+
 @interface CYSurroundingLifeController ()
 
 @end
@@ -21,7 +25,30 @@
     }
     return self;
 }
-
+- (void)viewWillAppear:(BOOL)animated
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *parameters = @{@"tenement_id": @"1",
+                                        @"type": @"0",
+                                     @"canSend": @"0",
+                                  @"candPayoff": @"0",
+                                        @"size": @"6",
+                                      @"offset": @"0",
+                                         @"sid": @"66d804a0bb4c0a06",};
+    [manager POST:@"http://bbs.enveesoft.com:1602/htx/hexinpassserver/appserver/public/store/list" parameters:parameters
+          success:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+         _dataArr = [responseObject valueForKey:@"results"];
+//         _searchDataArr = [responseObject valueForKey:@"results"];
+         _searchDataArr = [[NSMutableArray alloc]initWithArray:_dataArr];
+         [self.tableView reloadData];
+//         NSLog(@"self.dataDic: %@", _dataArr);
+     }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+         NSLog(@"Error: %@", error);
+     }];
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -32,6 +59,11 @@
     [self.view addSubview:_cySearchBar];
     _cySearchDisplayController = [[UISearchDisplayController alloc]initWithSearchBar:_cySearchBar contentsController:self];
     _cySearchDisplayController.delegate = self;
+    _cySearchDisplayController.searchResultsDelegate = self;
+    _cySearchDisplayController.searchResultsDataSource = self;
+//    _cySearchDisplayController.searchResultsTableView.delegate = self;
+//    _cySearchDisplayController.searchResultsTableView.dataSource = self;
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,100 +74,60 @@
 #pragma mark - Table view data source
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 80;
+    return 90;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 8;
+    if ([tableView isEqual:self.searchDisplayController.searchResultsTableView])
+    {
+        return _searchDataArr.count;
+
+    }
+    else
+    {
+        return _dataArr.count;
+
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
-    
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView                               dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (cell == nil) {
+    if ([tableView isEqual:self.searchDisplayController.searchResultsTableView])
+    {
+        static NSString *CellIdentifier = @"searchCell";
         
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault
-                                     reuseIdentifier:CellIdentifier];
+        searchCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        
+        if (cell == nil)
+        {
+            cell = [[searchCell alloc]initWithStyle:UITableViewCellStyleDefault
+                                         reuseIdentifier:CellIdentifier];
+        }
+        return cell;
+    }
+    else
+    {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SurroundingLifeCell" forIndexPath:indexPath];
+        //评分
+        [(DJQRateView *)[cell viewWithTag:100] setRate:[_dataArr[indexPath.row][@"grade"]floatValue]];
+        //名字
+        [(UILabel *)[cell viewWithTag:104] setText:_dataArr[indexPath.row][@"name"]];
+        //地址
+        [(UILabel *)[cell viewWithTag:105] setText:_dataArr[indexPath.row][@"address"]];
+        //距离
+        NSString *distanceString = [NSString stringWithFormat:@"%@m",_dataArr[indexPath.row][@"distance"]];
+        [(UILabel *)[cell viewWithTag:107] setText:distanceString];
+
+        return cell;
     }
     
-    /* Configure the cell. */
-    
-    if ([tableView isEqual:self.searchDisplayController.searchResultsTableView]){
-        
-        cell.textLabel.text = @"searchResultsTableView";
-        
-    }else{
-        
-        cell.textLabel.text = @"1111111111111111111";
-        
-    }   
-    
-    return cell;
-    
     
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)styleBtnClick:(id)sender
 {
@@ -214,6 +206,43 @@
 }
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-//    _cySearchBar.hidden = YES;
+//    [_searchDataArr removeAllObjects];
+//    for(NSString *str in _searchDataArr)
+//    {
+//        if([str hasPrefix:searchBar.text])
+//        {
+//            [_searchDataArr addObject:str];
+//        }
+//    }
+//    [self.tableView reloadData];
 }
+//- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+//{
+//    NSLog(@"开始搜索！");
+//}
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    if(0 == searchText.length)
+    {
+        return ;
+    }
+//    NSLog(@"_searchDataArr == %@",_searchDataArr);
+    NSMutableArray *tempArr = _searchDataArr;
+//    [_searchDataArr removeAllObjects];
+    for(NSDictionary *dic in _searchDataArr)
+    {
+        if ([dic[@"name"] hasPrefix:searchText])
+        {
+//            [tempArr addObject:dic];
+            NSLog(@"dic  name == %@",dic[@"name"]);
+
+            NSLog(@"有匹配结果！");
+        }
+    }
+//    [_searchDataArr removeAllObjects];
+//    _searchDataArr = tempArr;
+    [self.tableView reloadData];
+
+}
+
 @end

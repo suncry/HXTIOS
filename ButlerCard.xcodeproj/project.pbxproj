@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		238ECB531904BECA00721872 /* CYPropertieCardsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 238ECB521904BECA00721872 /* CYPropertieCardsController.m */; };
 		2392C7C218FE7157007EDB5A /* CYRepairController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2392C7C118FE7157007EDB5A /* CYRepairController.m */; };
+		23A8C4841907A04A00557F5A /* searchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A8C4831907A04A00557F5A /* searchCell.m */; };
 		23CA860D19065B7A0067D0D4 /* PCStackMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CA860A19065B7A0067D0D4 /* PCStackMenu.m */; };
 		23CA860E19065B7A0067D0D4 /* PCStackMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CA860C19065B7A0067D0D4 /* PCStackMenuItem.m */; };
 		23CA861F19066C430067D0D4 /* CYSurroundingLifeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CA861E19066C430067D0D4 /* CYSurroundingLifeController.m */; };
@@ -215,6 +216,8 @@
 		238ECB521904BECA00721872 /* CYPropertieCardsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYPropertieCardsController.m; sourceTree = "<group>"; };
 		2392C7C018FE7157007EDB5A /* CYRepairController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYRepairController.h; sourceTree = "<group>"; };
 		2392C7C118FE7157007EDB5A /* CYRepairController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYRepairController.m; sourceTree = "<group>"; };
+		23A8C4821907A04A00557F5A /* searchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchCell.h; sourceTree = "<group>"; };
+		23A8C4831907A04A00557F5A /* searchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchCell.m; sourceTree = "<group>"; };
 		23CA860919065B7A0067D0D4 /* PCStackMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCStackMenu.h; sourceTree = SOURCE_ROOT; };
 		23CA860A19065B7A0067D0D4 /* PCStackMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCStackMenu.m; sourceTree = SOURCE_ROOT; };
 		23CA860B19065B7A0067D0D4 /* PCStackMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCStackMenuItem.h; sourceTree = SOURCE_ROOT; };
@@ -430,6 +433,8 @@
 		23CA860719065B5C0067D0D4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				23A8C4821907A04A00557F5A /* searchCell.h */,
+				23A8C4831907A04A00557F5A /* searchCell.m */,
 				23CA860819065B660067D0D4 /* PCStackMenu */,
 			);
 			name = Model;
@@ -1080,6 +1085,7 @@
 				B2214C6E18FE1F9000762AE9 /* HXTRegisterInputPasswordViewController.m in Sources */,
 				B2214C8418FE1F9000762AE9 /* HXTSelectCityViewController.m in Sources */,
 				B2214E4D18FE1FB800762AE9 /* DJQStartView.m in Sources */,
+				23A8C4841907A04A00557F5A /* searchCell.m in Sources */,
 				B2214E1918FE1FB800762AE9 /* CYBillPieViewController.m in Sources */,
 				B2214E5518FE1FB800762AE9 /* HXTPropertyFeeCell.m in Sources */,
 				B2214E4318FE1FB800762AE9 /* HXTBindCardViewController.m in Sources */,
@@ -1399,7 +1405,7 @@
 				INFOPLIST_FILE = "ButlerCard/ButlerCard-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "A77BA517-27F5-4575-AF96-B214674C6B79";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1417,7 +1423,7 @@
 				INFOPLIST_FILE = "ButlerCard/ButlerCard-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "A77BA517-27F5-4575-AF96-B214674C6B79";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
