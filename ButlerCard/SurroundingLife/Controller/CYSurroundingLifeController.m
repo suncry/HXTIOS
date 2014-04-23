@@ -8,6 +8,7 @@
 
 #import "CYSurroundingLifeController.h"
 #import "PCStackMenu.h"
+#import "searchCell.h"
 @interface CYSurroundingLifeController ()
 
 @end
@@ -32,6 +33,11 @@
     [self.view addSubview:_cySearchBar];
     _cySearchDisplayController = [[UISearchDisplayController alloc]initWithSearchBar:_cySearchBar contentsController:self];
     _cySearchDisplayController.delegate = self;
+    _cySearchDisplayController.searchResultsDelegate = self;
+    _cySearchDisplayController.searchResultsDataSource = self;
+//    _cySearchDisplayController.searchResultsTableView.delegate = self;
+//    _cySearchDisplayController.searchResultsTableView.dataSource = self;
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,7 +48,7 @@
 #pragma mark - Table view data source
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 80;
+    return 90;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -56,34 +62,26 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
-    
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView                               dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (cell == nil) {
+    if ([tableView isEqual:self.searchDisplayController.searchResultsTableView])
+    {
+        static NSString *CellIdentifier = @"searchCell";
         
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault
-                                     reuseIdentifier:CellIdentifier];
+        searchCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        
+        if (cell == nil)
+        {
+            cell = [[searchCell alloc]initWithStyle:UITableViewCellStyleDefault
+                                         reuseIdentifier:CellIdentifier];
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        }
+        return cell;
     }
-    
-    /* Configure the cell. */
-    
-    if ([tableView isEqual:self.searchDisplayController.searchResultsTableView]){
-        
-        cell.textLabel.text = @"searchResultsTableView";
-        
-    }else{
-        
-        cell.textLabel.text = @"1111111111111111111";
-        
-    }   
-    
-    return cell;
+    else
+    {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SurroundingLifeCell" forIndexPath:indexPath];
+//        cell.textLabel.text = @"SurroundingLifeCell";
+        return cell;
+    }
     
     
 }
@@ -216,4 +214,13 @@
 {
 //    _cySearchBar.hidden = YES;
 }
+//- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+//{
+//    NSLog(@"开始搜索！");
+//}
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+//    NSLog(@"正在搜索 %@",searchText);
+}
+
 @end
