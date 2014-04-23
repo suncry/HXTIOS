@@ -9,6 +9,9 @@
 #import "CYSurroundingLifeController.h"
 #import "PCStackMenu.h"
 #import "searchCell.h"
+#import "DJQRateView.h"
+#import "AFNetworking.h"
+
 @interface CYSurroundingLifeController ()
 
 @end
@@ -22,7 +25,29 @@
     }
     return self;
 }
+- (void)viewWillAppear:(BOOL)animated
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *parameters = @{@"tenement_id": @"1",
+                                        @"type": @"0",
+                                     @"canSend": @"0",
+                                  @"candPayoff": @"0",
+                                        @"size": @"6",
+                                      @"offset": @"0",
+                                         @"sid": @"66d804a0bb4c0a06",};
+    [manager POST:@"http://bbs.enveesoft.com:1602/htx/hexinpassserver/appserver/public/store/list" parameters:parameters
+          success:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+         _dataArr = [responseObject valueForKey:@"results"];
+         [self.tableView reloadData];
+         NSLog(@"self.dataDic: %@", _dataArr);
+     }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+         NSLog(@"Error: %@", error);
+     }];
 
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -52,12 +77,12 @@
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 8;
+    return _dataArr.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -72,68 +97,28 @@
         {
             cell = [[searchCell alloc]initWithStyle:UITableViewCellStyleDefault
                                          reuseIdentifier:CellIdentifier];
-//            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
         return cell;
     }
     else
     {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SurroundingLifeCell" forIndexPath:indexPath];
-//        cell.textLabel.text = @"SurroundingLifeCell";
+        //评分
+        [(DJQRateView *)[cell viewWithTag:100] setRate:[_dataArr[indexPath.row][@"grade"]floatValue]];
+        //名字
+        [(UILabel *)[cell viewWithTag:104] setText:_dataArr[indexPath.row][@"name"]];
+        //地址
+        [(UILabel *)[cell viewWithTag:105] setText:_dataArr[indexPath.row][@"address"]];
+        //距离
+        NSString *distanceString = [NSString stringWithFormat:@"%@m",_dataArr[indexPath.row][@"distance"]];
+        [(UILabel *)[cell viewWithTag:107] setText:distanceString];
+
+
         return cell;
     }
     
     
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)styleBtnClick:(id)sender
 {
