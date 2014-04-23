@@ -35,11 +35,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
     [self.tableView registerNib:[UINib nibWithNibName:@"MyPropertyTableViewHeaderFooterView" bundle:[NSBundle mainBundle]]forHeaderFooterViewReuseIdentifier:kHeaderFooterViewReuseIdentifier];
     
     _expandedIndexSet = [NSMutableIndexSet indexSetWithIndex:0];
-    _freeNames = @[@"未知费用", @"物管费", @"停车费", @"水费", @"电费", @"气费",];
+    _freeNames = @[@"物管费", @"停车费", @"水费", @"电费", @"气费",@"物管费", @"停车费", @"水费", @"电费", @"气费"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -75,13 +74,14 @@
     if (indexPath.row < property.fees.count) { //详情单元
         HXTPropertyFeeCell *feeCell = property.fees[indexPath.row];
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ProtertyItemDetailCellIdentifier forIndexPath:indexPath];
-        ((UILabel *)[cell viewWithTag:101]).text = _freeNames[feeCell.freeType];
+//        ((UILabel *)[cell viewWithTag:101]).text = _freeNames[feeCell.freeType];
+        ((UILabel *)[cell viewWithTag:101]).text = _freeNames[indexPath.row];
         
         NSDateFormatter *df  = [[NSDateFormatter alloc] init];
         [df setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"]];
         [df setDateFormat:@"YYYY年MM月d日"];
         ((UILabel *)[cell viewWithTag:102]).text = [NSString stringWithFormat:@"截止%@", [df stringFromDate:feeCell.deadline]];
-        ((UILabel *)[cell viewWithTag:103]).text = [NSString stringWithFormat:@"%.2f", feeCell.money];
+//        ((UILabel *)[cell viewWithTag:103]).text = [NSString stringWithFormat:@"%.2f", feeCell.money];
         return cell;
     } else if (indexPath.row == property.fees.count) { //功能单元
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:FunctionCellIdentifier forIndexPath:indexPath];

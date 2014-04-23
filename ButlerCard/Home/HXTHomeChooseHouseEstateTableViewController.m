@@ -7,6 +7,7 @@
 //
 
 #import "HXTHomeChooseHouseEstateTableViewController.h"
+#import "HXTAccountManager.h"
 
 @interface HXTHomeChooseHouseEstateTableViewController ()
 
@@ -174,19 +175,24 @@
 
 #pragma mark - table view delegate
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if (section > 0) {
-        return 22.0f;
-    } else {
-        return 0.0f;
-    }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    UILabel *label = (UILabel *)[cell viewWithTag:102];
+    NSLog(@"label.text = %@", label.text);
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        if (![label.text isEqualToString:[HXTAccountManager sharedInstance].defaultHouseingEstate]) {
+            [HXTAccountManager sharedInstance].defaultHouseingEstate = [label.text copy];
+        }
+    }];
+    
 }
+
 
 #pragma mark - IB Actions
 
 - (IBAction)reloadButtonPressed:(UIButton *)sender {
     sender.selected = !sender.selected;
-    NSLog(@"#####");
 }
 
 #pragma mark - Navigation

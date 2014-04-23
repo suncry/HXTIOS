@@ -47,6 +47,20 @@
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [[HXTAccountManager sharedInstance] addObserver:self
+                                         forKeyPath:@"defaultHouseingEstate"
+                                            options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld
+                                            context:NULL];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [[HXTAccountManager sharedInstance] removeObserver:self forKeyPath:@"defaultHouseingEstate"];
+    [super viewWillDisappear:animated];
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
@@ -69,6 +83,18 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - key value abserver
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"defaultHouseingEstate"] && object == [HXTAccountManager sharedInstance]) {
+        if ([HXTAccountManager sharedInstance].defaultHouseingEstate) {
+            _chooseHouseEstateBarButtonItem.title = [[HXTAccountManager sharedInstance].defaultHouseingEstate stringByAppendingString:@" ▾"];
+        } else {
+            _chooseHouseEstateBarButtonItem.title = @"全部商圈 ▾";
+        }
+    }
 }
 
 #pragma mark - Table view data source
@@ -131,9 +157,9 @@
 //周边生活
 - (IBAction)surroundingLifeButtonPressed:(UIButton *)sender {
     sender.selected = YES;
-    NSLog(@"周边生活 %s %s %d", __FILE__, __FUNCTION__, __LINE__);
     
     UIViewController *surroundingLifeViewController = [[UIStoryboard storyboardWithName:@"SurroundingLife" bundle:nil] instantiateViewControllerWithIdentifier:@"SurroundingLifeStoryboardID"];
+    surroundingLifeViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:surroundingLifeViewController animated:YES];
     sender.selected = NO;
 }

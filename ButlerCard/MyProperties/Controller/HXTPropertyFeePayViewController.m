@@ -37,6 +37,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.view.backgroundColor = [UIColor whiteColor];
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
         _segmentedControl.tintColor = [UIColor whiteColor];
     }
@@ -53,12 +54,12 @@
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
         _segmentedControl.tintColor = [UIColor whiteColor];
     }
-    _coverView = [[UIControl alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    [self.view.window addSubview:_coverView];
-    [self.view.window bringSubviewToFront:_coverView];
+    _coverView = [[UIControl alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:_coverView];
+    [self.view bringSubviewToFront:_coverView];
     _coverView.hidden = YES;
-    _coverView.backgroundColor = [UIColor clearColor];
-//    _coverView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.2f];
+//    _coverView.backgroundColor = [UIColor lightTextColor];
+    _coverView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.2f];
     [_coverView addTarget:self action:@selector(backgroundTouchUpInside:) forControlEvents:UIControlEventTouchUpInside];
 }
 
@@ -130,8 +131,6 @@
     
     _coverView.hidden = NO;
     _editingTextField = textField;
-//    _editingTextField.borderStyle = UITextBorderStyleRoundedRect;
-//    _editingTextField.backgroundColor = [UIColor whiteColor];
     return YES;
 }
 
@@ -148,16 +147,12 @@
 
 - (void)pickerDidPressDoneWithStarDateComponents:(NSDateComponents *)startComps andEndComponents:(NSDateComponents *)endComps {
     _editingTextField.text = [NSString stringWithFormat:@"%4lu年%02lu月~%4lu年%02lu月",(long)startComps.year, (long)startComps.month, (long)endComps.year, (long)endComps.month];
-//    _editingTextField.borderStyle = UITextBorderStyleNone;
-//    _editingTextField.backgroundColor = [UIColor clearColor];
     [_editingTextField resignFirstResponder];
     _coverView.hidden = YES;
 }
 
 - (void)pickerDidPressCancelWithStarDateComponents:(NSDateComponents *)startComps andEndComponents:(NSDateComponents *)endComps {
     _editingTextField.text = [NSString stringWithFormat:@"%4lu年%02lu月~%4lu年%02lu月",(long)startComps.year, (long)startComps.month, (long)endComps.year, (long)endComps.month];
-//    _editingTextField.borderStyle = UITextBorderStyleNone;
-//    _editingTextField.backgroundColor = [UIColor clearColor];
     [_editingTextField resignFirstResponder];
     _coverView.hidden = YES;
 }
@@ -166,8 +161,6 @@
 - (void)backgroundTouchUpInside:(id)sender {
     if (_editingTextField) {
         [_editingTextField resignFirstResponder];
-//        _editingTextField.borderStyle = UITextBorderStyleNone;
-//        _editingTextField.backgroundColor = [UIColor clearColor];
     }
     _coverView.hidden = YES;
 }
@@ -177,6 +170,10 @@
 - (IBAction)segmentedControlValueChanged:(UISegmentedControl *)sender {
     NSLog(@"sender.selectedSegmentIndex = %lu title = %@", (long)sender.selectedSegmentIndex, [sender titleForSegmentAtIndex:sender.selectedSegmentIndex]);
     
+    if (_editingTextField) {
+        [_editingTextField resignFirstResponder];
+    }
+    _coverView.hidden = YES;
     [self.tableView reloadData];
 }
 
@@ -196,7 +193,4 @@
 }
 */
 
-- (IBAction)backButtonPressed:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:^{}];
-}
 @end

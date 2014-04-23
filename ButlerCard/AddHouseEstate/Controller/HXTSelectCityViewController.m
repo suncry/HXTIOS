@@ -46,8 +46,6 @@ typedef NS_ENUM(NSUInteger, sectionType) {
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.navigationController.navigationBarHidden = NO;
-    
     _currentCity = [HXTAccountManager sharedInstance].currentCity;
     _topCities   = [[NSArray alloc] initWithContentsOfFile:[[NSBundle bundleForClass:[self class]] pathForResource:@"hotCities" ofType:@"plist"]];
     _provinces   = [[NSDictionary alloc] initWithContentsOfFile:[[NSBundle bundleForClass:[self class]] pathForResource:@"provinces" ofType:@"plist"]];
@@ -183,7 +181,7 @@ typedef NS_ENUM(NSUInteger, sectionType) {
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if (tableView == self.tableView) {
-        return 35;
+        return 22;
     } else { // _selectCitySecondLevelViewController.tableView
         return 0;
     }
