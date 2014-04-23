@@ -13,7 +13,6 @@
 @end
 
 @implementation CYSurroundingLifeController
-
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -26,42 +25,68 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.clearsSelectionOnViewWillAppear = NO;
+    _cySearchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 100, 320, 44)];
+    _cySearchBar.hidden = YES;
+    _cySearchBar.delegate = self;
+    [self.view addSubview:_cySearchBar];
+    _cySearchDisplayController = [[UISearchDisplayController alloc]initWithSearchBar:_cySearchBar contentsController:self];
+    _cySearchDisplayController.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
-
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 80;
+}
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 0;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return 8;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
     
-    // Configure the cell...
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView                               dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (cell == nil) {
+        
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault
+                                     reuseIdentifier:CellIdentifier];
+        
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        
+    }
+    
+    /* Configure the cell. */
+    
+    if ([tableView isEqual:self.searchDisplayController.searchResultsTableView]){
+        
+        cell.textLabel.text = @"searchResultsTableView";
+        
+    }else{
+        
+        cell.textLabel.text = @"1111111111111111111";
+        
+    }   
     
     return cell;
+    
+    
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.
@@ -133,8 +158,14 @@
     
 	for(PCStackMenuItem *item in stackMenu.items)
     {
-        item.stackTitleLabel.textColor = [UIColor blackColor];
+        item.stackTitleLabel.textColor = [UIColor whiteColor];
         item.stackTitleLabel.shadowOffset = CGSizeMake(0, 0);
+//        item.stackTitleLabel.backgroundColor = [UIColor orangeColor];
+//        item.highlight = YES;
+		item.layer.cornerRadius = 10;
+		item.layer.masksToBounds = YES;
+		item.backgroundColor = [[UIColor darkGrayColor] colorWithAlphaComponent:0.7];
+
     }
 	
 	[stackMenu show:^(NSInteger selectedMenuIndex)
@@ -143,6 +174,29 @@
         [_styleBtn setTitle:item.stackTitleLabel.text forState:UIControlStateNormal];
 //		NSLog(@"menu index : %d", selectedMenuIndex);
 	}];
+
+}
+#pragma mark searchDisplayControllerDelegate
+- (IBAction)seachBtnClick:(id)sender
+{
+    _cySearchBar.hidden = NO;
+
+
+    [self.searchDisplayController setActive:YES animated:YES];
+}
+//- (void) searchDisplayControllerWillBeginSearch:(UISearchDisplayController *)controller
+//- (void) searchDisplayControllerDidBeginSearch:(UISearchDisplayController *)controller
+//- (void) searchDisplayControllerWillEndSearch:(UISearchDisplayController *)controller
+//- (void) searchDisplayControllerDidEndSearch:(UISearchDisplayController *)controller
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar
+{
+    _cySearchBar.hidden = YES;
+
+}
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+//    _cySearchBar.hidden = YES;
 
 }
 @end
