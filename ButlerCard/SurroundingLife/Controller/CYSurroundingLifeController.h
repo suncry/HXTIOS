@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CYSurroundingLifeController : UITableViewController
+@interface CYSurroundingLifeController : UITableViewController<UISearchDisplayDelegate,UISearchBarDelegate>
+{
+    UISearchDisplayController *_cySearchDisplayController;
+    UISearchBar *_cySearchBar;
+}
 @property (weak, nonatomic) IBOutlet UIButton *styleBtn;
 - (IBAction)styleBtnClick:(id)sender;
+- (IBAction)seachBtnClick:(id)sender;
 
 @end
