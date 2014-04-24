@@ -11,6 +11,7 @@
 #import "searchCell.h"
 #import "DJQRateView.h"
 #import "AFNetworking.h"
+#import "SVPullToRefresh.h"
 
 @interface CYSurroundingLifeController ()
 
@@ -61,6 +62,19 @@
     _cySearchDisplayController.delegate = self;
     _cySearchDisplayController.searchResultsDelegate = self;
     _cySearchDisplayController.searchResultsDataSource = self;
+    
+    
+    //注册下拉刷新功能
+    __weak CYSurroundingLifeController *weakSelf = self;
+    [self.tableView addPullToRefreshWithActionHandler:^{
+        [weakSelf insertRowAtTop];
+    }];
+    //注册上拉刷新功能
+    [self.tableView addInfiniteScrollingWithActionHandler:^{
+        [weakSelf insertRowAtBottom];
+    }];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -126,6 +140,7 @@
     
     
 }
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([tableView isEqual:self.searchDisplayController.searchResultsTableView])
@@ -140,10 +155,7 @@
         [self performSegueWithIdentifier:@"shopSegue" sender:self];
 //        UIButton *btttt = [[UIButton alloc]init];
 //        btttt.layer.cornerRadius
-
-
     }
-
 }
 
 #pragma mark btn setting
@@ -175,6 +187,8 @@
         [_styleBtn setTitle:[NSString stringWithFormat:@"%@▼",item.stackTitleLabel.text]
                    forState:UIControlStateNormal];
 //		NSLog(@"menu index : %d", selectedMenuIndex);
+        
+        [self.tableView reloadData];
 	}];
 
 }
@@ -182,11 +196,15 @@
 {
     UIButton *btn = (UIButton *)sender;
     btn.selected = !btn.selected;
+    [self.tableView reloadData];
+
 }
 - (IBAction)songhuoBtnClick:(id)sender
 {
     UIButton *btn = (UIButton *)sender;
     btn.selected = !btn.selected;
+    [self.tableView reloadData];
+
 }
 
 #pragma mark searchDisplayControllerDelegate
@@ -238,6 +256,63 @@
 //        NSLog(@"_searchDataArr == %@",_searchDataArr);
     }
     [self.tableView reloadData];
+}
+#pragma mark --SVPullToRefresh--
+//下拉刷新
+- (void)insertRowAtTop
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *parameters = @{@"tenement_id": @"1",
+                                 @"type": @"0",
+                                 @"canSend": @"0",
+                                 @"candPayoff": @"0",
+                                 @"size": @"6",
+                                 @"offset": @"0",
+                                 @"sid": @"66d804a0bb4c0a06",};
+    [manager POST:@"http://bbs.enveesoft.com:1602/htx/hexinpassserver/appserver/public/store/list" parameters:parameters
+          success:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+         _dataArr = [responseObject valueForKey:@"results"];
+         _searchDataArr = [responseObject valueForKey:@"results"];
+         //         _searchDataArr = [[NSMutableArray alloc]initWithArray:_dataArr];
+         [self.tableView reloadData];
+         //         NSLog(@"self.dataDic: %@", _dataArr);
+         //停止刷新
+         [self.tableView.pullToRefreshView stopAnimating];
+
+     }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+         NSLog(@"Error: %@", error);
+     }];
+}
+//上拉加载更多
+- (void)insertRowAtBottom
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *parameters = @{@"tenement_id": @"1",
+                                 @"type": @"0",
+                                 @"canSend": @"0",
+                                 @"candPayoff": @"0",
+                                 @"size": @"6",
+                                 @"offset": @"0",
+                                 @"sid": @"66d804a0bb4c0a06",};
+    [manager POST:@"http://bbs.enveesoft.com:1602/htx/hexinpassserver/appserver/public/store/list" parameters:parameters
+          success:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+         _dataArr = [responseObject valueForKey:@"results"];
+         _searchDataArr = [responseObject valueForKey:@"results"];
+         //         _searchDataArr = [[NSMutableArray alloc]initWithArray:_dataArr];
+         [self.tableView reloadData];
+         //         NSLog(@"self.dataDic: %@", _dataArr);
+         //停止刷新
+         [self.tableView.pullToRefreshView stopAnimating];
+         
+     }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+         NSLog(@"Error: %@", error);
+     }];
 }
 
 @end
