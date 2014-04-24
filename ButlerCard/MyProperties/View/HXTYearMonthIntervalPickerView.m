@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelBarButtonItem;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneBarButtonItem;
 @property (weak, nonatomic) IBOutlet UIPickerView *picker;
+@property (strong, nonatomic) UIControl *coverView;
 
 @property (strong, nonatomic) NSArray *starYears;
 @property (strong, nonatomic) NSArray *starMonth;
@@ -39,6 +40,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        [self _setup];
     }
     return self;
 }
@@ -47,17 +49,27 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         // Initialization code
-        
-        _starYears = @[@"2012", @"2013", @"2014", @"2015"];
-        _starMonth = @[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"11", @"12"];
-        
-        _endYears = @[@"2012", @"2013", @"2014", @"2015"];
-        _endMonth = @[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"11", @"12"];
-        
-        _dateArray = [NSMutableArray array];
-        _compsArray = [NSMutableArray array];
+        [self _setup];
     }
     return self;
+}
+
+- (void)_setup {
+    _starYears = @[@"2012", @"2013", @"2014", @"2015"];
+    _starMonth = @[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"11", @"12"];
+    
+    _endYears = @[@"2012", @"2013", @"2014", @"2015"];
+    _endMonth = @[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"11", @"12"];
+    
+    _dateArray = [NSMutableArray array];
+    _compsArray = [NSMutableArray array];
+    
+    self.frame = CGRectMake(0, kWinSize.height, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame));
+    
+    _coverView = [[UIControl alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    _coverView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.2];
+    [_coverView addTarget:self action:@selector(backgroundTouchUpInside) forControlEvents:UIControlEventTouchUpInside];
+    _coverView.userInteractionEnabled = NO;
 }
 
 - (void)layoutSubviews {
@@ -92,14 +104,14 @@
     _curStartComps = [_defaultStartComps copy];
     _curEndComps = [_defaultEndComps copy];
     
-    NSLog(@"_defaultEndComps = %@ _defaultEndComps.date = %@", _defaultEndComps, [self dateFromComponents:_defaultStartComps]);
+//    NSLog(@"_defaultEndComps = %@ _defaultEndComps.date = %@", _defaultEndComps, [self dateFromComponents:_defaultStartComps]);
     
     for (NSDateComponents *comps = [_startComps copy]; [[self dateFromComponents:comps] compare:[self dateFromComponents:_endComps]] == NSOrderedAscending || [[self dateFromComponents:comps] compare:[self dateFromComponents:_endComps]] == NSOrderedSame; comps.month++) {
         if (comps.month > 12) {
             comps.year++;
             comps.month = 1;
         }
-        NSLog(@"####%4lu年%2lu月", (long)comps.year, (long)comps.month);
+//        NSLog(@"####%4lu年%2lu月", (long)comps.year, (long)comps.month);
         [_dateArray addObject:[NSString stringWithFormat:@"%4lu年%2lu月", (long)comps.year, (long)comps.month]];
         [_compsArray addObject:[comps copy]];
         
@@ -203,7 +215,7 @@
 }
 
 
-#pragma mark - Local Functions
+#pragma mark - local functions
 
 - (NSDate *)dateFromComponents:(NSDateComponents *)comps {
     NSCalendar *myCal = [NSCalendar currentCalendar];
@@ -219,14 +231,20 @@
     return [myCal components:kCFCalendarUnitYear | kCFCalendarUnitMonth | kCFCalendarUnitDay fromDate:date];
 }
 
+- (void)backgroundTouchUpInside {
+    [self hide];
+}
+
 #pragma mark IB Actions
 
 - (IBAction)doneBarButtonItemPressed:(UIBarButtonItem *)sender {
+    [self hide];
     if (_delegate && [_delegate respondsToSelector:@selector(pickerDidPressDoneWithStarDateComponents:andEndComponents:)]) {
         [_delegate pickerDidPressDoneWithStarDateComponents:_curStartComps andEndComponents:_curEndComps];
     }
 }
 - (IBAction)cancelBarButtonItemPressed:(UIBarButtonItem *)sender {
+    [self hide];
     if (_delegate && [_delegate respondsToSelector:@selector(pickerDidPressCancel)]) {
         [_delegate pickerDidPressCancel];
     }
@@ -234,6 +252,38 @@
     if (_delegate && [_delegate respondsToSelector:@selector(pickerDidPressCancelWithStarDateComponents:andEndComponents:)]) {
         [_delegate pickerDidPressCancelWithStarDateComponents:_defaultStartComps andEndComponents:_defaultEndComps];
     }
+}
+
+#pragma mark - public functions
+
+- (void)show {
+    
+    [[UIApplication sharedApplication].windows.lastObject addSubview:_coverView];
+    [[UIApplication sharedApplication].windows.lastObject addSubview:self];
+    
+    [UIView animateWithDuration:0.2f
+                          delay:0.0f
+                        options:UIViewAnimationOptionTransitionFlipFromBottom
+                     animations:^{
+                         self.frame = CGRectMake(0, kWinSize.height - CGRectGetHeight(self.frame), CGRectGetWidth(self.frame), CGRectGetHeight(self.frame));
+                     }
+                     completion:^(BOOL finished){
+                         _coverView.userInteractionEnabled = YES;
+                     }];
+}
+
+- (void)hide {
+    [_coverView removeFromSuperview];
+    [UIView animateWithDuration:0.2f
+                          delay:0.0f
+                        options:UIViewAnimationOptionTransitionFlipFromBottom
+                     animations:^{
+                         self.frame = CGRectMake(0, kWinSize.height, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame));
+                     }
+                     completion:^(BOOL finished){
+                         [self removeFromSuperview];
+                         _coverView.userInteractionEnabled = NO;
+                     }];
 }
 
 @end

@@ -14,7 +14,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 
-@property (strong, nonatomic) UIControl *coverView;
 @property (strong, nonatomic) NSArray *feeTypeName;
 @property (strong, nonatomic) HXTYearMonthIntervalPickerView *yearMonthIntervalPicker;
 @property (strong, nonatomic) UITextField *editingTextField;
@@ -53,13 +52,6 @@
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
         _segmentedControl.tintColor = [UIColor whiteColor];
     }
-    _coverView = [[UIControl alloc] initWithFrame:self.view.bounds];
-    [self.view addSubview:_coverView];
-    [self.view bringSubviewToFront:_coverView];
-    _coverView.hidden = YES;
-//    _coverView.backgroundColor = [UIColor lightTextColor];
-    _coverView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.2f];
-    [_coverView addTarget:self action:@selector(backgroundTouchUpInside:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)didReceiveMemoryWarning
@@ -143,7 +135,6 @@
     _yearMonthIntervalPicker.startComps = startComps;
     _yearMonthIntervalPicker.endComps = endComps;
     
-    _coverView.hidden = NO;
     _editingTextField = textField;
     return YES;
 }
@@ -162,35 +153,71 @@
 - (void)pickerDidPressDoneWithStarDateComponents:(NSDateComponents *)startComps andEndComponents:(NSDateComponents *)endComps {
     _editingTextField.text = [NSString stringWithFormat:@"%4lu年%02lu月~%4lu年%02lu月",(long)startComps.year, (long)startComps.month, (long)endComps.year, (long)endComps.month];
     [_editingTextField resignFirstResponder];
-    _coverView.hidden = YES;
 }
 
 - (void)pickerDidPressCancelWithStarDateComponents:(NSDateComponents *)startComps andEndComponents:(NSDateComponents *)endComps {
     _editingTextField.text = [NSString stringWithFormat:@"%4lu年%02lu月~%4lu年%02lu月",(long)startComps.year, (long)startComps.month, (long)endComps.year, (long)endComps.month];
     [_editingTextField resignFirstResponder];
-    _coverView.hidden = YES;
 }
 
-#pragma mark - local functions
-- (void)backgroundTouchUpInside:(id)sender {
-    if (_editingTextField) {
-        [_editingTextField resignFirstResponder];
-    }
-    _coverView.hidden = YES;
-}
 
 #pragma mark - IB Actions
 
 - (IBAction)checkBoxButtonPressed:(UIButton *)sender {
     sender.selected = !sender.selected;
+    
+    UIView *view = sender.superview;
+    while (view && view.superview) {
+        if ([view isKindOfClass:[UITableViewCell class]]) {
+            NSIndexPath *indexPath = [self.tableView indexPathForCell:(UITableViewCell *)view];
+            NSLog(@"indexPath.row = %lu", (long)indexPath.row);
+            
+            return;
+        }
+        view = view.superview;
+    }
 }
 
 - (IBAction)chooseDateButtonPresssed:(UIButton *)sender {
     sender.selected = !sender.selected;
+    
+    UIView *view = sender.superview;
+    while (view && view.superview) {
+        if ([view isKindOfClass:[UITableViewCell class]]) {
+            NSIndexPath *indexPath = [self.tableView indexPathForCell:(UITableViewCell *)view];
+            NSLog(@"indexPath.row = %lu", (long)indexPath.row);
+            
+            break;
+        }
+        view = view.superview;
+    }
+    
+    
+    [_yearMonthIntervalPicker show];
+//    [self.view.window addSubview:_yearMonthIntervalPicker];
+//    [self.view.window bringSubviewToFront:_yearMonthIntervalPicker];
+//    [_yearMonthIntervalPicker setNeedsDisplay];;
+    
+//    UIView *view1 = [[UIView alloc] initWithFrame:self.view.frame];
+//    [self.tableView.window addSubview:view1];
+//    [self.tableView.window bringSubviewToFront:view1];
+    
+    NSLog(@"######");
 }
 
 - (IBAction)inputMoneyButtonPressed:(UIButton *)sender {
     sender.selected = !sender.selected;
+    
+    UIView *view = sender.superview;
+    while (view && view.superview) {
+        if ([view isKindOfClass:[UITableViewCell class]]) {
+            NSIndexPath *indexPath = [self.tableView indexPathForCell:(UITableViewCell *)view];
+            NSLog(@"indexPath.row = %lu", (long)indexPath.row);
+            
+            return;
+        }
+        view = view.superview;
+    }
 }
 
 - (IBAction)segmentedControlValueChanged:(UISegmentedControl *)sender {
@@ -199,7 +226,7 @@
     if (_editingTextField) {
         [_editingTextField resignFirstResponder];
     }
-    _coverView.hidden = YES;
+    
     [self.tableView reloadData];
 }
 

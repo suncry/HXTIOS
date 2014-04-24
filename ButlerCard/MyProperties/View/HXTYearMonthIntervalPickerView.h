@@ -18,7 +18,7 @@
 
 @end
 
-@interface HXTYearMonthIntervalPickerView : UIControl
+@interface HXTYearMonthIntervalPickerView : UIView
 
 @property (strong, nonatomic) id<HXTYearMonthIntervalPickerViewDelegate> delegate;
 
@@ -27,4 +27,6 @@
 @property (strong, nonatomic) NSDateComponents *defaultStartComps;
 @property (strong, nonatomic) NSDateComponents *defaultEndComps;
 
+- (void)show;
+- (void)hide;
 @end
