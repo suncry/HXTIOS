@@ -86,7 +86,7 @@
         // Configure the cell...
         
         ((UIButton *)[cell viewWithTag:101]).selected = YES;
-        ((UILabel *)[cell viewWithTag:102]).text = _feeTypeName[indexPath.row];
+        [((UIButton *)[cell viewWithTag:101]) setTitle:_feeTypeName[indexPath.row] forState:UIControlStateNormal];
         
         return cell;
     } else {
@@ -95,10 +95,10 @@
             
             // Configure the cell...
             ((UIButton *)[cell viewWithTag:101]).selected = YES;
-            ((UILabel *)[cell viewWithTag:102]).text = _feeTypeName[indexPath.row];
+            [((UIButton *)[cell viewWithTag:101]) setTitle:_feeTypeName[indexPath.row] forState:UIControlStateNormal];
         
-            ((UITextField *)[cell viewWithTag:103]).inputView = _yearMonthIntervalPicker;
-            ((UITextField *)[cell viewWithTag:103]).delegate = self;
+            ((UITextField *)[cell viewWithTag:102]).inputView = _yearMonthIntervalPicker;
+            ((UITextField *)[cell viewWithTag:102]).delegate = self;
             
             return cell;
         } else {
@@ -106,9 +106,10 @@
             
             // Configure the cell...
             ((UIButton *)[cell viewWithTag:101]).selected = YES;
-            ((UILabel *)[cell viewWithTag:102]).text = _feeTypeName[indexPath.row];
-            ((UITextField *)[cell viewWithTag:103]).inputView = _yearMonthIntervalPicker;
-            ((UITextField *)[cell viewWithTag:103]).delegate = self;
+            [((UIButton *)[cell viewWithTag:101]) setTitle:_feeTypeName[indexPath.row] forState:UIControlStateNormal];
+            
+            ((UITextField *)[cell viewWithTag:102]).inputView = _yearMonthIntervalPicker;
+            ((UITextField *)[cell viewWithTag:102]).delegate = self;
             
             return cell;
         }
