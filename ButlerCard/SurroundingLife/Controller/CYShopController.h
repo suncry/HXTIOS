@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "DJQRateView.h"
 @interface CYShopController : UITableViewController
+@property (weak, nonatomic) IBOutlet DJQRateView *rateView;
+@property (retain, nonatomic) NSMutableArray *dataArr;
+
+- (IBAction)takeCall:(id)sender;
 
 @end

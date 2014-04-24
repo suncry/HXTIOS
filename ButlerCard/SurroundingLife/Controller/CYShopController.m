@@ -7,6 +7,8 @@
 //
 
 #import "CYShopController.h"
+#import "SVPullToRefresh.h"
+#import "AFNetworking.h"
 
 @interface CYShopController ()
 
@@ -26,6 +28,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.rateView setRate:3.5];
+    
+    //注册上拉刷新功能
+    __weak CYShopController *weakSelf = self;
+    [self.tableView addInfiniteScrollingWithActionHandler:^{
+        [weakSelf insertRowAtBottom];
+    }];
+
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,21 +48,12 @@
 #pragma mark - Table view data source
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0)
-    {
         return 44;
-
-    }
-    else
-    {
-        return 90;
-
-    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -60,35 +62,18 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 30;
+    return 34;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    if (section == 0)
-    {
-        return @"商家动态";
-    }
-    else
-    {
-        return @"用户评论";
-    }
+    return @"商家动态";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0)
-    {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"saleMsgCell" forIndexPath:indexPath];
-        return cell;
-
-    }
-    else
-    {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"commentCell" forIndexPath:indexPath];
-        return cell;
-
-    }
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"saleMsgCell" forIndexPath:indexPath];
+    return cell;
 }
 
 /*
@@ -139,5 +124,39 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)takeCall:(id)sender
+{
+    NSString *number = @"10010";// 此处读入电话号码
+    NSString *num = [[NSString alloc] initWithFormat:@"telprompt://%@",number];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:num]]; //拨号
+}
+#pragma mark --SVPullToRefresh--
+//上拉加载更多
+- (void)insertRowAtBottom
+{
+    //接口空缺
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *parameters = @{@"tenement_id": @"1",
+                                 @"type": @"0",
+                                 @"canSend": @"0",
+                                 @"candPayoff": @"0",
+                                 @"size": @"6",
+                                 @"offset": @"0",
+                                 @"sid": @"66d804a0bb4c0a06",};
+    [manager POST:@"http://bbs.enveesoft.com:1602/htx/hexinpassserver/appserver/public/store/list" parameters:parameters
+          success:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+         _dataArr = [responseObject valueForKey:@"results"];
+         [self.tableView reloadData];
+         //         NSLog(@"self.dataDic: %@", _dataArr);
+         //停止刷新
+         [self.tableView.pullToRefreshView stopAnimating];
+     }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+         NSLog(@"Error: %@", error);
+     }];
+}
 
 @end
