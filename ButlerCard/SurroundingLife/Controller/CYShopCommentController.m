@@ -1,20 +1,18 @@
 //
-//  CYShopController.m
+//  CYShopCommentController.m
 //  ButlerCard
 //
 //  Created by niko on 14-4-24.
 //  Copyright (c) 2014年 johnny. All rights reserved.
 //
 
-#import "CYShopController.h"
-#import "SVPullToRefresh.h"
-#import "AFNetworking.h"
-
-@interface CYShopController ()
+#import "CYShopCommentController.h"
+#import "DJQRateView.h"
+@interface CYShopCommentController ()
 
 @end
 
-@implementation CYShopController
+@implementation CYShopCommentController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -28,15 +26,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.rateView setRate:3.5];
     
-    //注册上拉刷新功能
-    __weak CYShopController *weakSelf = self;
-    [self.tableView addInfiniteScrollingWithActionHandler:^{
-        [weakSelf insertRowAtBottom];
-    }];
-
-
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,7 +43,7 @@
 #pragma mark - Table view data source
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-        return 44;
+    return 120;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -58,21 +53,16 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 6;
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 34;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    return @"商家动态";
+    return 12;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"saleMsgCell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"commentCell" forIndexPath:indexPath];
+    //评分
+    
+    [(DJQRateView *)[cell viewWithTag:101] setRate:rand()%5];
+
     return cell;
 }
 
@@ -124,40 +114,5 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-- (IBAction)takeCall:(id)sender
-{
-    NSString *number = @"10010";// 此处读入电话号码
-    NSString *num = [[NSString alloc] initWithFormat:@"telprompt://%@",number];
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:num]]; //拨号
-}
-#pragma mark --SVPullToRefresh--
-//上拉加载更多
-- (void)insertRowAtBottom
-{
-    //接口空缺
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSDictionary *parameters = @{@"tenement_id": @"1",
-                                 @"type": @"0",
-                                 @"canSend": @"0",
-                                 @"candPayoff": @"0",
-                                 @"size": @"6",
-                                 @"offset": @"0",
-                                 @"sid": @"66d804a0bb4c0a06",};
-    [manager POST:@"http://bbs.enveesoft.com:1602/htx/hexinpassserver/appserver/public/store/list" parameters:parameters
-          success:^(AFHTTPRequestOperation *operation, id responseObject)
-     {
-         _dataArr = [responseObject valueForKey:@"results"];
-         [self.tableView reloadData];
-         //         NSLog(@"self.dataDic: %@", _dataArr);
-         NSLog(@"下拉加载更多！");
-         //停止刷新
-         [self.tableView.pullToRefreshView stopAnimating];
-     }
-          failure:^(AFHTTPRequestOperation *operation, NSError *error)
-     {
-         NSLog(@"Error: %@", error);
-     }];
-}
 
 @end
