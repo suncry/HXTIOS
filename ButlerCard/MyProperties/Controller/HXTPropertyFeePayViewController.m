@@ -85,8 +85,9 @@
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TypeOneCellIdentifier forIndexPath:indexPath];
         // Configure the cell...
         
+        cell.tag = indexPath.row;
         ((UIButton *)[cell viewWithTag:101]).selected = YES;
-        [((UIButton *)[cell viewWithTag:101]) setTitle:_feeTypeName[indexPath.row] forState:UIControlStateNormal];
+        ((UILabel *)[cell viewWithTag:102]).text = _feeTypeName[indexPath.row];
         
         return cell;
     } else {
@@ -94,26 +95,39 @@
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TypeTwoCellIdentifier forIndexPath:indexPath];
             
             // Configure the cell...
+            cell.tag = indexPath.row;
+            
             ((UIButton *)[cell viewWithTag:101]).selected = YES;
-            [((UIButton *)[cell viewWithTag:101]) setTitle:_feeTypeName[indexPath.row] forState:UIControlStateNormal];
+            ((UILabel *)[cell viewWithTag:102]).text = _feeTypeName[indexPath.row];
         
-            ((UITextField *)[cell viewWithTag:102]).inputView = _yearMonthIntervalPicker;
-            ((UITextField *)[cell viewWithTag:102]).delegate = self;
+            ((UITextField *)[cell viewWithTag:104]).inputView = _yearMonthIntervalPicker;
+            ((UITextField *)[cell viewWithTag:104]).delegate = self;
             
             return cell;
         } else {
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TypeThreeCellIdentifier forIndexPath:indexPath];
             
             // Configure the cell...
-            ((UIButton *)[cell viewWithTag:101]).selected = YES;
-            [((UIButton *)[cell viewWithTag:101]) setTitle:_feeTypeName[indexPath.row] forState:UIControlStateNormal];
             
-            ((UITextField *)[cell viewWithTag:102]).inputView = _yearMonthIntervalPicker;
-            ((UITextField *)[cell viewWithTag:102]).delegate = self;
+            cell.tag = indexPath.row;
+            
+            ((UIButton *)[cell viewWithTag:101]).selected = YES;
+            ((UILabel *)[cell viewWithTag:102]).text = _feeTypeName[indexPath.row];
             
             return cell;
         }
     }
+}
+
+#pragma mark - table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    UIButton *checkBoxImage = (UIButton *)[cell viewWithTag:101];
+    checkBoxImage.selected = !checkBoxImage.selected;
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - text field delegate
@@ -168,6 +182,10 @@
 
 #pragma mark - IB Actions
 
+- (IBAction)checkBoxButtonPressed:(UIButton *)sender {
+    sender.selected = !sender.selected;
+}
+
 - (IBAction)segmentedControlValueChanged:(UISegmentedControl *)sender {
     NSLog(@"sender.selectedSegmentIndex = %lu title = %@", (long)sender.selectedSegmentIndex, [sender titleForSegmentAtIndex:sender.selectedSegmentIndex]);
     
@@ -177,11 +195,6 @@
     _coverView.hidden = YES;
     [self.tableView reloadData];
 }
-
-- (IBAction)chechBoxChecked:(UIButton *)sender {
-    sender.selected = !sender.selected;
-}
-
 
 /*
 #pragma mark - Navigation

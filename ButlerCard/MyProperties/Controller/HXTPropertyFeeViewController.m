@@ -15,6 +15,8 @@
 
 @interface HXTPropertyFeeViewController () <HXTPropertyTableViewHeaderFooterViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *backBarButtonItem;
+
 @property (strong, nonatomic) NSMutableIndexSet *expandedIndexSet;
 @property (strong, nonatomic) NSArray *freeNames;
 
@@ -204,7 +206,6 @@
 #pragma mark - IB Actions
 
 - (IBAction)addPropertyButtonPressed:(id)sender {
-    NSLog(@"添加物业");
     UIViewController *addHouseEstateNavViewController = [[UIStoryboard storyboardWithName:@"AddHouseEstate" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"AddHouseEstateNavStoryboardID"];
     [self presentViewController:addHouseEstateNavViewController animated:YES completion:^{}];
 }
@@ -212,11 +213,8 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSLog(@"segue.indentifer = %@", segue.identifier );
     if ([segue.identifier isEqualToString:@"ChooseCityStoryboardID"]) {
-        //模态显示动画
-        //        ((UIViewController *)segue.destinationViewController).modalPresentationStyle = UIModalPresentationPageSheet;
-        //        ((UIViewController *)segue.destinationViewController).modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+        
     } else if ([segue.identifier isEqualToString:@"PropertyFeeDetailStoryboardSegue"]) { //费用明细
         ((UIViewController *)(segue.destinationViewController)).hidesBottomBarWhenPushed = YES;
     } else if ([segue.identifier isEqualToString:@"BindCardStoryboardSegue"]) {    //绑定卡
@@ -227,6 +225,11 @@
         ((UIViewController *)(segue.destinationViewController)).hidesBottomBarWhenPushed = YES;
     }
     
+    if ([segue.identifier isEqualToString:@"payStoryboardSegue"]) { //去缴费
+        _backBarButtonItem.title = @"返回";
+    } else {
+        _backBarButtonItem.title = @"物业缴费";
+    }
 }
 
 @end
