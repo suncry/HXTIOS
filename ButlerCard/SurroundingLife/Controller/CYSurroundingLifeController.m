@@ -227,7 +227,7 @@
         return ;
     }
 //    NSLog(@"_searchDataArr == %@",_searchDataArr);
-    NSMutableArray *tempArr = _searchDataArr;
+//    NSMutableArray *tempArr = _searchDataArr;
 //    [_searchDataArr removeAllObjects];
     for(NSDictionary *dic in _searchDataArr)
     {

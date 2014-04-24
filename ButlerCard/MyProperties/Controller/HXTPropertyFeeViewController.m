@@ -143,9 +143,9 @@
     if (indexPath.row < property.fees.count) {              //详情单元
         return 44;
     } else if (indexPath.row == property.fees.count) {      //绑定单元
-        return 83;
+        return 44;
     } else if (indexPath.row == property.fees.count + 1) {  //付费单元
-        return 56;
+        return 120;
     }else {
         return 0;
     }
