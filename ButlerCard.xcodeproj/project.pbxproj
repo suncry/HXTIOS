@@ -10,6 +10,7 @@
 		238ECB531904BECA00721872 /* CYPropertieCardsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 238ECB521904BECA00721872 /* CYPropertieCardsController.m */; };
 		2392C7C218FE7157007EDB5A /* CYRepairController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2392C7C118FE7157007EDB5A /* CYRepairController.m */; };
 		23A8C4841907A04A00557F5A /* searchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A8C4831907A04A00557F5A /* searchCell.m */; };
+		23A8C6981908BC5300EF925C /* CYShopController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A8C6971908BC5300EF925C /* CYShopController.m */; };
 		23CA860D19065B7A0067D0D4 /* PCStackMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CA860A19065B7A0067D0D4 /* PCStackMenu.m */; };
 		23CA860E19065B7A0067D0D4 /* PCStackMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CA860C19065B7A0067D0D4 /* PCStackMenuItem.m */; };
 		23CA861F19066C430067D0D4 /* CYSurroundingLifeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CA861E19066C430067D0D4 /* CYSurroundingLifeController.m */; };
@@ -218,6 +219,8 @@
 		2392C7C118FE7157007EDB5A /* CYRepairController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYRepairController.m; sourceTree = "<group>"; };
 		23A8C4821907A04A00557F5A /* searchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchCell.h; sourceTree = "<group>"; };
 		23A8C4831907A04A00557F5A /* searchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchCell.m; sourceTree = "<group>"; };
+		23A8C6961908BC5300EF925C /* CYShopController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYShopController.h; sourceTree = "<group>"; };
+		23A8C6971908BC5300EF925C /* CYShopController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYShopController.m; sourceTree = "<group>"; };
 		23CA860919065B7A0067D0D4 /* PCStackMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCStackMenu.h; sourceTree = SOURCE_ROOT; };
 		23CA860A19065B7A0067D0D4 /* PCStackMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCStackMenu.m; sourceTree = SOURCE_ROOT; };
 		23CA860B19065B7A0067D0D4 /* PCStackMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCStackMenuItem.h; sourceTree = SOURCE_ROOT; };
@@ -783,6 +786,8 @@
 			children = (
 				23CA861D19066C430067D0D4 /* CYSurroundingLifeController.h */,
 				23CA861E19066C430067D0D4 /* CYSurroundingLifeController.m */,
+				23A8C6961908BC5300EF925C /* CYShopController.h */,
+				23A8C6971908BC5300EF925C /* CYShopController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1135,6 +1140,7 @@
 				B2214E1518FE1FB800762AE9 /* CYActivityCell.m in Sources */,
 				B26FE5D518FE51FC0093BC2F /* NSStringAdditions.m in Sources */,
 				B2214E1F18FE1FB800762AE9 /* CYMsgTableViewController.m in Sources */,
+				23A8C6981908BC5300EF925C /* CYShopController.m in Sources */,
 				B2214E5718FE1FB800762AE9 /* HXTPropertyFeeDetailCell.m in Sources */,
 				B2214C7E18FE1F9000762AE9 /* HXTBrowseHouseEstateViewController.m in Sources */,
 				B2214E5918FE1FB800762AE9 /* HXTPropertyTableViewHeaderFooterView.m in Sources */,
@@ -1405,7 +1411,7 @@
 				INFOPLIST_FILE = "ButlerCard/ButlerCard-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "A77BA517-27F5-4575-AF96-B214674C6B79";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1423,7 +1429,7 @@
 				INFOPLIST_FILE = "ButlerCard/ButlerCard-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "A77BA517-27F5-4575-AF96-B214674C6B79";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

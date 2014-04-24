@@ -126,7 +126,27 @@
     
     
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([tableView isEqual:self.searchDisplayController.searchResultsTableView])
+    {
+        NSLog(@"搜索cell");
+        [self performSegueWithIdentifier:@"shopSegue" sender:self];
+        
+    }
+    else
+    {
+        NSLog(@"商店cell");
+        [self performSegueWithIdentifier:@"shopSegue" sender:self];
+//        UIButton *btttt = [[UIButton alloc]init];
+//        btttt.layer.cornerRadius
 
+
+    }
+
+}
+
+#pragma mark btn setting
 - (IBAction)styleBtnClick:(id)sender
 {
     UIButton *button = (UIButton *)sender;
@@ -175,24 +195,11 @@
     _cySearchBar.hidden = NO;
     [self.searchDisplayController setActive:YES animated:YES];
 }
-//- (void) searchDisplayControllerWillBeginSearch:(UISearchDisplayController *)controller
-//{
-//    NSLog(@"searchDisplayControllerWillBeginSearch");
-//}
-//- (void) searchDisplayControllerDidBeginSearch:(UISearchDisplayController *)controller
-//{
-//    NSLog(@"searchDisplayControllerDidBeginSearch");
-//
-//}
 - (void) searchDisplayControllerWillEndSearch:(UISearchDisplayController *)controller
 {
 //    NSLog(@"searchDisplayControllerWillEndSearch");
     _cySearchBar.hidden = YES;
 }
-//- (void) searchDisplayControllerDidEndSearch:(UISearchDisplayController *)controller
-//{
-//    NSLog(@"searchDisplayControllerDidEndSearch");
-//}
 - (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar
 {
     _cySearchBar.hidden = YES;
@@ -209,10 +216,6 @@
 //    }
 //    [self.tableView reloadData];
 }
-//- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
-//{
-//    NSLog(@"开始搜索！");
-//}
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
     if(0 == searchText.length)
@@ -225,8 +228,7 @@
     //只能用普通的循环。。才能对其数组本身进行操作。
     for (int i = 0; i < tempArr.count; i++)
     {
-        NSLog(@"dic  name == %@",tempArr[i][@"name"]);
-
+//        NSLog(@"dic  name == %@",tempArr[i][@"name"]);
         if ([tempArr[i][@"name"] hasPrefix:searchText])
         {
             [_searchDataArr addObject:tempArr[i]];
