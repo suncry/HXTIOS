@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		232EBDD619090F6E00381960 /* CYShopCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 232EBDD519090F6E00381960 /* CYShopCommentController.m */; };
+		232EBDD9190914BC00381960 /* CYMyCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 232EBDD8190914BC00381960 /* CYMyCommentController.m */; };
 		238ECB531904BECA00721872 /* CYPropertieCardsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 238ECB521904BECA00721872 /* CYPropertieCardsController.m */; };
 		2392C7C218FE7157007EDB5A /* CYRepairController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2392C7C118FE7157007EDB5A /* CYRepairController.m */; };
 		23A8C4841907A04A00557F5A /* searchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A8C4831907A04A00557F5A /* searchCell.m */; };
@@ -213,6 +215,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		232EBDD419090F6E00381960 /* CYShopCommentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYShopCommentController.h; sourceTree = "<group>"; };
+		232EBDD519090F6E00381960 /* CYShopCommentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYShopCommentController.m; sourceTree = "<group>"; };
+		232EBDD7190914BC00381960 /* CYMyCommentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYMyCommentController.h; sourceTree = "<group>"; };
+		232EBDD8190914BC00381960 /* CYMyCommentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYMyCommentController.m; sourceTree = "<group>"; };
 		238ECB511904BECA00721872 /* CYPropertieCardsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYPropertieCardsController.h; sourceTree = "<group>"; };
 		238ECB521904BECA00721872 /* CYPropertieCardsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYPropertieCardsController.m; sourceTree = "<group>"; };
 		2392C7C018FE7157007EDB5A /* CYRepairController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYRepairController.h; sourceTree = "<group>"; };
@@ -788,6 +794,10 @@
 				23CA861E19066C430067D0D4 /* CYSurroundingLifeController.m */,
 				23A8C6961908BC5300EF925C /* CYShopController.h */,
 				23A8C6971908BC5300EF925C /* CYShopController.m */,
+				232EBDD419090F6E00381960 /* CYShopCommentController.h */,
+				232EBDD519090F6E00381960 /* CYShopCommentController.m */,
+				232EBDD7190914BC00381960 /* CYMyCommentController.h */,
+				232EBDD8190914BC00381960 /* CYMyCommentController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1097,6 +1107,7 @@
 				B26FE5DF18FE51FC0093BC2F /* StoreBaseItem.m in Sources */,
 				B2214E3718FE1FB800762AE9 /* PieLayer.m in Sources */,
 				B2214E3118FE1FB800762AE9 /* MyPieElement.m in Sources */,
+				232EBDD9190914BC00381960 /* CYMyCommentController.m in Sources */,
 				23CA860E19065B7A0067D0D4 /* PCStackMenuItem.m in Sources */,
 				B26FE5E918FE51FC0093BC2F /* HXTViewWithArrow.m in Sources */,
 				B2214C7418FE1F9000762AE9 /* HXTRetrievePasswordViewController.m in Sources */,
@@ -1121,6 +1132,7 @@
 				B2214DB518FE1FA200762AE9 /* HXTTabBarViewController.m in Sources */,
 				B2214E3F18FE1FB800762AE9 /* CYNoticeBoardController.m in Sources */,
 				B2214C6C18FE1F9000762AE9 /* HXTRegisterAddHouseEstateViewController.m in Sources */,
+				232EBDD619090F6E00381960 /* CYShopCommentController.m in Sources */,
 				B2214C7A18FE1F9000762AE9 /* HXTAddHouseViewController.m in Sources */,
 				B2214E3918FE1FB800762AE9 /* CYActiveController.m in Sources */,
 				B2214E2B18FE1FB800762AE9 /* CYMyPropertyTableViewController.m in Sources */,
@@ -1411,7 +1423,7 @@
 				INFOPLIST_FILE = "ButlerCard/ButlerCard-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "A77BA517-27F5-4575-AF96-B214674C6B79";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1429,7 +1441,7 @@
 				INFOPLIST_FILE = "ButlerCard/ButlerCard-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "A77BA517-27F5-4575-AF96-B214674C6B79";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

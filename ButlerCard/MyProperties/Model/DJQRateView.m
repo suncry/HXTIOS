@@ -130,14 +130,14 @@
 
 -(void) touchesMoved: (NSSet *)touches withEvent: (UIEvent *)event
 {
-    NSLog(@"开始移动了");
+//    NSLog(@"开始移动了");
 	CGPoint pt = [[touches anyObject] locationInView:self];
     float width = [self bounds].size.width/5;
-    NSLog(@"width == %f",width);
-	float newRating = (int)pt.x/width;
+//    NSLog(@"width == %f",width);
+	int newRating = (int)pt.x/width + 1;
 	if (newRating < 1 || newRating > 5)
 		return;
-	NSLog(@"newRating == %f",newRating);
+//	NSLog(@"newRating == %d",newRating);
     [self setRate:newRating];
 
 }
