@@ -39,8 +39,8 @@
           success:^(AFHTTPRequestOperation *operation, id responseObject)
      {
          _dataArr = [responseObject valueForKey:@"results"];
-//         _searchDataArr = [responseObject valueForKey:@"results"];
-         _searchDataArr = [[NSMutableArray alloc]initWithArray:_dataArr];
+         _searchDataArr = [responseObject valueForKey:@"results"];
+//         _searchDataArr = [[NSMutableArray alloc]initWithArray:_dataArr];
          [self.tableView reloadData];
 //         NSLog(@"self.dataDic: %@", _dataArr);
      }
@@ -61,9 +61,6 @@
     _cySearchDisplayController.delegate = self;
     _cySearchDisplayController.searchResultsDelegate = self;
     _cySearchDisplayController.searchResultsDataSource = self;
-//    _cySearchDisplayController.searchResultsTableView.delegate = self;
-//    _cySearchDisplayController.searchResultsTableView.dataSource = self;
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -91,7 +88,6 @@
     else
     {
         return _dataArr.count;
-
     }
 }
 
@@ -100,14 +96,16 @@
     if ([tableView isEqual:self.searchDisplayController.searchResultsTableView])
     {
         static NSString *CellIdentifier = @"searchCell";
-        
         searchCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        
         if (cell == nil)
         {
             cell = [[searchCell alloc]initWithStyle:UITableViewCellStyleDefault
                                          reuseIdentifier:CellIdentifier];
         }
+        cell.nameLabel.text = _searchDataArr[indexPath.row][@"name"];
+        [cell.rateView setRate:[_searchDataArr[indexPath.row][@"grade"]floatValue]];
+        cell.addressLabel.text = _searchDataArr[indexPath.row][@"address"];
+        cell.distanceLabel.text = [NSString stringWithFormat:@"%@m",_dataArr[indexPath.row][@"distance"]];
         return cell;
     }
     else
@@ -128,7 +126,27 @@
     
     
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([tableView isEqual:self.searchDisplayController.searchResultsTableView])
+    {
+        NSLog(@"搜索cell");
+        [self performSegueWithIdentifier:@"shopSegue" sender:self];
+        
+    }
+    else
+    {
+        NSLog(@"商店cell");
+        [self performSegueWithIdentifier:@"shopSegue" sender:self];
+//        UIButton *btttt = [[UIButton alloc]init];
+//        btttt.layer.cornerRadius
 
+
+    }
+
+}
+
+#pragma mark btn setting
 - (IBAction)styleBtnClick:(id)sender
 {
     UIButton *button = (UIButton *)sender;
@@ -177,32 +195,14 @@
     _cySearchBar.hidden = NO;
     [self.searchDisplayController setActive:YES animated:YES];
 }
-//- (void) searchDisplayControllerWillBeginSearch:(UISearchDisplayController *)controller
-//{
-//    NSLog(@"searchDisplayControllerWillBeginSearch");
-//}
-//- (void) searchDisplayControllerDidBeginSearch:(UISearchDisplayController *)controller
-//{
-//    NSLog(@"searchDisplayControllerDidBeginSearch");
-//
-//}
 - (void) searchDisplayControllerWillEndSearch:(UISearchDisplayController *)controller
 {
 //    NSLog(@"searchDisplayControllerWillEndSearch");
     _cySearchBar.hidden = YES;
-
-
 }
-//- (void) searchDisplayControllerDidEndSearch:(UISearchDisplayController *)controller
-//{
-//    NSLog(@"searchDisplayControllerDidEndSearch");
-//
-//}
-
 - (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar
 {
     _cySearchBar.hidden = YES;
-
 }
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
@@ -216,33 +216,28 @@
 //    }
 //    [self.tableView reloadData];
 }
-//- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
-//{
-//    NSLog(@"开始搜索！");
-//}
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
     if(0 == searchText.length)
     {
         return ;
     }
-//    NSLog(@"_searchDataArr == %@",_searchDataArr);
-//    NSMutableArray *tempArr = _searchDataArr;
-//    [_searchDataArr removeAllObjects];
-    for(NSDictionary *dic in _searchDataArr)
+    _searchDataArr = [[NSMutableArray alloc]initWithArray:_dataArr];
+    NSMutableArray *tempArr = [[NSMutableArray alloc]initWithArray:_searchDataArr];
+    [_searchDataArr removeAllObjects];
+    //只能用普通的循环。。才能对其数组本身进行操作。
+    for (int i = 0; i < tempArr.count; i++)
     {
-        if ([dic[@"name"] hasPrefix:searchText])
+//        NSLog(@"dic  name == %@",tempArr[i][@"name"]);
+        if ([tempArr[i][@"name"] hasPrefix:searchText])
         {
-//            [tempArr addObject:dic];
-            NSLog(@"dic  name == %@",dic[@"name"]);
-
-            NSLog(@"有匹配结果！");
+            [_searchDataArr addObject:tempArr[i]];
+//            NSLog(@"有匹配结果！");
         }
+//        NSLog(@"tempArr.count == %d",tempArr.count);
+//        NSLog(@"_searchDataArr == %@",_searchDataArr);
     }
-//    [_searchDataArr removeAllObjects];
-//    _searchDataArr = tempArr;
     [self.tableView reloadData];
-
 }
 
 @end
