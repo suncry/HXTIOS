@@ -210,6 +210,11 @@
     [self presentViewController:addHouseEstateNavViewController animated:YES completion:^{}];
 }
 
+- (IBAction)automaticBillPayStateButtonPressed:(UIButton *)sender {
+    sender.selected = !sender.selected;
+}
+
+
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

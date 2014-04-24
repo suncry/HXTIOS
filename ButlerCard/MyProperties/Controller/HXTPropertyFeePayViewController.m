@@ -7,7 +7,6 @@
 //
 
 #import "HXTPropertyFeePayViewController.h"
-
 #import "HXTYearMonthIntervalPickerView.h"
 
 @interface HXTPropertyFeePayViewController () <UITextFieldDelegate, HXTYearMonthIntervalPickerViewDelegate>
@@ -100,8 +99,8 @@
             ((UIButton *)[cell viewWithTag:101]).selected = YES;
             ((UILabel *)[cell viewWithTag:102]).text = _feeTypeName[indexPath.row];
         
-            ((UITextField *)[cell viewWithTag:104]).inputView = _yearMonthIntervalPicker;
-            ((UITextField *)[cell viewWithTag:104]).delegate = self;
+//            ((UITextField *)[cell viewWithTag:104]).inputView = _yearMonthIntervalPicker;
+//            ((UITextField *)[cell viewWithTag:104]).delegate = self;
             
             return cell;
         } else {
@@ -183,6 +182,14 @@
 #pragma mark - IB Actions
 
 - (IBAction)checkBoxButtonPressed:(UIButton *)sender {
+    sender.selected = !sender.selected;
+}
+
+- (IBAction)chooseDateButtonPresssed:(UIButton *)sender {
+    sender.selected = !sender.selected;
+}
+
+- (IBAction)inputMoneyButtonPressed:(UIButton *)sender {
     sender.selected = !sender.selected;
 }
 
