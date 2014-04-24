@@ -16,7 +16,7 @@
 
 @property (strong, nonatomic) NSArray *feeTypeName;
 @property (strong, nonatomic) HXTYearMonthIntervalPickerView *yearMonthIntervalPicker;
-@property (strong, nonatomic) UITextField *editingTextField;
+@property (strong, nonatomic) UIButton *selectedButton;
 @end
 
 @implementation HXTPropertyFeePayViewController
@@ -121,43 +121,24 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-#pragma mark - text field delegate
-
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    
-    NSDateComponents *startComps = [[NSDateComponents alloc] init];
-    startComps.year = 2011;
-    startComps.month = 1;
-    
-    NSDateComponents *endComps = [[NSDateComponents alloc] init];
-    endComps.year = 2014;
-    endComps.month = 12;
-    _yearMonthIntervalPicker.startComps = startComps;
-    _yearMonthIntervalPicker.endComps = endComps;
-    
-    _editingTextField = textField;
-    return YES;
-}
-
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-    
-}
-
 #pragma mark - HXTYearMonthIntervalPickerView delegate
 
 - (void)pickerDidSelectStartDateComponents:(NSDateComponents *)startComps andEndComponents:(NSDateComponents *)endComps {
     NSLog(@"startComps = %@, endComps = %@, ", startComps, endComps);
-    _editingTextField.text = [NSString stringWithFormat:@"%4lu年%02lu月~%4lu年%02lu月",(long)startComps.year, (long)startComps.month, (long)endComps.year, (long)endComps.month];
+    NSString *date = [NSString stringWithFormat:@"%4lu年%02lu月~%4lu年%02lu月",(long)startComps.year, (long)startComps.month, (long)endComps.year, (long)endComps.month];
+    [_selectedButton setTitle:date forState:UIControlStateSelected];
 }
 
 - (void)pickerDidPressDoneWithStarDateComponents:(NSDateComponents *)startComps andEndComponents:(NSDateComponents *)endComps {
-    _editingTextField.text = [NSString stringWithFormat:@"%4lu年%02lu月~%4lu年%02lu月",(long)startComps.year, (long)startComps.month, (long)endComps.year, (long)endComps.month];
-    [_editingTextField resignFirstResponder];
+    NSString *date = [NSString stringWithFormat:@"%4lu年%02lu月~%4lu年%02lu月",(long)startComps.year, (long)startComps.month, (long)endComps.year, (long)endComps.month];
+    [_selectedButton setTitle:date forState:UIControlStateNormal];
+    _selectedButton.selected = NO;
 }
 
 - (void)pickerDidPressCancelWithStarDateComponents:(NSDateComponents *)startComps andEndComponents:(NSDateComponents *)endComps {
-    _editingTextField.text = [NSString stringWithFormat:@"%4lu年%02lu月~%4lu年%02lu月",(long)startComps.year, (long)startComps.month, (long)endComps.year, (long)endComps.month];
-    [_editingTextField resignFirstResponder];
+    NSString *date = [NSString stringWithFormat:@"%4lu年%02lu月~%4lu年%02lu月",(long)startComps.year, (long)startComps.month, (long)endComps.year, (long)endComps.month];
+    [_selectedButton setTitle:date forState:UIControlStateNormal];
+    _selectedButton.selected = NO;
 }
 
 
@@ -180,6 +161,7 @@
 
 - (IBAction)chooseDateButtonPresssed:(UIButton *)sender {
     sender.selected = !sender.selected;
+    _selectedButton = sender;
     
     UIView *view = sender.superview;
     while (view && view.superview) {
@@ -187,13 +169,24 @@
             NSIndexPath *indexPath = [self.tableView indexPathForCell:(UITableViewCell *)view];
             NSLog(@"indexPath.row = %lu", (long)indexPath.row);
             
+            NSDateComponents *startComps = [[NSDateComponents alloc] init];
+            startComps.year = 2011;
+            startComps.month = 1;
+            
+            NSDateComponents *endComps = [[NSDateComponents alloc] init];
+            endComps.year = 2014;
+            endComps.month = 12;
+            _yearMonthIntervalPicker.startComps = startComps;
+            _yearMonthIntervalPicker.endComps = endComps;
+            
+            [_yearMonthIntervalPicker show];
+            
             break;
         }
         view = view.superview;
     }
     
     
-    [_yearMonthIntervalPicker show];
 //    [self.view.window addSubview:_yearMonthIntervalPicker];
 //    [self.view.window bringSubviewToFront:_yearMonthIntervalPicker];
 //    [_yearMonthIntervalPicker setNeedsDisplay];;
@@ -222,10 +215,6 @@
 
 - (IBAction)segmentedControlValueChanged:(UISegmentedControl *)sender {
     NSLog(@"sender.selectedSegmentIndex = %lu title = %@", (long)sender.selectedSegmentIndex, [sender titleForSegmentAtIndex:sender.selectedSegmentIndex]);
-    
-    if (_editingTextField) {
-        [_editingTextField resignFirstResponder];
-    }
     
     [self.tableView reloadData];
 }

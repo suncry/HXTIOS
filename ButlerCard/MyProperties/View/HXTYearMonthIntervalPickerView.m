@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneBarButtonItem;
 @property (weak, nonatomic) IBOutlet UIPickerView *picker;
 @property (strong, nonatomic) UIControl *coverView;
+@property (assign, nonatomic) BOOL isShowing;
 
 @property (strong, nonatomic) NSArray *starYears;
 @property (strong, nonatomic) NSArray *starMonth;
@@ -67,7 +68,7 @@
     self.frame = CGRectMake(0, kWinSize.height, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame));
     
     _coverView = [[UIControl alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    _coverView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.2];
+    _coverView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.3];
     [_coverView addTarget:self action:@selector(backgroundTouchUpInside) forControlEvents:UIControlEventTouchUpInside];
     _coverView.userInteractionEnabled = NO;
 }
@@ -75,58 +76,60 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    if (!_startComps) {
-        _startComps = [[NSDateComponents alloc] init];
-        _startComps.year = 2000;
-        _startComps.month = 1;
-        _startComps = [self componentsFromdate:[self dateFromComponents:_startComps]];
-    }
-    
-    if (!_endComps) {
-        _endComps = [[NSDateComponents alloc] init];
-        _endComps.year = 2020;
-        _endComps.month = 12;
-        _endComps = [self componentsFromdate:[self dateFromComponents:_endComps]];
-    }
-    
-    if (!_defaultStartComps) {
-        _defaultStartComps = [_startComps copy];
-    } else {
-        _defaultStartComps = [self componentsFromdate:[self dateFromComponents:_defaultStartComps]];
-    }
-    
-    if (!_defaultEndComps) {
-        _defaultEndComps = [_endComps copy];
-    } else {
-        _defaultEndComps   = [self componentsFromdate:[self dateFromComponents:_defaultEndComps]];
-    }
-    
-    _curStartComps = [_defaultStartComps copy];
-    _curEndComps = [_defaultEndComps copy];
-    
-//    NSLog(@"_defaultEndComps = %@ _defaultEndComps.date = %@", _defaultEndComps, [self dateFromComponents:_defaultStartComps]);
-    
-    for (NSDateComponents *comps = [_startComps copy]; [[self dateFromComponents:comps] compare:[self dateFromComponents:_endComps]] == NSOrderedAscending || [[self dateFromComponents:comps] compare:[self dateFromComponents:_endComps]] == NSOrderedSame; comps.month++) {
-        if (comps.month > 12) {
-            comps.year++;
-            comps.month = 1;
-        }
-//        NSLog(@"####%4lu年%2lu月", (long)comps.year, (long)comps.month);
-        [_dateArray addObject:[NSString stringWithFormat:@"%4lu年%2lu月", (long)comps.year, (long)comps.month]];
-        [_compsArray addObject:[comps copy]];
-        
-        if ([[self dateFromComponents:_defaultStartComps] compare:[self dateFromComponents:comps]] == NSOrderedSame) {
-            _defaultStartComps = [_compsArray lastObject];
+    if (!_isShowing) {
+        if (!_startComps) {
+            _startComps = [[NSDateComponents alloc] init];
+            _startComps.year = 2000;
+            _startComps.month = 1;
+            _startComps = [self componentsFromdate:[self dateFromComponents:_startComps]];
         }
         
-        if ([[self dateFromComponents:_defaultEndComps] compare:[self dateFromComponents:comps]] == NSOrderedSame) {
-            _defaultEndComps = [_compsArray lastObject];
+        if (!_endComps) {
+            _endComps = [[NSDateComponents alloc] init];
+            _endComps.year = 2020;
+            _endComps.month = 12;
+            _endComps = [self componentsFromdate:[self dateFromComponents:_endComps]];
         }
+        
+        if (!_defaultStartComps) {
+            _defaultStartComps = [_startComps copy];
+        } else {
+            _defaultStartComps = [self componentsFromdate:[self dateFromComponents:_defaultStartComps]];
+        }
+        
+        if (!_defaultEndComps) {
+            _defaultEndComps = [_endComps copy];
+        } else {
+            _defaultEndComps   = [self componentsFromdate:[self dateFromComponents:_defaultEndComps]];
+        }
+        
+        _curStartComps = [_defaultStartComps copy];
+        _curEndComps = [_defaultEndComps copy];
+        
+        //    NSLog(@"_defaultEndComps = %@ _defaultEndComps.date = %@", _defaultEndComps, [self dateFromComponents:_defaultStartComps]);
+        
+        for (NSDateComponents *comps = [_startComps copy]; [[self dateFromComponents:comps] compare:[self dateFromComponents:_endComps]] == NSOrderedAscending || [[self dateFromComponents:comps] compare:[self dateFromComponents:_endComps]] == NSOrderedSame; comps.month++) {
+            if (comps.month > 12) {
+                comps.year++;
+                comps.month = 1;
+            }
+            
+            [_dateArray addObject:[NSString stringWithFormat:@"%4lu年%2lu月", (long)comps.year, (long)comps.month]];
+            [_compsArray addObject:[comps copy]];
+            
+            if ([[self dateFromComponents:_defaultStartComps] compare:[self dateFromComponents:comps]] == NSOrderedSame) {
+                _defaultStartComps = [_compsArray lastObject];
+            }
+            
+            if ([[self dateFromComponents:_defaultEndComps] compare:[self dateFromComponents:comps]] == NSOrderedSame) {
+                _defaultEndComps = [_compsArray lastObject];
+            }
+        }
+        
+        [_picker reloadAllComponents];
+        [_picker selectRow:[_compsArray indexOfObject:_defaultStartComps] inComponent:0 animated:NO];
+        [_picker selectRow:[_compsArray indexOfObject:_defaultEndComps] inComponent:2 animated:NO];
     }
-    
-    [_picker reloadAllComponents];
-    [_picker selectRow:[_compsArray indexOfObject:_defaultStartComps] inComponent:0 animated:NO];
-    [_picker selectRow:[_compsArray indexOfObject:_defaultEndComps] inComponent:2 animated:NO];
 }
 
 #pragma mark - picker view data source
@@ -233,6 +236,10 @@
 
 - (void)backgroundTouchUpInside {
     [self hide];
+
+    if (_delegate && [_delegate respondsToSelector:@selector(pickerDidPressCancelWithStarDateComponents:andEndComponents:)]) {
+        [_delegate pickerDidPressCancelWithStarDateComponents:_defaultStartComps andEndComponents:_defaultEndComps];
+    }
 }
 
 #pragma mark IB Actions
@@ -257,7 +264,6 @@
 #pragma mark - public functions
 
 - (void)show {
-    
     [[UIApplication sharedApplication].windows.lastObject addSubview:_coverView];
     [[UIApplication sharedApplication].windows.lastObject addSubview:self];
     
@@ -269,6 +275,7 @@
                      }
                      completion:^(BOOL finished){
                          _coverView.userInteractionEnabled = YES;
+                         _isShowing = YES;
                      }];
 }
 
@@ -283,6 +290,7 @@
                      completion:^(BOOL finished){
                          [self removeFromSuperview];
                          _coverView.userInteractionEnabled = NO;
+                         _isShowing = NO;
                      }];
 }
 
