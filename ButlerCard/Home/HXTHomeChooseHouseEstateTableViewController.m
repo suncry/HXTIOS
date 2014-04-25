@@ -8,8 +8,11 @@
 
 #import "HXTHomeChooseHouseEstateTableViewController.h"
 #import "HXTAccountManager.h"
+#import "HXTLocationManager.h"
 
 @interface HXTHomeChooseHouseEstateTableViewController ()
+
+@property (copy, nonatomic) NSString *curAddress;
 
 @end
 
@@ -39,6 +42,23 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    //获得当前地址
+    __block __weak HXTHomeChooseHouseEstateTableViewController *homeChooseHouseEstateTableViewController = self;
+    
+    [[HXTLocationManager sharedLocation] getAddress:^(NSString * addressString) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            homeChooseHouseEstateTableViewController.curAddress = addressString;
+            NSLog(@"addressString = %@", addressString);
+            NSIndexSet *indexSet= [NSIndexSet indexSetWithIndex:1];
+            [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+        });
+    }];
 }
 
 #pragma mark - Table view data source
@@ -105,22 +125,25 @@
     static NSString *theOtherHouseEstateCellIdentifier = @"TheOtherHouseEstateCellIdentifier";
     
     switch (indexPath.section) {
-        case 0: {
+        case 0: { //全部商圈
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:allHouseEstateCellIdentifier forIndexPath:indexPath];
             return cell;
             break;
         }
-        case 1: {
+        case 1: { //当前位置
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:currentLocationCellIdentifier forIndexPath:indexPath];
+            
+            ((UILabel *)[cell viewWithTag:102]).text = _curAddress? _curAddress: @"当前位置";
+            ((UIActivityIndicatorView *)[cell viewWithTag:104]).hidden = YES;
             return cell;
             break;
         }
-        case 2: {
+        case 2: { //我的小区
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:myHouseEstateCellIdentifier forIndexPath:indexPath];
             return cell;
             break;
         }
-        case 3: {
+        case 3: { //其它小区
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:theOtherHouseEstateCellIdentifier forIndexPath:indexPath];
             return cell;
             break;
@@ -135,43 +158,6 @@
     
 }
 
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
- {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- } else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
- {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
 
 #pragma mark - table view delegate
 
@@ -192,7 +178,41 @@
 #pragma mark - IB Actions
 
 - (IBAction)reloadButtonPressed:(UIButton *)sender {
-    sender.selected = !sender.selected;
+    sender.hidden = YES;
+    
+    //获取Activity Indicator;
+    __block __weak UIActivityIndicatorView *activityIndicatorView;
+    UIView *view = sender.superview;
+    while (view && view.superview) {
+        if ([view isKindOfClass:[UITableViewCell class]]) {
+            
+            activityIndicatorView = (UIActivityIndicatorView *)[((UITableViewCell *)view) viewWithTag:104];
+            activityIndicatorView.hidden = NO;
+            [activityIndicatorView startAnimating];
+            
+            NSIndexPath *indexPath = [self.tableView indexPathForCell:(UITableViewCell *)view];
+            NSLog(@"indexPath.row = %lu", (long)indexPath.row);
+            
+            break;
+        }
+        view = view.superview;
+    }
+    
+    //获得当前地址
+    __block __weak HXTHomeChooseHouseEstateTableViewController *homeChooseHouseEstateTableViewController = self;
+    
+    [[HXTLocationManager sharedLocation] getAddress:^(NSString * addressString) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            homeChooseHouseEstateTableViewController.curAddress = addressString;
+            NSLog(@"addressString = %@", addressString);
+            NSIndexSet *indexSet= [NSIndexSet indexSetWithIndex:1];
+            [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+            
+            [activityIndicatorView stopAnimating];
+            sender.hidden = NO;
+        });
+    }];
 }
 
 #pragma mark - Navigation

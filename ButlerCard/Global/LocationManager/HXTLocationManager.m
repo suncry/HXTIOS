@@ -107,7 +107,21 @@
                            [standard setObject:self.lastCity forKey:kLastCity];
                            [standard setObject:self.lastAddress forKey:kLastAddress];
                            
-                           NSLog(@"%s %s %d %@", __FILE__, __FUNCTION__, __LINE__, placeMark.addressDictionary);
+                           NSLog(@"%s %s %d", __FILE__, __FUNCTION__, __LINE__);
+                           
+                           NSLog(@"placeMark.name = %@", placeMark.name);
+                           NSLog(@"placeMark.thoroughfare = %@", placeMark.thoroughfare);
+                           NSLog(@"placeMark.subThoroughfare = %@", placeMark.subThoroughfare);
+                           NSLog(@"placeMark.locality = %@", placeMark.locality);
+                           NSLog(@"placeMark.subLocality = %@", placeMark.subLocality);
+                           NSLog(@"placeMark.administrativeArea = %@", placeMark.administrativeArea);
+                           NSLog(@"placeMark.subAdministrativeArea = %@", placeMark.subAdministrativeArea);
+                           NSLog(@"placeMark.postalCode = %@", placeMark.postalCode);
+                           NSLog(@"placeMark.ISOcountryCode = %@", placeMark.ISOcountryCode);
+                           NSLog(@"placeMark.country = %@", placeMark.country);
+                           NSLog(@"placeMark.inlandWater = %@", placeMark.inlandWater);
+                           NSLog(@"placeMark.ocean = %@", placeMark.ocean);
+                           NSLog(@"placeMark.areasOfInterest = %@", placeMark.areasOfInterest);
                            
                            [self stopLocation];
                        }

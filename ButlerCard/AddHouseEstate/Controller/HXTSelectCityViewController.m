@@ -52,9 +52,9 @@ typedef NS_ENUM(NSUInteger, sectionType) {
     
     //获得当前城市
     __block __weak HXTSelectCityViewController *selectCityViewController = self;
-    [[HXTLocationManager sharedLocation] getCity:^(NSString *addressString) {
-        if (addressString && addressString.length > 0 && ![addressString isEqualToString:_currentCity]) {
-            selectCityViewController.currentCity = addressString;
+    [[HXTLocationManager sharedLocation] getCity:^(NSString *cityString) {
+        if (cityString && cityString.length > 0 && ![cityString isEqualToString:_currentCity]) {
+            selectCityViewController.currentCity = cityString;
             
             // Update Tabel View
             dispatch_async(dispatch_get_main_queue(), ^{

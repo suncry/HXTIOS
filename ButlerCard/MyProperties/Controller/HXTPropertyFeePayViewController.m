@@ -86,7 +86,7 @@
 #pragma mark - table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return _feeTypeName.count;
 }
 
 
@@ -113,9 +113,6 @@
             
             ((UIButton *)[cell viewWithTag:101]).selected = YES;
             ((UILabel *)[cell viewWithTag:102]).text = _feeTypeName[indexPath.row];
-        
-//            ((UITextField *)[cell viewWithTag:104]).inputView = _yearMonthIntervalPicker;
-//            ((UITextField *)[cell viewWithTag:104]).delegate = self;
             
             return cell;
         } else {
@@ -208,17 +205,6 @@
         }
         view = view.superview;
     }
-    
-    
-//    [self.view.window addSubview:_yearMonthIntervalPicker];
-//    [self.view.window bringSubviewToFront:_yearMonthIntervalPicker];
-//    [_yearMonthIntervalPicker setNeedsDisplay];;
-    
-//    UIView *view1 = [[UIView alloc] initWithFrame:self.view.frame];
-//    [self.tableView.window addSubview:view1];
-//    [self.tableView.window bringSubviewToFront:view1];
-    
-    NSLog(@"######");
 }
 
 - (IBAction)inputMoneyButtonPressed:(UIButton *)sender {
