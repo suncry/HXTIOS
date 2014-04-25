@@ -9,6 +9,8 @@
 #import "CYShopController.h"
 #import "SVPullToRefresh.h"
 #import "AFNetworking.h"
+#import "DJQRateView.h"
+#import "Shop.h"
 
 @interface CYShopController ()
 
@@ -24,17 +26,21 @@
     }
     return self;
 }
-
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self queryFromDB];
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.rateView setRate:3.5];
-    
     //注册上拉刷新功能
     __weak CYShopController *weakSelf = self;
     [self.tableView addInfiniteScrollingWithActionHandler:^{
         [weakSelf insertRowAtBottom];
     }];
+    
+    //获取当前应用程序的委托（UIApplication sharedApplication为整个应用程序上下文）
+    self.myDelegate = (HXTAppDelegate *)[[UIApplication sharedApplication] delegate];
 
 
 }
@@ -75,59 +81,9 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"saleMsgCell" forIndexPath:indexPath];
     return cell;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (IBAction)takeCall:(id)sender
 {
-    NSString *number = @"10010";// 此处读入电话号码
+    NSString *number = [[NSUserDefaults standardUserDefaults] valueForKey:kShopTel];// 此处读入电话号码
     NSString *num = [[NSString alloc] initWithFormat:@"telprompt://%@",number];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:num]]; //拨号
 }
@@ -158,6 +114,35 @@
      {
          NSLog(@"Error: %@", error);
      }];
+}
+- (void)queryFromDB
+{
+    //创建取回数据请求
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    //设置要检索哪种类型的实体对象
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Shop"inManagedObjectContext:self.myDelegate.managedObjectContext];
+    //设置请求实体
+    [request setEntity:entity];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(shopID = %@)",[[NSUserDefaults standardUserDefaults]valueForKey:kShopID]];
+    [request setPredicate:predicate];
+    NSError *error = nil;
+    //执行获取数据请求，返回数组
+    NSMutableArray *mutableFetchResult = [[self.myDelegate.managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
+    if (mutableFetchResult == nil)
+    {
+        NSLog(@"Error: %@,%@",error,[error userInfo]);
+    }
+    NSLog(@"The count of FetchResult:%i",[mutableFetchResult count]);
+    for(Shop *entry in mutableFetchResult)
+    {
+//        NSLog(@"Shop ------>  grade:%@",entry.grade);
+        [_rateView setRate:[entry.grade floatValue]];
+        [[NSUserDefaults standardUserDefaults]setValue:entry.tel forKey:kShopTel];
+        [_telBtn setTitle:entry.tel forState:UIControlStateNormal];
+        self.navigationItem.title = entry.name;
+    }
+
 }
 
 @end

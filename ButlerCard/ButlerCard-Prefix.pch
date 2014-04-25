@@ -16,3 +16,7 @@
 #endif
 
 #define kHouseName @"houseName"
+#define kShopID @"shopID"
+#define kShopTel @"shopTel"
+
+

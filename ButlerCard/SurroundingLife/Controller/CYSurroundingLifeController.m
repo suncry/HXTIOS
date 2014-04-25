@@ -138,9 +138,12 @@
     {
         NSLog(@"商店cell");
         [self performSegueWithIdentifier:@"shopSegue" sender:self];
-//        UIButton *btttt = [[UIButton alloc]init];
-//        btttt.layer.cornerRadius
     }
+    
+    
+    //记录是哪个商店被点击。
+    [[NSUserDefaults standardUserDefaults]setValue:_dataArr[indexPath.row][@"id"] forKey:kShopID];
+    
 }
 
 #pragma mark btn setting

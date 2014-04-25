@@ -176,7 +176,7 @@
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                 </button>
-                                <view userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GVb-6f-61X" customClass="DJQRateView">
+                                <view userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GVb-6f-61X" customClass="DJQRateView">
                                     <rect key="frame" x="191" y="16" width="106" height="26"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -262,6 +262,7 @@
                     <navigationItem key="navigationItem" title="某商店" id="aO9-gy-XRl"/>
                     <connections>
                         <outlet property="rateView" destination="GVb-6f-61X" id="1s6-9O-iHV"/>
+                        <outlet property="telBtn" destination="XFY-Vl-Yrc" id="fRA-wZ-K2A"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rGi-fd-xS5" userLabel="First Responder" sceneMemberID="firstResponder"/>

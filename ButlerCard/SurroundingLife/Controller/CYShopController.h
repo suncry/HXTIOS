@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "DJQRateView.h"
+#import "HXTAppDelegate.h"
+
 @interface CYShopController : UITableViewController
+//用于CoreData
+@property (strong,nonatomic) HXTAppDelegate *myDelegate;
+
 @property (weak, nonatomic) IBOutlet DJQRateView *rateView;
+@property (weak, nonatomic) IBOutlet UIButton *telBtn;
 @property (retain, nonatomic) NSMutableArray *dataArr;
 
 - (IBAction)takeCall:(id)sender;
