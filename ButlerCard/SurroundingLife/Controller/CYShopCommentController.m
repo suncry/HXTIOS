@@ -8,6 +8,9 @@
 
 #import "CYShopCommentController.h"
 #import "DJQRateView.h"
+#import "SVPullToRefresh.h"
+#import "AFNetworking.h"
+
 @interface CYShopCommentController ()
 
 @end
@@ -22,16 +25,23 @@
     }
     return self;
 }
-
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self insertRowAtTop];
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //注册下拉刷新功能
+    __weak CYShopCommentController *weakSelf = self;
+    [self.tableView addPullToRefreshWithActionHandler:^{
+        [weakSelf insertRowAtTop];
+    }];
+    //注册上拉刷新功能
+    [self.tableView addInfiniteScrollingWithActionHandler:^{
+        [weakSelf insertRowAtBottom];
+    }];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,15 +63,22 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 12;
+    return _dataArr.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"commentCell" forIndexPath:indexPath];
+    //名字
+    [(UILabel *)[cell viewWithTag:100] setText:(_dataArr[indexPath.row])[@"nickname"]];
     //评分
-    
-    [(DJQRateView *)[cell viewWithTag:101] setRate:rand()%5];
+    [(DJQRateView *)[cell viewWithTag:101] setRate:[(_dataArr[indexPath.row])[@"grade"]floatValue]];
+    //评论
+    [(UILabel *)[cell viewWithTag:102] setText:(_dataArr[indexPath.row])[@"comment"]];
+    //时间
+    [(UILabel *)[cell viewWithTag:103] setText:(_dataArr[indexPath.row])[@"time"]];
+    //商家回复
+    [(UILabel *)[cell viewWithTag:104] setText:(_dataArr[indexPath.row])[@"replyMessage"]];
 
     return cell;
 }
@@ -114,5 +131,45 @@
     // Pass the selected object to the new view controller.
 }
 */
+#pragma mark --SVPullToRefresh--
+//下拉刷新
+- (void)insertRowAtTop
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *parameters = @{@"store_id": @"6"};
+    [manager POST:@"http://bbs.enveesoft.com:1602/htx/hexinpassserver/appserver/public/store/info" parameters:parameters
+          success:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+         _dataArr = (responseObject[@"results"])[@"comments"];
+         [self.tableView reloadData];
+//         NSLog(@"self.dataDic: %@", _dataArr);
+         //停止刷新
+         [self.tableView.pullToRefreshView stopAnimating];
+         
+     }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+         NSLog(@"Error: %@", error);
+     }];
+}
+//上拉加载更多
+- (void)insertRowAtBottom
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *parameters = @{@"store_id": @"6"};
+    [manager POST:@"http://bbs.enveesoft.com:1602/htx/hexinpassserver/appserver/public/store/info" parameters:parameters
+          success:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+         _dataArr = (responseObject[@"results"])[@"comments"];
+         [self.tableView reloadData];
+//         NSLog(@"self.dataDic: %@", _dataArr);
+         //停止刷新
+         [self.tableView.infiniteScrollingView stopAnimating];
+     }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+         NSLog(@"Error: %@", error);
+     }];
+}
 
 @end

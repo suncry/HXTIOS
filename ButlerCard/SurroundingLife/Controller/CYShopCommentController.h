@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CYShopCommentController : UITableViewController
+@property (retain, nonatomic) NSMutableArray *dataArr;
 
 @end

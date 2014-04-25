@@ -28,27 +28,7 @@
 }
 - (void)viewWillAppear:(BOOL)animated
 {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSDictionary *parameters = @{@"tenement_id": @"1",
-                                        @"type": @"0",
-                                     @"canSend": @"0",
-                                  @"candPayoff": @"0",
-                                        @"size": @"6",
-                                      @"offset": @"0",
-                                         @"sid": @"66d804a0bb4c0a06",};
-    [manager POST:@"http://bbs.enveesoft.com:1602/htx/hexinpassserver/appserver/public/store/list" parameters:parameters
-          success:^(AFHTTPRequestOperation *operation, id responseObject)
-     {
-         _dataArr = [responseObject valueForKey:@"results"];
-         _searchDataArr = [responseObject valueForKey:@"results"];
-//         _searchDataArr = [[NSMutableArray alloc]initWithArray:_dataArr];
-         [self.tableView reloadData];
-//         NSLog(@"self.dataDic: %@", _dataArr);
-     }
-          failure:^(AFHTTPRequestOperation *operation, NSError *error)
-     {
-         NSLog(@"Error: %@", error);
-     }];
+    [self insertRowAtTop];
 }
 - (void)viewDidLoad
 {
@@ -306,7 +286,7 @@
          [self.tableView reloadData];
          //         NSLog(@"self.dataDic: %@", _dataArr);
          //停止刷新
-         [self.tableView.pullToRefreshView stopAnimating];
+         [self.tableView.infiniteScrollingView stopAnimating];
          
      }
           failure:^(AFHTTPRequestOperation *operation, NSError *error)

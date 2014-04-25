@@ -152,7 +152,7 @@
          //         NSLog(@"self.dataDic: %@", _dataArr);
          NSLog(@"下拉加载更多！");
          //停止刷新
-         [self.tableView.pullToRefreshView stopAnimating];
+         [self.tableView.infiniteScrollingView stopAnimating];
      }
           failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
