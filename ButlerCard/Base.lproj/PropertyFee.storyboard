@@ -264,7 +264,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <state key="normal" title="充值">
-                                            <color key="titleColor" red="0.15686274510000001" green="0.68627450980000004" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.94901960784313721" green="0.43529411764705883" blue="0.054901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -1033,10 +1033,10 @@
                                                         <outlet property="delegate" destination="GrL-uk-cy2" id="oYc-Bw-0WD"/>
                                                     </connections>
                                                 </textField>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="缴费金额:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1n-m4-Gdp">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="¥" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1n-m4-Gdp">
                                                     <rect key="frame" x="20" y="11" width="73" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1054,7 +1054,7 @@
                                                     <rect key="frame" x="20" y="2" width="44" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="50元">
-                                                        <color key="titleColor" red="0.15686274510000001" green="0.68627450980000004" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleColor" red="0.94901960780000005" green="0.43529411759999997" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -1065,7 +1065,7 @@
                                                     <rect key="frame" x="91" y="2" width="44" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="100元">
-                                                        <color key="titleColor" red="0.15686274510000001" green="0.68627450980000004" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleColor" red="0.94901960780000005" green="0.43529411759999997" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -1076,7 +1076,7 @@
                                                     <rect key="frame" x="179" y="2" width="44" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="200元">
-                                                        <color key="titleColor" red="0.15686274510000001" green="0.68627450980000004" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleColor" red="0.94901960780000005" green="0.43529411759999997" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -1087,7 +1087,7 @@
                                                     <rect key="frame" x="256" y="2" width="44" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="500元">
-                                                        <color key="titleColor" red="0.15686274510000001" green="0.68627450980000004" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleColor" red="0.94901960780000005" green="0.43529411759999997" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -1158,6 +1158,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="9su-MH-3Le"/>
+        <segue reference="3BM-Va-MRI"/>
     </inferredMetricsTieBreakers>
 </document>

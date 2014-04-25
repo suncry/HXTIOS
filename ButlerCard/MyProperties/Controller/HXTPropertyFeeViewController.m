@@ -45,6 +45,18 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+        self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:242.0f / 255 green:111.0f / 255 blue:14.f / 255 alpha:1.0f];
+
+        self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+        self.navigationController.navigationBar.translucent = NO;
+        self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor colorWithRed:255.0f / 255 green:192.0f / 255 blue:141.0f / 255 alpha:1.0f], UITextAttributeFont: [UIFont systemFontOfSize:18.0f]};
+    }
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

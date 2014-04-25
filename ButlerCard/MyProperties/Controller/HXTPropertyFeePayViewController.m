@@ -36,11 +36,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+        self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+        self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:242.0f / 255 green:111.0f / 255 blue:14.0f / 255 alpha:1];
+        self.navigationController.navigationBar.translucent = YES;
+        self.navigationController.navigationBar.titleTextAttributes = @{};
+        _segmentedControl.tintColor =  [UIColor colorWithRed:242.0f / 255 green:111.0f / 255 blue:14.0f / 255 alpha:1];
+    }
+    
     self.view.backgroundColor = [UIColor whiteColor];
     [self setExtraCellLineHidden:_tableView];
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
-        _segmentedControl.tintColor = [UIColor whiteColor];
-    }
     
     _feeTypeName = @[@"物管费", @"停车费", @"水费", @"电费", @"气费"];
     
@@ -57,7 +62,7 @@
     [super viewDidAppear:animated];
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
-        _segmentedControl.tintColor = [UIColor whiteColor];
+//        _segmentedControl.tintColor = [UIColor whiteColor];
     }
     
     if (_selectedButton) {

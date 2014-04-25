@@ -350,12 +350,12 @@
             <objects>
                 <tableViewController id="0Ke-7N-58u" customClass="HXTHomeChooseHouseEstateTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="T8P-d5-qyg">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AllHouseEstateCellIdentifier" id="4Km-Wa-SGh">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Km-Wa-SGh" id="ESG-ai-oKt">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -375,7 +375,7 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CurrentLocationCellIdentifier" id="5Kj-os-2YT">
-                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="130" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Kj-os-2YT" id="nbo-Bj-Dn2">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -410,7 +410,7 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyHouseEstateCellIdentifier" id="EUC-M9-37o">
-                                <rect key="frame" x="0.0" y="110" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="174" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EUC-M9-37o" id="sz9-My-Cex">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -430,7 +430,7 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TheOtherHouseEstateCellIdentifier" id="Ni9-27-xao">
-                                <rect key="frame" x="0.0" y="154" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="218" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ni9-27-xao" id="m3H-Au-M5g">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -456,7 +456,8 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="选择小区" id="Sdz-AB-bko">
-                        <barButtonItem key="leftBarButtonItem" title="取消" id="SSC-6f-X8a">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="SSC-6f-X8a">
+                            <color key="tintColor" red="0.15686274510000001" green="0.68627450980000004" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="backButtonPressed:" destination="0Ke-7N-58u" id="0PW-us-Tqb"/>
                             </connections>
@@ -1772,12 +1773,11 @@
         <!--Navigation Controller-->
         <scene sceneID="5aM-SS-cYZ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="p66-WV-dhf" customClass="HXTNavigationController" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="p66-WV-dhf" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Zd7-9S-mol">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zd7-9S-mol">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
