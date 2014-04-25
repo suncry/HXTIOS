@@ -306,7 +306,7 @@
          [self.tableView reloadData];
          //         NSLog(@"self.dataDic: %@", _dataArr);
          //停止刷新
-         [self.tableView.pullToRefreshView stopAnimating];
+         [self.tableView.infiniteScrollingView stopAnimating];
          
      }
           failure:^(AFHTTPRequestOperation *operation, NSError *error)

@@ -8,6 +8,9 @@
 
 #import "CYShopCommentController.h"
 #import "DJQRateView.h"
+#import "SVPullToRefresh.h"
+#import "AFNetworking.h"
+
 @interface CYShopCommentController ()
 
 @end
@@ -22,16 +25,23 @@
     }
     return self;
 }
-
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self insertRowAtTop];
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //注册下拉刷新功能
+    __weak CYShopCommentController *weakSelf = self;
+    [self.tableView addPullToRefreshWithActionHandler:^{
+        [weakSelf insertRowAtTop];
+    }];
+    //注册上拉刷新功能
+    [self.tableView addInfiniteScrollingWithActionHandler:^{
+        [weakSelf insertRowAtBottom];
+    }];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -114,5 +124,47 @@
     // Pass the selected object to the new view controller.
 }
 */
+#pragma mark --SVPullToRefresh--
+//下拉刷新
+- (void)insertRowAtTop
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *parameters = @{@"store_id": @"6"};
+    [manager POST:@"http://bbs.enveesoft.com:1602/htx/hexinpassserver/appserver/public/store/info" parameters:parameters
+          success:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+//         _dataArr = [responseObject valueForKey:@"results"];
+//         _searchDataArr = [responseObject valueForKey:@"results"];
+         //         _searchDataArr = [[NSMutableArray alloc]initWithArray:_dataArr];
+         [self.tableView reloadData];
+         //         NSLog(@"self.dataDic: %@", _dataArr);
+         //停止刷新
+         [self.tableView.pullToRefreshView stopAnimating];
+         
+     }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+         NSLog(@"Error: %@", error);
+     }];
+}
+//上拉加载更多
+- (void)insertRowAtBottom
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *parameters = @{@"store_id": @"6"};
+    [manager POST:@"http://bbs.enveesoft.com:1602/htx/hexinpassserver/appserver/public/store/info" parameters:parameters
+          success:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+         _dataArr = [responseObject valueForKey:@"results"];
+         [self.tableView reloadData];
+         //         NSLog(@"self.dataDic: %@", _dataArr);
+         //停止刷新
+         [self.tableView.infiniteScrollingView stopAnimating];
+     }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+         NSLog(@"Error: %@", error);
+     }];
+}
 
 @end
