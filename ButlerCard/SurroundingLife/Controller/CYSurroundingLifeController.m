@@ -306,11 +306,12 @@
 }
 - (void)saveData
 {
+    //在写入数据之前先清空表的内容
+    [self deleteAllObjects:@"Shop"];
     for (NSMutableDictionary *dic in _dataArr)
     {
         //让CoreData在上下文中创建一个新对象(托管对象)
         Shop *shop = (Shop *)[NSEntityDescription insertNewObjectForEntityForName:@"Shop" inManagedObjectContext:self.myDelegate.managedObjectContext];
-        
         [shop setShopID:[NSString stringWithFormat:@"%@",dic[@"id"]]];
 
         NSLog(@"save -----> %@",dic[@"name"]);
@@ -339,10 +340,7 @@
         }else {
 //            NSLog(@"Save successful!");
         }
-
     }
-    
-
 }
 - (void)queryFromDB
 {
@@ -377,4 +375,25 @@
     }
 
 }
+//删除操作
+- (void) deleteAllObjects: (NSString *)entityDescription
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:entityDescription inManagedObjectContext:self.myDelegate.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSError *error;
+    NSArray *items = [self.myDelegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    
+    for (NSManagedObject *managedObject in items)
+    {
+    	[self.myDelegate.managedObjectContext deleteObject:managedObject];
+//    	NSLog(@"%@ object deleted",entityDescription);
+    }
+    if (![self.myDelegate.managedObjectContext save:&error]) {
+//    	NSLog(@"Error deleting %@ - error:%@",entityDescription,error);
+    }
+}
+
 @end
