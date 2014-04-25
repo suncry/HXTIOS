@@ -191,14 +191,14 @@
 		B26FE5EC18FE51FC0093BC2F /* XPHTTPURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE5A618FE51FC0093BC2F /* XPHTTPURLConnection.m */; };
 		B26FE64118FE55A90093BC2F /* NSString+Check.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE64018FE55A90093BC2F /* NSString+Check.m */; };
 		B26FE64218FE55A90093BC2F /* NSString+Check.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE64018FE55A90093BC2F /* NSString+Check.m */; };
-		B280044318FFCAF400E2DE0E /* HXTOpenAutomaticBillPaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B280044218FFCAF400E2DE0E /* HXTOpenAutomaticBillPaymentViewController.m */; };
-		B280044418FFCAF400E2DE0E /* HXTOpenAutomaticBillPaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B280044218FFCAF400E2DE0E /* HXTOpenAutomaticBillPaymentViewController.m */; };
-		B280044718FFE1B100E2DE0E /* HXTWithholdingUseAgreementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B280044618FFE1B000E2DE0E /* HXTWithholdingUseAgreementViewController.m */; };
-		B280044818FFE1B100E2DE0E /* HXTWithholdingUseAgreementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B280044618FFE1B000E2DE0E /* HXTWithholdingUseAgreementViewController.m */; };
 		B2D1FC86190256C500A7467D /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D1FC85190256C500A7467D /* HMSegmentedControl.m */; };
 		B2D1FC87190256C500A7467D /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D1FC85190256C500A7467D /* HMSegmentedControl.m */; };
 		B2D484DF1909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D484DE1909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.m */; };
 		B2D484E01909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D484DE1909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.m */; };
+		B2D484E7190A1B5E000D5E33 /* HXTOpenAutomaticBillPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D484E6190A1B5E000D5E33 /* HXTOpenAutomaticBillPayViewController.m */; };
+		B2D484E8190A1B5E000D5E33 /* HXTOpenAutomaticBillPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D484E6190A1B5E000D5E33 /* HXTOpenAutomaticBillPayViewController.m */; };
+		B2D484EB190A2141000D5E33 /* HXTWithholdingUseAgreementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D484EA190A2141000D5E33 /* HXTWithholdingUseAgreementViewController.m */; };
+		B2D484EC190A2141000D5E33 /* HXTWithholdingUseAgreementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D484EA190A2141000D5E33 /* HXTWithholdingUseAgreementViewController.m */; };
 		B2D4EFFE19035897007C6089 /* LTHMonthYearPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D4EFFD19035897007C6089 /* LTHMonthYearPickerView.m */; };
 		B2D4EFFF19035897007C6089 /* LTHMonthYearPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D4EFFD19035897007C6089 /* LTHMonthYearPickerView.m */; };
 		B2F8B6541900BB31000CAB54 /* HXTPropertyFeePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F8B6531900BB31000CAB54 /* HXTPropertyFeePayViewController.m */; };
@@ -402,14 +402,14 @@
 		B26FE5A618FE51FC0093BC2F /* XPHTTPURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPHTTPURLConnection.m; sourceTree = "<group>"; };
 		B26FE63F18FE55A90093BC2F /* NSString+Check.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Check.h"; sourceTree = "<group>"; };
 		B26FE64018FE55A90093BC2F /* NSString+Check.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Check.m"; sourceTree = "<group>"; };
-		B280044118FFCAF400E2DE0E /* HXTOpenAutomaticBillPaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTOpenAutomaticBillPaymentViewController.h; sourceTree = "<group>"; };
-		B280044218FFCAF400E2DE0E /* HXTOpenAutomaticBillPaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTOpenAutomaticBillPaymentViewController.m; sourceTree = "<group>"; };
-		B280044518FFE1B000E2DE0E /* HXTWithholdingUseAgreementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTWithholdingUseAgreementViewController.h; sourceTree = "<group>"; };
-		B280044618FFE1B000E2DE0E /* HXTWithholdingUseAgreementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTWithholdingUseAgreementViewController.m; sourceTree = "<group>"; };
 		B2D1FC84190256C500A7467D /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
 		B2D1FC85190256C500A7467D /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
 		B2D484DD1909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTPropertyFeeInputMoneyTableViewController.h; sourceTree = "<group>"; };
 		B2D484DE1909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTPropertyFeeInputMoneyTableViewController.m; sourceTree = "<group>"; };
+		B2D484E5190A1B5E000D5E33 /* HXTOpenAutomaticBillPayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTOpenAutomaticBillPayViewController.h; sourceTree = "<group>"; };
+		B2D484E6190A1B5E000D5E33 /* HXTOpenAutomaticBillPayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTOpenAutomaticBillPayViewController.m; sourceTree = "<group>"; };
+		B2D484E9190A2141000D5E33 /* HXTWithholdingUseAgreementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTWithholdingUseAgreementViewController.h; sourceTree = "<group>"; };
+		B2D484EA190A2141000D5E33 /* HXTWithholdingUseAgreementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTWithholdingUseAgreementViewController.m; sourceTree = "<group>"; };
 		B2D4EFFC19035897007C6089 /* LTHMonthYearPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTHMonthYearPickerView.h; sourceTree = "<group>"; };
 		B2D4EFFD19035897007C6089 /* LTHMonthYearPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTHMonthYearPickerView.m; sourceTree = "<group>"; };
 		B2F8B6521900BB31000CAB54 /* HXTPropertyFeePayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTPropertyFeePayViewController.h; sourceTree = "<group>"; };
@@ -724,6 +724,8 @@
 				B2214DE618FE1FB800762AE9 /* CYHouseChoiceController.h */,
 				B2214DE718FE1FB800762AE9 /* CYHouseChoiceController.m */,
 				B2214DE818FE1FB800762AE9 /* CYNoticeBoardController.h */,
+				B2D484E9190A2141000D5E33 /* HXTWithholdingUseAgreementViewController.h */,
+				B2D484EA190A2141000D5E33 /* HXTWithholdingUseAgreementViewController.m */,
 				B2214DE918FE1FB800762AE9 /* CYNoticeBoardController.m */,
 				B2214DEA18FE1FB800762AE9 /* CYRentController.h */,
 				B2214DEB18FE1FB800762AE9 /* CYRentController.m */,
@@ -733,10 +735,8 @@
 				B2214DEF18FE1FB800762AE9 /* HXTPropertyFeeViewController.m */,
 				B2214DF018FE1FB800762AE9 /* HXTPropertyFeeDetailTableViewController.h */,
 				B2214DF118FE1FB800762AE9 /* HXTPropertyFeeDetailTableViewController.m */,
-				B280044118FFCAF400E2DE0E /* HXTOpenAutomaticBillPaymentViewController.h */,
-				B280044218FFCAF400E2DE0E /* HXTOpenAutomaticBillPaymentViewController.m */,
-				B280044518FFE1B000E2DE0E /* HXTWithholdingUseAgreementViewController.h */,
-				B280044618FFE1B000E2DE0E /* HXTWithholdingUseAgreementViewController.m */,
+				B2D484E5190A1B5E000D5E33 /* HXTOpenAutomaticBillPayViewController.h */,
+				B2D484E6190A1B5E000D5E33 /* HXTOpenAutomaticBillPayViewController.m */,
 				B2F8B6521900BB31000CAB54 /* HXTPropertyFeePayViewController.h */,
 				B2F8B6531900BB31000CAB54 /* HXTPropertyFeePayViewController.m */,
 				B2214DF218FE1FB800762AE9 /* HXTPropertyServiceViewController.h */,
@@ -1092,7 +1092,6 @@
 				B2D4EFFE19035897007C6089 /* LTHMonthYearPickerView.m in Sources */,
 				B2214DB318FE1FA200762AE9 /* HXTNavigationController.m in Sources */,
 				B2214E5118FE1FB800762AE9 /* HXTMyProperties.m in Sources */,
-				B280044318FFCAF400E2DE0E /* HXTOpenAutomaticBillPaymentViewController.m in Sources */,
 				B2214E3318FE1FB800762AE9 /* NSMutableArray+pieEx.m in Sources */,
 				B2214C8218FE1F9000762AE9 /* HXTSelectCitySecondLevelViewController.m in Sources */,
 				B2214E4918FE1FB800762AE9 /* HXTPropertyServiceViewController.m in Sources */,
@@ -1119,6 +1118,7 @@
 				B2214C7418FE1F9000762AE9 /* HXTRetrievePasswordViewController.m in Sources */,
 				B2214C1C18FE1E4000762AE9 /* HXTAppDelegate.m in Sources */,
 				B2214C7018FE1F9000762AE9 /* HXTRegisterInputPhoneNumberViewController.m in Sources */,
+				B2D484EB190A2141000D5E33 /* HXTWithholdingUseAgreementViewController.m in Sources */,
 				B2214E2918FE1FB800762AE9 /* CYMyPropertyTableViewCell.m in Sources */,
 				B2214C6A18FE1F9000762AE9 /* HXTLoginViewController.m in Sources */,
 				B26FE5EB18FE51FC0093BC2F /* XPHTTPURLConnection.m in Sources */,
@@ -1129,7 +1129,6 @@
 				B2214E2118FE1FB800762AE9 /* CYMyBillDetailCell.m in Sources */,
 				B2214C7618FE1F9000762AE9 /* HXTAccountManager.m in Sources */,
 				B2214C7218FE1F9000762AE9 /* HXTRegisterInputValidCodeViewController.m in Sources */,
-				B280044718FFE1B100E2DE0E /* HXTWithholdingUseAgreementViewController.m in Sources */,
 				B26FE5D718FE51FC0093BC2F /* HXTLocationManager.m in Sources */,
 				B2D1FC86190256C500A7467D /* HMSegmentedControl.m in Sources */,
 				B2214E1718FE1FB800762AE9 /* CYActivityViewController.m in Sources */,
@@ -1144,6 +1143,7 @@
 				B2214E2B18FE1FB800762AE9 /* CYMyPropertyTableViewController.m in Sources */,
 				B2214E4B18FE1FB800762AE9 /* DJQRateView.m in Sources */,
 				23CA860D19065B7A0067D0D4 /* PCStackMenu.m in Sources */,
+				B2D484E7190A1B5E000D5E33 /* HXTOpenAutomaticBillPayViewController.m in Sources */,
 				B2214E2718FE1FB800762AE9 /* CYMyOrderViewController.m in Sources */,
 				B26FE64118FE55A90093BC2F /* NSString+Check.m in Sources */,
 				B2214E5318FE1FB800762AE9 /* HXTPropertyCell.m in Sources */,
@@ -1196,6 +1196,7 @@
 				B2214C8518FE1F9000762AE9 /* HXTSelectCityViewController.m in Sources */,
 				B2214E3018FE1FB800762AE9 /* Example2PieView.m in Sources */,
 				B2214E3A18FE1FB800762AE9 /* CYActiveController.m in Sources */,
+				B2D484E8190A1B5E000D5E33 /* HXTOpenAutomaticBillPayViewController.m in Sources */,
 				B2214E3C18FE1FB800762AE9 /* CYDiscussController.m in Sources */,
 				B2214E5418FE1FB800762AE9 /* HXTPropertyCell.m in Sources */,
 				B26FE64218FE55A90093BC2F /* NSString+Check.m in Sources */,
@@ -1204,7 +1205,6 @@
 				B2214E3818FE1FB800762AE9 /* PieLayer.m in Sources */,
 				B2214DB618FE1FA200762AE9 /* HXTTabBarViewController.m in Sources */,
 				B2214E4618FE1FB800762AE9 /* HXTPropertyFeeViewController.m in Sources */,
-				B280044418FFCAF400E2DE0E /* HXTOpenAutomaticBillPaymentViewController.m in Sources */,
 				B2214E3418FE1FB800762AE9 /* NSMutableArray+pieEx.m in Sources */,
 				B2214C7718FE1F9000762AE9 /* HXTAccountManager.m in Sources */,
 				B2214E5018FE1FB800762AE9 /* HXTHouse.m in Sources */,
@@ -1221,8 +1221,8 @@
 				B26FE5D018FE51FC0093BC2F /* NSArrayAdditionals.m in Sources */,
 				B2214E2018FE1FB800762AE9 /* CYMsgTableViewController.m in Sources */,
 				B2214E2218FE1FB800762AE9 /* CYMyBillDetailCell.m in Sources */,
+				B2D484EC190A2141000D5E33 /* HXTWithholdingUseAgreementViewController.m in Sources */,
 				B2214C8118FE1F9000762AE9 /* HXTRegisterUserProtocolViewController.m in Sources */,
-				B280044818FFE1B100E2DE0E /* HXTWithholdingUseAgreementViewController.m in Sources */,
 				B2214C7F18FE1F9000762AE9 /* HXTBrowseHouseEstateViewController.m in Sources */,
 				B2214C7518FE1F9000762AE9 /* HXTRetrievePasswordViewController.m in Sources */,
 				B26FE5D818FE51FC0093BC2F /* HXTLocationManager.m in Sources */,
