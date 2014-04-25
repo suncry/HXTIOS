@@ -13,6 +13,9 @@
 		2392C7C218FE7157007EDB5A /* CYRepairController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2392C7C118FE7157007EDB5A /* CYRepairController.m */; };
 		23A8C4841907A04A00557F5A /* searchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A8C4831907A04A00557F5A /* searchCell.m */; };
 		23A8C6981908BC5300EF925C /* CYShopController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A8C6971908BC5300EF925C /* CYShopController.m */; };
+		23BC739A190A040B0088BEC9 /* CoreModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 23BC7398190A040B0088BEC9 /* CoreModel.xcdatamodeld */; };
+		23BC73A0190A06020088BEC9 /* Shop.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BC739F190A06020088BEC9 /* Shop.m */; };
+		23BC73A2190A0A020088BEC9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23BC73A1190A0A020088BEC9 /* CoreData.framework */; };
 		23CA860D19065B7A0067D0D4 /* PCStackMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CA860A19065B7A0067D0D4 /* PCStackMenu.m */; };
 		23CA860E19065B7A0067D0D4 /* PCStackMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CA860C19065B7A0067D0D4 /* PCStackMenuItem.m */; };
 		23CA861F19066C430067D0D4 /* CYSurroundingLifeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CA861E19066C430067D0D4 /* CYSurroundingLifeController.m */; };
@@ -229,6 +232,10 @@
 		23A8C4831907A04A00557F5A /* searchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchCell.m; sourceTree = "<group>"; };
 		23A8C6961908BC5300EF925C /* CYShopController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYShopController.h; sourceTree = "<group>"; };
 		23A8C6971908BC5300EF925C /* CYShopController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYShopController.m; sourceTree = "<group>"; };
+		23BC7399190A040B0088BEC9 /* CoreModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreModel.xcdatamodel; sourceTree = "<group>"; };
+		23BC739E190A06020088BEC9 /* Shop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shop.h; sourceTree = "<group>"; };
+		23BC739F190A06020088BEC9 /* Shop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shop.m; sourceTree = "<group>"; };
+		23BC73A1190A0A020088BEC9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		23CA860919065B7A0067D0D4 /* PCStackMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCStackMenu.h; sourceTree = SOURCE_ROOT; };
 		23CA860A19065B7A0067D0D4 /* PCStackMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCStackMenu.m; sourceTree = SOURCE_ROOT; };
 		23CA860B19065B7A0067D0D4 /* PCStackMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCStackMenuItem.h; sourceTree = SOURCE_ROOT; };
@@ -422,6 +429,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23BC73A2190A0A020088BEC9 /* CoreData.framework in Frameworks */,
 				B2214E8818FE216700762AE9 /* libsqlite3.dylib in Frameworks */,
 				B2214C0E18FE1E4000762AE9 /* CoreGraphics.framework in Frameworks */,
 				B2214C1018FE1E4000762AE9 /* UIKit.framework in Frameworks */,
@@ -449,6 +457,9 @@
 				23A8C4821907A04A00557F5A /* searchCell.h */,
 				23A8C4831907A04A00557F5A /* searchCell.m */,
 				23CA860819065B660067D0D4 /* PCStackMenu */,
+				23BC7398190A040B0088BEC9 /* CoreModel.xcdatamodeld */,
+				23BC739E190A06020088BEC9 /* Shop.h */,
+				23BC739F190A06020088BEC9 /* Shop.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -487,6 +498,7 @@
 		B2214C0A18FE1E4000762AE9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				23BC73A1190A0A020088BEC9 /* CoreData.framework */,
 				B2214E8718FE216700762AE9 /* libsqlite3.dylib */,
 				B2214C0B18FE1E4000762AE9 /* Foundation.framework */,
 				B2214C0D18FE1E4000762AE9 /* CoreGraphics.framework */,
@@ -1094,6 +1106,7 @@
 				B2214E5118FE1FB800762AE9 /* HXTMyProperties.m in Sources */,
 				B2214E3318FE1FB800762AE9 /* NSMutableArray+pieEx.m in Sources */,
 				B2214C8218FE1F9000762AE9 /* HXTSelectCitySecondLevelViewController.m in Sources */,
+				23BC73A0190A06020088BEC9 /* Shop.m in Sources */,
 				B2214E4918FE1FB800762AE9 /* HXTPropertyServiceViewController.m in Sources */,
 				B2214E4F18FE1FB800762AE9 /* HXTHouse.m in Sources */,
 				B26FE5DD18FE51FC0093BC2F /* SqliteStoreManager.m in Sources */,
@@ -1120,6 +1133,7 @@
 				B2214C7018FE1F9000762AE9 /* HXTRegisterInputPhoneNumberViewController.m in Sources */,
 				B2D484EB190A2141000D5E33 /* HXTWithholdingUseAgreementViewController.m in Sources */,
 				B2214E2918FE1FB800762AE9 /* CYMyPropertyTableViewCell.m in Sources */,
+				23BC739A190A040B0088BEC9 /* CoreModel.xcdatamodeld in Sources */,
 				B2214C6A18FE1F9000762AE9 /* HXTLoginViewController.m in Sources */,
 				B26FE5EB18FE51FC0093BC2F /* XPHTTPURLConnection.m in Sources */,
 				B26FE5E318FE51FC0093BC2F /* HXTCheckBox.m in Sources */,
@@ -1525,6 +1539,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		23BC7398190A040B0088BEC9 /* CoreModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				23BC7399190A040B0088BEC9 /* CoreModel.xcdatamodel */,
+			);
+			currentVersion = 23BC7399190A040B0088BEC9 /* CoreModel.xcdatamodel */;
+			path = CoreModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B2214C0018FE1E4000762AE9 /* Project object */;
 }

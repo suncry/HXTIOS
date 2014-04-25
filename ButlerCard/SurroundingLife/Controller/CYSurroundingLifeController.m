@@ -12,6 +12,7 @@
 #import "DJQRateView.h"
 #import "AFNetworking.h"
 #import "SVPullToRefresh.h"
+#import "Shop.h"
 
 @interface CYSurroundingLifeController ()
 
@@ -54,6 +55,10 @@
         [weakSelf insertRowAtBottom];
     }];
     
+    
+    //获取当前应用程序的委托（UIApplication sharedApplication为整个应用程序上下文）
+    self.myDelegate = (HXTAppDelegate *)[[UIApplication sharedApplication] delegate];
+
     
 }
 
@@ -256,6 +261,8 @@
          _searchDataArr = [responseObject valueForKey:@"results"];
          //         _searchDataArr = [[NSMutableArray alloc]initWithArray:_dataArr];
          [self.tableView reloadData];
+         //存入数据库
+//         [self saveData];
          //         NSLog(@"self.dataDic: %@", _dataArr);
          //停止刷新
          [self.tableView.pullToRefreshView stopAnimating];
@@ -294,5 +301,27 @@
          NSLog(@"Error: %@", error);
      }];
 }
+- (void)saveData
+{
+    //让CoreData在上下文中创建一个新对象(托管对象)
+    Shop *shop = (Shop *)[NSEntityDescription insertNewObjectForEntityForName:@"Student" inManagedObjectContext:self.myDelegate.managedObjectContext];
 
+    for (NSMutableDictionary *dic in _dataArr)
+    {
+        [shop setName:dic[@"name"]];
+
+    }
+    
+    NSError *error;
+    
+    //托管对象准备好后，调用托管对象上下文的save方法将数据写入数据库
+    BOOL isSaveSuccess = [self.myDelegate.managedObjectContext save:&error];
+    
+    if (!isSaveSuccess) {
+        NSLog(@"Error: %@,%@",error,[error userInfo]);
+    }else {
+        NSLog(@"Save successful!");
+    }
+
+}
 @end
