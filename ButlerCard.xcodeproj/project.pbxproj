@@ -197,6 +197,8 @@
 		B280044818FFE1B100E2DE0E /* HXTWithholdingUseAgreementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B280044618FFE1B000E2DE0E /* HXTWithholdingUseAgreementViewController.m */; };
 		B2D1FC86190256C500A7467D /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D1FC85190256C500A7467D /* HMSegmentedControl.m */; };
 		B2D1FC87190256C500A7467D /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D1FC85190256C500A7467D /* HMSegmentedControl.m */; };
+		B2D484DF1909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D484DE1909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.m */; };
+		B2D484E01909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D484DE1909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.m */; };
 		B2D4EFFE19035897007C6089 /* LTHMonthYearPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D4EFFD19035897007C6089 /* LTHMonthYearPickerView.m */; };
 		B2D4EFFF19035897007C6089 /* LTHMonthYearPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D4EFFD19035897007C6089 /* LTHMonthYearPickerView.m */; };
 		B2F8B6541900BB31000CAB54 /* HXTPropertyFeePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F8B6531900BB31000CAB54 /* HXTPropertyFeePayViewController.m */; };
@@ -406,6 +408,8 @@
 		B280044618FFE1B000E2DE0E /* HXTWithholdingUseAgreementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTWithholdingUseAgreementViewController.m; sourceTree = "<group>"; };
 		B2D1FC84190256C500A7467D /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
 		B2D1FC85190256C500A7467D /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
+		B2D484DD1909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTPropertyFeeInputMoneyTableViewController.h; sourceTree = "<group>"; };
+		B2D484DE1909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTPropertyFeeInputMoneyTableViewController.m; sourceTree = "<group>"; };
 		B2D4EFFC19035897007C6089 /* LTHMonthYearPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTHMonthYearPickerView.h; sourceTree = "<group>"; };
 		B2D4EFFD19035897007C6089 /* LTHMonthYearPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTHMonthYearPickerView.m; sourceTree = "<group>"; };
 		B2F8B6521900BB31000CAB54 /* HXTPropertyFeePayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTPropertyFeePayViewController.h; sourceTree = "<group>"; };
@@ -739,6 +743,8 @@
 				B2214DF318FE1FB800762AE9 /* HXTPropertyServiceViewController.m */,
 				238ECB511904BECA00721872 /* CYPropertieCardsController.h */,
 				238ECB521904BECA00721872 /* CYPropertieCardsController.m */,
+				B2D484DD1909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.h */,
+				B2D484DE1909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1150,6 +1156,7 @@
 				B2214E2F18FE1FB800762AE9 /* Example2PieView.m in Sources */,
 				B2214E4118FE1FB800762AE9 /* CYRentController.m in Sources */,
 				B2214E1518FE1FB800762AE9 /* CYActivityCell.m in Sources */,
+				B2D484DF1909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.m in Sources */,
 				B26FE5D518FE51FC0093BC2F /* NSStringAdditions.m in Sources */,
 				B2214E1F18FE1FB800762AE9 /* CYMsgTableViewController.m in Sources */,
 				23A8C6981908BC5300EF925C /* CYShopController.m in Sources */,
@@ -1174,6 +1181,7 @@
 				B26FE5D418FE51FC0093BC2F /* NSDictionaryAdditions.m in Sources */,
 				B26FE5DE18FE51FC0093BC2F /* SqliteStoreManager.m in Sources */,
 				B2D1FC87190256C500A7467D /* HMSegmentedControl.m in Sources */,
+				B2D484E01909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.m in Sources */,
 				B2214E1818FE1FB800762AE9 /* CYActivityViewController.m in Sources */,
 				B2F8B6551900BB31000CAB54 /* HXTPropertyFeePayViewController.m in Sources */,
 				B26FE5DC18FE51FC0093BC2F /* Reachability.m in Sources */,

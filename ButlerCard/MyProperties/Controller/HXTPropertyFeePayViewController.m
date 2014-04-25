@@ -8,6 +8,7 @@
 
 #import "HXTPropertyFeePayViewController.h"
 #import "HXTYearMonthIntervalPickerView.h"
+#import "HXTPropertyFeeInputMoneyTableViewController.h"
 
 @interface HXTPropertyFeePayViewController () <UITextFieldDelegate, HXTYearMonthIntervalPickerViewDelegate>
 
@@ -44,6 +45,11 @@
     
     _yearMonthIntervalPicker = [[[NSBundle mainBundle] loadNibNamed:@"HXTYearMonthIntervalPickerView" owner:self options:nil] lastObject];
     _yearMonthIntervalPicker.delegate = self;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(inputMoneyNotificationSelector:)
+                                                 name:kInputMoneyNotification
+                                               object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -52,12 +58,28 @@
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
         _segmentedControl.tintColor = [UIColor whiteColor];
     }
+    
+    if (_selectedButton) {
+        _selectedButton.selected = NO;
+    }
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - notification abserver
+
+- (void)inputMoneyNotificationSelector:(NSNotification *)notification {
+    if ([notification.name isEqualToString:kInputMoneyNotification]) {
+        NSLog(@"%@", notification.userInfo);
+        if (_selectedButton && _selectedButton.tag == 105) {
+            [_selectedButton setTitle:notification.userInfo[@"money"] forState:UIControlStateNormal];
+            _selectedButton.selected = NO;
+        }
+    }
 }
 
 #pragma mark - table view data source
@@ -200,6 +222,7 @@
 
 - (IBAction)inputMoneyButtonPressed:(UIButton *)sender {
     sender.selected = !sender.selected;
+    _selectedButton = sender;
     
     UIView *view = sender.superview;
     while (view && view.superview) {
