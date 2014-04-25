@@ -194,6 +194,9 @@
 		B26FE5EC18FE51FC0093BC2F /* XPHTTPURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE5A618FE51FC0093BC2F /* XPHTTPURLConnection.m */; };
 		B26FE64118FE55A90093BC2F /* NSString+Check.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE64018FE55A90093BC2F /* NSString+Check.m */; };
 		B26FE64218FE55A90093BC2F /* NSString+Check.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE64018FE55A90093BC2F /* NSString+Check.m */; };
+		B2B01F5D190A4EC9005A9483 /* HXTAreaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B01F5C190A4EC9005A9483 /* HXTAreaModel.m */; };
+		B2B01F5E190A4EC9005A9483 /* HXTAreaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B01F5C190A4EC9005A9483 /* HXTAreaModel.m */; };
+		B2B01F60190A4F2E005A9483 /* HXTAreaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B01F5F190A4F2E005A9483 /* HXTAreaTests.m */; };
 		B2D1FC86190256C500A7467D /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D1FC85190256C500A7467D /* HMSegmentedControl.m */; };
 		B2D1FC87190256C500A7467D /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D1FC85190256C500A7467D /* HMSegmentedControl.m */; };
 		B2D484DF1909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D484DE1909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.m */; };
@@ -409,6 +412,9 @@
 		B26FE5A618FE51FC0093BC2F /* XPHTTPURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPHTTPURLConnection.m; sourceTree = "<group>"; };
 		B26FE63F18FE55A90093BC2F /* NSString+Check.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Check.h"; sourceTree = "<group>"; };
 		B26FE64018FE55A90093BC2F /* NSString+Check.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Check.m"; sourceTree = "<group>"; };
+		B2B01F5B190A4EC9005A9483 /* HXTAreaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTAreaModel.h; sourceTree = "<group>"; };
+		B2B01F5C190A4EC9005A9483 /* HXTAreaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTAreaModel.m; sourceTree = "<group>"; };
+		B2B01F5F190A4F2E005A9483 /* HXTAreaTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTAreaTests.m; sourceTree = "<group>"; };
 		B2D1FC84190256C500A7467D /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
 		B2D1FC85190256C500A7467D /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
 		B2D484DD1909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTPropertyFeeInputMoneyTableViewController.h; sourceTree = "<group>"; };
@@ -549,8 +555,9 @@
 		B2214C3318FE1E4000762AE9 /* ButlerCardTests */ = {
 			isa = PBXGroup;
 			children = (
-				B2214C3918FE1E4000762AE9 /* ButlerCardTests.m */,
 				B2214C3418FE1E4000762AE9 /* Supporting Files */,
+				B2214C3918FE1E4000762AE9 /* ButlerCardTests.m */,
+				B2B01F5F190A4F2E005A9483 /* HXTAreaTests.m */,
 			);
 			path = ButlerCardTests;
 			sourceTree = "<group>";
@@ -637,6 +644,8 @@
 			isa = PBXGroup;
 			children = (
 				B2214C6518FE1F9000762AE9 /* Data */,
+				B2B01F5B190A4EC9005A9483 /* HXTAreaModel.h */,
+				B2B01F5C190A4EC9005A9483 /* HXTAreaModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1161,6 +1170,7 @@
 				B2214E2718FE1FB800762AE9 /* CYMyOrderViewController.m in Sources */,
 				B26FE64118FE55A90093BC2F /* NSString+Check.m in Sources */,
 				B2214E5318FE1FB800762AE9 /* HXTPropertyCell.m in Sources */,
+				B2B01F5D190A4EC9005A9483 /* HXTAreaModel.m in Sources */,
 				2392C7C218FE7157007EDB5A /* CYRepairController.m in Sources */,
 				B26FE5D318FE51FC0093BC2F /* NSDictionaryAdditions.m in Sources */,
 				B2214E2518FE1FB800762AE9 /* CYMyBillTableViewController.m in Sources */,
@@ -1202,6 +1212,7 @@
 				B2214E1C18FE1FB800762AE9 /* CYFeedBackViewController.m in Sources */,
 				B26FE5E018FE51FC0093BC2F /* StoreBaseItem.m in Sources */,
 				B2214E5618FE1FB800762AE9 /* HXTPropertyFeeCell.m in Sources */,
+				B2B01F60190A4F2E005A9483 /* HXTAreaTests.m in Sources */,
 				B2214DB018FE1FA200762AE9 /* HXTHomeChooseHouseEstateTableViewController.m in Sources */,
 				B2214E3E18FE1FB800762AE9 /* CYHouseChoiceController.m in Sources */,
 				B2214E2A18FE1FB800762AE9 /* CYMyPropertyTableViewCell.m in Sources */,
@@ -1248,6 +1259,7 @@
 				B240382D1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.m in Sources */,
 				B2214C7318FE1F9000762AE9 /* HXTRegisterInputValidCodeViewController.m in Sources */,
 				B2214E4818FE1FB800762AE9 /* HXTPropertyFeeDetailTableViewController.m in Sources */,
+				B2B01F5E190A4EC9005A9483 /* HXTAreaModel.m in Sources */,
 				B2D4EFFF19035897007C6089 /* LTHMonthYearPickerView.m in Sources */,
 				B2214E2C18FE1FB800762AE9 /* CYMyPropertyTableViewController.m in Sources */,
 				B2214E1E18FE1FB800762AE9 /* CYMsgCell.m in Sources */,
