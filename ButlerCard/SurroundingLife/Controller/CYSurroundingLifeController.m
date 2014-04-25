@@ -258,12 +258,15 @@
           success:^(AFHTTPRequestOperation *operation, id responseObject)
      {
          _dataArr = [responseObject valueForKey:@"results"];
+//         NSMutableDictionary *dic = _dataArr[0];
+         NSLog(@"self.dataDic: %@", _dataArr);
+
          _searchDataArr = [responseObject valueForKey:@"results"];
          //         _searchDataArr = [[NSMutableArray alloc]initWithArray:_dataArr];
          [self.tableView reloadData];
          //存入数据库
-//         [self saveData];
-         //         NSLog(@"self.dataDic: %@", _dataArr);
+         [self saveData];
+         [self queryFromDB];
          //停止刷新
          [self.tableView.pullToRefreshView stopAnimating];
 
@@ -291,7 +294,7 @@
          _searchDataArr = [responseObject valueForKey:@"results"];
          //         _searchDataArr = [[NSMutableArray alloc]initWithArray:_dataArr];
          [self.tableView reloadData];
-         //         NSLog(@"self.dataDic: %@", _dataArr);
+//         NSLog(@"self.dataDic: %@", _dataArr);
          //停止刷新
          [self.tableView.infiniteScrollingView stopAnimating];
          
@@ -303,24 +306,74 @@
 }
 - (void)saveData
 {
-    //让CoreData在上下文中创建一个新对象(托管对象)
-    Shop *shop = (Shop *)[NSEntityDescription insertNewObjectForEntityForName:@"Student" inManagedObjectContext:self.myDelegate.managedObjectContext];
-
     for (NSMutableDictionary *dic in _dataArr)
     {
+        //让CoreData在上下文中创建一个新对象(托管对象)
+        Shop *shop = (Shop *)[NSEntityDescription insertNewObjectForEntityForName:@"Shop" inManagedObjectContext:self.myDelegate.managedObjectContext];
+        
+        [shop setShopID:[NSString stringWithFormat:@"%@",dic[@"id"]]];
+
+        NSLog(@"save -----> %@",dic[@"name"]);
         [shop setName:dic[@"name"]];
+        
+        [shop setAddress:dic[@"address"]];
+        //自定义了一个图片地址
+        [shop setIconPath:@"http://imgt1.bdstatic.com/it/u=2952884929,346785930&fm=21&gp=0.jpg"];
+        [shop setType:[NSString stringWithFormat:@"%@",dic[@"type"]]];
+        [shop setCansend:dic[@"canSend"]];
+        [shop setCanpayoff:dic[@"canPayoff"]];
+        [shop setCantuan:dic[@"canTuan"]];
+        [shop setPositionX:dic[@"positionX"]];
+        [shop setPositionY:dic[@"positionY"]];
+        [shop setGrade:dic[@"grade"]];
+        [shop setTel:dic[@"tel"]];
+        [shop setDistance:[NSString stringWithFormat:@"%@",dic[@"distance"]]];
+        
+        NSError *error;
+        
+        //托管对象准备好后，调用托管对象上下文的save方法将数据写入数据库
+        BOOL isSaveSuccess = [self.myDelegate.managedObjectContext save:&error];
+        
+        if (!isSaveSuccess) {
+            NSLog(@"Error: %@,%@",error,[error userInfo]);
+        }else {
+//            NSLog(@"Save successful!");
+        }
 
     }
     
-    NSError *error;
+
+}
+- (void)queryFromDB
+{
+    //创建取回数据请求
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    //设置要检索哪种类型的实体对象
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Shop"inManagedObjectContext:self.myDelegate.managedObjectContext];
+    //设置请求实体
+    [request setEntity:entity];
     
-    //托管对象准备好后，调用托管对象上下文的save方法将数据写入数据库
-    BOOL isSaveSuccess = [self.myDelegate.managedObjectContext save:&error];
+//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(title = %@)",@"123"];
+//    [request setPredicate:predicate];
     
-    if (!isSaveSuccess) {
+    //指定对结果的排序方式
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name"ascending:YES];
+    //排序条件 数组，可以多个条件排序
+    NSArray *sortDescriptions = [[NSArray alloc]initWithObjects:sortDescriptor, nil];
+    [request setSortDescriptors:sortDescriptions];
+    
+    NSError *error = nil;
+    //执行获取数据请求，返回数组
+    NSMutableArray *mutableFetchResult = [[self.myDelegate.managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
+    if (mutableFetchResult == nil)
+    {
         NSLog(@"Error: %@,%@",error,[error userInfo]);
-    }else {
-        NSLog(@"Save successful!");
+    }
+    self.entries = mutableFetchResult;
+    NSLog(@"The count of entry:%i",[self.entries count]);
+    for(Shop *entry in self.entries)
+    {
+        NSLog(@"Shop ------>  name:%@",entry.name);
     }
 
 }

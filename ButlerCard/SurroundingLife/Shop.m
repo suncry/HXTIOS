@@ -11,17 +11,18 @@
 
 @implementation Shop
 
-@dynamic shopID;
-@dynamic name;
 @dynamic address;
-@dynamic iconPath;
-@dynamic type;
-@dynamic cansend;
 @dynamic canpayoff;
+@dynamic cansend;
+@dynamic distance;
+@dynamic grade;
+@dynamic iconPath;
+@dynamic name;
 @dynamic positionX;
 @dynamic positionY;
-@dynamic grade;
+@dynamic shopID;
 @dynamic tel;
-@dynamic distance;
+@dynamic type;
+@dynamic cantuan;
 
 @end
