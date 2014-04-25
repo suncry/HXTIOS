@@ -4,6 +4,7 @@
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="canpayoff" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="cansend" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="cantuan" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="distance" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="grade" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="iconPath" optional="YES" attributeType="String" syncable="YES"/>
@@ -15,6 +16,6 @@
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Shop" positionX="-63" positionY="-18" width="128" height="225"/>
+        <element name="Shop" positionX="-63" positionY="-18" width="128" height="240"/>
     </elements>
 </model>
