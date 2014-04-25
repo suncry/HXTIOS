@@ -10,4 +10,10 @@
 
 @interface HXTAreaModel : NSObject
 
+@property (strong, nonatomic) NSMutableArray *areas;
+@property (strong, nonatomic) NSMutableArray *towns;
+
++ (instancetype)sharedInstance;
+
+- (void)show;
 @end

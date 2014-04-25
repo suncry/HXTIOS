@@ -9,6 +9,7 @@
 #import "HXTAddHouseEstateViewController.h"
 #import "HXTAccountManager.h"
 #import "HXTMyProperties.h"
+#import "HXTAreaModel.h"
 
 @interface HXTAddHouseEstateViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *chooseAreaBarButtonItem;
@@ -42,6 +43,9 @@
     _addedHouse = [[HXTHouse alloc] init];
     
     _chooseAreaBarButtonItem.title = [[HXTAccountManager sharedInstance].currentCity stringByAppendingString:@" ▾"];
+    
+    NSLog(@"JOHNNY#####");
+    [[HXTAreaModel sharedInstance] show];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

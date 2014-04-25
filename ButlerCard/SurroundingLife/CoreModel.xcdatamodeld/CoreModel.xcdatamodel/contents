@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5063" systemVersion="12F37" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13C1021" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="HXTAreaFirstModel" representedClassName="HXTAreaFirstModel" syncable="YES">
+        <attribute name="area" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="areaSecModel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HXTAreaSecModel" inverseName="areaFirstModel" inverseEntity="HXTAreaSecModel" syncable="YES"/>
+    </entity>
+    <entity name="HXTAreaSecModel" representedClassName="HXTAreaSecModel" syncable="YES">
+        <attribute name="area" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="index" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="areaFirstModel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HXTAreaFirstModel" inverseName="areaSecModel" inverseEntity="HXTAreaFirstModel" syncable="YES"/>
+    </entity>
     <entity name="Shop" representedClassName="Shop" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="canpayoff" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -16,6 +25,8 @@
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
+        <element name="HXTAreaFirstModel" positionX="-135" positionY="-388" width="128" height="73"/>
         <element name="Shop" positionX="-63" positionY="-18" width="128" height="240"/>
+        <element name="HXTAreaSecModel" positionX="97" positionY="-324" width="128" height="88"/>
     </elements>
 </model>

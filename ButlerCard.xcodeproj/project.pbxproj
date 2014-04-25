@@ -175,7 +175,7 @@
 		B26FE5D318FE51FC0093BC2F /* NSDictionaryAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE58918FE51FC0093BC2F /* NSDictionaryAdditions.m */; };
 		B26FE5D418FE51FC0093BC2F /* NSDictionaryAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE58918FE51FC0093BC2F /* NSDictionaryAdditions.m */; };
 		B26FE5D518FE51FC0093BC2F /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE58B18FE51FC0093BC2F /* NSStringAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B26FE5D618FE51FC0093BC2F /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE58B18FE51FC0093BC2F /* NSStringAdditions.m */; };
+		B26FE5D618FE51FC0093BC2F /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE58B18FE51FC0093BC2F /* NSStringAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B26FE5D718FE51FC0093BC2F /* HXTLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE58E18FE51FC0093BC2F /* HXTLocationManager.m */; };
 		B26FE5D818FE51FC0093BC2F /* HXTLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE58E18FE51FC0093BC2F /* HXTLocationManager.m */; };
 		B26FE5DB18FE51FC0093BC2F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE59318FE51FC0093BC2F /* Reachability.m */; };
@@ -197,6 +197,10 @@
 		B2B01F5D190A4EC9005A9483 /* HXTAreaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B01F5C190A4EC9005A9483 /* HXTAreaModel.m */; };
 		B2B01F5E190A4EC9005A9483 /* HXTAreaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B01F5C190A4EC9005A9483 /* HXTAreaModel.m */; };
 		B2B01F60190A4F2E005A9483 /* HXTAreaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B01F5F190A4F2E005A9483 /* HXTAreaTests.m */; };
+		B2B01F8C190A677D005A9483 /* HXTAreaFirstModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B01F8B190A677D005A9483 /* HXTAreaFirstModel.m */; };
+		B2B01F8D190A677D005A9483 /* HXTAreaFirstModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B01F8B190A677D005A9483 /* HXTAreaFirstModel.m */; };
+		B2B01F90190A677E005A9483 /* HXTAreaSecModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B01F8F190A677E005A9483 /* HXTAreaSecModel.m */; };
+		B2B01F91190A677E005A9483 /* HXTAreaSecModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B01F8F190A677E005A9483 /* HXTAreaSecModel.m */; };
 		B2D1FC86190256C500A7467D /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D1FC85190256C500A7467D /* HMSegmentedControl.m */; };
 		B2D1FC87190256C500A7467D /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D1FC85190256C500A7467D /* HMSegmentedControl.m */; };
 		B2D484DF1909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D484DE1909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.m */; };
@@ -415,6 +419,10 @@
 		B2B01F5B190A4EC9005A9483 /* HXTAreaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTAreaModel.h; sourceTree = "<group>"; };
 		B2B01F5C190A4EC9005A9483 /* HXTAreaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTAreaModel.m; sourceTree = "<group>"; };
 		B2B01F5F190A4F2E005A9483 /* HXTAreaTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTAreaTests.m; sourceTree = "<group>"; };
+		B2B01F8A190A677D005A9483 /* HXTAreaFirstModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HXTAreaFirstModel.h; path = ../../Global/HXTAreaFirstModel.h; sourceTree = "<group>"; };
+		B2B01F8B190A677D005A9483 /* HXTAreaFirstModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HXTAreaFirstModel.m; path = ../../Global/HXTAreaFirstModel.m; sourceTree = "<group>"; };
+		B2B01F8E190A677E005A9483 /* HXTAreaSecModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HXTAreaSecModel.h; path = ../../Global/HXTAreaSecModel.h; sourceTree = "<group>"; };
+		B2B01F8F190A677E005A9483 /* HXTAreaSecModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HXTAreaSecModel.m; path = ../../Global/HXTAreaSecModel.m; sourceTree = "<group>"; };
 		B2D1FC84190256C500A7467D /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
 		B2D1FC85190256C500A7467D /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
 		B2D484DD1909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTPropertyFeeInputMoneyTableViewController.h; sourceTree = "<group>"; };
@@ -463,7 +471,6 @@
 				23A8C4821907A04A00557F5A /* searchCell.h */,
 				23A8C4831907A04A00557F5A /* searchCell.m */,
 				23CA860819065B660067D0D4 /* PCStackMenu */,
-				23BC7398190A040B0088BEC9 /* CoreModel.xcdatamodeld */,
 				23FDF0B0190A4A4A0063421D /* Shop.h */,
 				23FDF0B1190A4A4A0063421D /* Shop.m */,
 			);
@@ -646,6 +653,10 @@
 				B2214C6518FE1F9000762AE9 /* Data */,
 				B2B01F5B190A4EC9005A9483 /* HXTAreaModel.h */,
 				B2B01F5C190A4EC9005A9483 /* HXTAreaModel.m */,
+				B2B01F8E190A677E005A9483 /* HXTAreaSecModel.h */,
+				B2B01F8F190A677E005A9483 /* HXTAreaSecModel.m */,
+				B2B01F8A190A677D005A9483 /* HXTAreaFirstModel.h */,
+				B2B01F8B190A677D005A9483 /* HXTAreaFirstModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -832,6 +843,8 @@
 		B26FE55718FE51FC0093BC2F /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				23BC7398190A040B0088BEC9 /* CoreModel.xcdatamodeld */,
+				B2B01F61190A570B005A9483 /* Model */,
 				B26FE63E18FE55A90093BC2F /* NSString+Check */,
 				B26FE58118FE51FC0093BC2F /* Extra */,
 				B26FE58C18FE51FC0093BC2F /* LocationManager */,
@@ -918,6 +931,13 @@
 				B26FE64018FE55A90093BC2F /* NSString+Check.m */,
 			);
 			path = "NSString+Check";
+			sourceTree = "<group>";
+		};
+		B2B01F61190A570B005A9483 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		B2D1FC83190256C500A7467D /* HMSegmentedControl */ = {
@@ -1137,6 +1157,7 @@
 				232EBDD9190914BC00381960 /* CYMyCommentController.m in Sources */,
 				23CA860E19065B7A0067D0D4 /* PCStackMenuItem.m in Sources */,
 				B26FE5E918FE51FC0093BC2F /* HXTViewWithArrow.m in Sources */,
+				B2B01F8C190A677D005A9483 /* HXTAreaFirstModel.m in Sources */,
 				B2214C7418FE1F9000762AE9 /* HXTRetrievePasswordViewController.m in Sources */,
 				B2214C1C18FE1E4000762AE9 /* HXTAppDelegate.m in Sources */,
 				B2214C7018FE1F9000762AE9 /* HXTRegisterInputPhoneNumberViewController.m in Sources */,
@@ -1178,6 +1199,7 @@
 				238ECB531904BECA00721872 /* CYPropertieCardsController.m in Sources */,
 				B2214E3518FE1FB800762AE9 /* PieElement.m in Sources */,
 				B2214E2F18FE1FB800762AE9 /* Example2PieView.m in Sources */,
+				B2B01F90190A677E005A9483 /* HXTAreaSecModel.m in Sources */,
 				B2214E4118FE1FB800762AE9 /* CYRentController.m in Sources */,
 				B2214E1518FE1FB800762AE9 /* CYActivityCell.m in Sources */,
 				B2D484DF1909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.m in Sources */,
@@ -1220,6 +1242,7 @@
 				B26FE5D218FE51FC0093BC2F /* NSDataAdditions.m in Sources */,
 				B2214C8518FE1F9000762AE9 /* HXTSelectCityViewController.m in Sources */,
 				B2214E3018FE1FB800762AE9 /* Example2PieView.m in Sources */,
+				B2B01F8D190A677D005A9483 /* HXTAreaFirstModel.m in Sources */,
 				B2214E3A18FE1FB800762AE9 /* CYActiveController.m in Sources */,
 				B2D484E8190A1B5E000D5E33 /* HXTOpenAutomaticBillPayViewController.m in Sources */,
 				B2214E3C18FE1FB800762AE9 /* CYDiscussController.m in Sources */,
@@ -1251,6 +1274,7 @@
 				B2214C7F18FE1F9000762AE9 /* HXTBrowseHouseEstateViewController.m in Sources */,
 				B2214C7518FE1F9000762AE9 /* HXTRetrievePasswordViewController.m in Sources */,
 				B26FE5D818FE51FC0093BC2F /* HXTLocationManager.m in Sources */,
+				B2B01F91190A677E005A9483 /* HXTAreaSecModel.m in Sources */,
 				B2214C7B18FE1F9000762AE9 /* HXTAddHouseViewController.m in Sources */,
 				B2214E4018FE1FB800762AE9 /* CYNoticeBoardController.m in Sources */,
 				B2214E3218FE1FB800762AE9 /* MyPieElement.m in Sources */,
@@ -1559,7 +1583,8 @@
 				23BC7399190A040B0088BEC9 /* CoreModel.xcdatamodel */,
 			);
 			currentVersion = 23BC7399190A040B0088BEC9 /* CoreModel.xcdatamodel */;
-			path = CoreModel.xcdatamodeld;
+			name = CoreModel.xcdatamodeld;
+			path = ../SurroundingLife/CoreModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -27,9 +27,10 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testShow
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    [[HXTAreaModel sharedInstance] show];
+//    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
 }
 
 @end

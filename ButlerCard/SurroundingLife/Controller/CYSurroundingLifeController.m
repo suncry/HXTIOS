@@ -339,10 +339,7 @@
         }else {
 //            NSLog(@"Save successful!");
         }
-
     }
-    
-
 }
 - (void)queryFromDB
 {
@@ -370,7 +367,7 @@
         NSLog(@"Error: %@,%@",error,[error userInfo]);
     }
     self.entries = mutableFetchResult;
-    NSLog(@"The count of entry:%i",[self.entries count]);
+    NSLog(@"The count of entry:%lu",(unsigned long)[self.entries count]);
     for(Shop *entry in self.entries)
     {
         NSLog(@"Shop ------>  name:%@",entry.name);
