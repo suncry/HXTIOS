@@ -63,15 +63,22 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 12;
+    return _dataArr.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"commentCell" forIndexPath:indexPath];
+    //名字
+    [(UILabel *)[cell viewWithTag:100] setText:(_dataArr[indexPath.row])[@"nickname"]];
     //评分
-    
-    [(DJQRateView *)[cell viewWithTag:101] setRate:rand()%5];
+    [(DJQRateView *)[cell viewWithTag:101] setRate:[(_dataArr[indexPath.row])[@"grade"]floatValue]];
+    //评论
+    [(UILabel *)[cell viewWithTag:102] setText:(_dataArr[indexPath.row])[@"comment"]];
+    //时间
+    [(UILabel *)[cell viewWithTag:103] setText:(_dataArr[indexPath.row])[@"time"]];
+    //商家回复
+    [(UILabel *)[cell viewWithTag:104] setText:(_dataArr[indexPath.row])[@"replyMessage"]];
 
     return cell;
 }
@@ -133,11 +140,9 @@
     [manager POST:@"http://bbs.enveesoft.com:1602/htx/hexinpassserver/appserver/public/store/info" parameters:parameters
           success:^(AFHTTPRequestOperation *operation, id responseObject)
      {
-//         _dataArr = [responseObject valueForKey:@"results"];
-//         _searchDataArr = [responseObject valueForKey:@"results"];
-         //         _searchDataArr = [[NSMutableArray alloc]initWithArray:_dataArr];
+         _dataArr = (responseObject[@"results"])[@"comments"];
          [self.tableView reloadData];
-         //         NSLog(@"self.dataDic: %@", _dataArr);
+         NSLog(@"self.dataDic: %@", _dataArr);
          //停止刷新
          [self.tableView.pullToRefreshView stopAnimating];
          
@@ -155,9 +160,9 @@
     [manager POST:@"http://bbs.enveesoft.com:1602/htx/hexinpassserver/appserver/public/store/info" parameters:parameters
           success:^(AFHTTPRequestOperation *operation, id responseObject)
      {
-         _dataArr = [responseObject valueForKey:@"results"];
+         _dataArr = (responseObject[@"results"])[@"comments"];
          [self.tableView reloadData];
-         //         NSLog(@"self.dataDic: %@", _dataArr);
+//         NSLog(@"self.dataDic: %@", _dataArr);
          //停止刷新
          [self.tableView.infiniteScrollingView stopAnimating];
      }
