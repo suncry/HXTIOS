@@ -142,7 +142,7 @@
      {
          _dataArr = (responseObject[@"results"])[@"comments"];
          [self.tableView reloadData];
-         NSLog(@"self.dataDic: %@", _dataArr);
+//         NSLog(@"self.dataDic: %@", _dataArr);
          //停止刷新
          [self.tableView.pullToRefreshView stopAnimating];
          
