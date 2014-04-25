@@ -37,6 +37,7 @@
     // Do any additional setup after loading the view.
     
     self.view.backgroundColor = [UIColor whiteColor];
+    [self setExtraCellLineHidden:_tableView];
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
         _segmentedControl.tintColor = [UIColor whiteColor];
     }
@@ -240,6 +241,15 @@
     NSLog(@"sender.selectedSegmentIndex = %lu title = %@", (long)sender.selectedSegmentIndex, [sender titleForSegmentAtIndex:sender.selectedSegmentIndex]);
     
     [self.tableView reloadData];
+}
+
+#pragma mark - local functions
+
+- (void)setExtraCellLineHidden: (UITableView *)tableView{
+    UIView *view =[ [UIView alloc]init];
+    view.backgroundColor = [UIColor clearColor];
+    [tableView setTableFooterView:view];
+    [tableView setTableHeaderView:view];
 }
 
 /*

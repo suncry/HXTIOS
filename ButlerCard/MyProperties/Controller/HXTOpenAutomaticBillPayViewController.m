@@ -31,6 +31,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self setExtraCellLineHidden:_tableView];
     _feeItemsArray = @[@"物管费", @"停车费", @"水费", @"电费", @"气费", @"水费(爸妈家)", @"电费(爸妈家)", @"气费(爸妈家)"];
 }
 
@@ -45,9 +46,6 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _feeItemsArray.count + 1;
 }
-
-// Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
-// Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -82,6 +80,15 @@
 
 - (IBAction)checkBoxButtonPressed:(UIButton *)sender {
     sender.selected = !sender.selected;
+}
+
+#pragma mark - local functions
+
+- (void)setExtraCellLineHidden: (UITableView *)tableView{
+    UIView *view =[ [UIView alloc]init];
+    view.backgroundColor = [UIColor clearColor];
+    [tableView setTableFooterView:view];
+    [tableView setTableHeaderView:view];
 }
 
 /*
