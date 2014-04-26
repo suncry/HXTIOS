@@ -66,8 +66,8 @@
                                                         source:self
                                                    destination:[[UIStoryboard storyboardWithName:@"PropertyService" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"PropertyServiceStoryboardID"]
                                                 performHandler:^{
+                                                    ((UIViewController *)(_propertyServiceSegue.destinationViewController)).hidesBottomBarWhenPushed = YES;
                                                     [((UIViewController *)(_propertyServiceSegue.sourceViewController)).navigationController pushViewController:_propertyServiceSegue.destinationViewController animated:YES];
-                                                    ((UIViewController *)(_propertyServiceSegue.sourceViewController)).hidesBottomBarWhenPushed = YES;
                                                 }];
     
     
@@ -76,8 +76,8 @@
                                                         source:self
                                                    destination:[[UIStoryboard storyboardWithName:@"PropertyFee" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"PropertyFeeStoryboardID"]
                                                 performHandler:^{
+                                                    ((UIViewController *)(_propertyFeeSegue.destinationViewController)).hidesBottomBarWhenPushed = YES;
                                                     [((UIViewController *)(_propertyFeeSegue.sourceViewController)).navigationController pushViewController:_propertyFeeSegue.destinationViewController animated:YES];
-                                                    ((UIViewController *)(_propertyFeeSegue.sourceViewController)).hidesBottomBarWhenPushed = YES;
                                                 }];
     
     //浏览小区Segue定义
@@ -93,8 +93,8 @@
                                                         source:self
                                                    destination:[[UIStoryboard storyboardWithName:@"SurroundingLife" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SurroundingLifeStoryboardID"]
                                                 performHandler:^{
+                                                    ((UIViewController *)(_surroundingLifeSegue.destinationViewController)).hidesBottomBarWhenPushed = YES;
                                                     [((UIViewController *)(_surroundingLifeSegue.sourceViewController)).navigationController pushViewController:_surroundingLifeSegue.destinationViewController animated:YES];
-                                                    ((UIViewController *)(_surroundingLifeSegue.sourceViewController)).hidesBottomBarWhenPushed = YES;
                                                 }];
     
     
@@ -227,7 +227,6 @@
     [self.navigationController pushViewController:ecologicalDistributionViewcontroller animated:YES];
     sender.selected = NO;
 }
-
 
 
 @end

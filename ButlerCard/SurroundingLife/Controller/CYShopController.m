@@ -133,7 +133,7 @@
     {
         NSLog(@"Error: %@,%@",error,[error userInfo]);
     }
-    NSLog(@"The count of FetchResult:%i",[mutableFetchResult count]);
+    NSLog(@"The count of FetchResult:%lu",(unsigned long)[mutableFetchResult count]);
     for(Shop *entry in mutableFetchResult)
     {
 //        NSLog(@"Shop ------>  grade:%@",entry.grade);
