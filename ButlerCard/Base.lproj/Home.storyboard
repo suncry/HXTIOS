@@ -456,8 +456,8 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="选择小区" id="Sdz-AB-bko">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="SSC-6f-X8a">
-                            <color key="tintColor" red="0.15686274510000001" green="0.68627450980000004" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="SSC-6f-X8a">
+                            <color key="tintColor" red="0.94901960780000005" green="0.43529411759999997" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="backButtonPressed:" destination="0Ke-7N-58u" id="0PW-us-Tqb"/>
                             </connections>

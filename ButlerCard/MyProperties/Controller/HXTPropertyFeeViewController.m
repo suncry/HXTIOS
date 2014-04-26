@@ -37,6 +37,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor colorWithRed:239.0f / 255 green:239.0f / 255 blue:244.0f / 255 alpha:1];
     [self.tableView registerNib:[UINib nibWithNibName:@"MyPropertyTableViewHeaderFooterView" bundle:[NSBundle mainBundle]]forHeaderFooterViewReuseIdentifier:kHeaderFooterViewReuseIdentifier];
     
     _expandedIndexSet = [NSMutableIndexSet indexSetWithIndex:0];
@@ -47,6 +48,14 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    
+//    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+//        self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+//        self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:242.0f / 255 green:111.0f / 255 blue:14.0f / 255 alpha:1];
+//        self.navigationController.navigationBar.translucent = YES;
+//        self.navigationController.navigationBar.titleTextAttributes = @{};
+//    }
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
         self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:242.0f / 255 green:111.0f / 255 blue:14.f / 255 alpha:1.0f];
@@ -159,7 +168,7 @@
     } else if (indexPath.row == property.fees.count) {      //绑定单元
         return 44;
     } else if (indexPath.row == property.fees.count + 1) {  //付费单元
-        return 120;
+        return 108;
     }else {
         return 0;
     }
@@ -244,6 +253,12 @@
     
     if ([segue.identifier isEqualToString:@"payStoryboardSegue"]) { //去缴费
         _backBarButtonItem.title = @"返回";
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+            self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+            self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:242.0f / 255 green:111.0f / 255 blue:14.0f / 255 alpha:1];
+            self.navigationController.navigationBar.translucent = YES;
+            self.navigationController.navigationBar.titleTextAttributes = @{};
+        }
     } else {
         _backBarButtonItem.title = @"物业缴费";
     }

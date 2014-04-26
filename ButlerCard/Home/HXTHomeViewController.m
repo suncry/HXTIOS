@@ -54,6 +54,7 @@
                                          forKeyPath:@"defaultHouseingEstate"
                                             options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld
                                             context:NULL];
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -147,6 +148,7 @@
         UITableViewController *propertyFeeViewController = [[UIStoryboard storyboardWithName:@"PropertyFee" bundle:nil] instantiateViewControllerWithIdentifier:@"PropertyFeeStoryboardID"];
         propertyFeeViewController.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:propertyFeeViewController animated:YES];
+        
         sender.selected = NO;
     } else {
         UIViewController *browseHouseEstateNavViewController = [[UIStoryboard storyboardWithName:@"BrowseHouseEstate" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"BrowseHouseEstateNavStoryboardID"];
