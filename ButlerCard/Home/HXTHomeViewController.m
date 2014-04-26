@@ -10,6 +10,12 @@
 #import "UIDevice+Resolutions.h"
 #import "HXTAccountManager.h"
 
+#define kLoginSegue             @"loginSegue"
+#define kPropertyServiceSegue   @"propertyServiceSegue"
+#define kPropertyFeeSegue       @"propertyFeeSegue"
+#define kBrowseHouseEstateSegue @"browseHouseEstateSegue"
+#define kSurroundingLifeSegue   @"surroundingLifeSegue"
+
 @interface HXTHomeViewController ()
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *chooseHouseEstateBarButtonItem;
@@ -19,6 +25,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *houseEstateInteractionButton;
 @property (weak, nonatomic) IBOutlet UIButton *sellerButton;
 @property (weak, nonatomic) IBOutlet UITableView *messageTableView;
+
+@property (strong, nonatomic) UIStoryboardSegue *loginSegue;
+@property (strong, nonatomic) UIStoryboardSegue *propertyServiceSegue;
+@property (strong, nonatomic) UIStoryboardSegue *propertyFeeSegue;
+@property (strong, nonatomic) UIStoryboardSegue *browseHouseEstateSegue;
+@property (strong, nonatomic) UIStoryboardSegue *surroundingLifeSegue;
 
 @property (strong, nonatomic) UIViewController *nextStepViewController;
 
@@ -40,6 +52,52 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 //    [_chooseHouseEstateBarButtonItem setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], UITextAttributeFont: [UIFont fontAwesomeFontOfSize:18.0f]} forState:UIControlStateNormal];
+    
+    //登录Segue定义
+    _loginSegue = [UIStoryboardSegue segueWithIdentifier:kLoginSegue
+                                                            source:self
+                                                       destination:[[UIStoryboard storyboardWithName:@"AccountManager" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"AccountManagerNavStoryboardID"]
+                                                    performHandler:^{
+                                                        [_loginSegue.sourceViewController presentViewController:_loginSegue.destinationViewController animated:YES completion:^{}];
+                                                    }];
+    
+    //物业服务Segue定义
+    _propertyServiceSegue = [UIStoryboardSegue segueWithIdentifier:kPropertyServiceSegue
+                                                        source:self
+                                                   destination:[[UIStoryboard storyboardWithName:@"PropertyService" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"PropertyServiceStoryboardID"]
+                                                performHandler:^{
+                                                    [((UIViewController *)(_propertyServiceSegue.sourceViewController)).navigationController pushViewController:_propertyServiceSegue.destinationViewController animated:YES];
+                                                    ((UIViewController *)(_propertyServiceSegue.sourceViewController)).hidesBottomBarWhenPushed = YES;
+                                                }];
+    
+    
+    //物业缴费Segue定义
+    _propertyFeeSegue = [UIStoryboardSegue segueWithIdentifier:kPropertyFeeSegue
+                                                        source:self
+                                                   destination:[[UIStoryboard storyboardWithName:@"PropertyFee" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"PropertyFeeStoryboardID"]
+                                                performHandler:^{
+                                                    [((UIViewController *)(_propertyFeeSegue.sourceViewController)).navigationController pushViewController:_propertyFeeSegue.destinationViewController animated:YES];
+                                                    ((UIViewController *)(_propertyFeeSegue.sourceViewController)).hidesBottomBarWhenPushed = YES;
+                                                }];
+    
+    //浏览小区Segue定义
+    _browseHouseEstateSegue = [UIStoryboardSegue segueWithIdentifier:kBrowseHouseEstateSegue
+                                                        source:self
+                                                   destination:[[UIStoryboard storyboardWithName:@"BrowseHouseEstate" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"BrowseHouseEstateNavStoryboardID"]
+                                                performHandler:^{
+                                                    [_browseHouseEstateSegue.sourceViewController presentViewController:_browseHouseEstateSegue.destinationViewController animated:YES completion:^{}];
+                                                }];
+    
+    //周边生活Segue定义
+    _surroundingLifeSegue = [UIStoryboardSegue segueWithIdentifier:kSurroundingLifeSegue
+                                                        source:self
+                                                   destination:[[UIStoryboard storyboardWithName:@"SurroundingLife" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SurroundingLifeStoryboardID"]
+                                                performHandler:^{
+                                                    [((UIViewController *)(_surroundingLifeSegue.sourceViewController)).navigationController pushViewController:_surroundingLifeSegue.destinationViewController animated:YES];
+                                                    ((UIViewController *)(_surroundingLifeSegue.sourceViewController)).hidesBottomBarWhenPushed = YES;
+                                                }];
+    
+    
     if ([HXTAccountManager sharedInstance].defaultHouseingEstate) {
         _chooseHouseEstateBarButtonItem.title = [[HXTAccountManager sharedInstance].defaultHouseingEstate stringByAppendingString:@" ▾"];
     } else {
@@ -67,13 +125,9 @@
     
     //从登录界面返回后进入物业服务页面
     if (_propertyServiceButton.selected && [HXTAccountManager sharedInstance].logged) {
-        UIViewController *propertyServiceViewController = [[UIStoryboard storyboardWithName:@"PropertyService" bundle:nil] instantiateViewControllerWithIdentifier:@"PropertyServiceStoryboardID"];
-        propertyServiceViewController.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:propertyServiceViewController animated:YES];
+        [_propertyServiceSegue perform];
     } else if (_propertyFeeButton.selected && [HXTAccountManager sharedInstance].logged) {
-        UIViewController *propertyFeeViewcontroller = [[UIStoryboard storyboardWithName:@"PropertyFee" bundle:nil] instantiateViewControllerWithIdentifier:@"PropertyFeeStoryboardID"];
-        propertyFeeViewcontroller.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:propertyFeeViewcontroller animated:YES];
+        [_propertyFeeSegue perform];
     }
     
     _propertyServiceButton.selected = NO;
@@ -130,13 +184,10 @@
     sender.selected = YES;
     
     if ([HXTAccountManager sharedInstance].logged) {
-        UIViewController *propertyServiceViewController = [[UIStoryboard storyboardWithName:@"PropertyService" bundle:nil] instantiateViewControllerWithIdentifier:@"PropertyServiceStoryboardID"];
-        propertyServiceViewController.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:propertyServiceViewController animated:YES];
+        [_propertyServiceSegue perform];
         sender.selected = NO;
     } else {
-        UIViewController *accountManagerNavViewController = [[UIStoryboard storyboardWithName:@"AccountManager" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"AccountManagerNavStoryboardID"];
-        [self presentViewController:accountManagerNavViewController animated:YES completion:^{ }];
+        [_loginSegue perform];
     }
 }
 
@@ -145,14 +196,10 @@
     sender.selected = YES;
     
     if ([HXTAccountManager sharedInstance].logged) {
-        UITableViewController *propertyFeeViewController = [[UIStoryboard storyboardWithName:@"PropertyFee" bundle:nil] instantiateViewControllerWithIdentifier:@"PropertyFeeStoryboardID"];
-        propertyFeeViewController.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:propertyFeeViewController animated:YES];
-        
+        [_propertyFeeSegue perform];
         sender.selected = NO;
     } else {
-        UIViewController *browseHouseEstateNavViewController = [[UIStoryboard storyboardWithName:@"BrowseHouseEstate" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"BrowseHouseEstateNavStoryboardID"];
-        [self presentViewController:browseHouseEstateNavViewController animated:YES completion:^{}];
+        [_browseHouseEstateSegue perform];
     }
 }
 
@@ -160,9 +207,7 @@
 - (IBAction)surroundingLifeButtonPressed:(UIButton *)sender {
     sender.selected = YES;
     
-    UIViewController *surroundingLifeViewController = [[UIStoryboard storyboardWithName:@"SurroundingLife" bundle:nil] instantiateViewControllerWithIdentifier:@"SurroundingLifeStoryboardID"];
-    surroundingLifeViewController.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:surroundingLifeViewController animated:YES];
+    [_surroundingLifeSegue perform];
     sender.selected = NO;
 }
 
