@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "HXTAppDelegate.h"
-@interface CYSurroundingLifeController : UITableViewController<UISearchDisplayDelegate,UISearchBarDelegate>
+#import "MBProgressHUD.h"
+
+@interface CYSurroundingLifeController : UITableViewController<UISearchDisplayDelegate,UISearchBarDelegate,MBProgressHUDDelegate>
 {
     UISearchDisplayController *_cySearchDisplayController;
     UISearchBar *_cySearchBar;

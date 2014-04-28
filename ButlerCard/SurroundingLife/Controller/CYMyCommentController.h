@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD.h"
 
-@interface CYMyCommentController : UIViewController
+@interface CYMyCommentController : UIViewController<MBProgressHUDDelegate>
 - (IBAction)sendComment:(id)sender;
 
 @end

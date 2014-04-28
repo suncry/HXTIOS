@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD.h"
 
-@interface CYShopCommentController : UITableViewController
+@interface CYShopCommentController : UITableViewController<MBProgressHUDDelegate>
 @property (retain, nonatomic) NSMutableArray *dataArr;
 
 @end

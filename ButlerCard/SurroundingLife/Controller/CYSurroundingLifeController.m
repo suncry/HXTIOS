@@ -29,7 +29,11 @@
 }
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self insertRowAtTop];
+    //每次进入页面都根据所选择住址刷新一遍页面内容
+    MBProgressHUD *HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.navigationController.view addSubview:HUD];
+    HUD.delegate = self;
+    [HUD showWhileExecuting:@selector(insertRowAtTop) onTarget:self withObject:nil animated:YES];
 }
 - (void)viewDidLoad
 {
@@ -59,6 +63,8 @@
     //获取当前应用程序的委托（UIApplication sharedApplication为整个应用程序上下文）
     self.myDelegate = (HXTAppDelegate *)[[UIApplication sharedApplication] delegate];
 
+    
+    
     
 }
 
