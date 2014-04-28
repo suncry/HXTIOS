@@ -11,7 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "HXTAppDelegate.h"
 
-@interface CYShopMapController : UIViewController<MKMapViewDelegate, CLLocationManagerDelegate>
+@interface CYShopMapController : UIViewController<MKMapViewDelegate, CLLocationManagerDelegate,MKMapViewDelegate>
  {
     CLLocationManager *locationManager;
  }
