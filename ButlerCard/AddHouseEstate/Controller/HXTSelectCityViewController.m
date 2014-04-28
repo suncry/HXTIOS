@@ -10,7 +10,6 @@
 #import "HXTAccountManager.h"
 #import "HXTLocationManager.h"
 #import "HXTAreaModel.h"
-#import "SVPullToRefresh.h"
 
 
 @interface HXTSelectCityViewController () <HXTAreaModelDelegate>
@@ -43,11 +42,8 @@
     
     _areaModel = [[HXTAreaModel alloc] init];
     _areaModel.delegate = self;
-    
+
     _currentArea = [HXTAccountManager sharedInstance].currentArea;
-    
-    [self _updateCurrentAare];
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,23 +52,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
     [_areaModel reloadAreasFromServer];
-    
-    //注册下拉刷新功能
-    __block __weak HXTSelectCityViewController *weakSelf = self;
-    [self.tableView addPullToRefreshWithActionHandler:^{
-        [weakSelf _updateCurrentAare];
-        [weakSelf.tableView.pullToRefreshView stopAnimating];
-    }];
-    
-    //注册上拉刷新功能
-    [self.tableView addInfiniteScrollingWithActionHandler:^{
-//        [weakSelf.tableView reloadData];
-
-        [weakSelf.tableView.infiniteScrollingView stopAnimating];
-    }];
+    [self _updateCurrentAare];
 }
 
 #pragma mark - Table view data source
@@ -173,6 +158,9 @@
     }
 }
 
+
+#pragma mark - local functions
+
 - (void)_updateCurrentAare {
     //获得当前区域
     __block __weak HXTSelectCityViewController *selectCityViewController = self;
@@ -181,6 +169,7 @@
         if (subLocality && subLocality.length > 0 && ![subLocality isEqualToString:_currentArea]) {
             selectCityViewController.currentArea = subLocality;
             
+            [HXTAccountManager sharedInstance].currentArea = subLocality;
             // Update Tabel View
             dispatch_async(dispatch_get_main_queue(), ^{
                 NSIndexSet *indexSet= [NSIndexSet indexSetWithIndex:0];

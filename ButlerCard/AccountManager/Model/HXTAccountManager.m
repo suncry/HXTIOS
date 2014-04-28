@@ -23,7 +23,7 @@
         [accountManager LoadDataFromUserDefault];
         
         if (!accountManager.currentArea) {
-            accountManager.currentArea = @"重庆";
+            accountManager.currentArea = @"成华区";
         }
     }
     

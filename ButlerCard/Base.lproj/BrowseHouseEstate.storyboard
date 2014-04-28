@@ -48,7 +48,7 @@
                                     <constraint firstAttribute="height" constant="2" id="lJH-Dt-gDV"/>
                                 </constraints>
                             </imageView>
-                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YBD-Ce-MEF">
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YBD-Ce-MEF">
                                 <rect key="frame" x="0.0" y="46" width="320" height="404"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -303,9 +303,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="选择地区" id="yIh-pA-Pky">
-                        <barButtonItem key="leftBarButtonItem" title="取消" id="6jR-9x-X64">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="YrO-bz-WeC">
                             <connections>
-                                <action selector="backButtonPressed:" destination="CRu-ZP-UFS" id="0zR-oD-y7X"/>
+                                <action selector="backButtonPressed:" destination="CRu-ZP-UFS" id="5eV-QK-Mb5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

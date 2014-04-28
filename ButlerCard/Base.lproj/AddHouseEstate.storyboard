@@ -379,9 +379,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="选择地区" id="jzZ-QU-t3v">
-                        <barButtonItem key="leftBarButtonItem" title="取消" id="SRB-sF-UAx">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="6vq-wx-gPS">
                             <connections>
-                                <action selector="backButtonPressed:" destination="nDI-RQ-1VH" id="hFd-dD-WlB"/>
+                                <action selector="backButtonPressed:" destination="nDI-RQ-1VH" id="WQn-kn-1Cx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
