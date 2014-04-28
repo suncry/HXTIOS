@@ -8,15 +8,30 @@
 
 #import "HXTAreaModel.h"
 #import "AFNetworking.h"
-#import "HXTAreaFirstModel.h"
 #import "HXTAppDelegate.h"
-#import "HXTAreaSecModel.h"
+
+#define kAreaSaveFileName @"areas.plist"
 
 @interface HXTAreaModel ()
 
+@property (strong, nonatomic) NSString *areaSaveFilePath;
+
 @end
 
+
 @implementation HXTAreaModel
+
+@synthesize area = _area;
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        _areaSaveFilePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:kAreaSaveFileName];
+        [self reloadData];
+    }
+    
+    return self;
+}
 
 + (instancetype)sharedInstance {
     static HXTAreaModel *areaModel;
@@ -29,88 +44,63 @@
 
 #pragma mark - local functions
 
-- (void)show {
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    dispatch_async(dispatch_get_main_queue(), ^{
-//        [[NSNotificationCenter defaultCenter] postNotificationName:kRegisteredAndLoginStartNotification object:self];
-    });
+- (void)setArea:(NSDictionary *)area {
+    _area = area;
+    [_area writeToFile:_areaSaveFilePath atomically:YES];
+}
+
+
+#pragma mark - public functions
+
+- (NSDictionary *)area {
+    if (!_area ) {
+        _area = [[NSDictionary alloc] initWithContentsOfFile: _areaSaveFilePath];
+    }
     
-//    NSDictionary *parameters = @{@"tel": username, @"password": password};
+    if (!_area) {
+        _area= [[NSDictionary alloc] initWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"areas" ofType:@"plist"]];
+    }
+    
+    return _area;
+}
+
+
+- (void)reloadData {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
     [[AFHTTPRequestOperationManager manager] POST:@"http://bbs.enveesoft.com:1602/htx/hexinpassserver/appserver/public/tenement/area"
                                        parameters:nil
                                           success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
                                               if ([responseObject[@"success"] integerValue] == 1) {
-                                                  NSLog(@"getArea sucessed!!");
-//                                                  NSDictionary *area = responseObject[@"results"];
-//                                                  NSLog(@"area = %@", area);
-//                                                  NSLog(@"成都 = %@", area[@"成都"]);
+                                                  self.area = responseObject[@"results"];
+                                                  
+                                                  dispatch_async(dispatch_get_main_queue(), ^{
+                                                      if (_delegate && [_delegate respondsToSelector:@selector(areaModel:DidFinishLoadingArea:)]) {
+                                                          [_delegate areaModel:self DidFinishLoadingArea:self.area];
+                                                      }
+                                                  });
                                                   
                                               }else  {
-                                                  NSLog(@"getArea Fail!");
+                                                  NSError *error = [[NSError alloc] initWithDomain:@"未知错误" code:[responseObject[@"success"] integerValue] userInfo:nil];
+                                                  dispatch_async(dispatch_get_main_queue(), ^{
+                                                      if (_delegate && [_delegate respondsToSelector:@selector(areaModel:DidFailLoadingAreaWithError:)]) {
+                                                          [_delegate areaModel:self DidFailLoadingAreaWithError:error];
+                                                      }
+                                                  });
                                               }
-//                                              dispatch_async(dispatch_get_main_queue(), ^{
-//                                                  NSLog(@"JSON: %@", responseObject);
-//                                              });
+                                              [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                                           }
                                           failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                              dispatch_async(dispatch_get_main_queue(), ^{
+                                                  if (_delegate && [_delegate respondsToSelector:@selector(areaModel:DidFailLoadingAreaWithError:)]) {
+                                                      [_delegate areaModel:self DidFailLoadingAreaWithError:error];
+                                                  }
+                                              });
                                               NSLog(@"Error: %@", error);
                                               NSLog(@"operation: %@", operation);
-    
+                                              [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+                                              
                                           }];
-    
-    //让CoreData在上下文中创建一个新对象(托管对象)
-    HXTAreaFirstModel *areaFirstModel = (HXTAreaFirstModel *)[NSEntityDescription insertNewObjectForEntityForName:@"HXTAreaFirstModel" inManagedObjectContext:((HXTAppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext];
-    
-    HXTAreaSecModel *areaSecModel = (HXTAreaSecModel *)[NSEntityDescription insertNewObjectForEntityForName:@"HXTAreaSecModel" inManagedObjectContext:((HXTAppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext];
-    
-    areaFirstModel.area = @"chengdu";
-    
-    areaSecModel.area = @"AAA";
-    areaFirstModel.areaSecModel = areaSecModel;
-    
-    NSError *error;
-    
-    //托管对象准备好后，调用托管对象上下文的save方法将数据写入数据库
-    BOOL isSaveSuccess = [((HXTAppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext save:&error];
-    
-    if (!isSaveSuccess) {
-        NSLog(@"Error: %@,%@",error,[error userInfo]);
-    }else {
-        //            NSLog(@"Save successful!");
-    }
-    
-    
-    //创建取回数据请求
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    //设置要检索哪种类型的实体对象
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"HXTAreaFirstModel" inManagedObjectContext:((HXTAppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext];
-    //设置请求实体
-    [request setEntity:entity];
-    
-    //    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(title = %@)",@"123"];
-    //    [request setPredicate:predicate];
-    
-    //指定对结果的排序方式
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"area"ascending:YES];
-    //排序条件 数组，可以多个条件排序
-    NSArray *sortDescriptions = [[NSArray alloc]initWithObjects:sortDescriptor, nil];
-    [request setSortDescriptors:sortDescriptions];
-    
-//    NSError *error = nil;
-    //执行获取数据请求，返回数组
-    NSMutableArray *mutableFetchResult = [[((HXTAppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
-    if (mutableFetchResult == nil)
-    {
-        NSLog(@"Error: %@,%@",error,[error userInfo]);
-    }
-    
-    NSLog(@"mutableFetchResult = %@", mutableFetchResult);
-    
-    for(HXTAreaFirstModel *areaFirstModel in mutableFetchResult)
-    {
-        NSLog(@"HXTAreaFirstModel ------>  area:%@",areaFirstModel.area);
-        NSLog(@"areaFirstModel.areaSecModel.area = %@", areaFirstModel.areaSecModel.area);
-    }
 }
 
 @end

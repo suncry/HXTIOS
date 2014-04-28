@@ -9,6 +9,7 @@
 #import "HXTSelectCityViewController.h"
 #import "HXTAccountManager.h"
 #import "HXTLocationManager.h"
+#import "HXTAreaModel.h"
 
 typedef NS_ENUM(NSUInteger, sectionType) {
     sectionTypeCurrentCity = 0,
@@ -16,7 +17,9 @@ typedef NS_ENUM(NSUInteger, sectionType) {
     sectionTypeProvinces
 };
 
-@interface HXTSelectCityViewController ()
+@interface HXTSelectCityViewController () <HXTAreaModelDelegate>
+
+@property (strong, nonatomic) HXTAreaModel *areaModel;
 @property (copy  , nonatomic) NSString     *currentCity;
 @property (strong, nonatomic) NSArray      *topCities;
 @property (strong, nonatomic) NSDictionary *provinces;
@@ -45,6 +48,9 @@ typedef NS_ENUM(NSUInteger, sectionType) {
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    _areaModel = [[HXTAreaModel alloc] init];
+    _areaModel.delegate = self;
     
     _currentCity = [HXTAccountManager sharedInstance].currentCity;
     _topCities   = [[NSArray alloc] initWithContentsOfFile:[[NSBundle bundleForClass:[self class]] pathForResource:@"hotCities" ofType:@"plist"]];
@@ -175,6 +181,17 @@ typedef NS_ENUM(NSUInteger, sectionType) {
         cell.textLabel.text = city.allKeys[0];
         return cell;
     }
+}
+
+#pragma mark - AreaModel Delegate
+
+- (void)areaModel:(HXTAreaModel *)areaModel DidFinishLoadingArea:(NSDictionary *)area {
+    NSLog(@"area = %@", area);
+    
+}
+
+- (void)areaModel:(HXTAreaModel *)areaModel DidFailLoadingAreaWithError:(NSError *)error {
+    NSLog(@"error = %@", error);
 }
 
 #pragma mark - Table view delegate

@@ -163,6 +163,8 @@
 		B2214E8518FE1FE200762AE9 /* SurroundingLife.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2214E7518FE1FE200762AE9 /* SurroundingLife.storyboard */; };
 		B2214E8618FE1FE200762AE9 /* SurroundingLife.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2214E7518FE1FE200762AE9 /* SurroundingLife.storyboard */; };
 		B2214E8818FE216700762AE9 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B2214E8718FE216700762AE9 /* libsqlite3.dylib */; };
+		B226D940190E1BD700993132 /* areas.plist in Resources */ = {isa = PBXBuildFile; fileRef = B226D93F190E1BD700993132 /* areas.plist */; };
+		B226D941190E1BD700993132 /* areas.plist in Resources */ = {isa = PBXBuildFile; fileRef = B226D93F190E1BD700993132 /* areas.plist */; };
 		B22F869918FE8E5F0031A646 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B22F869818FE8E5F0031A646 /* Images.xcassets */; };
 		B240382C1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B240382B1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.m */; };
 		B240382D1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B240382B1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.m */; };
@@ -197,10 +199,6 @@
 		B2B01F5D190A4EC9005A9483 /* HXTAreaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B01F5C190A4EC9005A9483 /* HXTAreaModel.m */; };
 		B2B01F5E190A4EC9005A9483 /* HXTAreaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B01F5C190A4EC9005A9483 /* HXTAreaModel.m */; };
 		B2B01F60190A4F2E005A9483 /* HXTAreaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B01F5F190A4F2E005A9483 /* HXTAreaTests.m */; };
-		B2B01F8C190A677D005A9483 /* HXTAreaFirstModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B01F8B190A677D005A9483 /* HXTAreaFirstModel.m */; };
-		B2B01F8D190A677D005A9483 /* HXTAreaFirstModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B01F8B190A677D005A9483 /* HXTAreaFirstModel.m */; };
-		B2B01F90190A677E005A9483 /* HXTAreaSecModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B01F8F190A677E005A9483 /* HXTAreaSecModel.m */; };
-		B2B01F91190A677E005A9483 /* HXTAreaSecModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B01F8F190A677E005A9483 /* HXTAreaSecModel.m */; };
 		B2B01F93190BA173005A9483 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2B01F92190BA173005A9483 /* MapKit.framework */; };
 		B2B01F96190BA1F9005A9483 /* HXTPropertyFeeMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B01F95190BA1F9005A9483 /* HXTPropertyFeeMapViewController.m */; };
 		B2B01F97190BA1F9005A9483 /* HXTPropertyFeeMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B01F95190BA1F9005A9483 /* HXTPropertyFeeMapViewController.m */; };
@@ -244,7 +242,7 @@
 		23A8C4831907A04A00557F5A /* searchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchCell.m; sourceTree = "<group>"; };
 		23A8C6961908BC5300EF925C /* CYShopController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYShopController.h; sourceTree = "<group>"; };
 		23A8C6971908BC5300EF925C /* CYShopController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYShopController.m; sourceTree = "<group>"; };
-		23BC7399190A040B0088BEC9 /* CoreModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreModel.xcdatamodel; sourceTree = "<group>"; };
+		23BC7399190A040B0088BEC9 /* CoreModel.xcdatamodel */ = {isa = PBXFileReference; explicitFileType = wrapper.xcdatamodel; path = CoreModel.xcdatamodel; sourceTree = "<group>"; };
 		23BC73A1190A0A020088BEC9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		23CA860919065B7A0067D0D4 /* PCStackMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCStackMenu.h; sourceTree = SOURCE_ROOT; };
 		23CA860A19065B7A0067D0D4 /* PCStackMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCStackMenu.m; sourceTree = SOURCE_ROOT; };
@@ -391,6 +389,7 @@
 		B2214E7418FE1FE200762AE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PropertyService.storyboard; sourceTree = "<group>"; };
 		B2214E7618FE1FE200762AE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SurroundingLife.storyboard; sourceTree = "<group>"; };
 		B2214E8718FE216700762AE9 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		B226D93F190E1BD700993132 /* areas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = areas.plist; sourceTree = "<group>"; };
 		B22F869818FE8E5F0031A646 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B240382A1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTYearMonthIntervalPickerView.h; sourceTree = "<group>"; };
 		B240382B1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTYearMonthIntervalPickerView.m; sourceTree = "<group>"; };
@@ -424,10 +423,6 @@
 		B2B01F5B190A4EC9005A9483 /* HXTAreaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTAreaModel.h; sourceTree = "<group>"; };
 		B2B01F5C190A4EC9005A9483 /* HXTAreaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTAreaModel.m; sourceTree = "<group>"; };
 		B2B01F5F190A4F2E005A9483 /* HXTAreaTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTAreaTests.m; sourceTree = "<group>"; };
-		B2B01F8A190A677D005A9483 /* HXTAreaFirstModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HXTAreaFirstModel.h; path = ../../Global/HXTAreaFirstModel.h; sourceTree = "<group>"; };
-		B2B01F8B190A677D005A9483 /* HXTAreaFirstModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HXTAreaFirstModel.m; path = ../../Global/HXTAreaFirstModel.m; sourceTree = "<group>"; };
-		B2B01F8E190A677E005A9483 /* HXTAreaSecModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HXTAreaSecModel.h; path = ../../Global/HXTAreaSecModel.h; sourceTree = "<group>"; };
-		B2B01F8F190A677E005A9483 /* HXTAreaSecModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HXTAreaSecModel.m; path = ../../Global/HXTAreaSecModel.m; sourceTree = "<group>"; };
 		B2B01F92190BA173005A9483 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B2B01F94190BA1F9005A9483 /* HXTPropertyFeeMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTPropertyFeeMapViewController.h; sourceTree = "<group>"; };
 		B2B01F95190BA1F9005A9483 /* HXTPropertyFeeMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTPropertyFeeMapViewController.m; sourceTree = "<group>"; };
@@ -662,13 +657,10 @@
 		B2214C6418FE1F9000762AE9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B226D93F190E1BD700993132 /* areas.plist */,
 				B2214C6518FE1F9000762AE9 /* Data */,
 				B2B01F5B190A4EC9005A9483 /* HXTAreaModel.h */,
 				B2B01F5C190A4EC9005A9483 /* HXTAreaModel.m */,
-				B2B01F8E190A677E005A9483 /* HXTAreaSecModel.h */,
-				B2B01F8F190A677E005A9483 /* HXTAreaSecModel.m */,
-				B2B01F8A190A677D005A9483 /* HXTAreaFirstModel.h */,
-				B2B01F8B190A677D005A9483 /* HXTAreaFirstModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1061,6 +1053,7 @@
 				B2214E7718FE1FE200762AE9 /* AccountManager.storyboard in Resources */,
 				B2214E5B18FE1FB800762AE9 /* MyPropertyTableViewHeaderFooterView.xib in Resources */,
 				B2214C8A18FE1F9000762AE9 /* provinces_bck.plist in Resources */,
+				B226D940190E1BD700993132 /* areas.plist in Resources */,
 				B2214E7F18FE1FE200762AE9 /* Home.storyboard in Resources */,
 				B2214E8118FE1FE200762AE9 /* PropertyFee.storyboard in Resources */,
 				B2214C8618FE1F9000762AE9 /* hotCities.plist in Resources */,
@@ -1080,6 +1073,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2214C8D18FE1F9000762AE9 /* region.plist in Resources */,
+				B226D941190E1BD700993132 /* areas.plist in Resources */,
 				B2214C3818FE1E4000762AE9 /* InfoPlist.strings in Resources */,
 				B2214E7E18FE1FE200762AE9 /* EcologicalDistribution.storyboard in Resources */,
 				B2214E7A18FE1FE200762AE9 /* AddHouseEstate.storyboard in Resources */,
@@ -1174,7 +1168,6 @@
 				232EBDD9190914BC00381960 /* CYMyCommentController.m in Sources */,
 				23CA860E19065B7A0067D0D4 /* PCStackMenuItem.m in Sources */,
 				B26FE5E918FE51FC0093BC2F /* HXTViewWithArrow.m in Sources */,
-				B2B01F8C190A677D005A9483 /* HXTAreaFirstModel.m in Sources */,
 				B2214C7418FE1F9000762AE9 /* HXTRetrievePasswordViewController.m in Sources */,
 				B2214C1C18FE1E4000762AE9 /* HXTAppDelegate.m in Sources */,
 				B2214C7018FE1F9000762AE9 /* HXTRegisterInputPhoneNumberViewController.m in Sources */,
@@ -1216,7 +1209,6 @@
 				238ECB531904BECA00721872 /* CYPropertieCardsController.m in Sources */,
 				B2214E3518FE1FB800762AE9 /* PieElement.m in Sources */,
 				B2214E2F18FE1FB800762AE9 /* Example2PieView.m in Sources */,
-				B2B01F90190A677E005A9483 /* HXTAreaSecModel.m in Sources */,
 				B2214E4118FE1FB800762AE9 /* CYRentController.m in Sources */,
 				B2214E1518FE1FB800762AE9 /* CYActivityCell.m in Sources */,
 				B2FC604B190DE8D000C13524 /* HXTHomeMapViewController.m in Sources */,
@@ -1260,7 +1252,6 @@
 				B26FE5D218FE51FC0093BC2F /* NSDataAdditions.m in Sources */,
 				B2214C8518FE1F9000762AE9 /* HXTSelectCityViewController.m in Sources */,
 				B2214E3018FE1FB800762AE9 /* Example2PieView.m in Sources */,
-				B2B01F8D190A677D005A9483 /* HXTAreaFirstModel.m in Sources */,
 				B2214E3A18FE1FB800762AE9 /* CYActiveController.m in Sources */,
 				B2D484E8190A1B5E000D5E33 /* HXTOpenAutomaticBillPayViewController.m in Sources */,
 				B2214E3C18FE1FB800762AE9 /* CYDiscussController.m in Sources */,
@@ -1293,7 +1284,6 @@
 				B2214C7F18FE1F9000762AE9 /* HXTBrowseHouseEstateViewController.m in Sources */,
 				B2214C7518FE1F9000762AE9 /* HXTRetrievePasswordViewController.m in Sources */,
 				B26FE5D818FE51FC0093BC2F /* HXTLocationManager.m in Sources */,
-				B2B01F91190A677E005A9483 /* HXTAreaSecModel.m in Sources */,
 				B2214C7B18FE1F9000762AE9 /* HXTAddHouseViewController.m in Sources */,
 				B2214E4018FE1FB800762AE9 /* CYNoticeBoardController.m in Sources */,
 				B2214E3218FE1FB800762AE9 /* MyPieElement.m in Sources */,
