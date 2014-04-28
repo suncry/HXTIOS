@@ -71,14 +71,30 @@
         [manager POST:@"http://bbs.enveesoft.com:1602/htx/hexinpassserver/appserver/public/store/comment-add" parameters:parameters
               success:^(AFHTTPRequestOperation *operation, id responseObject)
          {
-             NSLog(@"responseObject == %@", responseObject);
+             MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+             hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Checkmark.png"]];
+             hud.mode = MBProgressHUDModeCustomView;
+             hud.labelText = @"评价已提交!";
+             [hud show:YES];
+             [hud hide:YES afterDelay:1.5];
+             [self.navigationController popViewControllerAnimated:YES];
+
+//             NSLog(@"responseObject == %@", responseObject);
          }
               failure:^(AFHTTPRequestOperation *operation, NSError *error)
          {
              NSLog(@"Error: %@", error);
+             MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+             hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Checkmark.png"]];
+             hud.mode = MBProgressHUDModeCustomView;
+             hud.labelText = [NSString stringWithFormat:@"无网络连接!!!"];
+             [hud show:YES];
+             [hud hide:YES afterDelay:1.5];
+             [self.navigationController popViewControllerAnimated:YES];
+
+
          }];
         
-        [self.navigationController popViewControllerAnimated:YES];
 
     }
 }

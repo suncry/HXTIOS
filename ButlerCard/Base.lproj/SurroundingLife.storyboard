@@ -397,14 +397,15 @@
             </objects>
             <point key="canvasLocation" x="2358" y="-100"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation Controller - 周边生活-->
         <scene sceneID="QUy-Za-EwL">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9JY-Dc-Jkj" sceneMemberID="viewController">
+                <navigationController title="周边生活" extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="9JY-Dc-Jkj" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="3lt-vh-grq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="1" green="0.50196078430000002" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
