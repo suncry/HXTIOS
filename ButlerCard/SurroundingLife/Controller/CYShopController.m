@@ -155,7 +155,7 @@
      {
 //         _dataArr = (responseObject[@"results"])[@"comments"];
 //         [(UIButton *)[self.view viewWithTag:105] setText:[NSString stringWithFormat:@"%d",((NSArray *)(responseObject[@"results"])[@"comments"]).count]];
-         [(UIButton *)[self.view viewWithTag:105] setTitle:[NSString stringWithFormat:@"用户评价(%d)",((NSArray *)(responseObject[@"results"])[@"comments"]).count] forState:UIControlStateNormal];
+         [(UIButton *)[self.view viewWithTag:105] setTitle:[NSString stringWithFormat:@"用户评价(%lu)",(long)(((NSArray *)(responseObject[@"results"])[@"comments"]).count)] forState:UIControlStateNormal];
 //         NSLog(@"评论数量为 == %@",[NSString stringWithFormat:@"%d",((NSArray *)(responseObject[@"results"])[@"comments"]).count]);
      }
           failure:^(AFHTTPRequestOperation *operation, NSError *error)
