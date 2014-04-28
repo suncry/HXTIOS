@@ -201,6 +201,9 @@
 		B2B01F8D190A677D005A9483 /* HXTAreaFirstModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B01F8B190A677D005A9483 /* HXTAreaFirstModel.m */; };
 		B2B01F90190A677E005A9483 /* HXTAreaSecModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B01F8F190A677E005A9483 /* HXTAreaSecModel.m */; };
 		B2B01F91190A677E005A9483 /* HXTAreaSecModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B01F8F190A677E005A9483 /* HXTAreaSecModel.m */; };
+		B2B01F93190BA173005A9483 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2B01F92190BA173005A9483 /* MapKit.framework */; };
+		B2B01F96190BA1F9005A9483 /* HXTPropertyFeeMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B01F95190BA1F9005A9483 /* HXTPropertyFeeMapViewController.m */; };
+		B2B01F97190BA1F9005A9483 /* HXTPropertyFeeMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B01F95190BA1F9005A9483 /* HXTPropertyFeeMapViewController.m */; };
 		B2D1FC86190256C500A7467D /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D1FC85190256C500A7467D /* HMSegmentedControl.m */; };
 		B2D1FC87190256C500A7467D /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D1FC85190256C500A7467D /* HMSegmentedControl.m */; };
 		B2D484DF1909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D484DE1909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.m */; };
@@ -213,6 +216,8 @@
 		B2D4EFFF19035897007C6089 /* LTHMonthYearPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D4EFFD19035897007C6089 /* LTHMonthYearPickerView.m */; };
 		B2F8B6541900BB31000CAB54 /* HXTPropertyFeePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F8B6531900BB31000CAB54 /* HXTPropertyFeePayViewController.m */; };
 		B2F8B6551900BB31000CAB54 /* HXTPropertyFeePayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F8B6531900BB31000CAB54 /* HXTPropertyFeePayViewController.m */; };
+		B2FC604B190DE8D000C13524 /* HXTHomeMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FC604A190DE8D000C13524 /* HXTHomeMapViewController.m */; };
+		B2FC604C190DE8D000C13524 /* HXTHomeMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FC604A190DE8D000C13524 /* HXTHomeMapViewController.m */; };
 		FCE6C2F870A645348CF02435 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C760D7067C514D27AA581EFA /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -423,6 +428,9 @@
 		B2B01F8B190A677D005A9483 /* HXTAreaFirstModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HXTAreaFirstModel.m; path = ../../Global/HXTAreaFirstModel.m; sourceTree = "<group>"; };
 		B2B01F8E190A677E005A9483 /* HXTAreaSecModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HXTAreaSecModel.h; path = ../../Global/HXTAreaSecModel.h; sourceTree = "<group>"; };
 		B2B01F8F190A677E005A9483 /* HXTAreaSecModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HXTAreaSecModel.m; path = ../../Global/HXTAreaSecModel.m; sourceTree = "<group>"; };
+		B2B01F92190BA173005A9483 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B2B01F94190BA1F9005A9483 /* HXTPropertyFeeMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTPropertyFeeMapViewController.h; sourceTree = "<group>"; };
+		B2B01F95190BA1F9005A9483 /* HXTPropertyFeeMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTPropertyFeeMapViewController.m; sourceTree = "<group>"; };
 		B2D1FC84190256C500A7467D /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
 		B2D1FC85190256C500A7467D /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
 		B2D484DD1909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTPropertyFeeInputMoneyTableViewController.h; sourceTree = "<group>"; };
@@ -435,6 +443,8 @@
 		B2D4EFFD19035897007C6089 /* LTHMonthYearPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTHMonthYearPickerView.m; sourceTree = "<group>"; };
 		B2F8B6521900BB31000CAB54 /* HXTPropertyFeePayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTPropertyFeePayViewController.h; sourceTree = "<group>"; };
 		B2F8B6531900BB31000CAB54 /* HXTPropertyFeePayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTPropertyFeePayViewController.m; sourceTree = "<group>"; };
+		B2FC6049190DE8D000C13524 /* HXTHomeMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTHomeMapViewController.h; sourceTree = "<group>"; };
+		B2FC604A190DE8D000C13524 /* HXTHomeMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTHomeMapViewController.m; sourceTree = "<group>"; };
 		C760D7067C514D27AA581EFA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -443,6 +453,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2B01F93190BA173005A9483 /* MapKit.framework in Frameworks */,
 				23BC73A2190A0A020088BEC9 /* CoreData.framework in Frameworks */,
 				B2214E8818FE216700762AE9 /* libsqlite3.dylib in Frameworks */,
 				B2214C0E18FE1E4000762AE9 /* CoreGraphics.framework in Frameworks */,
@@ -511,6 +522,7 @@
 		B2214C0A18FE1E4000762AE9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B2B01F92190BA173005A9483 /* MapKit.framework */,
 				23BC73A1190A0A020088BEC9 /* CoreData.framework */,
 				B2214E8718FE216700762AE9 /* libsqlite3.dylib */,
 				B2214C0B18FE1E4000762AE9 /* Foundation.framework */,
@@ -683,6 +695,8 @@
 				B2214D2A18FE1FA200762AE9 /* HXTTabBarViewController.m */,
 				B2214D2318FE1FA200762AE9 /* HXTHomeChooseHouseEstateTableViewController.h */,
 				B2214D2418FE1FA200762AE9 /* HXTHomeChooseHouseEstateTableViewController.m */,
+				B2FC6049190DE8D000C13524 /* HXTHomeMapViewController.h */,
+				B2FC604A190DE8D000C13524 /* HXTHomeMapViewController.m */,
 			);
 			name = "Home----------主页";
 			path = Home;
@@ -777,6 +791,8 @@
 				238ECB521904BECA00721872 /* CYPropertieCardsController.m */,
 				B2D484DD1909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.h */,
 				B2D484DE1909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.m */,
+				B2B01F94190BA1F9005A9483 /* HXTPropertyFeeMapViewController.h */,
+				B2B01F95190BA1F9005A9483 /* HXTPropertyFeeMapViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -843,7 +859,6 @@
 		B26FE55718FE51FC0093BC2F /* Global */ = {
 			isa = PBXGroup;
 			children = (
-				23BC7398190A040B0088BEC9 /* CoreModel.xcdatamodeld */,
 				B2B01F61190A570B005A9483 /* Model */,
 				B26FE63E18FE55A90093BC2F /* NSString+Check */,
 				B26FE58118FE51FC0093BC2F /* Extra */,
@@ -936,6 +951,7 @@
 		B2B01F61190A570B005A9483 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				23BC7398190A040B0088BEC9 /* CoreModel.xcdatamodeld */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1133,6 +1149,7 @@
 				B2D4EFFE19035897007C6089 /* LTHMonthYearPickerView.m in Sources */,
 				B2214DB318FE1FA200762AE9 /* HXTNavigationController.m in Sources */,
 				B2214E5118FE1FB800762AE9 /* HXTMyProperties.m in Sources */,
+				B2B01F96190BA1F9005A9483 /* HXTPropertyFeeMapViewController.m in Sources */,
 				B2214E3318FE1FB800762AE9 /* NSMutableArray+pieEx.m in Sources */,
 				B2214C8218FE1F9000762AE9 /* HXTSelectCitySecondLevelViewController.m in Sources */,
 				B2214E4918FE1FB800762AE9 /* HXTPropertyServiceViewController.m in Sources */,
@@ -1202,6 +1219,7 @@
 				B2B01F90190A677E005A9483 /* HXTAreaSecModel.m in Sources */,
 				B2214E4118FE1FB800762AE9 /* CYRentController.m in Sources */,
 				B2214E1518FE1FB800762AE9 /* CYActivityCell.m in Sources */,
+				B2FC604B190DE8D000C13524 /* HXTHomeMapViewController.m in Sources */,
 				B2D484DF1909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.m in Sources */,
 				B26FE5D518FE51FC0093BC2F /* NSStringAdditions.m in Sources */,
 				B2214E1F18FE1FB800762AE9 /* CYMsgTableViewController.m in Sources */,
@@ -1266,6 +1284,7 @@
 				B2214DB218FE1FA200762AE9 /* HXTHomeViewController.m in Sources */,
 				B2214E1A18FE1FB800762AE9 /* CYBillPieViewController.m in Sources */,
 				B2214E1618FE1FB800762AE9 /* CYActivityCell.m in Sources */,
+				B2B01F97190BA1F9005A9483 /* HXTPropertyFeeMapViewController.m in Sources */,
 				B26FE5D018FE51FC0093BC2F /* NSArrayAdditionals.m in Sources */,
 				B2214E2018FE1FB800762AE9 /* CYMsgTableViewController.m in Sources */,
 				B2214E2218FE1FB800762AE9 /* CYMyBillDetailCell.m in Sources */,
@@ -1279,6 +1298,7 @@
 				B2214E4018FE1FB800762AE9 /* CYNoticeBoardController.m in Sources */,
 				B2214E3218FE1FB800762AE9 /* MyPieElement.m in Sources */,
 				B2214E4A18FE1FB800762AE9 /* HXTPropertyServiceViewController.m in Sources */,
+				B2FC604C190DE8D000C13524 /* HXTHomeMapViewController.m in Sources */,
 				B2214E4E18FE1FB800762AE9 /* DJQStartView.m in Sources */,
 				B240382D1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.m in Sources */,
 				B2214C7318FE1F9000762AE9 /* HXTRegisterInputValidCodeViewController.m in Sources */,

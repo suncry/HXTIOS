@@ -862,36 +862,42 @@
             </objects>
             <point key="canvasLocation" x="2043" y="-1702"/>
         </scene>
-        <!--View Controller - 查看地图位置-->
+        <!--Property Fee Map View Controller - 查看地图位置-->
         <scene sceneID="p7G-Ag-Aws">
             <objects>
-                <viewController id="kxh-8u-Em3" sceneMemberID="viewController">
+                <viewController id="kxh-8u-Em3" customClass="HXTPropertyFeeMapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6PP-ao-pNL"/>
                         <viewControllerLayoutGuide type="bottom" id="dGN-M1-461"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="jqv-Js-xqM" customClass="MKMapView">
+                    <view key="view" contentMode="scaleToFill" id="jqv-Js-xqM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Dl5-3n-sMK">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="adn-rR-yrP">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="kxh-8u-Em3" id="Uag-Zy-s22"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Dl5-3n-sMK" firstAttribute="top" secondItem="6PP-ao-pNL" secondAttribute="bottom" id="Bhv-7J-vjc"/>
-                            <constraint firstItem="dGN-M1-461" firstAttribute="top" secondItem="Dl5-3n-sMK" secondAttribute="bottom" id="JG7-c2-2UE"/>
-                            <constraint firstAttribute="trailing" secondItem="Dl5-3n-sMK" secondAttribute="trailing" id="JMH-ZB-dXa"/>
-                            <constraint firstItem="Dl5-3n-sMK" firstAttribute="leading" secondItem="jqv-Js-xqM" secondAttribute="leading" id="Tq6-xc-oyM"/>
+                            <constraint firstItem="dGN-M1-461" firstAttribute="top" secondItem="adn-rR-yrP" secondAttribute="bottom" id="8Yn-ca-F84"/>
+                            <constraint firstAttribute="trailing" secondItem="adn-rR-yrP" secondAttribute="trailing" id="HI9-Nw-9L7"/>
+                            <constraint firstItem="adn-rR-yrP" firstAttribute="top" secondItem="6PP-ao-pNL" secondAttribute="bottom" id="K5c-lU-Xmw"/>
+                            <constraint firstItem="adn-rR-yrP" firstAttribute="leading" secondItem="jqv-Js-xqM" secondAttribute="leading" id="TCe-Ze-QEe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="查看地图位置" id="boK-yN-Vr6"/>
+                    <connections>
+                        <outlet property="mapView" destination="adn-rR-yrP" id="796-jl-Isi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfR-Z9-c6d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2463" y="-1702"/>
+            <point key="canvasLocation" x="2518" y="-1702"/>
         </scene>
         <!--Property Fee Detail Table View Controller - 物管费-->
         <scene sceneID="Cvo-DD-Ava">

@@ -92,6 +92,7 @@
     self.lastCoordinate = newLocation.coordinate;
     NSUserDefaults *standard = [NSUserDefaults standardUserDefaults];
     
+    NSLog(@"%f, %f", self.lastCoordinate.latitude, self.lastCoordinate.longitude);
     [standard setObject:@(self.lastCoordinate.latitude) forKey:kLastLatitude];
     [standard setObject:@(self.lastCoordinate.longitude) forKey:kLastLongitude];
     

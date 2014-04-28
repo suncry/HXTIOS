@@ -5,6 +5,40 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
+        <!--Home Map View Controller - 当前位置-->
+        <scene sceneID="KxR-aV-kQZ">
+            <objects>
+                <viewController id="tCA-Kl-EWq" customClass="HXTHomeMapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yAw-IR-KP3"/>
+                        <viewControllerLayoutGuide type="bottom" id="zNb-8C-dBl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sdY-GO-G54">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Sk-jf-YTe">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="tCA-Kl-EWq" id="BPM-x7-W0q"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0Sk-jf-YTe" firstAttribute="leading" secondItem="sdY-GO-G54" secondAttribute="leading" id="6eB-o1-uMg"/>
+                            <constraint firstItem="zNb-8C-dBl" firstAttribute="top" secondItem="0Sk-jf-YTe" secondAttribute="bottom" id="EyZ-Ou-gdM"/>
+                            <constraint firstItem="0Sk-jf-YTe" firstAttribute="top" secondItem="yAw-IR-KP3" secondAttribute="bottom" id="FbS-Jo-soN"/>
+                            <constraint firstAttribute="trailing" secondItem="0Sk-jf-YTe" secondAttribute="trailing" id="kTl-0q-lev"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="当前位置" id="gys-az-ypo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tar-lM-jBi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2334" y="-1573"/>
+        </scene>
         <!--View Controller - 话费充值-->
         <scene sceneID="ziO-es-m1E">
             <objects>
@@ -374,30 +408,25 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CurrentLocationCellIdentifier" id="5Kj-os-2YT">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="CurrentLocationCellIdentifier" id="5Kj-os-2YT">
                                 <rect key="frame" x="0.0" y="130" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Kj-os-2YT" id="nbo-Bj-Dn2">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="253" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="成都市高新区天府软件园C区" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIX-qv-Ne9">
-                                            <rect key="frame" x="56" y="11" width="196" height="21"/>
+                                            <rect key="frame" x="56" y="11" width="181" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" tag="101" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="propertyFee_address" translatesAutoresizingMaskIntoConstraints="NO" id="qBG-s0-xQM">
                                             <rect key="frame" x="20" y="8" width="28" height="28"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <activityIndicatorView hidden="YES" opaque="NO" tag="104" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="jm7-ce-NX7">
-                                            <rect key="frame" x="262" y="3" width="37" height="37"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </activityIndicatorView>
                                         <button opaque="NO" tag="103" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCV-Y9-KHX">
-                                            <rect key="frame" x="258" y="0.0" width="44" height="44"/>
+                                            <rect key="frame" x="229" y="0.0" width="44" height="44"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" image="home_reload">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -406,8 +435,16 @@
                                                 <action selector="reloadButtonPressed:" destination="0Ke-7N-58u" eventType="touchUpInside" id="toO-WE-RlN"/>
                                             </connections>
                                         </button>
+                                        <activityIndicatorView hidden="YES" opaque="NO" tag="104" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="jm7-ce-NX7">
+                                            <rect key="frame" x="241" y="12" width="20" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="tCA-Kl-EWq" kind="push" trigger="accessoryAction" id="JXj-Da-Bev"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyHouseEstateCellIdentifier" id="EUC-M9-37o">
                                 <rect key="frame" x="0.0" y="174" width="320" height="44"/>
