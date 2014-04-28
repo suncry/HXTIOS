@@ -56,8 +56,6 @@
 		B2214C7F18FE1F9000762AE9 /* HXTBrowseHouseEstateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C5D18FE1F9000762AE9 /* HXTBrowseHouseEstateViewController.m */; };
 		B2214C8018FE1F9000762AE9 /* HXTRegisterUserProtocolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C5F18FE1F9000762AE9 /* HXTRegisterUserProtocolViewController.m */; };
 		B2214C8118FE1F9000762AE9 /* HXTRegisterUserProtocolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C5F18FE1F9000762AE9 /* HXTRegisterUserProtocolViewController.m */; };
-		B2214C8218FE1F9000762AE9 /* HXTSelectCitySecondLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C6118FE1F9000762AE9 /* HXTSelectCitySecondLevelViewController.m */; };
-		B2214C8318FE1F9000762AE9 /* HXTSelectCitySecondLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C6118FE1F9000762AE9 /* HXTSelectCitySecondLevelViewController.m */; };
 		B2214C8418FE1F9000762AE9 /* HXTSelectCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C6318FE1F9000762AE9 /* HXTSelectCityViewController.m */; };
 		B2214C8518FE1F9000762AE9 /* HXTSelectCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C6318FE1F9000762AE9 /* HXTSelectCityViewController.m */; };
 		B2214C8618FE1F9000762AE9 /* hotCities.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2214C6618FE1F9000762AE9 /* hotCities.plist */; };
@@ -297,8 +295,6 @@
 		B2214C5D18FE1F9000762AE9 /* HXTBrowseHouseEstateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTBrowseHouseEstateViewController.m; sourceTree = "<group>"; };
 		B2214C5E18FE1F9000762AE9 /* HXTRegisterUserProtocolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTRegisterUserProtocolViewController.h; sourceTree = "<group>"; };
 		B2214C5F18FE1F9000762AE9 /* HXTRegisterUserProtocolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTRegisterUserProtocolViewController.m; sourceTree = "<group>"; };
-		B2214C6018FE1F9000762AE9 /* HXTSelectCitySecondLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTSelectCitySecondLevelViewController.h; sourceTree = "<group>"; };
-		B2214C6118FE1F9000762AE9 /* HXTSelectCitySecondLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTSelectCitySecondLevelViewController.m; sourceTree = "<group>"; };
 		B2214C6218FE1F9000762AE9 /* HXTSelectCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTSelectCityViewController.h; sourceTree = "<group>"; };
 		B2214C6318FE1F9000762AE9 /* HXTSelectCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTSelectCityViewController.m; sourceTree = "<group>"; };
 		B2214C6618FE1F9000762AE9 /* hotCities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hotCities.plist; sourceTree = "<group>"; };
@@ -653,8 +649,6 @@
 				B2214C5D18FE1F9000762AE9 /* HXTBrowseHouseEstateViewController.m */,
 				B2214C5E18FE1F9000762AE9 /* HXTRegisterUserProtocolViewController.h */,
 				B2214C5F18FE1F9000762AE9 /* HXTRegisterUserProtocolViewController.m */,
-				B2214C6018FE1F9000762AE9 /* HXTSelectCitySecondLevelViewController.h */,
-				B2214C6118FE1F9000762AE9 /* HXTSelectCitySecondLevelViewController.m */,
 				B2214C6218FE1F9000762AE9 /* HXTSelectCityViewController.h */,
 				B2214C6318FE1F9000762AE9 /* HXTSelectCityViewController.m */,
 			);
@@ -1154,7 +1148,6 @@
 				B2214E5118FE1FB800762AE9 /* HXTMyProperties.m in Sources */,
 				B2B01F96190BA1F9005A9483 /* HXTPropertyFeeMapViewController.m in Sources */,
 				B2214E3318FE1FB800762AE9 /* NSMutableArray+pieEx.m in Sources */,
-				B2214C8218FE1F9000762AE9 /* HXTSelectCitySecondLevelViewController.m in Sources */,
 				B2214E4918FE1FB800762AE9 /* HXTPropertyServiceViewController.m in Sources */,
 				B2214E4F18FE1FB800762AE9 /* HXTHouse.m in Sources */,
 				B26FE5DD18FE51FC0093BC2F /* SqliteStoreManager.m in Sources */,
@@ -1242,7 +1235,6 @@
 				B2214E2618FE1FB800762AE9 /* CYMyBillTableViewController.m in Sources */,
 				B2214E3618FE1FB800762AE9 /* PieElement.m in Sources */,
 				B2214E4C18FE1FB800762AE9 /* DJQRateView.m in Sources */,
-				B2214C8318FE1F9000762AE9 /* HXTSelectCitySecondLevelViewController.m in Sources */,
 				B2214C6B18FE1F9000762AE9 /* HXTLoginViewController.m in Sources */,
 				B26FE5D418FE51FC0093BC2F /* NSDictionaryAdditions.m in Sources */,
 				B26FE5DE18FE51FC0093BC2F /* SqliteStoreManager.m in Sources */,

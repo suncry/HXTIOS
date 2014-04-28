@@ -39,14 +39,14 @@
     
     _housingEstateNamesToShow = [[NSMutableArray alloc] initWithArray:[HXTMyProperties sharedInstance].allHousingEstateNames];
     
-    _chooseAreaBarButtonItem.title = [[HXTAccountManager sharedInstance].currentCity stringByAppendingString:@" ▾"];
+    _chooseAreaBarButtonItem.title = [[HXTAccountManager sharedInstance].currentArea stringByAppendingString:@" ▾"];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
     [[HXTAccountManager sharedInstance] addObserver:self
-                                         forKeyPath:@"currentCity"
+                                         forKeyPath:@"currentArea"
                                             options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld
                                             context:NULL];
 }
@@ -54,7 +54,7 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [_propertySearchBar resignFirstResponder];
     
-    [[HXTAccountManager sharedInstance] removeObserver:self forKeyPath:@"currentCity"];
+    [[HXTAccountManager sharedInstance] removeObserver:self forKeyPath:@"currentArea"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,8 +66,8 @@
 #pragma mark - key value abserver
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    if ([keyPath isEqualToString:@"currentCity"] && object == [HXTAccountManager sharedInstance]) {
-        _chooseAreaBarButtonItem.title = [[HXTAccountManager sharedInstance].currentCity stringByAppendingString:@" ▾"];
+    if ([keyPath isEqualToString:@"currentArea"] && object == [HXTAccountManager sharedInstance]) {
+        _chooseAreaBarButtonItem.title = [[HXTAccountManager sharedInstance].currentArea stringByAppendingString:@" ▾"];
     }
 }
 

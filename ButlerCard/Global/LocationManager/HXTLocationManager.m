@@ -13,12 +13,14 @@
 @property (nonatomic, assign) CLLocationCoordinate2D lastCoordinate;
 @property (nonatomic, strong) NSString *lastCity;
 @property (nonatomic, strong) NSString *lastAddress;
+@property (nonatomic, strong) NSString *lastSubLocality;
 @property (nonatomic, assign) float latitude;
 @property (nonatomic, assign) float longitude;
 
 @property (nonatomic, strong) LocationBlock locationBlock;
 @property (nonatomic, strong) NSStringBlock cityBlock;
 @property (nonatomic, strong) NSStringBlock addressBlock;
+@property (nonatomic, strong) NSStringBlock subLocalityBlock;
 @property (nonatomic, strong) LocationErrorBlock errorBlock;
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
@@ -49,6 +51,7 @@
         self.lastCoordinate = CLLocationCoordinate2DMake(longitude,latitude);
         self.lastCity = [standard objectForKey:kLastCity];
         self.lastAddress=[standard objectForKey:kLastAddress];
+        self.lastSubLocality = [standard objectForKey:kLastSubLocality];
     }
     return self;
 }
@@ -85,6 +88,11 @@
     [self startLocation];
 }
 
+- (void) getSubLocality:(NSStringBlock)addressBlock {
+    self.subLocalityBlock = [addressBlock copy];
+    [self startLocation];
+}
+
 #pragma mark - CLLocationManager delegate
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
@@ -100,13 +108,18 @@
     
     [geoCoder reverseGeocodeLocation:newLocation
                    completionHandler:^(NSArray *placemarks,NSError *error) {
+                       
+                       CLPlacemark *placemark = [placemarks objectAtIndex:0];
+                       NSLog(@"####placeMark.name = %@", placemark.name);
                        for (CLPlacemark * placeMark in placemarks)
                        {
                            self.lastCity = placeMark.locality;
                            self.lastAddress = placeMark.name;
+                           self.lastSubLocality = placeMark.subLocality;
                            
                            [standard setObject:self.lastCity forKey:kLastCity];
                            [standard setObject:self.lastAddress forKey:kLastAddress];
+                           [standard setObject:self.lastSubLocality forKey:kLastSubLocality];
                            
                            NSLog(@"%s %s %d", __FILE__, __FUNCTION__, __LINE__);
                            
@@ -142,6 +155,9 @@
                            _addressBlock = nil;
                        }
                        
+                       if (_subLocalityBlock) {
+                           _subLocalityBlock(_lastSubLocality);
+                       }
                        [[NSUserDefaults standardUserDefaults] synchronize];
                    }];
 }
@@ -185,7 +201,7 @@
         _locationManager = [[CLLocationManager alloc] init];
         _locationManager.delegate = self;
         _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-        _locationManager.distanceFilter = 1000.0f;
+        _locationManager.distanceFilter = kCLDistanceFilterNone;
         [_locationManager startUpdatingLocation];
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     }

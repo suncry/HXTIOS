@@ -8,7 +8,6 @@
 
 #import "HXTAreaModel.h"
 #import "AFNetworking.h"
-#import "HXTAppDelegate.h"
 
 #define kAreaSaveFileName @"areas.plist"
 
@@ -27,7 +26,6 @@
     self = [super init];
     if (self) {
         _areaSaveFilePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:kAreaSaveFileName];
-        [self reloadData];
     }
     
     return self;
@@ -65,7 +63,7 @@
 }
 
 
-- (void)reloadData {
+- (void)reloadAreasFromServer {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     [[AFHTTPRequestOperationManager manager] POST:@"http://bbs.enveesoft.com:1602/htx/hexinpassserver/appserver/public/tenement/area"

@@ -10,12 +10,13 @@
 #import "HXTAccountManager.h"
 #import "HXTLocationManager.h"
 #import "HXTAreaModel.h"
+#import "SVPullToRefresh.h"
 
 
 @interface HXTSelectCityViewController () <HXTAreaModelDelegate>
 
 @property (strong, nonatomic) HXTAreaModel *areaModel;
-@property (copy  , nonatomic) NSString     *currentCity;
+@property (copy  , nonatomic) NSString     *currentArea;
 
 @end
 
@@ -43,21 +44,9 @@
     _areaModel = [[HXTAreaModel alloc] init];
     _areaModel.delegate = self;
     
-    _currentCity = [HXTAccountManager sharedInstance].currentCity;
+    _currentArea = [HXTAccountManager sharedInstance].currentArea;
     
-    //获得当前城市
-    __block __weak HXTSelectCityViewController *selectCityViewController = self;
-    [[HXTLocationManager sharedLocation] getCity:^(NSString *cityString) {
-        if (cityString && cityString.length > 0 && ![cityString isEqualToString:_currentCity]) {
-            selectCityViewController.currentCity = cityString;
-            
-            // Update Tabel View
-            dispatch_async(dispatch_get_main_queue(), ^{
-                NSIndexSet *indexSet= [NSIndexSet indexSetWithIndex:0];
-                [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
-            });
-        }
-    }];
+    [self _updateCurrentAare];
     
 }
 
@@ -70,6 +59,20 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [_areaModel reloadAreasFromServer];
+    
+    //注册下拉刷新功能
+    __block __weak HXTSelectCityViewController *weakSelf = self;
+    [self.tableView addPullToRefreshWithActionHandler:^{
+        [weakSelf _updateCurrentAare];
+        [weakSelf.tableView.pullToRefreshView stopAnimating];
+    }];
+    
+    //注册上拉刷新功能
+    [self.tableView addInfiniteScrollingWithActionHandler:^{
+//        [weakSelf.tableView reloadData];
+
+        [weakSelf.tableView.infiniteScrollingView stopAnimating];
+    }];
 }
 
 #pragma mark - Table view data source
@@ -110,7 +113,7 @@
         
         // Configure the cell...
         
-        cell.textLabel.text = _currentCity;
+        cell.textLabel.text = _currentArea;
         
         return cell;
     } else  {
@@ -152,26 +155,40 @@
     if (indexPath.section == 0) {
         
         [self dismissViewControllerAnimated:YES completion:^{
-            if (_currentCity && ![_currentCity isEqualToString:[HXTAccountManager sharedInstance].currentCity]) {
-                [HXTAccountManager sharedInstance].currentCity = _currentCity;
+            if (_currentArea && ![_currentArea isEqualToString:[HXTAccountManager sharedInstance].currentArea]) {
+                [HXTAccountManager sharedInstance].currentArea = _currentArea;
             }
         }];
         
     } else {
         
         NSArray *keys = _areaModel.area.allKeys;
-        _currentCity = _areaModel.area[keys[indexPath.section - 1]][indexPath.row][@"area"];
+        _currentArea = _areaModel.area[keys[indexPath.section - 1]][indexPath.row][@"area"];
         
         [self dismissViewControllerAnimated:YES completion:^{
-            if (_currentCity && ![_currentCity isEqualToString:[HXTAccountManager sharedInstance].currentCity]) {
-                [HXTAccountManager sharedInstance].currentCity = _currentCity;
+            if (_currentArea && ![_currentArea isEqualToString:[HXTAccountManager sharedInstance].currentArea]) {
+                [HXTAccountManager sharedInstance].currentArea = _currentArea;
             }
         }];
     }
 }
 
-#pragma mark - IB Actions
-
+- (void)_updateCurrentAare {
+    //获得当前区域
+    __block __weak HXTSelectCityViewController *selectCityViewController = self;
+    
+    [[HXTLocationManager sharedLocation] getSubLocality:^(NSString *subLocality) {
+        if (subLocality && subLocality.length > 0 && ![subLocality isEqualToString:_currentArea]) {
+            selectCityViewController.currentArea = subLocality;
+            
+            // Update Tabel View
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSIndexSet *indexSet= [NSIndexSet indexSetWithIndex:0];
+                [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+            });
+        }
+    }];
+}
 
 #pragma mark - Navigation
 

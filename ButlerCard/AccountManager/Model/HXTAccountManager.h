@@ -19,7 +19,7 @@
 #define kPhoneNumber              @"PhoneNumber"
 #define kEmailAddr                @"EmailAddr"
 #define kSex                      @"Sex"
-#define kCurrentCity              @"CurrentCity"
+#define kcurrentArea              @"currentArea"
 #define kDefaultHouseingEstate    @"DefaultHouseingEstate"
 #define kLogged                   @"Logged"
 #define kFirstRun                 @"FirstRun"
@@ -51,7 +51,7 @@
 @property (copy,   nonatomic) NSString *phoneNumber;
 @property (copy,   nonatomic) NSString *emailAddr;
 @property (copy,   nonatomic) NSString *sex;
-@property (copy,   nonatomic) NSString *currentCity;
+@property (copy,   nonatomic) NSString *currentArea;
 @property (copy,   nonatomic) NSString *defaultHouseingEstate;
 
 @property (assign, nonatomic, getter = isLogged) BOOL logged;

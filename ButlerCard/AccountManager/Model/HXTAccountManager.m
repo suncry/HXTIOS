@@ -22,8 +22,8 @@
         accountManager = [[HXTAccountManager alloc] init];
         [accountManager LoadDataFromUserDefault];
         
-        if (!accountManager.currentCity) {
-            accountManager.currentCity = @"重庆";
+        if (!accountManager.currentArea) {
+            accountManager.currentArea = @"重庆";
         }
     }
     
@@ -47,7 +47,7 @@
     _phoneNumber              = [accountDefaults objectForKey:kPhoneNumber];
     _emailAddr                = [accountDefaults objectForKey:kEmailAddr];
     _sex                      = [accountDefaults objectForKey:kSex];
-    _currentCity              = [accountDefaults objectForKey:kCurrentCity];
+    _currentArea              = [accountDefaults objectForKey:kcurrentArea];
     _defaultHouseingEstate    = [accountDefaults objectForKey:kDefaultHouseingEstate];
     _logged                   = [accountDefaults boolForKey:kLogged];
     _firstRun                 = [accountDefaults boolForKey:kFirstRun];
@@ -70,7 +70,7 @@
     [accountDefaults setObject:_phoneNumber forKey:kPhoneNumber];
     [accountDefaults setObject:_emailAddr forKey:kEmailAddr];
     [accountDefaults setObject:_sex forKey:kSex];
-    [accountDefaults setObject:_currentCity forKey:kCurrentCity];
+    [accountDefaults setObject:_currentArea forKey:kcurrentArea];
     [accountDefaults setObject:_defaultHouseingEstate forKey:kDefaultHouseingEstate];
     [accountDefaults setBool:_logged forKey:kLogged];
     [accountDefaults setBool:_firstRun forKey:kFirstRun];
