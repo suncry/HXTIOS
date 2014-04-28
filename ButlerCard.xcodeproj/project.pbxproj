@@ -18,6 +18,8 @@
 		23CA860D19065B7A0067D0D4 /* PCStackMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CA860A19065B7A0067D0D4 /* PCStackMenu.m */; };
 		23CA860E19065B7A0067D0D4 /* PCStackMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CA860C19065B7A0067D0D4 /* PCStackMenuItem.m */; };
 		23CA861F19066C430067D0D4 /* CYSurroundingLifeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CA861E19066C430067D0D4 /* CYSurroundingLifeController.m */; };
+		23D707E2190E2E27005E3C1A /* CYCustomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D707E1190E2E27005E3C1A /* CYCustomAnnotation.m */; };
+		23D707E5190E2F7E005E3C1A /* CYShopMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D707E4190E2F7E005E3C1A /* CYShopMapController.m */; };
 		23FDF0B2190A4A4A0063421D /* Shop.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FDF0B1190A4A4A0063421D /* Shop.m */; };
 		B2214C0C18FE1E4000762AE9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2214C0B18FE1E4000762AE9 /* Foundation.framework */; };
 		B2214C0E18FE1E4000762AE9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2214C0D18FE1E4000762AE9 /* CoreGraphics.framework */; };
@@ -250,6 +252,10 @@
 		23CA860C19065B7A0067D0D4 /* PCStackMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCStackMenuItem.m; sourceTree = SOURCE_ROOT; };
 		23CA861D19066C430067D0D4 /* CYSurroundingLifeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYSurroundingLifeController.h; sourceTree = "<group>"; };
 		23CA861E19066C430067D0D4 /* CYSurroundingLifeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYSurroundingLifeController.m; sourceTree = "<group>"; };
+		23D707E0190E2E27005E3C1A /* CYCustomAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYCustomAnnotation.h; sourceTree = "<group>"; };
+		23D707E1190E2E27005E3C1A /* CYCustomAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYCustomAnnotation.m; sourceTree = "<group>"; };
+		23D707E3190E2F7E005E3C1A /* CYShopMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYShopMapController.h; sourceTree = "<group>"; };
+		23D707E4190E2F7E005E3C1A /* CYShopMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYShopMapController.m; sourceTree = "<group>"; };
 		23FDF0B0190A4A4A0063421D /* Shop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shop.h; sourceTree = "<group>"; };
 		23FDF0B1190A4A4A0063421D /* Shop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shop.m; sourceTree = "<group>"; };
 		B08EE05FF8CA47378694428B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -479,6 +485,8 @@
 				23CA860819065B660067D0D4 /* PCStackMenu */,
 				23FDF0B0190A4A4A0063421D /* Shop.h */,
 				23FDF0B1190A4A4A0063421D /* Shop.m */,
+				23D707E0190E2E27005E3C1A /* CYCustomAnnotation.h */,
+				23D707E1190E2E27005E3C1A /* CYCustomAnnotation.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -844,6 +852,8 @@
 				232EBDD519090F6E00381960 /* CYShopCommentController.m */,
 				232EBDD7190914BC00381960 /* CYMyCommentController.h */,
 				232EBDD8190914BC00381960 /* CYMyCommentController.m */,
+				23D707E3190E2F7E005E3C1A /* CYShopMapController.h */,
+				23D707E4190E2F7E005E3C1A /* CYShopMapController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1135,6 +1145,7 @@
 				B2214E1B18FE1FB800762AE9 /* CYFeedBackViewController.m in Sources */,
 				B26FE5E118FE51FC0093BC2F /* UIDevice+Resolutions.m in Sources */,
 				B2214E4518FE1FB800762AE9 /* HXTPropertyFeeViewController.m in Sources */,
+				23D707E5190E2F7E005E3C1A /* CYShopMapController.m in Sources */,
 				B2214E3B18FE1FB800762AE9 /* CYDiscussController.m in Sources */,
 				B2214E2318FE1FB800762AE9 /* CYMyBillMonthCell.m in Sources */,
 				B26FE5CF18FE51FC0093BC2F /* NSArrayAdditionals.m in Sources */,
@@ -1171,6 +1182,7 @@
 				B2214C7418FE1F9000762AE9 /* HXTRetrievePasswordViewController.m in Sources */,
 				B2214C1C18FE1E4000762AE9 /* HXTAppDelegate.m in Sources */,
 				B2214C7018FE1F9000762AE9 /* HXTRegisterInputPhoneNumberViewController.m in Sources */,
+				23D707E2190E2E27005E3C1A /* CYCustomAnnotation.m in Sources */,
 				B2D484EB190A2141000D5E33 /* HXTWithholdingUseAgreementViewController.m in Sources */,
 				B2214E2918FE1FB800762AE9 /* CYMyPropertyTableViewCell.m in Sources */,
 				23BC739A190A040B0088BEC9 /* CoreModel.xcdatamodeld in Sources */,

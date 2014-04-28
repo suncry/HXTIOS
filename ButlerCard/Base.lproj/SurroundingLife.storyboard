@@ -175,6 +175,9 @@
                                     <state key="normal" image="map">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <segue destination="7MR-88-f2U" kind="push" id="wsx-Su-o4g"/>
+                                    </connections>
                                 </button>
                                 <view userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GVb-6f-61X" customClass="DJQRateView">
                                     <rect key="frame" x="191" y="16" width="106" height="26"/>
@@ -268,6 +271,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rGi-fd-xS5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1322" y="-100"/>
+        </scene>
+        <!--Shop Map Controller - 商店位置-->
+        <scene sceneID="8KD-ko-RWM">
+            <objects>
+                <viewController id="7MR-88-f2U" customClass="CYShopMapController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qmg-bQ-W0k"/>
+                        <viewControllerLayoutGuide type="bottom" id="3x3-7r-98J"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RU6-yI-rcX">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="KBC-TB-AHm">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="商店位置" id="t2l-5B-Lvh"/>
+                    <connections>
+                        <outlet property="shopMap" destination="KBC-TB-AHm" id="RZI-XK-0Hl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="01b-7L-Joz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1659" y="-841"/>
         </scene>
         <!--Shop Comment Controller - 用户评价-->
         <scene sceneID="Kr2-Id-VU4">
