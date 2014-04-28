@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Ngw-rg-gIa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Ngw-rg-gIa">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -148,7 +148,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="成都市▼" id="OoZ-6c-JR0">
                             <connections>
-                                <segue destination="bgN-nH-UGk" kind="modal" id="e1e-gH-0Fk"/>
+                                <segue destination="UNP-Ir-ZeE" kind="modal" id="ZZU-G4-viw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -234,125 +234,6 @@
             </objects>
             <point key="canvasLocation" x="1585" y="810"/>
         </scene>
-        <!--Select City View Controller - 选择地区-->
-        <scene sceneID="RIR-wk-lDd">
-            <objects>
-                <tableViewController storyboardIdentifier="ChooseCityStoryboardID" title="选择地区" id="nDI-RQ-1VH" customClass="HXTSelectCityViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Mte-Xo-cZ4">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CurrentCityCellIdentifier" textLabel="koZ-ZX-28T" style="IBUITableViewCellStyleDefault" id="hiY-xw-U6G">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hiY-xw-U6G" id="4pL-Ka-mFd">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="成都市" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="koZ-ZX-28T">
-                                            <rect key="frame" x="15" y="0.0" width="290" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TopCityCellIdentifier" textLabel="Ech-CK-wAG" style="IBUITableViewCellStyleDefault" id="UvC-BL-921">
-                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UvC-BL-921" id="iHj-e5-ndg">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="北京市" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ech-CK-wAG">
-                                            <rect key="frame" x="15" y="0.0" width="290" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProvinceCellIdentifier" textLabel="HBn-8e-Phg" style="IBUITableViewCellStyleDefault" id="E7v-FV-nxz">
-                                <rect key="frame" x="0.0" y="110" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E7v-FV-nxz" id="sDf-KZ-gbO">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="四川省" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HBn-8e-Phg">
-                                            <rect key="frame" x="15" y="0.0" width="270" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="RWv-pV-Xau" kind="push" identifier="SelectCitySecondLevelSegueIdentifier" id="q9s-B4-MJo"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="nDI-RQ-1VH" id="YIq-S0-rer"/>
-                            <outlet property="delegate" destination="nDI-RQ-1VH" id="Kac-RJ-5h2"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="选择地区" id="jzZ-QU-t3v">
-                        <barButtonItem key="leftBarButtonItem" title="取消" id="O8H-eh-XGJ">
-                            <connections>
-                                <action selector="backButtonPressed:" destination="nDI-RQ-1VH" id="OiS-P5-2fa"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TT7-KE-j05" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2037" y="-610"/>
-        </scene>
-        <!--Select City Second Level View Controller - 四川省-->
-        <scene sceneID="4z7-Xc-1fy">
-            <objects>
-                <tableViewController storyboardIdentifier="SelectCitySecondLevelViewControllerStoryboardID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RWv-pV-Xau" customClass="HXTSelectCitySecondLevelViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="swr-7M-BLf">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CityCellIdentifier" textLabel="Ehl-N1-zrV" style="IBUITableViewCellStyleDefault" id="LYs-Qh-oNH">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LYs-Qh-oNH" id="qSQ-wp-DDI">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="成都市" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ehl-N1-zrV">
-                                            <rect key="frame" x="15" y="0.0" width="290" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="RWv-pV-Xau" id="PRC-Qk-Eli"/>
-                            <outlet property="delegate" destination="RWv-pV-Xau" id="Qi5-E5-isP"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="四川省" id="zGV-DT-Nrt"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uQT-ri-jMk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2486" y="-610"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="unw-sE-oeN">
             <objects>
@@ -372,24 +253,85 @@
             </objects>
             <point key="canvasLocation" x="608" y="132"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ydY-vK-P6y">
+        <!--Select City View Controller - 选择地区-->
+        <scene sceneID="PAu-jc-xrU">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bgN-nH-UGk" customClass="HXTNavigationController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ChooseCityStoryboardID" title="选择地区" id="CRu-ZP-UFS" customClass="HXTSelectCityViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="HNe-5S-ryY">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CurrentAreaCellIdentifier" textLabel="lLg-n7-Q0B" style="IBUITableViewCellStyleDefault" id="BOa-hX-8un">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BOa-hX-8un" id="gdZ-RM-1NC">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="100" contentMode="left" text="高新区" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lLg-n7-Q0B">
+                                            <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AreaCellIdentifier" textLabel="w03-oP-geu" style="IBUITableViewCellStyleDefault" id="QwU-DI-Onm">
+                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QwU-DI-Onm" id="CJZ-V2-SFd">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="100" contentMode="left" text="华阳镇" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="w03-oP-geu">
+                                            <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="CRu-ZP-UFS" id="Uc5-dX-MSo"/>
+                            <outlet property="delegate" destination="CRu-ZP-UFS" id="1rF-2X-8Jf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="选择地区" id="yIh-pA-Pky">
+                        <barButtonItem key="leftBarButtonItem" title="取消" id="6jR-9x-X64">
+                            <connections>
+                                <action selector="backButtonPressed:" destination="CRu-ZP-UFS" id="0zR-oD-y7X"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ioo-dQ-YGh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2019" y="-365"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="AVV-Xw-BHb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UNP-Ir-ZeE" customClass="HXTNavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="xP4-v8-Ffu">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="2Xe-ba-a2u">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="nDI-RQ-1VH" kind="relationship" relationship="rootViewController" id="upA-Kz-FjS"/>
+                        <segue destination="CRu-ZP-UFS" kind="relationship" relationship="rootViewController" id="JWa-lb-qAR"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vzO-9z-OJA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VVO-qg-9Ej" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1584" y="-610"/>
+            <point key="canvasLocation" x="1566" y="-365"/>
         </scene>
     </scenes>
     <resources>

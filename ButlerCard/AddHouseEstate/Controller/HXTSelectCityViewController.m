@@ -11,11 +11,6 @@
 #import "HXTLocationManager.h"
 #import "HXTAreaModel.h"
 
-typedef NS_ENUM(NSUInteger, sectionType) {
-    sectionTypeCurrentCity = 0,
-    sectionTypeTopCities,
-    sectionTypeProvinces
-};
 
 @interface HXTSelectCityViewController () <HXTAreaModelDelegate>
 
@@ -72,13 +67,9 @@ typedef NS_ENUM(NSUInteger, sectionType) {
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    
-    [super viewWillDisappear:animated];
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [_areaModel reloadAreasFromServer];
 }
 
 #pragma mark - Table view data source
@@ -96,8 +87,9 @@ typedef NS_ENUM(NSUInteger, sectionType) {
     if (section == 0) {
         return 1;
     } else {
-        NSArray *keys = _areaModel.area.allKeys;
-        return [_areaModel.area[keys[section]] count];
+        NSArray *oneLevelArea = _areaModel.area.allKeys;
+        NSArray *twoLevelArea = _areaModel.area[oneLevelArea[section - 1]];
+        return twoLevelArea.count;
     }
 }
 
@@ -127,6 +119,9 @@ typedef NS_ENUM(NSUInteger, sectionType) {
         
         // Configure the cell...
         
+        NSArray *keys = _areaModel.area.allKeys;
+        cell.textLabel.text = _areaModel.area[keys[indexPath.section - 1]][indexPath.row][@"area"];
+        
         return cell;
     }
 }
@@ -134,12 +129,16 @@ typedef NS_ENUM(NSUInteger, sectionType) {
 #pragma mark - AreaModel Delegate
 
 - (void)areaModel:(HXTAreaModel *)areaModel DidFinishLoadingArea:(NSDictionary *)area {
-    NSLog(@"area = %@", area);
-    
+    [self.tableView reloadData];
 }
 
 - (void)areaModel:(HXTAreaModel *)areaModel DidFailLoadingAreaWithError:(NSError *)error {
-    NSLog(@"error = %@", error);
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                       message:error.description
+                                                      delegate:nil
+                                             cancelButtonTitle:@"OK"
+                                             otherButtonTitles: nil];
+    [alertView show];
 }
 
 #pragma mark - Table view delegate
@@ -150,75 +149,34 @@ typedef NS_ENUM(NSUInteger, sectionType) {
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-//    if (tableView == self.tableView) {
-//        if (indexPath.section == sectionTypeCurrentCity) {
-//            
-//            [self dismissViewControllerAnimated:YES completion:^{
-//                if (_currentCity && ![_currentCity isEqualToString:[HXTAccountManager sharedInstance].currentCity]) {
-//                    [HXTAccountManager sharedInstance].currentCity = _currentCity;
-//                }
-//            }];
-//            
-//        } else if (indexPath.section == sectionTypeTopCities) {
-//            _currentCity = _topCities[indexPath.row];
-//            
-//            [self dismissViewControllerAnimated:YES completion:^{
-//                if (_currentCity && ![_currentCity isEqualToString:[HXTAccountManager sharedInstance].currentCity]) {
-//                    [HXTAccountManager sharedInstance].currentCity = _currentCity;
-//                }
-//            }];
-//        } else if (indexPath.section == sectionTypeProvinces) {
-//           ;
-//        } else {
-//            NSLog(@"####Error%s %s %d %@", __FILE__, __FUNCTION__, __LINE__, @"Wrong indexPath.section");
-//        }
-//    } else { // _selectCitySecondLevelViewController.tableView
-//        if (_selectCitySecondLevelViewController) {
-//            [_selectCitySecondLevelViewController dismissViewControllerAnimated:YES completion:^{
-//                NSString *key = [NSString stringWithFormat:@"%li", (long)indexPath.row];
-//                NSDictionary *city = _selectedProvince[key];
-//                [HXTAccountManager sharedInstance].currentCity = city.allKeys[0];
-//            }];
-//        }
-//    }
+    if (indexPath.section == 0) {
+        
+        [self dismissViewControllerAnimated:YES completion:^{
+            if (_currentCity && ![_currentCity isEqualToString:[HXTAccountManager sharedInstance].currentCity]) {
+                [HXTAccountManager sharedInstance].currentCity = _currentCity;
+            }
+        }];
+        
+    } else {
+        
+        NSArray *keys = _areaModel.area.allKeys;
+        _currentCity = _areaModel.area[keys[indexPath.section - 1]][indexPath.row][@"area"];
+        
+        [self dismissViewControllerAnimated:YES completion:^{
+            if (_currentCity && ![_currentCity isEqualToString:[HXTAccountManager sharedInstance].currentCity]) {
+                [HXTAccountManager sharedInstance].currentCity = _currentCity;
+            }
+        }];
+    }
 }
 
 #pragma mark - IB Actions
 
-- (IBAction)backButtonPressed:(UIButton *)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
 #pragma mark - Navigation
 
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    
-//    if ([segue.identifier isEqualToString:@"SelectCitySecondLevelSegueIdentifier"]) {
-//        
-//        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-//        
-//        if (selectedIndexPath.section == sectionTypeProvinces) {
-//            
-//            _selectCitySecondLevelViewController = segue.destinationViewController;
-//            
-//            //设置Title为所选择的省份
-//            NSString *key = [NSString stringWithFormat:@"%li", (long)selectedIndexPath.row];
-//            NSDictionary *province = _provinces[key];
-//            _selectCitySecondLevelViewController.navigationItem.title  = province.allKeys[0];
-//            
-//            //获取当前省份城市数据。
-//            key = [NSString stringWithFormat:@"%li", (long)selectedIndexPath.row];
-//            NSDictionary *provinceWithIndex = _provinces[key];
-//            _selectedProvince = provinceWithIndex[provinceWithIndex.allKeys[0]];
-//            
-//            // Set _selectCitySecondLevelViewController.tableView.delegate to self
-//            [segue.destinationViewController setValue:self forKeyPath:@"self.tableView.delegate"];
-//            
-//            // Set _selectCitySecondLevelViewController.tableView.dataSource to self
-//            [segue.destinationViewController setValue:self forKeyPath:@"self.tableView.dataSource"];
-//        }
-//    }
-//}
-
+- (IBAction)backButtonPressed:(UIButton *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end
