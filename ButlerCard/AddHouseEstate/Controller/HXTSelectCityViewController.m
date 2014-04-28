@@ -93,76 +93,40 @@ typedef NS_ENUM(NSUInteger, sectionType) {
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    if (section == sectionTypeCurrentCity) {
+    if (section == 0) {
         return 1;
     } else {
         NSArray *keys = _areaModel.area.allKeys;
-        return _areaModel.ar
-        NSLog(@"####Error%s %s %d %@", __FILE__, __FUNCTION__, __LINE__, @"Wrong section");
-        return 0;
+        return [_areaModel.area[keys[section]] count];
     }
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    if (tableView == self.tableView) {
-        if (section == sectionTypeCurrentCity) {
-            return @"当前位置";
-        } else if (section == sectionTypeTopCities) {
-            return @"热门城市";
-        } else if (section == sectionTypeProvinces) {
-            return @"按省份选择城市";
-        } else {
-            NSLog(@"####Error%s %s %d %@", __FILE__, __FUNCTION__, __LINE__, @"Wrong section");
-            return nil;
-        }
-    } else { // _selectCitySecondLevelViewController.tableView
-        return nil;
+    if (section == 0) {
+        return @"当前位置";
+    } else {
+        NSArray *keys = _areaModel.area.allKeys;
+        return keys[section - 1];
     }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (tableView == self.tableView) {
-        if (indexPath.section == sectionTypeCurrentCity) {
-            static NSString *CellIdentifier = @"CurrentCityCellIdentifier";
-            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-            
-            // Configure the cell...
-            
-            cell.textLabel.text = _currentCity;
-            
-            return cell;
-        } else if (indexPath.section == sectionTypeTopCities) {
-            static NSString *CellIdentifier = @"TopCityCellIdentifier";
-            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-            
-            // Configure the cell...
-            
-            cell.textLabel.text = _topCities[indexPath.row];
-            return cell;
-        } else if (indexPath.section == sectionTypeProvinces) {
-            static NSString *CellIdentifier = @"ProvinceCellIdentifier";
-            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-            
-            // Configure the cell...
-            
-            NSString *key = [NSString stringWithFormat:@"%li", (long)indexPath.row];
-            NSDictionary *province = _provinces[key];
-            cell.textLabel.text = province.allKeys[0];
-            return cell;
-        } else {
-            NSLog(@"####Error%s %s %d %@", __FILE__, __FUNCTION__, __LINE__, @"Wrong indexPath.section");
-            return nil;
-        }
-    } else { // _selectCitySecondLevelViewController.tableView
-        static NSString *CellIdentifier = @"CityCellIdentifier";
+    if (indexPath.section == 0) {
+        static NSString *CellIdentifier = @"CurrentAreaCellIdentifier";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         
         // Configure the cell...
         
-        NSString *key = [NSString stringWithFormat:@"%li", (long)indexPath.row];
-        NSDictionary *city = _selectedProvince[key];
-        cell.textLabel.text = city.allKeys[0];
+        cell.textLabel.text = _currentCity;
+        
+        return cell;
+    } else  {
+        static NSString *CellIdentifier = @"AreaCellIdentifier";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        
+        // Configure the cell...
+        
         return cell;
     }
 }
@@ -181,46 +145,42 @@ typedef NS_ENUM(NSUInteger, sectionType) {
 #pragma mark - Table view delegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if (tableView == self.tableView) {
-        return 22;
-    } else { // _selectCitySecondLevelViewController.tableView
-        return 0;
-    }
+    return 22;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (tableView == self.tableView) {
-        if (indexPath.section == sectionTypeCurrentCity) {
-            
-            [self dismissViewControllerAnimated:YES completion:^{
-                if (_currentCity && ![_currentCity isEqualToString:[HXTAccountManager sharedInstance].currentCity]) {
-                    [HXTAccountManager sharedInstance].currentCity = _currentCity;
-                }
-            }];
-            
-        } else if (indexPath.section == sectionTypeTopCities) {
-            _currentCity = _topCities[indexPath.row];
-            
-            [self dismissViewControllerAnimated:YES completion:^{
-                if (_currentCity && ![_currentCity isEqualToString:[HXTAccountManager sharedInstance].currentCity]) {
-                    [HXTAccountManager sharedInstance].currentCity = _currentCity;
-                }
-            }];
-        } else if (indexPath.section == sectionTypeProvinces) {
-           ;
-        } else {
-            NSLog(@"####Error%s %s %d %@", __FILE__, __FUNCTION__, __LINE__, @"Wrong indexPath.section");
-        }
-    } else { // _selectCitySecondLevelViewController.tableView
-        if (_selectCitySecondLevelViewController) {
-            [_selectCitySecondLevelViewController dismissViewControllerAnimated:YES completion:^{
-                NSString *key = [NSString stringWithFormat:@"%li", (long)indexPath.row];
-                NSDictionary *city = _selectedProvince[key];
-                [HXTAccountManager sharedInstance].currentCity = city.allKeys[0];
-            }];
-        }
-    }
+//    if (tableView == self.tableView) {
+//        if (indexPath.section == sectionTypeCurrentCity) {
+//            
+//            [self dismissViewControllerAnimated:YES completion:^{
+//                if (_currentCity && ![_currentCity isEqualToString:[HXTAccountManager sharedInstance].currentCity]) {
+//                    [HXTAccountManager sharedInstance].currentCity = _currentCity;
+//                }
+//            }];
+//            
+//        } else if (indexPath.section == sectionTypeTopCities) {
+//            _currentCity = _topCities[indexPath.row];
+//            
+//            [self dismissViewControllerAnimated:YES completion:^{
+//                if (_currentCity && ![_currentCity isEqualToString:[HXTAccountManager sharedInstance].currentCity]) {
+//                    [HXTAccountManager sharedInstance].currentCity = _currentCity;
+//                }
+//            }];
+//        } else if (indexPath.section == sectionTypeProvinces) {
+//           ;
+//        } else {
+//            NSLog(@"####Error%s %s %d %@", __FILE__, __FUNCTION__, __LINE__, @"Wrong indexPath.section");
+//        }
+//    } else { // _selectCitySecondLevelViewController.tableView
+//        if (_selectCitySecondLevelViewController) {
+//            [_selectCitySecondLevelViewController dismissViewControllerAnimated:YES completion:^{
+//                NSString *key = [NSString stringWithFormat:@"%li", (long)indexPath.row];
+//                NSDictionary *city = _selectedProvince[key];
+//                [HXTAccountManager sharedInstance].currentCity = city.allKeys[0];
+//            }];
+//        }
+//    }
 }
 
 #pragma mark - IB Actions
@@ -231,34 +191,34 @@ typedef NS_ENUM(NSUInteger, sectionType) {
 
 #pragma mark - Navigation
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    if ([segue.identifier isEqualToString:@"SelectCitySecondLevelSegueIdentifier"]) {
-        
-        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-        
-        if (selectedIndexPath.section == sectionTypeProvinces) {
-            
-            _selectCitySecondLevelViewController = segue.destinationViewController;
-            
-            //设置Title为所选择的省份
-            NSString *key = [NSString stringWithFormat:@"%li", (long)selectedIndexPath.row];
-            NSDictionary *province = _provinces[key];
-            _selectCitySecondLevelViewController.navigationItem.title  = province.allKeys[0];
-            
-            //获取当前省份城市数据。
-            key = [NSString stringWithFormat:@"%li", (long)selectedIndexPath.row];
-            NSDictionary *provinceWithIndex = _provinces[key];
-            _selectedProvince = provinceWithIndex[provinceWithIndex.allKeys[0]];
-            
-            // Set _selectCitySecondLevelViewController.tableView.delegate to self
-            [segue.destinationViewController setValue:self forKeyPath:@"self.tableView.delegate"];
-            
-            // Set _selectCitySecondLevelViewController.tableView.dataSource to self
-            [segue.destinationViewController setValue:self forKeyPath:@"self.tableView.dataSource"];
-        }
-    }
-}
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    
+//    if ([segue.identifier isEqualToString:@"SelectCitySecondLevelSegueIdentifier"]) {
+//        
+//        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+//        
+//        if (selectedIndexPath.section == sectionTypeProvinces) {
+//            
+//            _selectCitySecondLevelViewController = segue.destinationViewController;
+//            
+//            //设置Title为所选择的省份
+//            NSString *key = [NSString stringWithFormat:@"%li", (long)selectedIndexPath.row];
+//            NSDictionary *province = _provinces[key];
+//            _selectCitySecondLevelViewController.navigationItem.title  = province.allKeys[0];
+//            
+//            //获取当前省份城市数据。
+//            key = [NSString stringWithFormat:@"%li", (long)selectedIndexPath.row];
+//            NSDictionary *provinceWithIndex = _provinces[key];
+//            _selectedProvince = provinceWithIndex[provinceWithIndex.allKeys[0]];
+//            
+//            // Set _selectCitySecondLevelViewController.tableView.delegate to self
+//            [segue.destinationViewController setValue:self forKeyPath:@"self.tableView.delegate"];
+//            
+//            // Set _selectCitySecondLevelViewController.tableView.dataSource to self
+//            [segue.destinationViewController setValue:self forKeyPath:@"self.tableView.dataSource"];
+//        }
+//    }
+//}
 
 
 @end
