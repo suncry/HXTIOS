@@ -163,8 +163,7 @@
 		B2214E8518FE1FE200762AE9 /* SurroundingLife.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2214E7518FE1FE200762AE9 /* SurroundingLife.storyboard */; };
 		B2214E8618FE1FE200762AE9 /* SurroundingLife.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2214E7518FE1FE200762AE9 /* SurroundingLife.storyboard */; };
 		B2214E8818FE216700762AE9 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B2214E8718FE216700762AE9 /* libsqlite3.dylib */; };
-		B226D940190E1BD700993132 /* areas.plist in Resources */ = {isa = PBXBuildFile; fileRef = B226D93F190E1BD700993132 /* areas.plist */; };
-		B226D941190E1BD700993132 /* areas.plist in Resources */ = {isa = PBXBuildFile; fileRef = B226D93F190E1BD700993132 /* areas.plist */; };
+		B226D943190E3F0600993132 /* areas.plist in Resources */ = {isa = PBXBuildFile; fileRef = B226D942190E3F0600993132 /* areas.plist */; };
 		B22F869918FE8E5F0031A646 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B22F869818FE8E5F0031A646 /* Images.xcassets */; };
 		B240382C1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B240382B1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.m */; };
 		B240382D1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B240382B1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.m */; };
@@ -389,7 +388,7 @@
 		B2214E7418FE1FE200762AE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PropertyService.storyboard; sourceTree = "<group>"; };
 		B2214E7618FE1FE200762AE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SurroundingLife.storyboard; sourceTree = "<group>"; };
 		B2214E8718FE216700762AE9 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		B226D93F190E1BD700993132 /* areas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = areas.plist; sourceTree = "<group>"; };
+		B226D942190E3F0600993132 /* areas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = areas.plist; sourceTree = "<group>"; };
 		B22F869818FE8E5F0031A646 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B240382A1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTYearMonthIntervalPickerView.h; sourceTree = "<group>"; };
 		B240382B1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTYearMonthIntervalPickerView.m; sourceTree = "<group>"; };
@@ -657,7 +656,7 @@
 		B2214C6418FE1F9000762AE9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B226D93F190E1BD700993132 /* areas.plist */,
+				B226D942190E3F0600993132 /* areas.plist */,
 				B2214C6518FE1F9000762AE9 /* Data */,
 				B2B01F5B190A4EC9005A9483 /* HXTAreaModel.h */,
 				B2B01F5C190A4EC9005A9483 /* HXTAreaModel.m */,
@@ -1053,7 +1052,7 @@
 				B2214E7718FE1FE200762AE9 /* AccountManager.storyboard in Resources */,
 				B2214E5B18FE1FB800762AE9 /* MyPropertyTableViewHeaderFooterView.xib in Resources */,
 				B2214C8A18FE1F9000762AE9 /* provinces_bck.plist in Resources */,
-				B226D940190E1BD700993132 /* areas.plist in Resources */,
+				B226D943190E3F0600993132 /* areas.plist in Resources */,
 				B2214E7F18FE1FE200762AE9 /* Home.storyboard in Resources */,
 				B2214E8118FE1FE200762AE9 /* PropertyFee.storyboard in Resources */,
 				B2214C8618FE1F9000762AE9 /* hotCities.plist in Resources */,
@@ -1073,7 +1072,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2214C8D18FE1F9000762AE9 /* region.plist in Resources */,
-				B226D941190E1BD700993132 /* areas.plist in Resources */,
 				B2214C3818FE1E4000762AE9 /* InfoPlist.strings in Resources */,
 				B2214E7E18FE1FE200762AE9 /* EcologicalDistribution.storyboard in Resources */,
 				B2214E7A18FE1FE200762AE9 /* AddHouseEstate.storyboard in Resources */,
@@ -1437,7 +1435,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "A77BA517-27F5-4575-AF96-B214674C6B79";
+				PROVISIONING_PROFILE = "05E4BCC8-4DF3-4ED5-85D5-6A3DECA95339";
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/Headers/AFNetworking $(SRCROOT)/Pods/Headers/FMDB $(SRCROOT)/Pods/Headers/SBJson $(SRCROOT)/Pods/Headers/MBProgressHUD $(SRCROOT)/Pods/Headers/SVPullToRefresh";
 			};
@@ -1471,7 +1469,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PROVISIONING_PROFILE = "A77BA517-27F5-4575-AF96-B214674C6B79";
+				PROVISIONING_PROFILE = "05E4BCC8-4DF3-4ED5-85D5-6A3DECA95339";
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/Headers/AFNetworking $(SRCROOT)/Pods/Headers/FMDB $(SRCROOT)/Pods/Headers/SBJson $(SRCROOT)/Pods/Headers/MBProgressHUD $(SRCROOT)/Pods/Headers/SVPullToRefresh";
 				VALIDATE_PRODUCT = YES;
@@ -1491,7 +1489,7 @@
 				INFOPLIST_FILE = "ButlerCard/ButlerCard-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "05E4BCC8-4DF3-4ED5-85D5-6A3DECA95339";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1509,7 +1507,7 @@
 				INFOPLIST_FILE = "ButlerCard/ButlerCard-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "05E4BCC8-4DF3-4ED5-85D5-6A3DECA95339";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

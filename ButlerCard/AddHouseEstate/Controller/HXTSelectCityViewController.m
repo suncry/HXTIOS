@@ -21,11 +21,7 @@ typedef NS_ENUM(NSUInteger, sectionType) {
 
 @property (strong, nonatomic) HXTAreaModel *areaModel;
 @property (copy  , nonatomic) NSString     *currentCity;
-@property (strong, nonatomic) NSArray      *topCities;
-@property (strong, nonatomic) NSDictionary *provinces;
 
-@property (strong, nonatomic) NSDictionary *selectedProvince;
-@property (weak  , nonatomic) UITableViewController *selectCitySecondLevelViewController;
 @end
 
 @implementation HXTSelectCityViewController
@@ -53,8 +49,6 @@ typedef NS_ENUM(NSUInteger, sectionType) {
     _areaModel.delegate = self;
     
     _currentCity = [HXTAccountManager sharedInstance].currentCity;
-    _topCities   = [[NSArray alloc] initWithContentsOfFile:[[NSBundle bundleForClass:[self class]] pathForResource:@"hotCities" ofType:@"plist"]];
-    _provinces   = [[NSDictionary alloc] initWithContentsOfFile:[[NSBundle bundleForClass:[self class]] pathForResource:@"provinces" ofType:@"plist"]];
     
     //获得当前城市
     __block __weak HXTSelectCityViewController *selectCityViewController = self;
@@ -80,11 +74,10 @@ typedef NS_ENUM(NSUInteger, sectionType) {
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.tabBarController.tabBar.hidden = YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-    self.tabBarController.tabBar.hidden = NO;
+    
     [super viewWillDisappear:animated];
 }
 
@@ -93,29 +86,20 @@ typedef NS_ENUM(NSUInteger, sectionType) {
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    if (tableView == self.tableView) {
-        return 3;
-    } else { // _selectCitySecondLevelViewController.tableView
-        return 1;
-    }
+    
+    return _areaModel.area.count + 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    if (tableView == self.tableView) {
-        if (section == sectionTypeCurrentCity) {
-            return 1;
-        } else if (section == sectionTypeTopCities) {
-            return _topCities.count;
-        } else if (section == sectionTypeProvinces) {
-            return _provinces.allKeys.count;
-        } else {
-            NSLog(@"####Error%s %s %d %@", __FILE__, __FUNCTION__, __LINE__, @"Wrong section");
-            return 0;
-        }
-    } else { // _selectCitySecondLevelViewController.tableView
-        return _selectedProvince.count;
+    if (section == sectionTypeCurrentCity) {
+        return 1;
+    } else {
+        NSArray *keys = _areaModel.area.allKeys;
+        return _areaModel.ar
+        NSLog(@"####Error%s %s %d %@", __FILE__, __FUNCTION__, __LINE__, @"Wrong section");
+        return 0;
     }
 }
 
