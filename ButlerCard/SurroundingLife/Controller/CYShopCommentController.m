@@ -145,7 +145,6 @@
 //         NSLog(@"self.dataDic: %@", _dataArr);
          //停止刷新
          [self.tableView.pullToRefreshView stopAnimating];
-         
      }
           failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {

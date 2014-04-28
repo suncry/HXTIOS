@@ -42,6 +42,8 @@
     //获取当前应用程序的委托（UIApplication sharedApplication为整个应用程序上下文）
     self.myDelegate = (HXTAppDelegate *)[[UIApplication sharedApplication] delegate];
 
+    //获取评论数量
+    [self commentNum];
 
 }
 
@@ -144,5 +146,22 @@
     }
 
 }
+- (void)commentNum
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *parameters = @{@"store_id": [[NSUserDefaults standardUserDefaults]valueForKey:kShopID]};
+    [manager POST:@"http://bbs.enveesoft.com:1602/htx/hexinpassserver/appserver/public/store/info" parameters:parameters
+          success:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+//         _dataArr = (responseObject[@"results"])[@"comments"];
+//         [(UIButton *)[self.view viewWithTag:105] setText:[NSString stringWithFormat:@"%d",((NSArray *)(responseObject[@"results"])[@"comments"]).count]];
+         [(UIButton *)[self.view viewWithTag:105] setTitle:[NSString stringWithFormat:@"用户评价(%d)",((NSArray *)(responseObject[@"results"])[@"comments"]).count] forState:UIControlStateNormal];
+//         NSLog(@"评论数量为 == %@",[NSString stringWithFormat:@"%d",((NSArray *)(responseObject[@"results"])[@"comments"]).count]);
+     }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+         NSLog(@"获取评论数量失败Error: %@", error);
+     }];
 
+}
 @end
