@@ -15,7 +15,7 @@
 #define kPropertyFeeSegue       @"propertyFeeSegue"
 #define kBrowseHouseEstateSegue @"browseHouseEstateSegue"
 #define kSurroundingLifeSegue   @"surroundingLifeSegue"
-
+#define kInteractionSegue       @"interactionSegue"
 @interface HXTHomeViewController ()
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *chooseHouseEstateBarButtonItem;
@@ -31,6 +31,7 @@
 @property (strong, nonatomic) UIStoryboardSegue *propertyFeeSegue;
 @property (strong, nonatomic) UIStoryboardSegue *browseHouseEstateSegue;
 @property (strong, nonatomic) UIStoryboardSegue *surroundingLifeSegue;
+@property (strong, nonatomic) UIStoryboardSegue *interactionSegue;
 
 @property (strong, nonatomic) UIViewController *nextStepViewController;
 
@@ -97,6 +98,15 @@
                                                     [((UIViewController *)(_surroundingLifeSegue.sourceViewController)).navigationController pushViewController:_surroundingLifeSegue.destinationViewController animated:YES];
                                                 }];
     
+    //小区互动Segue定义
+    _interactionSegue = [UIStoryboardSegue segueWithIdentifier:kInteractionSegue
+                                                            source:self
+                                                       destination:[[UIStoryboard storyboardWithName:@"Interaction" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"InteractionStoryboardID"]
+                                                    performHandler:^{
+                                                        ((UIViewController *)(_interactionSegue.destinationViewController)).hidesBottomBarWhenPushed = YES;
+                                                        [((UIViewController *)(_interactionSegue.sourceViewController)).navigationController pushViewController:_interactionSegue.destinationViewController animated:YES];
+                                                    }];
+
     
     if ([HXTAccountManager sharedInstance].defaultHouseingEstate) {
         _chooseHouseEstateBarButtonItem.title = [[HXTAccountManager sharedInstance].defaultHouseingEstate stringByAppendingString:@" ▾"];
@@ -215,6 +225,9 @@
 //小区互动
 - (IBAction)houseEstateInteractionButtonPressed:(UIButton *)sender {
     sender.selected = YES;
+    
+    [_interactionSegue perform];
+    
     NSLog(@"小区互动 %s %s %d", __FILE__, __FUNCTION__, __LINE__);
     sender.selected = NO;
 }
