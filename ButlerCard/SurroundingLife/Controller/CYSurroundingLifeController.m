@@ -245,12 +245,13 @@
 //        NSLog(@"range.length == %d",range.length);
 //        NSLog(@"range.location == %d",range.location);
 //        NSLog(@"NSNotFound == %d",NSNotFound);
-        if (range.location ==NSNotFound)//不包含
+        if (range.location ==NSNotFound)
         {
-            
+            //不包含
         }
         else
         {
+            //包含
             [_searchDataArr addObject:tempArr[i]];
         }
 //        NSLog(@"tempArr.count == %d",tempArr.count);
