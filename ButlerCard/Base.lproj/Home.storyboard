@@ -34,9 +34,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="当前位置" id="gys-az-ypo"/>
-                    <connections>
-                        <outlet property="mapView" destination="0Sk-jf-YTe" id="Mxc-CT-wBz"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tar-lM-jBi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,7 +10,6 @@
 #import <MapKit/MapKit.h>
 
 @interface HXTHomeMapViewController () <MKMapViewDelegate>
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @end
 
@@ -70,24 +69,21 @@
 - (void)mapViewDidFinishLoadingMap:(MKMapView *)mapView {
     
     
-//    if (0.00001 > [mapView userLocation].location.coordinate.latitude) {
-//        
-//        [self performSelector:@selector(mapViewDidFinishLoadingMap:)
-//                   withObject:mapView
-//                   afterDelay:1.0];
-//        return;
-//    }
-    NSLog(@"latitude = %f, longitude = %f", [mapView userLocation].location.coordinate.latitude, [mapView userLocation].location.coordinate.longitude);
-    MKCoordinateRegion region = [mapView region];
+    if (0.00001 > [mapView userLocation].location.coordinate.latitude) {
+        
+        [self performSelector:@selector(mapViewDidFinishLoadingMap:)
+                   withObject:mapView
+                   afterDelay:1.0];
+        return;
+    }
+    
+    NSLog(@"latitude = %f, longitude = %f", mapView.userLocation.location.coordinate.latitude, mapView.userLocation.location.coordinate.longitude);
+    MKCoordinateRegion region = mapView.region;
     region.center = [mapView userLocation].location.coordinate;
-    //    region.center.latitude = 30.509898;
-    //    region.center.longitude = 104.059720;
     
     region.span.latitudeDelta = 0.02;
     region.span.longitudeDelta = 0.02;
-    [mapView setRegion:[mapView regionThatFits:region] animated:NO];
-    
-    //    [mapView setCenterCoordinate:region.center animated:YES];
+    [mapView setRegion:[mapView regionThatFits:region] animated:YES];
     
 }
 - (void)mapViewDidFailLoadingMap:(MKMapView *)mapView withError:(NSError *)error {
