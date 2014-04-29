@@ -82,7 +82,7 @@
     //时间
     [(UILabel *)[cell viewWithTag:103] setText:(_dataArr[indexPath.row])[@"time"]];
     //商家回复
-    [(UILabel *)[cell viewWithTag:104] setText:(_dataArr[indexPath.row])[@"replyMessage"]];
+    [(UILabel *)[cell viewWithTag:104] setText:[NSString stringWithFormat:@"商家回复:%@",(_dataArr[indexPath.row])[@"replyMessage"]]];
 
     return cell;
 }
