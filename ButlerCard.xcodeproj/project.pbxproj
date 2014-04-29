@@ -22,6 +22,10 @@
 		23D707E5190E2F7E005E3C1A /* CYShopMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D707E4190E2F7E005E3C1A /* CYShopMapController.m */; };
 		23D7A2C9190F946400F363F8 /* Interaction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23D7A2C8190F946400F363F8 /* Interaction.storyboard */; };
 		23D7A2CF190F9BC500F363F8 /* CYCarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D7A2CE190F9BC500F363F8 /* CYCarController.m */; };
+		23D7A2D2190FA94200F363F8 /* CYFoodController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D7A2D1190FA94200F363F8 /* CYFoodController.m */; };
+		23D7A2D5190FA96700F363F8 /* CYHouseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D7A2D4190FA96700F363F8 /* CYHouseController.m */; };
+		23D7A2D8190FA99200F363F8 /* CYMahjongController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D7A2D7190FA99200F363F8 /* CYMahjongController.m */; };
+		23D7A2DB190FA9BC00F363F8 /* CYTravelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D7A2DA190FA9BC00F363F8 /* CYTravelController.m */; };
 		23FDF0B2190A4A4A0063421D /* Shop.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FDF0B1190A4A4A0063421D /* Shop.m */; };
 		B2214C0C18FE1E4000762AE9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2214C0B18FE1E4000762AE9 /* Foundation.framework */; };
 		B2214C0E18FE1E4000762AE9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2214C0D18FE1E4000762AE9 /* CoreGraphics.framework */; };
@@ -258,6 +262,14 @@
 		23D7A2C8190F946400F363F8 /* Interaction.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Interaction.storyboard; sourceTree = "<group>"; };
 		23D7A2CD190F9BC500F363F8 /* CYCarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYCarController.h; sourceTree = "<group>"; };
 		23D7A2CE190F9BC500F363F8 /* CYCarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYCarController.m; sourceTree = "<group>"; };
+		23D7A2D0190FA94200F363F8 /* CYFoodController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYFoodController.h; sourceTree = "<group>"; };
+		23D7A2D1190FA94200F363F8 /* CYFoodController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYFoodController.m; sourceTree = "<group>"; };
+		23D7A2D3190FA96700F363F8 /* CYHouseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYHouseController.h; sourceTree = "<group>"; };
+		23D7A2D4190FA96700F363F8 /* CYHouseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYHouseController.m; sourceTree = "<group>"; };
+		23D7A2D6190FA99200F363F8 /* CYMahjongController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYMahjongController.h; sourceTree = "<group>"; };
+		23D7A2D7190FA99200F363F8 /* CYMahjongController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYMahjongController.m; sourceTree = "<group>"; };
+		23D7A2D9190FA9BC00F363F8 /* CYTravelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYTravelController.h; sourceTree = "<group>"; };
+		23D7A2DA190FA9BC00F363F8 /* CYTravelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYTravelController.m; sourceTree = "<group>"; };
 		23FDF0B0190A4A4A0063421D /* Shop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shop.h; sourceTree = "<group>"; };
 		23FDF0B1190A4A4A0063421D /* Shop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shop.m; sourceTree = "<group>"; };
 		B08EE05FF8CA47378694428B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -516,6 +528,14 @@
 			children = (
 				23D7A2CD190F9BC500F363F8 /* CYCarController.h */,
 				23D7A2CE190F9BC500F363F8 /* CYCarController.m */,
+				23D7A2D0190FA94200F363F8 /* CYFoodController.h */,
+				23D7A2D1190FA94200F363F8 /* CYFoodController.m */,
+				23D7A2D3190FA96700F363F8 /* CYHouseController.h */,
+				23D7A2D4190FA96700F363F8 /* CYHouseController.m */,
+				23D7A2D6190FA99200F363F8 /* CYMahjongController.h */,
+				23D7A2D7190FA99200F363F8 /* CYMahjongController.m */,
+				23D7A2D9190FA9BC00F363F8 /* CYTravelController.h */,
+				23D7A2DA190FA9BC00F363F8 /* CYTravelController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1167,6 +1187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23CA861F19066C430067D0D4 /* CYSurroundingLifeController.m in Sources */,
+				23D7A2D2190FA94200F363F8 /* CYFoodController.m in Sources */,
 				B2214E1B18FE1FB800762AE9 /* CYFeedBackViewController.m in Sources */,
 				B26FE5E118FE51FC0093BC2F /* UIDevice+Resolutions.m in Sources */,
 				B2214E4518FE1FB800762AE9 /* HXTPropertyFeeViewController.m in Sources */,
@@ -1178,6 +1199,7 @@
 				B2214E2D18FE1FB800762AE9 /* CYOrderCell.m in Sources */,
 				B2D4EFFE19035897007C6089 /* LTHMonthYearPickerView.m in Sources */,
 				B2214DB318FE1FA200762AE9 /* HXTNavigationController.m in Sources */,
+				23D7A2D5190FA96700F363F8 /* CYHouseController.m in Sources */,
 				B2214E5118FE1FB800762AE9 /* HXTMyProperties.m in Sources */,
 				B2B01F96190BA1F9005A9483 /* HXTPropertyFeeMapViewController.m in Sources */,
 				B2214E3318FE1FB800762AE9 /* NSMutableArray+pieEx.m in Sources */,
@@ -1216,6 +1238,7 @@
 				B26FE5E318FE51FC0093BC2F /* HXTCheckBox.m in Sources */,
 				B2214C7818FE1F9000762AE9 /* HXTAddHouseEstateViewController.m in Sources */,
 				B240382C1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.m in Sources */,
+				23D7A2D8190FA99200F363F8 /* CYMahjongController.m in Sources */,
 				B2214DB118FE1FA200762AE9 /* HXTHomeViewController.m in Sources */,
 				B2214E2118FE1FB800762AE9 /* CYMyBillDetailCell.m in Sources */,
 				B2214C7618FE1F9000762AE9 /* HXTAccountManager.m in Sources */,
@@ -1255,6 +1278,7 @@
 				23A8C6981908BC5300EF925C /* CYShopController.m in Sources */,
 				B2214E5718FE1FB800762AE9 /* HXTPropertyFeeDetailCell.m in Sources */,
 				B2214C7E18FE1F9000762AE9 /* HXTBrowseHouseEstateViewController.m in Sources */,
+				23D7A2DB190FA9BC00F363F8 /* CYTravelController.m in Sources */,
 				B2214E5918FE1FB800762AE9 /* HXTPropertyTableViewHeaderFooterView.m in Sources */,
 				B26FE5DB18FE51FC0093BC2F /* Reachability.m in Sources */,
 			);
