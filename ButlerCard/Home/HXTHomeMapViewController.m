@@ -10,6 +10,7 @@
 #import <MapKit/MapKit.h>
 
 @interface HXTHomeMapViewController () <MKMapViewDelegate>
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @end
 
@@ -30,11 +31,27 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    /*
+    //定位
+    CLLocationCoordinate2D coords = CLLocationCoordinate2DMake(30.509898,104.059720);
+    float zoomLevel = 0.02;
+    MKCoordinateRegion region = MKCoordinateRegionMake(coords, MKCoordinateSpanMake(zoomLevel, zoomLevel));
+    
+    [_mapView setRegion:[_mapView regionThatFits:region] animated:YES];
+     */
+    //放大头针
+//    [self createAnnotationWithCoords:coords];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 #pragma mark - map view delegate
 
@@ -52,13 +69,14 @@
 
 - (void)mapViewDidFinishLoadingMap:(MKMapView *)mapView {
     
-    if (0.00001 > [mapView userLocation].location.coordinate.latitude) {
-        
-        [self performSelector:@selector(mapViewDidFinishLoadingMap:)
-                   withObject:mapView
-                   afterDelay:1.0];
-        return;
-    }
+    
+//    if (0.00001 > [mapView userLocation].location.coordinate.latitude) {
+//        
+//        [self performSelector:@selector(mapViewDidFinishLoadingMap:)
+//                   withObject:mapView
+//                   afterDelay:1.0];
+//        return;
+//    }
     NSLog(@"latitude = %f, longitude = %f", [mapView userLocation].location.coordinate.latitude, [mapView userLocation].location.coordinate.longitude);
     MKCoordinateRegion region = [mapView region];
     region.center = [mapView userLocation].location.coordinate;
@@ -67,7 +85,7 @@
     
     region.span.latitudeDelta = 0.02;
     region.span.longitudeDelta = 0.02;
-    [mapView setRegion:region animated:YES];
+    [mapView setRegion:[mapView regionThatFits:region] animated:NO];
     
     //    [mapView setCenterCoordinate:region.center animated:YES];
     
