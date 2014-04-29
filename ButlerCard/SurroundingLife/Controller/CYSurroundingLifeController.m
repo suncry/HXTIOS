@@ -110,7 +110,8 @@
         cell.nameLabel.text = _searchDataArr[indexPath.row][@"name"];
         [cell.rateView setRate:[_searchDataArr[indexPath.row][@"grade"]floatValue]];
         cell.addressLabel.text = _searchDataArr[indexPath.row][@"address"];
-        cell.distanceLabel.text = [NSString stringWithFormat:@"%@m",_dataArr[indexPath.row][@"distance"]];
+        cell.distanceLabel.text = [NSString stringWithFormat:@"%@m",_searchDataArr[indexPath.row][@"distance"]];
+        NSLog(@"搜索cell的 距离为：%@",_searchDataArr[indexPath.row][@"distance"]);
         return cell;
     }
     else
