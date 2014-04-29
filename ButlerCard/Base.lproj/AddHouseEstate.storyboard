@@ -13,7 +13,7 @@
                         <viewControllerLayoutGuide type="top" id="5ay-93-U0h"/>
                         <viewControllerLayoutGuide type="bottom" id="REb-iE-BXa"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="afT-KI-7F6">
+                    <view key="view" tag="100" contentMode="scaleToFill" id="afT-KI-7F6">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>

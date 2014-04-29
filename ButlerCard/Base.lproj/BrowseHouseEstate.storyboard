@@ -5,15 +5,15 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Browse House Estate View Controller - 浏览小区-->
+        <!--Add House Estate View Controller - 浏览小区-->
         <scene sceneID="yie-27-K9g">
             <objects>
-                <viewController storyboardIdentifier="BrowseHouseEstateStoryboardID" id="KbO-D9-o9T" customClass="HXTBrowseHouseEstateViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BrowseHouseEstateStoryboardID" id="KbO-D9-o9T" customClass="HXTAddHouseEstateViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5ay-93-U0h"/>
                         <viewControllerLayoutGuide type="bottom" id="REb-iE-BXa"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="afT-KI-7F6">
+                    <view key="view" tag="101" contentMode="scaleToFill" id="afT-KI-7F6">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>

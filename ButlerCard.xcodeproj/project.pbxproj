@@ -58,8 +58,6 @@
 		B2214C7B18FE1F9000762AE9 /* HXTAddHouseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C5918FE1F9000762AE9 /* HXTAddHouseViewController.m */; };
 		B2214C7C18FE1F9000762AE9 /* HXTAppleyOpenPropertyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C5B18FE1F9000762AE9 /* HXTAppleyOpenPropertyViewController.m */; };
 		B2214C7D18FE1F9000762AE9 /* HXTAppleyOpenPropertyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C5B18FE1F9000762AE9 /* HXTAppleyOpenPropertyViewController.m */; };
-		B2214C7E18FE1F9000762AE9 /* HXTBrowseHouseEstateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C5D18FE1F9000762AE9 /* HXTBrowseHouseEstateViewController.m */; };
-		B2214C7F18FE1F9000762AE9 /* HXTBrowseHouseEstateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C5D18FE1F9000762AE9 /* HXTBrowseHouseEstateViewController.m */; };
 		B2214C8018FE1F9000762AE9 /* HXTRegisterUserProtocolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C5F18FE1F9000762AE9 /* HXTRegisterUserProtocolViewController.m */; };
 		B2214C8118FE1F9000762AE9 /* HXTRegisterUserProtocolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C5F18FE1F9000762AE9 /* HXTRegisterUserProtocolViewController.m */; };
 		B2214C8418FE1F9000762AE9 /* HXTSelectCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2214C6318FE1F9000762AE9 /* HXTSelectCityViewController.m */; };
@@ -309,8 +307,6 @@
 		B2214C5918FE1F9000762AE9 /* HXTAddHouseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTAddHouseViewController.m; sourceTree = "<group>"; };
 		B2214C5A18FE1F9000762AE9 /* HXTAppleyOpenPropertyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTAppleyOpenPropertyViewController.h; sourceTree = "<group>"; };
 		B2214C5B18FE1F9000762AE9 /* HXTAppleyOpenPropertyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTAppleyOpenPropertyViewController.m; sourceTree = "<group>"; };
-		B2214C5C18FE1F9000762AE9 /* HXTBrowseHouseEstateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTBrowseHouseEstateViewController.h; sourceTree = "<group>"; };
-		B2214C5D18FE1F9000762AE9 /* HXTBrowseHouseEstateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTBrowseHouseEstateViewController.m; sourceTree = "<group>"; };
 		B2214C5E18FE1F9000762AE9 /* HXTRegisterUserProtocolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTRegisterUserProtocolViewController.h; sourceTree = "<group>"; };
 		B2214C5F18FE1F9000762AE9 /* HXTRegisterUserProtocolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTRegisterUserProtocolViewController.m; sourceTree = "<group>"; };
 		B2214C6218FE1F9000762AE9 /* HXTSelectCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTSelectCityViewController.h; sourceTree = "<group>"; };
@@ -699,8 +695,6 @@
 				B2214C5918FE1F9000762AE9 /* HXTAddHouseViewController.m */,
 				B2214C5A18FE1F9000762AE9 /* HXTAppleyOpenPropertyViewController.h */,
 				B2214C5B18FE1F9000762AE9 /* HXTAppleyOpenPropertyViewController.m */,
-				B2214C5C18FE1F9000762AE9 /* HXTBrowseHouseEstateViewController.h */,
-				B2214C5D18FE1F9000762AE9 /* HXTBrowseHouseEstateViewController.m */,
 				B2214C5E18FE1F9000762AE9 /* HXTRegisterUserProtocolViewController.h */,
 				B2214C5F18FE1F9000762AE9 /* HXTRegisterUserProtocolViewController.m */,
 				B2214C6218FE1F9000762AE9 /* HXTSelectCityViewController.h */,
@@ -1280,7 +1274,6 @@
 				B2214E1F18FE1FB800762AE9 /* CYMsgTableViewController.m in Sources */,
 				23A8C6981908BC5300EF925C /* CYShopController.m in Sources */,
 				B2214E5718FE1FB800762AE9 /* HXTPropertyFeeDetailCell.m in Sources */,
-				B2214C7E18FE1F9000762AE9 /* HXTBrowseHouseEstateViewController.m in Sources */,
 				23D7A2DB190FA9BC00F363F8 /* CYTravelController.m in Sources */,
 				B2214E5918FE1FB800762AE9 /* HXTPropertyTableViewHeaderFooterView.m in Sources */,
 				B26FE5DB18FE51FC0093BC2F /* Reachability.m in Sources */,
@@ -1345,7 +1338,6 @@
 				B2214E2218FE1FB800762AE9 /* CYMyBillDetailCell.m in Sources */,
 				B2D484EC190A2141000D5E33 /* HXTWithholdingUseAgreementViewController.m in Sources */,
 				B2214C8118FE1F9000762AE9 /* HXTRegisterUserProtocolViewController.m in Sources */,
-				B2214C7F18FE1F9000762AE9 /* HXTBrowseHouseEstateViewController.m in Sources */,
 				B2214C7518FE1F9000762AE9 /* HXTRetrievePasswordViewController.m in Sources */,
 				B26FE5D818FE51FC0093BC2F /* HXTLocationManager.m in Sources */,
 				B2214C7B18FE1F9000762AE9 /* HXTAddHouseViewController.m in Sources */,
