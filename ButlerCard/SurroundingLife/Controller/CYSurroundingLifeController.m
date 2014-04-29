@@ -241,10 +241,17 @@
     for (int i = 0; i < tempArr.count; i++)
     {
 //        NSLog(@"dic  name == %@",tempArr[i][@"name"]);
-        if ([tempArr[i][@"name"] hasPrefix:searchText])
+        NSRange range = [tempArr[i][@"name"] rangeOfString:searchText];//判断字符串是否包含
+//        NSLog(@"range.length == %d",range.length);
+//        NSLog(@"range.location == %d",range.location);
+//        NSLog(@"NSNotFound == %d",NSNotFound);
+        if (range.location ==NSNotFound)//不包含
+        {
+            
+        }
+        else
         {
             [_searchDataArr addObject:tempArr[i]];
-//            NSLog(@"有匹配结果！");
         }
 //        NSLog(@"tempArr.count == %d",tempArr.count);
 //        NSLog(@"_searchDataArr == %@",_searchDataArr);
