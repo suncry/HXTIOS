@@ -29,7 +29,7 @@
 
 - (void)testShow
 {
-    [[HXTAreaModel sharedInstance] show];
+    [[HXTAreaModel sharedInstance] loadDataFromServer];
 //    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
 }
 

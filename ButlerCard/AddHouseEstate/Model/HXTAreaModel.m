@@ -44,6 +44,7 @@
 
 - (void)setArea:(NSDictionary *)area {
     _area = area;
+    
     [_area writeToFile:_areaSaveFilePath atomically:YES];
 }
 
@@ -51,19 +52,14 @@
 #pragma mark - public functions
 
 - (NSDictionary *)area {
-    if (!_area ) {
-        _area = [[NSDictionary alloc] initWithContentsOfFile: _areaSaveFilePath];
-    }
     
-    if (!_area) {
-        _area= [[NSDictionary alloc] initWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"areas" ofType:@"plist"]];
-    }
+    _area = [[NSDictionary alloc] initWithContentsOfFile: _areaSaveFilePath];
     
     return _area;
 }
 
 
-- (void)reloadAreasFromServer {
+- (void)loadDataFromServer {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     [[AFHTTPRequestOperationManager manager] POST:@"http://bbs.enveesoft.com:1602/htx/hexinpassserver/appserver/public/tenement/area"

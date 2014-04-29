@@ -15,7 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *chooseAreaBarButtonItem;
 @property (weak, nonatomic) IBOutlet UIControl *coverView;
 @property (weak, nonatomic) IBOutlet UISearchBar *propertySearchBar;
-@property (weak, nonatomic) IBOutlet UICollectionView *housingEstatesCollectionView;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @property (copy,   nonatomic) NSMutableArray *housingEstateNamesToShow;
 
@@ -102,7 +102,7 @@
         }
     }
     
-    [_housingEstatesCollectionView reloadData];
+    [_collectionView reloadData];
 }
 
 #pragma mark - UICollectionView DataSource

@@ -42,16 +42,7 @@
 - (id)init {
     self = [super init];
     if (self) {
-        NSUserDefaults *standard = [NSUserDefaults standardUserDefaults];
         
-        float longitude = [standard floatForKey:kLastLongitude];
-        float latitude = [standard floatForKey:kLastLatitude];
-        self.longitude = longitude;
-        self.latitude = latitude;
-        self.lastCoordinate = CLLocationCoordinate2DMake(longitude,latitude);
-        self.lastCity = [standard objectForKey:kLastCity];
-        self.lastAddress=[standard objectForKey:kLastAddress];
-        self.lastSubLocality = [standard objectForKey:kLastSubLocality];
     }
     return self;
 }
@@ -98,28 +89,20 @@
 -(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
     
     self.lastCoordinate = newLocation.coordinate;
-    NSUserDefaults *standard = [NSUserDefaults standardUserDefaults];
     
     NSLog(@"%f, %f", self.lastCoordinate.latitude, self.lastCoordinate.longitude);
-    [standard setObject:@(self.lastCoordinate.latitude) forKey:kLastLatitude];
-    [standard setObject:@(self.lastCoordinate.longitude) forKey:kLastLongitude];
     
     CLGeocoder *geoCoder = [[CLGeocoder alloc] init];
     
     [geoCoder reverseGeocodeLocation:newLocation
                    completionHandler:^(NSArray *placemarks,NSError *error) {
                        
-                       CLPlacemark *placemark = [placemarks objectAtIndex:0];
-                       NSLog(@"####placeMark.name = %@", placemark.name);
                        for (CLPlacemark * placeMark in placemarks)
                        {
                            self.lastCity = placeMark.locality;
                            self.lastAddress = placeMark.name;
                            self.lastSubLocality = placeMark.subLocality;
                            
-                           [standard setObject:self.lastCity forKey:kLastCity];
-                           [standard setObject:self.lastAddress forKey:kLastAddress];
-                           [standard setObject:self.lastSubLocality forKey:kLastSubLocality];
                            
                            NSLog(@"%s %s %d", __FILE__, __FUNCTION__, __LINE__);
                            
@@ -158,7 +141,6 @@
                        if (_subLocalityBlock) {
                            _subLocalityBlock(_lastSubLocality);
                        }
-                       [[NSUserDefaults standardUserDefaults] synchronize];
                    }];
 }
 

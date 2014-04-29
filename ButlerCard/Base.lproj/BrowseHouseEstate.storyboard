@@ -154,8 +154,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="chooseAreaBarButtonItem" destination="OoZ-6c-JR0" id="rST-Pg-6q9"/>
+                        <outlet property="collectionView" destination="YBD-Ce-MEF" id="ogL-k5-pI5"/>
                         <outlet property="coverView" destination="aG2-6z-Gk5" id="JUD-nG-Tnr"/>
-                        <outlet property="housingEstatesCollectionView" destination="YBD-Ce-MEF" id="f5e-Lm-deS"/>
                         <outlet property="propertySearchBar" destination="9eD-ib-4iT" id="sa0-k6-ShT"/>
                         <outlet property="searchDisplayController" destination="cjh-a7-OSq" id="g9s-Xy-sD9"/>
                     </connections>

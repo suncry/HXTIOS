@@ -8,16 +8,16 @@
 
 #import "HXTAddHouseEstateViewController.h"
 #import "HXTAccountManager.h"
-#import "HXTMyProperties.h"
+#import "HXTHouseEstateListModel.h"
 
-@interface HXTAddHouseEstateViewController ()
+@interface HXTAddHouseEstateViewController () <HXTHouseEstateListModelDelegate>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *chooseAreaBarButtonItem;
 @property (weak, nonatomic) IBOutlet UIControl *coverView;
 @property (weak, nonatomic) IBOutlet UISearchBar *propertySearchBar;
-@property (weak, nonatomic) IBOutlet UICollectionView *housingEstatesCollectionView;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
-@property (copy, nonatomic) NSMutableArray *housingEstateNamesToShow;
-@property (strong, nonatomic)HXTHouse *addedHouse;
+@property (strong, nonatomic) HXTHouseEstateListModel *houseEstatelistModel;
+@property (strong, nonatomic) NSArray *houstEstateList;
 @end
 
 @implementation HXTAddHouseEstateViewController
@@ -36,12 +36,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    self.navigationController.navigationBarHidden = NO;
-    
-    _housingEstateNamesToShow = [[NSMutableArray alloc] initWithArray:[HXTMyProperties sharedInstance].allHousingEstateNames];
-    _addedHouse = [[HXTHouse alloc] init];
-    
     _chooseAreaBarButtonItem.title = [[HXTAccountManager sharedInstance].currentArea stringByAppendingString:@" ▾"];
+    
+    _houseEstatelistModel = [[HXTHouseEstateListModel alloc] init];
+    _houseEstatelistModel.delegate = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -58,6 +56,12 @@
     [[HXTAccountManager sharedInstance] removeObserver:self forKeyPath:@"currentArea"];
     
     [super viewWillDisappear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+     [_houseEstatelistModel loadDataFromServerWithAreaID:nil andSearchWord:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -94,24 +98,18 @@
 - (void)startSearch:(NSString *)searchString {
     if (searchString == nil || (id)searchString==[NSNull null] ||
         searchString.length <= 0 || [searchString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length<=0) {
-        [_housingEstateNamesToShow addObjectsFromArray:[HXTMyProperties sharedInstance].allHousingEstateNames];
+        //未输入查询，不做处理
     } else {
-        [_housingEstateNamesToShow removeAllObjects];
-        for (NSUInteger i = 0; i < [HXTMyProperties sharedInstance].allHousingEstateNames.count; i++) {
-            NSRange range = [[HXTMyProperties sharedInstance].allHousingEstateNames[i] rangeOfString:searchString];
-            if (range.location != NSNotFound) {
-                [_housingEstateNamesToShow addObject:[HXTMyProperties sharedInstance].allHousingEstateNames[i]];
-            }
-        }
+        [_houseEstatelistModel loadDataFromServerWithAreaID:nil andSearchWord:searchString];
     }
     
-    [_housingEstatesCollectionView reloadData];
+    [_collectionView reloadData];
 }
 
 #pragma mark - UICollectionView DataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return _housingEstateNamesToShow.count;
+    return _houstEstateList.count;
 }
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
@@ -120,7 +118,7 @@
     
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:collectionViewCellIdentifier forIndexPath:indexPath];
     ((UIImageView *)[cell viewWithTag:100]).image = [UIImage imageNamed:[NSString stringWithFormat:@"property_house%lu", (long)(indexPath.row % 7 + 1)]];
-    ((UILabel *)[cell viewWithTag:101]).text = _housingEstateNamesToShow[indexPath.row];
+    ((UILabel *)[cell viewWithTag:101]).text = _houstEstateList[indexPath.row][@"name"];
     
     return cell;
 }
@@ -130,17 +128,21 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"didSelectItemAtIndexPath indexPath.section = %li, indexPath.row = %li", (long)indexPath.section, (long)indexPath.row);
-    _addedHouse.housingEstatename = _housingEstateNamesToShow[indexPath.row];
-    /*
-     UIViewController *loginViewcontroller = [[UIStoryboard storyboardWithName:@"AccountManager" bundle:nil] instantiateViewControllerWithIdentifier:@"LoginStoryboardID"];
-     
-     [loginViewcontroller setValue:self forKey:@"delegate"];
-     [self.navigationController pushViewController:loginViewcontroller animated:YES];
-     */
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     
+}
+
+#pragma mark - HXTHouseEstateListModel Delegate
+
+- (void)houseEstateListModel:(HXTHouseEstateListModel *)houseEstateListModel DidFinishLoadingListModel:(NSArray *)houseEstateList {
+    NSLog(@"houseEstateList = %@", houseEstateList);
+    _houstEstateList = houseEstateList;
+    [_collectionView reloadData];
+}
+- (void)houseEstateListModel:(HXTHouseEstateListModel *)houseEstateListModel DidFailLoadingListModelWithError:(NSError *)error {
+    NSLog(@"%s %s %d Error: %@", __FILE__, __FUNCTION__, __LINE__, error.description);
 }
 
 #pragma mark - IB Actions
@@ -158,8 +160,8 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"AddHouseStoryboardSegue"]) {
-        UIViewController *addHouseViewController = segue.destinationViewController;
-        [addHouseViewController setValue:_addedHouse forKey:@"addedHouse"];
+//        UIViewController *addHouseViewController = segue.destinationViewController;
+//        [addHouseViewController setValue:_addedHouse forKey:@"addedHouse"];
     }
 }
 

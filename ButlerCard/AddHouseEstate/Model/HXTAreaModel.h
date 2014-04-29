@@ -25,5 +25,5 @@
 
 + (instancetype)sharedInstance;
 
-- (void)reloadAreasFromServer;
+- (void)loadDataFromServer;
 @end

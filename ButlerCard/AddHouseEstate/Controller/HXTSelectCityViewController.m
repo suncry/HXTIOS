@@ -56,7 +56,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [_areaModel reloadAreasFromServer];
+    [_areaModel loadDataFromServer];
     [self _updateCurrentAare];
 }
 

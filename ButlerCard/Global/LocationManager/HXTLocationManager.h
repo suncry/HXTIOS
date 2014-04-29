@@ -9,12 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 
-#define kLastLongitude     @"LastLongitude"
-#define kLastLatitude      @"LastLatitude"
-#define kLastCity          @"LastCity"
-#define kLastAddress       @"LastAddress"
-#define kLastSubLocality   @"LastSubLocality"
-
 typedef void (^LocationBlock)(CLLocationCoordinate2D locationCorrrdinate);
 typedef void (^LocationErrorBlock) (NSError *error);
 typedef void (^NSStringBlock)(NSString *cityString);
