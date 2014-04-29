@@ -9,8 +9,10 @@
 #import "HXTAddHouseEstateViewController.h"
 #import "HXTAccountManager.h"
 #import "HXTHouseEstateListModel.h"
+#import "MBProgressHUD.h"
 
-@interface HXTAddHouseEstateViewController () <HXTHouseEstateListModelDelegate>
+@interface HXTAddHouseEstateViewController () <HXTHouseEstateListModelDelegate, MBProgressHUDDelegate>
+
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *chooseAreaBarButtonItem;
 @property (weak, nonatomic) IBOutlet UIControl *coverView;
 @property (weak, nonatomic) IBOutlet UISearchBar *propertySearchBar;
@@ -18,6 +20,8 @@
 
 @property (strong, nonatomic) HXTHouseEstateListModel *houseEstatelistModel;
 @property (strong, nonatomic) NSArray *houstEstateList;
+@property (strong, nonatomic) MBProgressHUD *HUD;
+
 @end
 
 @implementation HXTAddHouseEstateViewController
@@ -60,6 +64,14 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
+    if (!_HUD) {
+        _HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    }
+    [self.view addSubview:_HUD];
+    
+    _HUD.delegate = self;
+    [_HUD show:YES];
     
      [_houseEstatelistModel loadDataFromServerWithAreaID:nil andSearchWord:nil];
 }
@@ -140,9 +152,22 @@
     NSLog(@"houseEstateList = %@", houseEstateList);
     _houstEstateList = houseEstateList;
     [_collectionView reloadData];
+    [_HUD hide:YES];
 }
+
 - (void)houseEstateListModel:(HXTHouseEstateListModel *)houseEstateListModel DidFailLoadingListModelWithError:(NSError *)error {
     NSLog(@"%s %s %d Error: %@", __FILE__, __FUNCTION__, __LINE__, error.description);
+    
+    [_HUD hide:YES];
+    UIAlertView *alerView = [[UIAlertView alloc] initWithTitle:nil message:error.description delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+    [alerView show];
+}
+
+#pragma mark - MBProgressHUD Delegate
+
+- (void)hudWasHidden:(MBProgressHUD *)hud {
+	// Remove HUD from screen when the HUD was hidded
+	[_HUD removeFromSuperview];
 }
 
 #pragma mark - IB Actions
