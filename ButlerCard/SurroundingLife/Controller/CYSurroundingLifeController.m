@@ -110,7 +110,8 @@
         cell.nameLabel.text = _searchDataArr[indexPath.row][@"name"];
         [cell.rateView setRate:[_searchDataArr[indexPath.row][@"grade"]floatValue]];
         cell.addressLabel.text = _searchDataArr[indexPath.row][@"address"];
-        cell.distanceLabel.text = [NSString stringWithFormat:@"%@m",_dataArr[indexPath.row][@"distance"]];
+        cell.distanceLabel.text = [NSString stringWithFormat:@"%@m",_searchDataArr[indexPath.row][@"distance"]];
+        NSLog(@"搜索cell的 距离为：%@",_searchDataArr[indexPath.row][@"distance"]);
         return cell;
     }
     else
@@ -241,10 +242,18 @@
     for (int i = 0; i < tempArr.count; i++)
     {
 //        NSLog(@"dic  name == %@",tempArr[i][@"name"]);
-        if ([tempArr[i][@"name"] hasPrefix:searchText])
+        NSRange range = [tempArr[i][@"name"] rangeOfString:searchText];//判断字符串是否包含
+//        NSLog(@"range.length == %d",range.length);
+//        NSLog(@"range.location == %d",range.location);
+//        NSLog(@"NSNotFound == %d",NSNotFound);
+        if (range.location ==NSNotFound)
         {
+            //不包含
+        }
+        else
+        {
+            //包含
             [_searchDataArr addObject:tempArr[i]];
-//            NSLog(@"有匹配结果！");
         }
 //        NSLog(@"tempArr.count == %d",tempArr.count);
 //        NSLog(@"_searchDataArr == %@",_searchDataArr);
