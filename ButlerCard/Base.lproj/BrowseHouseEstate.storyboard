@@ -143,7 +143,7 @@
                     <navigationItem key="navigationItem" title="浏览小区" id="T9y-7o-5kM">
                         <barButtonItem key="leftBarButtonItem" title="取消" id="bBR-eo-2lR">
                             <connections>
-                                <action selector="backButtonPressed:" destination="KbO-D9-o9T" id="9bZ-eA-G8U"/>
+                                <action selector="cancelButtonPressed:" destination="KbO-D9-o9T" id="MUX-PU-aQ4"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="成都市▼" id="OoZ-6c-JR0">
