@@ -178,7 +178,6 @@
 #pragma mark - HXTHouseEstateListModel Delegate
 
 - (void)houseEstateListModel:(HXTHouseEstateListModel *)houseEstateListModel DidFinishLoadingListModel:(NSArray *)houseEstateList {
-    NSLog(@"houseEstateList = %@", houseEstateList);
     _houstEstateList = houseEstateList;
     [_collectionView reloadData];
     [_HUD hide:YES];
@@ -237,12 +236,6 @@
 
 #pragma mark - Navigation
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"AddHouseStoryboardSegue"]) {
-        //        UIViewController *addHouseViewController = segue.destinationViewController;
-        //        [addHouseViewController setValue:_addedHouse forKey:@"addedHouse"];
-    }
-}
 
 - (IBAction)cancelButtonPressed:(id)sender {
     [self dismissViewControllerAnimated:YES completion:^{}];

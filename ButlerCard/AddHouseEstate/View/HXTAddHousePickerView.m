@@ -176,7 +176,7 @@
             break;
     }
     
-    NSLog(@"selected %@栋 %@单元 %@", _buidindNo, _unitNo, _houseNo);
+    NSLog(@"selected %@栋 %@单元 %@号", _buidindNo, _unitNo, _houseNo);
 }
 
 #pragma mark - local functions

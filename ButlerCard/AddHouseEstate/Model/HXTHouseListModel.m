@@ -31,7 +31,7 @@
                                        parameters:parameters
                                           success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
                                               if ([responseObject[@"success"] integerValue] == 1) {
-                                                  NSLog(@"responseObject = %@", responseObject);
+//                                                  NSLog(@"responseObject = %@", responseObject);
                                                   dispatch_async(dispatch_get_main_queue(), ^{
                                                       if (_delegate && [_delegate respondsToSelector:@selector(houseListModel:DidFinishLoadingListModel:)]) {
                                                           [_delegate houseListModel:self DidFinishLoadingListModel:responseObject[@"results"]];
