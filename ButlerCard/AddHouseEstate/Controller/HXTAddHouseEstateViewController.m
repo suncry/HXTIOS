@@ -9,6 +9,7 @@
 #import "HXTAddHouseEstateViewController.h"
 #import "HXTAccountManager.h"
 #import "HXTHouseEstateListModel.h"
+#import "HXTAddHousePickerView.h"
 #import "MBProgressHUD.h"
 
 @interface HXTAddHouseEstateViewController () <HXTHouseEstateListModelDelegate, MBProgressHUDDelegate>
@@ -18,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UISearchBar *propertySearchBar;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
+@property (strong, nonatomic) HXTAddHousePickerView *addHousePickerView;
 @property (strong, nonatomic) HXTHouseEstateListModel *houseEstatelistModel;
 @property (strong, nonatomic) NSArray *houstEstateList;
 @property (strong, nonatomic) MBProgressHUD *HUD;
@@ -50,6 +52,8 @@
     } else {
         self.title = @"添加小区";
     }
+    
+    _addHousePickerView = [[[NSBundle mainBundle] loadNibNamed:@"HXTAddHousePickerView" owner:self options:nil] lastObject];
     
 }
 
@@ -153,7 +157,7 @@
         
         [self.navigationController pushViewController:loginViewcontroller animated:YES];
     } else { //是添加小区页面
-        
+        [_addHousePickerView show];
     }
 }
 
