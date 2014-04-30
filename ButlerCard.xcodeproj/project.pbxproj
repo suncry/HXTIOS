@@ -154,8 +154,6 @@
 		B2214E7818FE1FE200762AE9 /* AccountManager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2214E6718FE1FE200762AE9 /* AccountManager.storyboard */; };
 		B2214E7918FE1FE200762AE9 /* AddHouseEstate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2214E6918FE1FE200762AE9 /* AddHouseEstate.storyboard */; };
 		B2214E7A18FE1FE200762AE9 /* AddHouseEstate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2214E6918FE1FE200762AE9 /* AddHouseEstate.storyboard */; };
-		B2214E7B18FE1FE200762AE9 /* BrowseHouseEstate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2214E6B18FE1FE200762AE9 /* BrowseHouseEstate.storyboard */; };
-		B2214E7C18FE1FE200762AE9 /* BrowseHouseEstate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2214E6B18FE1FE200762AE9 /* BrowseHouseEstate.storyboard */; };
 		B2214E7D18FE1FE200762AE9 /* EcologicalDistribution.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2214E6D18FE1FE200762AE9 /* EcologicalDistribution.storyboard */; };
 		B2214E7E18FE1FE200762AE9 /* EcologicalDistribution.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2214E6D18FE1FE200762AE9 /* EcologicalDistribution.storyboard */; };
 		B2214E7F18FE1FE200762AE9 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2214E6F18FE1FE200762AE9 /* Home.storyboard */; };
@@ -397,7 +395,6 @@
 		B2214E0618FE1FB800762AE9 /* MyPropertyTableViewHeaderFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyPropertyTableViewHeaderFooterView.xib; sourceTree = "<group>"; };
 		B2214E6818FE1FE200762AE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AccountManager.storyboard; sourceTree = "<group>"; };
 		B2214E6A18FE1FE200762AE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AddHouseEstate.storyboard; sourceTree = "<group>"; };
-		B2214E6C18FE1FE200762AE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/BrowseHouseEstate.storyboard; sourceTree = "<group>"; };
 		B2214E6E18FE1FE200762AE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/EcologicalDistribution.storyboard; sourceTree = "<group>"; };
 		B2214E7018FE1FE200762AE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		B2214E7218FE1FE200762AE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PropertyFee.storyboard; sourceTree = "<group>"; };
@@ -596,7 +593,6 @@
 				23D7A2C8190F946400F363F8 /* Interaction.storyboard */,
 				B2214E6718FE1FE200762AE9 /* AccountManager.storyboard */,
 				B2214E6918FE1FE200762AE9 /* AddHouseEstate.storyboard */,
-				B2214E6B18FE1FE200762AE9 /* BrowseHouseEstate.storyboard */,
 				B2214E6D18FE1FE200762AE9 /* EcologicalDistribution.storyboard */,
 				B2214E6F18FE1FE200762AE9 /* Home.storyboard */,
 				B2214E7118FE1FE200762AE9 /* PropertyFee.storyboard */,
@@ -1108,7 +1104,6 @@
 				B2214E7F18FE1FE200762AE9 /* Home.storyboard in Resources */,
 				B2214E8118FE1FE200762AE9 /* PropertyFee.storyboard in Resources */,
 				B2214C8618FE1F9000762AE9 /* hotCities.plist in Resources */,
-				B2214E7B18FE1FE200762AE9 /* BrowseHouseEstate.storyboard in Resources */,
 				B2214E8318FE1FE200762AE9 /* PropertyService.storyboard in Resources */,
 				B2214E8518FE1FE200762AE9 /* SurroundingLife.storyboard in Resources */,
 				B2214C8818FE1F9000762AE9 /* provinces.plist in Resources */,
@@ -1137,7 +1132,6 @@
 				B2596BA81904BF4A00FBB3F9 /* HXTYearMonthIntervalPickerView.xib in Resources */,
 				B2214E8218FE1FE200762AE9 /* PropertyFee.storyboard in Resources */,
 				B2214E5C18FE1FB800762AE9 /* MyPropertyTableViewHeaderFooterView.xib in Resources */,
-				B2214E7C18FE1FE200762AE9 /* BrowseHouseEstate.storyboard in Resources */,
 				B2214E8418FE1FE200762AE9 /* PropertyService.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1405,14 +1399,6 @@
 				B2214E6A18FE1FE200762AE9 /* Base */,
 			);
 			name = AddHouseEstate.storyboard;
-			sourceTree = "<group>";
-		};
-		B2214E6B18FE1FE200762AE9 /* BrowseHouseEstate.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B2214E6C18FE1FE200762AE9 /* Base */,
-			);
-			name = BrowseHouseEstate.storyboard;
 			sourceTree = "<group>";
 		};
 		B2214E6D18FE1FE200762AE9 /* EcologicalDistribution.storyboard */ = {

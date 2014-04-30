@@ -84,9 +84,14 @@
     //浏览小区Segue定义
     _browseHouseEstateSegue = [UIStoryboardSegue segueWithIdentifier:kBrowseHouseEstateSegue
                                                         source:self
-                                                   destination:[[UIStoryboard storyboardWithName:@"BrowseHouseEstate" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"BrowseHouseEstateNavStoryboardID"]
+                                                   destination:[[UIStoryboard storyboardWithName:@"AddHouseEstate" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"AddHouseEstateNavStoryboardID"]
                                                 performHandler:^{
-                                                    [_browseHouseEstateSegue.sourceViewController presentViewController:_browseHouseEstateSegue.destinationViewController animated:YES completion:^{}];
+                                                    [_browseHouseEstateSegue.sourceViewController presentViewController:_browseHouseEstateSegue.destinationViewController animated:YES completion:^{
+                                                        NSLog(@"count = %lu", ((UINavigationController *)_browseHouseEstateSegue.destinationViewController).viewControllers.count);
+                                                        UIViewController *viewController = ((UINavigationController *)_browseHouseEstateSegue.destinationViewController).viewControllers[0];
+                                                        [viewController setValue:@(1) forKeyPath:@"functionType"];
+                                                        viewController.title = @"浏览小区";
+                                                    }];
                                                 }];
     
     //周边生活Segue定义

@@ -177,43 +177,6 @@
 
 #pragma mark - IB Actions
 
-- (IBAction)reloadButtonPressed:(UIButton *)sender {
-    sender.hidden = YES;
-    
-    //获取Activity Indicator;
-    __block __weak UIActivityIndicatorView *activityIndicatorView;
-    UIView *view = sender.superview;
-    while (view && view.superview) {
-        if ([view isKindOfClass:[UITableViewCell class]]) {
-            
-            activityIndicatorView = (UIActivityIndicatorView *)[((UITableViewCell *)view) viewWithTag:104];
-            activityIndicatorView.hidden = NO;
-            [activityIndicatorView startAnimating];
-            
-            NSIndexPath *indexPath = [self.tableView indexPathForCell:(UITableViewCell *)view];
-            NSLog(@"indexPath.row = %lu", (long)indexPath.row);
-            
-            break;
-        }
-        view = view.superview;
-    }
-    
-    //获得当前地址
-    __block __weak HXTHomeChooseHouseEstateTableViewController *homeChooseHouseEstateTableViewController = self;
-    
-    [[HXTLocationManager sharedLocation] getAddress:^(NSString * addressString) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            homeChooseHouseEstateTableViewController.curAddress = addressString;
-            NSLog(@"addressString = %@", addressString);
-            NSIndexSet *indexSet= [NSIndexSet indexSetWithIndex:1];
-            [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
-            
-            [activityIndicatorView stopAnimating];
-            sender.hidden = NO;
-        });
-    }];
-}
 
 #pragma mark - Navigation
 /*

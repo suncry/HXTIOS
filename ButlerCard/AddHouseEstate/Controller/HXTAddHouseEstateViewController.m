@@ -45,6 +45,12 @@
     _houseEstatelistModel = [[HXTHouseEstateListModel alloc] init];
     _houseEstatelistModel.delegate = self;
     
+    if ([self.functionType integerValue] == FunctionTypeBrowHouseEstate) {
+        self.title = @"浏览小区";
+    } else {
+        self.title = @"添加小区";
+    }
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -142,7 +148,7 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"didSelectItemAtIndexPath indexPath.section = %li, indexPath.row = %li", (long)indexPath.section, (long)indexPath.row);
     
-    if (self.view.tag == 101) { //是浏览小区页面
+    if ([self.functionType integerValue] == FunctionTypeBrowHouseEstate) { //是浏览小区页面
         UIViewController *loginViewcontroller = [[UIStoryboard storyboardWithName:@"AccountManager" bundle:nil] instantiateViewControllerWithIdentifier:@"LoginStoryboardID"];
         
         [self.navigationController pushViewController:loginViewcontroller animated:YES];

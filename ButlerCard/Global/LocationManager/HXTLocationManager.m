@@ -120,7 +120,6 @@
                            NSLog(@"placeMark.ocean = %@", placeMark.ocean);
                            NSLog(@"placeMark.areasOfInterest = %@", placeMark.areasOfInterest);
                            
-                           [self stopLocation];
                        }
                        
                        if (_cityBlock) {
@@ -141,6 +140,8 @@
                        if (_subLocalityBlock) {
                            _subLocalityBlock(_lastSubLocality);
                        }
+                       
+                       [self stopLocation];
                    }];
 }
 

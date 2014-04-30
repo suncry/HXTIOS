@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, AddHouseEstateFunctionType) {
+    FunctionTypeAddHouseEstate  = 0,      //添加小区
+    FunctionTypeBrowHouseEstate          //浏览小区
+};
+
 @interface HXTAddHouseEstateViewController : UIViewController
+
+@property (strong, nonatomic) NSNumber *functionType;
 
 @end
