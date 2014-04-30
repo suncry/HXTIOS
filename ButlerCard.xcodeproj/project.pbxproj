@@ -194,6 +194,8 @@
 		B2ADF8B61910D5C900D14FE1 /* HXTAddHousePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2ADF8B41910D5C900D14FE1 /* HXTAddHousePickerView.xib */; };
 		B2ADF8BD1910D67100D14FE1 /* HXTAddHousePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2ADF8BC1910D67100D14FE1 /* HXTAddHousePickerView.m */; };
 		B2ADF8BE1910D67100D14FE1 /* HXTAddHousePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2ADF8BC1910D67100D14FE1 /* HXTAddHousePickerView.m */; };
+		B2ADF8C51910E0C300D14FE1 /* HXTHouseListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2ADF8C41910E0C300D14FE1 /* HXTHouseListModel.m */; };
+		B2ADF8C61910E0C300D14FE1 /* HXTHouseListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2ADF8C41910E0C300D14FE1 /* HXTHouseListModel.m */; };
 		B2B01F5D190A4EC9005A9483 /* HXTAreaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B01F5C190A4EC9005A9483 /* HXTAreaModel.m */; };
 		B2B01F5E190A4EC9005A9483 /* HXTAreaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B01F5C190A4EC9005A9483 /* HXTAreaModel.m */; };
 		B2B01F60190A4F2E005A9483 /* HXTAreaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B01F5F190A4F2E005A9483 /* HXTAreaTests.m */; };
@@ -428,6 +430,8 @@
 		B2ADF8B41910D5C900D14FE1 /* HXTAddHousePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HXTAddHousePickerView.xib; path = View/HXTAddHousePickerView.xib; sourceTree = "<group>"; };
 		B2ADF8BB1910D67000D14FE1 /* HXTAddHousePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HXTAddHousePickerView.h; path = View/HXTAddHousePickerView.h; sourceTree = "<group>"; };
 		B2ADF8BC1910D67100D14FE1 /* HXTAddHousePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HXTAddHousePickerView.m; path = View/HXTAddHousePickerView.m; sourceTree = "<group>"; };
+		B2ADF8C31910E0C300D14FE1 /* HXTHouseListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTHouseListModel.h; sourceTree = "<group>"; };
+		B2ADF8C41910E0C300D14FE1 /* HXTHouseListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTHouseListModel.m; sourceTree = "<group>"; };
 		B2B01F5B190A4EC9005A9483 /* HXTAreaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTAreaModel.h; sourceTree = "<group>"; };
 		B2B01F5C190A4EC9005A9483 /* HXTAreaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTAreaModel.m; sourceTree = "<group>"; };
 		B2B01F5F190A4F2E005A9483 /* HXTAreaTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTAreaTests.m; sourceTree = "<group>"; };
@@ -702,6 +706,8 @@
 				B2B01F5C190A4EC9005A9483 /* HXTAreaModel.m */,
 				B226D944190F847C00993132 /* HXTHouseEstateListModel.h */,
 				B226D945190F847C00993132 /* HXTHouseEstateListModel.m */,
+				B2ADF8C31910E0C300D14FE1 /* HXTHouseListModel.h */,
+				B2ADF8C41910E0C300D14FE1 /* HXTHouseListModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1210,6 +1216,7 @@
 				23D7A2CF190F9BC500F363F8 /* CYCarController.m in Sources */,
 				B2D484EB190A2141000D5E33 /* HXTWithholdingUseAgreementViewController.m in Sources */,
 				B2214E2918FE1FB800762AE9 /* CYMyPropertyTableViewCell.m in Sources */,
+				B2ADF8C51910E0C300D14FE1 /* HXTHouseListModel.m in Sources */,
 				23BC739A190A040B0088BEC9 /* CoreModel.xcdatamodeld in Sources */,
 				B2214C6A18FE1F9000762AE9 /* HXTLoginViewController.m in Sources */,
 				B26FE5EB18FE51FC0093BC2F /* XPHTTPURLConnection.m in Sources */,
@@ -1287,6 +1294,7 @@
 				B2214DB018FE1FA200762AE9 /* HXTHomeChooseHouseEstateTableViewController.m in Sources */,
 				B2214E3E18FE1FB800762AE9 /* CYHouseChoiceController.m in Sources */,
 				B2214E2A18FE1FB800762AE9 /* CYMyPropertyTableViewCell.m in Sources */,
+				B2ADF8C61910E0C300D14FE1 /* HXTHouseListModel.m in Sources */,
 				B26FE5EC18FE51FC0093BC2F /* XPHTTPURLConnection.m in Sources */,
 				B26FE5D218FE51FC0093BC2F /* NSDataAdditions.m in Sources */,
 				B2214C8518FE1F9000762AE9 /* HXTSelectCityViewController.m in Sources */,

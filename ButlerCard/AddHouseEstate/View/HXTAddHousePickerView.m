@@ -8,6 +8,9 @@
 
 #import "HXTAddHousePickerView.h"
 
+#define kBuildingNo             @"buildingNo"
+#define kUnitNo                 @"unitNo"
+#define kHouseNo                @"houseNo"
 #define kWinSize [UIScreen mainScreen].bounds.size
 
 @interface HXTAddHousePickerView ()
@@ -16,6 +19,9 @@
 
 @property (strong, nonatomic) UIControl *coverView;
 @property (assign, nonatomic) BOOL isShowing;
+@property (assign, nonatomic) NSString *buidindNo;
+@property (assign, nonatomic) NSString *unitNo;
+@property (assign, nonatomic) NSString *houseNo;
 
 @end
 
@@ -51,13 +57,32 @@
 }
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect
+ {
+ // Drawing code
+ }
+ */
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    if (_houseList.count > 0) {
+        _buidindNo = _houseList.allKeys[0]; //获取第一个楼号
+        NSLog(@"_buidindNo = %@", _buidindNo);
+        if ([_houseList[_buidindNo] allKeys] > 0) {
+            _unitNo = [_houseList[_buidindNo] allKeys][0]; //获取第一个单元号
+            NSLog(@"_unitNo = %@", _unitNo);
+            if ([_houseList[_buidindNo][_unitNo] count] > 0) {
+                _houseNo = _houseList[_buidindNo][_unitNo][0]; //获取第一个房间号
+                NSLog(@"_houseNo = %@", _houseNo);
+            }
+        }
+    }
+    
+    [self.pickerView reloadAllComponents];
 }
-*/
 
 #pragma mark - UIPickerView DataSource
 
@@ -69,13 +94,16 @@
     NSUInteger rows = 0;
     switch (component) {
         case 0:
-            rows = 15;
+            rows = _houseList.allKeys.count;
+            NSLog(@"0rows = %lu", (long)rows);
             break;
         case 1:
-            rows = 4;
+            rows = [[_houseList[_buidindNo] allKeys] count];
+            NSLog(@"1rows = %lu", (long)rows);
             break;
         case 2:
-            rows = 20;
+            rows = [_houseList[_buidindNo][_unitNo] count];
+            NSLog(@"2rows = %lu", (long)rows);
             break;
         default:
             break;
@@ -99,13 +127,13 @@
     NSString *title;
     switch (component) {
         case 0:
-            title = [NSString stringWithFormat:@"%lu栋", (long)(row + 1)];
+            title = [NSString stringWithFormat:@"%@栋", _houseList.allKeys[row]];
             break;
         case 1:
-            title = [NSString stringWithFormat:@"%lu单元", (long)(row + 1)];
+            title = [NSString stringWithFormat:@"%@单元", [_houseList[_buidindNo] allKeys][row]];
             break;
         case 2:
-            title = [NSString stringWithFormat:@"%lu", (long)(100 * (row / 2 + 1) + row + 1)];
+            title = [NSString stringWithFormat:@"%@号", _houseList[_buidindNo][_unitNo][row]];
             break;
         default:
             break;
@@ -125,7 +153,30 @@
  */
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    NSLog(@"row = %lu, component = %lu", (long)row, (long)component);
+    switch (component) {
+        case 0:
+            _buidindNo = _houseList.allKeys[row];
+            [_pickerView reloadComponent:1];
+            [_pickerView selectRow:0 inComponent:1 animated:YES];
+            _unitNo = [_houseList[_buidindNo] allKeys][0];
+            [_pickerView reloadComponent:2];
+            [_pickerView selectRow:0 inComponent:2 animated:YES];
+            _houseNo = _houseList[_buidindNo][_unitNo][0];
+            break;
+        case 1:
+            _unitNo = [_houseList[_buidindNo] allKeys][row];
+            [_pickerView reloadComponent:2];
+            [_pickerView selectRow:0 inComponent:2 animated:YES];
+            _houseNo = _houseList[_buidindNo][_unitNo][0];
+            break;
+        case 2:
+            _houseNo = _houseList[_buidindNo][_unitNo][row];
+            break;
+        default:
+            break;
+    }
+    
+    NSLog(@"selected %@栋 %@单元 %@", _buidindNo, _unitNo, _houseNo);
 }
 
 #pragma mark - local functions
@@ -136,13 +187,18 @@
 
 #pragma makr - IB Actions
 
-- (IBAction)cancelButtonPressed:(id)sender {
+- (IBAction)doneBarButtonItemPressed:(UIBarButtonItem *)sender {
     [self hide];
+    //    if (_delegate && [_delegate respondsToSelector:@selector(pickerDidPressDoneWithStarDateComponents:andEndComponents:)]) {
+    //        [_delegate pickerDidPressDoneWithStarDateComponents:_curStartComps andEndComponents:_curEndComps];
+    //    }
 }
-
-
-- (IBAction)doneButtonPressed:(id)sender {
+- (IBAction)cancelBarButtonItemPressed:(UIBarButtonItem *)sender {
     [self hide];
+    
+    if (_delegate && [_delegate respondsToSelector:@selector(pickerDidPressCancel)]) {
+        [_delegate pickerDidPressCancel];
+    }
 }
 
 #pragma mark - public functions

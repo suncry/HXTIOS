@@ -10,9 +10,11 @@
 #import "HXTAccountManager.h"
 #import "HXTHouseEstateListModel.h"
 #import "HXTAddHousePickerView.h"
+#import "HXTHouseListModel.h"
 #import "MBProgressHUD.h"
 
-@interface HXTAddHouseEstateViewController () <HXTHouseEstateListModelDelegate, MBProgressHUDDelegate>
+
+@interface HXTAddHouseEstateViewController () <HXTHouseEstateListModelDelegate, MBProgressHUDDelegate,HXTHouseListModelDelegate,  HXTAddHousePickerViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *chooseAreaBarButtonItem;
 @property (weak, nonatomic) IBOutlet UIControl *coverView;
@@ -22,6 +24,7 @@
 @property (strong, nonatomic) HXTAddHousePickerView *addHousePickerView;
 @property (strong, nonatomic) HXTHouseEstateListModel *houseEstatelistModel;
 @property (strong, nonatomic) NSArray *houstEstateList;
+@property (strong, nonatomic) HXTHouseListModel *houstListModel;
 @property (strong, nonatomic) MBProgressHUD *HUD;
 
 @end
@@ -42,18 +45,24 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    _chooseAreaBarButtonItem.title = [[HXTAccountManager sharedInstance].currentArea stringByAppendingString:@" ▾"];
     
     _houseEstatelistModel = [[HXTHouseEstateListModel alloc] init];
     _houseEstatelistModel.delegate = self;
+    
+    _houstListModel = [[HXTHouseListModel alloc] init];
+    _houstListModel.delegate = self;
+    
+    _addHousePickerView = [[[NSBundle mainBundle] loadNibNamed:@"HXTAddHousePickerView" owner:self options:nil] lastObject];
+    _addHousePickerView.delegate = self;
+    
+    
+    _chooseAreaBarButtonItem.title = [[HXTAccountManager sharedInstance].currentArea stringByAppendingString:@" ▾"];
     
     if ([self.functionType integerValue] == FunctionTypeBrowHouseEstate) {
         self.title = @"浏览小区";
     } else {
         self.title = @"添加小区";
     }
-    
-    _addHousePickerView = [[[NSBundle mainBundle] loadNibNamed:@"HXTAddHousePickerView" owner:self options:nil] lastObject];
     
 }
 
@@ -84,7 +93,7 @@
     _HUD.delegate = self;
     [_HUD show:YES];
     
-     [_houseEstatelistModel loadDataFromServerWithAreaID:nil andSearchWord:nil];
+    [_houseEstatelistModel loadDataFromServerWithAreaID:nil andSearchWord:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -157,7 +166,8 @@
         
         [self.navigationController pushViewController:loginViewcontroller animated:YES];
     } else { //是添加小区页面
-        [_addHousePickerView show];
+        _addHousePickerView.titleLabel.text = _houstEstateList[indexPath.row][@"name"];
+        [_houstListModel loadDataFromServerWithHouseEstateID:@"1"];
     }
 }
 
@@ -182,6 +192,31 @@
     [alerView show];
 }
 
+#pragma mark - HXTHouseListModel Delegate
+
+- (void)houseListModel:(HXTHouseListModel *)houseListModel DidFinishLoadingListModel:(NSDictionary *)houseList {
+    _addHousePickerView.houseList = houseList;
+    [_addHousePickerView show];
+}
+- (void)houseListModel:(HXTHouseListModel *)houseListModel DidFailLoadingListModelWithError:(NSError *)error {
+    UIAlertView *alerView = [[UIAlertView alloc] initWithTitle:nil
+                                                       message:error.description
+                                                      delegate:nil
+                                             cancelButtonTitle:@"确定"
+                                             otherButtonTitles:nil];
+    [alerView show];
+}
+
+#pragma mark - HXTAddHousePickerView Delegate
+
+- (void)pickerDidSelectHouse:(NSString *)house {
+    NSLog(@"pickerDidSelectHouse");
+}
+
+- (void)pickerDidPressCancel {
+    NSLog(@"pickerDidPressCancel");
+}
+
 #pragma mark - MBProgressHUD Delegate
 
 - (void)hudWasHidden:(MBProgressHUD *)hud {
@@ -204,8 +239,8 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"AddHouseStoryboardSegue"]) {
-//        UIViewController *addHouseViewController = segue.destinationViewController;
-//        [addHouseViewController setValue:_addedHouse forKey:@"addedHouse"];
+        //        UIViewController *addHouseViewController = segue.destinationViewController;
+        //        [addHouseViewController setValue:_addedHouse forKey:@"addedHouse"];
     }
 }
 

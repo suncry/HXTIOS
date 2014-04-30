@@ -8,7 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
+@class HXTAddHousePickerView;
+
+@protocol HXTAddHousePickerViewDelegate <NSObject>
+
+@optional
+- (void)pickerDidSelectHouse:(NSString *)house;
+- (void)pickerDidPressCancel;
+
+@end
+
 @interface HXTAddHousePickerView : UIView
+
+@property (assign, nonatomic)id<HXTAddHousePickerViewDelegate> delegate;
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) NSDictionary *houseList;
 
 - (void)show;
 - (void)hide;
