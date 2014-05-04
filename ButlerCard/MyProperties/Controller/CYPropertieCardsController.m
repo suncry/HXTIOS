@@ -67,7 +67,7 @@
     if (indexPath.row == 0)
     {
         //月份cell高度
-        return 60.0;
+        return 44.0;
         
     }
     else
