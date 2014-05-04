@@ -40,7 +40,7 @@
                                                   
                                               }else  {
                                                   NSLog(@"####fail!!");
-                                                  NSError *error = [[NSError alloc] initWithDomain:@"未知错误" code:[responseObject[@"success"] integerValue] userInfo:nil];
+                                                  NSError *error = [[NSError alloc] initWithDomain:@"未知错误" code:[responseObject[@"success"] integerValue] userInfo:@{NSLocalizedDescriptionKey: @"未知错误"}];
                                                   dispatch_async(dispatch_get_main_queue(), ^{
                                                       if (_delegate && [_delegate respondsToSelector:@selector(houseListModel:DidFailLoadingListModelWithError:)]) {
                                                           [_delegate houseListModel:self DidFailLoadingListModelWithError:error];
