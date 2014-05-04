@@ -13,6 +13,7 @@
 @interface HXTHomeChooseHouseEstateTableViewController ()
 
 @property (copy, nonatomic) NSString *curAddress;
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 
 @end
 
@@ -36,6 +37,12 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(_reload:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView.tableHeaderView addSubview:self.refreshControl];
+    
+    [self.tableView.tableFooterView addSubview:self.refreshControl];
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,6 +54,13 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+    [self _reload:nil];
+}
+
+#pragma mark - local functions
+
+- (void)_reload:(__unused id)sender {
+    
     //获得当前地址
     __block __weak HXTHomeChooseHouseEstateTableViewController *homeChooseHouseEstateTableViewController = self;
     
@@ -57,6 +71,7 @@
             NSLog(@"addressString = %@", addressString);
             NSIndexSet *indexSet= [NSIndexSet indexSetWithIndex:1];
             [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+            [homeChooseHouseEstateTableViewController.refreshControl endRefreshing];
         });
     }];
 }

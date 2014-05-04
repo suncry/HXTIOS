@@ -86,15 +86,13 @@
 
 #pragma mark - CLLocationManager delegate
 
--(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
-    
-    self.lastCoordinate = newLocation.coordinate;
-    
-    NSLog(@"%f, %f", self.lastCoordinate.latitude, self.lastCoordinate.longitude);
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    NSLog(@"######## = %@", locations);
+    self.lastCoordinate = [locations.lastObject coordinate];
     
     CLGeocoder *geoCoder = [[CLGeocoder alloc] init];
     
-    [geoCoder reverseGeocodeLocation:newLocation
+    [geoCoder reverseGeocodeLocation:locations.lastObject
                    completionHandler:^(NSArray *placemarks,NSError *error) {
                        
                        for (CLPlacemark * placeMark in placemarks)
@@ -183,7 +181,7 @@
         
         _locationManager = [[CLLocationManager alloc] init];
         _locationManager.delegate = self;
-        _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        _locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
         _locationManager.distanceFilter = kCLDistanceFilterNone;
         [_locationManager startUpdatingLocation];
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;

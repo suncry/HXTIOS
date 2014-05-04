@@ -87,7 +87,6 @@
                                                    destination:[[UIStoryboard storyboardWithName:@"AddHouseEstate" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"AddHouseEstateNavStoryboardID"]
                                                 performHandler:^{
                                                     [_browseHouseEstateSegue.sourceViewController presentViewController:_browseHouseEstateSegue.destinationViewController animated:YES completion:^{
-                                                        NSLog(@"count = %lu", ((UINavigationController *)_browseHouseEstateSegue.destinationViewController).viewControllers.count);
                                                         UIViewController *viewController = ((UINavigationController *)_browseHouseEstateSegue.destinationViewController).viewControllers[0];
                                                         [viewController setValue:@(1) forKeyPath:@"functionType"];
                                                         viewController.title = @"浏览小区";

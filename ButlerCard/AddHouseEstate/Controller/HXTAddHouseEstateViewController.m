@@ -187,7 +187,7 @@
     NSLog(@"%s %s %d Error: %@", __FILE__, __FUNCTION__, __LINE__, error.description);
     
     [_HUD hide:YES];
-    UIAlertView *alerView = [[UIAlertView alloc] initWithTitle:nil message:error.description delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+    UIAlertView *alerView = [[UIAlertView alloc] initWithTitle:nil message:error.localizedDescription delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
     [alerView show];
 }
 
