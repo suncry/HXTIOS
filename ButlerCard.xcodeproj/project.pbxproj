@@ -27,6 +27,8 @@
 		23D7A2D8190FA99200F363F8 /* CYMahjongController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D7A2D7190FA99200F363F8 /* CYMahjongController.m */; };
 		23D7A2DB190FA9BC00F363F8 /* CYTravelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D7A2DA190FA9BC00F363F8 /* CYTravelController.m */; };
 		23FDF0B2190A4A4A0063421D /* Shop.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FDF0B1190A4A4A0063421D /* Shop.m */; };
+		B203DFB21916357100DDC4F0 /* HXTAddHouseEstateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B203DFB11916357100DDC4F0 /* HXTAddHouseEstateModel.m */; };
+		B203DFB31916357100DDC4F0 /* HXTAddHouseEstateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B203DFB11916357100DDC4F0 /* HXTAddHouseEstateModel.m */; };
 		B2214C0C18FE1E4000762AE9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2214C0B18FE1E4000762AE9 /* Foundation.framework */; };
 		B2214C0E18FE1E4000762AE9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2214C0D18FE1E4000762AE9 /* CoreGraphics.framework */; };
 		B2214C1018FE1E4000762AE9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2214C0F18FE1E4000762AE9 /* UIKit.framework */; };
@@ -268,6 +270,8 @@
 		23FDF0B0190A4A4A0063421D /* Shop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shop.h; sourceTree = "<group>"; };
 		23FDF0B1190A4A4A0063421D /* Shop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shop.m; sourceTree = "<group>"; };
 		B08EE05FF8CA47378694428B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		B203DFB01916357100DDC4F0 /* HXTAddHouseEstateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTAddHouseEstateModel.h; sourceTree = "<group>"; };
+		B203DFB11916357100DDC4F0 /* HXTAddHouseEstateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTAddHouseEstateModel.m; sourceTree = "<group>"; };
 		B2214C0818FE1E4000762AE9 /* ButlerCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ButlerCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2214C0B18FE1E4000762AE9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B2214C0D18FE1E4000762AE9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -708,6 +712,8 @@
 				B226D945190F847C00993132 /* HXTHouseEstateListModel.m */,
 				B2ADF8C31910E0C300D14FE1 /* HXTHouseListModel.h */,
 				B2ADF8C41910E0C300D14FE1 /* HXTHouseListModel.m */,
+				B203DFB01916357100DDC4F0 /* HXTAddHouseEstateModel.h */,
+				B203DFB11916357100DDC4F0 /* HXTAddHouseEstateModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1235,6 +1241,7 @@
 				B2214C7C18FE1F9000762AE9 /* HXTAppleyOpenPropertyViewController.m in Sources */,
 				B2214DB518FE1FA200762AE9 /* HXTTabBarViewController.m in Sources */,
 				B2214E3F18FE1FB800762AE9 /* CYNoticeBoardController.m in Sources */,
+				B203DFB21916357100DDC4F0 /* HXTAddHouseEstateModel.m in Sources */,
 				B2214C6C18FE1F9000762AE9 /* HXTRegisterAddHouseEstateViewController.m in Sources */,
 				232EBDD619090F6E00381960 /* CYShopCommentController.m in Sources */,
 				B2214C7A18FE1F9000762AE9 /* HXTAddHouseViewController.m in Sources */,
@@ -1301,6 +1308,7 @@
 				B226D947190F847C00993132 /* HXTHouseEstateListModel.m in Sources */,
 				B2214E3018FE1FB800762AE9 /* Example2PieView.m in Sources */,
 				B2214E3A18FE1FB800762AE9 /* CYActiveController.m in Sources */,
+				B203DFB31916357100DDC4F0 /* HXTAddHouseEstateModel.m in Sources */,
 				B2D484E8190A1B5E000D5E33 /* HXTOpenAutomaticBillPayViewController.m in Sources */,
 				B2214E3C18FE1FB800762AE9 /* CYDiscussController.m in Sources */,
 				B2214E5418FE1FB800762AE9 /* HXTPropertyCell.m in Sources */,

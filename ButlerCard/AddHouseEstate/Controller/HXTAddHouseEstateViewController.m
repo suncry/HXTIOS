@@ -11,10 +11,18 @@
 #import "HXTHouseEstateListModel.h"
 #import "HXTAddHousePickerView.h"
 #import "HXTHouseListModel.h"
+#import "HXTAddHouseEstateModel.h"
 #import "MBProgressHUD.h"
 
 
-@interface HXTAddHouseEstateViewController () <HXTHouseEstateListModelDelegate, MBProgressHUDDelegate,HXTHouseListModelDelegate,  HXTAddHousePickerViewDelegate>
+@interface HXTAddHouseEstateViewController ()
+<
+HXTHouseEstateListModelDelegate,
+MBProgressHUDDelegate,
+HXTHouseListModelDelegate,
+HXTAddHouseEstateModelDelegate,
+HXTAddHousePickerViewDelegate
+>
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *chooseAreaBarButtonItem;
 @property (weak, nonatomic) IBOutlet UIControl *coverView;
@@ -25,6 +33,7 @@
 @property (strong, nonatomic) HXTHouseEstateListModel *houseEstatelistModel;
 @property (strong, nonatomic) NSArray *houstEstateList;
 @property (strong, nonatomic) HXTHouseListModel *houstListModel;
+@property (strong, nonatomic) HXTAddHouseEstateModel *addHouseEstateModel;
 @property (strong, nonatomic) MBProgressHUD *HUD;
 
 @end
@@ -208,12 +217,29 @@
 
 #pragma mark - HXTAddHousePickerView Delegate
 
-- (void)pickerDidSelectHouse:(NSString *)house {
-    NSLog(@"pickerDidSelectHouse");
+- (void)addHousePickerViewDidSelectHouseWithBuildingNo:(NSString *)buildingNo unitNo:(NSString *)unitNo houseNo:(NSString *)houseNo {
+    NSLog(@"addHousePickerViewDidSelectHouseWithBuildingNo = %@, unitNo = %@, houseNo = %@", buildingNo, unitNo, houseNo);
+    if (!_addHouseEstateModel) {
+        _addHouseEstateModel = [[HXTAddHouseEstateModel alloc] init];
+        _addHouseEstateModel.delegate = self;
+    }
+    
+    [_addHouseEstateModel addHouseEstateToServerWithUserID:@"1" houseEstateID:@"1" buildingNo:buildingNo unitNo:unitNo houseNo:houseNo];
 }
 
-- (void)pickerDidPressCancel {
-    NSLog(@"pickerDidPressCancel");
+- (void)addHousePickerViewDidPressCancel {
+    NSLog(@"addHousePickerViewDidPressCancel");
+}
+
+#pragma mark - HXTAddHouseEstateModel Delegate
+
+- (void)addHouseEstateModel:(HXTAddHouseEstateModel *)addHouseEstateModel DidFinishAddHouseEstate:(NSDictionary *)houseEstate {
+    
+    NSLog(@"houseEstate = %@", houseEstate);
+}
+
+- (void)addHouseEstateModel:(HXTAddHouseEstateModel *)addHouseEstateModel DidFailAddHouseEstateWithError:(NSError *)error {
+    
 }
 
 #pragma mark - MBProgressHUD Delegate

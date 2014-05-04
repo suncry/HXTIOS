@@ -13,8 +13,8 @@
 @protocol HXTAddHousePickerViewDelegate <NSObject>
 
 @optional
-- (void)pickerDidSelectHouse:(NSString *)house;
-- (void)pickerDidPressCancel;
+- (void)addHousePickerViewDidSelectHouseWithBuildingNo:(NSString *)buildingNo unitNo:(NSString *)unitNo houseNo:(NSString *)houseNo;
+- (void)addHousePickerViewDidPressCancel;
 
 @end
 

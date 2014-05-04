@@ -189,15 +189,17 @@
 
 - (IBAction)doneBarButtonItemPressed:(UIBarButtonItem *)sender {
     [self hide];
-    //    if (_delegate && [_delegate respondsToSelector:@selector(pickerDidPressDoneWithStarDateComponents:andEndComponents:)]) {
-    //        [_delegate pickerDidPressDoneWithStarDateComponents:_curStartComps andEndComponents:_curEndComps];
-    //    }
+    if (_delegate && [_delegate respondsToSelector:@selector(addHousePickerViewDidSelectHouseWithBuildingNo:unitNo:houseNo:)]) {
+        [_delegate addHousePickerViewDidSelectHouseWithBuildingNo:_buidindNo
+                                                           unitNo:_unitNo
+                                                          houseNo:_houseNo];
+    }
 }
 - (IBAction)cancelBarButtonItemPressed:(UIBarButtonItem *)sender {
     [self hide];
     
-    if (_delegate && [_delegate respondsToSelector:@selector(pickerDidPressCancel)]) {
-        [_delegate pickerDidPressCancel];
+    if (_delegate && [_delegate respondsToSelector:@selector(addHousePickerViewDidPressCancel)]) {
+        [_delegate addHousePickerViewDidPressCancel];
     }
 }
 
