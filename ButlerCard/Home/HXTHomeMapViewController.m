@@ -10,7 +10,9 @@
 #import <MapKit/MapKit.h>
 
 @interface HXTHomeMapViewController () <MKMapViewDelegate, CLLocationManagerDelegate>
+
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) CLLocationManager *locationManager;
 
 @end
 
@@ -29,31 +31,92 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    CLLocationManager *locationManager = [[CLLocationManager alloc] init];//创建位置管理器
-    locationManager.delegate=self;//设置代理
-    locationManager.desiredAccuracy=kCLLocationAccuracyBest;//指定需要的精度级别
-    locationManager.distanceFilter=100.0f;//设置距离筛选器
-    [locationManager startUpdatingLocation];//启动位置管理器
-    MKCoordinateSpan theSpan;
-    //地图的范围 越小越精确
-    theSpan.latitudeDelta=0.01;
-    theSpan.longitudeDelta=0.01;
-    MKCoordinateRegion theRegion;
-    theRegion.center=[[locationManager location] coordinate];
-    theRegion.span=theSpan;
-    [self.mapView setRegion:theRegion];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+    [self _startLocation];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [self _stopLocation];
+    [super viewWillDisappear:animated];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+#pragma mark - location functions
+
+-(void)_startLocation
+{
+    // check to see if Location Services is enabled, there are two state possibilities:
+    // 1) disabled for entire device, 2) disabled just for this app
+    //
+    NSString *causeStr = nil;
+    
+    // check whether location services are enabled on the device
+    if ([CLLocationManager locationServicesEnabled] == NO)
+    {
+        causeStr = @"device";
+    }
+    // check the application’s explicit authorization status:
+    else if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied)
+    {
+        causeStr = @"app";
+    }
+    else
+    {
+        // we are good to go, start the location
+        if (_locationManager) {
+            _locationManager = nil;
+        }
+        
+        _locationManager = [[CLLocationManager alloc] init];
+        _locationManager.delegate = self;
+        _locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
+        _locationManager.distanceFilter = kCLDistanceFilterNone;
+        [_locationManager startUpdatingLocation];
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    }
+    
+    if (causeStr != nil)
+    {
+        NSString *alertMessage = [NSString stringWithFormat:@"You currently have location services disabled for this %@. Please refer to \"Settings\" app to turn on Location Services.", causeStr];
+        
+        UIAlertView *servicesDisabledAlert = [[UIAlertView alloc] initWithTitle:@"Location Services Disabled"
+                                                                        message:alertMessage
+                                                                       delegate:nil
+                                                              cancelButtonTitle:@"OK"
+                                                              otherButtonTitles:nil];
+        [servicesDisabledAlert show];
+    }
+}
+
+-(void)_stopLocation
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    [_locationManager stopUpdatingLocation];
+    _locationManager = nil;
+}
+
+#pragma mark - location manager delegate
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    NSLog(@"locations = %@", locations);
+    MKCoordinateSpan theSpan;
+    //地图的范围 越小越精确
+    theSpan.latitudeDelta=0.01;
+    theSpan.longitudeDelta=0.01;
+    MKCoordinateRegion theRegion;
+    theRegion.center=[[_locationManager location] coordinate];
+    theRegion.span=theSpan;
+    [self.mapView setRegion:theRegion];
 }
 
 
