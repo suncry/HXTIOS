@@ -80,7 +80,7 @@
     else
     {
         //消费清单cell高度
-        return 80.0;
+        return 44.0;
     }
     
 }
@@ -101,24 +101,6 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    //点击的如果是月份cell  row == 0  则触发折叠功能
-    if (indexPath.row == 0)
-    {
-        //折叠的情况
-        if ([_dataArray[indexPath.section] count]> 1)
-        {
-            NSMutableArray *tempArray = [[NSMutableArray alloc]initWithObjects:_dataArray[indexPath.section][indexPath.row], nil];
-            _dataArray[indexPath.section] = tempArray;
-            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationFade];
-        }
-        //展开的情况
-        else
-        {
-            _dataArray[indexPath.section] = _allDataArray[indexPath.section];
-            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationFade];
-        }
-    }
 }
 
 /*
