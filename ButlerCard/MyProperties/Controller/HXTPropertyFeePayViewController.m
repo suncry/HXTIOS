@@ -10,6 +10,8 @@
 #import "HXTYearMonthIntervalPickerView.h"
 #import "HXTPropertyFeeInputMoneyTableViewController.h"
 
+#define kPaySegue  @"paySegue"
+
 @interface HXTPropertyFeePayViewController () <UITextFieldDelegate, HXTYearMonthIntervalPickerViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -18,6 +20,7 @@
 @property (strong, nonatomic) NSArray *feeTypeName;
 @property (strong, nonatomic) HXTYearMonthIntervalPickerView *yearMonthIntervalPicker;
 @property (strong, nonatomic) UIButton *selectedButton;
+@property (strong, nonatomic) UIStoryboardSegue *paySegue;
 @end
 
 @implementation HXTPropertyFeePayViewController
@@ -40,8 +43,17 @@
         _segmentedControl.tintColor =  [UIColor colorWithRed:242.0f / 255 green:111.0f / 255 blue:14.0f / 255 alpha:1];
     }
     
+    //登录Segue定义
+    _paySegue = [UIStoryboardSegue segueWithIdentifier:kPaySegue
+                                                  source:self
+                                             destination:[[UIStoryboard storyboardWithName:@"ChargeAndPay" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"payStoryboadID"]
+                                          performHandler:^{
+                                              [_paySegue.sourceViewController presentViewController:_paySegue.destinationViewController animated:YES completion:^{}];
+                                          }];
+    
     self.view.backgroundColor = [UIColor whiteColor];
     [self setExtraCellLineHidden:_tableView];
+    
     
     _feeTypeName = @[@"物管费", @"停车费", @"水费", @"电费", @"气费"];
     
@@ -235,6 +247,11 @@
     NSLog(@"sender.selectedSegmentIndex = %lu title = %@", (long)sender.selectedSegmentIndex, [sender titleForSegmentAtIndex:sender.selectedSegmentIndex]);
     
     [self.tableView reloadData];
+}
+
+
+- (IBAction)payButtonPressed:(UIButton *)sender {
+    [_paySegue perform];
 }
 
 #pragma mark - local functions

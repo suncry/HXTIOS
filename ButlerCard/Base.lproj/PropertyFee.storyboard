@@ -248,6 +248,9 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <state key="selected" backgroundImage="global_button_y_s"/>
+                                        <connections>
+                                            <action selector="payButtonPressed:" destination="LPQ-63-w2k" eventType="touchUpInside" id="Abd-Kn-9tD"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="我的管家卡余额：800.00元" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bzc-ev-nbv">
                                         <rect key="frame" x="20" y="42" width="242" height="21"/>
@@ -322,7 +325,7 @@
                                                     <state key="normal" image="global_point">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <state key="selected" image="global_point_s02"/>
+                                                    <state key="selected" image="global_point_s"/>
                                                     <connections>
                                                         <action selector="checkBoxButtonPressed:" destination="LPQ-63-w2k" eventType="touchUpInside" id="K6t-Qi-dAS"/>
                                                     </connections>
@@ -357,7 +360,7 @@
                                                     <state key="normal" image="global_point">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <state key="selected" image="global_point_s02"/>
+                                                    <state key="selected" image="global_point_s"/>
                                                     <connections>
                                                         <action selector="checkBoxButtonPressed:" destination="LPQ-63-w2k" eventType="touchUpInside" id="dBm-75-GWi"/>
                                                     </connections>
@@ -412,7 +415,7 @@
                                                     <state key="normal" image="global_point">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
-                                                    <state key="selected" image="global_point_s02"/>
+                                                    <state key="selected" image="global_point_s"/>
                                                     <connections>
                                                         <action selector="checkBoxButtonPressed:" destination="LPQ-63-w2k" eventType="touchUpInside" id="1Rg-nE-fcy"/>
                                                     </connections>
@@ -527,6 +530,7 @@
                                             <state key="selected" image="propertyFee_dai_s"/>
                                             <connections>
                                                 <action selector="automaticBillPayStateButtonPressed:" destination="WJD-nw-qmQ" eventType="touchUpInside" id="3Hq-ma-AAu"/>
+                                                <segue destination="TJm-XO-52v" kind="push" id="Dij-Xz-0Qn"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -1138,7 +1142,6 @@
         <image name="global_nyline2" width="320" height="4"/>
         <image name="global_point" width="20" height="20"/>
         <image name="global_point_s" width="20" height="20"/>
-        <image name="global_point_s02" width="20" height="20"/>
         <image name="propertyFee_address" width="17" height="17"/>
         <image name="propertyFee_bindCard_searchbg01_down" width="100" height="30"/>
         <image name="propertyFee_bindCard_searchbg01_up" width="100" height="30"/>
@@ -1159,6 +1162,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="Tmo-af-fkL"/>
         <segue reference="3BM-Va-MRI"/>
     </inferredMetricsTieBreakers>
 </document>
