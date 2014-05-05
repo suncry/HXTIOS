@@ -9,11 +9,6 @@
 /* Begin PBXBuildFile section */
 		232EBDD619090F6E00381960 /* CYShopCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 232EBDD519090F6E00381960 /* CYShopCommentController.m */; };
 		232EBDD9190914BC00381960 /* CYMyCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 232EBDD8190914BC00381960 /* CYMyCommentController.m */; };
-		234608AF191781DB006529E1 /* MJPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 234608AA191781DB006529E1 /* MJPasswordView.m */; };
-		234608B0191781DB006529E1 /* MJCircleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 234608AC191781DB006529E1 /* MJCircleLayer.m */; };
-		234608B1191781DB006529E1 /* MJPathLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 234608AE191781DB006529E1 /* MJPathLayer.m */; };
-		234608B3191782E9006529E1 /* Password.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 234608B2191782E9006529E1 /* Password.storyboard */; };
-		234608B719178330006529E1 /* CYPassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 234608B619178330006529E1 /* CYPassWordViewController.m */; };
 		238ECB531904BECA00721872 /* CYPropertieCardsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 238ECB521904BECA00721872 /* CYPropertieCardsController.m */; };
 		2392C7C218FE7157007EDB5A /* CYRepairController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2392C7C118FE7157007EDB5A /* CYRepairController.m */; };
 		23A8C4841907A04A00557F5A /* searchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A8C4831907A04A00557F5A /* searchCell.m */; };
@@ -174,6 +169,14 @@
 		B22F869918FE8E5F0031A646 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B22F869818FE8E5F0031A646 /* Images.xcassets */; };
 		B240382C1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B240382B1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.m */; };
 		B240382D1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B240382B1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.m */; };
+		B254E3BA1917E527007AC826 /* CYGesturePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B254E3B91917E527007AC826 /* CYGesturePasswordViewController.m */; };
+		B254E3BB1917E527007AC826 /* CYGesturePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B254E3B91917E527007AC826 /* CYGesturePasswordViewController.m */; };
+		B254E3C41917E531007AC826 /* MJCircleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B254E3BF1917E531007AC826 /* MJCircleLayer.m */; };
+		B254E3C51917E531007AC826 /* MJCircleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B254E3BF1917E531007AC826 /* MJCircleLayer.m */; };
+		B254E3C61917E531007AC826 /* MJPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = B254E3C11917E531007AC826 /* MJPasswordView.m */; };
+		B254E3C71917E531007AC826 /* MJPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = B254E3C11917E531007AC826 /* MJPasswordView.m */; };
+		B254E3C81917E531007AC826 /* MJPathLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B254E3C31917E531007AC826 /* MJPathLayer.m */; };
+		B254E3C91917E531007AC826 /* MJPathLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B254E3C31917E531007AC826 /* MJPathLayer.m */; };
 		B2596BA71904BF4A00FBB3F9 /* HXTYearMonthIntervalPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2596BA61904BF4A00FBB3F9 /* HXTYearMonthIntervalPickerView.xib */; };
 		B2596BA81904BF4A00FBB3F9 /* HXTYearMonthIntervalPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2596BA61904BF4A00FBB3F9 /* HXTYearMonthIntervalPickerView.xib */; };
 		B26FE5CF18FE51FC0093BC2F /* NSArrayAdditionals.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE58518FE51FC0093BC2F /* NSArrayAdditionals.m */; };
@@ -248,15 +251,6 @@
 		232EBDD519090F6E00381960 /* CYShopCommentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYShopCommentController.m; sourceTree = "<group>"; };
 		232EBDD7190914BC00381960 /* CYMyCommentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYMyCommentController.h; sourceTree = "<group>"; };
 		232EBDD8190914BC00381960 /* CYMyCommentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYMyCommentController.m; sourceTree = "<group>"; };
-		234608A9191781DB006529E1 /* MJPasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPasswordView.h; sourceTree = "<group>"; };
-		234608AA191781DB006529E1 /* MJPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPasswordView.m; sourceTree = "<group>"; };
-		234608AB191781DB006529E1 /* MJCircleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJCircleLayer.h; sourceTree = "<group>"; };
-		234608AC191781DB006529E1 /* MJCircleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJCircleLayer.m; sourceTree = "<group>"; };
-		234608AD191781DB006529E1 /* MJPathLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPathLayer.h; sourceTree = "<group>"; };
-		234608AE191781DB006529E1 /* MJPathLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPathLayer.m; sourceTree = "<group>"; };
-		234608B2191782E9006529E1 /* Password.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Password.storyboard; path = SurroundingLife/Password.storyboard; sourceTree = "<group>"; };
-		234608B519178330006529E1 /* CYPassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYPassWordViewController.h; sourceTree = "<group>"; };
-		234608B619178330006529E1 /* CYPassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYPassWordViewController.m; sourceTree = "<group>"; };
 		238ECB511904BECA00721872 /* CYPropertieCardsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYPropertieCardsController.h; sourceTree = "<group>"; };
 		238ECB521904BECA00721872 /* CYPropertieCardsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYPropertieCardsController.m; sourceTree = "<group>"; };
 		2392C7C018FE7157007EDB5A /* CYRepairController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYRepairController.h; sourceTree = "<group>"; };
@@ -430,6 +424,14 @@
 		B22F869818FE8E5F0031A646 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B240382A1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTYearMonthIntervalPickerView.h; sourceTree = "<group>"; };
 		B240382B1903CF8C0078CF6A /* HXTYearMonthIntervalPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTYearMonthIntervalPickerView.m; sourceTree = "<group>"; };
+		B254E3B81917E527007AC826 /* CYGesturePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYGesturePasswordViewController.h; sourceTree = "<group>"; };
+		B254E3B91917E527007AC826 /* CYGesturePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYGesturePasswordViewController.m; sourceTree = "<group>"; };
+		B254E3BE1917E531007AC826 /* MJCircleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJCircleLayer.h; sourceTree = "<group>"; };
+		B254E3BF1917E531007AC826 /* MJCircleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJCircleLayer.m; sourceTree = "<group>"; };
+		B254E3C01917E531007AC826 /* MJPasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPasswordView.h; sourceTree = "<group>"; };
+		B254E3C11917E531007AC826 /* MJPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPasswordView.m; sourceTree = "<group>"; };
+		B254E3C21917E531007AC826 /* MJPathLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPathLayer.h; sourceTree = "<group>"; };
+		B254E3C31917E531007AC826 /* MJPathLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPathLayer.m; sourceTree = "<group>"; };
 		B2596BA61904BF4A00FBB3F9 /* HXTYearMonthIntervalPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HXTYearMonthIntervalPickerView.xib; sourceTree = "<group>"; };
 		B26FE58418FE51FC0093BC2F /* NSArrayAdditionals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSArrayAdditionals.h; sourceTree = "<group>"; };
 		B26FE58518FE51FC0093BC2F /* NSArrayAdditionals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayAdditionals.m; sourceTree = "<group>"; };
@@ -515,28 +517,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		234608A8191781D1006529E1 /* MJPasswordView */ = {
-			isa = PBXGroup;
-			children = (
-				234608A9191781DB006529E1 /* MJPasswordView.h */,
-				234608AA191781DB006529E1 /* MJPasswordView.m */,
-				234608AB191781DB006529E1 /* MJCircleLayer.h */,
-				234608AC191781DB006529E1 /* MJCircleLayer.m */,
-				234608AD191781DB006529E1 /* MJPathLayer.h */,
-				234608AE191781DB006529E1 /* MJPathLayer.m */,
-			);
-			name = MJPasswordView;
-			sourceTree = "<group>";
-		};
-		234608B419178317006529E1 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				234608B519178330006529E1 /* CYPassWordViewController.h */,
-				234608B619178330006529E1 /* CYPassWordViewController.m */,
-			);
-			name = Controller;
-			sourceTree = "<group>";
-		};
 		23CA860719065B5C0067D0D4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -664,7 +644,6 @@
 				B21F24AE1917416E00BE2728 /* ChargeAndPay---充值和缴费 */,
 				B2214C1A18FE1E4000762AE9 /* HXTAppDelegate.h */,
 				B2214C1B18FE1E4000762AE9 /* HXTAppDelegate.m */,
-				234608B2191782E9006529E1 /* Password.storyboard */,
 				23D7A2C8190F946400F363F8 /* Interaction.storyboard */,
 				B2214E6718FE1FE200762AE9 /* AccountManager.storyboard */,
 				B2214E6918FE1FE200762AE9 /* AddHouseEstate.storyboard */,
@@ -714,6 +693,7 @@
 			isa = PBXGroup;
 			children = (
 				B2214C4418FE1F9000762AE9 /* Controller */,
+				B254E3BC1917E531007AC826 /* View */,
 				B2214C5118FE1F9000762AE9 /* Model */,
 			);
 			name = "AccountManager-账户管理";
@@ -723,6 +703,8 @@
 		B2214C4418FE1F9000762AE9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B254E3B81917E527007AC826 /* CYGesturePasswordViewController.h */,
+				B254E3B91917E527007AC826 /* CYGesturePasswordViewController.m */,
 				B2214C4518FE1F9000762AE9 /* HXTLoginViewController.h */,
 				B2214C4618FE1F9000762AE9 /* HXTLoginViewController.m */,
 				B2214C4718FE1F9000762AE9 /* HXTRegisterAddHouseEstateViewController.h */,
@@ -967,10 +949,30 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		B254E3BC1917E531007AC826 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B254E3BD1917E531007AC826 /* MJPasswordView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B254E3BD1917E531007AC826 /* MJPasswordView */ = {
+			isa = PBXGroup;
+			children = (
+				B254E3BE1917E531007AC826 /* MJCircleLayer.h */,
+				B254E3BF1917E531007AC826 /* MJCircleLayer.m */,
+				B254E3C01917E531007AC826 /* MJPasswordView.h */,
+				B254E3C11917E531007AC826 /* MJPasswordView.m */,
+				B254E3C21917E531007AC826 /* MJPathLayer.h */,
+				B254E3C31917E531007AC826 /* MJPathLayer.m */,
+			);
+			path = MJPasswordView;
+			sourceTree = "<group>";
+		};
 		B26FE55718FE51FC0093BC2F /* Global */ = {
 			isa = PBXGroup;
 			children = (
-				234608B419178317006529E1 /* Controller */,
 				B2B01F61190A570B005A9483 /* Model */,
 				B26FE63E18FE55A90093BC2F /* NSString+Check */,
 				B26FE58118FE51FC0093BC2F /* Extra */,
@@ -1073,7 +1075,6 @@
 		B2B01F61190A570B005A9483 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				234608A8191781D1006529E1 /* MJPasswordView */,
 				23BC7398190A040B0088BEC9 /* CoreModel.xcdatamodeld */,
 			);
 			name = Model;
@@ -1188,7 +1189,6 @@
 				B2214E8518FE1FE200762AE9 /* SurroundingLife.storyboard in Resources */,
 				B2596BA71904BF4A00FBB3F9 /* HXTYearMonthIntervalPickerView.xib in Resources */,
 				B2214E7D18FE1FE200762AE9 /* EcologicalDistribution.storyboard in Resources */,
-				234608B3191782E9006529E1 /* Password.storyboard in Resources */,
 				23D7A2C9190F946400F363F8 /* Interaction.storyboard in Resources */,
 				B2214E7918FE1FE200762AE9 /* AddHouseEstate.storyboard in Resources */,
 				B2ADF8B51910D5C900D14FE1 /* HXTAddHousePickerView.xib in Resources */,
@@ -1262,6 +1262,7 @@
 				B26FE5E118FE51FC0093BC2F /* UIDevice+Resolutions.m in Sources */,
 				B2214E4518FE1FB800762AE9 /* HXTPropertyFeeViewController.m in Sources */,
 				23D707E5190E2F7E005E3C1A /* CYShopMapController.m in Sources */,
+				B254E3C81917E531007AC826 /* MJPathLayer.m in Sources */,
 				B2214E3B18FE1FB800762AE9 /* CYDiscussController.m in Sources */,
 				B2214E2318FE1FB800762AE9 /* CYMyBillMonthCell.m in Sources */,
 				B26FE5CF18FE51FC0093BC2F /* NSArrayAdditionals.m in Sources */,
@@ -1270,12 +1271,12 @@
 				B2D4EFFE19035897007C6089 /* LTHMonthYearPickerView.m in Sources */,
 				B2214DB318FE1FA200762AE9 /* HXTNavigationController.m in Sources */,
 				23D7A2D5190FA96700F363F8 /* CYHouseController.m in Sources */,
-				234608B719178330006529E1 /* CYPassWordViewController.m in Sources */,
 				B2214E5118FE1FB800762AE9 /* HXTMyProperties.m in Sources */,
 				B2B01F96190BA1F9005A9483 /* HXTPropertyFeeMapViewController.m in Sources */,
 				B2214E3318FE1FB800762AE9 /* NSMutableArray+pieEx.m in Sources */,
 				B2214E4918FE1FB800762AE9 /* HXTPropertyServiceViewController.m in Sources */,
 				B2214E4F18FE1FB800762AE9 /* HXTHouse.m in Sources */,
+				B254E3BA1917E527007AC826 /* CYGesturePasswordViewController.m in Sources */,
 				B26FE5DD18FE51FC0093BC2F /* SqliteStoreManager.m in Sources */,
 				B2214E1D18FE1FB800762AE9 /* CYMsgCell.m in Sources */,
 				B2214DAF18FE1FA200762AE9 /* HXTHomeChooseHouseEstateTableViewController.m in Sources */,
@@ -1304,12 +1305,12 @@
 				B2214C7018FE1F9000762AE9 /* HXTRegisterInputPhoneNumberViewController.m in Sources */,
 				23D707E2190E2E27005E3C1A /* CYCustomAnnotation.m in Sources */,
 				23D7A2CF190F9BC500F363F8 /* CYCarController.m in Sources */,
+				B254E3C61917E531007AC826 /* MJPasswordView.m in Sources */,
 				B2D484EB190A2141000D5E33 /* HXTWithholdingUseAgreementViewController.m in Sources */,
 				B2214E2918FE1FB800762AE9 /* CYMyPropertyTableViewCell.m in Sources */,
 				B2ADF8C51910E0C300D14FE1 /* HXTHouseListModel.m in Sources */,
 				23BC739A190A040B0088BEC9 /* CoreModel.xcdatamodeld in Sources */,
 				B2214C6A18FE1F9000762AE9 /* HXTLoginViewController.m in Sources */,
-				234608B1191781DB006529E1 /* MJPathLayer.m in Sources */,
 				B26FE5EB18FE51FC0093BC2F /* XPHTTPURLConnection.m in Sources */,
 				B26FE5E318FE51FC0093BC2F /* HXTCheckBox.m in Sources */,
 				B2214C7818FE1F9000762AE9 /* HXTAddHouseEstateViewController.m in Sources */,
@@ -1323,7 +1324,6 @@
 				B2D1FC86190256C500A7467D /* HMSegmentedControl.m in Sources */,
 				B2214E1718FE1FB800762AE9 /* CYActivityViewController.m in Sources */,
 				B2214E4718FE1FB800762AE9 /* HXTPropertyFeeDetailTableViewController.m in Sources */,
-				234608B0191781DB006529E1 /* MJCircleLayer.m in Sources */,
 				B2214DB518FE1FA200762AE9 /* HXTTabBarViewController.m in Sources */,
 				B2214E3F18FE1FB800762AE9 /* CYNoticeBoardController.m in Sources */,
 				B203DFB21916357100DDC4F0 /* HXTAddHouseEstateModel.m in Sources */,
@@ -1339,6 +1339,7 @@
 				B2214E2718FE1FB800762AE9 /* CYMyOrderViewController.m in Sources */,
 				B26FE64118FE55A90093BC2F /* NSString+Check.m in Sources */,
 				B2214E5318FE1FB800762AE9 /* HXTPropertyCell.m in Sources */,
+				B254E3C41917E531007AC826 /* MJCircleLayer.m in Sources */,
 				B2B01F5D190A4EC9005A9483 /* HXTAreaModel.m in Sources */,
 				B2ADF8BD1910D67100D14FE1 /* HXTAddHousePickerView.m in Sources */,
 				2392C7C218FE7157007EDB5A /* CYRepairController.m in Sources */,
@@ -1349,7 +1350,6 @@
 				238ECB531904BECA00721872 /* CYPropertieCardsController.m in Sources */,
 				B2214E3518FE1FB800762AE9 /* PieElement.m in Sources */,
 				B2214E2F18FE1FB800762AE9 /* Example2PieView.m in Sources */,
-				234608AF191781DB006529E1 /* MJPasswordView.m in Sources */,
 				B2214E4118FE1FB800762AE9 /* CYRentController.m in Sources */,
 				B2214E1518FE1FB800762AE9 /* CYActivityCell.m in Sources */,
 				B2FC604B190DE8D000C13524 /* HXTHomeMapViewController.m in Sources */,
@@ -1368,6 +1368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B254E3BB1917E527007AC826 /* CYGesturePasswordViewController.m in Sources */,
 				B2214DB418FE1FA200762AE9 /* HXTNavigationController.m in Sources */,
 				B2214C3A18FE1E4000762AE9 /* ButlerCardTests.m in Sources */,
 				B2214E2618FE1FB800762AE9 /* CYMyBillTableViewController.m in Sources */,
@@ -1391,6 +1392,7 @@
 				B2ADF8C61910E0C300D14FE1 /* HXTHouseListModel.m in Sources */,
 				B26FE5EC18FE51FC0093BC2F /* XPHTTPURLConnection.m in Sources */,
 				B26FE5D218FE51FC0093BC2F /* NSDataAdditions.m in Sources */,
+				B254E3C51917E531007AC826 /* MJCircleLayer.m in Sources */,
 				B2214C8518FE1F9000762AE9 /* HXTSelectCityViewController.m in Sources */,
 				B226D947190F847C00993132 /* HXTHouseEstateListModel.m in Sources */,
 				B2214E3018FE1FB800762AE9 /* Example2PieView.m in Sources */,
@@ -1399,6 +1401,7 @@
 				B2D484E8190A1B5E000D5E33 /* HXTOpenAutomaticBillPayViewController.m in Sources */,
 				B2214E3C18FE1FB800762AE9 /* CYDiscussController.m in Sources */,
 				B2214E5418FE1FB800762AE9 /* HXTPropertyCell.m in Sources */,
+				B254E3C71917E531007AC826 /* MJPasswordView.m in Sources */,
 				B26FE64218FE55A90093BC2F /* NSString+Check.m in Sources */,
 				B2214E2E18FE1FB800762AE9 /* CYOrderCell.m in Sources */,
 				B26FE5D618FE51FC0093BC2F /* NSStringAdditions.m in Sources */,
@@ -1444,6 +1447,7 @@
 				B2214E5218FE1FB800762AE9 /* HXTMyProperties.m in Sources */,
 				B2214E2818FE1FB800762AE9 /* CYMyOrderViewController.m in Sources */,
 				B2214C7118FE1F9000762AE9 /* HXTRegisterInputPhoneNumberViewController.m in Sources */,
+				B254E3C91917E531007AC826 /* MJPathLayer.m in Sources */,
 				B2214C6D18FE1F9000762AE9 /* HXTRegisterAddHouseEstateViewController.m in Sources */,
 				B2214E5A18FE1FB800762AE9 /* HXTPropertyTableViewHeaderFooterView.m in Sources */,
 				B26FE5EA18FE51FC0093BC2F /* HXTViewWithArrow.m in Sources */,

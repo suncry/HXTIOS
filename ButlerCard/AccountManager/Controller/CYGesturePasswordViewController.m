@@ -1,14 +1,14 @@
 //
-//  CYPassWordViewController.m
+//  CYGesturePasswordViewController.m
 //  ButlerCard
 //
 //  Created by niko on 14-5-5.
 //  Copyright (c) 2014年 johnny. All rights reserved.
 //
 
-#import "CYPassWordViewController.h"
+#import "CYGesturePasswordViewController.h"
 
-@interface CYPassWordViewController ()
+@interface CYGesturePasswordViewController ()
 
 @property (nonatomic,assign) ePasswordSate state;
 
@@ -22,7 +22,7 @@
 
 @end
 
-@implementation CYPassWordViewController
+@implementation CYGesturePasswordViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,6 +36,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     // Do any additional setup after loading the view.
     self.password = @"";
     self.state = ePasswordUnset;
@@ -157,6 +158,6 @@
 
 - (IBAction)forgetPassWord:(id)sender
 {
-    [self presentViewController:[[UIStoryboard storyboardWithName:@"Home" bundle:nil]instantiateInitialViewController] animated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:^{}];
 }
 @end

@@ -1,5 +1,5 @@
 //
-//  CYPassWordViewController.h
+//  CYGesturePasswordViewController.h
 //  ButlerCard
 //
 //  Created by niko on 14-5-5.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MJPasswordView.h"
 
-@interface CYPassWordViewController : UIViewController<MJPasswordDelegate>
+@interface CYGesturePasswordViewController : UIViewController<MJPasswordDelegate>
 - (IBAction)forgetPassWord:(id)sender;
 
 @end

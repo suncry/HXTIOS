@@ -696,6 +696,55 @@
             </objects>
             <point key="canvasLocation" x="721" y="50"/>
         </scene>
+        <!--Gesture Password View Controller-->
+        <scene sceneID="Vws-7a-ytT">
+            <objects>
+                <viewController storyboardIdentifier="TestStoryboardID" id="IQe-wS-teV" customClass="CYGesturePasswordViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Zga-TI-0KJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="d8B-TC-v1i"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YkH-xs-XN3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="usD-PO-BJX">
+                                <rect key="frame" x="115" y="489" width="90" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="忘记手势密码">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="forgetPassWord:" destination="IQe-wS-teV" eventType="touchUpInside" id="YrR-wR-lbK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="oS1-Dr-Hjq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1IN-8W-ECQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1123" y="-619"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="h36-Gt-pwO">
+            <objects>
+                <navigationController storyboardIdentifier="GesturePasswordNaviStoryboadID" automaticallyAdjustsScrollViewInsets="NO" id="jan-Yq-o0x" customClass="HXTNavigationController" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1BC-LV-NZW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="IQe-wS-teV" kind="relationship" relationship="rootViewController" id="N8C-Xx-Na3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rNQ-3x-Wnv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="721" y="-619"/>
+        </scene>
     </scenes>
     <resources>
         <image name="account_sigh_bg" width="320" height="188"/>

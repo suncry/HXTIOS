@@ -7,13 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CYPassWordViewController.h"
+
 @interface HXTAppDelegate : UIResponder <UIApplicationDelegate>
-{
-    UIViewController *_controller;
-}
+
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) UIViewController *loginViewController;
+@property (strong, nonatomic) UIViewController *gesturePasswordViewController;
 
 //引入CoreData框架
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
