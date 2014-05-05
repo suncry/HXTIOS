@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CYPassWordViewController.h"
 @interface HXTAppDelegate : UIResponder <UIApplicationDelegate>
-
+{
+    UIViewController *_controller;
+}
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UIViewController *loginViewController;
 
