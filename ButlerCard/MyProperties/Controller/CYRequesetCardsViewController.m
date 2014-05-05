@@ -10,7 +10,6 @@
 #import "AFNetworking.h"
 
 @interface CYRequesetCardsViewController ()
-
 @end
 
 @implementation CYRequesetCardsViewController
@@ -53,6 +52,11 @@
     [self.navigationController.view addSubview:HUD];
     HUD.delegate = self;
     [HUD showWhileExecuting:@selector(request) onTarget:self withObject:nil animated:YES];
+}
+
+- (IBAction)testBtnClick:(id)sender
+{
+    [self presentViewController:[[UIStoryboard storyboardWithName:@"Password" bundle:nil]instantiateInitialViewController] animated:YES completion:nil];
 }
 /**
  *  提交服务申请

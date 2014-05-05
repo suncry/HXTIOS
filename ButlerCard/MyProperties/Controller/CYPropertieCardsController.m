@@ -51,13 +51,6 @@
 }
 
 #pragma mark - Table view data source
-////去除多余的空白cell
-//- (void)setExtraCellLineHidden: (UITableView *)tableView
-//{
-//    UIView *view =[[UIView alloc]init];
-//    view.backgroundColor = [UIColor redColor];
-//    [self.tableView setTableFooterView:view];
-//}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {

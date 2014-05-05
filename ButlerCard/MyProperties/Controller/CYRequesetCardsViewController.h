@@ -14,5 +14,6 @@
     MBProgressHUD *HUD;
 }
 - (IBAction)sendBtnClick:(id)sender;
+- (IBAction)testBtnClick:(id)sender;
 
 @end
