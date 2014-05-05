@@ -106,10 +106,11 @@
                                         <rect key="frame" x="231" y="12" width="50" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                                        <color key="tintColor" red="0.15686274510000001" green="0.68627450980000004" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="开通申请"/>
                                         <connections>
                                             <action selector="appleyOpenPropertyButtonPressed:" destination="KbO-D9-o9T" eventType="touchUpInside" id="9yf-IF-7mt"/>
-                                            <segue destination="vRv-54-B51" kind="push" id="spj-28-JA4"/>
+                                            <segue destination="KYl-Td-WFQ" kind="push" id="TZn-qd-bTr"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -181,59 +182,70 @@
             </objects>
             <point key="canvasLocation" x="1033" y="132"/>
         </scene>
-        <!--Appley Open Property View Controller - 申请开通小区-->
-        <scene sceneID="gNC-zH-byS">
+        <!--Appley Open Property Table View Controller - 申请开通物业服务-->
+        <scene sceneID="T3p-P6-RU4">
             <objects>
-                <viewController id="vRv-54-B51" customClass="HXTAppleyOpenPropertyViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="TjV-md-H4e"/>
-                        <viewControllerLayoutGuide type="bottom" id="cID-pf-QBG"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="dCh-oA-aKh" customClass="UIControl">
+                <tableViewController id="KYl-Td-WFQ" customClass="HXTAppleyOpenPropertyTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="i9D-x4-CmM">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" 小区名称:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfJ-Cw-mhy">
-                                <rect key="frame" x="43" y="107" width="64" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入申请开通的小区名称" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gh0-cx-wGH">
-                                <rect key="frame" x="115" y="103" width="161" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="vRv-54-B51" id="aQj-pt-FQg"/>
-                                </connections>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A5p-Cc-hC0">
-                                <rect key="frame" x="20" y="141" width="280" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="申请" backgroundImage="account_sigh_button_tjxq">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="applyButtonPressed:" destination="vRv-54-B51" eventType="touchUpInside" id="fc5-sd-hZd"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="dTu-5z-Oh4">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Htx-mM-XaM">
+                                        <rect key="frame" x="0.0" y="35" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Htx-mM-XaM" id="b7r-ds-xDE">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入申请开通小区的名称" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Bbp-hk-25D">
+                                                    <rect key="frame" x="20" y="7" width="280" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="我们会记录你的申请，尽快联系物业开通小区服务" id="KkA-Ib-whv">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="dMc-dv-VgR">
+                                        <rect key="frame" x="0.0" y="144" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dMc-dv-VgR" id="Nx7-Gw-Mpe">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="申请" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qq-R5-IY1">
+                                                    <rect key="frame" x="20" y="11" width="34" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.15686274510000001" green="0.68627450980000004" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
-                            <action selector="backgoudTouchUpInside:" destination="vRv-54-B51" eventType="touchUpInside" id="TpN-Xm-4Jc"/>
+                            <outlet property="dataSource" destination="KYl-Td-WFQ" id="6lF-xJ-kVj"/>
+                            <outlet property="delegate" destination="KYl-Td-WFQ" id="u5f-fa-CGx"/>
                         </connections>
-                    </view>
-                    <navigationItem key="navigationItem" title="申请开通小区" id="0pI-c6-tdT"/>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="申请开通物业服务" id="6gP-GF-vNg"/>
                     <connections>
-                        <outlet property="housingEstateNameTestField" destination="gh0-cx-wGH" id="waq-6i-aew"/>
+                        <outlet property="textField" destination="Bbp-hk-25D" id="Ahe-UA-n5g"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vSr-As-DAv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gzd-4k-2Kg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1585" y="810"/>
+            <point key="canvasLocation" x="1584" y="442"/>
         </scene>
         <!--Select City View Controller - 选择地区-->
         <scene sceneID="RIR-wk-lDd">
@@ -336,7 +348,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="account_sigh_button_tjxq" width="234" height="26"/>
         <image name="property_house1" width="52" height="52"/>
         <image name="property_houseLine" width="320" height="2"/>
         <image name="property_houseTipsicon" width="12" height="12"/>
