@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		232EBDD619090F6E00381960 /* CYShopCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 232EBDD519090F6E00381960 /* CYShopCommentController.m */; };
 		232EBDD9190914BC00381960 /* CYMyCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 232EBDD8190914BC00381960 /* CYMyCommentController.m */; };
+		234608AF191781DB006529E1 /* MJPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 234608AA191781DB006529E1 /* MJPasswordView.m */; };
+		234608B0191781DB006529E1 /* MJCircleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 234608AC191781DB006529E1 /* MJCircleLayer.m */; };
+		234608B1191781DB006529E1 /* MJPathLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 234608AE191781DB006529E1 /* MJPathLayer.m */; };
+		234608B3191782E9006529E1 /* Password.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 234608B2191782E9006529E1 /* Password.storyboard */; };
+		234608B719178330006529E1 /* CYPassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 234608B619178330006529E1 /* CYPassWordViewController.m */; };
 		238ECB531904BECA00721872 /* CYPropertieCardsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 238ECB521904BECA00721872 /* CYPropertieCardsController.m */; };
 		2392C7C218FE7157007EDB5A /* CYRepairController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2392C7C118FE7157007EDB5A /* CYRepairController.m */; };
 		23A8C4841907A04A00557F5A /* searchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A8C4831907A04A00557F5A /* searchCell.m */; };
@@ -241,6 +246,15 @@
 		232EBDD519090F6E00381960 /* CYShopCommentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYShopCommentController.m; sourceTree = "<group>"; };
 		232EBDD7190914BC00381960 /* CYMyCommentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYMyCommentController.h; sourceTree = "<group>"; };
 		232EBDD8190914BC00381960 /* CYMyCommentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYMyCommentController.m; sourceTree = "<group>"; };
+		234608A9191781DB006529E1 /* MJPasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPasswordView.h; sourceTree = "<group>"; };
+		234608AA191781DB006529E1 /* MJPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPasswordView.m; sourceTree = "<group>"; };
+		234608AB191781DB006529E1 /* MJCircleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJCircleLayer.h; sourceTree = "<group>"; };
+		234608AC191781DB006529E1 /* MJCircleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJCircleLayer.m; sourceTree = "<group>"; };
+		234608AD191781DB006529E1 /* MJPathLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPathLayer.h; sourceTree = "<group>"; };
+		234608AE191781DB006529E1 /* MJPathLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPathLayer.m; sourceTree = "<group>"; };
+		234608B2191782E9006529E1 /* Password.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Password.storyboard; path = SurroundingLife/Password.storyboard; sourceTree = "<group>"; };
+		234608B519178330006529E1 /* CYPassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYPassWordViewController.h; sourceTree = "<group>"; };
+		234608B619178330006529E1 /* CYPassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYPassWordViewController.m; sourceTree = "<group>"; };
 		238ECB511904BECA00721872 /* CYPropertieCardsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYPropertieCardsController.h; sourceTree = "<group>"; };
 		238ECB521904BECA00721872 /* CYPropertieCardsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYPropertieCardsController.m; sourceTree = "<group>"; };
 		2392C7C018FE7157007EDB5A /* CYRepairController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYRepairController.h; sourceTree = "<group>"; };
@@ -497,6 +511,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		234608A8191781D1006529E1 /* MJPasswordView */ = {
+			isa = PBXGroup;
+			children = (
+				234608A9191781DB006529E1 /* MJPasswordView.h */,
+				234608AA191781DB006529E1 /* MJPasswordView.m */,
+				234608AB191781DB006529E1 /* MJCircleLayer.h */,
+				234608AC191781DB006529E1 /* MJCircleLayer.m */,
+				234608AD191781DB006529E1 /* MJPathLayer.h */,
+				234608AE191781DB006529E1 /* MJPathLayer.m */,
+			);
+			name = MJPasswordView;
+			sourceTree = "<group>";
+		};
+		234608B419178317006529E1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				234608B519178330006529E1 /* CYPassWordViewController.h */,
+				234608B619178330006529E1 /* CYPassWordViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		23CA860719065B5C0067D0D4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -622,6 +658,7 @@
 				B21F24AE1917416E00BE2728 /* ChargeAndPay---充值和缴费 */,
 				B2214C1A18FE1E4000762AE9 /* HXTAppDelegate.h */,
 				B2214C1B18FE1E4000762AE9 /* HXTAppDelegate.m */,
+				234608B2191782E9006529E1 /* Password.storyboard */,
 				23D7A2C8190F946400F363F8 /* Interaction.storyboard */,
 				B2214E6718FE1FE200762AE9 /* AccountManager.storyboard */,
 				B2214E6918FE1FE200762AE9 /* AddHouseEstate.storyboard */,
@@ -927,6 +964,7 @@
 		B26FE55718FE51FC0093BC2F /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				234608B419178317006529E1 /* Controller */,
 				B2B01F61190A570B005A9483 /* Model */,
 				B26FE63E18FE55A90093BC2F /* NSString+Check */,
 				B26FE58118FE51FC0093BC2F /* Extra */,
@@ -1029,6 +1067,7 @@
 		B2B01F61190A570B005A9483 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				234608A8191781D1006529E1 /* MJPasswordView */,
 				23BC7398190A040B0088BEC9 /* CoreModel.xcdatamodeld */,
 			);
 			name = Model;
@@ -1143,6 +1182,7 @@
 				B2214E8518FE1FE200762AE9 /* SurroundingLife.storyboard in Resources */,
 				B2596BA71904BF4A00FBB3F9 /* HXTYearMonthIntervalPickerView.xib in Resources */,
 				B2214E7D18FE1FE200762AE9 /* EcologicalDistribution.storyboard in Resources */,
+				234608B3191782E9006529E1 /* Password.storyboard in Resources */,
 				23D7A2C9190F946400F363F8 /* Interaction.storyboard in Resources */,
 				B2214E7918FE1FE200762AE9 /* AddHouseEstate.storyboard in Resources */,
 				B2ADF8B51910D5C900D14FE1 /* HXTAddHousePickerView.xib in Resources */,
@@ -1224,6 +1264,7 @@
 				B2D4EFFE19035897007C6089 /* LTHMonthYearPickerView.m in Sources */,
 				B2214DB318FE1FA200762AE9 /* HXTNavigationController.m in Sources */,
 				23D7A2D5190FA96700F363F8 /* CYHouseController.m in Sources */,
+				234608B719178330006529E1 /* CYPassWordViewController.m in Sources */,
 				B2214E5118FE1FB800762AE9 /* HXTMyProperties.m in Sources */,
 				B2B01F96190BA1F9005A9483 /* HXTPropertyFeeMapViewController.m in Sources */,
 				B2214E3318FE1FB800762AE9 /* NSMutableArray+pieEx.m in Sources */,
@@ -1262,6 +1303,7 @@
 				B2ADF8C51910E0C300D14FE1 /* HXTHouseListModel.m in Sources */,
 				23BC739A190A040B0088BEC9 /* CoreModel.xcdatamodeld in Sources */,
 				B2214C6A18FE1F9000762AE9 /* HXTLoginViewController.m in Sources */,
+				234608B1191781DB006529E1 /* MJPathLayer.m in Sources */,
 				B26FE5EB18FE51FC0093BC2F /* XPHTTPURLConnection.m in Sources */,
 				B26FE5E318FE51FC0093BC2F /* HXTCheckBox.m in Sources */,
 				B2214C7818FE1F9000762AE9 /* HXTAddHouseEstateViewController.m in Sources */,
@@ -1275,6 +1317,7 @@
 				B2D1FC86190256C500A7467D /* HMSegmentedControl.m in Sources */,
 				B2214E1718FE1FB800762AE9 /* CYActivityViewController.m in Sources */,
 				B2214E4718FE1FB800762AE9 /* HXTPropertyFeeDetailTableViewController.m in Sources */,
+				234608B0191781DB006529E1 /* MJCircleLayer.m in Sources */,
 				B2214DB518FE1FA200762AE9 /* HXTTabBarViewController.m in Sources */,
 				B2214E3F18FE1FB800762AE9 /* CYNoticeBoardController.m in Sources */,
 				B203DFB21916357100DDC4F0 /* HXTAddHouseEstateModel.m in Sources */,
@@ -1299,6 +1342,7 @@
 				238ECB531904BECA00721872 /* CYPropertieCardsController.m in Sources */,
 				B2214E3518FE1FB800762AE9 /* PieElement.m in Sources */,
 				B2214E2F18FE1FB800762AE9 /* Example2PieView.m in Sources */,
+				234608AF191781DB006529E1 /* MJPasswordView.m in Sources */,
 				B2214E4118FE1FB800762AE9 /* CYRentController.m in Sources */,
 				B2214E1518FE1FB800762AE9 /* CYActivityCell.m in Sources */,
 				B2FC604B190DE8D000C13524 /* HXTHomeMapViewController.m in Sources */,
