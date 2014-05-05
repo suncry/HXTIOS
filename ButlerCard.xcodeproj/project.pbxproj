@@ -26,6 +26,7 @@
 		23D7A2D5190FA96700F363F8 /* CYHouseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D7A2D4190FA96700F363F8 /* CYHouseController.m */; };
 		23D7A2D8190FA99200F363F8 /* CYMahjongController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D7A2D7190FA99200F363F8 /* CYMahjongController.m */; };
 		23D7A2DB190FA9BC00F363F8 /* CYTravelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D7A2DA190FA9BC00F363F8 /* CYTravelController.m */; };
+		23F9A5A119173A75001CE590 /* CYRequesetCardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F9A5A019173A75001CE590 /* CYRequesetCardsViewController.m */; };
 		23FDF0B2190A4A4A0063421D /* Shop.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FDF0B1190A4A4A0063421D /* Shop.m */; };
 		B203DFB21916357100DDC4F0 /* HXTAddHouseEstateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B203DFB11916357100DDC4F0 /* HXTAddHouseEstateModel.m */; };
 		B203DFB31916357100DDC4F0 /* HXTAddHouseEstateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B203DFB11916357100DDC4F0 /* HXTAddHouseEstateModel.m */; };
@@ -267,6 +268,8 @@
 		23D7A2D7190FA99200F363F8 /* CYMahjongController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYMahjongController.m; sourceTree = "<group>"; };
 		23D7A2D9190FA9BC00F363F8 /* CYTravelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYTravelController.h; sourceTree = "<group>"; };
 		23D7A2DA190FA9BC00F363F8 /* CYTravelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYTravelController.m; sourceTree = "<group>"; };
+		23F9A59F19173A75001CE590 /* CYRequesetCardsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYRequesetCardsViewController.h; sourceTree = "<group>"; };
+		23F9A5A019173A75001CE590 /* CYRequesetCardsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYRequesetCardsViewController.m; sourceTree = "<group>"; };
 		23FDF0B0190A4A4A0063421D /* Shop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shop.h; sourceTree = "<group>"; };
 		23FDF0B1190A4A4A0063421D /* Shop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shop.m; sourceTree = "<group>"; };
 		B08EE05FF8CA47378694428B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -827,6 +830,8 @@
 				B2D484DE1909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.m */,
 				B2B01F94190BA1F9005A9483 /* HXTPropertyFeeMapViewController.h */,
 				B2B01F95190BA1F9005A9483 /* HXTPropertyFeeMapViewController.m */,
+				23F9A59F19173A75001CE590 /* CYRequesetCardsViewController.h */,
+				23F9A5A019173A75001CE590 /* CYRequesetCardsViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1206,6 +1211,7 @@
 				B2214C8418FE1F9000762AE9 /* HXTSelectCityViewController.m in Sources */,
 				B2214E4D18FE1FB800762AE9 /* DJQStartView.m in Sources */,
 				23A8C4841907A04A00557F5A /* searchCell.m in Sources */,
+				23F9A5A119173A75001CE590 /* CYRequesetCardsViewController.m in Sources */,
 				B2214E1918FE1FB800762AE9 /* CYBillPieViewController.m in Sources */,
 				B2214E5518FE1FB800762AE9 /* HXTPropertyFeeCell.m in Sources */,
 				B21F24A81917282D00BE2728 /* HXTAppleyOpenPropertyTableViewController.m in Sources */,

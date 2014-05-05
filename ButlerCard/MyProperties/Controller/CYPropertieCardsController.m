@@ -29,9 +29,9 @@
     [super viewDidLoad];
     
     //消费单的假数据初始化
-    _allDataArray = [[NSMutableArray alloc]initWithObjects:@[@"1月",@"香皂",@"洗面奶"],nil];
+    _allDataArray = [[NSMutableArray alloc]initWithObjects:@[@"1月",@"香皂"],nil];
     
-    _dataArray = [[NSMutableArray alloc]initWithObjects:@[@"1月",@"香皂",@"洗面奶"],nil];
+    _dataArray = [[NSMutableArray alloc]initWithObjects:@[@"1月",@"香皂"],nil];
     
 //    //注册下拉刷新功能
 //    __weak CYPropertieCardsController *weakSelf = self;
