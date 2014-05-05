@@ -12,6 +12,7 @@
 #import "HXTAccountManager.h"
 
 #define kHeaderFooterViewReuseIdentifier @"HeaderFooterViewReuseIdentifier"
+#define kChargeSegue  @"chargeSegue"
 
 @interface HXTPropertyFeeViewController () <HXTPropertyTableViewHeaderFooterViewDelegate>
 
@@ -19,6 +20,7 @@
 
 @property (strong, nonatomic) NSMutableIndexSet *expandedIndexSet;
 @property (strong, nonatomic) NSArray *freeNames;
+@property (strong, nonatomic) UIStoryboardSegue *chargeSegue;
 
 @end
 
@@ -37,6 +39,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    //充值Segue定义
+    _chargeSegue = [UIStoryboardSegue segueWithIdentifier:kChargeSegue
+                                                   source:self
+                                              destination:[[UIStoryboard storyboardWithName:@"ChargeAndPay" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"ChargeNaviStoryboadID"]
+                                           performHandler:^{
+                                               [_chargeSegue.sourceViewController presentViewController:_chargeSegue.destinationViewController animated:YES completion:^{}];
+                                           }];
+    
     self.view.backgroundColor = [UIColor colorWithRed:239.0f / 255 green:239.0f / 255 blue:244.0f / 255 alpha:1];
     [self.tableView registerNib:[UINib nibWithNibName:@"MyPropertyTableViewHeaderFooterView" bundle:[NSBundle mainBundle]]forHeaderFooterViewReuseIdentifier:kHeaderFooterViewReuseIdentifier];
     
@@ -235,6 +245,10 @@
     sender.selected = !sender.selected;
 }
 
+
+- (IBAction)chargeButtonPressed:(UIButton *)sender {
+    [_chargeSegue perform];
+}
 
 #pragma mark - Navigation
 

@@ -209,6 +209,8 @@
 		B2B01F93190BA173005A9483 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2B01F92190BA173005A9483 /* MapKit.framework */; };
 		B2B01F96190BA1F9005A9483 /* HXTPropertyFeeMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B01F95190BA1F9005A9483 /* HXTPropertyFeeMapViewController.m */; };
 		B2B01F97190BA1F9005A9483 /* HXTPropertyFeeMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B01F95190BA1F9005A9483 /* HXTPropertyFeeMapViewController.m */; };
+		B2B4D545191790550054140A /* HXTChargeStepOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B4D544191790550054140A /* HXTChargeStepOneViewController.m */; };
+		B2B4D546191790550054140A /* HXTChargeStepOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B4D544191790550054140A /* HXTChargeStepOneViewController.m */; };
 		B2D1FC86190256C500A7467D /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D1FC85190256C500A7467D /* HMSegmentedControl.m */; };
 		B2D1FC87190256C500A7467D /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D1FC85190256C500A7467D /* HMSegmentedControl.m */; };
 		B2D484DF1909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D484DE1909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.m */; };
@@ -452,6 +454,8 @@
 		B2B01F92190BA173005A9483 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B2B01F94190BA1F9005A9483 /* HXTPropertyFeeMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTPropertyFeeMapViewController.h; sourceTree = "<group>"; };
 		B2B01F95190BA1F9005A9483 /* HXTPropertyFeeMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTPropertyFeeMapViewController.m; sourceTree = "<group>"; };
+		B2B4D543191790550054140A /* HXTChargeStepOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTChargeStepOneViewController.h; sourceTree = "<group>"; };
+		B2B4D544191790550054140A /* HXTChargeStepOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTChargeStepOneViewController.m; sourceTree = "<group>"; };
 		B2D1FC84190256C500A7467D /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
 		B2D1FC85190256C500A7467D /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
 		B2D484DD1909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTPropertyFeeInputMoneyTableViewController.h; sourceTree = "<group>"; };
@@ -569,6 +573,8 @@
 			children = (
 				B21F24B0191744AD00BE2728 /* HXTPayViewController.h */,
 				B21F24B1191744AD00BE2728 /* HXTPayViewController.m */,
+				B2B4D543191790550054140A /* HXTChargeStepOneViewController.h */,
+				B2B4D544191790550054140A /* HXTChargeStepOneViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1282,6 +1288,7 @@
 				232EBDD619090F6E00381960 /* CYShopCommentController.m in Sources */,
 				B2214C7A18FE1F9000762AE9 /* HXTAddHouseViewController.m in Sources */,
 				B2214E3918FE1FB800762AE9 /* CYActiveController.m in Sources */,
+				B2B4D545191790550054140A /* HXTChargeStepOneViewController.m in Sources */,
 				B2214E2B18FE1FB800762AE9 /* CYMyPropertyTableViewController.m in Sources */,
 				B2214E4B18FE1FB800762AE9 /* DJQRateView.m in Sources */,
 				23CA860D19065B7A0067D0D4 /* PCStackMenu.m in Sources */,
@@ -1379,6 +1386,7 @@
 				B2214C7B18FE1F9000762AE9 /* HXTAddHouseViewController.m in Sources */,
 				B2214E4018FE1FB800762AE9 /* CYNoticeBoardController.m in Sources */,
 				B2214E3218FE1FB800762AE9 /* MyPieElement.m in Sources */,
+				B2B4D546191790550054140A /* HXTChargeStepOneViewController.m in Sources */,
 				B2214E4A18FE1FB800762AE9 /* HXTPropertyServiceViewController.m in Sources */,
 				B2FC604C190DE8D000C13524 /* HXTHomeMapViewController.m in Sources */,
 				B2214E4E18FE1FB800762AE9 /* DJQStartView.m in Sources */,

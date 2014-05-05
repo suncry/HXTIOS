@@ -5,10 +5,35 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
+        <!--Charge Step One View Controller - 充值-->
+        <scene sceneID="8ap-za-03c">
+            <objects>
+                <viewController id="KNt-d9-msx" customClass="HXTChargeStepOneViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YSz-hy-Zc2"/>
+                        <viewControllerLayoutGuide type="bottom" id="Dhy-xR-GYQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="h9r-72-Kr1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="充值" id="OvG-Li-dMh">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Zuj-Eh-kHQ">
+                            <color key="tintColor" red="0.94901960780000005" green="0.43529411759999997" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="cancelBarButtonItemPressed:" destination="KNt-d9-msx" id="Q3U-cC-ZrW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rg9-O9-K6J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="653" y="-636"/>
+        </scene>
         <!--Pay View Controller - 收银台-->
         <scene sceneID="hNf-lb-EkA">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ro0-Ol-1PY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="8Af-TE-Pxl" customClass="HXTPayViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vHd-7g-vh8"/>
@@ -98,7 +123,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="收银台" id="hLd-Os-S83">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="1mb-OH-6nk">
-                            <color key="tintColor" red="0.15686274510000001" green="0.68627450980000004" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.94901960780000005" green="0.43529411759999997" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="cancelBarButtonItemPressed:" destination="8Af-TE-Pxl" id="t9s-Fc-8Lv"/>
                             </connections>
@@ -108,13 +133,14 @@
                         <outlet property="tableView" destination="bWz-MG-ye5" id="ohu-rr-Ivk"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ro0-Ol-1PY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="653" y="65"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="D6a-xH-er6">
             <objects>
-                <navigationController storyboardIdentifier="payStoryboadID" automaticallyAdjustsScrollViewInsets="NO" id="SaZ-tg-RFH" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="PayNaviStoryboadID" automaticallyAdjustsScrollViewInsets="NO" id="SaZ-tg-RFH" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4hv-9U-kAW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -128,6 +154,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zjo-i5-kfV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="219" y="65"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2dx-aB-Ujk">
+            <objects>
+                <navigationController storyboardIdentifier="ChargeNaviStoryboadID" automaticallyAdjustsScrollViewInsets="NO" id="paT-Wb-Uzw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JV8-Y0-Jd5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="KNt-d9-msx" kind="relationship" relationship="rootViewController" id="KDU-ei-T3f"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IMj-Pw-cAq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="219" y="-636"/>
         </scene>
     </scenes>
     <resources>

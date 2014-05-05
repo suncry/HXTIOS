@@ -10,7 +10,8 @@
 #import "HXTYearMonthIntervalPickerView.h"
 #import "HXTPropertyFeeInputMoneyTableViewController.h"
 
-#define kPaySegue  @"paySegue"
+#define kPaySegue     @"paySegue"
+#define kChargeSegue  @"chargeSegue"
 
 @interface HXTPropertyFeePayViewController () <UITextFieldDelegate, HXTYearMonthIntervalPickerViewDelegate>
 
@@ -21,6 +22,8 @@
 @property (strong, nonatomic) HXTYearMonthIntervalPickerView *yearMonthIntervalPicker;
 @property (strong, nonatomic) UIButton *selectedButton;
 @property (strong, nonatomic) UIStoryboardSegue *paySegue;
+@property (strong, nonatomic) UIStoryboardSegue *chargeSegue;
+
 @end
 
 @implementation HXTPropertyFeePayViewController
@@ -43,13 +46,21 @@
         _segmentedControl.tintColor =  [UIColor colorWithRed:242.0f / 255 green:111.0f / 255 blue:14.0f / 255 alpha:1];
     }
     
-    //登录Segue定义
+    //付款Segue定义
     _paySegue = [UIStoryboardSegue segueWithIdentifier:kPaySegue
                                                   source:self
-                                             destination:[[UIStoryboard storyboardWithName:@"ChargeAndPay" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"payStoryboadID"]
+                                             destination:[[UIStoryboard storyboardWithName:@"ChargeAndPay" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"PayNaviStoryboadID"]
                                           performHandler:^{
                                               [_paySegue.sourceViewController presentViewController:_paySegue.destinationViewController animated:YES completion:^{}];
                                           }];
+    
+    //充值Segue定义
+    _chargeSegue = [UIStoryboardSegue segueWithIdentifier:kChargeSegue
+                                                source:self
+                                           destination:[[UIStoryboard storyboardWithName:@"ChargeAndPay" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"ChargeNaviStoryboadID"]
+                                        performHandler:^{
+                                            [_chargeSegue.sourceViewController presentViewController:_chargeSegue.destinationViewController animated:YES completion:^{}];
+                                        }];
     
     self.view.backgroundColor = [UIColor whiteColor];
     [self setExtraCellLineHidden:_tableView];
@@ -252,6 +263,11 @@
 
 - (IBAction)payButtonPressed:(UIButton *)sender {
     [_paySegue perform];
+}
+
+
+- (IBAction)chargeButtonPressed:(id)sender {
+    [_chargeSegue perform];
 }
 
 #pragma mark - local functions

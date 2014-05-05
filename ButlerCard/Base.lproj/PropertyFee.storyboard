@@ -172,25 +172,6 @@
             </objects>
             <point key="canvasLocation" x="2881" y="-376"/>
         </scene>
-        <!--View Controller - 充值-->
-        <scene sceneID="bpU-vB-M2C">
-            <objects>
-                <viewController id="N71-jd-9dX" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="w8z-ck-LUK"/>
-                        <viewControllerLayoutGuide type="bottom" id="tGx-n8-fCS"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ywn-aC-XFd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="充值" id="IlF-ry-a1G"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cph-UN-Ih2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2463" y="-2370"/>
-        </scene>
         <!--Property Fee Pay View Controller-->
         <scene sceneID="Rxg-L9-LB4">
             <objects>
@@ -268,7 +249,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="N71-jd-9dX" kind="push" id="3BM-Va-MRI"/>
+                                            <action selector="chargeButtonPressed:" destination="LPQ-63-w2k" eventType="touchUpInside" id="439-7l-zsG"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="缴费合计：500.00元" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcY-GZ-EMV">
@@ -481,7 +462,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ob-8c-Mtv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2043" y="-1054"/>
+            <point key="canvasLocation" x="2043" y="-1021"/>
         </scene>
         <!--Property Fee View Controller - 物业缴费-->
         <scene sceneID="05V-e1-hS3">
@@ -606,7 +587,7 @@
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <segue destination="N71-jd-9dX" kind="push" identifier="RechargeStoryboardSegue" id="9su-MH-3Le"/>
+                                                <action selector="chargeButtonPressed:" destination="WJD-nw-qmQ" eventType="touchUpInside" id="f7d-CU-snc"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="欠费总计：290.00元" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lX7-oT-eah">
@@ -901,7 +882,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfR-Z9-c6d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2518" y="-1702"/>
+            <point key="canvasLocation" x="2477" y="-1702"/>
         </scene>
         <!--Property Fee Detail Table View Controller - 物管费-->
         <scene sceneID="Cvo-DD-Ava">
@@ -1010,7 +991,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aU6-6P-Fpy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2463" y="-1049"/>
+            <point key="canvasLocation" x="2477" y="-1021"/>
         </scene>
         <!--Property Fee Input Money Table View Controller-->
         <scene sceneID="VK5-zu-ZNt">
@@ -1113,13 +1094,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="aoh-eU-mr0">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="zVr-Vs-wrK">
-                            <color key="tintColor" red="0.15686274510000001" green="0.68627450980000004" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.94901960780000005" green="0.43529411759999997" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="cancelButtonPressed:" destination="GrL-uk-cy2" id="aUr-5C-e0p"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="SPw-oG-KEn">
-                            <color key="tintColor" red="0.15686274510000001" green="0.68627450980000004" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.94901960780000005" green="0.43529411759999997" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="doneButtonPressed:" destination="GrL-uk-cy2" id="cVZ-84-UZF"/>
                             </connections>
@@ -1131,7 +1112,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H8H-It-ayh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2881" y="-1049"/>
+            <point key="canvasLocation" x="2881" y="-1021"/>
         </scene>
     </scenes>
     <resources>
@@ -1163,6 +1144,5 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="Tmo-af-fkL"/>
-        <segue reference="3BM-Va-MRI"/>
     </inferredMetricsTieBreakers>
 </document>
