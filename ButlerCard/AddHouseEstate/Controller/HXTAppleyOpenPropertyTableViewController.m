@@ -15,6 +15,7 @@
 @property (strong, nonatomic) UIAlertView *errorAlertView;
 @property (strong, nonatomic) UIAlertView *applyAlertView;
 @property (strong, nonatomic) UIAlertView *applyResultAlertView;
+@property (strong, nonatomic) MBProgressHUD *HUD;
 
 @end
 
@@ -53,78 +54,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
-/*
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}
- */
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NSLog(@"######indexPath.section = %lu, indexPath.row = %lu", (long)indexPath.section, (long)indexPath.row);
+    
     if (indexPath.section == 1 && indexPath.row == 0) {
         if (_textField.text.length == 0 || _textField.text == nil) {
             _errorAlertView = [[UIAlertView alloc] initWithTitle:@"警告"
@@ -149,7 +83,6 @@
 #pragma mark - Alert view deleage
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    NSLog(@"buttonIndex = %lu", (long)buttonIndex);
     if (alertView == _errorAlertView) {
         _errorAlertView = nil;
     } else if (alertView == _applyAlertView) {
@@ -158,10 +91,12 @@
                 [_textField becomeFirstResponder];
                 break;
             case 1: { //OK Button pressed
-                MBProgressHUD *HUD = [[MBProgressHUD alloc] initWithView:self.view.window];
-                [self.view.window addSubview:HUD];
-                HUD.delegate = self;
-                [HUD showWhileExecuting:@selector(_applyOpenProperty) onTarget:self withObject:nil animated:YES];
+                if (!_HUD) {
+                    _HUD = [[MBProgressHUD alloc] initWithView:self.view.window];
+                    [self.view.window addSubview:_HUD];
+                    _HUD.delegate = self;
+                }
+                [_HUD showWhileExecuting:@selector(_applyOpenProperty) onTarget:self withObject:nil animated:YES];
             }
                 break;
             default:
@@ -173,7 +108,15 @@
     }
 }
 
+#pragma mark - 
+
+- (void)hudWasHidden:(MBProgressHUD *)hud {
+    [hud removeFromSuperview];
+    hud = nil;
+}
+
 #pragma mark - Local functions
+
 - (void)_applyOpenProperty {
     sleep(1);
     _applyResultAlertView = [[UIAlertView alloc] initWithTitle:nil
@@ -184,15 +127,5 @@
     [_applyResultAlertView show];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
