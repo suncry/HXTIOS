@@ -155,11 +155,13 @@
             </objects>
             <point key="canvasLocation" x="219" y="65"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation Controller - 充值-->
         <scene sceneID="2dx-aB-Ujk">
             <objects>
                 <navigationController storyboardIdentifier="ChargeNaviStoryboadID" automaticallyAdjustsScrollViewInsets="NO" id="paT-Wb-Uzw" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="充值" image="Checkmark" id="04k-b6-8Wr"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JV8-Y0-Jd5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -175,6 +177,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Checkmark" width="37" height="37"/>
         <image name="global_button_y_s" width="116" height="40"/>
         <image name="global_nyline2" width="320" height="4"/>
     </resources>

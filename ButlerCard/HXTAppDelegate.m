@@ -20,28 +20,30 @@
     // Override point for customization after application launch.
     
     /*
-    NSArray *familyNames =[[NSArray alloc]initWithArray:[UIFont familyNames]];
-    NSArray *fontNames;
-    NSInteger indFamily, indFont;
-    NSLog(@"[familyNames count]===%lu",(unsigned long)[familyNames count]);
-    for(indFamily=0;indFamily<[familyNames count];++indFamily)
-        
-	{
-		NSLog(@"Family name: %@", [familyNames objectAtIndex:indFamily]);
-        fontNames =[[NSArray alloc]initWithArray:[UIFont fontNamesForFamilyName:[familyNames objectAtIndex:indFamily]]];
-        
-		for(indFont=0; indFont<[fontNames count]; ++indFont)
-            
-		{
-			NSLog(@"Font name: %@",[fontNames objectAtIndex:indFont]);
-            
-        }
-	}
+     NSArray *familyNames =[[NSArray alloc]initWithArray:[UIFont familyNames]];
+     NSArray *fontNames;
+     NSInteger indFamily, indFont;
+     NSLog(@"[familyNames count]===%lu",(unsigned long)[familyNames count]);
+     for(indFamily=0;indFamily<[familyNames count];++indFamily)
+     
+     {
+     NSLog(@"Family name: %@", [familyNames objectAtIndex:indFamily]);
+     fontNames =[[NSArray alloc]initWithArray:[UIFont fontNamesForFamilyName:[familyNames objectAtIndex:indFamily]]];
+     
+     for(indFont=0; indFont<[fontNames count]; ++indFont)
+     
+     {
+     NSLog(@"Font name: %@",[fontNames objectAtIndex:indFont]);
+     
+     }
+     }
      */
-    
+    if (!_loginViewController) {
+        _loginViewController = [[UIStoryboard storyboardWithName:@"AccountManager" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"AccountManagerNavStoryboardID"];
+    }
     return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -50,7 +52,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     [[HXTAccountManager sharedInstance] writeDataToUserDefault];
     
@@ -64,6 +66,11 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+//    NSLog(@"windows.count = %lu", [UIApplication sharedApplication].windows.count);
+//    UIWindow *window = [UIApplication sharedApplication].windows.firstObject;
+//    [window.rootViewController.navigationController pushViewController:_loginViewController animated:YES];
+    [[self getCurrentRootViewController] presentViewController:_loginViewController animated:NO completion:^{}];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -162,6 +169,38 @@
 - (NSURL *)applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+#pragma mark - Get current root view controller
+
+- (UIViewController *)getCurrentRootViewController {
+    
+    UIViewController *result;
+    
+    // Try to find the root view controller programmically
+    // Find the top window (that is not an alert view or other window)
+    
+    UIWindow *topWindow = [[UIApplication sharedApplication] keyWindow];
+    
+    if (topWindow.windowLevel != UIWindowLevelNormal) {
+        NSArray *windows = [[UIApplication sharedApplication] windows];
+        for(topWindow in windows) {
+            if (topWindow.windowLevel == UIWindowLevelNormal)
+                break;
+        }
+    }
+    
+    UIView *rootView = [[topWindow subviews] objectAtIndex:0];
+    
+    id nextResponder = [rootView nextResponder];
+    if ([nextResponder isKindOfClass:[UIViewController class]])
+        result = nextResponder;
+    else if ([topWindow respondsToSelector:@selector(rootViewController)] && topWindow.rootViewController != nil)
+        result = topWindow.rootViewController;
+    else
+        NSAssert(NO, @"ShareKit: Could not find a root view controller.  You can assign one manually by calling [[SHK currentHelper] setRootViewController:YOURROOTVIEWCONTROLLER].");
+    
+    return result;
 }
 
 @end
