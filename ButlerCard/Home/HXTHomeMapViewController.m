@@ -108,14 +108,9 @@
 #pragma mark - location manager delegate
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    
     NSLog(@"locations = %@", locations);
-    MKCoordinateSpan theSpan;
-    //地图的范围 越小越精确
-    theSpan.latitudeDelta=0.01;
-    theSpan.longitudeDelta=0.01;
-    MKCoordinateRegion theRegion;
-    theRegion.center=[[_locationManager location] coordinate];
-    theRegion.span=theSpan;
+    MKCoordinateRegion theRegion = MKCoordinateRegionMake(_locationManager.location.coordinate, MKCoordinateSpanMake(0.01, 0.01));
     [self.mapView setRegion:theRegion];
 }
 

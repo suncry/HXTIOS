@@ -67,10 +67,7 @@
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     
-//    NSLog(@"windows.count = %lu", [UIApplication sharedApplication].windows.count);
-//    UIWindow *window = [UIApplication sharedApplication].windows.firstObject;
-//    [window.rootViewController.navigationController pushViewController:_loginViewController animated:YES];
-    [[self getCurrentRootViewController] presentViewController:_loginViewController animated:NO completion:^{}];
+//    [[self getCurrentRootViewController] presentViewController:_loginViewController animated:NO completion:^{}];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
