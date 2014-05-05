@@ -29,19 +29,19 @@
     [super viewDidLoad];
     
     //消费单的假数据初始化
-    _allDataArray = [[NSMutableArray alloc]initWithObjects:@[@"1月",@"香皂",@"洗面奶"],@[@"2月",@"杀虫剂"],nil];
+    _allDataArray = [[NSMutableArray alloc]initWithObjects:@[@"1月",@"香皂"],nil];
     
-    _dataArray = [[NSMutableArray alloc]initWithObjects:@[@"1月",@"香皂",@"洗面奶"],@[@"2月",@"杀虫剂"],nil];
+    _dataArray = [[NSMutableArray alloc]initWithObjects:@[@"1月",@"香皂"],nil];
     
-    //注册下拉刷新功能
-    __weak CYPropertieCardsController *weakSelf = self;
-    [self.tableView addPullToRefreshWithActionHandler:^{
-        [weakSelf insertRowAtTop];
-    }];
-    //注册上拉刷新功能
-    [self.tableView addInfiniteScrollingWithActionHandler:^{
-        [weakSelf insertRowAtBottom];
-    }];
+//    //注册下拉刷新功能
+//    __weak CYPropertieCardsController *weakSelf = self;
+//    [self.tableView addPullToRefreshWithActionHandler:^{
+//        [weakSelf insertRowAtTop];
+//    }];
+//    //注册上拉刷新功能
+//    [self.tableView addInfiniteScrollingWithActionHandler:^{
+//        [weakSelf insertRowAtBottom];
+//    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,6 +51,13 @@
 }
 
 #pragma mark - Table view data source
+////去除多余的空白cell
+//- (void)setExtraCellLineHidden: (UITableView *)tableView
+//{
+//    UIView *view =[[UIView alloc]init];
+//    view.backgroundColor = [UIColor redColor];
+//    [self.tableView setTableFooterView:view];
+//}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -73,7 +80,7 @@
     else
     {
         //消费清单cell高度
-        return 80.0;
+        return 44.0;
     }
     
 }
@@ -94,24 +101,6 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    //点击的如果是月份cell  row == 0  则触发折叠功能
-    if (indexPath.row == 0)
-    {
-        //折叠的情况
-        if ([_dataArray[indexPath.section] count]> 1)
-        {
-            NSMutableArray *tempArray = [[NSMutableArray alloc]initWithObjects:_dataArray[indexPath.section][indexPath.row], nil];
-            _dataArray[indexPath.section] = tempArray;
-            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationFade];
-        }
-        //展开的情况
-        else
-        {
-            _dataArray[indexPath.section] = _allDataArray[indexPath.section];
-            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationFade];
-        }
-    }
 }
 
 /*
@@ -171,7 +160,7 @@
     double delayInSeconds = 2.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        _allDataArray = [[NSMutableArray alloc]initWithObjects:@[@"1月",@"香皂",@"洗面奶"],@[@"2月",@"杀虫剂"],@[@"2月",@"杀虫剂"],nil];
+        _allDataArray = [[NSMutableArray alloc]initWithObjects:@[@"1月",@"香皂",@"洗面奶"],nil];
         _dataArray = [[NSMutableArray alloc]initWithObjects:@[@"1月",@"香皂",@"洗面奶"],@[@"2月",@"杀虫剂"],@[@"2月",@"杀虫剂"],nil];
         [self.tableView reloadData];
         //停止刷新
