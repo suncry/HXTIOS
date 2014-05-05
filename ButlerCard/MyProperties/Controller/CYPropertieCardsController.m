@@ -29,19 +29,19 @@
     [super viewDidLoad];
     
     //消费单的假数据初始化
-    _allDataArray = [[NSMutableArray alloc]initWithObjects:@[@"1月",@"香皂",@"洗面奶"],@[@"2月",@"杀虫剂"],nil];
+    _allDataArray = [[NSMutableArray alloc]initWithObjects:@[@"1月",@"香皂",@"洗面奶"],nil];
     
-    _dataArray = [[NSMutableArray alloc]initWithObjects:@[@"1月",@"香皂",@"洗面奶"],@[@"2月",@"杀虫剂"],nil];
+    _dataArray = [[NSMutableArray alloc]initWithObjects:@[@"1月",@"香皂",@"洗面奶"],nil];
     
-    //注册下拉刷新功能
-    __weak CYPropertieCardsController *weakSelf = self;
-    [self.tableView addPullToRefreshWithActionHandler:^{
-        [weakSelf insertRowAtTop];
-    }];
-    //注册上拉刷新功能
-    [self.tableView addInfiniteScrollingWithActionHandler:^{
-        [weakSelf insertRowAtBottom];
-    }];
+//    //注册下拉刷新功能
+//    __weak CYPropertieCardsController *weakSelf = self;
+//    [self.tableView addPullToRefreshWithActionHandler:^{
+//        [weakSelf insertRowAtTop];
+//    }];
+//    //注册上拉刷新功能
+//    [self.tableView addInfiniteScrollingWithActionHandler:^{
+//        [weakSelf insertRowAtBottom];
+//    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,6 +51,13 @@
 }
 
 #pragma mark - Table view data source
+////去除多余的空白cell
+//- (void)setExtraCellLineHidden: (UITableView *)tableView
+//{
+//    UIView *view =[[UIView alloc]init];
+//    view.backgroundColor = [UIColor redColor];
+//    [self.tableView setTableFooterView:view];
+//}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -171,7 +178,7 @@
     double delayInSeconds = 2.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        _allDataArray = [[NSMutableArray alloc]initWithObjects:@[@"1月",@"香皂",@"洗面奶"],@[@"2月",@"杀虫剂"],@[@"2月",@"杀虫剂"],nil];
+        _allDataArray = [[NSMutableArray alloc]initWithObjects:@[@"1月",@"香皂",@"洗面奶"],nil];
         _dataArray = [[NSMutableArray alloc]initWithObjects:@[@"1月",@"香皂",@"洗面奶"],@[@"2月",@"杀虫剂"],@[@"2月",@"杀虫剂"],nil];
         [self.tableView reloadData];
         //停止刷新
