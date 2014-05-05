@@ -960,7 +960,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="服务评价" id="6bY-jV-5ug">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="Rhp-oT-ncs">
+                        <barButtonItem key="rightBarButtonItem" id="Rhp-oT-ncs">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6W4-e8-h9U">
                                 <rect key="frame" x="233" y="5" width="71" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
