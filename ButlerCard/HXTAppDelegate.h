@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CYPassWordViewController.h"
 @interface HXTAppDelegate : UIResponder <UIApplicationDelegate>
-
+{
+    UIViewController *_controller;
+}
 @property (strong, nonatomic) UIWindow *window;
 
 //引入CoreData框架

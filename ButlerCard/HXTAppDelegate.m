@@ -38,7 +38,8 @@
         }
 	}
      */
-    
+    _controller = [[UIStoryboard storyboardWithName:@"Password" bundle:nil]instantiateInitialViewController];
+
     return YES;
 }
 							
@@ -64,6 +65,21 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    NSLog(@"applicationDidBecomeActive");
+
+    // 延迟2秒执行：
+    double delayInSeconds = 1.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        // code to be executed on the main queue after delay
+//        [self.window addSubview:_controller.view];
+//        [self.window.rootViewController presentViewController:[[UIStoryboard storyboardWithName:@"Password" bundle:nil]instantiateInitialViewController] animated:NO completion:nil];
+
+    });
+
+    
+    
+    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
