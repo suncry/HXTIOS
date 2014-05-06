@@ -91,6 +91,7 @@
 - (void)clearPassword
 {
     self.password = @"0125";
+    [HXTAccountManager sharedInstance].gesturePassword = @"0125";
     self.state = ePasswordExist;
     
     [self updateInfoLabel];

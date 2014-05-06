@@ -48,17 +48,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    //#warning Potentially incomplete method implementation.
-    // Return the number of sections.
     return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    //#warning Incomplete method implementation.
-    // Return the number of rows in the section.
     return 3;
-    
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -68,8 +63,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    [self.tableView registerClass:[CYActivityCell class] forCellReuseIdentifier:@"CYActivityCell"];
-    // Configure the cell...
     CYActivityCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CYActivityCell" forIndexPath:indexPath];
     return cell;
 }
