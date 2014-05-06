@@ -24,6 +24,8 @@
 #define kLogged                   @"Logged"
 #define kFirstRun                 @"FirstRun"
 #define kEnablePush               @"EnablePush"
+//手势密码
+#define kGesturePassword              @"gesturePassword"
 
 @class HXTAccountManager;
 
@@ -53,6 +55,7 @@
 @property (copy,   nonatomic) NSString *sex;
 @property (copy,   nonatomic) NSString *currentArea;
 @property (copy,   nonatomic) NSString *defaultHouseingEstate;
+@property (copy,   nonatomic) NSString *gesturePassword;
 
 @property (assign, nonatomic, getter = isLogged) BOOL logged;
 @property (assign, nonatomic, getter = isFirstRun) BOOL firstRun;

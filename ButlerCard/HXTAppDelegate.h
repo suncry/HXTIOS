@@ -11,7 +11,7 @@
 @interface HXTAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) UIViewController *gesturePasswordViewController;
+@property (strong, nonatomic) UINavigationController *gesturePasswordNaviViewController;
 //@property (strong, nonatomic) UIViewController *loginViewController;
 
 //引入CoreData框架

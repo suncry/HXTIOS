@@ -52,7 +52,8 @@
     _logged                   = [accountDefaults boolForKey:kLogged];
     _firstRun                 = [accountDefaults boolForKey:kFirstRun];
     _enablePush               = [accountDefaults boolForKey:kEnablePush];
-    
+    _gesturePassword          = [accountDefaults objectForKey:kGesturePassword];
+
     return YES;
 }
 
@@ -75,6 +76,8 @@
     [accountDefaults setBool:_logged forKey:kLogged];
     [accountDefaults setBool:_firstRun forKey:kFirstRun];
     [accountDefaults setBool:_enablePush forKey:kEnablePush];
+    [accountDefaults setObject:_gesturePassword forKey:kGesturePassword];
+
     [accountDefaults synchronize];
     return YES;
 }

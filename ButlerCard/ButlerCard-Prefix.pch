@@ -18,8 +18,6 @@
 #define kHouseName @"houseName"
 #define kShopID @"shopID"
 #define kShopTel @"shopTel"
-//手势密码
-#define kGestureCode @"gestureCode"
 
 
 

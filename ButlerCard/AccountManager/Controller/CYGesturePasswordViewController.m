@@ -7,7 +7,7 @@
 //
 
 #import "CYGesturePasswordViewController.h"
-
+#import "HXTAccountManager.h"
 @interface CYGesturePasswordViewController ()
 
 @property (nonatomic,assign) ePasswordSate state;
@@ -34,7 +34,7 @@
 }
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.password = [[NSUserDefaults standardUserDefaults]stringForKey:kGestureCode];
+    self.password = [HXTAccountManager sharedInstance].gesturePassword;
     [self updateInfoLabel];
 }
 - (void)viewDidLoad
@@ -42,7 +42,7 @@
     [super viewDidLoad];
 
     // Do any additional setup after loading the view.
-    self.password = [[NSUserDefaults standardUserDefaults]stringForKey:kGestureCode];
+    self.password = [HXTAccountManager sharedInstance].gesturePassword;
     self.state = ePasswordExist;
     
     self.clearButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];

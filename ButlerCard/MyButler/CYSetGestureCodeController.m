@@ -7,7 +7,7 @@
 //
 
 #import "CYSetGestureCodeController.h"
-
+#import "HXTAccountManager.h"
 @interface CYSetGestureCodeController ()
 @property (nonatomic,assign) ePasswordSate state;
 
@@ -102,8 +102,8 @@
                 alert.tag = 100;
                 alert.delegate = self;
                 [alert show];
-                [[NSUserDefaults standardUserDefaults]setObject:password forKey:kGestureCode];
-                NSLog(@"手势密码设置为:%@",[[NSUserDefaults standardUserDefaults]stringForKey:kGestureCode]);
+                [HXTAccountManager sharedInstance].gesturePassword = password;
+                NSLog(@"手势密码设置为:%@",[HXTAccountManager sharedInstance].gesturePassword);
             }
             else
             {

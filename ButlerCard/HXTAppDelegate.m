@@ -40,8 +40,8 @@
      }
      }
      */
-    if (!_gesturePasswordViewController) {
-        _gesturePasswordViewController = [[UIStoryboard storyboardWithName:@"AccountManager" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"GesturePasswordNaviStoryboadID"];
+    if (!_gesturePasswordNaviViewController) {
+        _gesturePasswordNaviViewController = [[UIStoryboard storyboardWithName:@"AccountManager" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"GesturePasswordNaviStoryboadID"];
     }
     
 //    if (!_loginViewController) {
@@ -75,9 +75,13 @@
 {
 //    NSLog(@"当前控制器 是手势密码页面吗 %d",[[self getCurrentRootViewController] isEqual:_gesturePasswordViewController]);
     //当前不是手势密码页面 才跳转
-    if (![[self getCurrentRootViewController] isEqual:_gesturePasswordViewController])
+    if (![[self getCurrentRootViewController] isEqual:_gesturePasswordNaviViewController])
     {
-        [[self getCurrentRootViewController] presentViewController:_gesturePasswordViewController animated:NO completion:^{}];
+        if (_gesturePasswordNaviViewController.viewControllers.count > 1) {
+            [_gesturePasswordNaviViewController popToRootViewControllerAnimated:NO];
+        }
+        
+        [[self getCurrentRootViewController] presentViewController:_gesturePasswordNaviViewController animated:NO completion:^{}];
 
     }
 }
@@ -209,9 +213,6 @@
     else
         NSAssert(NO, @"ShareKit: Could not find a root view controller.  You can assign one manually by calling [[SHK currentHelper] setRootViewController:YOURROOTVIEWCONTROLLER].");
     
-    if ([result isKindOfClass:[UINavigationController class]]) {
-        result = ((UINavigationController *)result).topViewController;
-    }
     
     return result;
     
