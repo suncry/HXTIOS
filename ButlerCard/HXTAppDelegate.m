@@ -9,6 +9,8 @@
 #import "HXTAppDelegate.h"
 #import "HXTAccountManager.h"
 #import <CoreData/CoreData.h>
+#import "CYGesturePasswordViewController.h"
+
 @implementation HXTAppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
@@ -42,9 +44,9 @@
         _gesturePasswordViewController = [[UIStoryboard storyboardWithName:@"AccountManager" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"GesturePasswordNaviStoryboadID"];
     }
     
-    if (!_loginViewController) {
-        _loginViewController = [[UIStoryboard storyboardWithName:@"AccountManager" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"AccountManagerNavStoryboardID"];
-    }
+//    if (!_loginViewController) {
+//        _loginViewController = [[UIStoryboard storyboardWithName:@"AccountManager" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"AccountManagerNavStoryboardID"];
+//    }
     
     return YES;
 }
@@ -66,14 +68,18 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    
-    [[self getCurrentRootViewController] presentViewController:_gesturePasswordViewController animated:NO completion:^{}];
+//    NSLog(@"当前控制器 是手势密码页面吗 %d",[[self getCurrentRootViewController] isEqual:_gesturePasswordViewController]);
+    //当前不是手势密码页面 才跳转
+    if (![[self getCurrentRootViewController] isEqual:_gesturePasswordViewController])
+    {
+        [[self getCurrentRootViewController] presentViewController:_gesturePasswordViewController animated:NO completion:^{}];
 
+    }
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -208,6 +214,9 @@
     }
     
     return result;
+    
+    
+    
 }
 
 @end

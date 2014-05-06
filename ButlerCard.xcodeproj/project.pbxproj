@@ -724,6 +724,7 @@
 		B2214C5118FE1F9000762AE9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B254E3BD1917E531007AC826 /* MJPasswordView */,
 				B2214C5218FE1F9000762AE9 /* HXTAccountManager.h */,
 				B2214C5318FE1F9000762AE9 /* HXTAccountManager.m */,
 			);
@@ -952,7 +953,6 @@
 		B254E3BC1917E531007AC826 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B254E3BD1917E531007AC826 /* MJPasswordView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -967,7 +967,8 @@
 				B254E3C21917E531007AC826 /* MJPathLayer.h */,
 				B254E3C31917E531007AC826 /* MJPathLayer.m */,
 			);
-			path = MJPasswordView;
+			name = MJPasswordView;
+			path = ../View/MJPasswordView;
 			sourceTree = "<group>";
 		};
 		B26FE55718FE51FC0093BC2F /* Global */ = {
