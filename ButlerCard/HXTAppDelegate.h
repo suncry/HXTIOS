@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UIViewController *gesturePasswordViewController;
+@property (strong, nonatomic) UIViewController *loginViewController;
 
 //引入CoreData框架
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;

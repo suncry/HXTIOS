@@ -100,6 +100,7 @@
             
         case ePasswordExist:
             infoText = [NSString stringWithFormat:@"密码设置成功，是:%@",self.password];
+            [self dismissViewControllerAnimated:YES completion:^{ }];
             break;
             
         default:
@@ -158,6 +159,7 @@
 
 - (IBAction)forgetPassWord:(id)sender
 {
-    [self dismissViewControllerAnimated:YES completion:^{}];
+    UIViewController *loginViewController = [[UIStoryboard storyboardWithName:@"AccountManager" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"LoginStoryboardID"];
+    [self.navigationController pushViewController:loginViewController animated:YES];
 }
 @end

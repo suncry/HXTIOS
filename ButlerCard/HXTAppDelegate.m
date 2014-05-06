@@ -42,7 +42,10 @@
         _gesturePasswordViewController = [[UIStoryboard storyboardWithName:@"AccountManager" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"GesturePasswordNaviStoryboadID"];
     }
     
-
+    if (!_loginViewController) {
+        _loginViewController = [[UIStoryboard storyboardWithName:@"AccountManager" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"AccountManagerNavStoryboardID"];
+    }
+    
     return YES;
 }
 
