@@ -13,6 +13,7 @@
 		2392C7C218FE7157007EDB5A /* CYRepairController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2392C7C118FE7157007EDB5A /* CYRepairController.m */; };
 		23A8C4841907A04A00557F5A /* searchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A8C4831907A04A00557F5A /* searchCell.m */; };
 		23A8C6981908BC5300EF925C /* CYShopController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A8C6971908BC5300EF925C /* CYShopController.m */; };
+		23B90FB01918914B00C7767F /* CYSetGestureCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B90FAF1918914B00C7767F /* CYSetGestureCodeController.m */; };
 		23BC739A190A040B0088BEC9 /* CoreModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 23BC7398190A040B0088BEC9 /* CoreModel.xcdatamodeld */; };
 		23BC73A2190A0A020088BEC9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23BC73A1190A0A020088BEC9 /* CoreData.framework */; };
 		23CA860D19065B7A0067D0D4 /* PCStackMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CA860A19065B7A0067D0D4 /* PCStackMenu.m */; };
@@ -259,6 +260,8 @@
 		23A8C4831907A04A00557F5A /* searchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchCell.m; sourceTree = "<group>"; };
 		23A8C6961908BC5300EF925C /* CYShopController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYShopController.h; sourceTree = "<group>"; };
 		23A8C6971908BC5300EF925C /* CYShopController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYShopController.m; sourceTree = "<group>"; };
+		23B90FAE1918914B00C7767F /* CYSetGestureCodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYSetGestureCodeController.h; sourceTree = "<group>"; };
+		23B90FAF1918914B00C7767F /* CYSetGestureCodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYSetGestureCodeController.m; sourceTree = "<group>"; };
 		23BC7399190A040B0088BEC9 /* CoreModel.xcdatamodel */ = {isa = PBXFileReference; explicitFileType = wrapper.xcdatamodel; path = CoreModel.xcdatamodel; sourceTree = "<group>"; };
 		23BC73A1190A0A020088BEC9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		23CA860919065B7A0067D0D4 /* PCStackMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCStackMenu.h; sourceTree = SOURCE_ROOT; };
@@ -517,6 +520,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23B90FAC191890EC00C7767F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B2214DBD18FE1FB800762AE9 /* CYActivityViewController.h */,
+				B2214DBE18FE1FB800762AE9 /* CYActivityViewController.m */,
+				B2214DBF18FE1FB800762AE9 /* CYBillPieViewController.h */,
+				B2214DC018FE1FB800762AE9 /* CYBillPieViewController.m */,
+				B2214DC118FE1FB800762AE9 /* CYFeedBackViewController.h */,
+				B2214DC218FE1FB800762AE9 /* CYFeedBackViewController.m */,
+				B2214DC518FE1FB800762AE9 /* CYMsgTableViewController.h */,
+				B2214DC618FE1FB800762AE9 /* CYMsgTableViewController.m */,
+				B2214DCB18FE1FB800762AE9 /* CYMyBillTableViewController.h */,
+				B2214DCC18FE1FB800762AE9 /* CYMyBillTableViewController.m */,
+				B2214DCD18FE1FB800762AE9 /* CYMyOrderViewController.h */,
+				B2214DCE18FE1FB800762AE9 /* CYMyOrderViewController.m */,
+				B2214DD118FE1FB800762AE9 /* CYMyPropertyTableViewController.h */,
+				B2214DD218FE1FB800762AE9 /* CYMyPropertyTableViewController.m */,
+				23B90FAE1918914B00C7767F /* CYSetGestureCodeController.h */,
+				23B90FAF1918914B00C7767F /* CYSetGestureCodeController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		23B90FAD191890F400C7767F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B2214DD318FE1FB800762AE9 /* CYOrderCell.h */,
+				B2214DD418FE1FB800762AE9 /* CYOrderCell.m */,
+				B2214DD518FE1FB800762AE9 /* Example2PieView.h */,
+				B2214DD618FE1FB800762AE9 /* Example2PieView.m */,
+				B2214DD718FE1FB800762AE9 /* MagicPieLayer.h */,
+				B2214DD818FE1FB800762AE9 /* MyPieElement.h */,
+				B2214DD918FE1FB800762AE9 /* MyPieElement.m */,
+				B2214DDA18FE1FB800762AE9 /* NSMutableArray+pieEx.h */,
+				B2214DDB18FE1FB800762AE9 /* NSMutableArray+pieEx.m */,
+				B2214DDC18FE1FB800762AE9 /* PieElement.h */,
+				B2214DDD18FE1FB800762AE9 /* PieElement.m */,
+				B2214DDE18FE1FB800762AE9 /* PieLayer.h */,
+				B2214DDF18FE1FB800762AE9 /* PieLayer.m */,
+				B2214DC718FE1FB800762AE9 /* CYMyBillDetailCell.h */,
+				B2214DC818FE1FB800762AE9 /* CYMyBillDetailCell.m */,
+				B2214DC918FE1FB800762AE9 /* CYMyBillMonthCell.h */,
+				B2214DCA18FE1FB800762AE9 /* CYMyBillMonthCell.m */,
+				B2214DC318FE1FB800762AE9 /* CYMsgCell.h */,
+				B2214DC418FE1FB800762AE9 /* CYMsgCell.m */,
+				B2214DBB18FE1FB800762AE9 /* CYActivityCell.h */,
+				B2214DBC18FE1FB800762AE9 /* CYActivityCell.m */,
+				B2214DCF18FE1FB800762AE9 /* CYMyPropertyTableViewCell.h */,
+				B2214DD018FE1FB800762AE9 /* CYMyPropertyTableViewCell.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		23CA860719065B5C0067D0D4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -795,43 +851,8 @@
 		B2214DBA18FE1FB800762AE9 /* MyButler--------我的管家 */ = {
 			isa = PBXGroup;
 			children = (
-				B2214DBB18FE1FB800762AE9 /* CYActivityCell.h */,
-				B2214DBC18FE1FB800762AE9 /* CYActivityCell.m */,
-				B2214DBD18FE1FB800762AE9 /* CYActivityViewController.h */,
-				B2214DBE18FE1FB800762AE9 /* CYActivityViewController.m */,
-				B2214DBF18FE1FB800762AE9 /* CYBillPieViewController.h */,
-				B2214DC018FE1FB800762AE9 /* CYBillPieViewController.m */,
-				B2214DC118FE1FB800762AE9 /* CYFeedBackViewController.h */,
-				B2214DC218FE1FB800762AE9 /* CYFeedBackViewController.m */,
-				B2214DC318FE1FB800762AE9 /* CYMsgCell.h */,
-				B2214DC418FE1FB800762AE9 /* CYMsgCell.m */,
-				B2214DC518FE1FB800762AE9 /* CYMsgTableViewController.h */,
-				B2214DC618FE1FB800762AE9 /* CYMsgTableViewController.m */,
-				B2214DC718FE1FB800762AE9 /* CYMyBillDetailCell.h */,
-				B2214DC818FE1FB800762AE9 /* CYMyBillDetailCell.m */,
-				B2214DC918FE1FB800762AE9 /* CYMyBillMonthCell.h */,
-				B2214DCA18FE1FB800762AE9 /* CYMyBillMonthCell.m */,
-				B2214DCB18FE1FB800762AE9 /* CYMyBillTableViewController.h */,
-				B2214DCC18FE1FB800762AE9 /* CYMyBillTableViewController.m */,
-				B2214DCD18FE1FB800762AE9 /* CYMyOrderViewController.h */,
-				B2214DCE18FE1FB800762AE9 /* CYMyOrderViewController.m */,
-				B2214DCF18FE1FB800762AE9 /* CYMyPropertyTableViewCell.h */,
-				B2214DD018FE1FB800762AE9 /* CYMyPropertyTableViewCell.m */,
-				B2214DD118FE1FB800762AE9 /* CYMyPropertyTableViewController.h */,
-				B2214DD218FE1FB800762AE9 /* CYMyPropertyTableViewController.m */,
-				B2214DD318FE1FB800762AE9 /* CYOrderCell.h */,
-				B2214DD418FE1FB800762AE9 /* CYOrderCell.m */,
-				B2214DD518FE1FB800762AE9 /* Example2PieView.h */,
-				B2214DD618FE1FB800762AE9 /* Example2PieView.m */,
-				B2214DD718FE1FB800762AE9 /* MagicPieLayer.h */,
-				B2214DD818FE1FB800762AE9 /* MyPieElement.h */,
-				B2214DD918FE1FB800762AE9 /* MyPieElement.m */,
-				B2214DDA18FE1FB800762AE9 /* NSMutableArray+pieEx.h */,
-				B2214DDB18FE1FB800762AE9 /* NSMutableArray+pieEx.m */,
-				B2214DDC18FE1FB800762AE9 /* PieElement.h */,
-				B2214DDD18FE1FB800762AE9 /* PieElement.m */,
-				B2214DDE18FE1FB800762AE9 /* PieLayer.h */,
-				B2214DDF18FE1FB800762AE9 /* PieLayer.m */,
+				23B90FAD191890F400C7767F /* Model */,
+				23B90FAC191890EC00C7767F /* Controller */,
 			);
 			name = "MyButler--------我的管家";
 			path = MyButler;
@@ -1322,6 +1343,7 @@
 				B2214C7618FE1F9000762AE9 /* HXTAccountManager.m in Sources */,
 				B2214C7218FE1F9000762AE9 /* HXTRegisterInputValidCodeViewController.m in Sources */,
 				B26FE5D718FE51FC0093BC2F /* HXTLocationManager.m in Sources */,
+				23B90FB01918914B00C7767F /* CYSetGestureCodeController.m in Sources */,
 				B2D1FC86190256C500A7467D /* HMSegmentedControl.m in Sources */,
 				B2214E1718FE1FB800762AE9 /* CYActivityViewController.m in Sources */,
 				B2214E4718FE1FB800762AE9 /* HXTPropertyFeeDetailTableViewController.m in Sources */,
