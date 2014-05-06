@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MJPasswordView.h"
 
-@interface CYGesturePasswordViewController : UIViewController<MJPasswordDelegate>
+@interface CYGesturePasswordViewController : UIViewController<MJPasswordDelegate,UIAlertViewDelegate>
 - (IBAction)forgetPassWord:(id)sender;
 
 @end

@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "MJPasswordView.h"
 
-@interface CYSetGestureCodeController : UIViewController<MJPasswordDelegate>
+@interface CYSetGestureCodeController : UIViewController<MJPasswordDelegate,UIAlertViewDelegate>
 
 @end

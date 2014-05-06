@@ -32,31 +32,28 @@
     }
     return self;
 }
-
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.password = [[NSUserDefaults standardUserDefaults]stringForKey:kGestureCode];
+    [self updateInfoLabel];
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
     // Do any additional setup after loading the view.
-    self.password = @"";
-    self.state = ePasswordUnset;
+    self.password = [[NSUserDefaults standardUserDefaults]stringForKey:kGestureCode];
+    self.state = ePasswordExist;
     
     self.clearButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    self.clearButton.frame = CGRectMake(110, 20, 100, 30);
-    [self.clearButton setTitle:@"清空密码" forState:UIControlStateNormal];
+    self.clearButton.frame = CGRectMake(110, 20, 150, 30);
+    [self.clearButton setTitle:@"重置密码为0125" forState:UIControlStateNormal];
     [self.clearButton addTarget:self action:@selector(clearPassword) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.clearButton];
     
     self.infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 60, 300, 30)];
     self.infoLabel.backgroundColor = [UIColor clearColor];
-    if ([[UIDevice currentDevice].systemVersion floatValue]>=6.0)
-    {
-        self.infoLabel.textAlignment =  NSTextAlignmentCenter;
-    }
-    else
-    {
-//        self.infoLabel.textAlignment = UITextAlignmentCenter;
-    }
+    self.infoLabel.textAlignment =  NSTextAlignmentCenter;
     self.infoLabel.textColor = [UIColor redColor];
     [self.view addSubview:self.infoLabel];
     
@@ -80,17 +77,8 @@
     NSString* infoText;
     switch (self.state)
     {
-        case ePasswordUnset:
-            infoText = @"请滑动九宫格，设置密码";
-            break;
-            
-        case ePasswordRepeat:
-            infoText = [NSString stringWithFormat:@"请再次输入刚才的密码:%@",self.password];
-            break;
-            
         case ePasswordExist:
             infoText = [NSString stringWithFormat:@"密码设置成功，是:%@",self.password];
-            [self dismissViewControllerAnimated:YES completion:^{ }];
             break;
             
         default:
@@ -102,8 +90,8 @@
 
 - (void)clearPassword
 {
-    self.password = @"";
-    self.state = ePasswordUnset;
+    self.password = @"0125";
+    self.state = ePasswordExist;
     
     [self updateInfoLabel];
 }
@@ -112,30 +100,24 @@
 {
     switch (self.state)
     {
-        case ePasswordUnset:
-            self.password = password;
-            self.state = ePasswordRepeat;
-            break;
-            
-        case ePasswordRepeat:
-            if ([password isEqualToString:self.password])
-            {
-                self.state = ePasswordExist;
-                UIAlertView* view = [[UIAlertView alloc] initWithTitle:@"密码设置成功！" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-                [view show];
-            }
-            break;
-            
         case ePasswordExist:
             if ([password isEqualToString:self.password])
             {
-                UIAlertView* view = [[UIAlertView alloc] initWithTitle:@"密码正确！" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-                [view show];
+//                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"密码正确！" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+//                alert.tag = 100;
+//                alert.delegate = self;
+//                
+//                [alert show];
+                [self dismissViewControllerAnimated:YES completion:nil];
             }
             else
             {
-                UIAlertView* view = [[UIAlertView alloc] initWithTitle:@"密码错误，请重试！" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-                [view show];
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"密码错误，请重试！" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+                alert.tag = 101;
+                alert.delegate = self;
+                [alert show];
+
+                self.infoLabel.text = @"密码输入错误！";
             }
             
             break;
@@ -149,8 +131,16 @@
 
 - (IBAction)forgetPassWord:(id)sender
 {
-    UIViewController *loginViewController = [[UIStoryboard storyboardWithName:@"AccountManager" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"AccountManagerNavStoryboardID"];
-//    [self.navigationController pushViewController:loginViewController animated:YES];
-    [self presentViewController:loginViewController animated:YES completion:nil];
+    UIViewController *loginViewController = [[UIStoryboard storyboardWithName:@"AccountManager" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"LoginStoryboardID"];
+    [self.navigationController pushViewController:loginViewController animated:YES];
+//    [self presentViewController:loginViewController animated:YES completion:nil];
 }
+//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+//{
+//    NSLog(@"alert tag == %d",alertView.tag);
+//    //tag 100  密码正确alert
+//    //tag 101  密码错误alert
+//
+//}
+
 @end

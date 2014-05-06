@@ -292,7 +292,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Osi-h5-La1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1656" y="-301"/>
+            <point key="canvasLocation" x="2182" y="-301"/>
         </scene>
         <!--Register User Protocol View Controller - 用户协议-->
         <scene sceneID="bGy-Ru-lo6">
@@ -327,7 +327,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iIR-zA-grT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2203" y="22"/>
+            <point key="canvasLocation" x="2729" y="22"/>
         </scene>
         <!--Register Input Valid Code View Controller - 输入验证码-->
         <scene sceneID="ZC0-d5-38V">
@@ -444,7 +444,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zor-BY-ucZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2203" y="-646"/>
+            <point key="canvasLocation" x="2729" y="-646"/>
         </scene>
         <!--Register Input Password View Controller - 设置密码-->
         <scene sceneID="fxC-25-t7l">
@@ -559,7 +559,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K3A-iE-0Nh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2648" y="-646"/>
+            <point key="canvasLocation" x="3174" y="-646"/>
         </scene>
         <!--Register Add House Estate View Controller - 添加小区-->
         <scene sceneID="MvA-2O-Rxo">
@@ -676,7 +676,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zmr-FO-rJH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3057" y="-646"/>
+            <point key="canvasLocation" x="3583" y="-646"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7qU-M1-fT8">
@@ -696,20 +696,20 @@
             </objects>
             <point key="canvasLocation" x="721" y="50"/>
         </scene>
-        <!--Gesture Password View Controller-->
+        <!--Gesture Password View Controller - 手势解锁-->
         <scene sceneID="Vws-7a-ytT">
             <objects>
-                <viewController storyboardIdentifier="GesturePasswordNaviStoryboadID" id="IQe-wS-teV" customClass="CYGesturePasswordViewController" sceneMemberID="viewController">
+                <viewController id="IQe-wS-teV" customClass="CYGesturePasswordViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Zga-TI-0KJ"/>
                         <viewControllerLayoutGuide type="bottom" id="d8B-TC-v1i"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YkH-xs-XN3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="usD-PO-BJX">
-                                <rect key="frame" x="115" y="489" width="90" height="30"/>
+                                <rect key="frame" x="115" y="437" width="90" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="忘记手势密码">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -721,9 +721,31 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="oS1-Dr-Hjq"/>
+                    <navigationItem key="navigationItem" title="手势解锁" id="oS1-Dr-Hjq"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1IN-8W-ECQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1649" y="-619"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5p0-qW-KTT">
+            <objects>
+                <navigationController storyboardIdentifier="GesturePasswordNaviStoryboadID" automaticallyAdjustsScrollViewInsets="NO" id="cwF-Yu-LCQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="BOY-hD-SO5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.50196078430000002" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="IQe-wS-teV" kind="relationship" relationship="rootViewController" id="0yt-9L-J5e"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bZK-p1-GyB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1123" y="-619"/>
         </scene>
