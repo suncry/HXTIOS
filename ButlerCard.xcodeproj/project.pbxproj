@@ -205,6 +205,8 @@
 		B26FE5EC18FE51FC0093BC2F /* XPHTTPURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE5A618FE51FC0093BC2F /* XPHTTPURLConnection.m */; };
 		B26FE64118FE55A90093BC2F /* NSString+Check.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE64018FE55A90093BC2F /* NSString+Check.m */; };
 		B26FE64218FE55A90093BC2F /* NSString+Check.m in Sources */ = {isa = PBXBuildFile; fileRef = B26FE64018FE55A90093BC2F /* NSString+Check.m */; };
+		B27EEB4D1918B4F200D02EBD /* HXTChargeStepOneTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27EEB4C1918B4F200D02EBD /* HXTChargeStepOneTableViewController.m */; };
+		B27EEB4E1918B4F200D02EBD /* HXTChargeStepOneTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27EEB4C1918B4F200D02EBD /* HXTChargeStepOneTableViewController.m */; };
 		B2ADF8B51910D5C900D14FE1 /* HXTAddHousePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2ADF8B41910D5C900D14FE1 /* HXTAddHousePickerView.xib */; };
 		B2ADF8B61910D5C900D14FE1 /* HXTAddHousePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2ADF8B41910D5C900D14FE1 /* HXTAddHousePickerView.xib */; };
 		B2ADF8BD1910D67100D14FE1 /* HXTAddHousePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2ADF8BC1910D67100D14FE1 /* HXTAddHousePickerView.m */; };
@@ -217,8 +219,6 @@
 		B2B01F93190BA173005A9483 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2B01F92190BA173005A9483 /* MapKit.framework */; };
 		B2B01F96190BA1F9005A9483 /* HXTPropertyFeeMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B01F95190BA1F9005A9483 /* HXTPropertyFeeMapViewController.m */; };
 		B2B01F97190BA1F9005A9483 /* HXTPropertyFeeMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B01F95190BA1F9005A9483 /* HXTPropertyFeeMapViewController.m */; };
-		B2B4D545191790550054140A /* HXTChargeStepOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B4D544191790550054140A /* HXTChargeStepOneViewController.m */; };
-		B2B4D546191790550054140A /* HXTChargeStepOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B4D544191790550054140A /* HXTChargeStepOneViewController.m */; };
 		B2D1FC86190256C500A7467D /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D1FC85190256C500A7467D /* HMSegmentedControl.m */; };
 		B2D1FC87190256C500A7467D /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D1FC85190256C500A7467D /* HMSegmentedControl.m */; };
 		B2D484DF1909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D484DE1909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.m */; };
@@ -459,6 +459,8 @@
 		B26FE5A618FE51FC0093BC2F /* XPHTTPURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPHTTPURLConnection.m; sourceTree = "<group>"; };
 		B26FE63F18FE55A90093BC2F /* NSString+Check.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Check.h"; sourceTree = "<group>"; };
 		B26FE64018FE55A90093BC2F /* NSString+Check.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Check.m"; sourceTree = "<group>"; };
+		B27EEB4B1918B4F200D02EBD /* HXTChargeStepOneTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTChargeStepOneTableViewController.h; sourceTree = "<group>"; };
+		B27EEB4C1918B4F200D02EBD /* HXTChargeStepOneTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTChargeStepOneTableViewController.m; sourceTree = "<group>"; };
 		B2ADF8B41910D5C900D14FE1 /* HXTAddHousePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HXTAddHousePickerView.xib; path = View/HXTAddHousePickerView.xib; sourceTree = "<group>"; };
 		B2ADF8BB1910D67000D14FE1 /* HXTAddHousePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HXTAddHousePickerView.h; path = View/HXTAddHousePickerView.h; sourceTree = "<group>"; };
 		B2ADF8BC1910D67100D14FE1 /* HXTAddHousePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HXTAddHousePickerView.m; path = View/HXTAddHousePickerView.m; sourceTree = "<group>"; };
@@ -470,8 +472,6 @@
 		B2B01F92190BA173005A9483 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B2B01F94190BA1F9005A9483 /* HXTPropertyFeeMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTPropertyFeeMapViewController.h; sourceTree = "<group>"; };
 		B2B01F95190BA1F9005A9483 /* HXTPropertyFeeMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTPropertyFeeMapViewController.m; sourceTree = "<group>"; };
-		B2B4D543191790550054140A /* HXTChargeStepOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTChargeStepOneViewController.h; sourceTree = "<group>"; };
-		B2B4D544191790550054140A /* HXTChargeStepOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTChargeStepOneViewController.m; sourceTree = "<group>"; };
 		B2D1FC84190256C500A7467D /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
 		B2D1FC85190256C500A7467D /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
 		B2D484DD1909FC60000D5E33 /* HXTPropertyFeeInputMoneyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTPropertyFeeInputMoneyTableViewController.h; sourceTree = "<group>"; };
@@ -589,8 +589,8 @@
 			children = (
 				B21F24B0191744AD00BE2728 /* HXTPayViewController.h */,
 				B21F24B1191744AD00BE2728 /* HXTPayViewController.m */,
-				B2B4D543191790550054140A /* HXTChargeStepOneViewController.h */,
-				B2B4D544191790550054140A /* HXTChargeStepOneViewController.m */,
+				B27EEB4B1918B4F200D02EBD /* HXTChargeStepOneTableViewController.h */,
+				B27EEB4C1918B4F200D02EBD /* HXTChargeStepOneTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1262,6 +1262,7 @@
 				B2214E1B18FE1FB800762AE9 /* CYFeedBackViewController.m in Sources */,
 				B26FE5E118FE51FC0093BC2F /* UIDevice+Resolutions.m in Sources */,
 				B2214E4518FE1FB800762AE9 /* HXTPropertyFeeViewController.m in Sources */,
+				B27EEB4D1918B4F200D02EBD /* HXTChargeStepOneTableViewController.m in Sources */,
 				23D707E5190E2F7E005E3C1A /* CYShopMapController.m in Sources */,
 				B254E3C81917E531007AC826 /* MJPathLayer.m in Sources */,
 				B2214E3B18FE1FB800762AE9 /* CYDiscussController.m in Sources */,
@@ -1332,7 +1333,6 @@
 				232EBDD619090F6E00381960 /* CYShopCommentController.m in Sources */,
 				B2214C7A18FE1F9000762AE9 /* HXTAddHouseViewController.m in Sources */,
 				B2214E3918FE1FB800762AE9 /* CYActiveController.m in Sources */,
-				B2B4D545191790550054140A /* HXTChargeStepOneViewController.m in Sources */,
 				B2214E2B18FE1FB800762AE9 /* CYMyPropertyTableViewController.m in Sources */,
 				B2214E4B18FE1FB800762AE9 /* DJQRateView.m in Sources */,
 				23CA860D19065B7A0067D0D4 /* PCStackMenu.m in Sources */,
@@ -1434,7 +1434,6 @@
 				B2214C7B18FE1F9000762AE9 /* HXTAddHouseViewController.m in Sources */,
 				B2214E4018FE1FB800762AE9 /* CYNoticeBoardController.m in Sources */,
 				B2214E3218FE1FB800762AE9 /* MyPieElement.m in Sources */,
-				B2B4D546191790550054140A /* HXTChargeStepOneViewController.m in Sources */,
 				B2214E4A18FE1FB800762AE9 /* HXTPropertyServiceViewController.m in Sources */,
 				B2FC604C190DE8D000C13524 /* HXTHomeMapViewController.m in Sources */,
 				B2214E4E18FE1FB800762AE9 /* DJQStartView.m in Sources */,
@@ -1447,6 +1446,7 @@
 				B2214E1E18FE1FB800762AE9 /* CYMsgCell.m in Sources */,
 				B2214E5218FE1FB800762AE9 /* HXTMyProperties.m in Sources */,
 				B2214E2818FE1FB800762AE9 /* CYMyOrderViewController.m in Sources */,
+				B27EEB4E1918B4F200D02EBD /* HXTChargeStepOneTableViewController.m in Sources */,
 				B2214C7118FE1F9000762AE9 /* HXTRegisterInputPhoneNumberViewController.m in Sources */,
 				B254E3C91917E531007AC826 /* MJPathLayer.m in Sources */,
 				B2214C6D18FE1F9000762AE9 /* HXTRegisterAddHouseEstateViewController.m in Sources */,

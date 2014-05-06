@@ -5,32 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Charge Step One View Controller - 充值-->
-        <scene sceneID="8ap-za-03c">
-            <objects>
-                <viewController id="KNt-d9-msx" customClass="HXTChargeStepOneViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="YSz-hy-Zc2"/>
-                        <viewControllerLayoutGuide type="bottom" id="Dhy-xR-GYQ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="h9r-72-Kr1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="充值" id="OvG-Li-dMh">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Zuj-Eh-kHQ">
-                            <color key="tintColor" red="0.94901960780000005" green="0.43529411759999997" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="cancelBarButtonItemPressed:" destination="KNt-d9-msx" id="Q3U-cC-ZrW"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Rg9-O9-K6J" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="653" y="-636"/>
-        </scene>
         <!--Pay View Controller - 收银台-->
         <scene sceneID="hNf-lb-EkA">
             <objects>
@@ -155,11 +129,10 @@
             </objects>
             <point key="canvasLocation" x="219" y="65"/>
         </scene>
-        <!--Navigation Controller - 充值-->
+        <!--Navigation Controller-->
         <scene sceneID="2dx-aB-Ujk">
             <objects>
                 <navigationController storyboardIdentifier="ChargeNaviStoryboadID" automaticallyAdjustsScrollViewInsets="NO" id="paT-Wb-Uzw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="充值" image="Checkmark" id="04k-b6-8Wr"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JV8-Y0-Jd5">
@@ -168,16 +141,168 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="KNt-d9-msx" kind="relationship" relationship="rootViewController" id="KDU-ei-T3f"/>
+                        <segue destination="YZH-e0-zae" kind="relationship" relationship="rootViewController" id="2Kc-vs-vMD"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IMj-Pw-cAq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="219" y="-636"/>
         </scene>
+        <!--Charge Step One Table View Controller - 充值-->
+        <scene sceneID="hrm-ih-CkP">
+            <objects>
+                <tableViewController id="YZH-e0-zae" customClass="HXTChargeStepOneTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="2Bz-xV-Pcd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="充值金额" id="Qnc-8a-9wT">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="BpC-DT-cuz">
+                                        <rect key="frame" x="0.0" y="119" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BpC-DT-cuz" id="jx5-aJ-1IO">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0.00元" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hD8-z3-HZU">
+                                                    <rect key="frame" x="125" y="0.0" width="195" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                </textField>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="¥" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9D-Ej-v4d">
+                                                    <rect key="frame" x="0.0" y="0.0" width="117" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="eWj-pE-CEg">
+                                        <rect key="frame" x="0.0" y="163" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eWj-pE-CEg" id="YyH-JS-xRs">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" tag="101" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hf2-Lw-iKR">
+                                                    <rect key="frame" x="20" y="0.0" width="80" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="20元">
+                                                        <color key="titleColor" red="0.94901960780000005" green="0.43529411759999997" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="moneyButtonPressed:" destination="YZH-e0-zae" eventType="touchUpInside" id="EZe-ZL-llS"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" tag="102" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wR5-3A-9eo">
+                                                    <rect key="frame" x="120" y="0.0" width="80" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="50元">
+                                                        <color key="titleColor" red="0.94901960780000005" green="0.43529411759999997" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="moneyButtonPressed:" destination="YZH-e0-zae" eventType="touchUpInside" id="Nxn-cb-xi7"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" tag="103" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1P-t8-OW4">
+                                                    <rect key="frame" x="220" y="-1" width="80" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="100元">
+                                                        <color key="titleColor" red="0.94901960780000005" green="0.43529411759999997" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="moneyButtonPressed:" destination="YZH-e0-zae" eventType="touchUpInside" id="UjH-9Y-ACJ"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="支付方式" id="Vrr-QK-Tbg">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Nyy-1I-4yA">
+                                        <rect key="frame" x="0.0" y="255" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nyy-1I-4yA" id="zPp-83-tn5">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chargeAndPay_zfb" translatesAutoresizingMaskIntoConstraints="NO" id="9T2-cT-8Yy">
+                                                    <rect key="frame" x="85" y="7" width="150" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="RsQ-v5-2aB">
+                                        <rect key="frame" x="0.0" y="299" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RsQ-v5-2aB" id="090-pf-NLM">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chargeAndPay_jsyh" translatesAutoresizingMaskIntoConstraints="NO" id="Lhq-4T-UrF">
+                                                    <rect key="frame" x="85" y="7" width="150" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="YBh-rI-nBN">
+                                        <rect key="frame" x="0.0" y="343" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YBh-rI-nBN" id="sLA-n6-JDQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chargeAndPay_zsyh" translatesAutoresizingMaskIntoConstraints="NO" id="ENz-sI-2TI">
+                                                    <rect key="frame" x="85" y="7" width="150" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="YZH-e0-zae" id="r0C-it-jY8"/>
+                            <outlet property="delegate" destination="YZH-e0-zae" id="Xw0-4n-20G"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="充值" id="zzt-cG-b89">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wJ0-uZ-WjM">
+                            <color key="tintColor" red="0.94901960780000005" green="0.43529411759999997" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="cancelBarButtonItemPressed:" destination="YZH-e0-zae" id="Yt3-Dz-LmM"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="下一步" id="yL1-38-gTc">
+                            <color key="tintColor" red="0.94901960780000005" green="0.43529411759999997" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="inputMoneyTestField" destination="hD8-z3-HZU" id="mJi-ec-nUt"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yay-KK-y7t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="653" y="-636"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="Checkmark" width="37" height="37"/>
+        <image name="chargeAndPay_jsyh" width="150" height="30"/>
+        <image name="chargeAndPay_zfb" width="150" height="30"/>
+        <image name="chargeAndPay_zsyh" width="150" height="30"/>
         <image name="global_button_y_s" width="116" height="40"/>
         <image name="global_nyline2" width="320" height="4"/>
     </resources>
