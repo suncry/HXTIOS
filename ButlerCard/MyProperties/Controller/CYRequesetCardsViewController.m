@@ -54,10 +54,6 @@
     [HUD showWhileExecuting:@selector(request) onTarget:self withObject:nil animated:YES];
 }
 
-- (IBAction)testBtnClick:(id)sender
-{
-    [self presentViewController:[[UIStoryboard storyboardWithName:@"Password" bundle:nil]instantiateInitialViewController] animated:YES completion:nil];
-}
 /**
  *  提交服务申请
  */
