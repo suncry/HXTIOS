@@ -1,15 +1,14 @@
 //
-//  CYGesturePasswordViewController.m
+//  CYSetGestureCodeController.m
 //  ButlerCard
 //
-//  Created by niko on 14-5-5.
+//  Created by niko on 14-5-6.
 //  Copyright (c) 2014年 johnny. All rights reserved.
 //
 
-#import "CYGesturePasswordViewController.h"
+#import "CYSetGestureCodeController.h"
 
-@interface CYGesturePasswordViewController ()
-
+@interface CYSetGestureCodeController ()
 @property (nonatomic,assign) ePasswordSate state;
 
 @property (nonatomic,copy) NSString* password;
@@ -22,7 +21,7 @@
 
 @end
 
-@implementation CYGesturePasswordViewController
+@implementation CYSetGestureCodeController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,16 +35,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     // Do any additional setup after loading the view.
     self.password = @"";
     self.state = ePasswordUnset;
     
-    self.clearButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    self.clearButton.frame = CGRectMake(110, 20, 100, 30);
-    [self.clearButton setTitle:@"清空密码" forState:UIControlStateNormal];
-    [self.clearButton addTarget:self action:@selector(clearPassword) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.clearButton];
+//    self.clearButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+//    self.clearButton.frame = CGRectMake(110, 20, 100, 30);
+//    [self.clearButton setTitle:@"清空密码" forState:UIControlStateNormal];
+//    [self.clearButton addTarget:self action:@selector(clearPassword) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:self.clearButton];
     
     self.infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 60, 300, 30)];
     self.infoLabel.backgroundColor = [UIColor clearColor];
@@ -55,7 +53,7 @@
     }
     else
     {
-//        self.infoLabel.textAlignment = UITextAlignmentCenter;
+        //        self.infoLabel.textAlignment = UITextAlignmentCenter;
     }
     self.infoLabel.textColor = [UIColor redColor];
     [self.view addSubview:self.infoLabel];
@@ -74,7 +72,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 - (void)updateInfoLabel
 {
     NSString* infoText;
@@ -100,13 +97,13 @@
     self.infoLabel.text = infoText;
 }
 
-- (void)clearPassword
-{
-    self.password = @"";
-    self.state = ePasswordUnset;
-    
-    [self updateInfoLabel];
-}
+//- (void)clearPassword
+//{
+//    self.password = @"";
+//    self.state = ePasswordUnset;
+//    
+//    [self updateInfoLabel];
+//}
 
 - (void)passwordView:(MJPasswordView*)passwordView withPassword:(NSString*)password
 {
@@ -120,23 +117,31 @@
         case ePasswordRepeat:
             if ([password isEqualToString:self.password])
             {
-                self.state = ePasswordExist;
+//                self.state = ePasswordExist;
                 UIAlertView* view = [[UIAlertView alloc] initWithTitle:@"密码设置成功！" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
                 [view show];
-            }
-            break;
-            
-        case ePasswordExist:
-            if ([password isEqualToString:self.password])
-            {
-                UIAlertView* view = [[UIAlertView alloc] initWithTitle:@"密码正确！" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-                [view show];
+                
             }
             else
             {
-                UIAlertView* view = [[UIAlertView alloc] initWithTitle:@"密码错误，请重试！" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-                [view show];
+                NSString *infoText = [NSString stringWithFormat:@"确认密码失败请重试!"];
+                self.infoLabel.text = infoText;
+                
             }
+            self.state = ePasswordUnset;
+            break;
+            
+//        case ePasswordExist:
+//            if ([password isEqualToString:self.password])
+//            {
+//                UIAlertView* view = [[UIAlertView alloc] initWithTitle:@"密码正确！" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+//                [view show];
+//            }
+//            else
+//            {
+//                UIAlertView* view = [[UIAlertView alloc] initWithTitle:@"密码错误，请重试！" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+//                [view show];
+//            }
             
             break;
             
@@ -147,10 +152,4 @@
     [self updateInfoLabel];
 }
 
-- (IBAction)forgetPassWord:(id)sender
-{
-    UIViewController *loginViewController = [[UIStoryboard storyboardWithName:@"AccountManager" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"AccountManagerNavStoryboardID"];
-//    [self.navigationController pushViewController:loginViewController animated:YES];
-    [self presentViewController:loginViewController animated:YES completion:nil];
-}
 @end
