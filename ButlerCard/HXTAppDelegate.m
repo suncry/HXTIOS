@@ -40,13 +40,10 @@
      }
      }
      */
-    if (!_gesturePasswordNaviViewController) {
+    if (!_gesturePasswordNaviViewController)
+    {
         _gesturePasswordNaviViewController = [[UIStoryboard storyboardWithName:@"AccountManager" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"GesturePasswordNaviStoryboadID"];
     }
-    
-//    if (!_loginViewController) {
-//        _loginViewController = [[UIStoryboard storyboardWithName:@"AccountManager" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"AccountManagerNavStoryboardID"];
-//    }
     
     return YES;
 }
@@ -68,12 +65,7 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-//    NSLog(@"当前控制器 是手势密码页面吗 %d",[[self getCurrentRootViewController] isEqual:_gesturePasswordViewController]);
+    //    NSLog(@"当前控制器 是手势密码页面吗 %d",[[self getCurrentRootViewController] isEqual:_gesturePasswordViewController]);
     //当前不是手势密码页面 才跳转
     if (![[self getCurrentRootViewController] isEqual:_gesturePasswordNaviViewController])
     {
@@ -82,8 +74,14 @@
         }
         
         [[self getCurrentRootViewController] presentViewController:_gesturePasswordNaviViewController animated:NO completion:^{}];
-
+        
     }
+
+
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
