@@ -59,6 +59,12 @@
     
     [self updateInfoLabel];
 
+    
+    
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"请输入密码" message:@"输入密码后才能修改手势" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"取消", nil];
+    alert.alertViewStyle = UIAlertViewStyleSecureTextInput;
+    [alert show];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -99,11 +105,10 @@
             {
 //                self.state = ePasswordExist;
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"密码设置成功！" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-                alert.tag = 100;
-                alert.delegate = self;
                 [alert show];
                 [HXTAccountManager sharedInstance].gesturePassword = password;
                 NSLog(@"手势密码设置为:%@",[HXTAccountManager sharedInstance].gesturePassword);
+                [self.navigationController popViewControllerAnimated:YES];
             }
             else
             {
@@ -120,11 +125,41 @@
 }
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    NSLog(@"alert tag == %d",alertView.tag);
-    //tag 100  密码正确alert
-    [self.navigationController popViewControllerAnimated:YES];
-    //tag 101  密码错误alert
-    
+    //(UITextField *)textfieldAtIndex:(NSInteger)textfieldIndex
+    //返回值是textfield
+    //UIAlertViewStyleDefault 没有
+    //UIAlertViewStyleSecureInput textfieldIndex 只有一个为0
+    //UIAlertViewStylePlainInput textfieldIndex 只有一个为0
+    //UIAlertViewStyleLoginAndPasswordInput textfieldIndex有两个 0 1
+    if (alertView.alertViewStyle == UIAlertViewStyleSecureTextInput)
+    {
+//        NSLog(@"[alertView textFieldAtIndex:0].text == %@",[alertView textFieldAtIndex:0].text);
+//        NSLog(@"[HXTAccountManager sharedInstance].password == %@",[HXTAccountManager sharedInstance].password);
+        NSLog(@"alertView buttonIndex == %d",buttonIndex);
+        if (buttonIndex == 1)
+        {
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+        else
+        {
+            if ([[alertView textFieldAtIndex:0].text isEqualToString:[HXTAccountManager sharedInstance].password])
+            {
+                NSLog(@"密码输入正确");
+            }
+            else
+            {
+                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"密码错误!" message:nil delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+                alert.alertViewStyle = UIAlertViewStyleDefault;
+                [alert show];
+            }
+        }
+    }
+    else if (alertView.alertViewStyle == UIAlertViewStyleDefault)
+    {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"请输入密码" message:@"输入密码后才能修改手势" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"取消", nil];
+        alert.alertViewStyle = UIAlertViewStyleSecureTextInput;
+        [alert show];
+    }
 }
 
 @end
