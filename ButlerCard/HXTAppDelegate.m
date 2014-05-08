@@ -152,15 +152,15 @@
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     //    NSLog(@"当前控制器 是手势密码页面吗 %d",[[self getCurrentRootViewController] isEqual:_gesturePasswordViewController]);
     //当前不是手势密码页面 才跳转
-    if (![[self getCurrentRootViewController] isEqual:_gesturePasswordNaviViewController])
-    {
-        if (_gesturePasswordNaviViewController.viewControllers.count > 1) {
-            [_gesturePasswordNaviViewController popToRootViewControllerAnimated:NO];
-        }
-        
-        [[self getCurrentRootViewController] presentViewController:_gesturePasswordNaviViewController animated:NO completion:^{}];
-        
-    }
+//    if (![[self getCurrentRootViewController] isEqual:_gesturePasswordNaviViewController])
+//    {
+//        if (_gesturePasswordNaviViewController.viewControllers.count > 1) {
+//            [_gesturePasswordNaviViewController popToRootViewControllerAnimated:NO];
+//        }
+//        
+//        [[self getCurrentRootViewController] presentViewController:_gesturePasswordNaviViewController animated:NO completion:^{}];
+//        
+//    }
 
 
 }
