@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		231D8302191B257A0029F96A /* libGexinSdk-1.0.4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 231D8301191B257A0029F96A /* libGexinSdk-1.0.4.a */; };
+		231D8304191B29C80029F96A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 231D8303191B29C80029F96A /* libz.dylib */; };
+		231D8306191B29D90029F96A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 231D8305191B29D90029F96A /* Security.framework */; };
+		231D8308191B29ED0029F96A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 231D8307191B29ED0029F96A /* SystemConfiguration.framework */; };
+		231D830A191B29FB0029F96A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 231D8309191B29FB0029F96A /* CFNetwork.framework */; };
 		232EBDD619090F6E00381960 /* CYShopCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 232EBDD519090F6E00381960 /* CYShopCommentController.m */; };
 		232EBDD9190914BC00381960 /* CYMyCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 232EBDD8190914BC00381960 /* CYMyCommentController.m */; };
 		238ECB531904BECA00721872 /* CYPropertieCardsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 238ECB521904BECA00721872 /* CYPropertieCardsController.m */; };
@@ -248,6 +253,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		231D82FF191B257A0029F96A /* GexinSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GexinSdk.h; sourceTree = "<group>"; };
+		231D8300191B257A0029F96A /* GXSdkError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GXSdkError.h; sourceTree = "<group>"; };
+		231D8301191B257A0029F96A /* libGexinSdk-1.0.4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libGexinSdk-1.0.4.a"; sourceTree = "<group>"; };
+		231D8303191B29C80029F96A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		231D8305191B29D90029F96A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		231D8307191B29ED0029F96A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		231D8309191B29FB0029F96A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		232EBDD419090F6E00381960 /* CYShopCommentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYShopCommentController.h; sourceTree = "<group>"; };
 		232EBDD519090F6E00381960 /* CYShopCommentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYShopCommentController.m; sourceTree = "<group>"; };
 		232EBDD7190914BC00381960 /* CYMyCommentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYMyCommentController.h; sourceTree = "<group>"; };
@@ -497,10 +509,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				231D830A191B29FB0029F96A /* CFNetwork.framework in Frameworks */,
+				231D8308191B29ED0029F96A /* SystemConfiguration.framework in Frameworks */,
+				231D8306191B29D90029F96A /* Security.framework in Frameworks */,
+				231D8304191B29C80029F96A /* libz.dylib in Frameworks */,
 				B2B01F93190BA173005A9483 /* MapKit.framework in Frameworks */,
 				23BC73A2190A0A020088BEC9 /* CoreData.framework in Frameworks */,
 				B2214E8818FE216700762AE9 /* libsqlite3.dylib in Frameworks */,
 				B2214C0E18FE1E4000762AE9 /* CoreGraphics.framework in Frameworks */,
+				231D8302191B257A0029F96A /* libGexinSdk-1.0.4.a in Frameworks */,
 				B2214C1018FE1E4000762AE9 /* UIKit.framework in Frameworks */,
 				B2214C0C18FE1E4000762AE9 /* Foundation.framework in Frameworks */,
 				FCE6C2F870A645348CF02435 /* libPods.a in Frameworks */,
@@ -520,6 +537,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		231D82FD191B23280029F96A /* GexinSdk */ = {
+			isa = PBXGroup;
+			children = (
+				231D82FE191B257A0029F96A /* include */,
+				231D8301191B257A0029F96A /* libGexinSdk-1.0.4.a */,
+			);
+			name = GexinSdk;
+			sourceTree = "<group>";
+		};
+		231D82FE191B257A0029F96A /* include */ = {
+			isa = PBXGroup;
+			children = (
+				231D82FF191B257A0029F96A /* GexinSdk.h */,
+				231D8300191B257A0029F96A /* GXSdkError.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
 		23B90FAC191890EC00C7767F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -674,6 +709,10 @@
 		B2214C0A18FE1E4000762AE9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				231D8309191B29FB0029F96A /* CFNetwork.framework */,
+				231D8307191B29ED0029F96A /* SystemConfiguration.framework */,
+				231D8305191B29D90029F96A /* Security.framework */,
+				231D8303191B29C80029F96A /* libz.dylib */,
 				B2B01F92190BA173005A9483 /* MapKit.framework */,
 				23BC73A1190A0A020088BEC9 /* CoreData.framework */,
 				B2214E8718FE216700762AE9 /* libsqlite3.dylib */,
@@ -1097,6 +1136,7 @@
 		B2B01F61190A570B005A9483 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				231D82FD191B23280029F96A /* GexinSdk */,
 				23BC7398190A040B0088BEC9 /* CoreModel.xcdatamodeld */,
 			);
 			name = Model;
@@ -1662,6 +1702,10 @@
 				GCC_PREFIX_HEADER = "ButlerCard/ButlerCard-Prefix.pch";
 				INFOPLIST_FILE = "ButlerCard/ButlerCard-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ButlerCard/Global",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -1680,6 +1724,10 @@
 				GCC_PREFIX_HEADER = "ButlerCard/ButlerCard-Prefix.pch";
 				INFOPLIST_FILE = "ButlerCard/ButlerCard-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ButlerCard/Global",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
