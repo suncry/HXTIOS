@@ -317,6 +317,34 @@
 //    [_naviController pushViewController:sendMessageView animated:YES];
 //    [sendMessageView release];
 }
+#pragma mark - 个推消息代理方法
+
+- (void)GexinSdkDidRegisterClient:(NSString *)clientId
+{
+//    NSLog(@"GexinSdkDidRegisterClient");
+//    NSLog(@"clientId == %@",clientId);
+
+}
+- (void)GexinSdkDidReceivePayload:(NSString *)payloadId fromApplication:(NSString *)appId
+{
+//    NSLog(@"GexinSdkDidReceivePayload");
+//    NSLog(@"payloadId == %@",payloadId);
+    NSString *payload = [[NSString alloc] initWithData:[_gexinPusher retrivePayloadById:payloadId]  encoding:NSUTF8StringEncoding];
+//    NSLog(@"获取到的payload == %@",payload);
+    UIAlertView *payloadAlert = [[UIAlertView alloc]initWithTitle:@"接收到推送消息" message:payload delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [payloadAlert show];
+
+}
+- (void)GexinSdkDidSendMessage:(NSString *)messageId result:(int)result
+{
+//    NSLog(@"GexinSdkDidSendMessage");
+
+}
+- (void)GexinSdkDidOccurError:(NSError *)error
+{
+//    NSLog(@"GexinSdkDidOccurError");
+
+}
 
 - (void)saveContext
 {
