@@ -35,6 +35,7 @@
 {
 	UIRemoteNotificationType apn_type = (UIRemoteNotificationType)(UIRemoteNotificationTypeAlert|UIRemoteNotificationTypeSound|UIRemoteNotificationTypeBadge);
 	[[UIApplication sharedApplication] registerForRemoteNotificationTypes:apn_type];
+
 }
 - (NSString *)currentLogFilePath
 {
@@ -103,6 +104,7 @@
     
     // [2]:注册APNS
     [self registerRemoteNotification];
+
     
     // [2-EXT]: 获取启动时收到的APN
     NSDictionary* message = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
@@ -161,8 +163,6 @@
 //        [[self getCurrentRootViewController] presentViewController:_gesturePasswordNaviViewController animated:NO completion:^{}];
 //        
 //    }
-
-
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
@@ -178,6 +178,8 @@
 }
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
 {
+    NSLog(@"didRegister!!!!!");
+
     NSString *token = [[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
 //    [_deviceToken release];
 	_deviceToken = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
@@ -187,11 +189,13 @@
     // [3]:向个推服务器注册deviceToken
     if (_gexinPusher) {
         [_gexinPusher registerDeviceToken:_deviceToken];
+        
     }
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
 {
+    NSLog(@"FailToRegister!!!!!");
     // [3-EXT]:如果APNS注册失败，通知个推服务器
     if (_gexinPusher) {
         [_gexinPusher registerDeviceToken:@""];
@@ -202,6 +206,9 @@
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userinfo
 {
+    NSLog(@"didReceiveRemoteNotification!!!!!");
+    NSLog(@"userinfo == %@",userinfo);
+    
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     
@@ -232,8 +239,11 @@
                                            delegate:self
                                               error:&err];
         if (!_gexinPusher) {
+            NSLog(@"_gexinPusher 注册失败");
 //            [_viewController logMsg:[NSString stringWithFormat:@"%@", [err localizedDescription]]];
         } else {
+            NSLog(@"_gexinPusher 注册成功");
+
             _sdkStatus = SdkStatusStarting;
         }
         
